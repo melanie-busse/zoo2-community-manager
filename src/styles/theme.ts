@@ -95,6 +95,10 @@ export const theme = {
     blur: "blur(10px)",
     border: "1px solid rgba(120, 255, 120, 0.15)",
   },
+  button: {
+    confirm: "#d33",
+    cancel: "#3085d6",
+  },
   layout: {
     widthPage: "1200px",
   },
