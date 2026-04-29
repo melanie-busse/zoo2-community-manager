@@ -22,7 +22,7 @@ const StyledHeader = styled.header`
 `;
 
 const Headline = styled.h1`
-  font-family: ${({ theme }) => theme.fonts.heading}, serif;
+  font-family: ${({ theme }) => theme.fonts.comic}, serif;
   font-size: clamp(2rem, 5vw, 3rem);
   color: ${({ theme }) => theme.colors.primary["700"]};
   letter-spacing: -0.02em;
