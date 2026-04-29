@@ -7,6 +7,7 @@ import { useTranslations } from "next-intl";
 import * as Styles from "@/components/elements/EmptyState/EmptyState.styles";
 
 interface EmptyStateProps {
+  object: string;
   title?: string;
   message?: string;
   buttonText?: string;
@@ -14,6 +15,7 @@ interface EmptyStateProps {
 }
 
 export default function EmptyState({
+  object,
   title = "",
   message = "",
   buttonText = "",
@@ -25,7 +27,7 @@ export default function EmptyState({
     <Styles.OuterContainer>
       <Styles.Container>
         <Styles.SpeechBubble>
-          <h3>{title || t("EmptyState.title")}</h3>
+          <h3>{title || t(`EmptyState.${object}.title`)}</h3>
           <p>{message || t("EmptyState.message")}</p>
         </Styles.SpeechBubble>
 

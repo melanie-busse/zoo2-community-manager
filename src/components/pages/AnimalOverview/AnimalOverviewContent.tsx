@@ -67,8 +67,8 @@ export default function AnimalOverviewContent({
             sortBy={sortBy}
             sortDirection={sortDirection}
             onSort={toggleSort}
-            onEdit={handleEdit}
-            onDelete={handleDelete}
+            onEdit={handleEdit.toString}
+            onDelete={handleDelete.toString}
           />
 
           <MobileListView
@@ -87,7 +87,7 @@ export default function AnimalOverviewContent({
           />
         </>
       ) : (
-        <EmptyState onResetAction={handleResetFilters} />
+        <EmptyState object="animals" onResetAction={handleResetFilters} />
       )}
 
       {totalPages > 1 && (

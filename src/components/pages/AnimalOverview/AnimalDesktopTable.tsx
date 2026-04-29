@@ -10,18 +10,18 @@ import BiomeBadge from "@/components/ui/badges/BiomeBadge";
 import CurrencyBadge, { CurrencyType } from "@/components/ui/badges/CurrencyBadge";
 import ShelterLevelBadge from "@/components/ui/badges/ShelterLevelBadge";
 import XPBadge from "@/components/ui/badges/XPBadge";
-import ActionBadge from "@/components/ui/badges/ActionBadge";
 import ThumbnailBadge from "@/components/ui/badges/ThumbnailBadge";
 import Table from "@/components/page-structure/Table/Table";
 import { calculateTotalXP } from "@/util/AnimalUtil";
+import ActionGroupBadge from "@/components/ui/badges/ActionGroupBadge";
 
 interface AnimalDesktopTableProps {
   animals: Animal[];
   sortBy: string | null;
   sortDirection: "asc" | "desc";
   onSort: (key: string) => void;
-  onEdit: (id: number) => void;
-  onDelete: (id: number) => void;
+  onEdit: (id: string) => void;
+  onDelete: (id: string) => void;
 }
 
 export default function AnimalDesktopTable({
@@ -109,24 +109,7 @@ export default function AnimalDesktopTable({
               </td>
               {isAdmin && (
                 <td style={{ textAlign: "right" }}>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "flex-end",
-                      gap: "8px",
-                    }}
-                  >
-                    <ActionBadge
-                      type="edit"
-                      onClickAction={() => onEdit(animal.id)}
-                      tooltip={t("Buttons.edit")}
-                    />
-                    <ActionBadge
-                      type="delete"
-                      onClickAction={() => onDelete(animal.id)}
-                      tooltip={t("Buttons.delete")}
-                    />
-                  </div>
+                  <ActionGroupBadge object={animal} onEdit={onEdit} onDelete={onDelete} />
                 </td>
               )}
             </tr>

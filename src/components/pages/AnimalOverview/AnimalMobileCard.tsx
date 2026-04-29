@@ -2,19 +2,18 @@
 
 import React from "react";
 import { useSession } from "next-auth/react";
-import { useTranslations } from "next-intl";
 
 import * as Styles from "./AnimalMobileCard.styles";
 
 import { Animal } from "@/types/animal";
 
-import ActionBadge from "@/components/ui/badges/ActionBadge";
 import BiomeBadge from "@/components/ui/badges/BiomeBadge";
 import ShelterLevelBadge from "@/components/ui/badges/ShelterLevelBadge";
 import { Name } from "@/components/elements/Name/Name";
 import PriceBadge from "@/components/ui/badges/PriceBadge";
 import { CurrencyType } from "@/components/ui/badges/CurrencyBadge";
 import GameBadge from "@/components/ui/badges/GameBadge";
+import ActionGroupBadge from "@/components/ui/badges/ActionGroupBadge";
 
 interface AnimalMobileCardProps {
   animal: Animal;
@@ -28,7 +27,6 @@ export default function AnimalMobileCard({
   onEditAction,
   onDeleteAction,
 }: AnimalMobileCardProps) {
-  const t = useTranslations();
   const { data: session } = useSession();
   const isAdmin = session?.user?.role === "Director";
 
@@ -39,14 +37,7 @@ export default function AnimalMobileCard({
       <Styles.HeaderRow>
         <Name>{displayName}</Name>
         {isAdmin && (
-          <Styles.ActionGroup onClick={(e) => e.stopPropagation()}>
-            <ActionBadge type="edit" tooltip={t("Buttons.edit")} onClickAction={onEditAction} />
-            <ActionBadge
-              type="delete"
-              tooltip={t("Buttons.delete")}
-              onClickAction={onDeleteAction}
-            />
-          </Styles.ActionGroup>
+          <ActionGroupBadge object={animal} onEdit={onEditAction} onDelete={onDeleteAction} />
         )}
       </Styles.HeaderRow>
 

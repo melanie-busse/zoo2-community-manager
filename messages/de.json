@@ -73,7 +73,8 @@
     },
     "price": "Preis",
     "actions": "Aktionen",
-    "scroll_to_top": "Nach oben scrollen"
+    "scroll_to_top": "Nach oben scrollen",
+    "save_changes": "Daten erfolgreich übermittelt!"
   },
   "Filter": {
     "search_placeholder": "Suche nach Tieren...",
@@ -92,7 +93,12 @@
     "add": "Hinzufügen"
   },
   "EmptyState": {
-    "title": "Oje, kein Tier da!",
+    "animals": {
+      "title": "Oje, kein Tier da!"
+    },
+    "contests": {
+      "title": "Keine Wettbewerbe gefunden"
+    },
     "uppySad": "Uppy ist traurig",
     "message": "Uppy hat überall gesucht, konnte aber nichts finden.",
     "button": "Suche neu starten"
@@ -106,5 +112,21 @@
   },
   "Tooltip": {
     "level": "Level"
+  },
+  "Contest": {
+    "contestOverview": {
+      "overview_title": "Wettbewerbe",
+      "table": {
+        "period": "Zeitraum",
+        "statues_animals": "Wettbewerbs-Tiere",
+        "status": "Status"
+      },
+      "messages": {
+        "deleteButton": "Ja, löschen!",
+        "cancelButton": "Abbrechen",
+        "deleteErrorTitle": "Wettbewerb löschen?",
+        "confirmDelete": "Bist du sicher, dass du diesen Wettbewerb unwiderruflich löschen möchtest?"
+      }
+    }
   }
 }
