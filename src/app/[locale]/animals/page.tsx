@@ -1,6 +1,7 @@
 import AnimalOverviewClient from "./AnimalOverviewClient";
 import PageWrapper from "@/components/page-structure/page/PageWrapper";
 import { getAllAnimals } from "@/service/AnimalService";
+import { Animal } from "@/types/animal";
 
 export default async function AnimalOverviewPage({
   params,
