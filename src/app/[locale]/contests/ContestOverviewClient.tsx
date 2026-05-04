@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 
 import { Contest } from "@/types/contest";
 import { useTheme } from "styled-components";
-import ContestOverviewContent from "@/components/pages/Contests/ContestOverviewContent";
+import ContestOverviewContent from "@/components/pages/Contests/ContestOverview/ContestOverviewContent";
 
 interface ContestOverviewClientProps {
   initialContests: Contest[];

@@ -1,16 +1,15 @@
 "use client";
 
 import React from "react";
-
-import { useTranslations, useLocale } from "next-intl";
 import { Calendar } from "lucide-react";
 import { Contest } from "@/types/contest";
+
 import ThumbnailBadge from "@/components/ui/badges/ThumbnailBadge";
 import * as Styles from "./ContestOverview.styles";
 import { StatusBadge } from "@/components/ui/badges/StatusBadge";
-import ActionBadge from "@/components/ui/badges/ActionBadge";
 import { useSession } from "next-auth/react";
 import ActionGroupBadge from "@/components/ui/badges/ActionGroupBadge";
+import { getAnimalImage } from "@/utils/AnimalUtil";
 
 interface ContestMobileCardProps {
   contest: Contest;
@@ -25,7 +24,6 @@ export default function ContestMobileCard({
   onEdit,
   onDelete,
 }: ContestMobileCardProps) {
-  const t = useTranslations("contests");
   const locale = useLocale();
   const { data: session } = useSession();
   const isAdmin = session?.user?.role === "Director";
@@ -57,8 +55,8 @@ export default function ContestMobileCard({
       </Styles.CardHeader>
 
       <Styles.AnimalGrid>
-        {contest.conteststatue?.map((link) => {
-          const statue = link.statue;
+        {contest.conteststatue?.map((contestStatue) => {
+          const statue = contestStatue.statue;
           const animal = statue.animal;
 
           if (!animal) return null;
@@ -66,13 +64,15 @@ export default function ContestMobileCard({
           const animalname = animal.name || "Unbekannt";
 
           return (
-            <Styles.AnimalItem key={link.id}>
-              <ThumbnailBadge
-                image={animal.image}
-                name={animalname}
-                size={65}
-                category={`animals/${(animal.category || "grassland").toLowerCase()}`}
-              />
+            <Styles.AnimalItem key={contestStatue.id}>
+              {contestStatue.statue.animal.image && (
+                <ThumbnailBadge
+                  image={getAnimalImage(contestStatue.statue.animal)}
+                  name={contestStatue.statue.animal.name}
+                  biome={contestStatue.statue.animal.biome}
+                  size={65}
+                />
+              )}
               <Styles.TinyName>{animalname}</Styles.TinyName>
             </Styles.AnimalItem>
           );
