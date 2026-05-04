@@ -7,10 +7,10 @@ import { useTranslations } from "next-intl";
 
 import Tooltip from "@/components/ui/tooltip/Tooltip";
 import { habitatColors } from "@/constants/habitatConstants";
-import { getTechnicalBiomeName } from "@/constants/BiomePathMap";
+import { Image } from "@/types/image";
 
 interface BiomeBadgeProps {
-  type: string;
+  image: Image;
   showTooltip?: boolean;
   size?: number;
   label?: string;
@@ -18,7 +18,7 @@ interface BiomeBadgeProps {
 }
 
 export default function BiomeBadge({
-  type,
+  image,
   showTooltip = true,
   size = 20,
   label,
@@ -26,15 +26,11 @@ export default function BiomeBadge({
 }: BiomeBadgeProps) {
   const t = useTranslations();
 
-  // Normalisierung
-  const safeType = type?.toLowerCase() || "default";
-  const technicalName = getTechnicalBiomeName(safeType);
-
   const BadgeContent = (
-    <StyledBadge $biomeType={technicalName}>
+    <StyledBadge $biomeType={image.name}>
       <NextImage
-        src={`/images/biomes/${technicalName}/area.webp`}
-        alt={safeType}
+        src={image.path}
+        alt={image.alt}
         width={size}
         height={size}
         // Verhindert Layout-Shift, falls das Bild kurz lädt

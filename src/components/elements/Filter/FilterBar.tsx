@@ -9,6 +9,8 @@ import { Animal } from "@/types/animal";
 import CustomBadgeFilter from "@/components/elements/Filter/CustomBadgeFilter";
 import BiomeBadge from "@/components/ui/badges/BiomeBadge";
 import ShelterLevelBadge from "@/components/ui/badges/ShelterLevelBadge";
+import { Biome } from "@/types/biome";
+import { getBiomeImage, getBiomeName, getShelterImage } from "@/utils/BiomeUtil";
 
 interface FilterBarProps {
   animals: Animal[];
@@ -51,11 +53,20 @@ export default function FilterBar({
     });
   };
 
-  const uniqueBiomes = Array.from(new Set(animals.map((a) => a.biomeName))).filter(Boolean);
+  const uniqueBiomes = Array.from(
+    new Map(
+      animals
+        .map((a) => a.biome)
+        .filter((b): b is Biome => b !== null && b !== undefined)
+        .map((b) => [b.id, b]), // Die ID dient als Key, um Duplikate zu vermeiden
+    ).values(),
+  );
 
-  const uniqueLevels = Array.from(new Set(animals.map((a) => a.shelterLevel)))
-    .filter((lvl): lvl is number => lvl !== undefined && lvl !== null)
-    .sort((a, b) => a - b);
+  const uniqueLevels = Array.from(
+    new Map(
+      animals.filter((a) => a.shelterLevel !== null).map((a) => [a.shelterLevel, a]),
+    ).values(),
+  ).sort((a, b) => (a.shelterLevel ?? 0) - (b.shelterLevel ?? 0));
 
   return (
     <Styles.FilterBar style={{ opacity: isPending ? 0.7 : 1 }}>
@@ -72,8 +83,10 @@ export default function FilterBar({
           selectedValue={selectedBiome}
           onSelectAction={(val) => updateFilters({ biome: val })}
           allLabelKey="all_enclosures"
-          getIdentifier={(b) => b}
-          renderBadge={(biome) => <BiomeBadge type={biome} size={20} showTooltip={false} />}
+          getIdentifier={(biome) => getBiomeName(biome, "")}
+          renderBadge={(biome) => (
+            <BiomeBadge image={getBiomeImage(biome)} size={20} showTooltip={false} />
+          )}
         />
       )}
 
@@ -84,17 +97,25 @@ export default function FilterBar({
           onSelectAction={(val) => updateFilters({ level: val })}
           allLabelKey="all_levels"
           labelPrefixKey="level_label"
-          getIdentifier={(lvl) => String(lvl)}
-          renderBadge={(lvl) => (
-            <Styles.ScaledBadge>
-              <ShelterLevelBadge
-                level={Number(lvl)}
-                habitat="grassland"
-                showTooltip={false}
-                size={60}
-              />
-            </Styles.ScaledBadge>
-          )}
+          getIdentifier={(animal) => String(animal.shelterLevel)}
+          renderBadge={(animal) => {
+            const grasslandBiome = {
+              identifier: "grassland",
+              biomestext: [{ biomeName: "Grasland" }],
+            } as any;
+
+            return (
+              <Styles.ScaledBadge>
+                <ShelterLevelBadge
+                  image={getShelterImage(grasslandBiome)}
+                  level={Number(animal.shelterLevel)}
+                  habitat="grassland"
+                  showTooltip={false}
+                  size={60}
+                />
+              </Styles.ScaledBadge>
+            );
+          }}
         />
       )}
     </Styles.FilterBar>

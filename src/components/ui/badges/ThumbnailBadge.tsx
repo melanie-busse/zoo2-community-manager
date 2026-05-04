@@ -5,29 +5,28 @@ import styled from "styled-components";
 import Tooltip from "@/components/ui/tooltip/Tooltip";
 import GameBadge from "@/components/ui/badges/GameBadge";
 import { habitatColors } from "@/constants/habitatConstants";
+import { Image } from "@/types/image";
 
 interface ItemThumbnailProps {
-  image: string;
+  image: Image;
   name?: string;
-  habitat?: { name: string };
+  biome?: { name: string };
   size?: number;
-  category: any;
   tooltip?: boolean;
 }
 
 export default function ThumbnailBadge({
   image,
   name,
-  habitat,
+  biome,
   size = 55,
-  category,
   tooltip = true,
 }: ItemThumbnailProps) {
-  const habitatKey = (habitat?.name || "standard").toLowerCase();
+  const habitatKey = (biome?.name || "standard").toLowerCase();
 
   const thumbnail = (
     <StyledThumbnail $habitat={habitatKey} $size={size}>
-      <GameBadge type={category} fileName={image} size={size - 10} borderColor="transparent" />
+      <GameBadge image={image} size={size - 10} borderColor="transparent" />
     </StyledThumbnail>
   );
 

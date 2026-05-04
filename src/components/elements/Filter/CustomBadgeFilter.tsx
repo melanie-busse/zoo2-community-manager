@@ -40,7 +40,6 @@ export default function CustomBadgeFilter<T>({
           <span>{t("Filter." + allLabelKey)}</span>
         ) : (
           <Styles.SelectedValue>
-            {/* Wir suchen das Item, das zum selektierten Wert passt, um das Badge zu rendern */}
             {renderBadge(selectedValue as unknown as T)}
             <Styles.Label>
               {labelPrefixKey && `${t("Filter." + labelPrefixKey)} `}

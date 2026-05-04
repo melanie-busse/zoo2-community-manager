@@ -3,10 +3,13 @@
 import React from "react";
 import styled from "styled-components";
 import { useTranslations } from "next-intl";
+
 import Tooltip from "@/components/ui/tooltip/Tooltip";
 import GameBadge from "@/components/ui/badges/GameBadge";
+import { Image } from "@/types/image";
 
 interface ShelterLevelBadgeProps {
+  image: Image;
   level: number | string;
   habitat?: string;
   showTooltip?: boolean;
@@ -14,6 +17,7 @@ interface ShelterLevelBadgeProps {
 }
 
 export default function ShelterLevelBadge({
+  image,
   level,
   habitat = "grassland",
   showTooltip = true,
@@ -23,7 +27,7 @@ export default function ShelterLevelBadge({
 
   const BadgeContent = (
     <ShelterContainer $size={size}>
-      <GameBadge fileName="shelter.png" type={`biomes/${habitat.toLowerCase()}`} size={size} />
+      <GameBadge image={image} size={size} />
       <LevelBadgeCircle $size={size}>{level}</LevelBadgeCircle>
     </ShelterContainer>
   );

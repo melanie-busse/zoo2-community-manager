@@ -5,5 +5,6 @@ export default function ActionsHeadline({ text }: { text: string }) {
 }
 
 const ActionText = styled.th`
-  text-align: center;
+  width: 100px;
+  text-align: right;
 `;
