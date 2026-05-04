@@ -18,6 +18,7 @@ model Language {
 
 model Biome {
   id                        Int          @id @unique(map: "biomeindex") @default(autoincrement())
+  identifier                String       @unique
   price                     Int?
   priceTypeId               Int?
   priceType                 PriceType?   @relation(fields: [priceTypeId], references: [id])
