@@ -10,6 +10,7 @@ import { StatusBadge } from "@/components/ui/badges/StatusBadge";
 import { useSession } from "next-auth/react";
 import ActionGroupBadge from "@/components/ui/badges/ActionGroupBadge";
 import { getAnimalImage } from "@/utils/AnimalUtil";
+import { useLocale } from "next-intl";
 
 interface ContestMobileCardProps {
   contest: Contest;
