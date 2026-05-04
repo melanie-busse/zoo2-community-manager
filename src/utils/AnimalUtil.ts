@@ -1,11 +1,6 @@
-export interface AnimalListItem {
-  id: number;
-  name: string;
-  image: string;
-  biomeName: string;
-  category: string;
-  shelterLevel: number;
-}
+import { Image } from "@/types/image";
+import { Animal } from "@/types/animal";
+import { getBiomeName } from "@/utils/BiomeUtil";
 
 interface FilterOptions {
   searchTerm: string;
@@ -14,9 +9,9 @@ interface FilterOptions {
 }
 
 export function filterAnimals(
-  animals: AnimalListItem[] | undefined,
+  animals: Animal[] | undefined,
   { searchTerm, selectedGehege, selectedLevel }: FilterOptions,
-): AnimalListItem[] {
+): Animal[] {
   if (!animals) return [];
 
   const searchLower = searchTerm.toLowerCase();
@@ -29,7 +24,8 @@ export function filterAnimals(
       animal.id.toString().includes(searchLower);
 
     // 2. Filter nach Gehege
-    const matchesGehege = selectedGehege === "all" || animal.biomeName === selectedGehege;
+    const matchesGehege =
+      selectedGehege === "all" || getBiomeName(animal.biome, "") === selectedGehege;
 
     // 3. Filter nach Level
     const matchesLevel = selectedLevel === "all" || String(animal.shelterLevel) === selectedLevel;
@@ -48,10 +44,7 @@ export function paginate<T>(items: T[], page: number, itemsPerPage: number): T[]
   return items.slice(start, start + itemsPerPage);
 }
 
-export function sortAnimals(
-  items: AnimalListItem[],
-  { sortBy, sortDirection }: SortOptions,
-): AnimalListItem[] {
+export function sortAnimals(items: Animal[], { sortBy, sortDirection }: SortOptions): Animal[] {
   if (!sortBy) return items;
 
   return [...items].sort((a, b) => {
@@ -83,8 +76,8 @@ function _getNestedValue(obj: any, path: string): string | number {
   return path.split(".").reduce((acc, part) => acc && acc[part], obj) || 0;
 }
 
-export function calculateTotalXP(animal: any): number {
-  const xpArray = animal?.xpData;
+export function calculateTotalXP(animal: Animal): number {
+  const xpArray = animal?.animalxp;
 
   if (!xpArray || !Array.isArray(xpArray)) {
     return 0;
@@ -94,4 +87,22 @@ export function calculateTotalXP(animal: any): number {
     const punkte = Number(eintrag.xpValue) || 0;
     return acc + punkte;
   }, 0);
+}
+
+export function getAnimalImage(animal: Animal): Image {
+  return {
+    name: animal.image || "placeholder.png",
+
+    path: `/images/animals/${animal.biome.identifier}/${animal.image}`,
+
+    alt: animal.animaltext?.[0]?.animalName || "Tierbild",
+  };
+}
+
+export function getAnimalName(animal: Animal, fallback: string): string {
+  return animal.animaltext?.[0]?.animalName || fallback;
+}
+
+export function getAnimalDescription(animal: Animal, fallback: string): string {
+  return animal.animaltext?.[0]?.animalDescription || fallback;
 }
