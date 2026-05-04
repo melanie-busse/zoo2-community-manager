@@ -12,8 +12,10 @@ import ShelterLevelBadge from "@/components/ui/badges/ShelterLevelBadge";
 import XPBadge from "@/components/ui/badges/XPBadge";
 import ThumbnailBadge from "@/components/ui/badges/ThumbnailBadge";
 import Table from "@/components/page-structure/Table/Table";
-import { calculateTotalXP } from "@/util/AnimalUtil";
+import { calculateTotalXP, getAnimalImage } from "@/utils/AnimalUtil";
 import ActionGroupBadge from "@/components/ui/badges/ActionGroupBadge";
+import { Biome } from "@/types/biome";
+import { getBiomeImage, getBiomeName, getShelterImage } from "@/utils/BiomeUtil";
 
 interface AnimalDesktopTableProps {
   animals: Animal[];
@@ -88,21 +90,28 @@ export default function AnimalDesktopTable({
               <td>
                 <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
                   <ThumbnailBadge
-                    image={animal.image}
-                    category={`animals/${animal.category}`}
+                    image={getAnimalImage(animal)}
+                    biome={animal.biome}
                     name={animal.name}
                   />
                   <strong>{animal.name}</strong>
                 </div>
               </td>
               <td>
-                <BiomeBadge type={animal.category} tooltipLabel={animal.biomeName} />
+                <BiomeBadge
+                  image={getBiomeImage(animal.biome)}
+                  tooltipLabel={getBiomeName(animal.biome, "unbekannter Biome")}
+                />
               </td>
               <td style={{ textAlign: "right" }}>
                 <CurrencyBadge value={animal.price} type={animal.priceType?.name as CurrencyType} />
               </td>
               <td>
-                <ShelterLevelBadge level={animal.shelterLevel} habitat={animal.category} />
+                <ShelterLevelBadge
+                  image={getShelterImage(animal.biome)}
+                  level={animal.shelterLevel}
+                  habitat={animal.biome.identifier}
+                />
               </td>
               <td style={{ textAlign: "right", paddingRight: "20px" }}>
                 <XPBadge label={calculateTotalXP(animal)} />

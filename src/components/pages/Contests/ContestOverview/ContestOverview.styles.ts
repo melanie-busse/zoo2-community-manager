@@ -7,7 +7,7 @@ export const DateWrapper = styled.div`
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 0.8rem;
   line-height: 1.1;
   color: #333;
   padding: 4px 0;
@@ -23,27 +23,54 @@ export const Divider = styled.span`
 `;
 
 export const StatueGroup = styled.div`
-  display: flex;
-  gap: 15px;
-  align-items: center;
+  display: grid;
+  /* Erhöht auf 150px für bessere Lesbarkeit */
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+  width: 100%;
+  min-width: 0;
 `;
-
 export const AnimalCard = styled.div`
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   background: white;
-  padding: 8px 12px;
+  padding: 6px 10px;
   border-radius: 10px;
   border: 1px solid #e0e0e0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  min-width: 200px;
-`;
+  width: 100%;
+  height: 100%;
 
-export const NameStack = styled.div`
-  display: flex;
-  flex-direction: column;
-  line-height: 1.2;
+  span {
+    font-size: 0.85rem;
+    font-weight: 600;
+    line-height: 1.2;
+    white-space: normal;
+
+    /* 1. Line-Clamping */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+    /* 2. Worttrennung erzwingen */
+    /* 'anywhere' ist stärker als 'break-word' und erlaubt Trennung an Silben */
+    overflow-wrap: anywhere;
+
+    /* 3. Hyphens mit Präfixen */
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+
+    /* 4. Verhindert, dass 'word-break' die 'hyphens' Regel überschreibt */
+    word-break: normal;
+
+    /* Hilft dem Browser, die Breite für die Trennung besser zu kalkulieren */
+    flex: 1;
+    min-width: 0;
+  }
 `;
 
 export const SubText = styled.span`

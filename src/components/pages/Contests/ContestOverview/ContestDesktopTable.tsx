@@ -10,9 +10,11 @@ import LinkedRow from "@/components/page-structure/Table/LinkedRow";
 import ActionsHeadline from "@/components/page-structure/Table/ActionsHeadline";
 import { Contest } from "@/types/contest";
 import ThumbnailBadge from "@/components/ui/badges/ThumbnailBadge";
-import { Name } from "@/components/elements/Name/Name";
 import ActionGroupBadge from "@/components/ui/badges/ActionGroupBadge";
 import { StatusBadge } from "@/components/ui/badges/StatusBadge";
+import { getStatueName } from "@/utils/ContestUtil";
+import { getAnimalImage } from "@/utils/AnimalUtil";
+import styled from "styled-components";
 
 interface ContestDesktopTableProps {
   contests: Contest[];
@@ -36,9 +38,9 @@ export default function ContestDesktopTable({
     <Table>
       <thead>
         <tr>
-          <th>{t("Contest.contestOverview.table.period")}</th>
+          <ThPeriod>{t("Contest.contestOverview.table.period")}</ThPeriod>
           <th>{t("Contest.contestOverview.table.statues_animals")}</th>
-          <th>{t("Contest.contestOverview.table.status")}</th>
+          <ThStatus>{t("Contest.contestOverview.table.status")}</ThStatus>
           <ActionsHeadline text={t("Common.actions")} />
         </tr>
       </thead>
@@ -67,39 +69,36 @@ export default function ContestDesktopTable({
               {/* Die Statuen/Tiere */}
               <td>
                 <Styles.StatueGroup>
-                  {contest.conteststatue?.map((link) => {
-                    const statue = link.statue;
-                    const animal = statue.animal;
-
-                    if (!animal) return null;
-
-                    const animalname = animal.name || "Unbekannt";
-
+                  {contest.conteststatue?.map((contestStatue) => {
                     return (
-                      <Styles.AnimalCard key={link.id}>
-                        <ThumbnailBadge
-                          image={animal.image}
-                          name={animalname}
-                          size={65}
-                          category={`animals/${(animal.category || "grassland").toLowerCase()}`}
-                        />
-                        <Styles.NameStack>
-                          <Name>{animalname}</Name>
-                          <Styles.SubText>{animal.biomeName}</Styles.SubText>
-                        </Styles.NameStack>
+                      <Styles.AnimalCard key={contestStatue.id}>
+                        {contestStatue.statue.animal.image && (
+                          <ThumbnailBadge
+                            image={getAnimalImage(contestStatue.statue.animal)}
+                            name={contestStatue.statue.animal.image}
+                            biome={contestStatue.statue.animal.biome}
+                            size={55}
+                          />
+                        )}
+                        <span>{getStatueName(contestStatue.statue, "unbekannte Statue")}</span>
                       </Styles.AnimalCard>
                     );
                   })}
                 </Styles.StatueGroup>
               </td>
 
-              {/* Status Badge */}
               <td>
                 <StatusBadge isActive={isActive} />
               </td>
-
               {isAdmin && (
-                <td style={{ textAlign: "right" }}>
+                <td
+                  style={{
+                    textAlign: "right",
+                    width: "1%",
+                    whiteSpace: "nowrap",
+                    paddingRight: "20px",
+                  }}
+                >
                   <ActionGroupBadge object={contest} onEdit={onEdit} onDelete={onDelete} />
                 </td>
               )}
@@ -110,3 +109,15 @@ export default function ContestDesktopTable({
     </Table>
   );
 }
+
+const ThPeriod = styled.th`
+  width: 110px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+`;
+
+const ThStatus = styled.th`
+  width: 100px;
+  text-align: center;
+`;

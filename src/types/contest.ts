@@ -1,9 +1,9 @@
 import { Animal } from "@/types/animal";
 import { User } from "@/types/user";
+import { Statue } from "@/types/statue";
 
 export interface Contest {
   id: number;
-  // Date | string, da JSON.stringify Daten in Strings umwandelt
   startDate: Date | string;
   endDate: Date | string;
   active: boolean;
@@ -14,16 +14,15 @@ export interface Contest {
 
 export interface ContestDonation {
   id: number;
+  contest: Contest;
+  animal: Animal;
+  statue: Statue;
   puzzlePiece?: number | null;
   user?: User;
-  animals?: Animal[];
 }
 
 export interface ContestStatue {
   id: number;
-  statue: {
-    id: number;
-    name: string;
-    animal?: Animal;
-  };
+  contest: Contest;
+  statue: Statue;
 }

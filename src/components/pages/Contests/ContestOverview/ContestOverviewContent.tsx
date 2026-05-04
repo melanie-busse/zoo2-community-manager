@@ -2,10 +2,10 @@
 
 import { useTranslations } from "next-intl";
 import PageHeader from "@/components/page-structure/page/PageHeader";
-import ContestDesktopTable from "@/components/pages/Contests/ContestDesktopTable";
+import ContestDesktopTable from "@/components/pages/Contests/ContestOverview/ContestDesktopTable";
 import MobileListView from "@/components/elements/MobileListView/MobileListView";
 import { Contest } from "@/types/contest";
-import ContestMobileCard from "@/components/pages/Contests/ContestMobileCard";
+import ContestMobileCard from "@/components/pages/Contests/ContestOverview/ContestMobileCard";
 import EmptyState from "@/components/elements/EmptyState/EmptyState";
 import React from "react";
 import { useRouter } from "next/navigation";
@@ -36,16 +36,13 @@ export default function ContestOverviewContent({
             currentItems={contests}
             onEdit={handleEdit.toString}
             onDelete={handleDelete.toString}
-            renderCardAction={(
-              contest,
-              actions, // actions wird hier von MobileListView geliefert
-            ) => (
+            renderCardAction={(contest, actions) => (
               <ContestMobileCard
                 key={contest.id}
                 contest={contest}
                 onClick={() => router.push(`/contests/${contest.id}`)}
-                onEdit={actions.onEdit.toString} // Nutzt den internen Handler von MobileListView
-                onDelete={actions.onDelete.toString} // Nutzt den internen Handler von MobileListView
+                onEdit={actions.onEdit.toString}
+                onDelete={actions.onDelete.toString}
               />
             )}
           />

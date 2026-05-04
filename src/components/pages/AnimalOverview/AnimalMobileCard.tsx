@@ -14,6 +14,8 @@ import PriceBadge from "@/components/ui/badges/PriceBadge";
 import { CurrencyType } from "@/components/ui/badges/CurrencyBadge";
 import GameBadge from "@/components/ui/badges/GameBadge";
 import ActionGroupBadge from "@/components/ui/badges/ActionGroupBadge";
+import { getAnimalImage } from "@/utils/AnimalUtil";
+import { getBiomeImage, getShelterImage } from "@/utils/BiomeUtil";
 
 interface AnimalMobileCardProps {
   animal: Animal;
@@ -52,11 +54,15 @@ export default function AnimalMobileCard({
         </Styles.PriceRow>
 
         <Styles.IconsRow>
-          <GameBadge type={`animals/${animal.category}`} fileName={animal.image} size={50} />
+          <GameBadge image={getAnimalImage(animal)} size={50} />
 
-          <BiomeBadge type={animal.category} size={35} />
+          <BiomeBadge image={getBiomeImage(animal.biome)} size={35} />
 
-          <ShelterLevelBadge level={animal.shelterLevel} habitat={animal.category} />
+          <ShelterLevelBadge
+            image={getShelterImage(animal.biome)}
+            level={animal.shelterLevel}
+            habitat={animal.biome.identifier}
+          />
         </Styles.IconsRow>
       </Styles.StatsRow>
     </Styles.CardContainer>

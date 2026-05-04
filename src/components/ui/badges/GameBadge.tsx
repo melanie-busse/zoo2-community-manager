@@ -4,36 +4,25 @@ import React from "react";
 import styled from "styled-components";
 import { useTranslations } from "next-intl";
 
+import { Image } from "@/types/image";
+
 interface GameBadgeProps {
-  type: string;
-  fileName: string;
+  image: Image;
   size?: number;
   borderColor?: string;
 }
 
-export default function GameBadge({
-  type,
-  fileName,
-  size = 50,
-  borderColor = "#4ca64c",
-}: GameBadgeProps) {
-  const name = fileName?.trim();
+export default function GameBadge({ image, size = 50, borderColor = "#4ca64c" }: GameBadgeProps) {
   const t = useTranslations();
-
-  // Pfad-Logik
-  const imagePath =
-    fileName === "placeholder.png" ? `/images/placeholder.jpg` : `/images/${type}/${name}`;
-
-  const cleanPath = imagePath.replace(/([^:]\/)\/+/g, "$1");
 
   return (
     <IconFrame $size={size} $borderColor={borderColor}>
       <StyledImage
-        src={cleanPath}
-        alt={fileName}
+        src={image.path}
+        alt={image.name}
         onError={(e) => {
           const target = e.target as HTMLImageElement;
-          console.error(t("Errors.imageNotFound"), cleanPath);
+          console.error(t("Errors.imageNotFound"), image.path);
           target.src = "/images/placeholder.png";
         }}
       />

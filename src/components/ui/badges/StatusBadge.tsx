@@ -3,10 +3,10 @@ import styled, { keyframes } from "styled-components";
 import { useTranslations } from "next-intl";
 
 export function StatusBadge({ isActive }: { isActive: boolean }) {
-  const t = useTranslations("contests");
+  const t = useTranslations();
 
   return (
-    <StatusWrapper title={isActive ? t("status.running") : t("status.upcoming")}>
+    <StatusWrapper title={isActive ? t("Contest.status.running") : t("Contest.status.upcoming")}>
       <StatusDot $active={isActive} />
     </StatusWrapper>
   );

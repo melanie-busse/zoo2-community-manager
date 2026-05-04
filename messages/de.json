@@ -74,7 +74,11 @@
     "price": "Preis",
     "actions": "Aktionen",
     "scroll_to_top": "Nach oben scrollen",
-    "save_changes": "Daten erfolgreich übermittelt!"
+    "save_changes": "Daten erfolgreich übermittelt!",
+    "available": "Verfügbar",
+    "no_more_item": "Keine weiteren gefunden",
+    "chosen": "Ausgewählt",
+    "none_selected": "Keine ausgewählt"
   },
   "Filter": {
     "search_placeholder": "Suche nach Tieren...",
@@ -114,6 +118,11 @@
     "level": "Level"
   },
   "Contest": {
+    "status": {
+      "live": "LIVE",
+      "running": "Läuft gerade",
+      "upcoming": "Demnächst"
+    },
     "contestOverview": {
       "overview_title": "Wettbewerbe",
       "table": {
@@ -127,6 +136,25 @@
         "deleteErrorTitle": "Wettbewerb löschen?",
         "confirmDelete": "Bist du sicher, dass du diesen Wettbewerb unwiderruflich löschen möchtest?"
       }
+    },
+    "contestForm": {
+      "createTitle": "Neuen Wettbewerb anlegen",
+      "editTitle": "Wettbewerb bearbeiten",
+      "createSubtitle": "Wähle den Zeitraum und die drei Statuen für diesen Wettbewerb aus.",
+      "saveContest": "Wettbewerb speichern",
+      "maxStatues": "Maximal 3 Statuen erlaubt!",
+      "chooseStatues": "Bitte wähle genau 3 Statuen aus!",
+      "endDateBeforeStart": "Das Enddatum darf nicht vor dem Startdatum liegen!",
+      "startDate": "Startdatum",
+      "endDate": "Enddatum",
+      "activeContest": "Wettbewerb aktiv",
+      "statuesChoise": "Statuen-Auswahl",
+      "successCreated": "Wettbewerb erfolgreich angelegt!",
+      "errorCreating": "Fehler beim Anlegen des Wettbewerbs.",
+      "successUpdated": "Wettbewerb erfolgreich aktualisiert!",
+      "errorUpdating": "Fehler beim Aktualisieren des Wettbewerbs.",
+      "networkError": "Netzwerkfehler beim Speichern. Bitte versuche es erneut.",
+      "contestNotFound": "Wettbewerb nicht gefunden."
     }
   }
 }

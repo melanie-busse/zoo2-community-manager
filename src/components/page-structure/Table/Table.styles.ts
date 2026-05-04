@@ -20,7 +20,7 @@ export const TableFrame = styled.div`
 `;
 
 export const Table = styled.table`
-  width: 100%;
+  width: 98%;
   border-collapse: separate;
   border-spacing: 0;
   min-width: 800px;
