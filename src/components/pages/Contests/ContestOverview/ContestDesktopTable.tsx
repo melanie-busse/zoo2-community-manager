@@ -39,7 +39,10 @@ export default function ContestDesktopTable({
       <thead>
         <tr>
           <ThPeriod>{t("Contest.contestOverview.table.period")}</ThPeriod>
-          <th>{t("Contest.contestOverview.table.statues_animals")}</th>
+          <th colSpan={3}>{t("Contest.contestOverview.table.statues_animals")}</th>
+          <th style={{ textAlign: "right", paddingRight: "50px" }}>
+            {t("Contest.contestOverview.table.colorVariant")}
+          </th>
           <ThStatus>{t("Contest.contestOverview.table.status")}</ThStatus>
           <ActionsHeadline text={t("Common.actions")} />
         </tr>
@@ -67,7 +70,7 @@ export default function ContestDesktopTable({
               </td>
 
               {/* Die Statuen/Tiere */}
-              <td>
+              <td colSpan={4}>
                 <Styles.StatueGroup>
                   {contest.conteststatue?.map((contestStatue) => {
                     return (

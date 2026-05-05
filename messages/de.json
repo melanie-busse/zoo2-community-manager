@@ -128,6 +128,7 @@
       "table": {
         "period": "Zeitraum",
         "statues_animals": "Wettbewerbs-Tiere",
+        "colorVariant": "Farbvarianten",
         "status": "Status"
       },
       "messages": {
@@ -140,15 +141,15 @@
     "contestForm": {
       "createTitle": "Neuen Wettbewerb anlegen",
       "editTitle": "Wettbewerb bearbeiten",
-      "createSubtitle": "Wähle den Zeitraum und die drei Statuen für diesen Wettbewerb aus.",
+      "createSubtitle": "Wähle den Zeitraum und die 3 oder 4 Tiere für diesen Wettbewerb aus.",
       "saveContest": "Wettbewerb speichern",
-      "maxStatues": "Maximal 3 Statuen erlaubt!",
-      "chooseStatues": "Bitte wähle genau 3 Statuen aus!",
+      "maxStatues": "Maximal 4 Tiere erlaubt!",
+      "chooseStatues": "Bitte wähle 3 oder 4 Tiere aus!",
       "endDateBeforeStart": "Das Enddatum darf nicht vor dem Startdatum liegen!",
       "startDate": "Startdatum",
       "endDate": "Enddatum",
       "activeContest": "Wettbewerb aktiv",
-      "statuesChoise": "Statuen-Auswahl",
+      "statuesChoise": "Tier-Auswahl",
       "successCreated": "Wettbewerb erfolgreich angelegt!",
       "errorCreating": "Fehler beim Anlegen des Wettbewerbs.",
       "successUpdated": "Wettbewerb erfolgreich aktualisiert!",

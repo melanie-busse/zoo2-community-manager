@@ -1,8 +1,7 @@
 "use client";
 
 import * as Styles from "./ContestCreateForm.styles";
-import { useLocale, useTranslations } from "next-intl";
-import { formatLocaleDate } from "@/utils/formatDate";
+import { useTranslations } from "next-intl";
 import React from "react";
 import SubmitButton from "@/components/ui/form/SubmitButton";
 import OriginTransfer from "@/components/ui/OriginTransfer/OriginTransfer";
@@ -29,7 +28,6 @@ export function ContestCreateFormContent({
   isSubmitting,
 }: ContestCreateFormContentProps) {
   const t = useTranslations();
-  const locale = useLocale();
 
   return (
     <form onSubmit={handleFormSubmit}>
@@ -38,20 +36,13 @@ export function ContestCreateFormContent({
           <label>{t("Contest.contestForm.startDate")}</label>
           <input
             type="date"
-            value={formData.start}
-            onChange={(e) => {
-              const newStart = e.target.value;
-              const startDate = new Date(newStart);
-              const newEnd = new Date(startDate);
-              newEnd.setDate(startDate.getDate() + 7);
-
+            value={formData.startDate}
+            onChange={(e) =>
               setFormData({
                 ...formData,
-                start: newStart,
-                ende: formatLocaleDate(newEnd, locale),
-              });
-            }}
-            required
+                startDate: e.target.value,
+              })
+            }
           />
         </Styles.InputGroup>
 
@@ -59,9 +50,14 @@ export function ContestCreateFormContent({
           <label>{t("Contest.contestForm.endDate")}</label>
           <input
             type="date"
-            value={formData.ende}
-            min={formData.start}
-            onChange={(e) => setFormData({ ...formData, ende: e.target.value })}
+            value={formData.endDate}
+            min={formData.startDate}
+            onChange={(e) =>
+              setFormData({
+                ...formData,
+                endDate: e.target.value,
+              })
+            }
             required
           />
         </Styles.InputGroup>
@@ -69,9 +65,9 @@ export function ContestCreateFormContent({
         <Styles.CheckboxGroup>
           <input
             type="checkbox"
-            id="aktiv"
-            checked={formData.aktiv === 1}
-            onChange={(e) => setFormData({ ...formData, aktiv: e.target.checked ? 1 : 0 })}
+            id="active"
+            checked={formData.active === 1}
+            onChange={(e) => setFormData({ ...formData, active: e.target.checked ? 1 : 0 })}
           />
           <label htmlFor="aktiv">{t("Contest.contestForm.activeContest")}</label>
         </Styles.CheckboxGroup>
