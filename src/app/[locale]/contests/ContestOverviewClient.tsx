@@ -1,10 +1,11 @@
 "use client";
 
 import React, { useState } from "react";
-import { useRouter } from "next/navigation";
+
 import { useTranslations } from "next-intl";
 import Swal from "sweetalert2";
 import { toast } from "react-toastify";
+import { useRouter } from "@/i18n/routing";
 
 import { Contest } from "@/types/contest";
 import { useTheme } from "styled-components";
@@ -21,7 +22,8 @@ export default function ContestOverviewClient({ initialContests }: ContestOvervi
   const t = useTranslations();
 
   const handleEdit = (id: string) => {
-    router.push(`/contests/${id}/edit`);
+    const targetPath = `/contests/${id}/edit`;
+    router.push(targetPath);
   };
 
   const handleDelete = async (id: string) => {

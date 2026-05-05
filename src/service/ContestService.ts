@@ -40,11 +40,31 @@ export async function getAllContests(locale: string = "de") {
 export async function createContest(data: any) {
   return prisma.contest.create({
     data: {
-      startDate: new Date(data.start),
-      endDate: new Date(data.ende),
-      active: data.aktiv,
+      startDate: new Date(data.startDate),
+      endDate: new Date(data.endDate),
+      active: data.active,
 
       conteststatue: {
+        create: data.statuenIds.map((id: number) => ({
+          statueId: id,
+        })),
+      },
+    },
+  });
+}
+
+export async function updateContest(id: number, data: any) {
+  return prisma.contest.update({
+    where: { id: id },
+    data: {
+      startDate: new Date(data.startDate),
+      endDate: new Date(data.endDate),
+      active: data.active,
+
+      conteststatue: {
+        // 1. Alle alten Verknüpfungen für diesen Wettbewerb entfernen
+        deleteMany: {},
+
         create: data.statuenIds.map((id: number) => ({
           statueId: id,
         })),
@@ -75,4 +95,48 @@ export async function getAllStatues(locale: string = "de") {
       },
     },
   });
+}
+
+export async function getContestById(id: string, locale: string = "de") {
+  try {
+    const contest = await prisma.contest.findUnique({
+      where: {
+        id: parseInt(id),
+      },
+      include: {
+        conteststatue: {
+          include: {
+            statue: {
+              include: {
+                animal: {
+                  include: {
+                    animaltext: {
+                      where: { languageCode: locale },
+                    },
+                    biome: {
+                      include: {
+                        biomestext: {
+                          where: { languageCode: locale },
+                        },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    });
+
+    if (!contest) {
+      console.warn(`Wettbewerb mit ID ${id} nicht gefunden.`);
+      return null;
+    }
+
+    return contest;
+  } catch (error) {
+    console.error(`Fehler in getContestById für ID ${id}:`, error);
+    throw error;
+  }
 }
