@@ -34,14 +34,14 @@ export default function ContestOverviewClient({ initialContests }: ContestOvervi
       showCancelButton: true,
       confirmButtonColor: theme.button.confirm,
       cancelButtonColor: theme.button.cancel,
-      cancelButtonText: t("contestOverview.messages.cancelButton"),
+      cancelButtonText: t("Contest.contestOverview.messages.cancelButton"),
     });
 
     if (result.isConfirmed) {
       try {
         const res = await fetch(`/api/contests/${id}`, { method: "DELETE" });
         if (res.ok) {
-          toast.success(t("Commen.save_changes"));
+          toast.success(t("Common.save_changes"));
           // Liste lokal aktualisieren statt neu laden
           setContests((prev) => prev.filter((c) => c.id.toString() !== id));
         }
