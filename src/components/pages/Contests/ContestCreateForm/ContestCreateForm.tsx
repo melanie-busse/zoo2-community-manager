@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+"use client";
+
+import React, { useState, useEffect } from "react";
 import { toast } from "react-toastify";
-import { useTranslations, useLocale } from "next-intl";
+import { useTranslations } from "next-intl";
 
 import { Contest } from "@/types/contest";
-import { formatLocaleDate } from "@/utils/formatDate";
 import { ContestCreateFormContent } from "@/components/pages/Contests/ContestCreateForm/ContestCreateFormContent";
 import { Statue } from "@/types/statue";
 import { getStatueName } from "@/utils/ContestUtil";
+import { toISODate } from "@/utils/formatDate";
 
 interface ContestFormProps {
   statues?: Statue[];
@@ -20,55 +22,60 @@ export default function ContestForm({
   onSubmit,
 }: ContestFormProps) {
   const t = useTranslations();
-  const locale = useLocale();
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const [formData, setFormData] = useState(() => {
-    if (initialData) {
-      return {
-        start: formatLocaleDate(initialData.startDate, locale),
-        ende: formatLocaleDate(initialData.endDate, locale),
-        aktiv: initialData.active ?? 1,
-      };
-    }
-
-    const getNextWednesday = (date: Date) => {
-      const result = new Date(date);
-      const day = result.getDay();
-      const diff = (3 - day + 7) % 7;
-      result.setDate(result.getDate() + (diff === 0 ? 7 : diff));
-      return result;
-    };
-
-    const start = getNextWednesday(new Date());
-    const end = new Date(start);
-    end.setDate(start.getDate() + 7);
-
-    return {
-      start: formatLocaleDate(start, locale),
-      ende: formatLocaleDate(end, locale),
-      aktiv: 1,
-    };
+  // 1. Formular-Daten State
+  const [formData, setFormData] = useState({
+    startDate: "",
+    endDate: "",
+    active: 1,
   });
 
-  // 2. Gewählte Statuen initialisieren
-  const [selectedStatues, setSelectedStatues] = useState<{ id: number; name: string }[]>(() => {
-    if (initialData?.conteststatue) {
-      return initialData.conteststatue.map((link: any) => {
-        const animal = link.statue.animal;
-        return {
-          id: link.statue.id,
-          name: animal?.name || link.statue.name,
-        };
+  // 2. Gewählte Statuen State
+  const [selectedStatues, setSelectedStatues] = useState<{ id: number; name: string }[]>([]);
+
+  // 3. Effekt zum Laden der Daten (wichtig für den Edit-Modus)
+  useEffect(() => {
+    if (initialData) {
+      setFormData({
+        startDate: toISODate(initialData.startDate),
+        endDate: toISODate(initialData.endDate),
+        active: initialData.active ? 1 : 0,
+      });
+
+      if (initialData.conteststatue) {
+        const preselected = initialData.conteststatue.map((link: any) => ({
+          id: link.statue?.id,
+          name: getStatueName(link.statue, "Unbekannte Statue"),
+        }));
+        setSelectedStatues(preselected);
+      }
+    } else {
+      // Default-Werte für neuen Contest (nächster Mittwoch)
+      const getNextWednesday = (date: Date) => {
+        const result = new Date(date);
+        const day = result.getDay();
+        const diff = (3 - day + 7) % 7;
+        result.setDate(result.getDate() + (diff === 0 ? 7 : diff));
+        return result;
+      };
+
+      const start = getNextWednesday(new Date());
+      const end = new Date(start);
+      end.setDate(start.getDate() + 7);
+
+      setFormData({
+        startDate: toISODate(start),
+        endDate: toISODate(end),
+        active: 1,
       });
     }
-    return [];
-  });
+  }, [initialData]);
 
-  // Verfügbare Statuen filtern & formatieren
+  // Verfügbare Statuen filtern (alle minus die bereits gewählten)
   const availableStatues = (statues || [])
-    .filter((statue) => !selectedStatues.find((selectedStatue) => selectedStatue.id === statue.id))
+    .filter((statue) => !selectedStatues.find((s) => s.id === statue.id))
     .map((statue) => ({
       id: statue.id,
       name: getStatueName(statue, "Unbekannte Statue"),
@@ -89,12 +96,14 @@ export default function ContestForm({
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (selectedStatues.length !== 4) {
+    // Validierung: Zoo 2 Contests benötigen immer genau 4 Statuen
+    if (selectedStatues.length < 3 || selectedStatues.length > 4) {
       toast.error(t("Contest.contestForm.chooseStatues"));
       return;
     }
 
-    if (new Date(formData.ende) < new Date(formData.start)) {
+    // Validierung: Datum
+    if (new Date(formData.endDate) < new Date(formData.startDate)) {
       toast.error(t("Contest.contestForm.endDateBeforeStart"));
       return;
     }
@@ -107,6 +116,9 @@ export default function ContestForm({
     setIsSubmitting(true);
     try {
       await onSubmit(submissionData);
+    } catch (error) {
+      console.error("Submission error:", error);
+      toast.error(t("Common.error"));
     } finally {
       setIsSubmitting(false);
     }

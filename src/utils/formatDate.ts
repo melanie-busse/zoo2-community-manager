@@ -16,3 +16,12 @@ export const formatLocaleDate = (date: Date | string | null, locale: string = "d
     year: "numeric",
   }).format(d);
 };
+
+export const toISODate = (dateInput: string | Date) => {
+  try {
+    const d = new Date(dateInput);
+    return d.toISOString().split("T")[0];
+  } catch (e) {
+    return "";
+  }
+};
