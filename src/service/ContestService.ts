@@ -73,6 +73,12 @@ export async function updateContest(id: number, data: any) {
   });
 }
 
+export async function deleteContest(id: number) {
+  return prisma.contest.delete({
+    where: { id },
+  });
+}
+
 export async function getAllStatues(locale: string = "de") {
   return prisma.statue.findMany({
     include: {
