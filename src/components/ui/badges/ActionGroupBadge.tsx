@@ -13,7 +13,7 @@ export default function ActionGroupBadge({ object, onEdit, onDelete }: ActionGro
   const t = useTranslations();
 
   return (
-    <ActionGroup>
+    <ActionGroup onClick={(e) => e.stopPropagation()}>
       <ActionBadge
         type="edit"
         onClickAction={() => onEdit(object.id.toString())}
