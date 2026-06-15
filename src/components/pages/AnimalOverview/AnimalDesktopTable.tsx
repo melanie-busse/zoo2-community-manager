@@ -4,6 +4,7 @@ import React from "react";
 import { useTranslations } from "next-intl";
 import { useSession } from "next-auth/react";
 
+import * as Styles from "@/components/page-structure/Table/Table.styles";
 import { Animal } from "@/types/animal";
 import SortableTableHeader from "@/components/page-structure/Table/SortableTableHeader";
 import BiomeBadge from "@/components/ui/badges/BiomeBadge";
@@ -14,7 +15,6 @@ import ThumbnailBadge from "@/components/ui/badges/ThumbnailBadge";
 import Table from "@/components/page-structure/Table/Table";
 import { calculateTotalXP, getAnimalImage } from "@/utils/AnimalUtil";
 import ActionGroupBadge from "@/components/ui/badges/ActionGroupBadge";
-import { Biome } from "@/types/biome";
 import { getBiomeImage, getBiomeName, getShelterImage } from "@/utils/BiomeUtil";
 
 interface AnimalDesktopTableProps {
@@ -43,6 +43,7 @@ export default function AnimalDesktopTable({
     <Table>
       <thead>
         <tr>
+          <td></td>
           <SortableTableHeader
             label={t("Animals.species")}
             onSort={() => onSort("name")}
@@ -73,6 +74,14 @@ export default function AnimalDesktopTable({
             sortDirection={sortDirection}
           />
           <SortableTableHeader
+            label={t("Common.selling_price")}
+            onSort={() => onSort("sellingPrice")}
+            columnKey="sellingPrice"
+            currentSortBy={sortBy}
+            sortDirection={sortDirection}
+            align="right"
+          />
+          <SortableTableHeader
             label="XP"
             onSort={() => onSort("xp")}
             columnKey="xp"
@@ -80,7 +89,10 @@ export default function AnimalDesktopTable({
             sortDirection={sortDirection}
             align="right"
           />
-          {isAdmin && <th style={{ textAlign: "right" }}>{t("Common.actions")}</th>}
+          {isAdmin &&
+              <Styles.TableCellRight>
+                {t("Common.actions")}
+              </Styles.TableCellRight>}
         </tr>
       </thead>
       <tbody>
@@ -88,14 +100,18 @@ export default function AnimalDesktopTable({
           animals.map((animal) => (
             <tr key={animal.id}>
               <td>
-                <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+                <Styles.TableThumbnail>
                   <ThumbnailBadge
                     image={getAnimalImage(animal)}
                     biome={animal.biome}
-                    name={animal.name}
+                    name={animal.animaltext?.[0]?.animalName ?? ""}
                   />
-                  <strong>{animal.name}</strong>
-                </div>
+                </Styles.TableThumbnail>
+              </td>
+              <td>
+                <strong>
+                  {animal.animaltext?.[0]?.animalName ?? "Kein Name vorhanden"}
+                </strong>
               </td>
               <td>
                 <BiomeBadge
@@ -103,9 +119,9 @@ export default function AnimalDesktopTable({
                   tooltipLabel={getBiomeName(animal.biome, "unbekannter Biome")}
                 />
               </td>
-              <td style={{ textAlign: "right" }}>
+              <Styles.TableCellRight>
                 <CurrencyBadge value={animal.price} type={animal.priceType?.name as CurrencyType} />
-              </td>
+              </Styles.TableCellRight>
               <td>
                 <ShelterLevelBadge
                   image={getShelterImage(animal.biome)}
@@ -113,21 +129,24 @@ export default function AnimalDesktopTable({
                   habitat={animal.biome.identifier}
                 />
               </td>
-              <td style={{ textAlign: "right", paddingRight: "20px" }}>
+              <Styles.TableCellRight>
+                <CurrencyBadge value={animal.sellingPrice} type={"Zoodollar" as CurrencyType} />
+              </Styles.TableCellRight>
+              <Styles.TableCellRight>
                 <XPBadge label={calculateTotalXP(animal)} />
-              </td>
+              </Styles.TableCellRight>
               {isAdmin && (
-                <td style={{ textAlign: "right" }}>
+                <Styles.TableCellRight>
                   <ActionGroupBadge object={animal} onEdit={onEdit} onDelete={onDelete} />
-                </td>
+                </Styles.TableCellRight>
               )}
             </tr>
           ))
         ) : (
           <tr>
-            <td colSpan={isAdmin ? 6 : 5} style={{ textAlign: "center", padding: "40px" }}>
+            <Styles.TableEmptyState colSpan={isAdmin ? 6 : 5}>
               {t("EmptyState.title")} 🐾
-            </td>
+            </Styles.TableEmptyState>
           </tr>
         )}
       </tbody>
