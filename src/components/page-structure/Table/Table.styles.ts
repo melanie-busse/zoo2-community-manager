@@ -63,3 +63,19 @@ export const TableContainer = styled.div`
   overflow-y: hidden;
   height: auto;
 `;
+
+export const TableCellRight = styled.td`
+  text-align: right;
+  padding-right: 20px;
+`;
+
+export const TableThumbnail = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+`;
+
+export const TableEmptyState = styled.td`
+  text-align: center;
+  padding: 40px;
+`;
