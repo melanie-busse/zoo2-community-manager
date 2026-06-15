@@ -55,7 +55,7 @@
     }
   },
   "Animals": {
-    "species": "Art",
+    "species": "Name",
     "messages": {
       "createSuccess": "Tier erfolgreich angelegt! 🐾",
       "deleteSuccess": "Das Tier wurde erfolgreich gelöscht! 🐾",
@@ -72,6 +72,7 @@
       "cancel": "Abbrechen"
     },
     "price": "Preis",
+    "selling_price": "Verkaufspreis",
     "actions": "Aktionen",
     "scroll_to_top": "Nach oben scrollen",
     "save_changes": "Daten erfolgreich übermittelt!",

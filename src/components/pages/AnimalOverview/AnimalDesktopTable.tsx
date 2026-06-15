@@ -14,7 +14,6 @@ import ThumbnailBadge from "@/components/ui/badges/ThumbnailBadge";
 import Table from "@/components/page-structure/Table/Table";
 import { calculateTotalXP, getAnimalImage } from "@/utils/AnimalUtil";
 import ActionGroupBadge from "@/components/ui/badges/ActionGroupBadge";
-import { Biome } from "@/types/biome";
 import { getBiomeImage, getBiomeName, getShelterImage } from "@/utils/BiomeUtil";
 
 interface AnimalDesktopTableProps {
@@ -43,6 +42,7 @@ export default function AnimalDesktopTable({
     <Table>
       <thead>
         <tr>
+          <td></td>
           <SortableTableHeader
             label={t("Animals.species")}
             onSort={() => onSort("name")}
@@ -73,6 +73,14 @@ export default function AnimalDesktopTable({
             sortDirection={sortDirection}
           />
           <SortableTableHeader
+            label={t("Common.selling_price")}
+            onSort={() => onSort("sellingPrice")}
+            columnKey="sellingPrice"
+            currentSortBy={sortBy}
+            sortDirection={sortDirection}
+            align="right"
+          />
+          <SortableTableHeader
             label="XP"
             onSort={() => onSort("xp")}
             columnKey="xp"
@@ -92,10 +100,12 @@ export default function AnimalDesktopTable({
                   <ThumbnailBadge
                     image={getAnimalImage(animal)}
                     biome={animal.biome}
-                    name={animal.name}
+                    name={animal.animaltext?.[0]?.animalName ?? ""}
                   />
-                  <strong>{animal.name}</strong>
                 </div>
+              </td>
+              <td>
+                <strong>{animal.animaltext?.[0]?.animalName ?? "Kein Name vorhanden"}</strong>
               </td>
               <td>
                 <BiomeBadge
@@ -112,6 +122,9 @@ export default function AnimalDesktopTable({
                   level={animal.shelterLevel}
                   habitat={animal.biome.identifier}
                 />
+              </td>
+              <td style={{ textAlign: "right", paddingRight: "20px" }}>
+                <CurrencyBadge value={animal.sellingPrice} type={"Zoodollar" as CurrencyType} />
               </td>
               <td style={{ textAlign: "right", paddingRight: "20px" }}>
                 <XPBadge label={calculateTotalXP(animal)} />
