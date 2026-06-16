@@ -8,7 +8,7 @@ import { Contest } from "@/types/contest";
 import { ContestCreateFormContent } from "@/components/pages/Contests/ContestCreateForm/ContestCreateFormContent";
 import { Statue } from "@/types/statue";
 import { getStatueName } from "@/utils/ContestUtil";
-import { toISODate } from "@/utils/formatDate";
+import { toISODate } from "@/utils/DateUtil";
 
 interface ContestFormProps {
   statues?: Statue[];

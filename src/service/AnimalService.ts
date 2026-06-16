@@ -1,6 +1,5 @@
 import "server-only";
 import prisma from "@/lib/prisma";
-import { Animal } from "@/types/animal";
 
 export async function getCountAnimals() {
   return prisma.animal.count();
