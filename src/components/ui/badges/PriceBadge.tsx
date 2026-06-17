@@ -3,6 +3,7 @@
 import React from "react";
 import styled from "styled-components";
 import CurrencyBadge from "@/components/ui/badges/CurrencyBadge";
+import ItemWrapper from "@/components/page-structure/page/ItemWrapper";
 
 interface PriceBadgeProps {
   value: number;
@@ -11,16 +12,8 @@ interface PriceBadgeProps {
 
 export default function PriceBadge({ value = 0, type = "Zoodollar" }: PriceBadgeProps) {
   return (
-    <PriceWrapper>
+    <ItemWrapper>
       <CurrencyBadge value={value ?? 0} type={type} />
-    </PriceWrapper>
+    </ItemWrapper>
   );
 }
-
-const PriceWrapper = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  width: 100%;
-  padding-right: 5px;
-`;

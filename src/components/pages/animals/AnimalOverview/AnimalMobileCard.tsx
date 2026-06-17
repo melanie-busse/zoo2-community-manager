@@ -32,7 +32,7 @@ export default function AnimalMobileCard({
   const { data: session } = useSession();
   const isAdmin = session?.user?.role === "Director";
 
-  const displayName = animal.name;
+  const displayName = animal.animaltext[0].animalName;
 
   return (
     <Styles.CardContainer onClick={onClickAction}>

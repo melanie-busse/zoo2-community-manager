@@ -3,7 +3,7 @@
 import React from "react";
 import styled from "styled-components";
 import NextImage from "next/image";
-import FormattedNumber from "../FormattedNumber/FormattedNumber";
+import FormattedNumber from "../Formatted/FormattedNumber";
 
 export type CurrencyType = "Diamond" | "Zoodollar";
 

@@ -56,6 +56,16 @@
   },
   "Animals": {
     "species": "Name",
+    "release": "Auswildern",
+    "colorVariants": "Farbvarianten",
+    "biomeCapacity": "Gehegekapazität",
+    "animalCount": "Anzahl Tiere",
+    "biomeSize": "Gehegegröße",
+    "breeding": {
+      "xpAndActions": "XP und Aktionen",
+      "breeding": "Zucht",
+      "breedingChance": "Zuchtchance"
+    },
     "messages": {
       "createSuccess": "Tier erfolgreich angelegt! 🐾",
       "deleteSuccess": "Das Tier wurde erfolgreich gelöscht! 🐾",
@@ -72,14 +82,19 @@
       "cancel": "Abbrechen"
     },
     "price": "Preis",
+    "time": "Zeit",
     "selling_price": "Verkaufspreis",
+    "release": "Release-Datum",
+    "popularity": "Popularität",
     "actions": "Aktionen",
+    "action": "Aktion",
     "scroll_to_top": "Nach oben scrollen",
     "save_changes": "Daten erfolgreich übermittelt!",
     "available": "Verfügbar",
     "no_more_item": "Keine weiteren gefunden",
     "chosen": "Ausgewählt",
-    "none_selected": "Keine ausgewählt"
+    "none_selected": "Keine ausgewählt",
+    "description": "Beschreibung"
   },
   "Filter": {
     "search_placeholder": "Suche nach Tieren...",

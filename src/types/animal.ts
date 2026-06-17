@@ -1,6 +1,7 @@
 import { Biome } from "@/types/biome";
 import { PriceType } from "@/types/PriceType";
-import { Image } from "@/types/image";
+import { Xp } from "@/types/xp";
+import { AnimalOrigin, Origin } from "@/types/origin";
 
 export interface Animal {
   id: number;
@@ -13,6 +14,7 @@ export interface Animal {
   price?: number | null;
   priceType?: PriceType | null;
   sellingPrice?: number | null;
+  releaseExp?: number | null;
   popularity?: number | null;
   description?: string | null;
   image?: string | null;
@@ -21,14 +23,32 @@ export interface Animal {
   breedingProbability?: number | null;
 
   // Relationen
-  animalxp?: any[];
+  animalxp?: Xp[];
   game: any[];
-  origins: any[];
+  animalorigins: AnimalOrigin[];
   animaltext: AnimalText[];
+  specialcoat: SpecialCoat[];
+  animalperenclosure: AnimalPerEnclosure[];
 }
 
 export interface AnimalText {
   id: number;
   animalName: string;
   animalDescription: string;
+}
+
+export interface SpecialCoat {
+  id: number;
+  name: string;
+  image?: string | null;
+  color?: string | null;
+  releaseDate?: Date | null;
+  origin?: Origin | null;
+  specialCoatText?: Array<{ name: string; languageCode: string }>;
+}
+
+export interface AnimalPerEnclosure {
+  animalId: number;
+  numberAnimals: number;
+  numberEnclosure: number;
 }

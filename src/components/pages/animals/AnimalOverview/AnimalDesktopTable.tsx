@@ -16,6 +16,7 @@ import Table from "@/components/page-structure/Table/Table";
 import { calculateTotalXP, getAnimalImage } from "@/utils/AnimalUtil";
 import ActionGroupBadge from "@/components/ui/badges/ActionGroupBadge";
 import { getBiomeImage, getBiomeName, getShelterImage } from "@/utils/BiomeUtil";
+import LinkedRow from "@/components/page-structure/Table/LinkedRow";
 
 interface AnimalDesktopTableProps {
   animals: Animal[];
@@ -89,16 +90,13 @@ export default function AnimalDesktopTable({
             sortDirection={sortDirection}
             align="right"
           />
-          {isAdmin &&
-              <Styles.TableCellRight>
-                {t("Common.actions")}
-              </Styles.TableCellRight>}
+          {isAdmin && <Styles.TableCellRight>{t("Common.actions")}</Styles.TableCellRight>}
         </tr>
       </thead>
       <tbody>
         {animals.length > 0 ? (
           animals.map((animal) => (
-            <tr key={animal.id}>
+            <LinkedRow key={animal.id} path={`/animals/${animal.id}`}>
               <td>
                 <Styles.TableThumbnail>
                   <ThumbnailBadge
@@ -109,9 +107,7 @@ export default function AnimalDesktopTable({
                 </Styles.TableThumbnail>
               </td>
               <td>
-                <strong>
-                  {animal.animaltext?.[0]?.animalName ?? "Kein Name vorhanden"}
-                </strong>
+                <strong>{animal.animaltext?.[0]?.animalName ?? "Kein Name vorhanden"}</strong>
               </td>
               <td>
                 <BiomeBadge
@@ -140,7 +136,7 @@ export default function AnimalDesktopTable({
                   <ActionGroupBadge object={animal} onEdit={onEdit} onDelete={onDelete} />
                 </Styles.TableCellRight>
               )}
-            </tr>
+            </LinkedRow>
           ))
         ) : (
           <tr>

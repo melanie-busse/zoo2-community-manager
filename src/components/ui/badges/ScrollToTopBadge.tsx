@@ -5,7 +5,7 @@ import styled, { keyframes } from "styled-components";
 import { useTranslations } from "next-intl";
 
 export default function ScrollToTopBadge() {
-  const t = useTranslations();
+  const t = useTranslations("Common");
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -30,17 +30,31 @@ export default function ScrollToTopBadge() {
   }, []);
 
   const scrollToTop = () => {
+    // 1. Standard-Window-Scroll (falls das Fenster scrollt)
     window.scrollTo({ top: 0, behavior: "smooth" });
+
+    // 2. Dokument-Ebene (Sicherheitsnetz für HTML/Body)
+    document.documentElement.scrollTo({ top: 0, behavior: "smooth" });
+    document.body.scrollTo({ top: 0, behavior: "smooth" });
+
+    // 3. Main-Element-Scroll (da du es schon im useEffect abfragst!)
+    const mainElement = document.querySelector("main");
+    if (mainElement) {
+      mainElement.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    // 4. Fallstrick aus dem vorherigen Schritt: Dein äußerer Layout-Wrapper
+    // Falls dein Haupt-Container eine Klasse oder ID hat, kannst du ihn hier auch triggern:
+    const pageWrapper = document.querySelector("[class*='Wrapper']");
+    if (pageWrapper) {
+      pageWrapper.scrollTo({ top: 0, behavior: "smooth" });
+    }
   };
 
   if (!isVisible) return null;
 
   return (
-    <ScrollButton
-      onClick={scrollToTop}
-      title={t("Common.scroll_to_top")}
-      aria-label={t("scroll_to_top")}
-    >
+    <ScrollButton onClick={scrollToTop} title={t("scroll_to_top")} aria-label={t("scroll_to_top")}>
       🐾
     </ScrollButton>
   );
