@@ -85,7 +85,7 @@ model Animal {
   breedingDuration    Int?
   breedingProbability Int?
   biome               Biome                @relation(fields: [biomeId], references: [id])
-  animalorigin        AnimalOrigin[]
+  animalorigins       AnimalOrigin[]
   animalperenclosure  AnimalPerEnclosure[]
   animaltext          AnimalText[]
   animalxp            AnimalXP[]

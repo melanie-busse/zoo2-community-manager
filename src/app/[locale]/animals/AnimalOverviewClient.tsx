@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 
 import { Animal } from "@/types/animal";
 import { useSort } from "@/hooks/useSort";
-import AnimalOverviewContent from "@/components/pages/AnimalOverview/AnimalOverviewContent";
+import AnimalOverviewContent from "@/components/pages/animals/AnimalOverview/AnimalOverviewContent";
 import { filterAnimals, sortAnimals, paginate } from "@/utils/AnimalUtil";
 
 interface AnimalOverviewClientProps {
