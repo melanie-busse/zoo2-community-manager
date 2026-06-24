@@ -20,7 +20,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           source: "."
           target: "/var/www/zoo2-community-manager"
-          exclude: [".git", ".env", "node_modules"] # Wichtig! .env wird nicht hochgeladen
+          exclude: .git, .env, node_modules
 
       - name: Deploy via SSH
         uses: appleboy/ssh-action@master
