@@ -1,39 +1,60 @@
-import { vi } from "vitest";
-
-// 1. Next.js Google Fonts mocken, BEVOR das Theme geladen wird
-vi.mock("next/font/google", () => ({
-  Sedgwick_Ave_Display: () => ({ style: { fontFamily: "sans-serif" } }),
-  DM_Sans: () => ({ style: { fontFamily: "sans-serif" } }),
-  Playfair_Display: () => ({ style: { fontFamily: "serif" } }),
-}));
-
 import React from "react";
-import { describe, test, expect } from "vitest";
+import { describe, test, expect, vi, beforeEach } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
-import { ThemeProvider } from "styled-components";
-import Pagination from "./Pagination";
-import { theme } from "@/styles/theme";
 
-// next-intl mocken, damit die Tooltip-Texte als String zurückkommen
-vi.mock("next-intl", () => ({
-  useTranslations: () => (key: string) => key,
+import Pagination from "./Pagination";
+
+vi.mock("./Pagination.styles", () => ({
+  SignpostAssembly: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
+  PageIndicator: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
+  // Hier mappen wir das auf einen echten Button und reichen disabled weiter
+  SignpostButton: ({ disabled, onClick }: { disabled: boolean; onClick: () => void }) => (
+    <button onClick={onClick} disabled={disabled} />
+  ),
 }));
 
-// Wir mocken die Tooltip-Komponente, um den Test schlank zu halten
-// So testen wir wirklich nur die Buttons und die Anzeige der Pagination selbst
 vi.mock("@/components/ui/tooltip/Tooltip", () => ({
   default: ({ children }: { children: React.ReactNode }) => <>{children}</>,
 }));
 
-describe("Pagination", () => {
-  test("rendert die Seitenzahlen korrekt und sperrt 'Zurück' auf der ersten Seite", () => {
-    render(
-      <ThemeProvider theme={theme as any}>
-        <Pagination currentPage={1} totalPages={5} onNext={vi.fn()} onPrev={vi.fn()} />
-      </ThemeProvider>,
-    );
+vi.mock("next-intl", () => ({
+  useTranslations: () => (key: string) => key,
+}));
 
-    // 1. Prüfen, ob die Anzeige "1 / 5" im DOM existiert (sucht flexibel über Elementgrenzen hinweg)
+const mockNextPage = vi.fn();
+const mockPrevPage = vi.fn();
+
+let storeState = {
+  currentPage: 1,
+  filteredCount: 50,
+  itemsPerPage: 10,
+  nextPage: mockNextPage,
+  prevPage: mockPrevPage,
+};
+
+vi.mock("@/store/useAnimalStore", () => ({
+  useAnimalStore: (selector: (state: typeof storeState) => any) => selector(storeState),
+}));
+
+describe("Pagination", () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+    // Standard-Zustand vor jedem Test wiederherstellen (Seite 1 von 5)
+    storeState.currentPage = 1;
+    storeState.filteredCount = 50;
+    storeState.itemsPerPage = 10;
+  });
+
+  test("rendert null, wenn es nur eine oder weniger Seiten gibt", () => {
+    storeState.filteredCount = 5;
+
+    const { container } = render(<Pagination />);
+    expect(container.firstChild).toBeNull();
+  });
+
+  test("rendert die Seitenzahlen korrekt und sperrt 'Zurück' auf der ersten Seite", () => {
+    render(<Pagination />);
+
     expect(
       screen.getByText((content, element) => {
         const hasText = (node: Element | null) => node?.textContent?.replace(/\s+/g, "") === "1/5";
@@ -44,54 +65,42 @@ describe("Pagination", () => {
       }),
     ).toBeInTheDocument();
 
-    // 2. Buttons anhand ihrer Styled-Components-Rollen/Attribute finden
-    const buttons = screen.getAllByRole("button");
+     const buttons = screen.getAllByRole("button");
     const prevButton = buttons[0];
     const nextButton = buttons[1];
 
-    // 3. Auf Seite 1 muss der Zurück-Button disabled sein, der Weiter-Button nicht
     expect(prevButton).toBeDisabled();
     expect(nextButton).not.toBeDisabled();
   });
 
-  test("ruft onNext und onPrev auf, wenn sich der User auf einer mittleren Seite befindet", () => {
-    const onNextMock = vi.fn();
-    const onPrevMock = vi.fn();
+  test("ruft nextPage und prevPage auf, wenn sich der User auf einer mittleren Seite befindet", () => {
+    storeState.currentPage = 3; // Auf Seite 3 springen
 
-    render(
-      <ThemeProvider theme={theme as any}>
-        <Pagination currentPage={3} totalPages={5} onNext={onNextMock} onPrev={onPrevMock} />
-      </ThemeProvider>,
-    );
+    render(<Pagination />);
 
     const buttons = screen.getAllByRole("button");
     const prevButton = buttons[0];
     const nextButton = buttons[1];
 
-    // Beide Buttons müssen auf Seite 3 klickbar sein
     expect(prevButton).not.toBeDisabled();
     expect(nextButton).not.toBeDisabled();
 
-    // Klicks simulieren
     fireEvent.click(prevButton);
-    expect(onPrevMock).toHaveBeenCalledTimes(1);
+    expect(mockPrevPage).toHaveBeenCalledTimes(1);
 
     fireEvent.click(nextButton);
-    expect(onNextMock).toHaveBeenCalledTimes(1);
+    expect(mockNextPage).toHaveBeenCalledTimes(1);
   });
 
   test("sperrt den 'Weiter'-Button auf der letzten Seite", () => {
-    render(
-      <ThemeProvider theme={theme as any}>
-        <Pagination currentPage={5} totalPages={5} onNext={vi.fn()} onPrev={vi.fn()} />
-      </ThemeProvider>,
-    );
+    storeState.currentPage = 5;
+
+    render(<Pagination />);
 
     const buttons = screen.getAllByRole("button");
     const prevButton = buttons[0];
     const nextButton = buttons[1];
 
-    // Auf der letzten Seite muss Weiter disabled sein, Zurück aktiv
     expect(prevButton).not.toBeDisabled();
     expect(nextButton).toBeDisabled();
   });

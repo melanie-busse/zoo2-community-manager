@@ -1,13 +1,14 @@
 import { describe, test, expect } from "vitest";
-import { formatLocaleDate, toISODate } from "./DateUtil"; // Pfad ggf. anpassen
+import { formatLocaleDate, toISODate, formatInitialDate } from "./DateUtil"; // Pfad ggf. anpassen
 
 describe("Date Utilities", () => {
+  // Wir nutzen einen UTC-String, um Zeitzonen-Verschiebungen im Test-Runner zu vermeiden
+  const testDate = "2026-04-30T12:00:00.000Z";
+
   // ==========================================
   // 1. FORMAT LOCALE DATE
   // ==========================================
   describe("formatLocaleDate", () => {
-    const testDate = "2026-04-30T12:00:00.000Z";
-
     test("formatiert das Datum korrekt für Deutsch (de-DE)", () => {
       expect(formatLocaleDate(testDate, "de-DE")).toBe("30.04.2026");
     });
@@ -43,6 +44,7 @@ describe("Date Utilities", () => {
   // ==========================================
   describe("toISODate", () => {
     test("extrahiert das reine YYYY-MM-DD Format aus einem Date-Objekt", () => {
+      // Explizit mit Uhrzeit mitten am Tag, damit Zeitzonen-Shifts das Datum nicht verfälschen
       const date = new Date("2026-06-16T14:30:00.000Z");
       expect(toISODate(date)).toBe("2026-06-16");
     });
@@ -52,9 +54,36 @@ describe("Date Utilities", () => {
     });
 
     test("fängt Fehler bei ungültigen Eingaben ab und gibt einen leeren String zurück", () => {
-      // Eine ungültige Eingabe bringt new Date().toISOString() zum Absturz,
-      // der catch-Block fängt das ab
       expect(toISODate("ungültig")).toBe("");
+    });
+  });
+
+  // ==========================================
+  // 3. FORMAT INITIAL DATE
+  // ==========================================
+  describe("formatInitialDate", () => {
+    test("gibt einen leeren String bei Falsy-Werten zurück", () => {
+      expect(formatInitialDate(null)).toBe("");
+      expect(formatInitialDate(undefined)).toBe("");
+      expect(formatInitialDate("")).toBe("");
+    });
+
+    test("formatiert ein gültiges Date-Objekt zu YYYY-MM-DD", () => {
+      const date = new Date("2026-03-07T10:00:00.000Z");
+      expect(formatInitialDate(date)).toBe("2026-03-07");
+    });
+
+    test("fängt ein ungültiges Date-Objekt ab", () => {
+      const invalidDate = new Date("kein-datum");
+      expect(formatInitialDate(invalidDate)).toBe("");
+    });
+
+    test("schneidet den Zeit-Teil von einem ISO-String ab", () => {
+      expect(formatInitialDate("2026-08-15T23:59:59.000Z")).toBe("2026-08-15");
+    });
+
+    test("gibt einen reinen Datums-String unverändert zurück", () => {
+      expect(formatInitialDate("2026-11-12")).toBe("2026-11-12");
     });
   });
 });

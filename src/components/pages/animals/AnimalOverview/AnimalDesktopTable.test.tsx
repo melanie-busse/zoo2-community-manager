@@ -1,17 +1,41 @@
+import React from "react";
 import { fireEvent, render, screen } from "@testing-library/react";
-import { expect, test, describe, vi } from "vitest";
+import { expect, test, describe, vi, beforeEach } from "vitest";
+
 import AnimalDesktopTable from "./AnimalDesktopTable";
 import { Animal } from "@/types/animal";
-import { ThemeProvider } from "styled-components";
-import { theme } from "@/styles/theme";
 
-// 1. next-intl mocken: Jetzt mit useTranslations UND useLocale
-vi.mock("next-intl", () => ({
-  useTranslations: () => (key: string) => key,
-  useLocale: () => "de", // Gibt einfach standardmäßig "de" für Deutsch zurück
+vi.mock("@/components/page-structure/Table/Table.styles", () => ({
+  TableCellRight: ({ children }: { children: React.ReactNode }) => <td>{children}</td>,
+  TableThumbnail: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
+  TableEmptyState: ({ children, colSpan }: { children: React.ReactNode; colSpan?: number }) => (
+    <td colSpan={colSpan}>{children}</td>
+  ),
 }));
 
-// 2. next-auth mocken: Eine Dummy-Session zurückgeben, damit useSession() nicht abstürzt
+vi.mock("@/components/page-structure/Table/Table", () => ({
+  default: ({ children }: { children: React.ReactNode }) => <table>{children}</table>,
+}));
+
+vi.mock("@/components/page-structure/Table/LinkedRow", () => ({
+  default: ({ children, onClick }: { children: React.ReactNode; onClick?: () => void }) => (
+    <tr onClick={onClick} data-testid="table-row">
+      {children}
+    </tr>
+  ),
+}));
+
+vi.mock("@/components/page-structure/Table/SortableTableHeader", () => ({
+  default: ({ label, onSort }: { label: string; onSort: () => void }) => (
+    <th onClick={onSort}>{label}</th>
+  ),
+}));
+
+vi.mock("next-intl", () => ({
+  useTranslations: () => (key: string) => key,
+  useLocale: () => "de",
+}));
+
 vi.mock("next-auth/react", () => ({
   useSession: () => ({
     data: { user: { name: "Test User", role: "Director" } },
@@ -19,182 +43,135 @@ vi.mock("next-auth/react", () => ({
   }),
 }));
 
-// Next.js Google Fonts mocken, damit das Theme nicht abstürzt
-vi.mock("next/font/google", () => ({
-  Sedgwick_Ave_Display: () => ({ className: "mock-sedgwick", style: {} }),
-  DM_Sans: () => ({ className: "mock-dm-sans", style: {} }),
-  Playfair_Display: () => ({ className: "mock-playfair", style: {} }),
-}));
-
-// Die CurrencyBadge komplett mocken, damit sie im Test nicht abstürzt
 vi.mock("@/components/ui/badges/CurrencyBadge", () => ({
-  // Falls es ein Default-Export ist:
   default: ({ value }: { value: number }) => <span>{value}</span>,
-  // Falls es ein Named-Export ist, nutze stattdessen:
-  // CurrencyBadge: ({ value }: { value: number }) => <span>{value}</span>,
 }));
 
-// Ein paar Mock-Daten für den Test definieren
+vi.mock("@/components/ui/badges/BiomeBadge", () => ({
+  default: () => <span>BiomeBadge</span>,
+}));
+
+vi.mock("@/components/ui/badges/ShelterLevelBadge", () => ({
+  default: () => <span>ShelterLevelBadge</span>,
+}));
+
+vi.mock("@/components/ui/badges/ThumbnailBadge", () => ({
+  default: () => <span>ThumbnailBadge</span>,
+}));
+
+vi.mock("@/components/ui/badges/XPBadge", () => ({
+  default: () => <span>XPBadge</span>,
+}));
+
+vi.mock("@/components/ui/badges/ActionGroupBadge", () => ({
+  default: () => <span>ActionGroupBadge</span>,
+}));
+
+vi.mock("@/utils/AnimalUtil", () => ({
+  calculateTotalXP: () => 100,
+  getAnimalImage: () => "/mock-image.png",
+}));
+
+vi.mock("@/utils/BiomeUtil", () => ({
+  getBiomeImage: () => "/mock-biome.png",
+  getBiomeName: () => "Mock-Biom",
+  getShelterImage: () => "/mock-shelter.png",
+}));
+
+const mockToggleSort = vi.fn();
+const mockSetSelectedAnimal = vi.fn();
+
+let storeState = {
+  currentItems: [] as Animal[],
+  sortBy: "name",
+  sortDirection: "asc" as const,
+  toggleSort: mockToggleSort,
+  setSelectedAnimal: mockSetSelectedAnimal,
+};
+
+vi.mock("@/store/useAnimalStore", () => ({
+  useAnimalStore: (selector: (state: typeof storeState) => any) => selector(storeState),
+}));
+
 const mockAnimals = [
   {
     id: 1,
-    price: 500, // Von sellingPrice auf price geändert
-    priceType: {
-      name: "COINS", // Damit animal.priceType?.name existiert!
-    },
-    biome: {
-      id: 1,
-      name: "Grassland",
-    },
+    price: 500,
+    sellingPrice: 250,
+    priceType: { name: "COINS" },
+    biome: { id: 1, identifier: "grassland" },
     animaltext: [{ animalName: "Löwe" }],
   },
   {
     id: 2,
-    price: 1200, // Von sellingPrice auf price geändert
-    priceType: {
-      name: "COINS",
-    },
-    biome: {
-      id: 2,
-      name: "Savanna",
-    },
+    price: 1200,
+    sellingPrice: 600,
+    priceType: { name: "COINS" },
+    biome: { id: 2, identifier: "savanna" },
     animaltext: [],
   },
 ] as unknown as Animal[];
 
-const defaultProps = {
-  sortBy: "name",
-  sortDirection: "asc" as const, // 'as const' sorgt dafür, dass TS den String exakt matcht
-  onSort: vi.fn(),
-  onEdit: vi.fn(),
-  onDelete: vi.fn(),
-};
-
 describe("AnimalDesktopTable", () => {
-  test("rendert den Tiernamen, wenn er vorhanden ist", () => {
-    render(
-      <ThemeProvider theme={theme}>
-        <AnimalDesktopTable animals={[mockAnimals[0]]} {...defaultProps} />
-      </ThemeProvider>,
-    );
+  beforeEach(() => {
+    vi.clearAllMocks();
+    storeState.currentItems = mockAnimals;
+    storeState.sortBy = "name";
+    storeState.sortDirection = "asc";
+  });
 
+  test("rendert den Tiernamen, wenn er vorhanden ist", () => {
+    render(<AnimalDesktopTable />);
     expect(screen.getByText("Löwe")).toBeInTheDocument();
   });
 
   test("fängt leere animaltext-Arrays ab und zeigt den Fallback-Text", () => {
-    render(
-      <ThemeProvider theme={theme}>
-        <AnimalDesktopTable animals={[mockAnimals[1]]} {...defaultProps} />
-      </ThemeProvider>,
-    );
-
+    render(<AnimalDesktopTable />);
     expect(screen.getByText("Kein Name vorhanden")).toBeInTheDocument();
   });
 
-  test("zeigt den korrekten Verkaufspreis an", () => {
-    render(
-      <ThemeProvider theme={theme}>
-        <AnimalDesktopTable animals={[mockAnimals[0]]} {...defaultProps} />
-      </ThemeProvider>,
-    );
-
+  test("zeigt den korrekten Einkaufspreis an", () => {
+    render(<AnimalDesktopTable />);
     expect(screen.getByText("500")).toBeInTheDocument();
   });
 
-  test("ruft onDelete mit der korrekten ID auf, wenn der Lösch-Button geklickt wird", () => {
-    const onDeleteMock = vi.fn();
+  test("ruft setSelectedAnimal im Store auf, wenn eine Reihe geklickt wird", () => {
+    render(<AnimalDesktopTable />);
 
-    render(
-      <ThemeProvider theme={theme}>
-        <AnimalDesktopTable animals={[mockAnimals[0]]} {...defaultProps} onDelete={onDeleteMock} />
-      </ThemeProvider>,
-    );
+    const rowCell = screen.getByText("Löwe");
+    fireEvent.click(rowCell);
 
-    // Da config.defaultAlt für das Trash-Icon "Delete" ist, suchen wir genau danach:
-    const deleteButton = screen.getByRole("button", { name: "Delete" });
-
-    // Den Klick ausführen
-    fireEvent.click(deleteButton);
-
-    expect(onDeleteMock).toHaveBeenCalledTimes(1);
-    // Da die Props eurer Tabelle (id: string) verlangen, übergeben wir die ID als String
-    expect(onDeleteMock).toHaveBeenCalledWith("1");
+    expect(mockSetSelectedAnimal).toHaveBeenCalledTimes(1);
+    expect(mockSetSelectedAnimal).toHaveBeenCalledWith(mockAnimals[0]);
   });
 
-  test("ruft onEdit mit der korrekten ID auf, wenn der Bearbeiten-Button geklickt wird", () => {
-    // 1. Frischen Mock für die Edit-Funktion erstellen
-    const onEditMock = vi.fn();
+  test("ruft toggleSort mit 'name' auf, wenn der Spaltenkopf für die Spezies geklickt wird", () => {
+    render(<AnimalDesktopTable />);
 
-    // 2. Komponente rendern (mit unserem Zoo-Direktor in der Session)
-    render(
-      <ThemeProvider theme={theme}>
-        <AnimalDesktopTable animals={[mockAnimals[0]]} {...defaultProps} onEdit={onEditMock} />
-      </ThemeProvider>,
-    );
-
-    // 3. Den Bearbeiten-Button über sein Alt-Text-Label "Edit" greifen
-    const editButton = screen.getByRole("button", { name: "Edit" });
-
-    // 4. Klick simulieren
-    fireEvent.click(editButton);
-
-    // 5. Assertions: Wurde es einmal und mit der String-ID aufgerufen?
-    expect(onEditMock).toHaveBeenCalledTimes(1);
-    expect(onEditMock).toHaveBeenCalledWith("1");
-  });
-
-  test("ruft onSort mit 'name' auf, wenn der Spaltenkopf für die Spezies geklickt wird", () => {
-    // 1. Frischen Mock für die Sortier-Funktion erstellen
-    const onSortMock = vi.fn();
-
-    // 2. Tabelle rendern
-    render(
-      <ThemeProvider theme={theme}>
-        <AnimalDesktopTable animals={mockAnimals} {...defaultProps} onSort={onSortMock} />
-      </ThemeProvider>,
-    );
-
-    // 3. Den Spaltenkopf anhand des Übersetzungstextes (Keys) finden
     const speciesHeader = screen.getByText("Animals.species");
-
-    // 4. Klick auf den Spaltenkopf simulieren
     fireEvent.click(speciesHeader);
 
-    // 5. Prüfen, ob die Funktion mit dem korrekten Sortier-Key gefeuert wurde
-    expect(onSortMock).toHaveBeenCalledTimes(1);
-    expect(onSortMock).toHaveBeenCalledWith("name");
+    expect(mockToggleSort).toHaveBeenCalledTimes(1);
+    expect(mockToggleSort).toHaveBeenCalledWith("name");
   });
 
-  test("ruft onSort mit 'price' auf, wenn der Spaltenkopf für den Preis geklickt wird", () => {
-    const onSortMock = vi.fn();
-
-    render(
-      <ThemeProvider theme={theme}>
-        <AnimalDesktopTable animals={mockAnimals} {...defaultProps} onSort={onSortMock} />
-      </ThemeProvider>,
-    );
+  test("ruft toggleSort mit 'price' auf, wenn der Spaltenkopf für den Preis geklickt wird", () => {
+    render(<AnimalDesktopTable />);
 
     const priceHeader = screen.getByText("Common.price");
     fireEvent.click(priceHeader);
 
-    expect(onSortMock).toHaveBeenCalledTimes(1);
-    expect(onSortMock).toHaveBeenCalledWith("price");
+    expect(mockToggleSort).toHaveBeenCalledTimes(1);
+    expect(mockToggleSort).toHaveBeenCalledWith("price");
   });
 
-  test("zeigt den Empty State mit Pfoten-Icon an, wenn das animals-Array leer ist", () => {
-    // 1. Wir rendern die Tabelle bewusst mit einem leeren Array []
-    render(
-      <ThemeProvider theme={theme}>
-        <AnimalDesktopTable animals={[]} {...defaultProps} />
-      </ThemeProvider>,
-    );
+  test("zeigt den Empty State mit Pfoten-Icon an, wenn das animals-Array im Store leer ist", () => {
+    storeState.currentItems = [];
 
-    // 2. Wir prüfen, ob der Übersetzungstext inklusive des Pfoten-Icons im DOM existiert
+    render(<AnimalDesktopTable />);
+
     const emptyStateText = screen.getByText(/EmptyState.title 🐾/i);
     expect(emptyStateText).toBeInTheDocument();
-
-    // 3. Optionaler Bonus-Check: Sicherstellen, dass KEIN Tiername (wie "Löwe") fälschlicherweise gelistet wird
-    const lionText = screen.queryByText("Löwe");
-    expect(lionText).not.toBeInTheDocument();
+    expect(screen.queryByText("Löwe")).not.toBeInTheDocument();
   });
 });
