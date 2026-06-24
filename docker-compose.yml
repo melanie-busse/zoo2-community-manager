@@ -1,0 +1,24 @@
+version: '3.8'
+services:
+  db:
+    image: mariadb:10.11
+    restart: always
+    environment:
+      MARIADB_DATABASE: zoo2_prod
+      MARIADB_ROOT_PASSWORD: dein_sicheres_passwort
+    volumes:
+      - db_data:/var/lib/mysql
+
+  app:
+    build: .
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      MARIADB_ROOT_PASSWORD: ${DB_PASSWORD}
+      DATABASE_URL: "mysql://root:${DB_PASSWORD}@db:3306/zoo2_prod"
+    depends_on:
+      - db
+
+volumes:
+  db_data:
