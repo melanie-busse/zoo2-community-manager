@@ -25,3 +25,14 @@ export const toISODate = (dateInput: string | Date) => {
     return "";
   }
 };
+
+export const formatInitialDate = (date: any) => {
+  if (!date) return "";
+
+  if (date instanceof Date) {
+    return !isNaN(date.getTime()) ? date.toISOString().split("T")[0] : "";
+  }
+
+  const dateString = String(date);
+  return dateString.includes("T") ? dateString.split("T")[0] : dateString;
+};

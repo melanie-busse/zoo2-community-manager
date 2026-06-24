@@ -1,5 +1,6 @@
 {
   "Header": {
+    "Title": "Zoo2: Animal Park Manager",
     "Login": {
       "open_menu": "Menü öffnen",
       "logout": "Abmelden",
@@ -61,10 +62,47 @@
     "biomeCapacity": "Gehegekapazität",
     "animalCount": "Anzahl Tiere",
     "biomeSize": "Gehegegröße",
+    "capacityTableLabel": "Anzahl Tiere vs. Gehegeplatz",
+    "requiredSize": "Benötigte Fläche",
+    "form": {
+      "createAnimal": "Neues Tier anlegen",
+      "editAnimal": "Tier bearbeiten",
+      "saveAnimal": "Tier speichern"
+    },
     "breeding": {
       "xpAndActions": "XP und Aktionen",
       "breeding": "Zucht",
       "breedingChance": "Zuchtchance"
+    },
+    "basicInfoSection": {
+      "basicInfo": "Grundinformationen",
+      "fields": {
+        "releaseDate": "Release"
+      }
+    },
+    "translationSection": {
+      "title": "Übersetzungen (Name & Beschreibung)",
+      "fields": {
+        "name": "Name",
+        "language": "Sprache",
+        "description": "Beschreibung",
+        "descriptionPlaceholder": "Beschreibe das Tier..."
+      }
+    },
+    "priceSection": {
+      "pricesAndValues": "Preise und Werte"
+    },
+    "xpSection": {
+      "actionsXp": "Aktionen & EP"
+    },
+    "originSection": {
+      "originTitle": "Herkunft",
+      "originDescription": "Woher bekommt man dieses Tier?"
+    },
+    "actions": {
+      "feed": "Füttern",
+      "play": "Spielen",
+      "clean": "Säubern"
     },
     "messages": {
       "createSuccess": "Tier erfolgreich angelegt! 🐾",
@@ -78,23 +116,38 @@
   },
   "Common": {
     "messages": {
+      "no_more_items": "Keine weiteren gefunden",
+      "none_selected": "Keine ausgewählt",
       "yes_delete": "Ja, löschen!",
       "cancel": "Abbrechen"
     },
+    "tooltip": {
+      "removeRow": "Zeile entfernen"
+    },
     "price": "Preis",
     "time": "Zeit",
+    "hours": "Stunden",
+    "minutes": "Minuten",
+    "language": "Sprache",
+    "allLanguages": "Alle Sprachen",
+    "name": "Name",
+    "addRow": "+ Zeile hinzufügen",
     "selling_price": "Verkaufspreis",
     "release": "Release-Datum",
     "popularity": "Popularität",
     "actions": "Aktionen",
     "action": "Aktion",
     "scroll_to_top": "Nach oben scrollen",
+    "saving": "Wird gespeichert...",
     "save_changes": "Daten erfolgreich übermittelt!",
     "available": "Verfügbar",
-    "no_more_item": "Keine weiteren gefunden",
+    "not_found": "Nicht gefunden",
     "chosen": "Ausgewählt",
     "none_selected": "Keine ausgewählt",
-    "description": "Beschreibung"
+    "description": "Beschreibung",
+    "descriptionPlaceholder": "Hier Beschreibung eingeben...",
+    "pleaseSelect": "Bitte wählen...",
+    "loading_data": "Daten werden geladen..."
   },
   "Filter": {
     "search_placeholder": "Suche nach Tieren...",
@@ -125,6 +178,7 @@
   },
   "Biome": {
     "enclosure": "Gehege",
+    "enclosureType": "Gehegetyp",
     "shelterLevel": "Stall Level"
   },
   "Errors": {
