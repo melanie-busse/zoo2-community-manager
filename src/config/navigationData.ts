@@ -28,7 +28,7 @@ export const navConfig: NavItem[] = [
       {
         labelKey: "animal_create",
         href: "/animals/create",
-        requiresAuth: true, // Nur für eingeloggte User sichtbar
+        requiresAuth: true,
       },
     ],
   },

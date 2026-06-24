@@ -14,9 +14,8 @@ export default function Navigation() {
   const pathname = usePathname();
 
   const checkActive = (item: any) => {
+    if (!pathname) return false;
     if (item.href) return pathname === item.href;
-    // Wichtig: basePath Check funktioniert hier ohne Sprach-Präfix,
-    // da usePathname() von next-intl das /de/ bereits entfernt hat.
     if (item.basePath) return pathname.startsWith(item.basePath);
     return false;
   };
@@ -28,9 +27,8 @@ export default function Navigation() {
           if (item.requiresAuth && !session) return null;
 
           return (
-            <Styles.NavItem key={item.id}>
+            <Styles.NavItem key={item.id} data-testid={`nav-item-${item.id}`}>
               {item.href && !item.subMenu ? (
-                // Nutze 'as={Link}' damit Styled Components den i18n-Link verwendet
                 <Styles.NavLink as={Link} href={item.href} $active={pathname === item.href}>
                   {t("Header.Navigation." + item.labelKey)}
                 </Styles.NavLink>
@@ -49,6 +47,7 @@ export default function Navigation() {
                             as={Link}
                             href={sub.href}
                             $active={pathname === sub.href}
+                            data-testid={`nav-sub-${item.id}-${sub.labelKey}`}
                           >
                             {t("Header.Navigation." + sub.labelKey)}
                           </Styles.DropdownLink>

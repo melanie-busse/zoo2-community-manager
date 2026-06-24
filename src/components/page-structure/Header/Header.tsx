@@ -2,14 +2,17 @@
 
 import { useEffect, useState } from "react";
 import { IoMenu, IoClose } from "react-icons/io5";
+import { useTranslations } from "next-intl";
 
 import * as Styles from "./Header.styles";
+
 import Navigation from "@/components/page-structure/Header/Navigation";
 import Logo from "@/components/page-structure/Header/Logo";
 import MobileNavigation from "@/components/page-structure/Header/MobileNavigation";
 import Login from "@/components/page-structure/Header/Login";
 
 export default function Header() {
+  const t = useTranslations("Header");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -20,7 +23,6 @@ export default function Header() {
     } else {
       document.body.style.overflow = "auto";
     }
-    // Cleanup-Funktion, um Scrollen wieder zu erlauben, wenn Komponente unmountet
     return () => {
       document.body.style.overflow = "auto";
     };
@@ -33,7 +35,7 @@ export default function Header() {
       </Styles.LogoWrapper>
 
       <Styles.TitleSection>
-        <Styles.MainTitle>Klub der tollen Tiere</Styles.MainTitle>
+        <Styles.MainTitle>{t("Title")}</Styles.MainTitle>
       </Styles.TitleSection>
 
       <Styles.MobileMenuButton onClick={toggleMenu} aria-label="Toggle Menu">

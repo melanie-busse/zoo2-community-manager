@@ -76,9 +76,11 @@ export const MainTitle = styled.h1`
     2px 2px 0 ${({ theme }) => theme.colors.ui.overlayDark};
 
   letter-spacing: 0.15em;
-  white-space: nowrap;
+  white-space: nowrap; /* Verhindert Umbruch auf Desktop */
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    white-space: normal; /* Erlaubt den Umbruch auf Mobile 2 Zeilen */
+    text-align: center; /* Zentriert den Text, falls er umbricht */
     letter-spacing: 0.05em;
     text-shadow: 1px 1px 0 ${({ theme }) => theme.colors.ui.overlayDark};
   }
