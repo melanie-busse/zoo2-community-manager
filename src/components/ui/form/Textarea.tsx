@@ -3,58 +3,62 @@
 import React from "react";
 import styled from "styled-components";
 
-interface TextareaProps {
-  label: string;
-  text: string;
+interface FormTextareaProps extends React.ComponentPropsWithoutRef<"textarea"> {
+  label?: string;
+  id: string;
+  $minHeight?: string;
 }
 
-export default function Textarea({ label, text }: TextareaProps) {
+export default function FormTextarea({ label, id, $minHeight, ...props }: FormTextareaProps) {
   return (
-    <DetailBox>
-      <LabelDescription>{label}</LabelDescription>
-      <p>{text}</p>
-    </DetailBox>
+    <Wrapper>
+      {label && <Label htmlFor={id}>{label}</Label>}
+      <StyledTextarea id={id} $minHeight={$minHeight} {...props} />
+    </Wrapper>
   );
 }
 
 // --- Styled Components ---
-const DetailBox = styled.div`
-  background: ${({ theme }) => theme.colors.ui.white};
-  border: 1px solid #e0e0e0;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-
-  height: auto;
-  min-height: 203px;
-
-  p {
-    line-height: 1.6;
-    margin: 0;
-    color: #333;
-    white-space: pre-wrap;
-  }
-
-  h3 {
-    display: flex;
-    align-items: center;
-    margin-top: 0;
-    margin-bottom: 1.2rem;
-    font-size: 1.25rem;
-    color: #2c3e50;
-    border-bottom: 2px solid #f1f2f6;
-    padding-bottom: 0.8rem;
-
-    span {
-      margin-right: 12px;
-    }
-  }
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px 0;
+  width: 100%;
 `;
 
-const LabelDescription = styled.label`
-  font-weight: bold;
-  font-size: 1rem;
-  color: #2d5a27;
-  display: block; /* Sichert den Umbruch zum darauffolgenden <p>-Tag */
-  margin-bottom: 0.5rem;
+const Label = styled.label`
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #5d7a2a;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+`;
+
+const StyledTextarea = styled.textarea<{ $minHeight?: string }>`
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d1e2a5;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  resize: vertical;
+  min-height: ${(props) => props.$minHeight || "120px"};
+  background-color: #fdfdfd;
+  transition: all 0.2s ease-in-out;
+
+  &:focus {
+    outline: none;
+    border-color: #88a04d;
+    background-color: #fff;
+    box-shadow: 0 0 0 3px rgba(136, 160, 77, 0.1);
+  }
+
+  &:disabled {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+    opacity: 0.7;
+  }
 `;

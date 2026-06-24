@@ -1,33 +1,31 @@
 import { Image } from "@/types/image";
 import { Animal } from "@/types/animal";
 import { getBiomeName } from "@/utils/BiomeUtil";
+import { formatInitialDate } from "@/utils/DateUtil";
 
 interface FilterOptions {
   searchTerm: string;
-  selectedGehege: string;
+  selectedBiome: string;
   selectedLevel: string;
 }
 
 export function filterAnimals(
   animals: Animal[] | undefined,
-  { searchTerm, selectedGehege, selectedLevel }: FilterOptions,
+  { searchTerm, selectedBiome, selectedLevel }: FilterOptions,
 ): Animal[] {
   if (!animals) return [];
 
   const searchLower = searchTerm.toLowerCase();
 
   return animals.filter((animal) => {
-    // 1. Suche nach Name oder ID
     const matchesSearch =
       !searchTerm ||
-      animal.name.toLowerCase().includes(searchLower) ||
+      animal.animaltext?.[0]?.animalName?.toLowerCase().includes(searchLower) ||
       animal.id.toString().includes(searchLower);
 
-    // 2. Filter nach Gehege
     const matchesGehege =
-      selectedGehege === "all" || getBiomeName(animal.biome, "") === selectedGehege;
+      selectedBiome === "all" || getBiomeName(animal.biome, "") === selectedBiome;
 
-    // 3. Filter nach Level
     const matchesLevel = selectedLevel === "all" || String(animal.shelterLevel) === selectedLevel;
 
     return matchesSearch && matchesGehege && matchesLevel;
@@ -103,6 +101,64 @@ export function getAnimalName(animal: Animal, fallback: string): string {
   return animal.animaltext?.[0]?.animalName || fallback;
 }
 
-export function getAnimalDescription(animal: Animal, fallback: string): string {
-  return animal.animaltext?.[0]?.animalDescription || fallback;
-}
+export const createEmptyForm = (languages: Array<{ code: string }>) => ({
+  price: null,
+  priceTypeId: 1,
+  sellingPrice: null,
+  popularity: null,
+  releaseExp: null,
+  biomeId: null,
+  shelterLevel: 0,
+  breedingCost: null,
+  breedingDuration: null,
+  breedingProbability: null,
+  releaseDate: null,
+  animaltext: languages.map((lang) => ({
+    languageCode: lang.code,
+    animalName: "",
+    animalDescription: "",
+  })),
+  animalxp: [],
+  animalorigins: [],
+  animalperenclosure: [],
+  actions: {
+    feed: { durationHours: null, durationMinutes: null, xp: null },
+    play: { durationHours: null, durationMinutes: null, xp: null },
+    clean: { durationHours: null, durationMinutes: null, xp: null },
+  },
+});
+
+export const mapAnimalToForm = (data: any, languages: Array<{ code: string }>) => {
+  if (!data) return createEmptyForm(languages);
+
+  const totalMinutesFeed = data.animalxp?.find((x: any) => x.xpTypeId === 1)?.xpDuration || 0;
+  const totalMinutesPlay = data.animalxp?.find((x: any) => x.xpTypeId === 2)?.xpDuration || 0;
+  const totalMinutesClean = data.animalxp?.find((x: any) => x.xpTypeId === 3)?.xpDuration || 0;
+
+  return {
+    ...data,
+    releaseDate: formatInitialDate(data.releaseDate),
+    actions: {
+      feed: {
+        xp: data.animalxp?.find((x: any) => x.xpTypeId === 1)?.xpValue ?? null,
+        durationHours: Math.floor(totalMinutesFeed / 60) || null,
+        durationMinutes: totalMinutesFeed % 60 || null,
+      },
+      play: {
+        xp: data.animalxp?.find((x: any) => x.xpTypeId === 2)?.xpValue ?? null,
+        durationHours: Math.floor(totalMinutesPlay / 60) || null,
+        durationMinutes: totalMinutesPlay % 60 || null,
+      },
+      clean: {
+        xp: data.animalxp?.find((x: any) => x.xpTypeId === 3)?.xpValue ?? null,
+        durationHours: Math.floor(totalMinutesClean / 60) || null,
+        durationMinutes: totalMinutesClean % 60 || null,
+      },
+    },
+    origins: data.animalorigins?.map((o: any) => ({ id: o.originId })) || [],
+    enclosureSizes: data.animalperenclosure?.map((size: any) => ({
+      animalCount: size.numberAnimals,
+      size: size.numberEnclosure,
+    })) || [{ animalCount: 1, size: 10 }],
+  };
+};

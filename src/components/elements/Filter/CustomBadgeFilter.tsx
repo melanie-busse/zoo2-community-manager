@@ -2,6 +2,7 @@
 
 import React, { useState, useRef } from "react";
 import { useTranslations } from "next-intl";
+
 import * as Styles from "@/components/elements/Filter/Filter.styles";
 import { useClickOutside } from "@/hooks/useClickOutside";
 import Chevron from "@/components/ui/icons/Chevron";
@@ -11,7 +12,7 @@ interface CustomBadgeFilterProps<T> {
   selectedValue: string;
   onSelectAction: (value: string) => void;
   allLabelKey: string;
-  labelPrefixKey?: string; // Optional: "Level", "Region" etc.
+  labelPrefixKey?: string;
   renderBadge: (value: T) => React.ReactNode;
   getIdentifier: (value: T) => string;
 }
@@ -33,6 +34,8 @@ export default function CustomBadgeFilter<T>({
 
   const isAllSelected = selectedValue === "all" || selectedValue === "Alle";
 
+  const selectedItem = items.find((item) => getIdentifier(item) === selectedValue);
+
   return (
     <Styles.SelectWrapper ref={wrapperRef}>
       <Styles.SelectHeader onClick={() => setIsOpen(!isOpen)} $isOpen={isOpen}>
@@ -40,7 +43,7 @@ export default function CustomBadgeFilter<T>({
           <span>{t("Filter." + allLabelKey)}</span>
         ) : (
           <Styles.SelectedValue>
-            {renderBadge(selectedValue as unknown as T)}
+            {selectedItem && renderBadge(selectedItem)}
             <Styles.Label>
               {labelPrefixKey && `${t("Filter." + labelPrefixKey)} `}
               {selectedValue}

@@ -45,14 +45,13 @@ export const IconsRow = styled.div`
   width: 100%;
 `;
 
-export const ActionGroup = styled.div`
-  display: flex;
-  gap: 16px;
+export const StyledMobileView = styled.div`
+  display: none;
 
-  button {
-    background: none;
-    border: none;
-    padding: 8px;
-    cursor: pointer;
+  @media (max-width: ${({ theme }) => theme.breakpoints?.mobile || "768px"}) {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 10px;
   }
 `;

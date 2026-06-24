@@ -1,87 +1,65 @@
 "use client";
 
-import { useRouter, useSearchParams, usePathname } from "next/navigation";
-import React, { useTransition } from "react";
+import React from "react";
 import { useTranslations } from "next-intl";
 
 import * as Styles from "@/components/elements/Filter/Filter.styles";
-import { Animal } from "@/types/animal";
 import CustomBadgeFilter from "@/components/elements/Filter/CustomBadgeFilter";
 import BiomeBadge from "@/components/ui/badges/BiomeBadge";
 import ShelterLevelBadge from "@/components/ui/badges/ShelterLevelBadge";
 import { Biome } from "@/types/biome";
 import { getBiomeImage, getBiomeName, getShelterImage } from "@/utils/BiomeUtil";
+import { useAnimalStore } from "@/store/useAnimalStore";
 
 interface FilterBarProps {
-  animals: Animal[];
   showBiomeFilter?: boolean;
   showLevelFilter?: boolean;
 }
 
 export default function FilterBar({
-  animals = [],
   showBiomeFilter = true,
   showLevelFilter = true,
-}: Partial<FilterBarProps>) {
-  const router = useRouter();
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
+}: FilterBarProps) {
   const t = useTranslations();
-  const [isPending, startTransition] = useTransition();
 
-  // Aktuelle Werte aus der URL holen
-  const searchTerm = searchParams.get("search") || "";
-  const selectedBiome = searchParams.get("biome") || "all";
-  const selectedLevel = searchParams.get("level") || "all";
+ const allAnimals = useAnimalStore((state) => state.allAnimals);
+  const searchTerm = useAnimalStore((state) => state.searchTerm);
+  const selectedBiome = useAnimalStore((state) => state.selectedBiome);
+  const selectedLevel = useAnimalStore((state) => state.selectedLevel);
 
-  const updateFilters = (updates: Record<string, string | null>) => {
-    const params = new URLSearchParams(searchParams.toString());
-
-    Object.entries(updates).forEach(([key, value]) => {
-      if (value && value !== "all") {
-        params.set(key, value);
-      } else {
-        params.delete(key);
-      }
-    });
-
-    params.set("page", "1");
-
-    // "startTransition" verhindert, dass die UI während des URL-Updates einfriert
-    startTransition(() => {
-      router.push(`${pathname}?${params.toString()}`, { scroll: false });
-    });
-  };
+  const setSearchTerm = useAnimalStore((state) => state.setSearchTerm);
+  const setSelectedBiome = useAnimalStore((state) => state.setSelectedBiome);
+  const setSelectedLevel = useAnimalStore((state) => state.setSelectedLevel);
 
   const uniqueBiomes = Array.from(
     new Map(
-      animals
+      allAnimals
         .map((a) => a.biome)
         .filter((b): b is Biome => b !== null && b !== undefined)
-        .map((b) => [b.id, b]), // Die ID dient als Key, um Duplikate zu vermeiden
+        .map((b) => [b.id, b]),
     ).values(),
   );
 
   const uniqueLevels = Array.from(
     new Map(
-      animals.filter((a) => a.shelterLevel !== null).map((a) => [a.shelterLevel, a]),
+      allAnimals.filter((a) => a.shelterLevel !== null).map((a) => [a.shelterLevel, a]),
     ).values(),
   ).sort((a, b) => (a.shelterLevel ?? 0) - (b.shelterLevel ?? 0));
 
   return (
-    <Styles.FilterBar style={{ opacity: isPending ? 0.7 : 1 }}>
+    <Styles.FilterBar>
       <Styles.SearchInput
         type="text"
         placeholder={t("Filter.search_placeholder")}
         value={searchTerm}
-        onChange={(e) => updateFilters({ search: e.target.value })}
+        onChange={(e) => setSearchTerm(e.target.value)}
       />
 
       {showBiomeFilter && (
         <CustomBadgeFilter
           items={uniqueBiomes}
           selectedValue={selectedBiome}
-          onSelectAction={(val) => updateFilters({ biome: val })}
+          onSelectAction={(val) => setSelectedBiome(val)}
           allLabelKey="all_enclosures"
           getIdentifier={(biome) => getBiomeName(biome, "")}
           renderBadge={(biome) => (
@@ -94,7 +72,7 @@ export default function FilterBar({
         <CustomBadgeFilter
           items={uniqueLevels}
           selectedValue={selectedLevel}
-          onSelectAction={(val) => updateFilters({ level: val })}
+          onSelectAction={(val) => setSelectedLevel(val)}
           allLabelKey="all_levels"
           labelPrefixKey="level_label"
           getIdentifier={(animal) => String(animal.shelterLevel)}

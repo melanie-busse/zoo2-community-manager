@@ -22,7 +22,7 @@ const CURRENCY_CONFIG = {
   Zoodollar: {
     src: "/images/currency/zoodollar.webp",
     defaultAlt: "Zoodollar",
-    color: (theme: any) => theme.colors.accent.light,
+    color: (theme: any) => theme.colors.system.success,
   },
 };
 

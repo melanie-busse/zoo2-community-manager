@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { useSession } from "next-auth/react";
 
 import * as Styles from "@/components/page-structure/Table/Table.styles";
-import { Animal } from "@/types/animal";
+
 import SortableTableHeader from "@/components/page-structure/Table/SortableTableHeader";
 import BiomeBadge from "@/components/ui/badges/BiomeBadge";
 import CurrencyBadge, { CurrencyType } from "@/components/ui/badges/CurrencyBadge";
@@ -17,26 +17,17 @@ import { calculateTotalXP, getAnimalImage } from "@/utils/AnimalUtil";
 import ActionGroupBadge from "@/components/ui/badges/ActionGroupBadge";
 import { getBiomeImage, getBiomeName, getShelterImage } from "@/utils/BiomeUtil";
 import LinkedRow from "@/components/page-structure/Table/LinkedRow";
+import { useAnimalStore } from "@/store/useAnimalStore";
 
-interface AnimalDesktopTableProps {
-  animals: Animal[];
-  sortBy: string | null;
-  sortDirection: "asc" | "desc";
-  onSort: (key: string) => void;
-  onEdit: (id: string) => void;
-  onDelete: (id: string) => void;
-}
-
-export default function AnimalDesktopTable({
-  animals,
-  sortBy,
-  sortDirection,
-  onSort,
-  onEdit,
-  onDelete,
-}: AnimalDesktopTableProps) {
+export default function AnimalDesktopTable() {
   const t = useTranslations();
   const { data: session } = useSession();
+
+  const animals = useAnimalStore((state) => state.currentItems);
+  const sortBy = useAnimalStore((state) => state.sortBy);
+  const sortDirection = useAnimalStore((state) => state.sortDirection);
+  const toggleSort = useAnimalStore((state) => state.toggleSort);
+  const setSelectedAnimal = useAnimalStore((state) => state.setSelectedAnimal);
 
   const isAdmin = session?.user?.role === "Director";
 
@@ -47,21 +38,21 @@ export default function AnimalDesktopTable({
           <td></td>
           <SortableTableHeader
             label={t("Animals.species")}
-            onSort={() => onSort("name")}
+            onSort={() => toggleSort("name")}
             columnKey="name"
             currentSortBy={sortBy}
             sortDirection={sortDirection}
           />
           <SortableTableHeader
             label={t("Biome.enclosure")}
-            onSort={() => onSort("biomeName")}
+            onSort={() => toggleSort("biomeName")}
             columnKey="biomeName"
             currentSortBy={sortBy}
             sortDirection={sortDirection}
           />
           <SortableTableHeader
             label={t("Common.price")}
-            onSort={() => onSort("price")}
+            onSort={() => toggleSort("price")}
             columnKey="price"
             currentSortBy={sortBy}
             sortDirection={sortDirection}
@@ -69,14 +60,14 @@ export default function AnimalDesktopTable({
           />
           <SortableTableHeader
             label={t("Biome.shelterLevel")}
-            onSort={() => onSort("shelterLevel")}
+            onSort={() => toggleSort("shelterLevel")}
             columnKey="shelterLevel"
             currentSortBy={sortBy}
             sortDirection={sortDirection}
           />
           <SortableTableHeader
             label={t("Common.selling_price")}
-            onSort={() => onSort("sellingPrice")}
+            onSort={() => toggleSort("sellingPrice")}
             columnKey="sellingPrice"
             currentSortBy={sortBy}
             sortDirection={sortDirection}
@@ -84,7 +75,7 @@ export default function AnimalDesktopTable({
           />
           <SortableTableHeader
             label="XP"
-            onSort={() => onSort("xp")}
+            onSort={() => toggleSort("xp")}
             columnKey="xp"
             currentSortBy={sortBy}
             sortDirection={sortDirection}
@@ -96,7 +87,11 @@ export default function AnimalDesktopTable({
       <tbody>
         {animals.length > 0 ? (
           animals.map((animal) => (
-            <LinkedRow key={animal.id} path={`/animals/${animal.id}`}>
+            <LinkedRow
+              key={animal.id}
+              path={`/animals/${animal.id}`}
+              onClick={() => setSelectedAnimal(animal)} // 💡 Speichert das Tier im Store, wenn geklickt wird
+            >
               <td>
                 <Styles.TableThumbnail>
                   <ThumbnailBadge
@@ -133,14 +128,14 @@ export default function AnimalDesktopTable({
               </Styles.TableCellRight>
               {isAdmin && (
                 <Styles.TableCellRight>
-                  <ActionGroupBadge object={animal} onEdit={onEdit} onDelete={onDelete} />
+                  <ActionGroupBadge object={animal} />
                 </Styles.TableCellRight>
               )}
             </LinkedRow>
           ))
         ) : (
           <tr>
-            <Styles.TableEmptyState colSpan={isAdmin ? 6 : 5}>
+            <Styles.TableEmptyState colSpan={isAdmin ? 8 : 7}>
               {t("EmptyState.title")} 🐾
             </Styles.TableEmptyState>
           </tr>
