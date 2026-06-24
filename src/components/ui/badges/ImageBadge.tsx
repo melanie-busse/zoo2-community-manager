@@ -4,12 +4,10 @@ import React from "react";
 import styled from "styled-components";
 import NextImage from "next/image";
 import { Animal } from "@/types/animal";
+import { useAnimalStore } from "@/store/useAnimalStore";
 
-interface ImageBadgeProps {
-  animal: Animal | null;
-}
-
-export default function ImageBadge({ animal }: ImageBadgeProps) {
+export default function ImageBadge() {
+  const animal = useAnimalStore((state) => state.selectedAnimal);
   if (!animal) return null;
 
   // 1. Convert Denglish schema properties to clean English paths
@@ -19,7 +17,7 @@ export default function ImageBadge({ animal }: ImageBadgeProps) {
   const imagePath =
     animalImage === "placeholder.png"
       ? "/images/placeholder.jpg"
-      : `/images/animals/${biomeName}/${animalImage}`; // Folders matching English schema
+      : `/images/animals/${biomeName}/${animalImage}`;
   // 2. Safety check: Replace duplicate slashes with a single slash
   const cleanPath = imagePath.replace(/([^:]\/)\/+/g, "$1");
 

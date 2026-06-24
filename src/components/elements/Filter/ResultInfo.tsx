@@ -3,14 +3,13 @@
 import React from "react";
 import styled from "styled-components";
 import { useTranslations } from "next-intl";
+import { useAnimalStore } from "@/store/useAnimalStore";
 
-interface ResultsInfoProps {
-  currentCount: number;
-  totalCount: number;
-}
-
-export default function ResultsInfo({ currentCount = 0, totalCount = 0 }: ResultsInfoProps) {
+export default function ResultsInfo() {
   const t = useTranslations();
+
+  const currentCount = useAnimalStore((state) => state.currentItems.length);
+  const totalCount = useAnimalStore((state) => state.filteredCount);
 
   return (
     <StyledInfo>

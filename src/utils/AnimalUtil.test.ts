@@ -6,15 +6,13 @@ import {
   calculateTotalXP,
   getAnimalImage,
   getAnimalName,
-} from "./AnimalUtil"; // Pfad anpassen, falls die Datei anders heißt
+} from "./AnimalUtil";
 
-// Da getBiomeName importiert wird, mocken wir das kurz, um die Filterung zu kontrollieren
 vi.mock("@/utils/BiomeUtil", () => ({
   getBiomeName: (biome: any) => biome?.name || "Unbekannt",
 }));
 
 describe("Animal Utilities", () => {
-  // Testdaten vorbereiten
   const mockAnimals = [
     {
       id: 1,
@@ -33,49 +31,53 @@ describe("Animal Utilities", () => {
       image: "loewe.png",
       sellingPrice: 2000,
       biome: { id: 11, identifier: "savanna", name: "Savanne" },
-      animaltext: [], // Kein Text -> Fallback-Test
+      animaltext: [{ animalName: "Großer Löwe" }], // 💡 FIX: Name für die Suchfunktion hinterlegt
       animalxp: [{ xpValue: 300 }],
     },
   ] as any[];
 
-  // ==========================================
-  // 1. FILTER ANIMALS
-  // ==========================================
   describe("filterAnimals", () => {
     test("filtert nach Suchbegriff (Name)", () => {
       const result = filterAnimals(mockAnimals, {
         searchTerm: "Löwe",
-        selectedGehege: "all",
+        selectedBiome: "all",
         selectedLevel: "all",
       });
       expect(result).toHaveLength(1);
       expect(result[0].id).toBe(2);
     });
 
-    test("filtert nach Gehege", () => {
+    test("filtert nach Suchbegriff (ID)", () => {
       const result = filterAnimals(mockAnimals, {
-        searchTerm: "",
-        selectedGehege: "Savanne",
+        searchTerm: "1",
+        selectedBiome: "all",
         selectedLevel: "all",
       });
       expect(result).toHaveLength(1);
-      expect(result[0].name).toBe("Löwe");
+      expect(result[0].id).toBe(1);
+    });
+
+    test("filtert nach Gehege", () => {
+      const result = filterAnimals(mockAnimals, {
+        searchTerm: "",
+        selectedBiome: "Savanne",
+        selectedLevel: "all",
+      });
+      expect(result).toHaveLength(1);
+      expect(result[0].id).toBe(2);
     });
 
     test("filtert nach Level", () => {
       const result = filterAnimals(mockAnimals, {
         searchTerm: "",
-        selectedGehege: "all",
+        selectedBiome: "all",
         selectedLevel: "2",
       });
       expect(result).toHaveLength(1);
-      expect(result[0].name).toBe("Erdmännchen");
+      expect(result[0].id).toBe(1);
     });
   });
 
-  // ==========================================
-  // 2. SORT ANIMALS
-  // ==========================================
   describe("sortAnimals", () => {
     test("sortiert nach Zahlen (z.B. sellingPrice) aufsteigend", () => {
       const result = sortAnimals(mockAnimals, { sortBy: "sellingPrice", sortDirection: "asc" });
@@ -84,13 +86,10 @@ describe("Animal Utilities", () => {
 
     test("sortiert nach XP (berechneter Wert) absteigend", () => {
       const result = sortAnimals(mockAnimals, { sortBy: "xp", sortDirection: "desc" });
-      expect(result[0].id).toBe(2); // Löwe hat 300 XP, Erdmännchen 150 XP
+      expect(result[0].id).toBe(2); // Löwe (300 XP) > Erdmännchen (150 XP)
     });
   });
 
-  // ==========================================
-  // 3. PAGINATE
-  // ==========================================
   describe("paginate", () => {
     test("gibt die exakte Teilmenge für die angeforderte Seite zurück", () => {
       const items = ["A", "B", "C", "D", "E"];
@@ -99,9 +98,6 @@ describe("Animal Utilities", () => {
     });
   });
 
-  // ==========================================
-  // 4. CALCULATE TOTAL XP
-  // ==========================================
   describe("calculateTotalXP", () => {
     test("rechnet alle XP-Werte eines Tieres zusammen", () => {
       const total = calculateTotalXP(mockAnimals[0]);
@@ -114,9 +110,6 @@ describe("Animal Utilities", () => {
     });
   });
 
-  // ==========================================
-  // 5. IMAGE & TEXT HELPERS
-  // ==========================================
   describe("Image & Text Helpers", () => {
     test("baut den korrekten Bild-Pfad zusammen", () => {
       const imageObj = getAnimalImage(mockAnimals[0]);
@@ -127,8 +120,9 @@ describe("Animal Utilities", () => {
       });
     });
 
-    test("nutzt den Fallback-Namen, wenn animaltext leer ist", () => {
-      const name = getAnimalName(mockAnimals[1], "Unbekanntes Tier");
+    test("nutzt den Fallback-Namen, wenn animaltext leer oder nicht vorhanden ist", () => {
+      const emptyAnimal = { animaltext: [] } as any;
+      const name = getAnimalName(emptyAnimal, "Unbekanntes Tier");
       expect(name).toBe("Unbekanntes Tier");
     });
   });

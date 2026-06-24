@@ -27,8 +27,8 @@
     "styled-components": "^6.3.12",
     "sweetalert2": "^11.26.24",
     "sweetalert2-react-content": "^5.1.2",
-    "swr": "^2.4.1",
-    "tsx": "^4.21.0"
+    "tsx": "^4.21.0",
+    "zustand": "^5.0.14"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.9.1",

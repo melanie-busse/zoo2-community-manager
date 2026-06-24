@@ -1,23 +1,26 @@
+"use client";
+
 import React from "react";
 import { useTranslations } from "next-intl";
 
 import * as Styles from "@/components/elements/Pagination/Pagination.styles";
+
 import Tooltip from "@/components/ui/tooltip/Tooltip";
+import { useAnimalStore } from "@/store/useAnimalStore";
 
-interface PaginationProps {
-  currentPage: number;
-  totalPages: number;
-  onNext: () => void;
-  onPrev: () => void;
-}
-
-export default function Pagination({
-  currentPage = 1,
-  totalPages = 1,
-  onNext,
-  onPrev,
-}: PaginationProps) {
+export default function Pagination() {
   const t = useTranslations();
+
+  const currentPage = useAnimalStore((state) => state.currentPage);
+  const filteredCount = useAnimalStore((state) => state.filteredCount);
+  const itemsPerPage = useAnimalStore((state) => state.itemsPerPage);
+
+  const onNext = useAnimalStore((state) => state.nextPage);
+  const onPrev = useAnimalStore((state) => state.prevPage);
+
+  const totalPages = Math.ceil(filteredCount / itemsPerPage);
+
+  if (totalPages <= 1) return null;
 
   return (
     <Styles.SignpostAssembly>

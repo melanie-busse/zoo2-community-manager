@@ -13,13 +13,11 @@ interface AnimalDetailPageProps {
   }>;
 }
 
-// 1. SERVER COMPONENT: Lädt die Daten direkt aus der MariaDB
 export default async function AnimalDetailPage({ params }: AnimalDetailPageProps) {
   const { id, locale } = await params;
 
   const animal = await getAnimalById(Number(id), locale);
 
-  // Wenn das Tier nicht existiert, Next.js 404-Seite triggern
   if (!animal) {
     notFound();
   }
@@ -27,7 +25,7 @@ export default async function AnimalDetailPage({ params }: AnimalDetailPageProps
   return (
     <PageWrapper>
       <ContentWrapper>
-        <AnimalDetailContentClient animal={animal} locale={locale} />
+        <AnimalDetailContentClient animal={animal} />
       </ContentWrapper>
     </PageWrapper>
   );

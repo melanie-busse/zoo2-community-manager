@@ -33,7 +33,7 @@ export const theme = {
     // Akzent-Farben (Orange/Gelb für Buttons & Highlights)
     accent: {
       light: "#DAE67F", // yellowLight
-      main: "#FF8C00", // oranget
+      main: "#FF8C00", // orange
       hover: "rgba(255, 165, 0, 1)", // orangeLight
       warm: "#fceabb", // warmWhite
     },

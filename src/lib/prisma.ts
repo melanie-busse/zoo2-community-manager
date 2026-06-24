@@ -1,16 +1,15 @@
-import "dotenv/config";
 import { PrismaClient } from "@prisma/client";
-import { PrismaTiDBCloud } from "@tidbcloud/prisma-adapter";
+// import { PrismaTiDBCloud } from '@tidbcloud/prisma-adapter' // temporär raus
 
-const globalForPrisma = global as unknown as { prisma: PrismaClient };
+const globalForPrisma = globalThis as unknown as { prisma: PrismaClient | undefined };
 
 const prismaClientSingleton = () => {
-  const adapter = new PrismaTiDBCloud({ url: process.env.DATABASE_URL });
-  return new PrismaClient({ adapter, log: ["error"] });
+  // Für localhost brauchen wir keinen speziellen Cloud-Adapter:
+  return new PrismaClient({ log: ["error"] });
 };
-const prisma = globalForPrisma.prisma ?? prismaClientSingleton();
+
+export const prisma = globalForPrisma.prisma ?? prismaClientSingleton();
 
 if (process.env.NODE_ENV !== "production") globalForPrisma.prisma = prisma;
 
-export { prisma };
 export default prisma;

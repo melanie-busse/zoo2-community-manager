@@ -1,8 +1,7 @@
 import { describe, test, expect } from "vitest";
-import { getBiomeImage, getShelterImage, getBiomeName, getBiomeDescription } from "./BiomeUtil"; // Pfad anpassen, falls die Datei anders heißt
+import { getBiomeImage, getShelterImage, getBiomeName, getBiomeDescription } from "./BiomeUtil";
 
 describe("Biome Utilities", () => {
-  // Mock-Daten für ein Gehege (z.B. Grasland) vorbereiten
   const mockBiome = {
     id: 1,
     identifier: "grassland",
@@ -15,17 +14,13 @@ describe("Biome Utilities", () => {
     ],
   } as any;
 
-  // Mock-Daten für ein Gehege ohne Übersetzungen (Fallback-Test)
   const mockEmptyBiome = {
     id: 2,
     identifier: "desert",
-    image: "", // Löst den placeholder.png Fallback aus
+    image: "",
     biomestext: [],
   } as any;
 
-  // ==========================================
-  // 1. GET BIOME IMAGE
-  // ==========================================
   describe("getBiomeImage", () => {
     test("baut den korrekten Bildpfad für das Gehege-Areal zusammen", () => {
       const result = getBiomeImage(mockBiome);
@@ -44,11 +39,17 @@ describe("Biome Utilities", () => {
         alt: "Gehegebild",
       });
     });
+
+    test("fängt null oder undefined sauber ab und gibt den globalen Platzhalter zurück", () => {
+      const result = getBiomeImage(null);
+      expect(result).toEqual({
+        name: "placeholder.png",
+        path: "/images/biomes/placeholder/area.webp",
+        alt: "Gehegebild",
+      });
+    });
   });
 
-  // ==========================================
-  // 2. GET SHELTER IMAGE
-  // ==========================================
   describe("getShelterImage", () => {
     test("baut den korrekten Bildpfad für den Stall zusammen", () => {
       const result = getShelterImage(mockBiome);
@@ -67,11 +68,17 @@ describe("Biome Utilities", () => {
         alt: "Stall",
       });
     });
+
+    test("fängt null oder undefined für Ställe sauber ab", () => {
+      const result = getShelterImage(undefined);
+      expect(result).toEqual({
+        name: "placeholder.png",
+        path: "/images/biomes/placeholder/shelter.png",
+        alt: "Stall",
+      });
+    });
   });
 
-  // ==========================================
-  // 3. NAME & DESCRIPTION FALLBACKS
-  // ==========================================
   describe("Name & Description Fallbacks", () => {
     test("gibt den korrekten Namen und Beschreibung aus, wenn vorhanden", () => {
       expect(getBiomeName(mockBiome, "Fallback")).toBe("Grasland");
@@ -85,6 +92,11 @@ describe("Biome Utilities", () => {
       expect(getBiomeDescription(mockEmptyBiome, "Keine Beschreibung verfügbar")).toBe(
         "Keine Beschreibung verfügbar",
       );
+    });
+
+    test("gibt den Fallback-String zurück, wenn das Biome-Objekt null oder undefined ist", () => {
+      expect(getBiomeName(null, "Globaler Fallback")).toBe("Globaler Fallback");
+      expect(getBiomeDescription(undefined, "Keine Beschreibung")).toBe("Keine Beschreibung");
     });
   });
 });

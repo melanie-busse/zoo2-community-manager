@@ -2,11 +2,11 @@
 
 import React from "react";
 import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 import * as Styles from "./AnimalMobileCard.styles";
 
 import { Animal } from "@/types/animal";
-
 import BiomeBadge from "@/components/ui/badges/BiomeBadge";
 import ShelterLevelBadge from "@/components/ui/badges/ShelterLevelBadge";
 import { Name } from "@/components/elements/Name/Name";
@@ -19,28 +19,23 @@ import { getBiomeImage, getShelterImage } from "@/utils/BiomeUtil";
 
 interface AnimalMobileCardProps {
   animal: Animal;
-  onClickAction: () => void;
-  onEditAction: () => void;
-  onDeleteAction: () => void;
 }
-export default function AnimalMobileCard({
-  animal,
-  onClickAction,
-  onEditAction,
-  onDeleteAction,
-}: AnimalMobileCardProps) {
-  const { data: session } = useSession();
-  const isAdmin = session?.user?.role === "Director";
 
-  const displayName = animal.animaltext[0].animalName;
+export default function AnimalMobileCard({ animal }: AnimalMobileCardProps) {
+  const { data: session } = useSession();
+  const router = useRouter();
+
+  if (!animal) return null;
+
+  const isAdmin = session?.user?.role === "Director";
+  const displayName = animal.animaltext?.[0]?.animalName ?? "Kein Name vorhanden";
 
   return (
-    <Styles.CardContainer onClick={onClickAction}>
+    <Styles.CardContainer onClick={() => router.push(`/animals/${animal.id}`)}>
       <Styles.HeaderRow>
         <Name>{displayName}</Name>
-        {isAdmin && (
-          <ActionGroupBadge object={animal} onEdit={onEditAction} onDelete={onDeleteAction} />
-        )}
+
+        {isAdmin && <ActionGroupBadge object={animal} />}
       </Styles.HeaderRow>
 
       <Styles.Divider />
@@ -61,7 +56,7 @@ export default function AnimalMobileCard({
           <ShelterLevelBadge
             image={getShelterImage(animal.biome)}
             level={animal.shelterLevel}
-            habitat={animal.biome.identifier}
+            habitat={animal.biome?.identifier}
           />
         </Styles.IconsRow>
       </Styles.StatsRow>

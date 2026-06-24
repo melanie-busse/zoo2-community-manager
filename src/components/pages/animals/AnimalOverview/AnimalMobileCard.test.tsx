@@ -1,24 +1,42 @@
 import React from "react";
 import { describe, test, expect, vi, beforeEach } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
-import { ThemeProvider } from "styled-components";
 import { useSession } from "next-auth/react";
-import AnimalMobileCard from "./AnimalMobileCard";
-import { theme } from "@/styles/theme";
 
-// 1. Google Fonts mocken, um Ladefehler im JSDOM zu verhindern
-vi.mock("next/font/google", () => ({
-  Sedgwick_Ave_Display: () => ({ className: "mock-sedgwick", style: {} }),
-  DM_Sans: () => ({ className: "mock-dm-sans", style: {} }),
-  Playfair_Display: () => ({ className: "mock-playfair", style: {} }),
+import AnimalMobileCard from "./AnimalMobileCard";
+
+vi.mock("./AnimalMobileCard.styles", () => ({
+  CardContainer: ({ children, onClick }: { children: React.ReactNode; onClick: () => void }) => (
+    <div data-testid="card-container" onClick={onClick}>
+      {children}
+    </div>
+  ),
+  HeaderRow: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
+  Divider: () => <hr />,
+  StatsRow: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
+  PriceRow: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
+  IconsRow: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
 }));
 
-// 2. NextAuth Client-Hook mocken
+vi.mock("@/components/elements/Name/Name", () => ({
+  Name: ({ children }: { children: React.ReactNode }) => <h2>{children}</h2>,
+}));
+
 vi.mock("next-auth/react", () => ({
   useSession: vi.fn(),
 }));
 
-// 3. Kind-Komponenten mocken, um next-intl / useTranslations komplett zu umgehen
+const mockPush = vi.fn();
+vi.mock("next/navigation", () => ({
+  useRouter() {
+    return {
+      push: mockPush,
+      prefetch: vi.fn(),
+      replace: vi.fn(),
+    };
+  },
+}));
+
 vi.mock("@/components/ui/badges/ActionGroupBadge", () => ({
   default: () => <div data-testid="action-group-badge">Admin Actions</div>,
 }));
@@ -37,6 +55,9 @@ vi.mock("@/components/ui/badges/ShelterLevelBadge", () => ({
   ),
 }));
 
+vi.mock("@/utils/AnimalUtil", () => ({ getAnimalImage: vi.fn() }));
+vi.mock("@/utils/BiomeUtil", () => ({ getBiomeImage: vi.fn(), getShelterImage: vi.fn() }));
+
 describe("AnimalMobileCard", () => {
   const mockAnimal = {
     id: 1,
@@ -48,10 +69,6 @@ describe("AnimalMobileCard", () => {
     animaltext: [{ animalName: "Löwe" }],
   } as any;
 
-  const mockOnClick = vi.fn();
-  const mockOnEdit = vi.fn();
-  const mockOnDelete = vi.fn();
-
   beforeEach(() => {
     vi.clearAllMocks();
   });
@@ -62,16 +79,7 @@ describe("AnimalMobileCard", () => {
       status: "authenticated",
     } as any);
 
-    render(
-      <ThemeProvider theme={theme as any}>
-        <AnimalMobileCard
-          animal={mockAnimal}
-          onClickAction={mockOnClick}
-          onEditAction={mockOnEdit}
-          onDeleteAction={mockOnDelete}
-        />
-      </ThemeProvider>,
-    );
+    render(<AnimalMobileCard animal={mockAnimal} />);
 
     expect(screen.getByText("Löwe")).toBeInTheDocument();
     expect(screen.getByText("Preis: 1500")).toBeInTheDocument();
@@ -84,37 +92,20 @@ describe("AnimalMobileCard", () => {
       status: "authenticated",
     } as any);
 
-    render(
-      <ThemeProvider theme={theme as any}>
-        <AnimalMobileCard
-          animal={mockAnimal}
-          onClickAction={mockOnClick}
-          onEditAction={mockOnEdit}
-          onDeleteAction={mockOnDelete}
-        />
-      </ThemeProvider>,
-    );
+    render(<AnimalMobileCard animal={mockAnimal} />);
 
     expect(screen.getByTestId("action-group-badge")).toBeInTheDocument();
   });
 
-  test("löst onClickAction aus, wenn auf die Karte geklickt wird", () => {
+  test("leitet den User beim Klick auf die Karte zur Detailseite weiter", () => {
     vi.mocked(useSession).mockReturnValue({ data: null, status: "unauthenticated" } as any);
 
-    render(
-      <ThemeProvider theme={theme as any}>
-        <AnimalMobileCard
-          animal={mockAnimal}
-          onClickAction={mockOnClick}
-          onEditAction={mockOnEdit}
-          onDeleteAction={mockOnDelete}
-        />
-      </ThemeProvider>,
-    );
+    render(<AnimalMobileCard animal={mockAnimal} />);
 
-    const cardText = screen.getByText("Löwe");
-    fireEvent.click(cardText);
+    const card = screen.getByTestId("card-container");
+    fireEvent.click(card);
 
-    expect(mockOnClick).toHaveBeenCalledTimes(1);
+    expect(mockPush).toHaveBeenCalledTimes(1);
+    expect(mockPush).toHaveBeenCalledWith("/animals/1");
   });
 });
