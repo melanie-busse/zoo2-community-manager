@@ -66,7 +66,7 @@ export default function AccordionCard() {
           </thead>
           <tbody>
             {xpData.map((item) => {
-              const typeId = Number(item.xpTypeId);
+              const typeId = Number(item.id);
               const actionInfo = XP[typeId];
 
               return (

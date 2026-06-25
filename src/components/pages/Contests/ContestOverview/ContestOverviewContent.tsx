@@ -23,7 +23,7 @@ export default function ContestOverviewContent({
   const router = useRouter();
   const t = useTranslations();
 
-  // return (
+  return <p>läuft</p>;
   //   <>
   //     <PageHeader text={t("Contest.contestOverview.overview_title")} />
   //
