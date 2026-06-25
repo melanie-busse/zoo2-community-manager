@@ -1,9 +1,10 @@
 import { NextResponse } from "next/server";
 import { updateAnimal } from "@/service/AnimalService";
 
-export async function PUT(request: Request, { params }: { params: { id: string } }) {
+export async function PUT(request: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
-    const animalId = parseInt(params.id, 10);
+    const { id } = await params;
+    const animalId = parseInt(id, 10);
     if (isNaN(animalId)) {
       return NextResponse.json({ message: "Ungültige Tier-ID" }, { status: 400 });
     }

@@ -77,14 +77,6 @@ export function ContestCreateFormContent({
         {t("Contest.contestForm.statuesChoise")} ({selectedStatues.length} / 4)
       </Styles.SectionHeadline>
 
-      <OriginTransfer
-        available={availableStatues}
-        selected={selectedStatues}
-        onMoveRight={handleMoveRight}
-        onMoveLeft={handleMoveLeft}
-        maxSelected={4}
-      />
-
       <SubmitButton
         label={isSubmitting ? t("Common.save_changes") : t("Contest.contestForm.saveContest")}
         isSubmitting={isSubmitting}
