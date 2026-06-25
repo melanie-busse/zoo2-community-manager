@@ -12,7 +12,7 @@ services:
     build: .
     restart: always
     ports:
-      - "3000:3000"
+      - "3010:3000"
     environment:
       MARIADB_ROOT_PASSWORD: ${DB_PASSWORD}
       DATABASE_URL: "mysql://root:${DB_PASSWORD}@db:3306/zoo2_prod"
