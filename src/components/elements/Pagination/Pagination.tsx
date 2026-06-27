@@ -6,17 +6,21 @@ import { useTranslations } from "next-intl";
 import * as Styles from "@/components/elements/Pagination/Pagination.styles";
 
 import Tooltip from "@/components/ui/tooltip/Tooltip";
-import { useAnimalStore } from "@/store/useAnimalStore";
 
-export default function Pagination() {
+export default function Pagination({
+  currentPage,
+  filteredCount,
+  itemsPerPage,
+  onNext,
+  onPrev,
+}: {
+  currentPage: number;
+  filteredCount: number;
+  itemsPerPage: number;
+  onNext: () => void;
+  onPrev: () => void;
+}) {
   const t = useTranslations();
-
-  const currentPage = useAnimalStore((state) => state.currentPage);
-  const filteredCount = useAnimalStore((state) => state.filteredCount);
-  const itemsPerPage = useAnimalStore((state) => state.itemsPerPage);
-
-  const onNext = useAnimalStore((state) => state.nextPage);
-  const onPrev = useAnimalStore((state) => state.prevPage);
 
   const totalPages = Math.ceil(filteredCount / itemsPerPage);
 
