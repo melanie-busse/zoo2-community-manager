@@ -1,0 +1,108 @@
+specialCoatId;name;color;languageCode
+1;Akhal-Teke;noir;fr
+2;Akhal-Teke;blanc;fr
+17;Daim;tacheté;fr
+18;Daim;noir;fr
+19;Daim;blanc;fr
+36;Panda géant;brun;fr
+37;Lièvre;tacheté;fr
+38;Lièvre;rose;fr
+39;Lièvre;noir et blanc;fr
+40;Lièvre;tigré;fr
+41;Lièvre;blanc;fr
+42;Cochon domestique;brun;fr
+43;Chèvre domestique;blanc;fr
+46;Jaguarondi;rouge;fr
+63;Coati;au museau blanc;fr
+72;Cheval;gris pommelé;fr
+73;Cheval;pinto;fr
+80;Chat de la jungle;noir;fr
+87;Mouton;brun;fr
+88;Mouton;pie;fr
+92;Cygne;noir;fr
+103;Tapir;blanc;fr
+15;Capybara;noir;fr
+23;Émeu;leucistique;fr
+25;Moufette à nez de cochon;de Humboldt;fr
+27;Flamant;noir;fr
+28;Flamant;blanc;fr
+66;Antilope oryx;arabe;fr
+67;Antilope oryx;beige;fr
+70;Paon;tacheté;fr
+71;Paon;blanc;fr
+77;Renne;tacheté;fr
+78;Renne;blanc;fr
+83;Kangourou roux;blanc;fr
+100;Zèbre des plaines;noir;fr
+101;Zèbre des plaines;blanc;fr
+10;Chauve-souris fantôme australienne;noir;fr
+22;Élan;blanc;fr
+24;Chat sauvage d'Europe;clair;fr
+30;Cacatoès à huppe jaune;blanc;fr
+32;Genette;brun;fr
+35;Kangourou arboricole de Goodfellow;noir;fr
+45;Wallaby de Parry;noir;fr
+102;Tortue étoilée d'Inde;vert;fr
+48;Kiwi;tacheté;fr
+50;Koala;brun;fr
+55;Cuscus;brun;fr
+56;Cuscus;jaune;fr
+82;Vari roux;noir et blanc;fr
+84;Renard roux;tacheté;fr
+85;Renard roux;argenté;fr
+109;Sanglier;blanc;fr
+7;Alpaga;tacheté;fr
+8;Alpaga;noir;fr
+9;Alpaga;blanc;fr
+12;Gypaète barbu;rouge;fr
+31;Porc-épic commun;blanc;fr
+44;Hermine;blanc;fr
+51;Ours kodiak;blond;fr
+52;Ours kodiak;noir;fr
+108;Pygargue à tête blanche;blanc;fr
+3;Éléphant d'Afrique;leucistique;fr
+4;Lycaon;brun;fr
+5;Lycaon;noir;fr
+6;Lycaon;blanc;fr
+29;Hippopotame;rose;fr
+58;Lion;blanc;fr
+64;Girafe réticulée;noir;fr
+13;Gorille des montagnes;blanc;fr
+49;Colobe;noir;fr
+53;Tigre du Bengale;blanc;fr
+57;Tamarin lion;or;fr
+61;Mandrill;blanc;fr
+65;Crocodile du Nil;blanc;fr
+69;Panthère;tacheté jaguar;fr
+79;Toucan toco;blanc;fr
+104;Cuscus tacheté;tacheté;fr
+105;Cuscus tacheté;noir;fr
+106;Cuscus tacheté;blanc;fr
+107;Gibbon à mains blanches;noir;fr
+62;Cerf porte-musc;or;fr
+74;Renard polaire;brun;fr
+75;Renard polaire;noir;fr
+76;Loup arctique;noir;fr
+91;Lièvre variable;brun;fr
+110;Zibeline;rouge;fr
+111;Zibeline;blanc;fr
+14;Baleine à bosse;blanc;fr
+59;Canard mandarin;blanc;fr
+86;Lamantin;lamantin;fr
+26;Salamandre tachetée;rouge;fr
+33;Rainette dorée;brun;fr
+97;Blaireau du soleil;brun;fr
+98;Blaireau du soleil;brun clair;fr
+112;Fourmilier soyeux;blanc;fr
+99;Varan de savane;clair;fr
+11;Axolotl;blanc;fr
+20;Discus;jaune;fr
+34;Poisson rouge;blanc;fr
+81;Piranha à ventre rouge;bleu-orange;fr
+89;Cichlidé papillon sud-américain;bleu;fr
+90;Cichlidé papillon sud-américain;rouge;fr
+47;Combattant du Siam;Halfmoon Butterfly;fr
+16;Poisson-clown;noir;fr
+21;Pieuvre Dumbo;blanc;fr
+54;Méduse boussole;pointillé;fr
+60;Poisson-mandarin;brun;fr
