@@ -1,0 +1,10 @@
+{
+  "Role": {
+    "role_admin": "Admin",
+    "role_Director": "Direktor",
+    "role_Employee": "Mitarbeiter",
+    "role_Member": "Mitglied",
+    "role_Visitor": "Besucher",
+    "role_": "Keine Rolle"
+  }
+}

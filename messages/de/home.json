@@ -1,0 +1,22 @@
+{
+  "Stats": {
+    "animals": "Tiere",
+    "specialCoat": "Farbvarianten",
+    "biomes": "Gehege",
+    "regions": "Zooregionen"
+  },
+  "Cards": {
+    "lexicon": {
+      "title": "Tier-Lexikon",
+      "text": "Preise, Stall-Level und Gehege-Infos auf einen Blick."
+    },
+    "specialCoat": {
+      "title": "Farbvarianten",
+      "text": "Verwalte deine Zuchterfolge und seltenen Varianten."
+    },
+    "club": {
+      "title": "Klub",
+      "text": "Sei ein Mitglied unseres Klubs und gewinne tolle Statuen bei den Wettbewerben."
+    }
+  }
+}

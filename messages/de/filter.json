@@ -1,0 +1,16 @@
+{
+  "search_placeholder": "Suche nach Tieren...",
+  "all_enclosures": "Alle Gehege",
+  "all_levels": "Alle Levels",
+  "all_status": "Alle Status",
+  "status_prefix": "Status:",
+  "ready": "Fertig",
+  "missing_partner": "Partner fehlt",
+  "not_owned": "Nicht besitzt",
+  "level_label": "Level",
+  "results": {
+    "show": "Angezeigt",
+    "of": "von",
+    "unit": "Tiere gefunden"
+  }
+}

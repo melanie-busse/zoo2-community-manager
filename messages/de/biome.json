@@ -1,0 +1,9 @@
+{
+  "Biome": {
+    "enclosure": "Gehege",
+    "enclosureType": "Gehegetyp",
+    "shelterLevel": "Stall Level",
+    "biomeCapacity": "Gehegekapazität",
+    "biomeSize": "Gehegegröße"
+  }
+}

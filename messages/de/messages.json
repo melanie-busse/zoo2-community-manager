@@ -1,0 +1,18 @@
+{
+  "no_more_items": "Keine weiteren gefunden",
+  "none_selected": "Keine ausgewählt",
+  "yes_delete": "Ja, löschen!",
+  "cancel": "Abbrechen",
+  "imageNotFound": "Bild nicht gefunden",
+  "scroll_to_top": "Nach oben scrollen",
+  "saving": "Wird gespeichert...",
+  "save_changes": "Daten erfolgreich übermittelt!",
+  "available": "Verfügbar",
+  "not_found": "Nicht gefunden",
+  "descriptionPlaceholder": "Hier Beschreibung eingeben...",
+  "pleaseSelect": "Bitte wählen...",
+  "loading_data": "Daten werden geladen...",
+  "uppySad": "Uppy ist traurig",
+  "message": "Uppy hat überall gesucht, konnte aber nichts finden.",
+  "button": "Suche neu starten"
+}

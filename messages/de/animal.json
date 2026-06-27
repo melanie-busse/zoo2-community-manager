@@ -1,0 +1,59 @@
+{
+  "species": "Name",
+  "release": "Auswildern",
+  "colorVariants": "Farbvarianten",
+  "overview_title": "Übersicht über alle Tiere",
+
+  "biome": {
+    "animalCount": "Anzahl Tiere",
+    "capacityTableLabel": "Anzahl Tiere vs. Gehegeplatz",
+    "requiredSize": "Benötigte Fläche"
+  },
+
+  "formActions": {
+    "createAnimal": "Neues Tier anlegen",
+    "editAnimal": "Tier bearbeiten",
+    "saveAnimal": "Tier speichern"
+  },
+
+  "breeding": {
+    "xpAndActions": "XP und Aktionen",
+    "breeding": "Zucht",
+    "breedingChance": "Zuchtchance"
+  },
+  "AnimalForm": {
+    "basicInfoSection": {
+      "basicInfo": "Grundinformationen",
+      "fields": {
+        "releaseDate": "Release"
+      }
+    },
+    "translationSection": {
+      "title": "Übersetzungen (Name & Beschreibung)",
+      "descriptionPlaceholder": "Beschreibe das Tier..."
+    },
+    "priceSection": {
+      "pricesAndValues": "Preise und Werte"
+    },
+    "xpSection": {
+      "actionsXp": "Aktionen & EP"
+    },
+    "originSection": {
+      "originTitle": "Herkunft",
+      "originDescription": "Woher bekommt man dieses Tier?"
+    },
+    "actions": {
+      "feed": "Füttern",
+      "play": "Spielen",
+      "clean": "Säubern"
+    },
+    "messages": {
+      "createSuccess": "Tier erfolgreich angelegt! 🐾",
+      "deleteSuccess": "Das Tier wurde erfolgreich gelöscht! 🐾",
+      "editSuccess": "Änderungen erfolgreich gespeichert! 🐾",
+      "deleteError": "Fehler beim Löschen des Tieres. Bitte versuche es erneut.",
+      "deleteErrorTitle": "Tier löschen?",
+      "confirmDelete": "Bist du sicher, dass du dieses Tier unwiderruflich löschen möchtest? Alle verknüpften Daten wie Texte und XP-Werte gehen dabei verloren."
+    }
+  }
+}

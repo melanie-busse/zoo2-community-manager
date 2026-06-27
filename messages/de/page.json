@@ -1,0 +1,31 @@
+{
+  "Header": {
+    "Title": "Zoo2: Animal Park Manager"
+  },
+
+  "Login": {
+    "open_menu": "Menü öffnen",
+    "logout": "Abmelden",
+    "button": "Anmelden",
+    "welcome": "Hej"
+  },
+
+  "Footer": {
+    "imprint": "Impressum"
+  },
+
+  "Pagination": {
+    "prev": "Zurück",
+    "next": "Weiter"
+  },
+
+  "tooltip": {
+    "removeRow": "Zeile entfernen"
+  },
+
+  "Buttons": {
+    "edit": "Bearbeiten",
+    "delete": "Löschen",
+    "add": "Hinzufügen"
+  }
+}
