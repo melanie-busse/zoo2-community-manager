@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 
 import * as Styles from "./AnimalDetails.styles";
 
-import { SpecialCoat } from "@/types/animal";
+import { SpecialCoat } from "@/types/specialCoat";
 import SpecialCoatCard from "./SpecialCoatCard";
 import { useAnimalStore } from "@/store/useAnimalStore";
 
