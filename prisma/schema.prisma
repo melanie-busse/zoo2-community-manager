@@ -270,7 +270,6 @@ model PriceTypeText {
 model SpecialCoat {
   id               Int                @id @unique(map: "specialCoatesindex") @default(autoincrement())
   animalId         Int
-  coatColor        String             @db.VarChar(20)
   originId         Int
   releaseDate      DateTime
   image            String?            @db.VarChar(255)
@@ -287,6 +286,7 @@ model SpecialCoatsText {
   id            Int         @id @default(autoincrement())
   specialCoatId Int
   languageCode  String      @db.VarChar(5)
+  name          String      @db.VarChar(255)
   color         String      @db.VarChar(255)
   specialcoat   SpecialCoat @relation(fields: [specialCoatId], references: [id], onDelete: Cascade, map: "specialCoatsText_specialCoatId_fkey")
 
