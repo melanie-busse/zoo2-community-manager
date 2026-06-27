@@ -15,6 +15,7 @@ interface CustomBadgeFilterProps<T> {
   labelPrefixKey?: string;
   renderBadge: (value: T) => React.ReactNode;
   getIdentifier: (value: T) => string;
+  getLabelKey?: (value: T) => string;
 }
 
 export default function CustomBadgeFilter<T>({
@@ -25,6 +26,7 @@ export default function CustomBadgeFilter<T>({
   labelPrefixKey,
   renderBadge,
   getIdentifier,
+  getLabelKey, // 💡 NEU
 }: CustomBadgeFilterProps<T>) {
   const t = useTranslations();
   const [isOpen, setIsOpen] = useState(false);
@@ -33,8 +35,14 @@ export default function CustomBadgeFilter<T>({
   useClickOutside(wrapperRef, () => setIsOpen(false));
 
   const isAllSelected = selectedValue === "all" || selectedValue === "Alle";
-
   const selectedItem = items.find((item) => getIdentifier(item) === selectedValue);
+
+  const renderLabelText = (item: T) => {
+    if (getLabelKey) {
+      return t("Filter." + getLabelKey(item));
+    }
+    return getIdentifier(item);
+  };
 
   return (
     <Styles.SelectWrapper ref={wrapperRef}>
@@ -46,7 +54,7 @@ export default function CustomBadgeFilter<T>({
             {selectedItem && renderBadge(selectedItem)}
             <Styles.Label>
               {labelPrefixKey && `${t("Filter." + labelPrefixKey)} `}
-              {selectedValue}
+              {selectedItem ? renderLabelText(selectedItem) : selectedValue}
             </Styles.Label>
           </Styles.SelectedValue>
         )}
@@ -77,7 +85,7 @@ export default function CustomBadgeFilter<T>({
                 {renderBadge(item)}
                 <Styles.Label>
                   {labelPrefixKey && `${t("Filter." + labelPrefixKey)} `}
-                  {id}
+                  {renderLabelText(item)}
                 </Styles.Label>
               </Styles.Option>
             );

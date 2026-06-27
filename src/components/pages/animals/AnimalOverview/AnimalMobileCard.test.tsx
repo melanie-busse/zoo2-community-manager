@@ -5,18 +5,28 @@ import { useSession } from "next-auth/react";
 
 import AnimalMobileCard from "./AnimalMobileCard";
 
-vi.mock("./AnimalMobileCard.styles", () => ({
-  CardContainer: ({ children, onClick }: { children: React.ReactNode; onClick: () => void }) => (
+vi.mock("@/components/page-structure/Card/CardContainer", () => ({
+  default: ({ children, onClick }: { children: React.ReactNode; onClick: () => void }) => (
     <div data-testid="card-container" onClick={onClick}>
       {children}
     </div>
   ),
-  HeaderRow: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
-  Divider: () => <hr />,
-  StatsRow: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
-  PriceRow: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
-  IconsRow: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
 }));
+vi.mock("@/components/page-structure/Card/CardHeaderRow", () => ({
+  default: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
+}));
+vi.mock("@/components/page-structure/Card/CardDevider", () => ({ default: () => <hr /> }));
+vi.mock("@/components/page-structure/Card/CardStatsRow", () => ({
+  default: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
+}));
+vi.mock("@/components/page-structure/Card/CardPriceRow", () => ({
+  default: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
+}));
+vi.mock("@/components/page-structure/Card/CardIconsRow", () => ({
+  CardIconsRow: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
+}));
+
+vi.mock("../../../page-structure/MobileView", () => ({}));
 
 vi.mock("@/components/elements/Name/Name", () => ({
   Name: ({ children }: { children: React.ReactNode }) => <h2>{children}</h2>,

@@ -90,7 +90,7 @@ export default function AnimalDesktopTable() {
             <LinkedRow
               key={animal.id}
               path={`/animals/${animal.id}`}
-              onClick={() => setSelectedAnimal(animal)} // 💡 Speichert das Tier im Store, wenn geklickt wird
+              onClick={() => setSelectedAnimal(animal)}
             >
               <td>
                 <Styles.TableThumbnail>

@@ -3,22 +3,23 @@
 import React, { Suspense } from "react";
 import { useTranslations } from "next-intl";
 
-import * as Styles from "./AnimalMobileCard.styles";
-
 import AnimalDesktopTable from "./AnimalDesktopTable";
 import AnimalMobileCard from "./AnimalMobileCard";
 import { useAnimalStore } from "@/store/useAnimalStore";
 import EmptyState from "@/components/elements/EmptyState/EmptyState";
-import Pagination from "@/components/elements/Pagination/Pagination";
 import PageHeader from "@/components/page-structure/page/PageHeader";
 import FilterBar from "@/components/elements/Filter/FilterBar";
 import ResultsInfo from "@/components/elements/Filter/ResultInfo";
+import MobileView from "@/components/page-structure/MobileView";
+import AnimalPagination from "@/components/pages/animals/AnimalOverview/AnimalPagination";
 
 export default function AnimalOverviewContent() {
   const t = useTranslations();
 
   const currentItems = useAnimalStore((state) => state.currentItems);
   const hasItems = currentItems.length > 0;
+  const currentCount = useAnimalStore((state) => state.currentItems.length);
+  const totalCount = useAnimalStore((state) => state.filteredCount);
 
   return (
     <>
@@ -28,23 +29,23 @@ export default function AnimalOverviewContent() {
         <FilterBar />
       </Suspense>
 
-      <ResultsInfo />
+      <ResultsInfo currentCount={currentCount} totalCount={totalCount} />
 
       {hasItems ? (
         <>
           <AnimalDesktopTable />
 
-          <Styles.StyledMobileView>
+          <MobileView>
             {currentItems.map((animal) => (
               <AnimalMobileCard key={animal.id} animal={animal} />
             ))}
-          </Styles.StyledMobileView>
+          </MobileView>
         </>
       ) : (
         <EmptyState object="animals" />
       )}
 
-      <Pagination />
+      <AnimalPagination />
     </>
   );
 }

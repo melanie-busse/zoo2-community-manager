@@ -1,15 +1,15 @@
 "use client";
 
-import React from "react";
 import styled from "styled-components";
 import { useTranslations } from "next-intl";
-import { useAnimalStore } from "@/store/useAnimalStore";
 
-export default function ResultsInfo() {
+interface ResultsInfoProps {
+  currentCount: number;
+  totalCount: number;
+}
+
+export default function ResultsInfo({ currentCount, totalCount }: ResultsInfoProps) {
   const t = useTranslations();
-
-  const currentCount = useAnimalStore((state) => state.currentItems.length);
-  const totalCount = useAnimalStore((state) => state.filteredCount);
 
   return (
     <StyledInfo>
@@ -28,7 +28,7 @@ const StyledInfo = styled.p`
   color: #666;
 
   strong {
-    color: ${({ theme }) => theme.colors.primary[600]};
+    color: ${({ theme }) => theme.colors?.primary?.[600]};
     font-weight: 800;
   }
 `;

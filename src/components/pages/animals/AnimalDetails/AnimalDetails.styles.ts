@@ -411,3 +411,9 @@ export const SpecialCoatName = styled.span`
   width: 100%;
   word-wrap: break-word;
 `;
+
+export const OriginContainer = styled.div`
+  display: flex;
+  gap: 6px;
+  align-items: center;
+`;
