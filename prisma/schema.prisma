@@ -45,12 +45,13 @@ model BiomesText {
 }
 
 model Origin {
-  id           Int            @id @unique(map: "originindex") @default(autoincrement())
-  name         String         @db.VarChar(50)
-  image        String?        @db.VarChar(255)
-  animalorigin AnimalOrigin[]
-  origintext   OriginText[]
-  specialcoat  SpecialCoat[]
+  id                  Int                  @id @unique(map: "originindex") @default(autoincrement())
+  name                String               @db.VarChar(50)
+  image               String?              @db.VarChar(255)
+  animalorigin        AnimalOrigin[]
+  origintext          OriginText[]
+  specialcoat         SpecialCoat[]
+  specialCoatsOrigins SpecialCoatsOrigin[]
 
   @@map("origin")
 }
@@ -268,14 +269,15 @@ model PriceTypeText {
 }
 
 model SpecialCoat {
-  id               Int                @id @unique(map: "specialCoatesindex") @default(autoincrement())
-  animalId         Int
-  originId         Int
-  releaseDate      DateTime
-  image            String?            @db.VarChar(255)
-  animal           Animal             @relation(fields: [animalId], references: [id], onDelete: Cascade, map: "specialCoat_animalId_fkey")
-  origin           Origin             @relation(fields: [originId], references: [id], map: "specialCoat_originId_fkey")
-  specialcoatstext SpecialCoatsText[]
+  id                 Int                  @id @unique(map: "specialCoatesindex") @default(autoincrement())
+  animalId           Int
+  originId           Int
+  releaseDate        DateTime
+  image              String?              @db.VarChar(255)
+  animal             Animal               @relation(fields: [animalId], references: [id], onDelete: Cascade, map: "specialCoat_animalId_fkey")
+  specialcoatstext   SpecialCoatsText[]
+  specialcoatsorigin SpecialCoatsOrigin[]
+  origin             Origin               @relation(fields: [originId], references: [id])
 
   @@index([animalId], map: "specialCoat_animalId_idx")
   @@index([originId], map: "specialCoat_originId_fkey")
@@ -292,6 +294,18 @@ model SpecialCoatsText {
 
   @@unique([specialCoatId, languageCode], map: "specialCoatsText_specialCoatId_languageCode_key")
   @@map("specialcoatstext")
+}
+
+model SpecialCoatsOrigin {
+  id            Int         @id @unique(map: "originindex") @default(autoincrement())
+  specialCoatId Int
+  originId      Int?
+  specialCoat   SpecialCoat @relation(fields: [specialCoatId], references: [id], onDelete: Cascade, map: "specialCoatOrigin_specialCoatId_fkey")
+  origin        Origin?     @relation(fields: [originId], references: [id], onDelete: Cascade, map: "specialCoatOrigin_originId_fkey")
+
+  @@index([specialCoatId], map: "specialCoatOrigin_specialCoatId_idx")
+  @@index([originId], map: "specialCoatOrigin_originId_idx")
+  @@map("specialCoatorigin")
 }
 
 model XPType {

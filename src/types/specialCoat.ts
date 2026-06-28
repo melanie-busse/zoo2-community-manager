@@ -17,6 +17,25 @@ export interface SpecialCoat {
   ownedAmount?: number;
 
   animal?: Animal;
-  origin?: Origin[];
+  specialcoatsorigin?: SpecialCoatOrigin[];
   specialcoatstext?: SpecialCoatsText[];
+}
+
+export interface SpecialCoatOrigin {
+  id: number;
+  specialCoatId: number;
+  originId: number;
+  origin?: Origin;
+}
+
+export interface CreateSpecialCoatInput {
+  animalId: number;
+  releaseDate: Date | string;
+  image: string | null;
+  texts: {
+    languageCode: string;
+    name: string;
+    color: string;
+  }[];
+  originIds: number[]; // Array von Herkunfts-IDs (z.B. [1, 3] für Shop und Event)
 }
