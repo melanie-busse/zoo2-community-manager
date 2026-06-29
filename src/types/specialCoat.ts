@@ -37,5 +37,5 @@ export interface CreateSpecialCoatInput {
     name: string;
     color: string;
   }[];
-  originIds: number[]; // Array von Herkunfts-IDs (z.B. [1, 3] für Shop und Event)
+  originIds: number[];
 }

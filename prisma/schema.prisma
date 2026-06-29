@@ -50,7 +50,6 @@ model Origin {
   image               String?              @db.VarChar(255)
   animalorigin        AnimalOrigin[]
   origintext          OriginText[]
-  specialcoat         SpecialCoat[]
   specialCoatsOrigins SpecialCoatsOrigin[]
 
   @@map("origin")
@@ -269,18 +268,16 @@ model PriceTypeText {
 }
 
 model SpecialCoat {
-  id                 Int                  @id @unique(map: "specialCoatesindex") @default(autoincrement())
-  animalId           Int
-  originId           Int
-  releaseDate        DateTime
-  image              String?              @db.VarChar(255)
+  id          Int      @id @unique(map: "specialCoatesindex") @default(autoincrement())
+  animalId    Int
+  releaseDate DateTime
+  image       String?  @db.VarChar(255)
+
   animal             Animal               @relation(fields: [animalId], references: [id], onDelete: Cascade, map: "specialCoat_animalId_fkey")
   specialcoatstext   SpecialCoatsText[]
   specialcoatsorigin SpecialCoatsOrigin[]
-  origin             Origin               @relation(fields: [originId], references: [id])
 
   @@index([animalId], map: "specialCoat_animalId_idx")
-  @@index([originId], map: "specialCoat_originId_fkey")
   @@map("specialcoat")
 }
 
