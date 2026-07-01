@@ -3,11 +3,10 @@
 import React from "react";
 import { useTranslations } from "next-intl";
 
-import * as Styles from "./AnimalForms.style";
-
 import InfoAccordion from "@/components/page-structure/Elements/InfoAccordion";
 import DynamicRowInput from "@/components/ui/form/DynamicRowInput";
 import { languageFlags } from "@/constants/languageFlags";
+import SectionColumn from "@/components/ui/form/styling/SectionColumn";
 
 interface TranslationSectionProps {
   formData: any;
@@ -15,7 +14,7 @@ interface TranslationSectionProps {
   dbLanguages: Array<{ code: string; name: string }>;
 }
 
-export default function TranslationSection({
+export default function AnimalTranslationSection({
   formData,
   setFormData,
   dbLanguages,
@@ -83,7 +82,7 @@ export default function TranslationSection({
       icon="/images/icons/globus.png"
       defaultOpen={true}
     >
-      <Styles.SectionColumn>
+      <SectionColumn>
         <DynamicRowInput
           label=""
           rows={rows}
@@ -115,7 +114,7 @@ export default function TranslationSection({
           onChange={onChange}
           disabledAdd={allLanguagesUsed}
         />
-      </Styles.SectionColumn>
+      </SectionColumn>
     </InfoAccordion>
   );
 }

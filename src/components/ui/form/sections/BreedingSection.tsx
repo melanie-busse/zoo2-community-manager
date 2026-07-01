@@ -3,19 +3,20 @@
 import React from "react";
 import { useTranslations } from "next-intl";
 
-import * as Styles from "./AnimalForms.style";
-
 import InfoAccordion from "@/components/page-structure/Elements/InfoAccordion";
 import Selectbox from "@/components/ui/form/Selectbox";
 import InputGroup from "@/components/ui/form/InputGroup";
 import InputField from "@/components/ui/form/InputField";
+import SectionColumn from "@/components/ui/form/styling/SectionColumn";
+import FormGroup from "@/components/ui/form/styling/FormGroup";
+import Label from "@/components/ui/form/Label";
 
 interface BreedingSectionProps {
   formData: any;
   setFormData: React.Dispatch<React.SetStateAction<any>>;
 }
 
-export default function BreedingSection({ formData, setFormData }: BreedingSectionProps) {
+export function BreedingSection({ formData, setFormData }: BreedingSectionProps) {
   const tAnimals = useTranslations("Animals");
   const tBiome = useTranslations("Biome");
   const tCommon = useTranslations("Common");
@@ -49,9 +50,9 @@ export default function BreedingSection({ formData, setFormData }: BreedingSecti
       icon="/images/icons/breeding.png"
       defaultOpen={true}
     >
-      <Styles.SectionColumn>
-        <Styles.FormGroup>
-          <Styles.Label htmlFor="breedingLevel">{tBiome("shelterLevel")}</Styles.Label>
+      <SectionColumn>
+        <FormGroup>
+          <Label htmlFor="breedingLevel">{tBiome("shelterLevel")}</Label>
           <Selectbox
             id="breedingLevel"
             name="breedingLevel"
@@ -59,10 +60,10 @@ export default function BreedingSection({ formData, setFormData }: BreedingSecti
             onChange={handleNumberChange("breedingLevel")}
             options={stallOptions}
           />
-        </Styles.FormGroup>
+        </FormGroup>
 
-        <Styles.FormGroup>
-          <Styles.Label htmlFor="breedingCost">{tCommon("price")}</Styles.Label>
+        <FormGroup>
+          <Label htmlFor="breedingCost">{tCommon("price")}</Label>
           <InputGroup icon="/images/currency/zoodollar.webp">
             <InputField
               id="breedingCost"
@@ -72,10 +73,10 @@ export default function BreedingSection({ formData, setFormData }: BreedingSecti
               onChange={handleNumberChange("breedingCost")}
             />
           </InputGroup>
-        </Styles.FormGroup>
+        </FormGroup>
 
-        <Styles.FormGroup>
-          <Styles.Label htmlFor="breedingDuration">{tCommon("time") || "Dauer"}</Styles.Label>
+        <FormGroup>
+          <Label htmlFor="breedingDuration">{tCommon("time") || "Dauer"}</Label>
           <InputGroup unit="h">
             <InputField
               id="breedingDuration"
@@ -85,12 +86,12 @@ export default function BreedingSection({ formData, setFormData }: BreedingSecti
               onChange={handleNumberChange("breedingDuration")}
             />
           </InputGroup>
-        </Styles.FormGroup>
+        </FormGroup>
 
-        <Styles.FormGroup>
-          <Styles.Label htmlFor="breedingProbability">
+        <FormGroup>
+          <Label htmlFor="breedingProbability">
             {tAnimals("breeding.breedingChance") || "Zuchtchance"}
-          </Styles.Label>
+          </Label>
           <InputGroup unit="%">
             <InputField
               id="breedingProbability"
@@ -100,8 +101,8 @@ export default function BreedingSection({ formData, setFormData }: BreedingSecti
               onChange={handleNumberChange("breedingProbability")}
             />
           </InputGroup>
-        </Styles.FormGroup>
-      </Styles.SectionColumn>
+        </FormGroup>
+      </SectionColumn>
     </InfoAccordion>
   );
 }

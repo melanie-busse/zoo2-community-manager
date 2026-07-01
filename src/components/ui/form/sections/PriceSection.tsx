@@ -3,12 +3,14 @@
 import React from "react";
 import { useTranslations } from "next-intl";
 
-import * as Styles from "./AnimalForms.style";
-
 import InfoAccordion from "@/components/page-structure/Elements/InfoAccordion";
 import InputField from "@/components/ui/form/InputField";
 import Selectbox from "@/components/ui/form/Selectbox";
 import InputGroup from "@/components/ui/form/InputGroup";
+import SectionColumn from "@/components/ui/form/styling/SectionColumn";
+import FormGroup from "@/components/ui/form/styling/FormGroup";
+import Label from "@/components/ui/form/Label";
+import FormRow from "@/components/ui/form/styling/FormRow";
 
 interface PriceSectionProps {
   formData: any;
@@ -40,10 +42,10 @@ export default function PriceSection({ formData, setFormData }: PriceSectionProp
       icon="/images/currency/zoodollar.webp"
       defaultOpen={true}
     >
-      <Styles.SectionColumn>
-        <Styles.FormGroup>
-          <Styles.Label htmlFor="price">{tCommon("price")}</Styles.Label>
-          <Styles.FormRow>
+      <SectionColumn>
+        <FormGroup>
+          <Label htmlFor="price">{tCommon("price")}</Label>
+          <FormRow>
             <InputField
               id="price"
               type="number"
@@ -58,11 +60,11 @@ export default function PriceSection({ formData, setFormData }: PriceSectionProp
               onChange={handleNumberChange("currencyId")}
               options={currencyOptions}
             />
-          </Styles.FormRow>
-        </Styles.FormGroup>
+          </FormRow>
+        </FormGroup>
 
-        <Styles.FormGroup>
-          <Styles.Label htmlFor="popularity">{tCommon("popularity") || "Beliebtheit"}</Styles.Label>
+        <FormGroup>
+          <Label htmlFor="popularity">{tCommon("popularity") || "Beliebtheit"}</Label>
           <InputGroup icon="/images/icons/visitors.jpg" iconSize="24px">
             <InputField
               id="popularity"
@@ -72,10 +74,10 @@ export default function PriceSection({ formData, setFormData }: PriceSectionProp
               onChange={handleNumberChange("popularity")}
             />
           </InputGroup>
-        </Styles.FormGroup>
+        </FormGroup>
 
-        <Styles.FormGroup>
-          <Styles.Label htmlFor="sellingPrice">{tCommon("selling_price")}</Styles.Label>
+        <FormGroup>
+          <Label htmlFor="sellingPrice">{tCommon("selling_price")}</Label>
           <InputGroup icon="/images/currency/zoodollar.webp" iconSize="24px">
             <InputField
               id="sellingPrice"
@@ -85,10 +87,10 @@ export default function PriceSection({ formData, setFormData }: PriceSectionProp
               onChange={handleNumberChange("sellingPrice")}
             />
           </InputGroup>
-        </Styles.FormGroup>
+        </FormGroup>
 
-        <Styles.FormGroup>
-          <Styles.Label htmlFor="releaseExp">{tAnimals("release")}</Styles.Label>
+        <FormGroup>
+          <Label htmlFor="releaseExp">{tAnimals("release")}</Label>
           <InputGroup icon="/images/icons/star.png" iconSize="24px">
             <InputField
               id="releaseExp"
@@ -98,8 +100,8 @@ export default function PriceSection({ formData, setFormData }: PriceSectionProp
               onChange={handleNumberChange("releaseExp")}
             />
           </InputGroup>
-        </Styles.FormGroup>
-      </Styles.SectionColumn>
+        </FormGroup>
+      </SectionColumn>
     </InfoAccordion>
   );
 }

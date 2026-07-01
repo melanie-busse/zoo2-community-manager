@@ -3,10 +3,11 @@
 import React from "react";
 import { useTranslations } from "next-intl";
 
-import * as Styles from "./AnimalForms.style";
-
 import InfoAccordion from "@/components/page-structure/Elements/InfoAccordion";
 import InputField from "@/components/ui/form/InputField";
+import SectionColumn from "@/components/ui/form/styling/SectionColumn";
+import FormGroup from "@/components/ui/form/styling/FormGroup";
+import Label from "@/components/ui/form/Label";
 
 interface BasicInfoSectionProps {
   formData: any;
@@ -31,11 +32,9 @@ export default function BasicInfoSection({ formData, setFormData }: BasicInfoSec
       icon="/images/icons/info.png"
       defaultOpen={true}
     >
-      <Styles.SectionColumn>
-        <Styles.FormGroup>
-          <Styles.Label htmlFor="releaseDate">
-            {tAnimals("basicInfoSection.fields.releaseDate")}
-          </Styles.Label>
+      <SectionColumn>
+        <FormGroup>
+          <Label htmlFor="releaseDate">{tAnimals("basicInfoSection.fields.releaseDate")}</Label>
           <InputField
             id="releaseDate"
             type="date"
@@ -44,8 +43,8 @@ export default function BasicInfoSection({ formData, setFormData }: BasicInfoSec
             onChange={handleDateChange}
             $width="200px"
           />
-        </Styles.FormGroup>
-      </Styles.SectionColumn>
+        </FormGroup>
+      </SectionColumn>
     </InfoAccordion>
   );
 }

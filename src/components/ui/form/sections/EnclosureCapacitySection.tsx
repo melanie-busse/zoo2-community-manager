@@ -3,10 +3,9 @@
 import React from "react";
 import { useTranslations } from "next-intl";
 
-import * as Styles from "./AnimalForms.style";
-
 import InfoAccordion from "@/components/page-structure/Elements/InfoAccordion";
 import DynamicRowInput from "@/components/ui/form/DynamicRowInput";
+import SectionColumn from "@/components/ui/form/styling/SectionColumn";
 
 interface EnclosureCapacitySectionProps {
   enclosureSizes: any[];
@@ -66,7 +65,7 @@ export default function EnclosureCapacitySection({
       icon="/images/icons/enclosureUpgrade.png"
       defaultOpen={false}
     >
-      <Styles.SectionColumn>
+      <SectionColumn>
         <DynamicRowInput
           rows={safeSizes}
           columns={[
@@ -89,7 +88,7 @@ export default function EnclosureCapacitySection({
           onRemove={onRemove}
           onChange={onChange}
         />
-      </Styles.SectionColumn>
+      </SectionColumn>
     </InfoAccordion>
   );
 }

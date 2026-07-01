@@ -3,11 +3,11 @@
 import React from "react";
 import { useTranslations } from "next-intl";
 
-import * as Styles from "./AnimalForms.style";
-
 import InfoAccordion from "@/components/page-structure/Elements/InfoAccordion";
 import Selectbox from "@/components/ui/form/Selectbox";
 import { Biome } from "@/types/biome";
+import SectionColumn from "@/components/ui/form/styling/SectionColumn";
+import Label from "@/components/ui/form/Label";
 
 interface EnclosureTypeSectionProps {
   formData: any;
@@ -44,8 +44,8 @@ export default function EnclosureTypeSection({
       icon="/images/biomes/grassland/enclosure.webp"
       defaultOpen={true}
     >
-      <Styles.SectionColumn>
-        <Styles.Label htmlFor="biomeId">{tBiome("enclosureType")}</Styles.Label>
+      <SectionColumn>
+        <Label htmlFor="biomeId">{tBiome("enclosureType")}</Label>
         <Selectbox
           id="biomeId"
           name="biomeId"
@@ -55,7 +55,7 @@ export default function EnclosureTypeSection({
           $width="100%"
           placeholder={tCommon("pleaseSelect")}
         />
-      </Styles.SectionColumn>
+      </SectionColumn>
     </InfoAccordion>
   );
 }

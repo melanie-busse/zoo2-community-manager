@@ -2,10 +2,10 @@
 
 import React from "react";
 import { useTranslations } from "next-intl";
-import * as Styles from "./AnimalForms.style";
 
 import InfoAccordion from "@/components/page-structure/Elements/InfoAccordion";
 import OriginTransfer from "@/components/ui/OriginTransfer/OriginTransfer";
+import SectionColumn from "@/components/ui/form/styling/SectionColumn";
 
 interface OriginOption {
   id: number;
@@ -14,7 +14,7 @@ interface OriginOption {
 
 interface OriginSectionProps {
   originsData: OriginOption[];
-  selectedOrigins: Array<{ id: number }>; // Typisiert auf das, was im Zustand-Store liegt
+  selectedOrigins: Array<{ id: number }>;
   setFormData: React.Dispatch<React.SetStateAction<any>>;
 }
 
@@ -40,7 +40,7 @@ export default function OriginSection({
       icon="/images/origins/shop.webp"
       defaultOpen={false}
     >
-      <Styles.SectionColumn>
+      <SectionColumn>
         <p className="description">
           {tAnimals("originSection.originDescription") ||
             "Wähle aus, wie dieses Tier im Spiel erworben werden kann."}
@@ -51,7 +51,7 @@ export default function OriginSection({
           selectedIds={selectedIds}
           onChange={handleTransferChange}
         />
-      </Styles.SectionColumn>
+      </SectionColumn>
     </InfoAccordion>
   );
 }

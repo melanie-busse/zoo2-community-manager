@@ -5,7 +5,7 @@ import Swal from "sweetalert2";
 import { toast } from "react-toastify";
 
 interface AnimalState {
-  // 1. Listen-Zustände (aus der Overview)
+  // 1. Listen-Zustände
   allAnimals: Animal[];
   currentItems: Animal[];
   filteredCount: number;
@@ -26,24 +26,24 @@ interface AnimalState {
 
   // 4. Aktionen für die Übersicht & Filter
   setInitialAnimals: (animals: any[]) => void;
-  setSearchTerm: (term: string) => void;
-  setSelectedBiome: (gehege: string) => void;
-  setSelectedLevel: (level: string) => void;
   setSelectedAnimal: (animal: Animal) => void;
   toggleSort: (key: string) => void;
   nextPage: () => void;
   prevPage: () => void;
+
+  // 5.Filter-Setter
+  setSearchTerm: (term: string) => void;
+  setSelectedBiome: (gehege: string) => void;
+  setSelectedLevel: (level: string) => void;
   resetFilters: () => void;
 
   // 5. Aktionen für Edit & Delete
   setEditingAnimal: (animal: Animal) => void;
   clearEditingAnimal: () => void;
-  // HIER KORRIGIERT: t hinzugefügt, damit das Interface zur Action passt!
   deleteAnimal: (id: number, t: any) => Promise<boolean>;
 }
 
 export const useAnimalStore = create<AnimalState>((set, get) => {
-  // Die Pipeline bleibt unsere interne Hilfsfunktion zur Berechnung der Liste
   const runPipeline = (all: Animal[], state: any) => {
     const filtered = filterAnimals(all, {
       searchTerm: state.searchTerm,

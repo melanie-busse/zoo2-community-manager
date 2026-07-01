@@ -4,11 +4,14 @@ import React from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
-import * as Styles from "./AnimalForms.style";
-
 import InfoAccordion from "@/components/page-structure/Elements/InfoAccordion";
 import InputGroup from "@/components/ui/form/InputGroup";
 import InputField from "@/components/ui/form/InputField";
+import SectionColumn from "@/components/ui/form/styling/SectionColumn";
+import ActionRow from "@/components/ui/form/styling/ActionRow";
+import Label from "@/components/ui/form/Label";
+import FormGroup from "@/components/ui/form/styling/FormGroup";
+import InputContainer from "../styling/InputContainer";
 
 interface XpActionSectionProps {
   formData: any;
@@ -48,17 +51,17 @@ export default function XpActionSection({ formData, setFormData }: XpActionSecti
       icon="/images/icons/star.png"
       defaultOpen={false}
     >
-      <Styles.SectionColumn>
+      <SectionColumn>
         {actions.map((action) => (
-          <Styles.ActionRow key={action.key}>
-            <Styles.Label>
+          <ActionRow key={action.key}>
+            <Label>
               {action.icon && <Image src={action.icon} alt="" width="20" height="20" />}
               <span>{action.label}</span>
-            </Styles.Label>
+            </Label>
 
-            <Styles.InputsContainer>
-              <Styles.FormGroup>
-                <Styles.Label htmlFor={`${action.key}-xp`}>XP</Styles.Label>
+            <InputContainer>
+              <FormGroup>
+                <Label htmlFor={`${action.key}-xp`}>XP</Label>
                 <InputGroup icon="/images/icons/star.png">
                   <InputField
                     id={`${action.key}-xp`}
@@ -69,12 +72,10 @@ export default function XpActionSection({ formData, setFormData }: XpActionSecti
                     $width="70px"
                   />
                 </InputGroup>
-              </Styles.FormGroup>
+              </FormGroup>
 
-              <Styles.FormGroup>
-                <Styles.Label htmlFor={`${action.key}-hours`}>
-                  {tCommon("hours") || "Std."}
-                </Styles.Label>
+              <FormGroup>
+                <Label htmlFor={`${action.key}-hours`}>{tCommon("hours") || "Std."}</Label>
                 <InputGroup unit="h">
                   <InputField
                     id={`${action.key}-hours`}
@@ -87,12 +88,10 @@ export default function XpActionSection({ formData, setFormData }: XpActionSecti
                     placeholder="0"
                   />
                 </InputGroup>
-              </Styles.FormGroup>
+              </FormGroup>
 
-              <Styles.FormGroup>
-                <Styles.Label htmlFor={`${action.key}-minutes`}>
-                  {tCommon("minutes") || "Min."}
-                </Styles.Label>
+              <FormGroup>
+                <Label htmlFor={`${action.key}-minutes`}>{tCommon("minutes") || "Min."}</Label>
                 <InputGroup unit="m">
                   <InputField
                     id={`${action.key}-minutes`}
@@ -105,11 +104,11 @@ export default function XpActionSection({ formData, setFormData }: XpActionSecti
                     placeholder="0"
                   />
                 </InputGroup>
-              </Styles.FormGroup>
-            </Styles.InputsContainer>
-          </Styles.ActionRow>
+              </FormGroup>
+            </InputContainer>
+          </ActionRow>
         ))}
-      </Styles.SectionColumn>
+      </SectionColumn>
     </InfoAccordion>
   );
 }
