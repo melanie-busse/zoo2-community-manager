@@ -31,11 +31,11 @@ export const navConfig: NavItem[] = [
         requiresAuth: true,
       },
       { labelKey: "specialcoats_overview", href: "/specialcoats" },
-      // {
-      //   labelKey: "specialcoats_create",
-      //   href: "/specialcoats/create",
-      //   requiresAuth: true,
-      // },
+      {
+        labelKey: "specialcoats_create",
+        href: "/specialcoats/create",
+        requiresAuth: true,
+      },
     ],
   },
   {

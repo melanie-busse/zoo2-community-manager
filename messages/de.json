@@ -198,9 +198,23 @@
   "Tooltip": {
     "level": "Level"
   },
-  "SpecialCoats": {
+  "SpecialCoat": {
     "overview_title": "Farbvarianten",
     "species": "Name",
-    "color": "Farbe"
+    "color": "Farbe",
+    "form": {
+      "createSpecialCoat": "Farbvariante erstellen",
+      "translationSection": {
+        "title": "Übersetzungen (Name & Farbe)",
+        "fields": {
+          "language": "Sprache",
+          "name": "Variantenname",
+          "NamePlaceholder": "z.B. Halloween, Valentinstag...",
+          "color": "Farbe",
+          "ColorPlaceholder": "z. B. gestreift"
+        }
+      },
+      "saveSpecialCoat": "Speichern"
+    }
   }
 }
