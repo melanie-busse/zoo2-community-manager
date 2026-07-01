@@ -36,7 +36,7 @@ describe("useSpecialCoatStore", () => {
   beforeEach(() => {
     // Zustand-Store vor jedem Test komplett auf Standardwerte zurücksetzen
     useSpecialCoatStore.setState({
-      allInitalItems: [],
+      allSpecialCoats: [],
       currentItems: [],
       filteredItems: [],
       searchQuery: "",
@@ -55,7 +55,7 @@ describe("useSpecialCoatStore", () => {
     store.setInitialSpecialCoats(mockCoats);
 
     const updatedState = useSpecialCoatStore.getState();
-    expect(updatedState.allInitalItems).toHaveLength(3);
+    expect(updatedState.allSpecialCoats).toHaveLength(3);
     expect(updatedState.filteredItems).toHaveLength(3);
     // Da itemsPerPage=2 ist, sollten in currentItems nur die ersten zwei sein
     expect(updatedState.currentItems).toHaveLength(2);

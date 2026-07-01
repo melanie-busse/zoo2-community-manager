@@ -37,7 +37,7 @@ export async function POST(request: Request) {
     // Ruft unseren neuen Service auf
     const newCoat = await createSpecialCoat(body);
 
-    return NextResponse.json({ id: newCoat.id }, { status: 201 });
+    return NextResponse.json({ id: newCoat?.id }, { status: 201 });
   } catch (error: any) {
     console.error("API Error during POST (SpecialCoats):", error);
     return NextResponse.json(
