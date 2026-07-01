@@ -5,7 +5,7 @@ import { useSpecialCoatStore } from "@/store/useSpecialCoatStore";
 
 export default function SpecialCoatsPagination() {
   const currentPage = useSpecialCoatStore((state) => state.currentPage);
-  const filteredCount: number = useSpecialCoatStore((state) => state.filteredItems.length);
+  const filteredCount: number = useSpecialCoatStore((state) => state.filteredCount);
   const itemsPerPage = useSpecialCoatStore((state) => state.itemsPerPage);
 
   const nextPage = useSpecialCoatStore((state) => state.nextPage);

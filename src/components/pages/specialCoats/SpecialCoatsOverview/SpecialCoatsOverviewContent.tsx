@@ -22,14 +22,12 @@ export default function SpecialCoatsOverviewContent() {
     console.log("Current Items haben sich geändert:", currentItems);
   }, [currentItems]);
 
-  console.log("currentItems", currentItems);
-
   const currentCount: number = useSpecialCoatStore((state) => state.currentItems.length);
-  const totalCount: number = useSpecialCoatStore((state) => state.filteredItems.length);
+  const totalCount: number = useSpecialCoatStore((state) => state.filteredCount);
 
   return (
     <>
-      <PageHeader text={t("SpecialCoats.overview_title")} />
+      <PageHeader text={t("SpecialCoat.overview_title")} />
 
       <Suspense fallback={<div>Lade Filter...</div>}>
         <SpecialCoatFilterBar />

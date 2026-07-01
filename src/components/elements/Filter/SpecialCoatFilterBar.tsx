@@ -29,7 +29,7 @@ export default function SpecialCoatFilterBar() {
   const t = useTranslations();
 
   // Zustand Werte & Setter laden
-  const allInitialItems = useSpecialCoatStore((state) => state.allInitalItems);
+  const allInitialItems = useSpecialCoatStore((state) => state.allSpecialCoats);
   const searchQuery = useSpecialCoatStore((state) => state.searchQuery);
   const selectedBiomeId = useSpecialCoatStore((state) => state.selectedBiomeId);
   const selectedShelterLevel = useSpecialCoatStore((state) => state.selectedShelterLevel);

@@ -27,7 +27,6 @@ export default function SpecialCoatsDesktopTable() {
   const toggleSort = useSpecialCoatStore((state) => state.toggleSort);
   const setSelectedSpecialCoat = useSpecialCoatStore((state) => state.setSelectedSpecialCoat);
 
-  console.log("specialCoats", specialCoats);
   const isAdmin = session?.user?.role === "Director";
 
   return (
@@ -36,14 +35,14 @@ export default function SpecialCoatsDesktopTable() {
         <tr>
           <td></td>
           <SortableTableHeader
-            label={t("SpecialCoats.species")}
+            label={t("SpecialCoat.species")}
             onSort={() => toggleSort("name")}
             columnKey="name"
             currentSortBy={sortBy}
             sortDirection={sortDirection}
           />
           <SortableTableHeader
-            label={t("SpecialCoats.color")}
+            label={t("SpecialCoat.color")}
             onSort={() => toggleSort("color")}
             columnKey="color"
             currentSortBy={sortBy}
