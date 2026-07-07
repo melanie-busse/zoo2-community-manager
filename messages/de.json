@@ -67,6 +67,7 @@
     "biomeSize": "Gehegegröße",
     "capacityTableLabel": "Anzahl Tiere vs. Gehegeplatz",
     "requiredSize": "Benötigte Fläche",
+    "noName": "Kein Name vorhanden",
     "form": {
       "createAnimal": "Neues Tier anlegen",
       "editAnimal": "Tier bearbeiten",
@@ -190,7 +191,8 @@
   "Biome": {
     "enclosure": "Gehege",
     "enclosureType": "Gehegetyp",
-    "shelterLevel": "Stall Level"
+    "shelterLevel": "Stall Level",
+    "noBiome": "Kein Gehege"
   },
   "Errors": {
     "imageNotFound": "Bild nicht gefunden"
@@ -202,8 +204,11 @@
     "overview_title": "Farbvarianten",
     "species": "Name",
     "color": "Farbe",
+    "noName": "Kein Name vorhanden",
+    "noColor": "Keine Farbe vorhanden",
     "form": {
       "createSpecialCoat": "Farbvariante erstellen",
+      "editSpecialCoat": "Farbvariante editieren",
       "translationSection": {
         "title": "Übersetzungen (Name & Farbe)",
         "fields": {
