@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useSession } from "next-auth/react";
-import { useRouter } from "next/navigation";
+import { useRouter } from "@/i18n/routing";
 
 import BiomeBadge from "@/components/ui/badges/BiomeBadge";
 import ShelterLevelBadge from "@/components/ui/badges/ShelterLevelBadge";
@@ -42,7 +42,7 @@ export default function SpecialCoatsMobileCard({ specialCoat }: SpecialCoatMobil
   const displayName = specialCoat.animal?.animaltext?.[0]?.animalName ?? "Kein Name vorhanden";
 
   return (
-    <CardContainer onClick={() => router.push(`/specialcoat/${specialCoat.id}`)}>
+    <CardContainer onClick={() => router.push(`/specialcoats/${specialCoat.id}`)}>
       <CardHeaderRow>
         <Name>{displayName}</Name>
         <Color>{specialCoat.specialcoatstext?.[0]?.color ?? "Keine Farbe vorhanden"} -</Color>

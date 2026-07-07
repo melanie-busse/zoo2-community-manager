@@ -75,7 +75,7 @@ export default function SpecialCoatsDesktopTable() {
           specialCoats.map((specialCoat) => (
             <LinkedRow
               key={specialCoat.id}
-              path={`/specialCoats/${specialCoat.id}`}
+              path={`/specialcoats/${specialCoat.id}`}
               onClick={() => setSelectedSpecialCoat(specialCoat)}
             >
               <td>
