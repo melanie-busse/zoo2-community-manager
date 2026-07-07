@@ -9,6 +9,7 @@ import * as Styles from "./AnimalDetails.styles";
 import SpecialCoatBadge from "@/components/ui/badges/SpecialCoatBadge";
 import { SpecialCoat } from "@/types/specialCoat";
 import { formatLocaleDate } from "@/utils/DateUtil";
+import { useRouter } from "@/i18n/routing";
 
 interface SpecialCoatCardProps {
   specialCoat: SpecialCoat;
@@ -16,6 +17,7 @@ interface SpecialCoatCardProps {
 
 export default function SpecialCoatCard({ specialCoat }: SpecialCoatCardProps) {
   const tCommon = useTranslations("Common");
+  const router = useRouter();
   const origins = specialCoat.specialcoatsorigin?.map((o) => o.origin).filter(Boolean) ?? [];
 
   const displayName = specialCoat.specialcoatstext?.[0]?.name || "";
@@ -24,7 +26,11 @@ export default function SpecialCoatCard({ specialCoat }: SpecialCoatCardProps) {
     : "---";
 
   return (
-    <Styles.StyledSpecialCoatCard title={displayName}>
+    <Styles.StyledSpecialCoatCard
+      title={displayName}
+      onClick={() => router.push(`/specialcoats/${specialCoat.id}`)}
+      style={{ cursor: "pointer" }}
+    >
       <SpecialCoatBadge image={specialCoat.image} displayName={displayName} />
 
       <Styles.SpecialCoatName>{displayName}</Styles.SpecialCoatName>

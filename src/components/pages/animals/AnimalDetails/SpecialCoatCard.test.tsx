@@ -16,6 +16,11 @@ vi.mock("@/utils/DateUtil", () => ({
   formatLocaleDate: vi.fn(() => "01.06.2026"),
 }));
 
+const mockPush = vi.fn();
+vi.mock("@/i18n/routing", () => ({
+  useRouter: () => ({ push: mockPush }),
+}));
+
 vi.mock("@/components/ui/badges/SpecialCoatBadge", () => ({
   default: ({ displayName }: { displayName: string }) => (
     <div data-testid="special-coat-badge">{displayName}</div>
@@ -23,8 +28,8 @@ vi.mock("@/components/ui/badges/SpecialCoatBadge", () => ({
 }));
 
 vi.mock("./AnimalDetails.styles", () => ({
-  StyledSpecialCoatCard: ({ children, title }: any) => (
-    <div data-testid="coat-card" title={title}>
+  StyledSpecialCoatCard: ({ children, title, onClick }: any) => (
+    <div data-testid="coat-card" title={title} onClick={onClick}>
       {children}
     </div>
   ),
@@ -97,6 +102,14 @@ describe("SpecialCoatCard", () => {
     render(<SpecialCoatCard specialCoat={coatWithoutDate} />);
 
     expect(screen.getByTestId("release-date")).toHaveTextContent("---");
+  });
+
+  test("navigiert zur SpecialCoat-Detailseite beim Klick auf die Karte", () => {
+    render(<SpecialCoatCard specialCoat={mockCoat} />);
+
+    screen.getByTestId("coat-card").click();
+
+    expect(mockPush).toHaveBeenCalledWith("/specialcoats/50");
   });
 
   test("zeigt einen leeren Namen, wenn specialcoatstext fehlt", () => {
