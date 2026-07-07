@@ -8,6 +8,11 @@ vi.mock("@/service/AnimalService", () => ({
   createAnimal: vi.fn(),
 }));
 
+const validBody = {
+  biomeId: 3,
+  animaltext: [{ languageCode: "de", animalName: "Löwe", animalDescription: "" }],
+};
+
 describe("Animals API Route Handler", () => {
   beforeEach(() => {
     vi.clearAllMocks();
@@ -58,13 +63,13 @@ describe("Animals API Route Handler", () => {
 
       const request = new Request("http://localhost:3000/api/animals", {
         method: "POST",
-        body: JSON.stringify({ nameDe: "Löwe", enclosureType: 3 }),
+        body: JSON.stringify(validBody),
       });
 
       const response = await POST(request);
       const data = await response.json();
 
-      expect(createAnimal).toHaveBeenCalledWith({ nameDe: "Löwe", enclosureType: 3 });
+      expect(createAnimal).toHaveBeenCalledWith(validBody);
       expect(response.status).toBe(201);
       expect(data).toEqual({ id: 99 });
     });
@@ -72,7 +77,7 @@ describe("Animals API Route Handler", () => {
     test("Gibt Status 400 zurück, wenn Pflichtfelder fehlen", async () => {
       const request = new Request("http://localhost:3000/api/animals", {
         method: "POST",
-        body: JSON.stringify({ nameDe: "Unvollständig" }), // enclosureType fehlt!
+        body: JSON.stringify({ animaltext: [{ languageCode: "de", animalName: "Unvollständig" }] }), // biomeId fehlt!
       });
 
       const response = await POST(request);
@@ -88,7 +93,7 @@ describe("Animals API Route Handler", () => {
 
       const request = new Request("http://localhost:3000/api/animals", {
         method: "POST",
-        body: JSON.stringify({ nameDe: "Tiger", enclosureType: 1 }),
+        body: JSON.stringify(validBody),
       });
 
       const response = await POST(request);

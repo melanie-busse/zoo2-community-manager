@@ -85,21 +85,21 @@ describe("Animal Service", () => {
 
   describe("createAnimal", () => {
     const mockInputData = {
-      translations: [
-        { spracheCode: "de", name: "Erdmännchen", description: "Süßer Gräber" },
-        { spracheCode: "en", name: "Meerkat", description: "Cute digger" },
+      animaltext: [
+        { languageCode: "de", animalName: "Erdmännchen", animalDescription: "Süßer Gräber" },
+        { languageCode: "en", animalName: "Meerkat", animalDescription: "Cute digger" },
       ],
       releaseDate: "2026-03-07",
       price: 1000,
-      priceType: "Zoodollar",
-      sellValue: 200,
+      currencyId: 1,
+      sellingPrice: 200,
       popularity: 50,
-      auswildern: 100,
-      enclosureType: 10,
+      releaseExp: 100,
+      biomeId: 10,
       breedingLevel: 1,
-      breedingCosts: 50,
+      breedingCost: 50,
       breedingDuration: 120,
-      breedingChance: 80,
+      breedingProbability: 80,
       actions: {
         feed: { xp: 10, durationHours: 1, durationMinutes: 0 },
       },
@@ -151,13 +151,13 @@ describe("Animal Service", () => {
 
   describe("updateAnimal", () => {
     const mockUpdateData = {
-      translations: [{ spracheCode: "de", name: "Löwe (Update)", description: "Neuer Text" }],
+      animaltext: [{ languageCode: "de", animalName: "Löwe (Update)", animalDescription: "Neuer Text" }],
       releaseDate: "2026-06-24",
       price: 5000,
       currencyId: 2,
-      sellPrice: 1000,
+      sellingPrice: 1000,
       popularity: 200,
-      releaseTickets: 500,
+      releaseExp: 500,
       biomeId: 12,
       breedingLevel: 4,
       breedingCost: 300,

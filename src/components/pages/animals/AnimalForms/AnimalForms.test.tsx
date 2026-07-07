@@ -22,6 +22,9 @@ vi.mock("next-intl", () => ({
   },
 }));
 
+const mockPush = vi.fn();
+vi.mock("next/navigation", () => ({ useRouter: () => ({ push: mockPush }) }));
+
 vi.mock("next/image", () => ({
   default: ({ src, alt, ...props }: any) => <img src={src} alt={alt} {...props} />,
 }));
@@ -94,7 +97,7 @@ vi.mock("@/components/ui/form/SubmitButton", () => ({
 }));
 
 vi.mock("@/utils/AnimalUtil", () => ({
-  mapAnimalToForm: vi.fn((animal) => animal || { biomeId: null, releaseDate: "" }),
+  mapAnimalToForm: vi.fn((animal) => animal || { biomeId: null, releaseDate: "", animaltext: [{ languageCode: "de", animalName: "Löwe" }] }),
 }));
 
 const mockLanguages = [{ code: "de", name: "Deutsch" }];
@@ -148,7 +151,7 @@ describe("AnimalForm Integration Tests", () => {
   });
 
   test("ruft saveAnimal auf und leert den Store bei erfolgreichem Submit", async () => {
-    mockSaveAnimal.mockResolvedValue(true); // Erfolg simulieren
+    mockSaveAnimal.mockResolvedValue(99); // Erfolg simulieren
 
     render(<AnimalForm languages={mockLanguages} biomes={mockBiomes} originsData={mockOrigins} />);
 
@@ -161,10 +164,9 @@ describe("AnimalForm Integration Tests", () => {
     const submitBtn = screen.getByRole("button", { name: "Animals.form.saveAnimal" });
     fireEvent.click(submitBtn);
 
-    expect(mockSaveAnimal).toHaveBeenCalledWith({
-      biomeId: 1,
-      releaseDate: "2026-06-24",
-    });
+    expect(mockSaveAnimal).toHaveBeenCalledWith(
+      expect.objectContaining({ biomeId: 1, releaseDate: "2026-06-24" }),
+    );
 
     await waitFor(() => {
       expect(mockClearEditingAnimal).toHaveBeenCalled();

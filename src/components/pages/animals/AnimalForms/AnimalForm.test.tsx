@@ -4,6 +4,7 @@ import { describe, test, expect, vi, beforeEach } from "vitest";
 
 import { useAnimalStore } from "@/store/useAnimalStore";
 import AnimalForm from "./AnimalForm";
+import { mapAnimalToForm } from "@/utils/AnimalUtil";
 
 vi.mock("@/store/useAnimalStore", () => ({
   useAnimalStore: vi.fn(),
@@ -19,6 +20,11 @@ vi.mock("next/image", () => ({
 
 vi.mock("react-toastify", () => ({
   toast: { warn: vi.fn() },
+}));
+
+const mockPush = vi.fn();
+vi.mock("next/navigation", () => ({
+  useRouter: () => ({ push: mockPush }),
 }));
 
 import { toast } from "react-toastify";
@@ -83,11 +89,11 @@ vi.mock("@/components/ui/form/SubmitButton", () => ({
 }));
 
 vi.mock("@/utils/AnimalUtil", () => ({
-  mapAnimalToForm: vi.fn((animal) => animal || { biomeId: null }),
+  mapAnimalToForm: vi.fn((animal) => animal || { biomeId: null, animaltext: [{ languageCode: "de", animalName: "Löwe" }] }),
 }));
 
 const mockLanguages = [{ code: "de", name: "Deutsch" }];
-const mockBiomes = [{ id: 1, identifier: "savanna" }];
+const mockBiomes = [{ id: 1, identifier: "savanna", name: "Savanne" }] as any;
 const mockOrigins = [{ id: 1, name: "Shop" }];
 const mockAnimal = { id: 10, biomeId: 1 } as any;
 
@@ -131,7 +137,28 @@ describe("AnimalForm Integration Tests", () => {
     expect(mockSetEditingAnimal).toHaveBeenCalledWith(mockAnimal);
   });
 
+  test("zeigt eine Toast-Warnung und ruft saveAnimal NICHT auf, wenn der deutsche Name fehlt", async () => {
+    vi.mocked(mapAnimalToForm).mockReturnValue({ biomeId: null, animaltext: [{ languageCode: "de", animalName: "" }] });
+
+    render(
+      <AnimalForm languages={mockLanguages} biomes={mockBiomes} originsData={mockOrigins} />,
+    );
+
+    fireEvent.click(screen.getByRole("button", { name: "Animals.form.saveAnimal" }));
+
+    await waitFor(() => {
+      expect(toast.warn).toHaveBeenCalledWith("Bitte gib einen deutschen Namen ein!");
+    });
+
+    expect(mockSaveAnimal).not.toHaveBeenCalled();
+  });
+
   test("zeigt eine Toast-Warnung und ruft saveAnimal NICHT auf, wenn biomeId fehlt", async () => {
+    vi.mocked(mapAnimalToForm).mockReturnValue({
+      biomeId: null,
+      animaltext: [{ languageCode: "de", animalName: "Löwe" }],
+    });
+
     render(
       <AnimalForm languages={mockLanguages} biomes={mockBiomes} originsData={mockOrigins} />,
     );
@@ -146,7 +173,7 @@ describe("AnimalForm Integration Tests", () => {
   });
 
   test("ruft saveAnimal auf, wenn das Formular mit biomeId abgesendet wird", async () => {
-    mockSaveAnimal.mockResolvedValue(true);
+    mockSaveAnimal.mockResolvedValue(99);
 
     render(
       <AnimalForm languages={mockLanguages} biomes={mockBiomes} originsData={mockOrigins} />,
@@ -161,7 +188,7 @@ describe("AnimalForm Integration Tests", () => {
   });
 
   test("ruft clearEditingAnimal auf, wenn saveAnimal erfolgreich war", async () => {
-    mockSaveAnimal.mockResolvedValue(true);
+    mockSaveAnimal.mockResolvedValue(99);
 
     render(
       <AnimalForm languages={mockLanguages} biomes={mockBiomes} originsData={mockOrigins} />,
@@ -169,7 +196,7 @@ describe("AnimalForm Integration Tests", () => {
 
     // Init-useEffect hat clearEditingAnimal bereits aufgerufen — Reset vor dem Submit
     vi.clearAllMocks();
-    mockSaveAnimal.mockResolvedValue(true);
+    mockSaveAnimal.mockResolvedValue(99);
 
     fireEvent.change(screen.getByLabelText("Gehege"), { target: { value: "1" } });
     fireEvent.click(screen.getByRole("button", { name: "Animals.form.saveAnimal" }));
@@ -200,8 +227,46 @@ describe("AnimalForm Integration Tests", () => {
     expect(mockClearEditingAnimal).not.toHaveBeenCalled();
   });
 
+  test("navigiert zur Detailseite nach erfolgreichem Speichern (neu)", async () => {
+    mockSaveAnimal.mockResolvedValue(99);
+
+    render(
+      <AnimalForm languages={mockLanguages} biomes={mockBiomes} originsData={mockOrigins} />,
+    );
+
+    fireEvent.change(screen.getByLabelText("Gehege"), { target: { value: "1" } });
+    fireEvent.click(screen.getByRole("button", { name: "Animals.form.saveAnimal" }));
+
+    await waitFor(() => {
+      expect(mockPush).toHaveBeenCalledWith("/animals/99");
+    });
+  });
+
+  test("navigiert zur Detailseite nach erfolgreichem Speichern (bearbeiten)", async () => {
+    mockSaveAnimal.mockResolvedValue(10);
+
+    render(
+      <AnimalForm
+        animal={mockAnimal}
+        languages={mockLanguages}
+        biomes={mockBiomes}
+        originsData={mockOrigins}
+      />,
+    );
+
+    vi.clearAllMocks();
+    mockSaveAnimal.mockResolvedValue(10);
+
+    fireEvent.change(screen.getByLabelText("Gehege"), { target: { value: "1" } });
+    fireEvent.click(screen.getByRole("button", { name: "Animals.form.saveAnimal" }));
+
+    await waitFor(() => {
+      expect(mockPush).toHaveBeenCalledWith("/animals/10");
+    });
+  });
+
   test("übergibt die aktuellen Formulardaten an saveAnimal", async () => {
-    mockSaveAnimal.mockResolvedValue(true);
+    mockSaveAnimal.mockResolvedValue(99);
 
     render(
       <AnimalForm languages={mockLanguages} biomes={mockBiomes} originsData={mockOrigins} />,

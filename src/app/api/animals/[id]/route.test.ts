@@ -1,11 +1,17 @@
 import { describe, test, expect, vi, beforeEach } from "vitest";
 
-import { PUT } from "./route";
-import { updateAnimal } from "@/service/AnimalService";
+import { PUT, DELETE } from "./route";
+import { updateAnimal, deleteAnimal } from "@/service/AnimalService";
 
 vi.mock("@/service/AnimalService", () => ({
   updateAnimal: vi.fn(),
+  deleteAnimal: vi.fn(),
 }));
+
+const validBody = {
+  biomeId: 10,
+  animaltext: [{ languageCode: "de", animalName: "Erdmännchen (Neu)", animalDescription: "" }],
+};
 
 describe("Animal Dynamic PUT API Route Handler", () => {
   beforeEach(() => {
@@ -17,13 +23,13 @@ describe("Animal Dynamic PUT API Route Handler", () => {
 
     const request = new Request("http://localhost:3000/api/animals/42", {
       method: "PUT",
-      body: JSON.stringify({ nameDe: "Erdmännchen (Neu)", biomeId: 10 }),
+      body: JSON.stringify(validBody),
     });
 
     const response = await PUT(request, { params: Promise.resolve({ id: "42" }) });
     const data = await response.json();
 
-    expect(updateAnimal).toHaveBeenCalledWith(42, { nameDe: "Erdmännchen (Neu)", biomeId: 10 });
+    expect(updateAnimal).toHaveBeenCalledWith(42, validBody);
     expect(response.status).toBe(200);
     expect(data).toEqual({ message: "Tier erfolgreich aktualisiert", id: 42 });
   });
@@ -31,7 +37,7 @@ describe("Animal Dynamic PUT API Route Handler", () => {
   test("Gibt Status 400 zurück, wenn die ID keine Zahl ist", async () => {
     const request = new Request("http://localhost:3000/api/animals/abc", {
       method: "PUT",
-      body: JSON.stringify({ nameDe: "Test", biomeId: 1 }),
+      body: JSON.stringify(validBody),
     });
 
     const response = await PUT(request, { params: Promise.resolve({ id: "abc" }) });
@@ -45,7 +51,7 @@ describe("Animal Dynamic PUT API Route Handler", () => {
   test("Gibt Status 400 zurück, wenn Pflichtfelder fehlen", async () => {
     const request = new Request("http://localhost:3000/api/animals/42", {
       method: "PUT",
-      body: JSON.stringify({ nameDe: "Unvollständig" }), // biomeId fehlt!
+      body: JSON.stringify({ animaltext: [{ languageCode: "de", animalName: "Unvollständig" }] }), // biomeId fehlt!
     });
 
     const response = await PUT(request, { params: Promise.resolve({ id: "42" }) });
@@ -61,7 +67,7 @@ describe("Animal Dynamic PUT API Route Handler", () => {
 
     const request = new Request("http://localhost:3000/api/animals/42", {
       method: "PUT",
-      body: JSON.stringify({ nameDe: "Löwe", biomeId: 12 }),
+      body: JSON.stringify({ biomeId: 12, animaltext: [{ languageCode: "de", animalName: "Löwe", animalDescription: "" }] }),
     });
 
     const response = await PUT(request, { params: Promise.resolve({ id: "42" }) });
@@ -70,5 +76,46 @@ describe("Animal Dynamic PUT API Route Handler", () => {
     expect(response.status).toBe(500);
     expect(data.message).toBe("Fehler beim Aktualisieren des Tieres");
     expect(data.error).toBe("Datenbank-Timeout");
+  });
+});
+
+describe("Animal Dynamic DELETE API Route Handler", () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
+
+  test("Löscht ein Tier erfolgreich mit Status 204", async () => {
+    vi.mocked(deleteAnimal).mockResolvedValue({} as any);
+
+    const request = new Request("http://localhost:3000/api/animals/42", { method: "DELETE" });
+
+    const response = await DELETE(request, { params: Promise.resolve({ id: "42" }) });
+
+    expect(deleteAnimal).toHaveBeenCalledWith(42);
+    expect(response.status).toBe(204);
+  });
+
+  test("Gibt Status 400 zurück, wenn die ID keine Zahl ist", async () => {
+    const request = new Request("http://localhost:3000/api/animals/abc", { method: "DELETE" });
+
+    const response = await DELETE(request, { params: Promise.resolve({ id: "abc" }) });
+    const data = await response.json();
+
+    expect(response.status).toBe(400);
+    expect(data.message).toBe("Ungültige Tier-ID");
+    expect(deleteAnimal).not.toHaveBeenCalled();
+  });
+
+  test("Gibt Status 500 zurück, wenn beim Löschen ein DB-Fehler auftritt", async () => {
+    vi.mocked(deleteAnimal).mockRejectedValue(new Error("Constraint-Verletzung"));
+
+    const request = new Request("http://localhost:3000/api/animals/42", { method: "DELETE" });
+
+    const response = await DELETE(request, { params: Promise.resolve({ id: "42" }) });
+    const data = await response.json();
+
+    expect(response.status).toBe(500);
+    expect(data.message).toBe("Fehler beim Löschen des Tieres");
+    expect(data.error).toBe("Constraint-Verletzung");
   });
 });

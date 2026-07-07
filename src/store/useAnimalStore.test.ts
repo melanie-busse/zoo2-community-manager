@@ -106,9 +106,9 @@ describe("useAnimalStore", () => {
       json: async () => newAnimal,
     });
 
-    const success = await useAnimalStore.getState().saveAnimal({ id: null, name: "Pinguin" });
+    const savedId = await useAnimalStore.getState().saveAnimal({ id: null, name: "Pinguin" });
 
-    expect(success).toBe(true);
+    expect(savedId).toBe(3);
     expect(fetch).toHaveBeenCalledWith("/api/animals", expect.any(Object));
     expect(toast.success).toHaveBeenCalledWith("Tier erfolgreich erstellt!");
     expect(useAnimalStore.getState().allAnimals).toContainEqual(newAnimal);
