@@ -31,9 +31,9 @@ vi.mock("next-intl", () => ({
   useTranslations: () => (key: string) => (key === "Filter.search_placeholder" ? "Suche..." : key),
 }));
 
-const mockSetSearchQuery = vi.fn();
-const mockSetBiomeFilter = vi.fn();
-const mockSetShelterLevelFilter = vi.fn();
+const mockSetSearchTerm = vi.fn();
+const mockSetSelectedBiome = vi.fn();
+const mockSetSelectedShelterLevel = vi.fn();
 const mockSetInventoryStatus = vi.fn();
 
 const mockCoats = [
@@ -47,14 +47,14 @@ const mockCoats = [
 vi.mock("@/store/useSpecialCoatStore", () => ({
   useSpecialCoatStore: (selector: any) =>
     selector({
-      allInitalItems: mockCoats,
-      searchQuery: "",
-      selectedBiomeId: null,
+      allSpecialCoats: mockCoats,
+      searchTerm: "",
+      selectedBiome: null,
       selectedShelterLevel: null,
       inventoryStatus: "all",
-      setSearchQuery: mockSetSearchQuery,
-      setBiomeFilter: mockSetBiomeFilter,
-      setShelterLevelFilter: mockSetShelterLevelFilter,
+      setSearchTerm: mockSetSearchTerm,
+      setSelectedBiome: mockSetSelectedBiome,
+      setSelectedShelterLevel: mockSetSelectedShelterLevel,
       setInventoryStatusFilter: mockSetInventoryStatus,
     }),
 }));
@@ -70,7 +70,7 @@ describe("SpecialCoatFilterBar", () => {
     const input = screen.getByPlaceholderText("Suche...");
     fireEvent.change(input, { target: { value: "Löwe" } });
 
-    expect(mockSetSearchQuery).toHaveBeenCalledWith("Löwe");
+    expect(mockSetSearchTerm).toHaveBeenCalledWith("Löwe");
   });
 
   test("ruft setInventoryStatusFilter auf, wenn der Status-Filter bedient wird", () => {
@@ -82,21 +82,21 @@ describe("SpecialCoatFilterBar", () => {
     expect(mockSetInventoryStatus).toHaveBeenCalled();
   });
 
-  test("ruft setBiomeFilter auf, wenn ein Biome-Filter bedient wird", () => {
+  test("ruft setSelectedBiome auf, wenn ein Biome-Filter bedient wird", () => {
     render(<SpecialCoatFilterBar />);
 
     const biomeButton = screen.getByText("all_enclosures");
     fireEvent.click(biomeButton);
 
-    expect(mockSetBiomeFilter).toHaveBeenCalled();
+    expect(mockSetSelectedBiome).toHaveBeenCalled();
   });
 
-  test("ruft setShelterLevelFilter auf, wenn ein Level-Filter bedient wird", () => {
+  test("ruft setSelectedShelterLevel auf, wenn ein Level-Filter bedient wird", () => {
     render(<SpecialCoatFilterBar />);
 
     const levelButton = screen.getByText("all_levels");
     fireEvent.click(levelButton);
 
-    expect(mockSetShelterLevelFilter).toHaveBeenCalled();
+    expect(mockSetSelectedShelterLevel).toHaveBeenCalled();
   });
 });

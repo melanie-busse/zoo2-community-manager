@@ -56,6 +56,10 @@ vi.mock("@/components/ui/badges/ActionGroupBadge", () => ({
   default: () => <button>AdminActions</button>,
 }));
 
+vi.mock("next-intl", () => ({
+  useTranslations: () => (key: string) => key,
+}));
+
 // 4. Utils stubs
 vi.mock("@/utils/SpecialCoatUtil", () => ({ getSpecialCoatImage: vi.fn() }));
 vi.mock("@/utils/BiomeUtil", () => ({ getBiomeImage: vi.fn(), getShelterImage: vi.fn() }));

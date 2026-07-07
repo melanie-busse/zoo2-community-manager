@@ -23,9 +23,9 @@ vi.mock("@/components/elements/Pagination/Pagination", () => ({
 const mockNextPage = vi.fn();
 const mockPrevPage = vi.fn();
 
-let storeState = {
+const storeState = {
   currentPage: 1,
-  filteredItems: new Array(24),
+  filteredCount: 24,
   itemsPerPage: 12,
   nextPage: mockNextPage,
   prevPage: mockPrevPage,

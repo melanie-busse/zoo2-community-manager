@@ -7,7 +7,7 @@ const createMockCoat = (
   id: number,
   animalName: string,
   color: string,
-  biomeId: number,
+  biomeIdentifier: string,
   shelterLevel: number,
   ownedAmount: number,
   price: number,
@@ -21,26 +21,25 @@ const createMockCoat = (
       id: id * 10,
       price,
       shelterLevel,
-      biome: { id: biomeId, identifier: biomeId === 1 ? "grassland" : "desert" },
+      biome: { id: id, identifier: biomeIdentifier },
       animaltext: [{ animalName, languageCode: "de" }],
     },
   }) as any;
 
 const mockCoats: SpecialCoat[] = [
-  createMockCoat(1, "Löwe", "Goldgelb", 1, 1, 0, 500), // Biome 1, Level 1, 0 Stück (not_owned)
-  createMockCoat(2, "Zebra", "Streifen", 1, 2, 1, 300), // Biome 1, Level 2, 1 Stück (missing_partner)
-  createMockCoat(3, "Erdmännchen", "Braun", 2, 1, 2, 100), // Biome 2, Level 1, 2 Stück (ready)
+  createMockCoat(1, "Löwe", "Goldgelb", "grassland", 1, 0, 500), // Biome grassland, Level 1, 0 Stück (not_owned)
+  createMockCoat(2, "Zebra", "Streifen", "grassland", 2, 1, 300), // Biome grassland, Level 2, 1 Stück (missing_partner)
+  createMockCoat(3, "Erdmännchen", "Braun", "desert", 1, 2, 100), // Biome desert, Level 1, 2 Stück (ready)
 ];
 
 describe("useSpecialCoatStore", () => {
   beforeEach(() => {
-    // Zustand-Store vor jedem Test komplett auf Standardwerte zurücksetzen
     useSpecialCoatStore.setState({
       allSpecialCoats: [],
       currentItems: [],
-      filteredItems: [],
-      searchQuery: "",
-      selectedBiomeId: null,
+      filteredCount: 0,
+      searchTerm: "",
+      selectedBiome: null,
       selectedShelterLevel: null,
       inventoryStatus: "all",
       sortBy: "animalName",
@@ -56,7 +55,7 @@ describe("useSpecialCoatStore", () => {
 
     const updatedState = useSpecialCoatStore.getState();
     expect(updatedState.allSpecialCoats).toHaveLength(3);
-    expect(updatedState.filteredItems).toHaveLength(3);
+    expect(updatedState.filteredCount).toBe(3);
     // Da itemsPerPage=2 ist, sollten in currentItems nur die ersten zwei sein
     expect(updatedState.currentItems).toHaveLength(2);
     // Standard-Sortierung ist animalName (asc): Erdmännchen (E) vor Löwe (L)
@@ -69,49 +68,49 @@ describe("useSpecialCoatStore", () => {
     });
 
     test("sollte nach Suchbegriff (Name, Farbname oder Variantename) filtern", () => {
-      useSpecialCoatStore.getState().setSearchQuery("Goldgelb");
-      expect(useSpecialCoatStore.getState().filteredItems).toHaveLength(1);
+      useSpecialCoatStore.getState().setSearchTerm("Goldgelb");
+      expect(useSpecialCoatStore.getState().filteredCount).toBe(1);
       expect(
-        useSpecialCoatStore.getState().filteredItems[0].animal?.animaltext?.[0].animalName,
+        useSpecialCoatStore.getState().currentItems[0].animal?.animaltext?.[0].animalName,
       ).toBe("Löwe");
 
-      useSpecialCoatStore.getState().setSearchQuery("Zebra");
-      expect(useSpecialCoatStore.getState().filteredItems).toHaveLength(1);
+      useSpecialCoatStore.getState().setSearchTerm("Zebra");
+      expect(useSpecialCoatStore.getState().filteredCount).toBe(1);
     });
 
     test("sollte nach Biome filtern", () => {
-      useSpecialCoatStore.getState().setBiomeFilter(1); // Löwe und Zebra haben Biome 1
-      expect(useSpecialCoatStore.getState().filteredItems).toHaveLength(2);
+      useSpecialCoatStore.getState().setSelectedBiome("grassland"); // Löwe und Zebra haben grassland
+      expect(useSpecialCoatStore.getState().filteredCount).toBe(2);
     });
 
     test("sollte nach Stalllevel (shelterLevel) filtern", () => {
-      useSpecialCoatStore.getState().setShelterLevelFilter(2); // Nur Zebra hat Level 2
-      expect(useSpecialCoatStore.getState().filteredItems).toHaveLength(1);
+      useSpecialCoatStore.getState().setSelectedShelterLevel(2); // Nur Zebra hat Level 2
+      expect(useSpecialCoatStore.getState().filteredCount).toBe(1);
       expect(
-        useSpecialCoatStore.getState().filteredItems[0].animal?.animaltext?.[0].animalName,
+        useSpecialCoatStore.getState().currentItems[0].animal?.animaltext?.[0].animalName,
       ).toBe("Zebra");
     });
 
     test("sollte nach Ampelsystem / Inventory-Status filtern", () => {
       // 1. Zuchtbereit (ready -> >= 2)
       useSpecialCoatStore.getState().setInventoryStatusFilter("ready");
-      expect(useSpecialCoatStore.getState().filteredItems).toHaveLength(1);
+      expect(useSpecialCoatStore.getState().filteredCount).toBe(1);
       expect(
-        useSpecialCoatStore.getState().filteredItems[0].animal?.animaltext?.[0].animalName,
+        useSpecialCoatStore.getState().currentItems[0].animal?.animaltext?.[0].animalName,
       ).toBe("Erdmännchen");
 
       // 2. Partner gesucht (missing_partner -> genau 1)
       useSpecialCoatStore.getState().setInventoryStatusFilter("missing_partner");
-      expect(useSpecialCoatStore.getState().filteredItems).toHaveLength(1);
+      expect(useSpecialCoatStore.getState().filteredCount).toBe(1);
       expect(
-        useSpecialCoatStore.getState().filteredItems[0].animal?.animaltext?.[0].animalName,
+        useSpecialCoatStore.getState().currentItems[0].animal?.animaltext?.[0].animalName,
       ).toBe("Zebra");
 
       // 3. Nicht im Besitz (not_owned -> genau 0)
       useSpecialCoatStore.getState().setInventoryStatusFilter("not_owned");
-      expect(useSpecialCoatStore.getState().filteredItems).toHaveLength(1);
+      expect(useSpecialCoatStore.getState().filteredCount).toBe(1);
       expect(
-        useSpecialCoatStore.getState().filteredItems[0].animal?.animaltext?.[0].animalName,
+        useSpecialCoatStore.getState().currentItems[0].animal?.animaltext?.[0].animalName,
       ).toBe("Löwe");
     });
   });
@@ -125,7 +124,7 @@ describe("useSpecialCoatStore", () => {
       // Default ist "animalName" + "asc"
       useSpecialCoatStore.getState().toggleSort("animalName");
 
-      let state = useSpecialCoatStore.getState();
+      const state = useSpecialCoatStore.getState();
       expect(state.sortBy).toBe("animalName");
       expect(state.sortDirection).toBe("desc");
       // Bei absteigender Sortierung sollte Zebra (Z) ganz oben stehen
@@ -136,8 +135,8 @@ describe("useSpecialCoatStore", () => {
       useSpecialCoatStore.getState().toggleSort("price"); // Schaltet auf price asc um
       const state = useSpecialCoatStore.getState();
       // Erdmännchen (100) -> Zebra (300) -> Löwe (500)
-      expect(state.filteredItems[0].animal?.price).toBe(100);
-      expect(state.filteredItems[1].animal?.price).toBe(300);
+      expect(state.currentItems[0].animal?.price).toBe(100);
+      expect(state.currentItems[1].animal?.price).toBe(300);
     });
   });
 

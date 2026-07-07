@@ -95,7 +95,7 @@ describe("SpecialCodesDesktopTable", () => {
   test("triggert toggleSort beim Klick auf einen sortierbaren Header", () => {
     render(<SpecialCoatsDesktopTable />);
 
-    const speciesHeader = screen.getByText("SpecialCoats.species");
+    const speciesHeader = screen.getByText("SpecialCoat.species");
     fireEvent.click(speciesHeader);
 
     expect(mockToggleSort).toHaveBeenCalledWith("name");
