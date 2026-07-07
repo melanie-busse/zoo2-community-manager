@@ -58,6 +58,7 @@ export default function AnimalForm({ animal, languages, biomes, originsData }: A
   );
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setFormData(mapAnimalToForm(editingAnimal, languages));
   }, [editingAnimal, languages]);
 
@@ -71,11 +72,16 @@ export default function AnimalForm({ animal, languages, biomes, originsData }: A
     }
 
     setIsSubmitting(true);
-    const success = await saveAnimal(formData);
-    setIsSubmitting(false);
+    try {
+      const success = await saveAnimal(formData);
 
-    if (success) {
-      clearEditingAnimal();
+      if (success) {
+        clearEditingAnimal();
+      }
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 

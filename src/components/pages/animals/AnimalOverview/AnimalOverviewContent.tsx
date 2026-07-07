@@ -42,7 +42,7 @@ export default function AnimalOverviewContent() {
           </MobileView>
         </>
       ) : (
-        <EmptyState object="animals" />
+        <EmptyState object="animals" message="Keine Tiere vorhanden." />
       )}
 
       <AnimalPagination />

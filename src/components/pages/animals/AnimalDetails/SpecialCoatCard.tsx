@@ -16,7 +16,7 @@ interface SpecialCoatCardProps {
 
 export default function SpecialCoatCard({ specialCoat }: SpecialCoatCardProps) {
   const tCommon = useTranslations("Common");
-  const origin = specialCoat.origin;
+  const origins = specialCoat.specialcoatsorigin?.map((o) => o.origin).filter(Boolean) ?? [];
 
   const displayName = specialCoat.specialcoatstext?.[0]?.name || "";
   const releaseDate = specialCoat.releaseDate
@@ -33,13 +33,13 @@ export default function SpecialCoatCard({ specialCoat }: SpecialCoatCardProps) {
         📅 {tCommon("release")}: {releaseDate}
       </Styles.ReleaseDate>
 
-      {specialCoat.origin && specialCoat.origin.length > 0 && (
+      {origins.length > 0 && (
         <Styles.OriginContainer>
-          {specialCoat.origin.map((ori) => (
-            <Styles.OriginRowSpecialCoat key={ori.id} title={ori.name}>
+          {origins.map((origin) => (
+            <Styles.OriginRowSpecialCoat key={origin!.id} title={origin!.name}>
               <NextImage
-                src={`/images/origins/${ori.image}`}
-                alt={ori.name}
+                src={`/images/origins/${origin!.image}`}
+                alt={origin!.name}
                 width={20}
                 height={20}
               />

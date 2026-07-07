@@ -20,6 +20,9 @@ import CardDivider from "@/components/page-structure/Card/CardDevider";
 import CardStatsRow from "@/components/page-structure/Card/CardStatsRow";
 import CardPriceRow from "@/components/page-structure/Card/CardPriceRow";
 import { CardIconsRow } from "@/components/page-structure/Card/CardIconsRow";
+import { useSpecialCoatStore } from "@/store/useSpecialCoatStore";
+import { useTranslations } from "next-intl";
+import { useAnimalStore } from "@/store/useAnimalStore";
 
 interface AnimalMobileCardProps {
   animal: Animal;
@@ -28,6 +31,10 @@ interface AnimalMobileCardProps {
 export default function AnimalMobileCard({ animal }: AnimalMobileCardProps) {
   const { data: session } = useSession();
   const router = useRouter();
+
+  const setEditingAnimal = useAnimalStore((state) => state.setEditingAnimal);
+  const deleteAnimal = useAnimalStore((state) => state.deleteAnimal);
+  const t = useTranslations();
 
   if (!animal) return null;
 
@@ -39,7 +46,16 @@ export default function AnimalMobileCard({ animal }: AnimalMobileCardProps) {
       <CardHeaderRow>
         <Name>{displayName}</Name>
 
-        {isAdmin && <ActionGroupBadge object={animal} />}
+        {isAdmin && (
+          <ActionGroupBadge
+            id={animal.id}
+            onEdit={() => {
+              setEditingAnimal(animal);
+              router.push(`/animal/${animal.id}/edit`);
+            }}
+            onDelete={() => deleteAnimal(animal.id, t)}
+          />
+        )}
       </CardHeaderRow>
 
       <CardDivider />

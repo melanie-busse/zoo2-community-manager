@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useEffect } from "react";
 
 import { Animal } from "@/types/animal";
 import AnimalDetailContent from "@/components/pages/animals/AnimalDetails/AnimalDetailContent";
@@ -11,12 +11,9 @@ interface AnimalDetailContentClientProps {
 }
 
 export default function AnimalDetailContentClient({ animal }: AnimalDetailContentClientProps) {
-  const initializedAnimalId = useRef<number | null>(null);
-
-  if (initializedAnimalId.current !== animal.id) {
+  useEffect(() => {
     useAnimalStore.setState({ selectedAnimal: animal });
-    initializedAnimalId.current = animal.id;
-  }
+  }, [animal]);
 
   return <AnimalDetailContent />;
 }
