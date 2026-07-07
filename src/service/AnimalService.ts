@@ -74,24 +74,23 @@ export async function getAnimalById(
 
 export async function createAnimal(animalData: any) {
   const {
-    translations,
+    animaltext,
     releaseDate,
     price,
-    priceType,
-    sellValue,
+    currencyId,
+    sellingPrice,
     popularity,
-    auswildern,
-    enclosureType,
+    releaseExp,
+    biomeId,
     breedingLevel,
-    breedingCosts,
+    breedingCost,
     breedingDuration,
-    breedingChance,
+    breedingProbability,
     actions,
     origins,
     enclosureSizes,
   } = animalData;
 
-  const priceTypeId = priceType === "Zoodollar" ? 1 : 2;
   const formattedReleaseDate = releaseDate ? new Date(releaseDate) : null;
 
   return await prisma.$transaction(async (tx) => {
@@ -99,25 +98,25 @@ export async function createAnimal(animalData: any) {
       data: {
         releaseDate: formattedReleaseDate,
         price: price ? parseInt(price.toString(), 10) : null,
-        priceTypeId: priceTypeId,
-        sellingPrice: sellValue ? parseInt(sellValue.toString(), 10) : null,
+        priceTypeId: currencyId ?? 1,
+        sellingPrice: sellingPrice ? parseInt(sellingPrice.toString(), 10) : null,
         popularity: popularity ? parseInt(popularity.toString(), 10) : null,
-        releaseExp: auswildern ? parseInt(auswildern.toString(), 10) : null,
-        biomeId: parseInt(enclosureType.toString(), 10),
+        releaseExp: releaseExp ? parseInt(releaseExp.toString(), 10) : null,
+        biomeId: biomeId ? parseInt(biomeId.toString(), 10) : null,
         shelterLevel: breedingLevel ? parseInt(breedingLevel.toString(), 10) : null,
-        breedingCost: breedingCosts ? parseInt(breedingCosts.toString(), 10) : null,
+        breedingCost: breedingCost ? parseInt(breedingCost.toString(), 10) : null,
         breedingDuration: breedingDuration ? parseInt(breedingDuration.toString(), 10) : null,
-        breedingProbability: breedingChance ? parseInt(breedingChance.toString(), 10) : null,
+        breedingProbability: breedingProbability ? parseInt(breedingProbability.toString(), 10) : null,
       },
     });
 
-    if (Array.isArray(translations) && translations.length > 0) {
+    if (Array.isArray(animaltext) && animaltext.length > 0) {
       await tx.animalText.createMany({
-        data: translations.map((t: any) => ({
+        data: animaltext.map((t: any) => ({
           animalId: animal.id,
-          languageCode: t.spracheCode,
-          animalName: t.name || "",
-          animalDescription: t.description || "",
+          languageCode: t.languageCode,
+          animalName: t.animalName || "",
+          animalDescription: t.animalDescription || "",
         })),
       });
     }
@@ -171,13 +170,13 @@ export async function createAnimal(animalData: any) {
 
 export async function updateAnimal(id: number, animalData: any) {
   const {
-    translations,
+    animaltext,
     releaseDate,
     price,
     currencyId,
-    sellPrice,
+    sellingPrice,
     popularity,
-    releaseTickets,
+    releaseExp,
     biomeId,
     breedingLevel,
     breedingCost,
@@ -197,9 +196,9 @@ export async function updateAnimal(id: number, animalData: any) {
         releaseDate: formattedReleaseDate,
         price: price,
         priceTypeId: currencyId ?? 1,
-        sellingPrice: sellPrice,
+        sellingPrice: sellingPrice,
         popularity: popularity,
-        releaseExp: releaseTickets,
+        releaseExp: releaseExp,
         biomeId: biomeId,
         shelterLevel: breedingLevel,
         breedingCost: breedingCost,
@@ -210,13 +209,13 @@ export async function updateAnimal(id: number, animalData: any) {
 
     await tx.animalText.deleteMany({ where: { animalId: id } });
 
-    if (Array.isArray(translations) && translations.length > 0) {
+    if (Array.isArray(animaltext) && animaltext.length > 0) {
       await tx.animalText.createMany({
-        data: translations.map((t: any) => ({
+        data: animaltext.map((t: any) => ({
           animalId: id,
-          languageCode: t.spracheCode,
-          animalName: t.name || "",
-          animalDescription: t.description || "",
+          languageCode: t.languageCode,
+          animalName: t.animalName || "",
+          animalDescription: t.animalDescription || "",
         })),
       });
     }
@@ -274,4 +273,8 @@ export async function updateAnimal(id: number, animalData: any) {
 
     return animal;
   });
+}
+
+export async function deleteAnimal(id: number) {
+  return await prisma.animal.delete({ where: { id } });
 }
