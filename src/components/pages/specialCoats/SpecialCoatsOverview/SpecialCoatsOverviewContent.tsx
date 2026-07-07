@@ -1,6 +1,6 @@
 "use client";
 
-import React, { Suspense, useEffect } from "react";
+import React, { Suspense } from "react";
 import { useTranslations } from "next-intl";
 
 import EmptyState from "@/components/elements/EmptyState/EmptyState";
@@ -18,10 +18,6 @@ export default function SpecialCoatsOverviewContent() {
 
   const currentItems = useSpecialCoatStore((state) => state.currentItems);
   const hasItems = currentItems.length > 0;
-  useEffect(() => {
-    console.log("Current Items haben sich geändert:", currentItems);
-  }, [currentItems]);
-
   const currentCount: number = useSpecialCoatStore((state) => state.currentItems.length);
   const totalCount: number = useSpecialCoatStore((state) => state.filteredCount);
 

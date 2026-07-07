@@ -13,11 +13,8 @@ import FormGrid from "@/components/ui/form/styling/FormGrid";
 import Column from "@/components/ui/form/styling/Column";
 import AnimalSelectSection from "@/components/ui/form/sections/AnimalSelectSection";
 import SpecialCoatTranslationSection from "@/components/ui/form/sections/SpecialCoatTranslationSection";
-
-const mapSpecialCoatToForm = (coat: any, languages: any[]) => {
-  if (!coat) return { origins: [], translations: {} };
-  return coat;
-};
+import { mapSpecialCoatToForm } from "@/utils/SpecialCoatUtil";
+import styled from "styled-components";
 
 interface OriginOption {
   id: number;
@@ -59,6 +56,7 @@ export default function SpecialCoatForm({
   );
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setFormData(mapSpecialCoatToForm(editingSpecialCoat, languages));
   }, [editingSpecialCoat, languages]);
 
@@ -69,6 +67,7 @@ export default function SpecialCoatForm({
     setIsSubmitting(true);
     try {
       const success = await saveSpecialCoat(formData);
+
       if (success) {
         clearEditingSpecialCoat();
       }
@@ -80,9 +79,8 @@ export default function SpecialCoatForm({
   };
 
   return (
-    <form onSubmit={handleSubmit} style={{ width: "100%" }}>
+    <form onSubmit={handleSubmit}>
       <FormGrid>
-        {/* 1. Spalte links: Grundinfos und Tierauswahl */}
         <Column>
           <BasicInfoSection formData={formData} setFormData={setFormData} />
           <AnimalSelectSection
@@ -92,17 +90,7 @@ export default function SpecialCoatForm({
           />
         </Column>
 
-        {/* 2. Spalte rechts ODER über die volle Breite brechend */}
-        {/* Mit gridColumn: "1 / -1" zwingen wir dieses Div, sich über die gesamte Breite des Rasters zu strecken */}
-        <div
-          style={{
-            gridColumn: "1 / -1",
-            display: "flex",
-            flexDirection: "column",
-            gap: "20px",
-            width: "100%",
-          }}
-        >
+        <ColumnRight>
           <SpecialCoatTranslationSection
             formData={formData}
             setFormData={setFormData}
@@ -113,7 +101,7 @@ export default function SpecialCoatForm({
             selectedOrigins={formData.origins || []}
             setFormData={setFormData}
           />
-        </div>
+        </ColumnRight>
       </FormGrid>
 
       <FooterSection>
@@ -125,3 +113,11 @@ export default function SpecialCoatForm({
     </form>
   );
 }
+
+const ColumnRight = styled.div`
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+`;

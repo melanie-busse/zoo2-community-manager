@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
-import { getSpecialCoatById } from "@/service/SpecialCoatsService";
+import { getSpecialCoatById, updateSpecialCoat } from "@/service/SpecialCoatsService";
 
 interface RouteParams {
   params: Promise<{ id: string }>;
@@ -8,10 +8,10 @@ interface RouteParams {
 
 export async function GET(request: Request, { params }: RouteParams) {
   try {
-    const { id } = await params;
     const { searchParams } = new URL(request.url);
     const locale = searchParams.get("locale") ?? "de";
 
+    const { id } = await params;
     const coat = await getSpecialCoatById(id, locale);
 
     if (!coat) {
@@ -28,69 +28,18 @@ export async function GET(request: Request, { params }: RouteParams) {
 export async function PUT(request: Request, { params }: RouteParams) {
   try {
     const { id } = await params;
-    const coatId = Number(id);
+    const body = await request.json();
 
-    if (isNaN(coatId)) {
+    const updatedCoat = await updateSpecialCoat(id, body);
+
+    return NextResponse.json(updatedCoat);
+  } catch (error: any) {
+    console.error("PUT SpecialCoat Error:", error);
+
+    if (error.message?.includes("Invalid ID")) {
       return NextResponse.json({ message: "Ungültige ID" }, { status: 400 });
     }
 
-    const body = await request.json();
-    const { animalId, releaseDate, image, originIds, texts } = body;
-
-    const updatedCoat = await prisma.$transaction(async (tx) => {
-      const coat = await tx.specialCoat.update({
-        where: { id: coatId },
-        data: {
-          animalId: Number(animalId),
-          releaseDate: releaseDate ? new Date(releaseDate) : new Date(),
-          image: image || null,
-        },
-      });
-
-      if (Array.isArray(originIds)) {
-        await tx.specialCoatsOrigin.deleteMany({
-          where: { specialCoatId: coatId },
-        });
-
-        if (originIds.length > 0) {
-          await tx.specialCoatsOrigin.createMany({
-            data: originIds.map((originId: number) => ({
-              specialCoatId: coatId,
-              originId: Number(originId),
-            })),
-          });
-        }
-      }
-
-      if (Array.isArray(texts)) {
-        for (const text of texts) {
-          await tx.specialCoatsText.upsert({
-            where: {
-              specialCoatId_languageCode: {
-                specialCoatId: coatId,
-                languageCode: text.languageCode,
-              },
-            },
-            update: {
-              name: text.name,
-              color: text.color,
-            },
-            create: {
-              specialCoatId: coatId,
-              languageCode: text.languageCode,
-              name: text.name,
-              color: text.color,
-            },
-          });
-        }
-      }
-
-      return coat;
-    });
-
-    return NextResponse.json(updatedCoat);
-  } catch (error) {
-    console.error("PUT SpecialCoat Error:", error);
     return NextResponse.json({ message: "Fehler beim Aktualisieren" }, { status: 500 });
   }
 }

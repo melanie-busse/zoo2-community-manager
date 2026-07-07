@@ -21,6 +21,8 @@ import CardStatsRow from "@/components/page-structure/Card/CardStatsRow";
 import CardPriceRow from "@/components/page-structure/Card/CardPriceRow";
 import { CardIconsRow } from "@/components/page-structure/Card/CardIconsRow";
 import styled from "styled-components";
+import { useSpecialCoatStore } from "@/store/useSpecialCoatStore";
+import { useTranslations } from "next-intl";
 
 interface SpecialCoatMobileCardProps {
   specialCoat: SpecialCoat;
@@ -29,6 +31,10 @@ interface SpecialCoatMobileCardProps {
 export default function SpecialCoatsMobileCard({ specialCoat }: SpecialCoatMobileCardProps) {
   const { data: session } = useSession();
   const router = useRouter();
+
+  const setEditingSpecialCoat = useSpecialCoatStore((state) => state.setEditingSpecialCoat);
+  const deleteSpecialCoat = useSpecialCoatStore((state) => state.deleteSpecialCoat);
+  const t = useTranslations();
 
   if (!specialCoat) return null;
 
@@ -41,7 +47,16 @@ export default function SpecialCoatsMobileCard({ specialCoat }: SpecialCoatMobil
         <Name>{displayName}</Name>
         <Color>{specialCoat.specialcoatstext?.[0]?.color ?? "Keine Farbe vorhanden"} -</Color>
 
-        {isAdmin && <ActionGroupBadge object={specialCoat} />}
+        {isAdmin && (
+          <ActionGroupBadge
+            id={specialCoat.id}
+            onEdit={() => {
+              setEditingSpecialCoat(specialCoat);
+              router.push(`/specialcoats/${specialCoat.id}/edit`);
+            }}
+            onDelete={() => deleteSpecialCoat(specialCoat.id, t)}
+          />
+        )}
       </CardHeaderRow>
 
       <CardDivider />

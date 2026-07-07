@@ -16,9 +16,14 @@ import { getBiomeImage, getBiomeName, getShelterImage } from "@/utils/BiomeUtil"
 import LinkedRow from "@/components/page-structure/Table/LinkedRow";
 import { useSpecialCoatStore } from "@/store/useSpecialCoatStore";
 import { getSpecialCoatImage } from "@/utils/SpecialCoatUtil";
+import { useRouter } from "@/i18n/routing";
 
 export default function SpecialCoatsDesktopTable() {
+  const router = useRouter();
   const t = useTranslations();
+
+  const setEditingSpecialCoat = useSpecialCoatStore((state) => state.setEditingSpecialCoat);
+  const deleteSpecialCoat = useSpecialCoatStore((state) => state.deleteSpecialCoat);
   const { data: session } = useSession();
 
   const specialCoats = useSpecialCoatStore((state) => state.currentItems);
@@ -83,17 +88,19 @@ export default function SpecialCoatsDesktopTable() {
                 </Styles.TableThumbnail>
               </td>
               <td>
-                <strong>{specialCoat.specialcoatstext?.[0]?.name ?? "Kein Name vorhanden"}</strong>
+                <strong>
+                  {specialCoat.specialcoatstext?.[0]?.name ?? t("SpecialCoat.noName")}
+                </strong>
               </td>
               <td>
                 <strong>
-                  {specialCoat.specialcoatstext?.[0]?.color ?? "Keine Farbe vorhanden"}
+                  {specialCoat.specialcoatstext?.[0]?.color ?? t("SpecialCoat.noColor")}
                 </strong>
               </td>
               <td>
                 <BiomeBadge
                   image={getBiomeImage(specialCoat.animal?.biome)}
-                  tooltipLabel={getBiomeName(specialCoat.animal?.biome, "unbekannter Biome")}
+                  tooltipLabel={getBiomeName(specialCoat.animal?.biome, t("Biome.noBiome"))}
                 />
               </td>
               <td>
@@ -105,7 +112,14 @@ export default function SpecialCoatsDesktopTable() {
               </td>
               {isAdmin && (
                 <Styles.TableCellRight>
-                  <ActionGroupBadge object={specialCoat} />
+                  <ActionGroupBadge
+                    id={specialCoat.id}
+                    onEdit={() => {
+                      setEditingSpecialCoat(specialCoat);
+                      router.push(`/specialcoats/${specialCoat.id}/edit`);
+                    }}
+                    onDelete={() => deleteSpecialCoat(specialCoat.id, t)}
+                  />
                 </Styles.TableCellRight>
               )}
             </LinkedRow>

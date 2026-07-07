@@ -1,8 +1,8 @@
+import { NextResponse } from "next/server";
+
 import { createSpecialCoat, getAllSpecialCoats } from "@/service/SpecialCoatsService";
 
 export const dynamic = "force-dynamic";
-
-import { NextResponse } from "next/server";
 
 export async function GET(request: Request) {
   try {
@@ -34,7 +34,6 @@ export async function POST(request: Request) {
       );
     }
 
-    // Ruft unseren neuen Service auf
     const newCoat = await createSpecialCoat(body);
 
     return NextResponse.json({ id: newCoat?.id }, { status: 201 });
