@@ -1,7 +1,8 @@
-export const dynamic = "force-dynamic";
-
 import { NextResponse } from "next/server";
+
 import { getAllAnimals, createAnimal } from "@/service/AnimalService";
+
+export const dynamic = "force-dynamic";
 
 export async function GET(request: Request) {
   try {

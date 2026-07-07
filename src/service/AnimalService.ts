@@ -5,10 +5,6 @@ export async function getCountAnimals() {
   return prisma.animal.count();
 }
 
-export async function getCountSpecialCoats() {
-  return prisma.specialCoat.count();
-}
-
 export async function getAllAnimals(locale: string = "de") {
   try {
     return await prisma.animal.findMany({
@@ -50,7 +46,15 @@ export async function getAnimalById(
     where: { id: numericId },
     include: {
       animaltext: locale ? { where: { languageCode: locale } } : true,
-      specialcoat: { include: { origin: true } },
+      specialcoat: {
+        include: {
+          specialcoatsorigin: {
+            include: {
+              origin: true,
+            },
+          },
+        },
+      },
       biome: {
         include: {
           biomestext: locale ? { where: { languageCode: locale } } : true,
@@ -70,8 +74,6 @@ export async function getAnimalById(
 
 export async function createAnimal(animalData: any) {
   const {
-    nameDe,
-    descriptionDe,
     translations,
     releaseDate,
     price,
@@ -113,7 +115,7 @@ export async function createAnimal(animalData: any) {
       await tx.animalText.createMany({
         data: translations.map((t: any) => ({
           animalId: animal.id,
-          languageCode: t.spracheCode, // kommt aus deinem Form-State
+          languageCode: t.spracheCode,
           animalName: t.name || "",
           animalDescription: t.description || "",
         })),
@@ -169,8 +171,6 @@ export async function createAnimal(animalData: any) {
 
 export async function updateAnimal(id: number, animalData: any) {
   const {
-    nameDe,
-    descriptionDe,
     translations,
     releaseDate,
     price,
@@ -196,7 +196,7 @@ export async function updateAnimal(id: number, animalData: any) {
       data: {
         releaseDate: formattedReleaseDate,
         price: price,
-        priceTypeId: currencyId ?? 1, // Nutzt jetzt die ID (1 = Zoodollar, 2 = Diamanten)
+        priceTypeId: currencyId ?? 1,
         sellingPrice: sellPrice,
         popularity: popularity,
         releaseExp: releaseTickets,
@@ -256,7 +256,7 @@ export async function updateAnimal(id: number, animalData: any) {
       await tx.animalPerEnclosure.createMany({
         data: enclosureSizes.map((size: any) => ({
           animalId: id,
-          numberAnimals: parseInt(size.animalCount.toString(), 10), // Bleibt zur Sicherheit falls aus Custom-UI
+          numberAnimals: parseInt(size.animalCount.toString(), 10),
           numberEnclosure: parseInt(size.size.toString(), 10),
         })),
       });
