@@ -44,7 +44,10 @@ export default function AnimalDetailContent({}) {
                 setEditingAnimal(animal);
                 router.push(`/animals/${animal.id}/edit`);
               }}
-              onDelete={() => deleteAnimal(animal.id, t)}
+              onDelete={async () => {
+                const success = await deleteAnimal(animal.id, t);
+                if (success) router.push("/animals");
+              }}
             />
         </Styles.TopBar>
       )}

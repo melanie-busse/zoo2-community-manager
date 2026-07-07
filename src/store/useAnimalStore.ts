@@ -16,7 +16,7 @@ interface AnimalState {
 
   // 2. Bearbeitungs-Zustand
   editingAnimal: Animal | null;
-  saveAnimal: (formData: any) => Promise<boolean>;
+  saveAnimal: (formData: any) => Promise<number | false>;
 
   // 3. Filter-Zustände
   searchTerm: string;
@@ -121,7 +121,7 @@ export const useAnimalStore = create<AnimalState>((set) => {
           };
         });
 
-        return true;
+        return result.id as number;
       } catch (error: any) {
         console.error("Fetch Error:", error);
         showErrorToast(error.message || "Netzwerkfehler beim Speichern.");

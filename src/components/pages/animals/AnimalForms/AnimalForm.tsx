@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
+import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 
 import { BreedingSection } from "@/components/ui/form/sections/BreedingSection";
@@ -38,6 +39,7 @@ interface AnimalFormProps {
 export default function AnimalForm({ animal, languages, biomes, originsData }: AnimalFormProps) {
   const tAnimals = useTranslations("Animals");
   const tCommon = useTranslations("Common");
+  const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const editingAnimal = useAnimalStore((state) => state.editingAnimal);
@@ -57,14 +59,17 @@ export default function AnimalForm({ animal, languages, biomes, originsData }: A
     mapAnimalToForm(animal || editingAnimal, languages),
   );
 
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setFormData(mapAnimalToForm(editingAnimal, languages));
-  }, [editingAnimal, languages]);
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (isSubmitting) return;
+
+    const nameDe = formData.animaltext?.find(
+      (t: any) => t.languageCode === "de",
+    )?.animalName;
+    if (!nameDe) {
+      toast.warn("Bitte gib einen deutschen Namen ein!");
+      return;
+    }
 
     if (!formData.biomeId) {
       toast.warn("Bitte wähle ein Gehege aus!");
@@ -73,10 +78,11 @@ export default function AnimalForm({ animal, languages, biomes, originsData }: A
 
     setIsSubmitting(true);
     try {
-      const success = await saveAnimal(formData);
+      const savedId = await saveAnimal(formData);
 
-      if (success) {
+      if (savedId !== false) {
         clearEditingAnimal();
+        router.push(`/animals/${savedId}`);
       }
     } catch (error) {
       console.error(error);
