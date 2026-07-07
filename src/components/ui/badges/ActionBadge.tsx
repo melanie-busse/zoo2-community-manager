@@ -5,7 +5,6 @@ import NextImage from "next/image";
 import * as Styles from "./Badge.styles";
 import Tooltip from "@/components/ui/tooltip/Tooltip";
 
-// die erlaubten Typen für unsere Icons
 export type ActionBadgeType = "edit" | "delete" | "add" | "view";
 
 interface ActionBadgeProps {
@@ -17,7 +16,6 @@ interface ActionBadgeProps {
   size?: number;
 }
 
-// Map für die Pfade und Standard-Alt-Texte
 const ACTION_CONFIG = {
   edit: { src: "/images/icons/edit.webp", defaultAlt: "Edit" },
   delete: { src: "/images/icons/trash.webp", defaultAlt: "Delete" },

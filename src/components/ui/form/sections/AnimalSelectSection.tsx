@@ -20,9 +20,11 @@ export default function AnimalSelectSection({
     if (formData.animalId) {
       const selectedAnimal = animalsData.find((a) => a.id === formData.animalId);
       if (selectedAnimal) {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setInputValue(selectedAnimal.animaltext?.[0]?.animalName || selectedAnimal.identifier);
       }
     } else {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setInputValue("");
     }
   }, [formData.animalId, animalsData]);

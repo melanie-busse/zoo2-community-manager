@@ -31,8 +31,8 @@ export default function AnimalTranslationSection({
       }))
     : [];
 
-  const rows = currentTexts.map((t: any) => ({
-    id: t.languageCode || Math.random().toString(),
+  const rows = currentTexts.map((t: any, index: number) => ({
+    id: t.languageCode || String(index),
     languageCode: t.languageCode || "",
     animalName: t.animalName || "",
     animalDescription: t.animalDescription || "",

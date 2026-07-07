@@ -16,15 +16,15 @@ export default function FormattedNumber({ value }: FormattedNumberProps) {
 
   if (value === undefined || value === null) return null;
 
+  let formatted: string;
   try {
-    const formatted = value.toLocaleString(locale, {
+    formatted = value.toLocaleString(locale, {
       minimumFractionDigits: 0,
       maximumFractionDigits: 0,
     });
-
-    return <span>{formatted}</span>;
-  } catch (error) {
-    // Fallback: Zeige die rohe Zahl
+  } catch {
     return <span>{value}</span>;
   }
+
+  return <span>{formatted}</span>;
 }

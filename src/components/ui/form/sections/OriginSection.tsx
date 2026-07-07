@@ -33,7 +33,7 @@ export default function OriginSection({
   };
 
   const selectedIds = selectedOrigins.map((o) => o.id);
-
+  console.log("selectedOrigins", selectedOrigins);
   return (
     <InfoAccordion
       title={tAnimals("originSection.originTitle") || "Herkunft & Quellen"}

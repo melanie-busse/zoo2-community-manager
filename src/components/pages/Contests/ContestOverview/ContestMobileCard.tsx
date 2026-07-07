@@ -50,7 +50,7 @@ export default function ContestMobileCard({
           </span>
         </Styles.DateInfo>
 
-        {isAdmin && <ActionGroupBadge object={contest} />}
+        {isAdmin && <ActionGroupBadge id={contest.id} onEdit={onEdit} onDelete={onDelete} />}
 
         <StatusBadge isActive={isActive} />
       </Styles.CardHeader>
