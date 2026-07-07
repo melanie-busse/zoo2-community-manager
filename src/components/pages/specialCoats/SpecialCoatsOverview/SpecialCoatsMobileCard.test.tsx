@@ -10,7 +10,7 @@ vi.mock("next-auth/react", () => ({
 }));
 
 const mockPush = vi.fn();
-vi.mock("next/navigation", () => ({
+vi.mock("@/i18n/routing", () => ({
   useRouter: () => ({
     push: mockPush,
   }),
@@ -107,7 +107,7 @@ describe("SpecialCoatsMobileCard", () => {
     const card = screen.getByTestId("card-container");
     fireEvent.click(card);
 
-    expect(mockPush).toHaveBeenCalledWith("/specialcoat/42");
+    expect(mockPush).toHaveBeenCalledWith("/specialcoats/42");
   });
 
   test("sollte null zurückgeben, wenn kein specialCoat vorhanden ist", () => {
