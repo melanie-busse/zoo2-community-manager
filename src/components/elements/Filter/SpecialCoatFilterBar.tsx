@@ -28,16 +28,15 @@ const INVENTORY_STATUS_ITEMS: InventoryStatusItem[] = [
 export default function SpecialCoatFilterBar() {
   const t = useTranslations();
 
-  // Zustand Werte & Setter laden
   const allInitialItems = useSpecialCoatStore((state) => state.allSpecialCoats);
-  const searchQuery = useSpecialCoatStore((state) => state.searchQuery);
-  const selectedBiomeId = useSpecialCoatStore((state) => state.selectedBiomeId);
+  const searchTerm = useSpecialCoatStore((state) => state.searchTerm);
+  const selectedBiome = useSpecialCoatStore((state) => state.selectedBiome);
   const selectedShelterLevel = useSpecialCoatStore((state) => state.selectedShelterLevel);
   const inventoryStatus = useSpecialCoatStore((state) => state.inventoryStatus);
 
-  const setSearchQuery = useSpecialCoatStore((state) => state.setSearchQuery);
-  const setBiomeFilter = useSpecialCoatStore((state) => state.setBiomeFilter);
-  const setShelterLevelFilter = useSpecialCoatStore((state) => state.setShelterLevelFilter);
+  const setSearchTerm = useSpecialCoatStore((state) => state.setSearchTerm);
+  const setBiomeFilter = useSpecialCoatStore((state) => state.setSelectedBiome);
+  const setShelterLevelFilter = useSpecialCoatStore((state) => state.setSelectedShelterLevel);
   const setInventoryStatus = useSpecialCoatStore((state) => state.setInventoryStatusFilter);
 
   const uniqueBiomes = Array.from(
@@ -59,17 +58,13 @@ export default function SpecialCoatFilterBar() {
     ).values(),
   ).sort((a, b) => (a.animal!.shelterLevel ?? 0) - (b.animal!.shelterLevel ?? 0));
 
-  const currentBiomeName = uniqueBiomes.find((b) => b.id === selectedBiomeId)
-    ? getBiomeName(uniqueBiomes.find((b) => b.id === selectedBiomeId)!, "")
-    : "all";
-
   return (
     <Styles.FilterBar>
       <Styles.SearchInput
         type="text"
         placeholder={t("Filter.search_placeholder")}
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
       />
 
       <CustomBadgeFilter<InventoryStatusItem>
@@ -85,15 +80,8 @@ export default function SpecialCoatFilterBar() {
 
       <CustomBadgeFilter<Biome>
         items={uniqueBiomes}
-        selectedValue={currentBiomeName}
-        onSelectAction={(val) => {
-          if (val === "all") {
-            setBiomeFilter(null);
-          } else {
-            const found = uniqueBiomes.find((b) => getBiomeName(b, "") === val);
-            setBiomeFilter(found ? found.id : null);
-          }
-        }}
+        selectedValue={selectedBiome ?? "all"}
+        onSelectAction={(val) => setBiomeFilter(val === "all" ? null : val)}
         allLabelKey="all_enclosures"
         getIdentifier={(biome) => getBiomeName(biome, "")}
         renderBadge={(biome) => (

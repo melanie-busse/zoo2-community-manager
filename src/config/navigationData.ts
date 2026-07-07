@@ -38,22 +38,22 @@ export const navConfig: NavItem[] = [
       },
     ],
   },
-  {
-    id: "contests",
-    labelKey: "club",
-    basePath: "/contests",
-    subMenu: [
-      { labelKey: "club_statues", href: "/contests/statues" },
-      {
-        labelKey: "club_contests",
-        href: "/contests",
-        requiresAuth: true,
-      },
-      {
-        labelKey: "club_create_contest",
-        href: "/contests/create",
-        requiresAuth: true,
-      },
-    ],
-  },
+  // {
+  //   id: "contests",
+  //   labelKey: "club",
+  //   basePath: "/contests",
+  //   subMenu: [
+  //     { labelKey: "club_statues", href: "/contests/statues" },
+  //     {
+  //       labelKey: "club_contests",
+  //       href: "/contests",
+  //       requiresAuth: true,
+  //     },
+  //     {
+  //       labelKey: "club_create_contest",
+  //       href: "/contests/create",
+  //       requiresAuth: true,
+  //     },
+  //   ],
+  // },
 ];

@@ -1,7 +1,12 @@
 import { create } from "zustand";
 import { SpecialCoat } from "@/types/specialCoat";
-import { toast } from "react-toastify";
-import Swal from "sweetalert2";
+import { filterSpecialCoats, sortSpecialCoats, paginate } from "@/utils/SpecialCoatUtil";
+import { confirmDeleteDialog, showErrorToast, showSuccessToast } from "@/utils/alerts";
+import {
+  createSpecialCoatOnClient,
+  deleteSpecialCoatOnClient,
+  updateSpecialCoatOnClient,
+} from "@/service/frontend/SpecialCoat";
 
 export type InventoryStatusFilter = "all" | "missing_partner" | "ready" | "not_owned";
 
@@ -17,7 +22,7 @@ interface SpecialCoatState {
 
   // 3. Filter-Zustände
   searchTerm: string;
-  selectedBiomeId: number | null;
+  selectedBiome: string | null;
   selectedShelterLevel: number | null;
   inventoryStatus: InventoryStatusFilter;
   sortBy: string;
@@ -36,8 +41,8 @@ interface SpecialCoatState {
 
   // 5. Filter-Setter
   setSearchTerm: (term: string) => void;
-  setBiomeFilter: (biomeId: number | null) => void;
-  setShelterLevelFilter: (level: number | null) => void;
+  setSelectedBiome: (biome: string | null) => void;
+  setSelectedShelterLevel: (level: number | null) => void;
   setInventoryStatusFilter: (status: InventoryStatusFilter) => void;
   resetFilters: () => void;
 
@@ -48,80 +53,24 @@ interface SpecialCoatState {
 }
 
 export const useSpecialCoatStore = create<SpecialCoatState>((set, get) => {
-  // Die Pipeline filtert, sortiert und paginiert analog zum AnimalStore
   const runPipeline = (all: SpecialCoat[], state: any) => {
-    let result = all.filter((coat) => {
-      const animal = coat.animal;
-
-      // Filter A: Textsuche (Farbname, Variantenname oder Tiername)
-      if (state.searchTerm.trim() !== "") {
-        const query = state.searchTerm.toLowerCase();
-        const coatColor = coat.specialcoatstext?.[0]?.color?.toLowerCase() ?? "";
-        const coatName = coat.specialcoatstext?.[0]?.name?.toLowerCase() ?? "";
-        const animalTextName = animal?.animaltext?.[0]?.animalName?.toLowerCase() ?? "";
-
-        if (
-          !coatColor.includes(query) &&
-          !coatName.includes(query) &&
-          !animalTextName.includes(query)
-        ) {
-          return false;
-        }
-      }
-
-      // Filter B: Biome
-      if (state.selectedBiomeId !== null && animal?.biome?.id !== state.selectedBiomeId) {
-        return false;
-      }
-
-      // Filter C: Stalllevel
-      if (
-        state.selectedShelterLevel !== null &&
-        animal?.shelterLevel !== state.selectedShelterLevel
-      ) {
-        return false;
-      }
-
-      // Filter D: Inventar-Status
-      const amount = coat.ownedAmount ?? 0;
-      if (state.inventoryStatus === "missing_partner" && amount !== 1) return false;
-      if (state.inventoryStatus === "ready" && amount < 2) return false;
-      if (state.inventoryStatus === "not_owned" && amount !== 0) return false;
-
-      return true;
+    const filtered = filterSpecialCoats(all, {
+      searchTerm: state.searchTerm,
+      selectedBiome: state.selectedBiome,
+      selectedShelterLevel: state.selectedShelterLevel,
+      inventoryStatus: state.inventoryStatus,
     });
 
-    // Sortierung
-    result.sort((a, b) => {
-      let valueA: any = "";
-      let valueB: any = "";
-
-      if (state.sortBy === "coatName") {
-        valueA = a.specialcoatstext?.[0]?.name ?? "";
-        valueB = b.specialcoatstext?.[0]?.name ?? "";
-      } else if (state.sortBy === "color") {
-        valueA = a.specialcoatstext?.[0]?.color ?? "";
-        valueB = b.specialcoatstext?.[0]?.color ?? "";
-      } else if (state.sortBy === "biomeName") {
-        valueA = a.animal?.biome?.identifier ?? "";
-        valueB = b.animal?.biome?.identifier ?? "";
-      } else if (state.sortBy === "shelterLevel") {
-        valueA = a.animal?.shelterLevel ?? 0;
-        valueB = b.animal?.shelterLevel ?? 0;
-      }
-
-      if (valueA < valueB) return state.sortDirection === "asc" ? -1 : 1;
-      if (valueA > valueB) return state.sortDirection === "asc" ? 1 : -1;
-      return 0;
+    const sorted = sortSpecialCoats(filtered, {
+      sortBy: state.sortBy,
+      sortDirection: state.sortDirection,
     });
 
-    // Pagination
-    const startIndex = (state.currentPage - 1) * state.itemsPerPage;
-    const paginatedItems = result.slice(startIndex, startIndex + state.itemsPerPage);
+    const paginated = paginate(sorted, state.currentPage, state.itemsPerPage);
 
     return {
-      currentItems: paginatedItems,
-      filteredCount: result.length,
+      currentItems: paginated,
+      filteredCount: filtered.length,
     };
   };
 
@@ -132,18 +81,16 @@ export const useSpecialCoatStore = create<SpecialCoatState>((set, get) => {
 
     editingSpecialCoat: null,
 
-    // Filter-Standards
     searchTerm: "",
-    selectedBiomeId: null,
+    selectedBiome: null,
     selectedShelterLevel: null,
     inventoryStatus: "all",
-    sortBy: "animalName",
+    sortBy: "coatName",
     sortDirection: "asc",
     currentPage: 1,
     itemsPerPage: 12,
     selectedSpecialCoat: null,
 
-    // --- AKTIONEN ---
     setInitialSpecialCoats: (coats) =>
       set((state) => {
         return {
@@ -157,45 +104,33 @@ export const useSpecialCoatStore = create<SpecialCoatState>((set, get) => {
 
     saveSpecialCoat: async (formData) => {
       const isEdit = !!formData.id;
-      const url = isEdit ? `/api/specialcoats/${formData.id}` : "/api/specialcoats";
-      const method = isEdit ? "PUT" : "POST";
+      let result: any;
 
       try {
-        const response = await fetch(url, {
-          method,
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
+        if (isEdit) {
+          result = await updateSpecialCoatOnClient(formData.id, formData);
+        } else {
+          result = await createSpecialCoatOnClient(formData);
+        }
+
+        set((state) => {
+          let updatedAll = [...state.allSpecialCoats];
+          if (isEdit) {
+            updatedAll = updatedAll.map((c) => (c.id === result.id ? result : c));
+          } else {
+            updatedAll.push(result);
+          }
+          return {
+            allSpecialCoats: updatedAll,
+            editingSpecialCoat: null,
+            ...runPipeline(updatedAll, state),
+          };
         });
 
-        const result = await response.json();
-
-        if (response.ok) {
-          toast.success(
-            isEdit
-              ? "Farbvariante erfolgreich aktualisiert!"
-              : "Farbvariante erfolgreich erstellt!",
-          );
-
-          set((state) => {
-            let updatedAll = [...state.allSpecialCoats];
-            if (isEdit) {
-              updatedAll = updatedAll.map((c) => (c.id === result.id ? result : c));
-            } else {
-              updatedAll.push(result);
-            }
-            return {
-              allSpecialCoats: updatedAll,
-              editingSpecialCoat: null,
-              ...runPipeline(updatedAll, state),
-            };
-          });
-          return true;
-        }
-        toast.error(`Fehler: ${result.message || "Unbekannter Fehler"}`);
-        return false;
-      } catch (error) {
+        return true;
+      } catch (error: any) {
         console.error("Fetch Error:", error);
-        toast.error("Netzwerkfehler beim Speichern.");
+        showErrorToast(error.message || "Netzwerkfehler beim Speichern.");
         return false;
       }
     },
@@ -210,17 +145,17 @@ export const useSpecialCoatStore = create<SpecialCoatState>((set, get) => {
         };
       }),
 
-    setBiomeFilter: (biomeId) =>
+    setSelectedBiome: (biome) =>
       set((state) => {
-        const nextState = { ...state, selectedBiomeId: biomeId, currentPage: 1 };
+        const nextState = { ...state, selectedBiome: biome, currentPage: 1 };
         return {
-          selectedBiomeId: biomeId,
+          selectedBiome: biome,
           currentPage: 1,
           ...runPipeline(state.allSpecialCoats, nextState),
         };
       }),
 
-    setShelterLevelFilter: (level) =>
+    setSelectedShelterLevel: (level) =>
       set((state) => {
         const nextState = { ...state, selectedShelterLevel: level, currentPage: 1 };
         return {
@@ -284,10 +219,10 @@ export const useSpecialCoatStore = create<SpecialCoatState>((set, get) => {
         const clearedState = {
           ...state,
           searchTerm: "",
-          selectedBiomeId: null,
+          selectedBiome: null,
           selectedShelterLevel: null,
           inventoryStatus: "all" as const,
-          sortBy: "animalName",
+          sortBy: "coatName",
           sortDirection: "asc" as const,
           currentPage: 1,
           selectedSpecialCoat: null,
@@ -299,42 +234,52 @@ export const useSpecialCoatStore = create<SpecialCoatState>((set, get) => {
     clearEditingSpecialCoat: () => set({ editingSpecialCoat: null }),
 
     deleteSpecialCoat: async (id: number, t: any) => {
-      const result = await Swal.fire({
+      const confirmed = await confirmDeleteDialog({
         title: t("SpecialCoat.messages.deleteErrorTitle") || "Löschen?",
         text:
           t("SpecialCoat.messages.confirmDelete") || "Möchtest du diese Variante wirklich löschen?",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#d33",
         confirmButtonText: t("Common.messages.yes_delete") || "Ja, löschen",
+        cancelButtonText: t("Common.messages.cancel") || "Abbrechen",
       });
 
-      if (result.isConfirmed) {
-        try {
-          const response = await fetch(`/api/special-coats/${id}`, { method: "DELETE" });
-          if (response.ok) {
-            set((state) => {
-              const updated = state.allSpecialCoats.filter((c) => c.id !== id);
-              const nextSelected =
-                state.selectedSpecialCoat?.id === id ? null : state.selectedSpecialCoat;
-              return {
-                allSpecialCoats: updated,
-                selectedSpecialCoat: nextSelected,
-                ...runPipeline(updated, state),
-              };
-            });
-            toast.success(t("SpecialCoat.messages.deleteSuccess") || "Erfolgreich gelöscht");
-            return true;
-          }
-          toast.error("Fehler beim Löschen");
-          return false;
-        } catch (error) {
-          console.error(error);
-          toast.error("Fehler beim Löschen");
-          return false;
-        }
+      if (!confirmed) return false;
+
+      try {
+        await deleteSpecialCoatOnClient(id);
+
+        set((state) => {
+          const updated = state.allSpecialCoats.filter((c) => c.id !== id);
+          const nextSelected =
+            state.selectedSpecialCoat?.id === id ? null : state.selectedSpecialCoat;
+
+          const filtered = filterSpecialCoats(updated, {
+            searchTerm: state.searchTerm,
+            selectedBiome: state.selectedBiome,
+            selectedShelterLevel: state.selectedShelterLevel,
+            inventoryStatus: state.inventoryStatus,
+          });
+
+          const totalPages = Math.ceil(filtered.length / state.itemsPerPage);
+          const nextPage =
+            state.currentPage > totalPages ? Math.max(1, totalPages) : state.currentPage;
+
+          const nextState = { ...state, currentPage: nextPage };
+
+          return {
+            allSpecialCoats: updated,
+            selectedSpecialCoat: nextSelected,
+            currentPage: nextPage,
+            ...runPipeline(updated, nextState),
+          };
+        });
+
+        showSuccessToast(t("SpecialCoat.messages.deleteSuccess") || "Erfolgreich gelöscht");
+        return true;
+      } catch (error: any) {
+        console.error("Delete Error:", error);
+        showErrorToast(error.message || "Fehler beim Löschen");
+        return false;
       }
-      return false;
     },
   };
 });

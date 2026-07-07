@@ -1,11 +1,11 @@
 import { prisma } from "@/lib/prisma";
 import { CreateSpecialCoatInput } from "@/types/specialCoat";
 
-/**
- * Holt alle Farbvarianten aus der Datenbank, passend zur gewählten Sprache (locale).
- * @param locale Die aktuelle Sprache (de, en, da, etc.)
- */
-export async function getAllSpecialCoats(locale: string) {
+export async function getCountSpecialCoats() {
+  return prisma.specialCoat.count();
+}
+
+export async function getAllSpecialCoats(locale: string = "de") {
   try {
     return await prisma.specialCoat.findMany({
       include: {
@@ -22,7 +22,13 @@ export async function getAllSpecialCoats(locale: string) {
               },
             },
             priceType: true,
-            biome: true,
+            biome: {
+              include: {
+                biomestext: {
+                  where: { languageCode: locale },
+                },
+              },
+            },
           },
         },
         specialcoatsorigin: {
@@ -38,11 +44,46 @@ export async function getAllSpecialCoats(locale: string) {
   }
 }
 
-/**
- * Erstellt eine neue Farbvariante inklusive ihrer Übersetzungen und Herkunfts-Verknüpfungen.
- */
+export async function getSpecialCoatById(
+  id: number | string,
+  locale: string | null = null,
+): Promise<any | null> {
+  const numericId = typeof id === "string" ? parseInt(id, 10) : id;
+
+  if (isNaN(numericId)) {
+    console.warn(`getSpecialCoatById aborted: ID is not a number: ${id}`);
+    return null;
+  }
+
+  const specialCoat = await prisma.specialCoat.findUnique({
+    where: { id: numericId },
+    include: {
+      specialcoatstext: locale ? { where: { languageCode: locale } } : true,
+      animal: {
+        include: {
+          animaltext: locale ? { where: { languageCode: locale } } : true,
+          priceType: true,
+          biome: {
+            include: {
+              biomestext: locale ? { where: { languageCode: locale } } : true,
+            },
+          },
+        },
+      },
+      specialcoatsorigin: {
+        include: {
+          origin: true,
+        },
+      },
+    },
+  });
+
+  if (!specialCoat) return null;
+
+  return specialCoat;
+}
+
 export async function createSpecialCoat(data: CreateSpecialCoatInput) {
-  // 1. Erstelle den SpecialCoat und die Texte
   const newCoat = await prisma.specialCoat.create({
     data: {
       animalId: data.animalId,
@@ -58,7 +99,6 @@ export async function createSpecialCoat(data: CreateSpecialCoatInput) {
     },
   });
 
-  // 2. Erstelle die Einträge in der Join-Tabelle, falls originIds übergeben wurden
   if (data.originIds && data.originIds.length > 0) {
     await prisma.specialCoatsOrigin.createMany({
       data: data.originIds.map((id) => ({
@@ -68,7 +108,6 @@ export async function createSpecialCoat(data: CreateSpecialCoatInput) {
     });
   }
 
-  // 3. Hole das vollständige Objekt inklusive aller Relationen zurück
   return prisma.specialCoat.findUnique({
     where: { id: newCoat.id },
     include: {
@@ -79,5 +118,66 @@ export async function createSpecialCoat(data: CreateSpecialCoatInput) {
         },
       },
     },
+  });
+}
+
+export async function updateSpecialCoat(id: number | string, data: any) {
+  const numericId = typeof id === "string" ? parseInt(id, 10) : id;
+
+  if (isNaN(numericId)) {
+    throw new Error(`updateSpecialCoat aborted: Invalid ID: ${id}`);
+  }
+
+  return prisma.$transaction(async (tx) => {
+    await tx.specialCoat.update({
+      where: { id: numericId },
+      data: {
+        animalId: data.animalId,
+        releaseDate: data.releaseDate ? new Date(data.releaseDate) : undefined,
+        image: data.image,
+      },
+    });
+
+    if (data.texts) {
+      await tx.specialCoatsText.deleteMany({
+        where: { specialCoatId: numericId },
+      });
+
+      await tx.specialCoatsText.createMany({
+        data: data.texts.map((text: any) => ({
+          specialCoatId: numericId,
+          languageCode: text.languageCode,
+          name: text.name,
+          color: text.color,
+        })),
+      });
+    }
+
+    if (data.originIds) {
+      await tx.specialCoatsOrigin.deleteMany({
+        where: { specialCoatId: numericId },
+      });
+
+      if (data.originIds.length > 0) {
+        await tx.specialCoatsOrigin.createMany({
+          data: data.originIds.map((originId: number) => ({
+            specialCoatId: numericId,
+            originId: originId,
+          })),
+        });
+      }
+    }
+
+    return tx.specialCoat.findUnique({
+      where: { id: numericId },
+      include: {
+        specialcoatstext: true,
+        specialcoatsorigin: {
+          include: {
+            origin: true,
+          },
+        },
+      },
+    });
   });
 }
