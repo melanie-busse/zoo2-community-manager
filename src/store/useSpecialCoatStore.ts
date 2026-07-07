@@ -18,7 +18,7 @@ interface SpecialCoatState {
 
   // 2. Bearbeitungs-Zustand
   editingSpecialCoat: SpecialCoat | null;
-  saveSpecialCoat: (formData: any) => Promise<boolean>;
+  saveSpecialCoat: (formData: any) => Promise<number | false>;
 
   // 3. Filter-Zustände
   searchTerm: string;
@@ -106,11 +106,16 @@ export const useSpecialCoatStore = create<SpecialCoatState>((set, get) => {
       const isEdit = !!formData.id;
       let result: any;
 
+      const payload = {
+        ...formData,
+        originIds: (formData.origins ?? []).map((o: { id: number }) => o.id),
+      };
+
       try {
         if (isEdit) {
-          result = await updateSpecialCoatOnClient(formData.id, formData);
+          result = await updateSpecialCoatOnClient(formData.id, payload);
         } else {
-          result = await createSpecialCoatOnClient(formData);
+          result = await createSpecialCoatOnClient(payload);
         }
 
         set((state) => {
@@ -127,7 +132,7 @@ export const useSpecialCoatStore = create<SpecialCoatState>((set, get) => {
           };
         });
 
-        return true;
+        return result.id as number;
       } catch (error: any) {
         console.error("Fetch Error:", error);
         showErrorToast(error.message || "Netzwerkfehler beim Speichern.");

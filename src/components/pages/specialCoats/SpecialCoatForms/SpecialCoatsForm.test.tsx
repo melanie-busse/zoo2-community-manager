@@ -78,6 +78,11 @@ vi.mock("@/utils/SpecialCoatUtil", () => ({
   mapSpecialCoatToForm: vi.fn((coat) => coat || { animalId: null, releaseDate: "" }),
 }));
 
+const mockPush = vi.fn();
+vi.mock("next/navigation", () => ({
+  useRouter: () => ({ push: mockPush }),
+}));
+
 const mockLanguages = [{ code: "de", name: "Deutsch" }];
 const mockAnimalData = [{ id: 5, animaltext: [{ animalName: "Löwe" }] }];
 const mockOrigins = [{ id: 1, name: "Shop" }];
@@ -128,7 +133,7 @@ describe("SpecialCoatForm Integration Tests", () => {
   });
 
   test("ruft saveSpecialCoat auf, wenn das Formular abgesendet wird", async () => {
-    mockSaveSpecialCoat.mockResolvedValue(true);
+    mockSaveSpecialCoat.mockResolvedValue(42);
 
     render(
       <SpecialCoatForm
@@ -147,7 +152,7 @@ describe("SpecialCoatForm Integration Tests", () => {
   });
 
   test("ruft clearEditingSpecialCoat auf, wenn saveSpecialCoat erfolgreich war", async () => {
-    mockSaveSpecialCoat.mockResolvedValue(true);
+    mockSaveSpecialCoat.mockResolvedValue(42);
 
     render(
       <SpecialCoatForm
@@ -161,6 +166,24 @@ describe("SpecialCoatForm Integration Tests", () => {
 
     await waitFor(() => {
       expect(mockClearEditingSpecialCoat).toHaveBeenCalled();
+    });
+  });
+
+  test("navigiert zur SpecialCoat-Übersicht nach erfolgreichem Speichern", async () => {
+    mockSaveSpecialCoat.mockResolvedValue(42);
+
+    render(
+      <SpecialCoatForm
+        animalData={mockAnimalData}
+        languages={mockLanguages}
+        originsData={mockOrigins}
+      />,
+    );
+
+    fireEvent.click(screen.getByRole("button", { name: "SpecialCoat.form.saveSpecialCoat" }));
+
+    await waitFor(() => {
+      expect(mockPush).toHaveBeenCalledWith("/specialcoats");
     });
   });
 
@@ -189,7 +212,7 @@ describe("SpecialCoatForm Integration Tests", () => {
   });
 
   test("übergibt die aktuellen Formulardaten an saveSpecialCoat", async () => {
-    mockSaveSpecialCoat.mockResolvedValue(true);
+    mockSaveSpecialCoat.mockResolvedValue(42);
 
     render(
       <SpecialCoatForm

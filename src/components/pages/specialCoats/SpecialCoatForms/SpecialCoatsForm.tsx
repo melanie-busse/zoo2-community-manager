@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
+import { useRouter } from "next/navigation";
 
 import SubmitButton from "@/components/ui/form/SubmitButton";
 import { useSpecialCoatStore } from "@/store/useSpecialCoatStore";
@@ -36,6 +37,7 @@ export default function SpecialCoatForm({
 }: SpecialCoatFormProps) {
   const tSpecialCoat = useTranslations("SpecialCoat");
   const tCommon = useTranslations("Common");
+  const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const editingSpecialCoat = useSpecialCoatStore((state) => state.editingSpecialCoat);
@@ -51,14 +53,7 @@ export default function SpecialCoatForm({
     }
   }, [specialCoat, setEditingSpecialCoat, clearEditingSpecialCoat]);
 
-  const [formData, setFormData] = useState<any>(() =>
-    mapSpecialCoatToForm(specialCoat || editingSpecialCoat, languages),
-  );
-
-  useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setFormData(mapSpecialCoatToForm(editingSpecialCoat, languages));
-  }, [editingSpecialCoat, languages]);
+  const [formData, setFormData] = useState<any>(() => mapSpecialCoatToForm(specialCoat, languages));
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -66,10 +61,11 @@ export default function SpecialCoatForm({
 
     setIsSubmitting(true);
     try {
-      const success = await saveSpecialCoat(formData);
+      const savedId = await saveSpecialCoat(formData);
 
-      if (success) {
+      if (savedId !== false) {
         clearEditingSpecialCoat();
+        router.push("/specialcoats");
       }
     } catch (error) {
       console.error(error);

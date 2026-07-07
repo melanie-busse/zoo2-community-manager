@@ -128,8 +128,8 @@ export const mapSpecialCoatToForm = (coat: any, languages: any[]) => {
   }
 
   const flatOrigins = coat.specialcoatsorigin
-    ? coat.specialcoatsorigin.map((o: any) => Number(o.originId))
-    : (coat.origins || []).map((id: any) => Number(id));
+    ? coat.specialcoatsorigin.map((o: any) => ({ id: Number(o.originId) }))
+    : (coat.origins || []).map((id: any) => ({ id: Number(id) }));
 
   const mappedTexts = coat.specialcoatstext
     ? coat.specialcoatstext.map((t: any) => ({

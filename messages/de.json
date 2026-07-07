@@ -202,6 +202,11 @@
   },
   "SpecialCoat": {
     "overview_title": "Farbvarianten",
+    "messages": {
+      "deleteErrorTitle": "Farbvariante löschen?",
+      "confirmDelete": "Möchtest du diese Farbvariante wirklich löschen?",
+      "deleteSuccess": "Farbvariante erfolgreich gelöscht"
+    },
     "species": "Name",
     "color": "Farbe",
     "noName": "Kein Name vorhanden",

@@ -56,7 +56,7 @@ export default function AnimalForm({ animal, languages, biomes, originsData }: A
   }, [animal, setEditingAnimal, clearEditingAnimal]);
 
   const [formData, setFormData] = useState<any>(() =>
-    mapAnimalToForm(animal || editingAnimal, languages),
+    mapAnimalToForm(animal, languages),
   );
 
   const handleSubmit = async (e: React.FormEvent) => {
