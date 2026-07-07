@@ -5,7 +5,6 @@ import {
   getAllAnimals,
   getAnimalById,
   getCountAnimals,
-  getCountSpecialCoats,
   createAnimal,
   updateAnimal,
 } from "@/service/AnimalService";
@@ -59,12 +58,6 @@ describe("Animal Service", () => {
     vi.mocked(prisma.animal.count).mockResolvedValue(42);
     const result = await getCountAnimals();
     expect(result).toBe(42);
-  });
-
-  test("getCountSpecialCoats should return the correct total count of coats", async () => {
-    vi.mocked(prisma.specialCoat.count).mockResolvedValue(15);
-    const result = await getCountSpecialCoats();
-    expect(result).toBe(15);
   });
 
   test("getAllAnimals should fetch animals with the correct relational includes and locales", async () => {

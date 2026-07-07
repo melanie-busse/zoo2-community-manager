@@ -20,7 +20,7 @@ describe("Animal Dynamic PUT API Route Handler", () => {
       body: JSON.stringify({ nameDe: "Erdmännchen (Neu)", biomeId: 10 }),
     });
 
-    const response = await PUT(request, { params: { id: "42" } });
+    const response = await PUT(request, { params: Promise.resolve({ id: "42" }) });
     const data = await response.json();
 
     expect(updateAnimal).toHaveBeenCalledWith(42, { nameDe: "Erdmännchen (Neu)", biomeId: 10 });
@@ -34,7 +34,7 @@ describe("Animal Dynamic PUT API Route Handler", () => {
       body: JSON.stringify({ nameDe: "Test", biomeId: 1 }),
     });
 
-    const response = await PUT(request, { params: { id: "abc" } });
+    const response = await PUT(request, { params: Promise.resolve({ id: "abc" }) });
     const data = await response.json();
 
     expect(response.status).toBe(400);
@@ -48,7 +48,7 @@ describe("Animal Dynamic PUT API Route Handler", () => {
       body: JSON.stringify({ nameDe: "Unvollständig" }), // biomeId fehlt!
     });
 
-    const response = await PUT(request, { params: { id: "42" } });
+    const response = await PUT(request, { params: Promise.resolve({ id: "42" }) });
     const data = await response.json();
 
     expect(response.status).toBe(400);
@@ -64,7 +64,7 @@ describe("Animal Dynamic PUT API Route Handler", () => {
       body: JSON.stringify({ nameDe: "Löwe", biomeId: 12 }),
     });
 
-    const response = await PUT(request, { params: { id: "42" } });
+    const response = await PUT(request, { params: Promise.resolve({ id: "42" }) });
     const data = await response.json();
 
     expect(response.status).toBe(500);

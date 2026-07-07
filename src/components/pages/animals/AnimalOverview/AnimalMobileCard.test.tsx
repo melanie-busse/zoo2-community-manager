@@ -68,6 +68,18 @@ vi.mock("@/components/ui/badges/ShelterLevelBadge", () => ({
 vi.mock("@/utils/AnimalUtil", () => ({ getAnimalImage: vi.fn() }));
 vi.mock("@/utils/BiomeUtil", () => ({ getBiomeImage: vi.fn(), getShelterImage: vi.fn() }));
 
+vi.mock("next-intl", () => ({
+  useTranslations: () => (key: string) => key,
+}));
+
+vi.mock("@/store/useAnimalStore", () => ({
+  useAnimalStore: (selector: any) =>
+    selector({
+      setEditingAnimal: vi.fn(),
+      deleteAnimal: vi.fn(),
+    }),
+}));
+
 describe("AnimalMobileCard", () => {
   const mockAnimal = {
     id: 1,

@@ -38,7 +38,7 @@ vi.mock("./AnimalForms.style", () => ({
   Label: ({ children, htmlFor }: any) => <label htmlFor={htmlFor}>{children}</label>,
 }));
 
-vi.mock("./BasicInfoSection", () => ({
+vi.mock("@/components/ui/form/sections/BasicInfoSection", () => ({
   default: ({ formData, setFormData }: any) => (
     <div>
       <label htmlFor="releaseDate">Release Date</label>
@@ -52,7 +52,7 @@ vi.mock("./BasicInfoSection", () => ({
   ),
 }));
 
-vi.mock("./EnclosureTypeSection", () => ({
+vi.mock("@/components/ui/form/sections/EnclosureTypeSection", () => ({
   default: ({ formData, setFormData }: any) => (
     <div>
       <label htmlFor="biomeId">Gehegetyp</label>
@@ -73,14 +73,17 @@ vi.mock("./EnclosureTypeSection", () => ({
   ),
 }));
 
-vi.mock("./PriceSection", () => ({ default: () => <div>PriceSection</div> }));
-vi.mock("./BreedingSection", () => ({ default: () => <div>BreedingSection</div> }));
-vi.mock("./XpActionSection", () => ({ default: () => <div>XpActionSection</div> }));
-vi.mock("./EnclosureCapacitySection", () => ({ default: () => <div>CapacitySection</div> }));
-vi.mock("./OriginSection", () => ({ default: () => <div>OriginSection</div> }));
-vi.mock("@/components/pages/animals/AnimalForms/TranslationSection", () => ({
+vi.mock("@/components/ui/form/sections/PriceSection", () => ({ default: () => <div>PriceSection</div> }));
+vi.mock("@/components/ui/form/sections/BreedingSection", () => ({ BreedingSection: () => <div>BreedingSection</div> }));
+vi.mock("@/components/ui/form/sections/XpActionSection", () => ({ default: () => <div>XpActionSection</div> }));
+vi.mock("@/components/ui/form/sections/EnclosureCapacitySection", () => ({ default: () => <div>CapacitySection</div> }));
+vi.mock("@/components/ui/form/sections/OriginSection", () => ({ default: () => <div>OriginSection</div> }));
+vi.mock("@/components/ui/form/sections/AnimalTranslationSection", () => ({
   default: () => <div>TranslationSection</div>,
 }));
+vi.mock("@/components/ui/form/sections/FooterSection", () => ({ default: ({ children }: any) => <div>{children}</div> }));
+vi.mock("@/components/ui/form/styling/FormGrid", () => ({ default: ({ children }: any) => <div>{children}</div> }));
+vi.mock("@/components/ui/form/styling/Column", () => ({ default: ({ children }: any) => <div>{children}</div> }));
 
 vi.mock("@/components/ui/form/SubmitButton", () => ({
   default: ({ label, isSubmitting }: any) => (
