@@ -1,7 +1,7 @@
 import { showSuccessToast } from "@/utils/alerts";
 
-export async function createSpecialCoatOnClient(formData: any): Promise<any> {
-  const response = await fetch("/api/specialcoats", {
+export async function createAnimalOnClient(formData: any): Promise<any> {
+  const response = await fetch("/api/animals", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(formData),
@@ -13,12 +13,12 @@ export async function createSpecialCoatOnClient(formData: any): Promise<any> {
     throw new Error(result.message || "Fehler beim Erstellen");
   }
 
-  showSuccessToast("Farbvariante erfolgreich erstellt!");
+  showSuccessToast("Tier erfolgreich erstellt!");
   return result;
 }
 
-export async function updateSpecialCoatOnClient(id: number, formData: any): Promise<any> {
-  const response = await fetch(`/api/specialcoats/${id}`, {
+export async function updateAnimalOnClient(id: number, formData: any): Promise<any> {
+  const response = await fetch(`/api/animals/${id}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(formData),
@@ -30,12 +30,12 @@ export async function updateSpecialCoatOnClient(id: number, formData: any): Prom
     throw new Error(result.message || "Fehler beim Updaten");
   }
 
-  showSuccessToast("Farbvariante erfolgreich aktualisiert!");
+  showSuccessToast("Tier erfolgreich aktualisiert!");
   return result;
 }
 
-export async function deleteSpecialCoatOnClient(id: number): Promise<void> {
-  const response = await fetch(`/api/specialcoats/${id}`, {
+export async function deleteAnimalOnClient(id: number): Promise<void> {
+  const response = await fetch(`/api/animals/${id}`, {
     method: "DELETE",
   });
 
