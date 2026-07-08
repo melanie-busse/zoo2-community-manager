@@ -1,0 +1,9 @@
+{
+  "emptyState": {
+    "title": "Aucun concours trouvé"
+  },
+  "status": {
+    "running": "En cours",
+    "upcoming": "À venir"
+  }
+}

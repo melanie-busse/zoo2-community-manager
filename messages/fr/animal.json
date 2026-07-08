@@ -1,0 +1,63 @@
+{
+  "species": "Nom",
+  "release": "Relâcher",
+  "colorVariants": "Variantes de couleur",
+  "biomeCapacity": "Capacité de l'enclos",
+  "animalCount": "Nombre d'animaux",
+  "biomeSize": "Taille de l'enclos",
+  "capacityTableLabel": "Animaux vs. espace de l'enclos",
+  "requiredSize": "Espace requis",
+  "noName": "Aucun nom disponible",
+  "overview_title": "Vue d'ensemble de tous les animaux",
+  "form": {
+    "createAnimal": "Créer un nouvel animal",
+    "editAnimal": "Modifier l'animal",
+    "saveAnimal": "Enregistrer l'animal"
+  },
+  "breeding": {
+    "xpAndActions": "XP et actions",
+    "breeding": "Élevage",
+    "breedingChance": "Chance d'élevage"
+  },
+  "basicInfoSection": {
+    "basicInfo": "Informations de base",
+    "fields": {
+      "releaseDate": "Sortie"
+    }
+  },
+  "translationSection": {
+    "title": "Traductions (Nom & Description)",
+    "fields": {
+      "name": "Nom",
+      "language": "Langue",
+      "description": "Description",
+      "descriptionPlaceholder": "Décrivez l'animal..."
+    }
+  },
+  "priceSection": {
+    "pricesAndValues": "Prix et valeurs"
+  },
+  "xpSection": {
+    "actionsXp": "Actions & XP"
+  },
+  "originSection": {
+    "originTitle": "Origine",
+    "originDescription": "Comment obtenir cet animal ?"
+  },
+  "actions": {
+    "feed": "Nourrir",
+    "play": "Jouer",
+    "clean": "Nettoyer"
+  },
+  "messages": {
+    "createSuccess": "Animal créé avec succès ! 🐾",
+    "deleteSuccess": "Animal supprimé avec succès ! 🐾",
+    "editSuccess": "Modifications enregistrées avec succès ! 🐾",
+    "deleteError": "Erreur lors de la suppression de l'animal. Veuillez réessayer.",
+    "deleteErrorTitle": "Supprimer l'animal ?",
+    "confirmDelete": "Êtes-vous sûr de vouloir supprimer définitivement cet animal ? Toutes les données liées, comme les textes et les valeurs XP, seront perdues."
+  },
+  "emptyState": {
+    "title": "Oh non, aucun animal ici !"
+  }
+}
