@@ -1,0 +1,63 @@
+{
+  "species": "Navn",
+  "release": "Udsætning",
+  "colorVariants": "Fargevarianter",
+  "biomeCapacity": "Indhegningskapacitet",
+  "animalCount": "Antal dyr",
+  "biomeSize": "Indhegningsstørrelse",
+  "capacityTableLabel": "Dyr vs. indhegningsplads",
+  "requiredSize": "Nødvendigt areal",
+  "noName": "Intet navn tilgængeligt",
+  "overview_title": "Oversigt over alle dyr",
+  "form": {
+    "createAnimal": "Opret nyt dyr",
+    "editAnimal": "Rediger dyr",
+    "saveAnimal": "Gem dyr"
+  },
+  "breeding": {
+    "xpAndActions": "XP og handlinger",
+    "breeding": "Avl",
+    "breedingChance": "Avlschance"
+  },
+  "basicInfoSection": {
+    "basicInfo": "Grundoplysninger",
+    "fields": {
+      "releaseDate": "Udgivelse"
+    }
+  },
+  "translationSection": {
+    "title": "Oversættelser (Navn & Beskrivelse)",
+    "fields": {
+      "name": "Navn",
+      "language": "Sprog",
+      "description": "Beskrivelse",
+      "descriptionPlaceholder": "Beskriv dyret..."
+    }
+  },
+  "priceSection": {
+    "pricesAndValues": "Priser og værdier"
+  },
+  "xpSection": {
+    "actionsXp": "Handlinger & XP"
+  },
+  "originSection": {
+    "originTitle": "Oprindelse",
+    "originDescription": "Hvordan kan man få dette dyr?"
+  },
+  "actions": {
+    "feed": "Fodre",
+    "play": "Lege",
+    "clean": "Rengøre"
+  },
+  "messages": {
+    "createSuccess": "Dyr oprettet! 🐾",
+    "deleteSuccess": "Dyret blev slettet! 🐾",
+    "editSuccess": "Ændringer gemt! 🐾",
+    "deleteError": "Fejl ved sletning af dyret. Prøv venligst igen.",
+    "deleteErrorTitle": "Slet dyr?",
+    "confirmDelete": "Er du sikker på, at du vil slette dette dyr permanent? Alle tilknyttede data som tekster og XP-værdier går tabt."
+  },
+  "emptyState": {
+    "title": "Åh nej, ingen dyr her!"
+  }
+}

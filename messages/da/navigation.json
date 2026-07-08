@@ -1,0 +1,30 @@
+{
+  "title": "Zoo2: Animal Park Manager",
+  "login": {
+    "open_menu": "Åbn menu",
+    "logout": "Log ud",
+    "button": "Log ind",
+    "welcome": "Hej"
+  },
+  "role": {
+    "role_admin": "Admin",
+    "role_Director": "Direktør",
+    "role_Employee": "Medarbejder",
+    "role_Member": "Medlem",
+    "role_Visitor": "Besøgende",
+    "role_": "Ingen rolle"
+  },
+  "links": {
+    "home": "Hjem",
+    "animals": "Dyr",
+    "animal_overview": "Dyroversigt",
+    "animal_create": "Tilføj dyr",
+    "specialCoats": "Fargevarianter",
+    "specialcoats_overview": "Farvevarianter oversigt",
+    "specialcoats_create": "Tilføj farvevariant",
+    "club": "Klub",
+    "club_statues": "Statuer",
+    "club_contests": "Konkurrencer",
+    "club_create_contest": "Opret konkurrence"
+  }
+}

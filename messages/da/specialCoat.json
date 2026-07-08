@@ -1,0 +1,30 @@
+{
+  "overview_title": "Fargevarianter",
+  "species": "Navn",
+  "color": "Farve",
+  "noName": "Intet navn tilgængeligt",
+  "noColor": "Ingen farve tilgængelig",
+  "form": {
+    "createSpecialCoat": "Opret fargevariant",
+    "editSpecialCoat": "Rediger fargevariant",
+    "saveSpecialCoat": "Gem",
+    "translationSection": {
+      "title": "Oversættelser (Navn & Farve)",
+      "fields": {
+        "language": "Sprog",
+        "name": "Variantnavn",
+        "NamePlaceholder": "f.eks. Halloween, Valentinsdag...",
+        "color": "Farve",
+        "ColorPlaceholder": "f.eks. stribet"
+      }
+    }
+  },
+  "messages": {
+    "deleteErrorTitle": "Slet fargevariant?",
+    "confirmDelete": "Vil du virkelig slette denne fargevariant?",
+    "deleteSuccess": "Fargevariant slettet"
+  },
+  "emptyState": {
+    "title": "Åh nej, ingen dyr her!"
+  }
+}

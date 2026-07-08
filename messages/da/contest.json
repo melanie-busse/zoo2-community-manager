@@ -1,0 +1,9 @@
+{
+  "emptyState": {
+    "title": "Ingen konkurrencer fundet"
+  },
+  "status": {
+    "running": "Kører nu",
+    "upcoming": "Kommende"
+  }
+}
