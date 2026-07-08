@@ -8,8 +8,6 @@ import prisma from "@/lib/prisma";
 const discordId = process.env.DISCORD_CLIENT_ID;
 const discordSecret = process.env.DISCORD_CLIENT_SECRET;
 
-// Sicherheitsscheck: Wenn die Variablen fehlen, werfen wir einen Fehler
-// Das beruhigt TypeScript zu 100%
 if (!discordId || !discordSecret) {
   throw new Error("Fehlende Discord Umgebungsvariablen in der .env!");
 }
@@ -32,7 +30,6 @@ export const authOptions = {
   callbacks: {
     async signIn({ user }: { user: any }) {
       try {
-        // Sync mit MariaDB
         await prisma.user.upsert({
           where: { id: user.id },
           update: {
@@ -44,7 +41,7 @@ export const authOptions = {
             name: user.name,
             email: user.email,
             image: user.image,
-            roleId: 1, // Standardrolle bei Neuanlage
+            roleId: 1,
           },
         });
         return true;
@@ -54,33 +51,37 @@ export const authOptions = {
       }
     },
 
-    async session({ session }: { session: any }) {
+    async jwt({ token, user }: { token: any; user: any }) {
+      if (user) {
+        token.id = user.id;
+      }
+      return token;
+    },
+
+    async session({ session, token }: { session: any; token: any }) {
       try {
-        // 1. Sicherheitscheck: Wenn keine Email da ist, gar nicht erst die DB fragen
-        if (!session?.user?.email) {
-          console.warn("Session Callback: Keine Email vorhanden.");
+        const userId = token?.id || session?.user?.id;
+
+        if (!userId) {
+          console.warn("Session Callback: Keine User-ID im Token gefunden.");
           return session;
         }
 
         const dbUser = await prisma.user.findUnique({
-          where: { email: session.user.email },
+          where: { id: userId },
           include: {
-            role: {
-              include: { rolestext: true },
-            },
+            role: true,
           },
         });
 
         if (dbUser) {
-          // Hier wird session jetzt aktiv benutzt -> nicht mehr grau!
-          session.user.role = dbUser.role.name;
-          session.user.roleId = dbUser.roleId;
           session.user.id = dbUser.id;
+          session.user.roleId = dbUser.roleId;
+          session.user.role = dbUser.role?.name || "User";
         }
 
         return session;
       } catch (error) {
-        // Das verhindert den 500er Fehler im Browser!
         console.error("KRITISCHER FEHLER IM SESSION CALLBACK:", error);
         return session;
       }
@@ -89,6 +90,5 @@ export const authOptions = {
   secret: process.env.NEXTAUTH_SECRET,
 };
 
-// WICHTIG FÜR APP ROUTER:
 const handler = NextAuth(authOptions);
 export { handler as GET, handler as POST };

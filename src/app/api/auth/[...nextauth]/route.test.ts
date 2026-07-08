@@ -74,23 +74,24 @@ describe("NextAuth Route Configuration", () => {
       const mockSession = {
         user: { name: "Melanie", email: "melanie@zoo2.de" },
       };
+      const mockToken = { id: "db-user-999" };
 
       const mockDbUser = {
         id: "db-user-999",
         roleId: 2,
-        role: {
-          name: "Admin",
-          rolestext: [],
-        },
+        role: { name: "Admin" },
       };
 
       vi.mocked(prisma.user.findUnique).mockResolvedValue(mockDbUser as any);
 
-      const updatedSession = await authOptions.callbacks.session({ session: mockSession });
+      const updatedSession = await authOptions.callbacks.session({
+        session: mockSession,
+        token: mockToken,
+      });
 
       expect(prisma.user.findUnique).toHaveBeenCalledWith({
-        where: { email: "melanie@zoo2.de" },
-        include: { role: { include: { rolestext: true } } },
+        where: { id: "db-user-999" },
+        include: { role: true },
       });
 
       expect(updatedSession.user.id).toBe("db-user-999");
@@ -98,13 +99,16 @@ describe("NextAuth Route Configuration", () => {
       expect(updatedSession.user.role).toBe("Admin");
     });
 
-    test("bricht nicht ab und gibt die normale Session zurück, wenn keine E-Mail existiert", async () => {
-      const mockSessionWithoutEmail = { user: { name: "Anonymus" } };
+    test("bricht nicht ab und gibt die normale Session zurück, wenn keine User-ID vorhanden ist", async () => {
+      const mockSessionWithoutId = { user: { name: "Anonymus" } };
 
-      const result = await authOptions.callbacks.session({ session: mockSessionWithoutEmail });
+      const result = await authOptions.callbacks.session({
+        session: mockSessionWithoutId,
+        token: {},
+      });
 
       expect(prisma.user.findUnique).not.toHaveBeenCalled();
-      expect(result).toEqual(mockSessionWithoutEmail);
+      expect(result).toEqual(mockSessionWithoutId);
     });
   });
 });
