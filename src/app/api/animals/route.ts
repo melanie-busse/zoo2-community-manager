@@ -1,7 +1,8 @@
-export const dynamic = "force-dynamic";
-
 import { NextResponse } from "next/server";
+
 import { getAllAnimals, createAnimal } from "@/service/AnimalService";
+
+export const dynamic = "force-dynamic";
 
 export async function GET(request: Request) {
   try {
@@ -27,7 +28,8 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
 
-    if (!body.nameDe || !body.enclosureType) {
+    const nameDe = body.animaltext?.find((t: any) => t.languageCode === "de")?.animalName;
+    if (!nameDe || !body.biomeId) {
       return NextResponse.json(
         { message: "Name (DE) und Gehegetyp sind Pflichtfelder." },
         { status: 400 },

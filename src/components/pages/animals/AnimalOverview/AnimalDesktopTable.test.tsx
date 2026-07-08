@@ -81,7 +81,7 @@ vi.mock("@/utils/BiomeUtil", () => ({
 const mockToggleSort = vi.fn();
 const mockSetSelectedAnimal = vi.fn();
 
-let storeState = {
+const storeState = {
   currentItems: [] as Animal[],
   sortBy: "name",
   sortDirection: "asc" as const,
@@ -127,7 +127,7 @@ describe("AnimalDesktopTable", () => {
 
   test("fängt leere animaltext-Arrays ab und zeigt den Fallback-Text", () => {
     render(<AnimalDesktopTable />);
-    expect(screen.getByText("Kein Name vorhanden")).toBeInTheDocument();
+    expect(screen.getByText("Animal.noName")).toBeInTheDocument();
   });
 
   test("zeigt den korrekten Einkaufspreis an", () => {

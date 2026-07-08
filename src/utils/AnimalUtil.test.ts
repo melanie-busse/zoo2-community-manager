@@ -40,8 +40,8 @@ describe("Animal Utilities", () => {
     test("filtert nach Suchbegriff (Name)", () => {
       const result = filterAnimals(mockAnimals, {
         searchTerm: "Löwe",
-        selectedBiome: "all",
-        selectedLevel: "all",
+        selectedBiome: null,
+        selectedShelterLevel: null,
       });
       expect(result).toHaveLength(1);
       expect(result[0].id).toBe(2);
@@ -50,8 +50,8 @@ describe("Animal Utilities", () => {
     test("filtert nach Suchbegriff (ID)", () => {
       const result = filterAnimals(mockAnimals, {
         searchTerm: "1",
-        selectedBiome: "all",
-        selectedLevel: "all",
+        selectedBiome: null,
+        selectedShelterLevel: null,
       });
       expect(result).toHaveLength(1);
       expect(result[0].id).toBe(1);
@@ -61,7 +61,7 @@ describe("Animal Utilities", () => {
       const result = filterAnimals(mockAnimals, {
         searchTerm: "",
         selectedBiome: "Savanne",
-        selectedLevel: "all",
+        selectedShelterLevel: null,
       });
       expect(result).toHaveLength(1);
       expect(result[0].id).toBe(2);
@@ -70,8 +70,8 @@ describe("Animal Utilities", () => {
     test("filtert nach Level", () => {
       const result = filterAnimals(mockAnimals, {
         searchTerm: "",
-        selectedBiome: "all",
-        selectedLevel: "2",
+        selectedBiome: null,
+        selectedShelterLevel: "2",
       });
       expect(result).toHaveLength(1);
       expect(result[0].id).toBe(1);

@@ -37,13 +37,12 @@ export default function FormattedDate({ date, options = {} }: FormattedDateProps
     ...options,
   };
 
+  let formatted: string;
   try {
-    return (
-      <time dateTime={dateObj.toISOString()}>
-        {new Intl.DateTimeFormat(locale, defaultOptions).format(dateObj)}
-      </time>
-    );
-  } catch (error) {
+    formatted = new Intl.DateTimeFormat(locale, defaultOptions).format(dateObj);
+  } catch {
     return <span>{String(date)}</span>;
   }
+
+  return <time dateTime={dateObj.toISOString()}>{formatted}</time>;
 }

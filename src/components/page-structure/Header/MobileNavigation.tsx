@@ -9,7 +9,7 @@ import { navConfig } from "@/config/navigationData";
 import Login from "@/components/page-structure/Header/Login";
 import Chevron from "@/components/ui/icons/Chevron";
 
-// @ts-ignore
+// @ts-expect-error -- Props werden ohne Typ-Definition übergeben
 export default function MobileNavigation({ isOpen, onClose }) {
   const t = useTranslations();
   const [openSubMenu, setOpenSubMenu] = useState<string | null>(null);

@@ -13,11 +13,16 @@ import AccordionCard from "./AccordionCard";
 import ActionGroupBadge from "@/components/ui/badges/ActionGroupBadge";
 import Textarea from "@/components/page-structure/Elements/Textarea";
 import { useAnimalStore } from "@/store/useAnimalStore";
+import { useRouter } from "@/i18n/routing";
 
 export default function AnimalDetailContent({}) {
   const animal = useAnimalStore((state) => state.selectedAnimal);
+  const setEditingAnimal = useAnimalStore((state) => state.setEditingAnimal);
+  const deleteAnimal = useAnimalStore((state) => state.deleteAnimal);
 
   const tCommon = useTranslations("Common");
+  const t = useTranslations();
+  const router = useRouter();
 
   const { data: session } = useSession();
   const isAdmin = session?.user?.role === "Director";
@@ -33,7 +38,17 @@ export default function AnimalDetailContent({}) {
     <Styles.Wrapper>
       {isAdmin && (
         <Styles.TopBar>
-          <ActionGroupBadge object={animal} />
+          <ActionGroupBadge
+              id={animal.id}
+              onEdit={() => {
+                setEditingAnimal(animal);
+                router.push(`/animals/${animal.id}/edit`);
+              }}
+              onDelete={async () => {
+                const success = await deleteAnimal(animal.id, t);
+                if (success) router.push("/animals");
+              }}
+            />
         </Styles.TopBar>
       )}
 

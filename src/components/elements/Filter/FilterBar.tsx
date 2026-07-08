@@ -22,14 +22,14 @@ export default function FilterBar({
 }: FilterBarProps) {
   const t = useTranslations();
 
- const allAnimals = useAnimalStore((state) => state.allAnimals);
+  const allAnimals = useAnimalStore((state) => state.allAnimals);
   const searchTerm = useAnimalStore((state) => state.searchTerm);
   const selectedBiome = useAnimalStore((state) => state.selectedBiome);
-  const selectedLevel = useAnimalStore((state) => state.selectedLevel);
+  const selectedLevel = useAnimalStore((state) => state.selectedShelterLevel);
 
   const setSearchTerm = useAnimalStore((state) => state.setSearchTerm);
   const setSelectedBiome = useAnimalStore((state) => state.setSelectedBiome);
-  const setSelectedLevel = useAnimalStore((state) => state.setSelectedLevel);
+  const setSelectedLevel = useAnimalStore((state) => state.setSelectedShelterLevel);
 
   const uniqueBiomes = Array.from(
     new Map(
@@ -58,8 +58,8 @@ export default function FilterBar({
       {showBiomeFilter && (
         <CustomBadgeFilter
           items={uniqueBiomes}
-          selectedValue={selectedBiome}
-          onSelectAction={(val) => setSelectedBiome(val)}
+          selectedValue={selectedBiome ?? "all"}
+          onSelectAction={(val) => setSelectedBiome(val === "all" ? null : val)}
           allLabelKey="all_enclosures"
           getIdentifier={(biome) => getBiomeName(biome, "")}
           renderBadge={(biome) => (
@@ -71,8 +71,8 @@ export default function FilterBar({
       {showLevelFilter && (
         <CustomBadgeFilter
           items={uniqueLevels}
-          selectedValue={selectedLevel}
-          onSelectAction={(val) => setSelectedLevel(val)}
+          selectedValue={selectedLevel ?? "all"}
+          onSelectAction={(val) => setSelectedLevel(val === "all" ? null : val)}
           allLabelKey="all_levels"
           labelPrefixKey="level_label"
           getIdentifier={(animal) => String(animal.shelterLevel)}

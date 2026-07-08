@@ -22,6 +22,9 @@ vi.mock("next-intl", () => ({
   },
 }));
 
+const mockPush = vi.fn();
+vi.mock("next/navigation", () => ({ useRouter: () => ({ push: mockPush }) }));
+
 vi.mock("next/image", () => ({
   default: ({ src, alt, ...props }: any) => <img src={src} alt={alt} {...props} />,
 }));
@@ -38,7 +41,7 @@ vi.mock("./AnimalForms.style", () => ({
   Label: ({ children, htmlFor }: any) => <label htmlFor={htmlFor}>{children}</label>,
 }));
 
-vi.mock("./BasicInfoSection", () => ({
+vi.mock("@/components/ui/form/sections/BasicInfoSection", () => ({
   default: ({ formData, setFormData }: any) => (
     <div>
       <label htmlFor="releaseDate">Release Date</label>
@@ -52,7 +55,7 @@ vi.mock("./BasicInfoSection", () => ({
   ),
 }));
 
-vi.mock("./EnclosureTypeSection", () => ({
+vi.mock("@/components/ui/form/sections/EnclosureTypeSection", () => ({
   default: ({ formData, setFormData }: any) => (
     <div>
       <label htmlFor="biomeId">Gehegetyp</label>
@@ -73,14 +76,17 @@ vi.mock("./EnclosureTypeSection", () => ({
   ),
 }));
 
-vi.mock("./PriceSection", () => ({ default: () => <div>PriceSection</div> }));
-vi.mock("./BreedingSection", () => ({ default: () => <div>BreedingSection</div> }));
-vi.mock("./XpActionSection", () => ({ default: () => <div>XpActionSection</div> }));
-vi.mock("./EnclosureCapacitySection", () => ({ default: () => <div>CapacitySection</div> }));
-vi.mock("./OriginSection", () => ({ default: () => <div>OriginSection</div> }));
-vi.mock("@/components/pages/animals/AnimalForms/TranslationSection", () => ({
+vi.mock("@/components/ui/form/sections/PriceSection", () => ({ default: () => <div>PriceSection</div> }));
+vi.mock("@/components/ui/form/sections/BreedingSection", () => ({ BreedingSection: () => <div>BreedingSection</div> }));
+vi.mock("@/components/ui/form/sections/XpActionSection", () => ({ default: () => <div>XpActionSection</div> }));
+vi.mock("@/components/ui/form/sections/EnclosureCapacitySection", () => ({ default: () => <div>CapacitySection</div> }));
+vi.mock("@/components/ui/form/sections/OriginSection", () => ({ default: () => <div>OriginSection</div> }));
+vi.mock("@/components/ui/form/sections/AnimalTranslationSection", () => ({
   default: () => <div>TranslationSection</div>,
 }));
+vi.mock("@/components/ui/form/sections/FooterSection", () => ({ default: ({ children }: any) => <div>{children}</div> }));
+vi.mock("@/components/ui/form/styling/FormGrid", () => ({ default: ({ children }: any) => <div>{children}</div> }));
+vi.mock("@/components/ui/form/styling/Column", () => ({ default: ({ children }: any) => <div>{children}</div> }));
 
 vi.mock("@/components/ui/form/SubmitButton", () => ({
   default: ({ label, isSubmitting }: any) => (
@@ -91,7 +97,7 @@ vi.mock("@/components/ui/form/SubmitButton", () => ({
 }));
 
 vi.mock("@/utils/AnimalUtil", () => ({
-  mapAnimalToForm: vi.fn((animal) => animal || { biomeId: null, releaseDate: "" }),
+  mapAnimalToForm: vi.fn((animal) => animal || { biomeId: null, releaseDate: "", animaltext: [{ languageCode: "de", animalName: "Löwe" }] }),
 }));
 
 const mockLanguages = [{ code: "de", name: "Deutsch" }];
@@ -145,7 +151,7 @@ describe("AnimalForm Integration Tests", () => {
   });
 
   test("ruft saveAnimal auf und leert den Store bei erfolgreichem Submit", async () => {
-    mockSaveAnimal.mockResolvedValue(true); // Erfolg simulieren
+    mockSaveAnimal.mockResolvedValue(99); // Erfolg simulieren
 
     render(<AnimalForm languages={mockLanguages} biomes={mockBiomes} originsData={mockOrigins} />);
 
@@ -158,10 +164,9 @@ describe("AnimalForm Integration Tests", () => {
     const submitBtn = screen.getByRole("button", { name: "Animals.form.saveAnimal" });
     fireEvent.click(submitBtn);
 
-    expect(mockSaveAnimal).toHaveBeenCalledWith({
-      biomeId: 1,
-      releaseDate: "2026-06-24",
-    });
+    expect(mockSaveAnimal).toHaveBeenCalledWith(
+      expect.objectContaining({ biomeId: 1, releaseDate: "2026-06-24" }),
+    );
 
     await waitFor(() => {
       expect(mockClearEditingAnimal).toHaveBeenCalled();

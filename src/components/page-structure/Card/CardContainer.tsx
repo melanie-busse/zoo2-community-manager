@@ -5,32 +5,35 @@ import styled from "styled-components";
 
 interface CardContainerProps {
   children: ReactNode;
+  onClick?: () => void; // 💡 Macht den onClick-Handler als Prop verfügbar
 }
 
-export default function CardContainer({ children }: CardContainerProps) {
-  return <StyledCardContainer>{children}</StyledCardContainer>;
+export default function CardContainer({ children, onClick }: CardContainerProps) {
+  return (
+    <StyledCardContainer onClick={onClick} $isClickable={!!onClick}>
+      {children}
+    </StyledCardContainer>
+  );
 }
 
-const StyledCardContainer = styled.div`
-  background: #fdfdfd;
-  border: 1.5px solid ${({ theme }) => theme.colors.ui.pageBg};
-  border-radius: var(--border-radius);
-  padding: 24px;
+const StyledCardContainer = styled.div<{ $isClickable: boolean }>`
+  background: ${({ theme }) => theme.colors.ui.white};
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  width: 80vw;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
   display: flex;
-  gap: 25px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  flex-direction: column;
 
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: flex-start;
-  width: 100%;
+  cursor: ${({ $isClickable }) => ($isClickable ? "pointer" : "default")};
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: center;
-    padding: 15px;
-    gap: 15px;
-    width: 100%;
-    border-radius: var(--border-radius);
+  &:hover {
+    ${({ $isClickable }) =>
+      $isClickable && "transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);"}
   }
 `;

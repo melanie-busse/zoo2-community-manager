@@ -14,7 +14,7 @@ const mockSetSearchTerm = vi.fn();
 const mockSetSelectedBiome = vi.fn();
 const mockSetSelectedLevel = vi.fn();
 
-let storeState = {
+const storeState = {
   allAnimals: [
     {
       id: 1,
@@ -24,10 +24,10 @@ let storeState = {
   ],
   searchTerm: "",
   selectedBiome: null,
-  selectedLevel: null,
+  selectedShelterLevel: null,
   setSearchTerm: mockSetSearchTerm,
   setSelectedBiome: mockSetSelectedBiome,
-  setSelectedLevel: mockSetSelectedLevel,
+  setSelectedShelterLevel: mockSetSelectedLevel,
 };
 
 vi.mock("@/store/useAnimalStore", () => ({

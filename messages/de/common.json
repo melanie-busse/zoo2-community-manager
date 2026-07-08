@@ -1,0 +1,18 @@
+{
+  "price": "Preis",
+  "time": "Zeit",
+  "hours": "Stunden",
+  "minutes": "Minuten",
+  "language": "Sprache",
+  "allLanguages": "Alle Sprachen",
+  "name": "Name",
+  "addRow": "+ Zeile hinzufügen",
+  "selling_price": "Verkaufspreis",
+  "release": "Release-Datum",
+  "popularity": "Popularität",
+  "actions": "Aktionen",
+  "action": "Aktion",
+  "available": "Verfügbar",
+  "chosen": "Ausgewählt",
+  "description": "Beschreibung"
+}

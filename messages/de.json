@@ -20,6 +20,9 @@
       "animals": "Tiere",
       "animal_overview": "Tierübersicht",
       "animal_create": "Tier anlegen",
+      "specialCoats": "Farbvarianten",
+      "specialcoats_overview": "Farbvarianten-übersicht",
+      "specialcoats_create": "Farbvariante anlegen",
       "club": "Klub",
       "club_statues": "Statuen",
       "club_contests": "Wettbewerbe",
@@ -64,6 +67,7 @@
     "biomeSize": "Gehegegröße",
     "capacityTableLabel": "Anzahl Tiere vs. Gehegeplatz",
     "requiredSize": "Benötigte Fläche",
+    "noName": "Kein Name vorhanden",
     "form": {
       "createAnimal": "Neues Tier anlegen",
       "editAnimal": "Tier bearbeiten",
@@ -153,6 +157,11 @@
     "search_placeholder": "Suche nach Tieren...",
     "all_enclosures": "Alle Gehege",
     "all_levels": "Alle Levels",
+    "all_status": "Alle Status",
+    "status_prefix": "Status:",
+    "ready": "Fertig",
+    "missing_partner": "Partner fehlt",
+    "not_owned": "Nicht besitzt",
     "level_label": "Level",
     "results": {
       "show": "Angezeigt",
@@ -169,6 +178,9 @@
     "animals": {
       "title": "Oje, kein Tier da!"
     },
+    "specialCoats": {
+      "title": "Oje, kein Tier da!"
+    },
     "contests": {
       "title": "Keine Wettbewerbe gefunden"
     },
@@ -179,12 +191,40 @@
   "Biome": {
     "enclosure": "Gehege",
     "enclosureType": "Gehegetyp",
-    "shelterLevel": "Stall Level"
+    "shelterLevel": "Stall Level",
+    "noBiome": "Kein Gehege"
   },
   "Errors": {
     "imageNotFound": "Bild nicht gefunden"
   },
   "Tooltip": {
     "level": "Level"
+  },
+  "SpecialCoat": {
+    "overview_title": "Farbvarianten",
+    "messages": {
+      "deleteErrorTitle": "Farbvariante löschen?",
+      "confirmDelete": "Möchtest du diese Farbvariante wirklich löschen?",
+      "deleteSuccess": "Farbvariante erfolgreich gelöscht"
+    },
+    "species": "Name",
+    "color": "Farbe",
+    "noName": "Kein Name vorhanden",
+    "noColor": "Keine Farbe vorhanden",
+    "form": {
+      "createSpecialCoat": "Farbvariante erstellen",
+      "editSpecialCoat": "Farbvariante editieren",
+      "translationSection": {
+        "title": "Übersetzungen (Name & Farbe)",
+        "fields": {
+          "language": "Sprache",
+          "name": "Variantenname",
+          "NamePlaceholder": "z.B. Halloween, Valentinstag...",
+          "color": "Farbe",
+          "ColorPlaceholder": "z. B. gestreift"
+        }
+      },
+      "saveSpecialCoat": "Speichern"
+    }
   }
 }

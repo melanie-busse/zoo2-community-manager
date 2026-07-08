@@ -4,7 +4,7 @@ services:
     restart: always
     environment:
       MARIADB_DATABASE: zoo2_prod
-      MARIADB_ROOT_PASSWORD: dein_sicheres_passwort
+      MARIADB_ROOT_PASSWORD:  ${DB_PASSWORD}
     volumes:
       - db_data:/var/lib/mysql
 

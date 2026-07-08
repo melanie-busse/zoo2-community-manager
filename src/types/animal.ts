@@ -1,7 +1,8 @@
 import { Biome } from "@/types/biome";
 import { PriceType } from "@/types/PriceType";
 import { Xp } from "@/types/xp";
-import { AnimalOrigin, Origin } from "@/types/origin";
+import { AnimalOrigin } from "@/types/origin";
+import { SpecialCoat } from "@/types/specialCoat";
 
 export interface Animal {
   id: number;
@@ -35,16 +36,6 @@ export interface AnimalText {
   id: number;
   animalName: string;
   animalDescription: string;
-}
-
-export interface SpecialCoat {
-  id: number;
-  name: string;
-  image?: string | null;
-  color?: string | null;
-  releaseDate?: Date | null;
-  origin?: Origin | null;
-  specialCoatText?: Array<{ name: string; languageCode: string }>;
 }
 
 export interface AnimalPerEnclosure {

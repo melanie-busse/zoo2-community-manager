@@ -108,3 +108,12 @@ export const ScaledBadge = styled.div`
   transform: scale(0.7);
   margin: -10px;
 `;
+
+export const StatusDot = styled.span<{ $color: string }>`
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: ${({ $color }) =>
+    $color === "green" ? "#4caf50" : $color === "yellow" ? "#ffeb3b" : "#f44336"};
+  display: inline-block;
+`;

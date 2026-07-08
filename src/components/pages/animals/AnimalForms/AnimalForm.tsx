@@ -2,23 +2,27 @@
 
 import React, { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
+import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 
-import * as Styles from "./AnimalForms.style";
-
-import BreedingSection from "./BreedingSection";
-import PriceSection from "./PriceSection";
-import BasicInfoSection from "./BasicInfoSection";
-import XpActionSection from "./XpActionSection";
-import EnclosureCapacitySection from "./EnclosureCapacitySection";
-import EnclosureTypeSection from "./EnclosureTypeSection";
-import OriginSection from "./OriginSection";
-import TranslationSection from "@/components/pages/animals/AnimalForms/TranslationSection";
+import { BreedingSection } from "@/components/ui/form/sections/BreedingSection";
+import PriceSection from "@/components/ui/form/sections/PriceSection";
+import BasicInfoSection from "@/components/ui/form/sections/BasicInfoSection";
+import XpActionSection from "@/components/ui/form/sections/XpActionSection";
+import EnclosureCapacitySection from "@/components/ui/form/sections/EnclosureCapacitySection";
+import EnclosureTypeSection from "@/components/ui/form/sections/EnclosureTypeSection";
+import OriginSection from "@/components/ui/form/sections/OriginSection";
+import AnimalTranslationSection from "@/components/ui/form/sections/AnimalTranslationSection";
 import SubmitButton from "@/components/ui/form/SubmitButton";
+
 import { useAnimalStore } from "@/store/useAnimalStore";
 import { Animal } from "@/types/animal";
 import { Biome } from "@/types/biome";
 import { mapAnimalToForm } from "@/utils/AnimalUtil";
+
+import FooterSection from "@/components/ui/form/sections/FooterSection";
+import FormGrid from "@/components/ui/form/styling/FormGrid";
+import Column from "@/components/ui/form/styling/Column";
 
 interface OriginOption {
   id: number;
@@ -35,6 +39,7 @@ interface AnimalFormProps {
 export default function AnimalForm({ animal, languages, biomes, originsData }: AnimalFormProps) {
   const tAnimals = useTranslations("Animals");
   const tCommon = useTranslations("Common");
+  const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const editingAnimal = useAnimalStore((state) => state.editingAnimal);
@@ -42,7 +47,7 @@ export default function AnimalForm({ animal, languages, biomes, originsData }: A
   const saveAnimal = useAnimalStore((state) => state.saveAnimal);
   const clearEditingAnimal = useAnimalStore((state) => state.clearEditingAnimal);
 
-   useEffect(() => {
+  useEffect(() => {
     if (animal) {
       setEditingAnimal(animal);
     } else {
@@ -50,17 +55,21 @@ export default function AnimalForm({ animal, languages, biomes, originsData }: A
     }
   }, [animal, setEditingAnimal, clearEditingAnimal]);
 
-   const [formData, setFormData] = useState<any>(() =>
-    mapAnimalToForm(animal || editingAnimal, languages),
+  const [formData, setFormData] = useState<any>(() =>
+    mapAnimalToForm(animal, languages),
   );
-
-   useEffect(() => {
-    setFormData(mapAnimalToForm(editingAnimal, languages));
-  }, [editingAnimal, languages]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (isSubmitting) return;
+
+    const nameDe = formData.animaltext?.find(
+      (t: any) => t.languageCode === "de",
+    )?.animalName;
+    if (!nameDe) {
+      toast.warn("Bitte gib einen deutschen Namen ein!");
+      return;
+    }
 
     if (!formData.biomeId) {
       toast.warn("Bitte wähle ein Gehege aus!");
@@ -68,28 +77,34 @@ export default function AnimalForm({ animal, languages, biomes, originsData }: A
     }
 
     setIsSubmitting(true);
-    const success = await saveAnimal(formData);
-    setIsSubmitting(false);
+    try {
+      const savedId = await saveAnimal(formData);
 
-    if (success) {
-      clearEditingAnimal();
+      if (savedId !== false) {
+        clearEditingAnimal();
+        router.push(`/animals/${savedId}`);
+      }
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <Styles.FormGrid>
-        <Styles.Column>
+      <FormGrid>
+        <Column>
           <BasicInfoSection formData={formData} setFormData={setFormData} />
           <EnclosureTypeSection formData={formData} setFormData={setFormData} biomes={biomes} />
-          <TranslationSection
+          <AnimalTranslationSection
             formData={formData}
             setFormData={setFormData}
             dbLanguages={languages}
           />
-        </Styles.Column>
+        </Column>
 
-        <Styles.Column>
+        <Column>
           <PriceSection formData={formData} setFormData={setFormData} />
           <BreedingSection formData={formData} setFormData={setFormData} />
           <XpActionSection formData={formData} setFormData={setFormData} />
@@ -97,10 +112,10 @@ export default function AnimalForm({ animal, languages, biomes, originsData }: A
             enclosureSizes={formData.enclosureSizes}
             setFormData={setFormData}
           />
-        </Styles.Column>
-      </Styles.FormGrid>
+        </Column>
+      </FormGrid>
 
-      <Styles.FooterSection>
+      <FooterSection>
         <OriginSection
           originsData={originsData}
           selectedOrigins={formData.origins || []}
@@ -111,7 +126,7 @@ export default function AnimalForm({ animal, languages, biomes, originsData }: A
           label={isSubmitting ? tCommon("saving") : tAnimals("form.saveAnimal")}
           isSubmitting={isSubmitting}
         />
-      </Styles.FooterSection>
+      </FooterSection>
     </form>
   );
 }

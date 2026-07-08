@@ -5,36 +5,39 @@ import { formatInitialDate } from "@/utils/DateUtil";
 
 interface FilterOptions {
   searchTerm: string;
-  selectedBiome: string;
-  selectedLevel: string;
-}
-
-export function filterAnimals(
-  animals: Animal[] | undefined,
-  { searchTerm, selectedBiome, selectedLevel }: FilterOptions,
-): Animal[] {
-  if (!animals) return [];
-
-  const searchLower = searchTerm.toLowerCase();
-
-  return animals.filter((animal) => {
-    const matchesSearch =
-      !searchTerm ||
-      animal.animaltext?.[0]?.animalName?.toLowerCase().includes(searchLower) ||
-      animal.id.toString().includes(searchLower);
-
-    const matchesGehege =
-      selectedBiome === "all" || getBiomeName(animal.biome, "") === selectedBiome;
-
-    const matchesLevel = selectedLevel === "all" || String(animal.shelterLevel) === selectedLevel;
-
-    return matchesSearch && matchesGehege && matchesLevel;
-  });
+  selectedBiome: string | null;
+  selectedShelterLevel: string | null;
 }
 
 interface SortOptions {
   sortBy: string | null;
   sortDirection: "asc" | "desc";
+}
+
+export function filterAnimals(
+  animals: Animal[] | undefined,
+  { searchTerm, selectedBiome, selectedShelterLevel }: FilterOptions,
+): Animal[] {
+  if (!animals) return [];
+
+  return animals.filter((animal) => {
+    if (searchTerm.trim() !== "") {
+      const query = searchTerm.toLowerCase();
+      const name = animal.animaltext?.[0]?.animalName?.toLowerCase() ?? "";
+      const id = animal.id.toString();
+      if (!name.includes(query) && !id.includes(query)) return false;
+    }
+
+    if (selectedBiome !== null && getBiomeName(animal.biome, "") !== selectedBiome) {
+      return false;
+    }
+
+    if (selectedShelterLevel !== null && String(animal.shelterLevel) !== selectedShelterLevel) {
+      return false;
+    }
+
+    return true;
+  });
 }
 
 export function paginate<T>(items: T[], page: number, itemsPerPage: number): T[] {
@@ -70,7 +73,6 @@ function _getNestedValue(obj: any, path: string): string | number {
     return obj.sellingPrice || 0;
   }
 
-  // Erlaubt Zugriff auf "biome.name" etc.
   return path.split(".").reduce((acc, part) => acc && acc[part], obj) || 0;
 }
 

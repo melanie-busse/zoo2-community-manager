@@ -1,0 +1,15 @@
+- name: Create .env file
+        run: |
+          echo "DB_PASSWORD=${{ secrets.DB_PASSWORD }}" > .env
+          echo "JWT_SECRET=${{ secrets.JWT_SECRET }}" >> .env
+          echo "OPENAI_API_KEY={{ secrets.OPENAI_API_KEY }}" >> .env
+          echo "IMAGE_REPO=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}" >> .env
+          echo "FRONTEND_URLS=https://tadaa-events.com" >> .env
+          echo "CLOUDFLARE_TOKEN=${{ secrets.CLOUDFLARE_TOKEN }}" >> .env
+          # beim zweiten deployment dringend löschen
+          # oder besser noch migration richtig einrichten!
+          echo "DB_SYNC=true" >> .env
+
+          deploy:
+              needs: build
+              runs-on: self-hosted

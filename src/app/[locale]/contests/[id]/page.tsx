@@ -1,10 +1,9 @@
 import { redirect } from "@/i18n/routing";
-import { useLocale } from "next-intl";
-
+import { getLocale } from "next-intl/server";
 
 export default async function ContestIdPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
-  const locale = useLocale();
+  const locale = await getLocale();
 
   // Wenn jemand nur die ID aufruft, schicken wir ihn direkt zum Editieren
   redirect({

@@ -22,6 +22,16 @@ interface EditAnimalPageProps {
 
 export default async function EditAnimalPage({ params }: EditAnimalPageProps) {
   const { id, locale } = await params;
+  const animalId = parseInt(id, 10);
+
+  if (isNaN(animalId)) {
+    notFound();
+  }
+
+  const session = await getServerSession(authOptions);
+  if (!session || session.user?.role !== "Director") {
+    redirect(`/${locale}/animals`);
+  }
 
   const [animalRaw, languages, biomes, origins] = await Promise.all([
     getAnimalById(id),
@@ -37,11 +47,6 @@ export default async function EditAnimalPage({ params }: EditAnimalPageProps) {
   const serializedAnimal = JSON.parse(JSON.stringify(animalRaw));
 
   const tAnimals = await getTranslations({ locale, namespace: "Animals" });
-
-  const session = await getServerSession(authOptions);
-  if (!session || session.user?.role !== "Director") {
-    redirect(`/${locale}/animals`);
-  }
 
   return (
     <PageWrapper>

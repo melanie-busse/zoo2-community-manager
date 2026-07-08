@@ -102,7 +102,11 @@ export default function ContestDesktopTable({
                     paddingRight: "20px",
                   }}
                 >
-                  <ActionGroupBadge object={contest} />
+                  <ActionGroupBadge
+                    id={contest.id}
+                    onEdit={() => onEdit(String(contest.id))}
+                    onDelete={() => onDelete(String(contest.id))}
+                  />
                 </td>
               )}
             </LinkedRow>

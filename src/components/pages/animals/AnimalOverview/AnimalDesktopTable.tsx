@@ -18,9 +18,14 @@ import ActionGroupBadge from "@/components/ui/badges/ActionGroupBadge";
 import { getBiomeImage, getBiomeName, getShelterImage } from "@/utils/BiomeUtil";
 import LinkedRow from "@/components/page-structure/Table/LinkedRow";
 import { useAnimalStore } from "@/store/useAnimalStore";
+import { useRouter } from "@/i18n/routing";
 
 export default function AnimalDesktopTable() {
+  const router = useRouter();
   const t = useTranslations();
+
+  const setEditingAnimal = useAnimalStore((state) => state.setEditingAnimal);
+  const deleteAnimal = useAnimalStore((state) => state.deleteAnimal);
   const { data: session } = useSession();
 
   const animals = useAnimalStore((state) => state.currentItems);
@@ -90,7 +95,7 @@ export default function AnimalDesktopTable() {
             <LinkedRow
               key={animal.id}
               path={`/animals/${animal.id}`}
-              onClick={() => setSelectedAnimal(animal)} // 💡 Speichert das Tier im Store, wenn geklickt wird
+              onClick={() => setSelectedAnimal(animal)}
             >
               <td>
                 <Styles.TableThumbnail>
@@ -102,12 +107,12 @@ export default function AnimalDesktopTable() {
                 </Styles.TableThumbnail>
               </td>
               <td>
-                <strong>{animal.animaltext?.[0]?.animalName ?? "Kein Name vorhanden"}</strong>
+                <strong>{animal.animaltext?.[0]?.animalName ?? t("Animal.noName")}</strong>
               </td>
               <td>
                 <BiomeBadge
                   image={getBiomeImage(animal.biome)}
-                  tooltipLabel={getBiomeName(animal.biome, "unbekannter Biome")}
+                  tooltipLabel={getBiomeName(animal.biome, t("Biome.noBiome"))}
                 />
               </td>
               <Styles.TableCellRight>
@@ -128,7 +133,16 @@ export default function AnimalDesktopTable() {
               </Styles.TableCellRight>
               {isAdmin && (
                 <Styles.TableCellRight>
-                  <ActionGroupBadge object={animal} />
+                  <ActionGroupBadge
+                    id={animal.id}
+                    onEdit={() => {
+                      setEditingAnimal(animal);
+                      router.push(`/animals/${animal.id}/edit`);
+                    }}
+                    onDelete={() => {
+                      deleteAnimal(animal.id, t);
+                    }}
+                  />
                 </Styles.TableCellRight>
               )}
             </LinkedRow>

@@ -38,6 +38,7 @@ export default function ContestForm({
   // 3. Effekt zum Laden der Daten (wichtig für den Edit-Modus)
   useEffect(() => {
     if (initialData) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setFormData({
         startDate: toISODate(initialData.startDate),
         endDate: toISODate(initialData.endDate),
@@ -49,6 +50,7 @@ export default function ContestForm({
           id: link.statue?.id,
           name: getStatueName(link.statue, "Unbekannte Statue"),
         }));
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setSelectedStatues(preselected);
       }
     } else {
@@ -65,6 +67,7 @@ export default function ContestForm({
       const end = new Date(start);
       end.setDate(start.getDate() + 7);
 
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setFormData({
         startDate: toISODate(start),
         endDate: toISODate(end),

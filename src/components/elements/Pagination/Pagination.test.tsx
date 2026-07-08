@@ -7,10 +7,15 @@ import Pagination from "./Pagination";
 vi.mock("./Pagination.styles", () => ({
   SignpostAssembly: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
   PageIndicator: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
-  // Hier mappen wir das auf einen echten Button und reichen disabled weiter
-  SignpostButton: ({ disabled, onClick }: { disabled: boolean; onClick: () => void }) => (
-    <button onClick={onClick} disabled={disabled} />
-  ),
+  SignpostButton: ({
+    disabled,
+    onClick,
+    $direction,
+  }: {
+    disabled: boolean;
+    onClick: () => void;
+    $direction: string;
+  }) => <button onClick={onClick} disabled={disabled} data-testid={`btn-${$direction}`} />,
 }));
 
 vi.mock("@/components/ui/tooltip/Tooltip", () => ({
@@ -21,39 +26,37 @@ vi.mock("next-intl", () => ({
   useTranslations: () => (key: string) => key,
 }));
 
-const mockNextPage = vi.fn();
-const mockPrevPage = vi.fn();
-
-let storeState = {
-  currentPage: 1,
-  filteredCount: 50,
-  itemsPerPage: 10,
-  nextPage: mockNextPage,
-  prevPage: mockPrevPage,
-};
-
-vi.mock("@/store/useAnimalStore", () => ({
-  useAnimalStore: (selector: (state: typeof storeState) => any) => selector(storeState),
-}));
-
 describe("Pagination", () => {
+  const mockNext = vi.fn();
+  const mockPrev = vi.fn();
+
   beforeEach(() => {
     vi.clearAllMocks();
-    // Standard-Zustand vor jedem Test wiederherstellen (Seite 1 von 5)
-    storeState.currentPage = 1;
-    storeState.filteredCount = 50;
-    storeState.itemsPerPage = 10;
   });
 
   test("rendert null, wenn es nur eine oder weniger Seiten gibt", () => {
-    storeState.filteredCount = 5;
-
-    const { container } = render(<Pagination />);
+    const { container } = render(
+      <Pagination
+        currentPage={1}
+        filteredCount={5}
+        itemsPerPage={10}
+        onNext={mockNext}
+        onPrev={mockPrev}
+      />,
+    );
     expect(container.firstChild).toBeNull();
   });
 
   test("rendert die Seitenzahlen korrekt und sperrt 'Zurück' auf der ersten Seite", () => {
-    render(<Pagination />);
+    render(
+      <Pagination
+        currentPage={1}
+        filteredCount={50}
+        itemsPerPage={10}
+        onNext={mockNext}
+        onPrev={mockPrev}
+      />,
+    );
 
     expect(
       screen.getByText((content, element) => {
@@ -65,41 +68,50 @@ describe("Pagination", () => {
       }),
     ).toBeInTheDocument();
 
-     const buttons = screen.getAllByRole("button");
-    const prevButton = buttons[0];
-    const nextButton = buttons[1];
+    const prevButton = screen.getByTestId("btn-prev");
+    const nextButton = screen.getByTestId("btn-next");
 
     expect(prevButton).toBeDisabled();
     expect(nextButton).not.toBeDisabled();
   });
 
-  test("ruft nextPage und prevPage auf, wenn sich der User auf einer mittleren Seite befindet", () => {
-    storeState.currentPage = 3; // Auf Seite 3 springen
+  test("ruft onNext und onPrev auf, wenn sich der User auf einer mittleren Seite befindet", () => {
+    render(
+      <Pagination
+        currentPage={3}
+        filteredCount={50}
+        itemsPerPage={10}
+        onNext={mockNext}
+        onPrev={mockPrev}
+      />,
+    );
 
-    render(<Pagination />);
-
-    const buttons = screen.getAllByRole("button");
-    const prevButton = buttons[0];
-    const nextButton = buttons[1];
+    const prevButton = screen.getByTestId("btn-prev");
+    const nextButton = screen.getByTestId("btn-next");
 
     expect(prevButton).not.toBeDisabled();
     expect(nextButton).not.toBeDisabled();
 
     fireEvent.click(prevButton);
-    expect(mockPrevPage).toHaveBeenCalledTimes(1);
+    expect(mockPrev).toHaveBeenCalledTimes(1);
 
     fireEvent.click(nextButton);
-    expect(mockNextPage).toHaveBeenCalledTimes(1);
+    expect(mockNext).toHaveBeenCalledTimes(1);
   });
 
   test("sperrt den 'Weiter'-Button auf der letzten Seite", () => {
-    storeState.currentPage = 5;
+    render(
+      <Pagination
+        currentPage={5}
+        filteredCount={50}
+        itemsPerPage={10}
+        onNext={mockNext}
+        onPrev={mockPrev}
+      />,
+    );
 
-    render(<Pagination />);
-
-    const buttons = screen.getAllByRole("button");
-    const prevButton = buttons[0];
-    const nextButton = buttons[1];
+    const prevButton = screen.getByTestId("btn-prev");
+    const nextButton = screen.getByTestId("btn-next");
 
     expect(prevButton).not.toBeDisabled();
     expect(nextButton).toBeDisabled();

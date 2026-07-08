@@ -7,8 +7,9 @@ import { useTranslations } from "next-intl";
 import * as Styles from "./AnimalDetails.styles";
 
 import SpecialCoatBadge from "@/components/ui/badges/SpecialCoatBadge";
-import { SpecialCoat } from "@/types/animal";
+import { SpecialCoat } from "@/types/specialCoat";
 import { formatLocaleDate } from "@/utils/DateUtil";
+import { useRouter } from "@/i18n/routing";
 
 interface SpecialCoatCardProps {
   specialCoat: SpecialCoat;
@@ -16,15 +17,20 @@ interface SpecialCoatCardProps {
 
 export default function SpecialCoatCard({ specialCoat }: SpecialCoatCardProps) {
   const tCommon = useTranslations("Common");
-  const origin = specialCoat.origin;
+  const router = useRouter();
+  const origins = specialCoat.specialcoatsorigin?.map((o) => o.origin).filter(Boolean) ?? [];
 
-  const displayName = specialCoat.specialCoatText?.[0]?.name || specialCoat.name;
+  const displayName = specialCoat.specialcoatstext?.[0]?.name || "";
   const releaseDate = specialCoat.releaseDate
     ? String(formatLocaleDate(specialCoat.releaseDate))
     : "---";
 
   return (
-    <Styles.StyledSpecialCoatCard title={displayName}>
+    <Styles.StyledSpecialCoatCard
+      title={displayName}
+      onClick={() => router.push(`/specialcoats/${specialCoat.id}`)}
+      style={{ cursor: "pointer" }}
+    >
       <SpecialCoatBadge image={specialCoat.image} displayName={displayName} />
 
       <Styles.SpecialCoatName>{displayName}</Styles.SpecialCoatName>
@@ -33,15 +39,19 @@ export default function SpecialCoatCard({ specialCoat }: SpecialCoatCardProps) {
         📅 {tCommon("release")}: {releaseDate}
       </Styles.ReleaseDate>
 
-      {origin && (
-        <Styles.OriginRowSpecialCoat title={origin.name}>
-          <NextImage
-            src={`/images/origins/${origin.image}`}
-            alt={origin.name}
-            width={20}
-            height={20}
-          />
-        </Styles.OriginRowSpecialCoat>
+      {origins.length > 0 && (
+        <Styles.OriginContainer>
+          {origins.map((origin) => (
+            <Styles.OriginRowSpecialCoat key={origin!.id} title={origin!.name}>
+              <NextImage
+                src={`/images/origins/${origin!.image}`}
+                alt={origin!.name}
+                width={20}
+                height={20}
+              />
+            </Styles.OriginRowSpecialCoat>
+          ))}
+        </Styles.OriginContainer>
       )}
     </Styles.StyledSpecialCoatCard>
   );
