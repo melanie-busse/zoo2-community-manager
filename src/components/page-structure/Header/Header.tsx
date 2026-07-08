@@ -12,7 +12,7 @@ import MobileNavigation from "@/components/page-structure/Header/MobileNavigatio
 import Login from "@/components/page-structure/Header/Login";
 
 export default function Header() {
-  const t = useTranslations("Header");
+  const t = useTranslations("navigation");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -35,7 +35,7 @@ export default function Header() {
       </Styles.LogoWrapper>
 
       <Styles.TitleSection>
-        <Styles.MainTitle>{t("Title")}</Styles.MainTitle>
+        <Styles.MainTitle>{t("title")}</Styles.MainTitle>
       </Styles.TitleSection>
 
       <Styles.MobileMenuButton onClick={toggleMenu} aria-label="Toggle Menu">

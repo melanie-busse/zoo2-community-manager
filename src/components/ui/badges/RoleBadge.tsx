@@ -18,7 +18,7 @@ interface RoleBadgeProps {
 }
 
 export default function RoleBadge({ role }: RoleBadgeProps) {
-  const t = useTranslations();
+  const t = useTranslations("navigation");
 
   const imageSrc = ROLE_IMAGES[role as keyof typeof ROLE_IMAGES] || ROLE_IMAGES.Visitor;
 

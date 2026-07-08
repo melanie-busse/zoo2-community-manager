@@ -9,7 +9,7 @@ import * as Styles from "./Navigation.styles";
 import { navConfig } from "@/config/navigationData";
 
 export default function Navigation() {
-  const t = useTranslations();
+  const t = useTranslations("navigation");
   const { data: session } = useSession();
   const pathname = usePathname();
 
@@ -30,12 +30,12 @@ export default function Navigation() {
             <Styles.NavItem key={item.id} data-testid={`nav-item-${item.id}`}>
               {item.href && !item.subMenu ? (
                 <Styles.NavLink as={Link} href={item.href} $active={pathname === item.href}>
-                  {t("Header.Navigation." + item.labelKey)}
+                  {t("links." + item.labelKey)}
                 </Styles.NavLink>
               ) : (
                 <>
                   <Styles.NavButton $active={checkActive(item)}>
-                    {t("Header.Navigation." + item.labelKey)} <IoChevronDown className="arrow" />
+                    {t("links." + item.labelKey)} <IoChevronDown className="arrow" />
                   </Styles.NavButton>
                   <Styles.Dropdown>
                     {item.subMenu?.map((sub) => {
@@ -49,7 +49,7 @@ export default function Navigation() {
                             $active={pathname === sub.href}
                             data-testid={`nav-sub-${item.id}-${sub.labelKey}`}
                           >
-                            {t("Header.Navigation." + sub.labelKey)}
+                            {t("links." + sub.labelKey)}
                           </Styles.DropdownLink>
                         </li>
                       );

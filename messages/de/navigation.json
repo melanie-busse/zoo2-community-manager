@@ -1,10 +1,30 @@
 {
-  "home": "Home",
-  "animals": "Tiere",
-  "animal_overview": "Tierübersicht",
-  "animal_create": "Tier anlegen",
-  "club": "Klub",
-  "club_statues": "Statuen",
-  "club_contests": "Wettbewerbe",
-  "club_create_contest": "Wettbewerb anlegen"
+  "title": "Zoo2: Animal Park Manager",
+  "login": {
+    "open_menu": "Menü öffnen",
+    "logout": "Abmelden",
+    "button": "Anmelden",
+    "welcome": "Hej"
+  },
+  "role": {
+    "role_admin": "Admin",
+    "role_Director": "Direktor",
+    "role_Employee": "Mitarbeiter",
+    "role_Member": "Mitglied",
+    "role_Visitor": "Besucher",
+    "role_": "Keine Rolle"
+  },
+  "links": {
+    "home": "Home",
+    "animals": "Tiere",
+    "animal_overview": "Tierübersicht",
+    "animal_create": "Tier anlegen",
+    "specialCoats": "Farbvarianten",
+    "specialcoats_overview": "Farbvarianten-übersicht",
+    "specialcoats_create": "Farbvariante anlegen",
+    "club": "Klub",
+    "club_statues": "Statuen",
+    "club_contests": "Wettbewerbe",
+    "club_create_contest": "Wettbewerb anlegen"
+  }
 }

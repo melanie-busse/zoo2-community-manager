@@ -1,31 +1,27 @@
 {
-  "Header": {
-    "Title": "Zoo2: Animal Park Manager"
+  "home": {
+    "stats": {
+      "animals": "Tiere",
+      "specialCoat": "Farbvarianten",
+      "biomes": "Gehege",
+      "regions": "Zooregionen"
+    },
+    "cards": {
+      "lexicon": {
+        "title": "Tier-Lexikon",
+        "text": "Preise, Stall-Level und Gehege-Infos auf einen Blick."
+      },
+      "specialCoat": {
+        "title": "Farbvarianten",
+        "text": "Verwalte deine Zuchterfolge und seltenen Varianten."
+      },
+      "club": {
+        "title": "Klub",
+        "text": "Sei ein Mitglied unseres Klubs und gewinne tolle Statuen bei den Wettbewerben."
+      }
+    }
   },
-
-  "Login": {
-    "open_menu": "Menü öffnen",
-    "logout": "Abmelden",
-    "button": "Anmelden",
-    "welcome": "Hej"
-  },
-
-  "Footer": {
+  "footer": {
     "imprint": "Impressum"
-  },
-
-  "Pagination": {
-    "prev": "Zurück",
-    "next": "Weiter"
-  },
-
-  "tooltip": {
-    "removeRow": "Zeile entfernen"
-  },
-
-  "Buttons": {
-    "edit": "Bearbeiten",
-    "delete": "Löschen",
-    "add": "Hinzufügen"
   }
 }

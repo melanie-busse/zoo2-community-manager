@@ -6,7 +6,7 @@ import { getHabitatCount } from "@/service/BiomeService";
 import { getCountSpecialCoats } from "@/service/SpecialCoatsService";
 
 export default async function IndexPage() {
-  const t = await getTranslations("Home");
+  const t = await getTranslations("page");
 
   // Daten auf dem Server holen
   const stats = {
@@ -16,16 +16,16 @@ export default async function IndexPage() {
   };
 
   const trans = {
-    stats_animals: t("Stats.animals"),
-    stats_specialCoat: t("Stats.specialCoat"),
-    stats_biomes: t("Stats.biomes"),
-    stats_regions: t("Stats.regions"),
-    cards_lexicon_title: t("Cards.lexicon.title"),
-    cards_lexicon_text: t("Cards.lexicon.text"),
-    cards_specialCoat_title: t("Cards.specialCoat.title"),
-    cards_specialCoat_text: t("Cards.specialCoat.text"),
-    cards_club_title: t("Cards.club.title"),
-    cards_club_text: t("Cards.club.text"),
+    stats_animals: t("home.stats.animals"),
+    stats_specialCoat: t("home.stats.specialCoat"),
+    stats_biomes: t("home.stats.biomes"),
+    stats_regions: t("home.stats.regions"),
+    cards_lexicon_title: t("home.cards.lexicon.title"),
+    cards_lexicon_text: t("home.cards.lexicon.text"),
+    cards_specialCoat_title: t("home.cards.specialCoat.title"),
+    cards_specialCoat_text: t("home.cards.specialCoat.text"),
+    cards_club_title: t("home.cards.club.title"),
+    cards_club_text: t("home.cards.club.text"),
   };
 
   return (

@@ -1,6 +1,16 @@
 import {getRequestConfig} from 'next-intl/server';
 import {routing} from './routing';
 
+const namespaces = [
+    'animal',
+    'biome',
+    'specialCoat',
+    'contest',
+    'navigation',
+    'page',
+    'common',
+] as const;
+
 export default getRequestConfig(async ({requestLocale}) => {
     let locale = await requestLocale;
 
@@ -8,8 +18,13 @@ export default getRequestConfig(async ({requestLocale}) => {
         locale = routing.defaultLocale;
     }
 
+    const messages: Record<string, unknown> = {};
+    for (const ns of namespaces) {
+        messages[ns] = (await import(`../../messages/${locale}/${ns}.json`)).default;
+    }
+
     return {
         locale,
-        messages: (await import(`../../messages/${locale}.json`)).default
+        messages,
     };
 });
