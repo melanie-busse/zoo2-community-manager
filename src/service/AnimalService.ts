@@ -93,21 +93,29 @@ export async function createAnimal(animalData: any) {
 
   const formattedReleaseDate = releaseDate ? new Date(releaseDate) : null;
 
+  // 1. Basis-Objekt mit den garantierten/Pflicht-Feldern erstellen
+  const insertData: any = {
+    releaseDate: formattedReleaseDate,
+    priceTypeId: currencyId ?? 1,
+  };
+
+  // 2. Optionale numerische Felder NUR hinzufügen, wenn sie existieren.
+  // Das verhindert den Prisma-Typenkonflikt (number | undefined) beim Build!
+  if (price) insertData.price = parseInt(price.toString(), 10);
+  if (sellingPrice) insertData.sellingPrice = parseInt(sellingPrice.toString(), 10);
+  if (popularity) insertData.popularity = parseInt(popularity.toString(), 10);
+  if (releaseExp) insertData.releaseExp = parseInt(releaseExp.toString(), 10);
+  if (biomeId) insertData.biomeId = parseInt(biomeId.toString(), 10);
+  if (breedingLevel) insertData.shelterLevel = parseInt(breedingLevel.toString(), 10);
+  if (breedingCost) insertData.breedingCost = parseInt(breedingCost.toString(), 10);
+  if (breedingDuration) insertData.breedingDuration = parseInt(breedingDuration.toString(), 10);
+  if (breedingProbability)
+    insertData.breedingProbability = parseInt(breedingProbability.toString(), 10);
+
   return await prisma.$transaction(async (tx) => {
+    // 3. Jetzt das sauber vorbereitete Objekt an Prisma übergeben
     const animal = await tx.animal.create({
-      data: {
-        releaseDate: formattedReleaseDate,
-        price: price ? parseInt(price.toString(), 10) : undefined,
-        priceTypeId: currencyId ?? 1,
-        sellingPrice: sellingPrice ? parseInt(sellingPrice.toString(), 10) : undefined,
-        popularity: popularity ? parseInt(popularity.toString(), 10) : undefined,
-        releaseExp: releaseExp ? parseInt(releaseExp.toString(), 10) : undefined,
-        biomeId: biomeId ? parseInt(biomeId.toString(), 10) : undefined,
-        shelterLevel: breedingLevel ? parseInt(breedingLevel.toString(), 10) : undefined,
-        breedingCost: breedingCost ? parseInt(breedingCost.toString(), 10) : undefined,
-        breedingDuration: breedingDuration ? parseInt(breedingDuration.toString(), 10) : undefined,
-        breedingProbability: breedingProbability ? parseInt(breedingProbability.toString(), 10) : undefined,
-      },
+      data: insertData,
     });
 
     if (Array.isArray(animaltext) && animaltext.length > 0) {
