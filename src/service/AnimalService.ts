@@ -97,16 +97,16 @@ export async function createAnimal(animalData: any) {
     const animal = await tx.animal.create({
       data: {
         releaseDate: formattedReleaseDate,
-        price: price ? parseInt(price.toString(), 10) : null,
+        price: price ? parseInt(price.toString(), 10) : undefined,
         priceTypeId: currencyId ?? 1,
-        sellingPrice: sellingPrice ? parseInt(sellingPrice.toString(), 10) : null,
-        popularity: popularity ? parseInt(popularity.toString(), 10) : null,
-        releaseExp: releaseExp ? parseInt(releaseExp.toString(), 10) : null,
-        biomeId: biomeId ? parseInt(biomeId.toString(), 10) : null,
-        shelterLevel: breedingLevel ? parseInt(breedingLevel.toString(), 10) : null,
-        breedingCost: breedingCost ? parseInt(breedingCost.toString(), 10) : null,
-        breedingDuration: breedingDuration ? parseInt(breedingDuration.toString(), 10) : null,
-        breedingProbability: breedingProbability ? parseInt(breedingProbability.toString(), 10) : null,
+        sellingPrice: sellingPrice ? parseInt(sellingPrice.toString(), 10) : undefined,
+        popularity: popularity ? parseInt(popularity.toString(), 10) : undefined,
+        releaseExp: releaseExp ? parseInt(releaseExp.toString(), 10) : undefined,
+        biomeId: biomeId ? parseInt(biomeId.toString(), 10) : undefined,
+        shelterLevel: breedingLevel ? parseInt(breedingLevel.toString(), 10) : undefined,
+        breedingCost: breedingCost ? parseInt(breedingCost.toString(), 10) : undefined,
+        breedingDuration: breedingDuration ? parseInt(breedingDuration.toString(), 10) : undefined,
+        breedingProbability: breedingProbability ? parseInt(breedingProbability.toString(), 10) : undefined,
       },
     });
 
