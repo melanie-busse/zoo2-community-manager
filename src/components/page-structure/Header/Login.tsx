@@ -16,7 +16,6 @@ export default function Login() {
   const wrapperRef = useRef<HTMLDivElement>(null);
 
   const user = session?.user;
-  // @ts-expect-error - Falls die Rolle noch nicht im Standard-Typ von NextAuth ist
   const userRole = user?.role || "";
 
   useClickOutside(wrapperRef, () => setShowLogout(false));
