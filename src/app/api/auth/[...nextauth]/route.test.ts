@@ -7,6 +7,9 @@ vi.mock("@/lib/prisma", () => ({
       upsert: vi.fn(),
       findUnique: vi.fn(),
     },
+    role: {
+      findUnique: vi.fn(),
+    },
   },
 }));
 
@@ -41,14 +44,14 @@ describe("NextAuth Route Configuration", () => {
       const result = await authOptions.callbacks.signIn({ user: mockUser });
 
       expect(prisma.user.upsert).toHaveBeenCalledWith({
-        where: { id: "discord-123" },
+        where: { discordId: "discord-123" },
         update: { name: "GamerZ", image: "avatar.png" },
         create: {
-          id: "discord-123",
+          discordId: "discord-123",
           name: "GamerZ",
           email: "gamer@zoo2.de",
           image: "avatar.png",
-          roleId: 1,
+          roleId: 5,
         },
       });
       expect(result).toBe(true);
@@ -76,13 +79,11 @@ describe("NextAuth Route Configuration", () => {
       };
       const mockToken = { id: "db-user-999" };
 
-      const mockDbUser = {
-        id: "db-user-999",
-        roleId: 2,
-        role: { name: "Admin" },
-      };
+      const mockDbUser = { id: "db-user-999", roleId: 2 };
+      const mockDbRole = { id: 2, name: "Admin" };
 
       vi.mocked(prisma.user.findUnique).mockResolvedValue(mockDbUser as any);
+      vi.mocked(prisma.role.findUnique).mockResolvedValue(mockDbRole as any);
 
       const updatedSession = await authOptions.callbacks.session({
         session: mockSession,
@@ -91,7 +92,9 @@ describe("NextAuth Route Configuration", () => {
 
       expect(prisma.user.findUnique).toHaveBeenCalledWith({
         where: { id: "db-user-999" },
-        include: { role: true },
+      });
+      expect(prisma.role.findUnique).toHaveBeenCalledWith({
+        where: { id: 2 },
       });
 
       expect(updatedSession.user.id).toBe("db-user-999");

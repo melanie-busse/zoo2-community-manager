@@ -19,7 +19,7 @@ export const authOptions = {
       clientSecret: discordSecret,
       profile(profile) {
         return {
-          id: profile.id,
+          id: profile.id, // Das ist die Discord-ID (String)
           name: profile.global_name || profile.username,
           email: profile.email,
           image: `https://cdn.discordapp.com/avatars/${profile.id}/${profile.avatar}.png`,
@@ -30,18 +30,19 @@ export const authOptions = {
   callbacks: {
     async signIn({ user }: { user: any }) {
       try {
+        // Wir upserten anhand der UNIQUE discordId
         await prisma.user.upsert({
-          where: { id: user.id },
+          where: { discordId: user.id },
           update: {
             name: user.name,
             image: user.image,
           },
           create: {
-            id: user.id,
+            discordId: user.id, // Hier landet die lange Discord-ID
             name: user.name,
             email: user.email,
             image: user.image,
-            roleId: 1,
+            roleId: 5, // Standard: Visitor
           },
         });
         return true;
@@ -52,32 +53,41 @@ export const authOptions = {
     },
 
     async jwt({ token, user }: { token: any; user: any }) {
+      // Wenn der User sich frisch einloggt, holen wir seine interne DB-ID
       if (user) {
-        token.id = user.id;
+        const dbUser = await prisma.user.findUnique({
+          where: { discordId: user.id },
+        });
+        if (dbUser) {
+          token.id = dbUser.id; // Wir packen die INTERNE Int-ID in den Token
+        }
       }
       return token;
     },
 
     async session({ session, token }: { session: any; token: any }) {
       try {
-        const userId = token?.id || session?.user?.id;
+        const userId = token?.id;
 
         if (!userId) {
           console.warn("Session Callback: Keine User-ID im Token gefunden.");
           return session;
         }
 
+        // Wir suchen ganz entspannt mit der internen Int-ID (Zahl)
         const dbUser = await prisma.user.findUnique({
           where: { id: userId },
-          include: {
-            role: true,
-          },
         });
 
         if (dbUser) {
           session.user.id = dbUser.id;
           session.user.roleId = dbUser.roleId;
-          session.user.role = dbUser.role?.name || "User";
+
+          const dbRole = await prisma.role.findUnique({
+            where: { id: dbUser.roleId },
+          });
+
+          session.user.role = dbRole?.name || "Visitor";
         }
 
         return session;

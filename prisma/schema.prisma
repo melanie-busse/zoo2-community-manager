@@ -111,11 +111,12 @@ model AnimalText {
 }
 
 model User {
-  id              Int               @unique
+  id              Int               @id @default(autoincrement())
+  discordId       String            @unique @db.VarChar(255)
   name            String?           @db.VarChar(255)
   email           String?           @unique @db.VarChar(255)
   image           String?           @db.Text
-  roleId          Int
+  roleId          Int               @default(5)
   last_login      DateTime?         @default(now()) @db.DateTime(0)
   contestdonation ContestDonation[]
   role            Role              @relation(fields: [roleId], references: [id])
