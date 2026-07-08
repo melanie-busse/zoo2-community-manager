@@ -1,0 +1,30 @@
+{
+  "overview_title": "Variantes de color",
+  "species": "Nombre",
+  "color": "Color",
+  "noName": "Sin nombre disponible",
+  "noColor": "Sin color disponible",
+  "form": {
+    "createSpecialCoat": "Crear variante de color",
+    "editSpecialCoat": "Editar variante de color",
+    "saveSpecialCoat": "Guardar",
+    "translationSection": {
+      "title": "Traducciones (Nombre & Color)",
+      "fields": {
+        "language": "Idioma",
+        "name": "Nombre de la variante",
+        "NamePlaceholder": "p.ej. Halloween, San Valentín...",
+        "color": "Color",
+        "ColorPlaceholder": "p.ej. rayado"
+      }
+    }
+  },
+  "messages": {
+    "deleteErrorTitle": "¿Eliminar variante de color?",
+    "confirmDelete": "¿Realmente quieres eliminar esta variante de color?",
+    "deleteSuccess": "Variante de color eliminada con éxito"
+  },
+  "emptyState": {
+    "title": "¡Vaya, no hay animales aquí!"
+  }
+}
