@@ -1,0 +1,27 @@
+{
+  "home": {
+    "stats": {
+      "animals": "Animals",
+      "specialCoat": "Color Variants",
+      "biomes": "Enclosures",
+      "regions": "Zoo Regions"
+    },
+    "cards": {
+      "lexicon": {
+        "title": "Animal Lexicon",
+        "text": "Prices, shelter levels and enclosure info at a glance."
+      },
+      "specialCoat": {
+        "title": "Color Variants",
+        "text": "Manage your breeding successes and rare variants."
+      },
+      "club": {
+        "title": "Club",
+        "text": "Be a member of our club and win great statues in the contests."
+      }
+    }
+  },
+  "footer": {
+    "imprint": "Imprint"
+  }
+}

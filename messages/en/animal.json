@@ -1,0 +1,63 @@
+{
+  "species": "Name",
+  "release": "Release",
+  "colorVariants": "Color Variants",
+  "biomeCapacity": "Enclosure Capacity",
+  "animalCount": "Number of Animals",
+  "biomeSize": "Enclosure Size",
+  "capacityTableLabel": "Animals vs. Enclosure Space",
+  "requiredSize": "Required Space",
+  "noName": "No name available",
+  "overview_title": "All Animals Overview",
+  "form": {
+    "createAnimal": "Create New Animal",
+    "editAnimal": "Edit Animal",
+    "saveAnimal": "Save Animal"
+  },
+  "breeding": {
+    "xpAndActions": "XP and Actions",
+    "breeding": "Breeding",
+    "breedingChance": "Breeding Chance"
+  },
+  "basicInfoSection": {
+    "basicInfo": "Basic Information",
+    "fields": {
+      "releaseDate": "Release"
+    }
+  },
+  "translationSection": {
+    "title": "Translations (Name & Description)",
+    "fields": {
+      "name": "Name",
+      "language": "Language",
+      "description": "Description",
+      "descriptionPlaceholder": "Describe the animal..."
+    }
+  },
+  "priceSection": {
+    "pricesAndValues": "Prices and Values"
+  },
+  "xpSection": {
+    "actionsXp": "Actions & XP"
+  },
+  "originSection": {
+    "originTitle": "Origin",
+    "originDescription": "How can you obtain this animal?"
+  },
+  "actions": {
+    "feed": "Feed",
+    "play": "Play",
+    "clean": "Clean"
+  },
+  "messages": {
+    "createSuccess": "Animal successfully created! 🐾",
+    "deleteSuccess": "Animal successfully deleted! 🐾",
+    "editSuccess": "Changes successfully saved! 🐾",
+    "deleteError": "Error deleting the animal. Please try again.",
+    "deleteErrorTitle": "Delete Animal?",
+    "confirmDelete": "Are you sure you want to permanently delete this animal? All linked data such as texts and XP values will be lost."
+  },
+  "emptyState": {
+    "title": "Oh no, no animals here!"
+  }
+}

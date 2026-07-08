@@ -1,0 +1,9 @@
+{
+  "emptyState": {
+    "title": "No contests found"
+  },
+  "status": {
+    "running": "Currently running",
+    "upcoming": "Upcoming"
+  }
+}

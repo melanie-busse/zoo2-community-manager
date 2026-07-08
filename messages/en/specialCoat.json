@@ -1,0 +1,30 @@
+{
+  "overview_title": "Color Variants",
+  "species": "Name",
+  "color": "Color",
+  "noName": "No name available",
+  "noColor": "No color available",
+  "form": {
+    "createSpecialCoat": "Create Color Variant",
+    "editSpecialCoat": "Edit Color Variant",
+    "saveSpecialCoat": "Save",
+    "translationSection": {
+      "title": "Translations (Name & Color)",
+      "fields": {
+        "language": "Language",
+        "name": "Variant Name",
+        "NamePlaceholder": "e.g. Halloween, Valentine's Day...",
+        "color": "Color",
+        "ColorPlaceholder": "e.g. striped"
+      }
+    }
+  },
+  "messages": {
+    "deleteErrorTitle": "Delete Color Variant?",
+    "confirmDelete": "Do you really want to delete this color variant?",
+    "deleteSuccess": "Color variant successfully deleted"
+  },
+  "emptyState": {
+    "title": "Oh no, no animals here!"
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "messages": {
+    "no_more_items": "No more items found",
+    "none_selected": "None selected",
+    "yes_delete": "Yes, delete!",
+    "cancel": "Cancel"
+  },
+  "tooltip": {
+    "removeRow": "Remove row",
+    "level": "Level"
+  },
+  "price": "Price",
+  "time": "Time",
+  "hours": "Hours",
+  "minutes": "Minutes",
+  "language": "Language",
+  "allLanguages": "All Languages",
+  "name": "Name",
+  "addRow": "+ Add row",
+  "selling_price": "Selling Price",
+  "release": "Release Date",
+  "popularity": "Popularity",
+  "actions": "Actions",
+  "action": "Action",
+  "scroll_to_top": "Scroll to top",
+  "saving": "Saving...",
+  "save_changes": "Data successfully submitted!",
+  "available": "Available",
+  "not_found": "Not found",
+  "chosen": "Selected",
+  "none_selected": "None selected",
+  "description": "Description",
+  "descriptionPlaceholder": "Enter description here...",
+  "pleaseSelect": "Please select...",
+  "loading_data": "Loading data...",
+  "buttons": {
+    "edit": "Edit",
+    "delete": "Delete",
+    "add": "Add"
+  },
+  "pagination": {
+    "prev": "Previous",
+    "next": "Next"
+  },
+  "filter": {
+    "search_placeholder": "Search for animals...",
+    "all_enclosures": "All Enclosures",
+    "all_levels": "All Levels",
+    "all_status": "All Statuses",
+    "status_prefix": "Status:",
+    "ready": "Ready",
+    "missing_partner": "Partner missing",
+    "not_owned": "Not owned",
+    "level_label": "Level",
+    "results": {
+      "show": "Showing",
+      "of": "of",
+      "unit": "animals found"
+    }
+  },
+  "emptyState": {
+    "uppySad": "Uppy is sad",
+    "message": "Uppy searched everywhere but couldn't find anything.",
+    "button": "Reset search"
+  },
+  "errors": {
+    "imageNotFound": "Image not found"
+  }
+}
