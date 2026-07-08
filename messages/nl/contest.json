@@ -1,0 +1,9 @@
+{
+  "emptyState": {
+    "title": "Geen wedstrijden gevonden"
+  },
+  "status": {
+    "running": "Loopt momenteel",
+    "upcoming": "Binnenkort"
+  }
+}

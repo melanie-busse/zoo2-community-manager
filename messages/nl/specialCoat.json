@@ -1,0 +1,30 @@
+{
+  "overview_title": "Kleurvarianten",
+  "species": "Naam",
+  "color": "Kleur",
+  "noName": "Geen naam beschikbaar",
+  "noColor": "Geen kleur beschikbaar",
+  "form": {
+    "createSpecialCoat": "Kleurvariant aanmaken",
+    "editSpecialCoat": "Kleurvariant bewerken",
+    "saveSpecialCoat": "Opslaan",
+    "translationSection": {
+      "title": "Vertalingen (Naam & Kleur)",
+      "fields": {
+        "language": "Taal",
+        "name": "Variantnaam",
+        "NamePlaceholder": "bijv. Halloween, Valentijnsdag...",
+        "color": "Kleur",
+        "ColorPlaceholder": "bijv. gestreept"
+      }
+    }
+  },
+  "messages": {
+    "deleteErrorTitle": "Kleurvariant verwijderen?",
+    "confirmDelete": "Wil je deze kleurvariant echt verwijderen?",
+    "deleteSuccess": "Kleurvariant succesvol verwijderd"
+  },
+  "emptyState": {
+    "title": "Oh nee, geen dieren hier!"
+  }
+}

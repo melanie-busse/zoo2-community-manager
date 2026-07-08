@@ -1,0 +1,27 @@
+{
+  "home": {
+    "stats": {
+      "animals": "Dieren",
+      "specialCoat": "Kleurvarianten",
+      "biomes": "Verblijven",
+      "regions": "Dieretuinregio's"
+    },
+    "cards": {
+      "lexicon": {
+        "title": "Dierenlexicon",
+        "text": "Prijzen, stalniveaus en verblijfsinformatie in één oogopslag."
+      },
+      "specialCoat": {
+        "title": "Kleurvarianten",
+        "text": "Beheer je foksuccessen en zeldzame varianten."
+      },
+      "club": {
+        "title": "Club",
+        "text": "Word lid van onze club en win prachtige standbeelden bij de wedstrijden."
+      }
+    }
+  },
+  "footer": {
+    "imprint": "Impressum"
+  }
+}
