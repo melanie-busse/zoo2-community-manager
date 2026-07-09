@@ -14,7 +14,7 @@ import MobileView from "@/components/page-structure/MobileView";
 import AnimalPagination from "@/components/pages/animals/AnimalOverview/AnimalPagination";
 
 export default function AnimalOverviewContent() {
-  const t = useTranslations();
+  const t = useTranslations("animal");
 
   const currentItems = useAnimalStore((state) => state.currentItems);
   const hasItems = currentItems.length > 0;
@@ -23,7 +23,7 @@ export default function AnimalOverviewContent() {
 
   return (
     <>
-      <PageHeader text={t("Animals.overview_title")} />
+      <PageHeader text={t("overview_title")} />
 
       <Suspense fallback={<div>Lade Filter...</div>}>
         <FilterBar />
@@ -42,7 +42,7 @@ export default function AnimalOverviewContent() {
           </MobileView>
         </>
       ) : (
-        <EmptyState object="animals" message="Keine Tiere vorhanden." />
+        <EmptyState object="animals" title={t("emptyState.title")} message="Keine Tiere vorhanden." />
       )}
 
       <AnimalPagination />

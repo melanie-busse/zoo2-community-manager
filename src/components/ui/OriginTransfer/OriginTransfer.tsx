@@ -23,7 +23,7 @@ export default function OriginTransfer({
   onChange,
   maxSelected = null,
 }: OriginTransferProps) {
-  const t = useTranslations("Common");
+  const t = useTranslations("common");
 
   // 🎯 Logik intern gekapselt: Berechne, wer links steht (nicht in selectedIds)
   const available = allOrigins.filter((o) => !selectedIds.includes(o.id));

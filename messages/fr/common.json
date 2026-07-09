@@ -59,10 +59,13 @@
     }
   },
   "emptyState": {
+    "title": "Rien trouvé",
     "uppySad": "Uppy est triste",
     "message": "Uppy a cherché partout, mais n'a rien trouvé.",
     "button": "Réinitialiser la recherche"
   },
+  "noDescriptionAvailable": "Aucune description disponible",
+  "error": "Une erreur s'est produite",
   "errors": {
     "imageNotFound": "Image introuvable"
   }

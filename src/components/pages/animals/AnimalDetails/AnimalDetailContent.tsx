@@ -20,8 +20,8 @@ export default function AnimalDetailContent({}) {
   const setEditingAnimal = useAnimalStore((state) => state.setEditingAnimal);
   const deleteAnimal = useAnimalStore((state) => state.deleteAnimal);
 
-  const tCommon = useTranslations("Common");
-  const t = useTranslations();
+  const tAnimal = useTranslations("animal");
+  const tCommon = useTranslations("common");
   const router = useRouter();
 
   const { data: session } = useSession();
@@ -29,6 +29,7 @@ export default function AnimalDetailContent({}) {
 
   if (!animal) {
     return <div>{tCommon("not_found")}</div>;
+
   }
 
   const translation = animal.animaltext?.[0];
@@ -45,7 +46,7 @@ export default function AnimalDetailContent({}) {
                 router.push(`/animals/${animal.id}/edit`);
               }}
               onDelete={async () => {
-                const success = await deleteAnimal(animal.id, t);
+                const success = await deleteAnimal(animal.id, tAnimal, tCommon);
                 if (success) router.push("/animals");
               }}
             />

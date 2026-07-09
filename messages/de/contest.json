@@ -5,5 +5,23 @@
   "status": {
     "running": "Läuft gerade",
     "upcoming": "Demnächst"
+  },
+  "contestOverview": {
+    "table": {
+      "period": "Zeitraum",
+      "statues_animals": "Statuen / Tiere",
+      "colorVariant": "Farbvariante",
+      "status": "Status"
+    },
+    "messages": {
+      "deleteErrorTitle": "Wettbewerb löschen?",
+      "confirmDelete": "Möchtest du diesen Wettbewerb wirklich löschen?",
+      "cancelButton": "Abbrechen"
+    }
+  },
+  "contestForm": {
+    "maxStatues": "Maximal 4 Statuen erlaubt",
+    "chooseStatues": "Bitte 3 oder 4 Statuen auswählen",
+    "endDateBeforeStart": "Enddatum muss nach Startdatum liegen"
   }
 }

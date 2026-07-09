@@ -35,8 +35,8 @@ export default function SpecialCoatForm({
   languages,
   originsData,
 }: SpecialCoatFormProps) {
-  const tSpecialCoat = useTranslations("SpecialCoat");
-  const tCommon = useTranslations("Common");
+  const tSpecialCoat = useTranslations("specialCoat");
+  const tCommon = useTranslations("common");
   const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
 

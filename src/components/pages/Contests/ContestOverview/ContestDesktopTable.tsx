@@ -27,7 +27,8 @@ export default function ContestDesktopTable({
   onEdit,
   onDelete,
 }: ContestDesktopTableProps) {
-  const t = useTranslations();
+  const tContest = useTranslations("contest");
+  const tCommon = useTranslations("common");
   const locale = useLocale();
   const { data: session } = useSession();
   const isAdmin = session?.user?.role === "Director";
@@ -38,13 +39,13 @@ export default function ContestDesktopTable({
     <Table>
       <thead>
         <tr>
-          <ThPeriod>{t("Contest.contestOverview.table.period")}</ThPeriod>
-          <th colSpan={3}>{t("Contest.contestOverview.table.statues_animals")}</th>
+          <ThPeriod>{tContest("contestOverview.table.period")}</ThPeriod>
+          <th colSpan={3}>{tContest("contestOverview.table.statues_animals")}</th>
           <th style={{ textAlign: "right", paddingRight: "50px" }}>
-            {t("Contest.contestOverview.table.colorVariant")}
+            {tContest("contestOverview.table.colorVariant")}
           </th>
-          <ThStatus>{t("Contest.contestOverview.table.status")}</ThStatus>
-          <ActionsHeadline text={t("Common.actions")} />
+          <ThStatus>{tContest("contestOverview.table.status")}</ThStatus>
+          <ActionsHeadline text={tCommon("actions")} />
         </tr>
       </thead>
       <tbody>

@@ -19,9 +19,9 @@ import FormattedDate from "@/components/ui/Formatted/FormattedDate";
 import { useAnimalStore } from "@/store/useAnimalStore";
 
 export default function HeaderCard() {
-  const tAnimals = useTranslations("Animals");
-  const tBiome = useTranslations("Biome");
-  const tCommon = useTranslations("Common");
+  const tAnimals = useTranslations("animal");
+  const tBiome = useTranslations("biome");
+  const tCommon = useTranslations("common");
 
   const animal = useAnimalStore((state) => state.selectedAnimal);
   if (!animal) return null;

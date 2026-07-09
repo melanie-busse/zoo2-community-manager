@@ -59,10 +59,13 @@
     }
   },
   "emptyState": {
+    "title": "Intet fundet",
     "uppySad": "Uppy er ked af det",
     "message": "Uppy ledte overalt, men kunne ikke finde noget.",
     "button": "Nulstil søgning"
   },
+  "noDescriptionAvailable": "Ingen beskrivelse tilgængelig",
+  "error": "Der opstod en fejl",
   "errors": {
     "imageNotFound": "Billede ikke fundet"
   }

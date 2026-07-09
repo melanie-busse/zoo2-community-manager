@@ -76,7 +76,7 @@ export const authOptions = {
 
         // Wir suchen ganz entspannt mit der internen Int-ID (Zahl)
         const dbUser = await prisma.user.findUnique({
-          where: { id: userId },
+          where: { discordId: userId },
         });
 
         if (dbUser) {

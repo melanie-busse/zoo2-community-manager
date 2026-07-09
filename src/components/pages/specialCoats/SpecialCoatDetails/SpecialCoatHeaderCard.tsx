@@ -12,8 +12,8 @@ import FormattedDate from "@/components/ui/Formatted/FormattedDate";
 import { useSpecialCoatStore } from "@/store/useSpecialCoatStore";
 
 export default function SpecialCoatHeaderCard() {
-  const tCommon = useTranslations("Common");
-  const tSpecialCoat = useTranslations("SpecialCoat");
+  const tCommon = useTranslations("common");
+  const tSpecialCoat = useTranslations("specialCoat");
 
   const specialCoat = useSpecialCoatStore((state) => state.selectedSpecialCoat);
   if (!specialCoat) return null;

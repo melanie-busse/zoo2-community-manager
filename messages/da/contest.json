@@ -5,5 +5,23 @@
   "status": {
     "running": "Kører nu",
     "upcoming": "Kommende"
+  },
+  "contestOverview": {
+    "table": {
+      "period": "Periode",
+      "statues_animals": "Statuer / Dyr",
+      "colorVariant": "Farvevariant",
+      "status": "Status"
+    },
+    "messages": {
+      "deleteErrorTitle": "Slet konkurrence?",
+      "confirmDelete": "Er du sikker på, at du vil slette denne konkurrence?",
+      "cancelButton": "Annuller"
+    }
+  },
+  "contestForm": {
+    "maxStatues": "Maksimalt 4 statuer tilladt",
+    "chooseStatues": "Vælg venligst 3 eller 4 statuer",
+    "endDateBeforeStart": "Slutdatoen skal være efter startdatoen"
   }
 }

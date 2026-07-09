@@ -15,7 +15,7 @@ interface BasicInfoSectionProps {
 }
 
 export default function BasicInfoSection({ formData, setFormData }: BasicInfoSectionProps) {
-  const tAnimals = useTranslations("Animals");
+  const tAnimals = useTranslations("animal");
 
   const handleDateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const nextValue = e.target.value;

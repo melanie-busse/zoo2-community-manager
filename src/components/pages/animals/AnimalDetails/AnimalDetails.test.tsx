@@ -160,7 +160,7 @@ describe("AnimalDetailContent Integration Test", () => {
 
     render(<AnimalDetailContent />);
 
-    expect(screen.getByText("Common.not_found")).toBeInTheDocument();
+    expect(screen.getByText("common.not_found")).toBeInTheDocument();
   });
 
   test("rendert alle Header-Informationen, Beschreibungen und Kapazitäten für Standard-User", () => {
@@ -211,6 +211,6 @@ describe("AnimalDetailContent Integration Test", () => {
 
     render(<AnimalDetailContent />);
 
-    expect(screen.getByText("Common.loading_data")).toBeInTheDocument();
+    expect(screen.getByText("common.loading_data")).toBeInTheDocument();
   });
 });

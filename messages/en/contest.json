@@ -5,5 +5,23 @@
   "status": {
     "running": "Currently running",
     "upcoming": "Upcoming"
+  },
+  "contestOverview": {
+    "table": {
+      "period": "Period",
+      "statues_animals": "Statues / Animals",
+      "colorVariant": "Color Variant",
+      "status": "Status"
+    },
+    "messages": {
+      "deleteErrorTitle": "Delete contest?",
+      "confirmDelete": "Are you sure you want to delete this contest?",
+      "cancelButton": "Cancel"
+    }
+  },
+  "contestForm": {
+    "maxStatues": "Maximum 4 statues allowed",
+    "chooseStatues": "Please select 3 or 4 statues",
+    "endDateBeforeStart": "End date must be after start date"
   }
 }

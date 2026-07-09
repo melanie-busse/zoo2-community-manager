@@ -143,7 +143,7 @@ describe("AnimalForm Integration Tests", () => {
   test("zeigt eine Warnung (Toast), wenn versucht wird ohne Gehege/Biome zu speichern", async () => {
     render(<AnimalForm languages={mockLanguages} biomes={mockBiomes} originsData={mockOrigins} />);
 
-    const submitBtn = screen.getByRole("button", { name: "Animals.form.saveAnimal" });
+    const submitBtn = screen.getByRole("button", { name: "animal.form.saveAnimal" });
     fireEvent.click(submitBtn);
 
     expect(toast.warn).toHaveBeenCalledWith("Bitte wähle ein Gehege aus!");
@@ -161,7 +161,7 @@ describe("AnimalForm Integration Tests", () => {
     fireEvent.change(dateInput, { target: { value: "2026-06-24" } });
     fireEvent.change(biomeSelect, { target: { value: "1" } }); // Biom ID 1 auswählen
 
-    const submitBtn = screen.getByRole("button", { name: "Animals.form.saveAnimal" });
+    const submitBtn = screen.getByRole("button", { name: "animal.form.saveAnimal" });
     fireEvent.click(submitBtn);
 
     expect(mockSaveAnimal).toHaveBeenCalledWith(

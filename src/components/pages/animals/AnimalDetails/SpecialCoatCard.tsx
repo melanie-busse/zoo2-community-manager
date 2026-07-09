@@ -16,7 +16,7 @@ interface SpecialCoatCardProps {
 }
 
 export default function SpecialCoatCard({ specialCoat }: SpecialCoatCardProps) {
-  const tCommon = useTranslations("Common");
+  const tCommon = useTranslations("common");
   const router = useRouter();
   const origins = specialCoat.specialcoatsorigin?.map((o) => o.origin).filter(Boolean) ?? [];
 

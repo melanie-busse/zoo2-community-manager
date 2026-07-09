@@ -19,7 +19,7 @@ export default function AnimalTranslationSection({
   setFormData,
   dbLanguages,
 }: TranslationSectionProps) {
-  const tAnimals = useTranslations("Animals");
+  const tAnimals = useTranslations("animal");
 
   const currentTexts = Array.isArray(formData?.animaltext) ? formData.animaltext : [];
 

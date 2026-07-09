@@ -59,10 +59,13 @@
     }
   },
   "emptyState": {
+    "title": "Niets gevonden",
     "uppySad": "Uppy is verdrietig",
     "message": "Uppy heeft overal gezocht, maar kon niets vinden.",
     "button": "Zoekopdracht opnieuw starten"
   },
+  "noDescriptionAvailable": "Geen beschrijving beschikbaar",
+  "error": "Er is een fout opgetreden",
   "errors": {
     "imageNotFound": "Afbeelding niet gevonden"
   }

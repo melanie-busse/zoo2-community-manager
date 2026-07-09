@@ -59,10 +59,13 @@
     }
   },
   "emptyState": {
+    "title": "Nothing found",
     "uppySad": "Uppy is sad",
     "message": "Uppy searched everywhere but couldn't find anything.",
     "button": "Reset search"
   },
+  "noDescriptionAvailable": "No description available",
+  "error": "An error occurred",
   "errors": {
     "imageNotFound": "Image not found"
   }

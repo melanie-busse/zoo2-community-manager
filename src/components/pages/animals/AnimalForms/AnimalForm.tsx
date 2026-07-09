@@ -37,8 +37,8 @@ interface AnimalFormProps {
 }
 
 export default function AnimalForm({ animal, languages, biomes, originsData }: AnimalFormProps) {
-  const tAnimals = useTranslations("Animals");
-  const tCommon = useTranslations("Common");
+  const tAnimals = useTranslations("animal");
+  const tCommon = useTranslations("common");
   const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
 

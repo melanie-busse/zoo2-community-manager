@@ -21,7 +21,8 @@ export default function ContestForm({
   initialData = null,
   onSubmit,
 }: ContestFormProps) {
-  const t = useTranslations();
+  const tContest = useTranslations("contest");
+  const tCommon = useTranslations("common");
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -86,7 +87,7 @@ export default function ContestForm({
 
   const handleMoveRight = (statue: { id: number; name: string }) => {
     if (selectedStatues.length >= 4) {
-      toast.warn(t("Contest.contestForm.maxStatues"));
+      toast.warn(tContest("contestForm.maxStatues"));
       return;
     }
     setSelectedStatues([...selectedStatues, statue]);
@@ -101,13 +102,13 @@ export default function ContestForm({
 
     // Validierung: Zoo 2 Contests benötigen immer genau 4 Statuen
     if (selectedStatues.length < 3 || selectedStatues.length > 4) {
-      toast.error(t("Contest.contestForm.chooseStatues"));
+      toast.error(tContest("contestForm.chooseStatues"));
       return;
     }
 
     // Validierung: Datum
     if (new Date(formData.endDate) < new Date(formData.startDate)) {
-      toast.error(t("Contest.contestForm.endDateBeforeStart"));
+      toast.error(tContest("contestForm.endDateBeforeStart"));
       return;
     }
 
@@ -121,7 +122,7 @@ export default function ContestForm({
       await onSubmit(submissionData);
     } catch (error) {
       console.error("Submission error:", error);
-      toast.error(t("Common.error"));
+      toast.error(tCommon("error"));
     } finally {
       setIsSubmitting(false);
     }

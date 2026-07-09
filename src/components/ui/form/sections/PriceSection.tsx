@@ -18,8 +18,8 @@ interface PriceSectionProps {
 }
 
 export default function PriceSection({ formData, setFormData }: PriceSectionProps) {
-  const tAnimals = useTranslations("Animals");
-  const tCommon = useTranslations("Common");
+  const tAnimals = useTranslations("animal");
+  const tCommon = useTranslations("common");
 
   const currencyOptions = [
     { value: "1", label: "Zoodollar" },

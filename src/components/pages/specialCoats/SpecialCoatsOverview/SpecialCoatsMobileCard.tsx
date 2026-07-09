@@ -34,7 +34,8 @@ export default function SpecialCoatsMobileCard({ specialCoat }: SpecialCoatMobil
 
   const setEditingSpecialCoat = useSpecialCoatStore((state) => state.setEditingSpecialCoat);
   const deleteSpecialCoat = useSpecialCoatStore((state) => state.deleteSpecialCoat);
-  const t = useTranslations();
+  const tSpecialCoat = useTranslations("specialCoat");
+  const tCommon = useTranslations("common");
 
   if (!specialCoat) return null;
 
@@ -54,7 +55,7 @@ export default function SpecialCoatsMobileCard({ specialCoat }: SpecialCoatMobil
               setEditingSpecialCoat(specialCoat);
               router.push(`/specialcoats/${specialCoat.id}/edit`);
             }}
-            onDelete={() => deleteSpecialCoat(specialCoat.id, t)}
+            onDelete={() => deleteSpecialCoat(specialCoat.id, tSpecialCoat, tCommon)}
           />
         )}
       </CardHeaderRow>

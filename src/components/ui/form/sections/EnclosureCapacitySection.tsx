@@ -16,7 +16,7 @@ export default function EnclosureCapacitySection({
   enclosureSizes = [],
   setFormData,
 }: EnclosureCapacitySectionProps) {
-  const tAnimals = useTranslations("Animals");
+  const tAnimals = useTranslations("animal");
 
   const safeSizes = (Array.isArray(enclosureSizes) ? enclosureSizes : []).map(
     (item: any, index) => {

@@ -45,7 +45,7 @@ interface AnimalState {
   // 6. Aktionen für Edit & Delete
   setEditingAnimal: (animal: Animal | null) => void;
   clearEditingAnimal: () => void;
-  deleteAnimal: (id: number, t: any) => Promise<boolean>;
+  deleteAnimal: (id: number, t: any, tCommon: any) => Promise<boolean>;
 }
 
 export const useAnimalStore = create<AnimalState>((set) => {
@@ -210,12 +210,12 @@ export const useAnimalStore = create<AnimalState>((set) => {
     clearEditingAnimal: () => set({ editingAnimal: null }),
 
     // Lösch-Aktion
-    deleteAnimal: async (id: number, t: any) => {
+    deleteAnimal: async (id: number, t: any, tCommon: any) => {
       const confirmed = await confirmDeleteDialog({
-        title: t("Animals.messages.deleteErrorTitle") || "Löschen?",
-        text: t("Animals.messages.confirmDelete") || "Möchtest du dieses Tier wirklich löschen?",
-        confirmButtonText: t("Common.messages.yes_delete") || "Ja, löschen",
-        cancelButtonText: t("Common.messages.cancel") || "Abbrechen",
+        title: t("messages.deleteErrorTitle") || "Löschen?",
+        text: t("messages.confirmDelete") || "Möchtest du dieses Tier wirklich löschen?",
+        confirmButtonText: tCommon("messages.yes_delete") || "Ja, löschen",
+        cancelButtonText: tCommon("messages.cancel") || "Abbrechen",
       });
 
       if (!confirmed) return false;
@@ -247,7 +247,7 @@ export const useAnimalStore = create<AnimalState>((set) => {
           };
         });
 
-        showSuccessToast(t("Animals.messages.deleteSuccess") || "Erfolgreich gelöscht");
+        showSuccessToast(t("messages.deleteSuccess") || "Erfolgreich gelöscht");
         return true;
       } catch (error: any) {
         console.error("Delete Error:", error);

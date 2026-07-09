@@ -20,7 +20,9 @@ import { useRouter } from "@/i18n/routing";
 
 export default function SpecialCoatsDesktopTable() {
   const router = useRouter();
-  const t = useTranslations();
+  const tSpecialCoat = useTranslations("specialCoat");
+  const tBiome = useTranslations("biome");
+  const tCommon = useTranslations("common");
 
   const setEditingSpecialCoat = useSpecialCoatStore((state) => state.setEditingSpecialCoat);
   const deleteSpecialCoat = useSpecialCoatStore((state) => state.deleteSpecialCoat);
@@ -40,34 +42,34 @@ export default function SpecialCoatsDesktopTable() {
         <tr>
           <td></td>
           <SortableTableHeader
-            label={t("SpecialCoat.species")}
+            label={tSpecialCoat("species")}
             onSort={() => toggleSort("name")}
             columnKey="name"
             currentSortBy={sortBy}
             sortDirection={sortDirection}
           />
           <SortableTableHeader
-            label={t("SpecialCoat.color")}
+            label={tSpecialCoat("color")}
             onSort={() => toggleSort("color")}
             columnKey="color"
             currentSortBy={sortBy}
             sortDirection={sortDirection}
           />
           <SortableTableHeader
-            label={t("Biome.enclosure")}
+            label={tBiome("enclosure")}
             onSort={() => toggleSort("biomeName")}
             columnKey="biomeName"
             currentSortBy={sortBy}
             sortDirection={sortDirection}
           />
           <SortableTableHeader
-            label={t("Biome.shelterLevel")}
+            label={tBiome("shelterLevel")}
             onSort={() => toggleSort("shelterLevel")}
             columnKey="shelterLevel"
             currentSortBy={sortBy}
             sortDirection={sortDirection}
           />
-          {isAdmin && <Styles.TableCellRight>{t("Common.actions")}</Styles.TableCellRight>}
+          {isAdmin && <Styles.TableCellRight>{tCommon("actions")}</Styles.TableCellRight>}
         </tr>
       </thead>
       <tbody>
@@ -89,18 +91,18 @@ export default function SpecialCoatsDesktopTable() {
               </td>
               <td>
                 <strong>
-                  {specialCoat.specialcoatstext?.[0]?.name ?? t("SpecialCoat.noName")}
+                  {specialCoat.specialcoatstext?.[0]?.name ?? tSpecialCoat("noName")}
                 </strong>
               </td>
               <td>
                 <strong>
-                  {specialCoat.specialcoatstext?.[0]?.color ?? t("SpecialCoat.noColor")}
+                  {specialCoat.specialcoatstext?.[0]?.color ?? tSpecialCoat("noColor")}
                 </strong>
               </td>
               <td>
                 <BiomeBadge
                   image={getBiomeImage(specialCoat.animal?.biome)}
-                  tooltipLabel={getBiomeName(specialCoat.animal?.biome, t("Biome.noBiome"))}
+                  tooltipLabel={getBiomeName(specialCoat.animal?.biome, tBiome("noBiome"))}
                 />
               </td>
               <td>
@@ -118,7 +120,7 @@ export default function SpecialCoatsDesktopTable() {
                       setEditingSpecialCoat(specialCoat);
                       router.push(`/specialcoats/${specialCoat.id}/edit`);
                     }}
-                    onDelete={() => deleteSpecialCoat(specialCoat.id, t)}
+                    onDelete={() => deleteSpecialCoat(specialCoat.id, tSpecialCoat, tCommon)}
                   />
                 </Styles.TableCellRight>
               )}
@@ -127,7 +129,7 @@ export default function SpecialCoatsDesktopTable() {
         ) : (
           <tr>
             <Styles.TableEmptyState colSpan={isAdmin ? 8 : 7}>
-              {t("EmptyState.title")} 🐾
+              {tCommon("emptyState.title")} 🐾
             </Styles.TableEmptyState>
           </tr>
         )}

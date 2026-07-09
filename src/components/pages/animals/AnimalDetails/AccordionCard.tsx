@@ -17,9 +17,9 @@ import { XP } from "@/constants/Xp";
 import { useAnimalStore } from "@/store/useAnimalStore";
 
 export default function AccordionCard() {
-  const tAnimals = useTranslations("Animals");
-  const tBiomes = useTranslations("Biome");
-  const tCommon = useTranslations("Common");
+  const tAnimals = useTranslations("animal");
+  const tBiomes = useTranslations("biome");
+  const tCommon = useTranslations("common");
 
   const animal = useAnimalStore((state) => state.selectedAnimal);
   if (!animal) return null;

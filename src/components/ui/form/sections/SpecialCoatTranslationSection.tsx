@@ -19,7 +19,7 @@ export default function SpecialCoatTranslationSection({
   setFormData,
   dbLanguages,
 }: SpecialCoatTranslationSectionProps) {
-  const tSpecialCoat = useTranslations("SpecialCoat");
+  const tSpecialCoat = useTranslations("specialCoat");
 
   const currentTexts = Array.isArray(formData?.texts) ? formData.texts : [];
 

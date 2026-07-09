@@ -19,8 +19,8 @@ interface XpActionSectionProps {
 }
 
 export default function XpActionSection({ formData, setFormData }: XpActionSectionProps) {
-  const tAnimals = useTranslations("Animals");
-  const tCommon = useTranslations("Common");
+  const tAnimals = useTranslations("animal");
+  const tCommon = useTranslations("common");
 
   const handleActionChange = (actionKey: string, field: string, value: string) => {
     setFormData((prev: any) => ({

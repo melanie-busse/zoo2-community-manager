@@ -12,7 +12,7 @@ export default function Footer() {
     <Styles.StyledFooter>
       <Styles.FooterContent>
         <p>
-          © 2026 - Klub der tollen Tiere | <Link href="/imprint">{t("footer.imprint")}</Link>
+          © 2026 - Melanie Busse | <Link href="/imprint">{t("footer.imprint")}</Link>
         </p>
       </Styles.FooterContent>
     </Styles.StyledFooter>

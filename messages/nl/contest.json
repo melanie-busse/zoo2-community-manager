@@ -5,5 +5,23 @@
   "status": {
     "running": "Loopt momenteel",
     "upcoming": "Binnenkort"
+  },
+  "contestOverview": {
+    "table": {
+      "period": "Periode",
+      "statues_animals": "Beelden / Dieren",
+      "colorVariant": "Kleurvariant",
+      "status": "Status"
+    },
+    "messages": {
+      "deleteErrorTitle": "Wedstrijd verwijderen?",
+      "confirmDelete": "Weet je zeker dat je deze wedstrijd wilt verwijderen?",
+      "cancelButton": "Annuleren"
+    }
+  },
+  "contestForm": {
+    "maxStatues": "Maximaal 4 beelden toegestaan",
+    "chooseStatues": "Selecteer 3 of 4 beelden",
+    "endDateBeforeStart": "Einddatum moet na startdatum liggen"
   }
 }

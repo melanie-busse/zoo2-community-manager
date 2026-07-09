@@ -13,7 +13,7 @@ interface GameBadgeProps {
 }
 
 export default function GameBadge({ image, size = 50, borderColor = "#4ca64c" }: GameBadgeProps) {
-  const t = useTranslations();
+  const t = useTranslations("common");
 
   return (
     <IconFrame $size={size} $borderColor={borderColor}>
@@ -22,7 +22,7 @@ export default function GameBadge({ image, size = 50, borderColor = "#4ca64c" }:
         alt={image.name}
         onError={(e) => {
           const target = e.target as HTMLImageElement;
-          console.error(t("Errors.imageNotFound"), image.path);
+          console.error(t("errors.imageNotFound"), image.path);
           target.src = "/images/placeholder.png";
         }}
       />

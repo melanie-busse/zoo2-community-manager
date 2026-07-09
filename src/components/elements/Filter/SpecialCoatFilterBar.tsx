@@ -26,7 +26,7 @@ const INVENTORY_STATUS_ITEMS: InventoryStatusItem[] = [
 ];
 
 export default function SpecialCoatFilterBar() {
-  const t = useTranslations();
+  const t = useTranslations("common");
 
   const allInitialItems = useSpecialCoatStore((state) => state.allSpecialCoats);
   const searchTerm = useSpecialCoatStore((state) => state.searchTerm);
@@ -62,7 +62,7 @@ export default function SpecialCoatFilterBar() {
     <Styles.FilterBar>
       <Styles.SearchInput
         type="text"
-        placeholder={t("Filter.search_placeholder")}
+        placeholder={t("filter.search_placeholder")}
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />

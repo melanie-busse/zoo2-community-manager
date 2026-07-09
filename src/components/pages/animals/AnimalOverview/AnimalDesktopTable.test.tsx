@@ -127,7 +127,7 @@ describe("AnimalDesktopTable", () => {
 
   test("fängt leere animaltext-Arrays ab und zeigt den Fallback-Text", () => {
     render(<AnimalDesktopTable />);
-    expect(screen.getByText("Animal.noName")).toBeInTheDocument();
+    expect(screen.getByText("noName")).toBeInTheDocument();
   });
 
   test("zeigt den korrekten Einkaufspreis an", () => {
@@ -148,7 +148,7 @@ describe("AnimalDesktopTable", () => {
   test("ruft toggleSort mit 'name' auf, wenn der Spaltenkopf für die Spezies geklickt wird", () => {
     render(<AnimalDesktopTable />);
 
-    const speciesHeader = screen.getByText("Animals.species");
+    const speciesHeader = screen.getByText("species");
     fireEvent.click(speciesHeader);
 
     expect(mockToggleSort).toHaveBeenCalledTimes(1);
@@ -158,7 +158,7 @@ describe("AnimalDesktopTable", () => {
   test("ruft toggleSort mit 'price' auf, wenn der Spaltenkopf für den Preis geklickt wird", () => {
     render(<AnimalDesktopTable />);
 
-    const priceHeader = screen.getByText("Common.price");
+    const priceHeader = screen.getByText("price");
     fireEvent.click(priceHeader);
 
     expect(mockToggleSort).toHaveBeenCalledTimes(1);

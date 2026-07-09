@@ -39,6 +39,18 @@ export default function LangSwitcher() {
         <Styles.LangOption onClick={() => handleLocaleChange("en")}>
           <span className="fi fi-gb"></span> EN
         </Styles.LangOption>
+        <Styles.LangOption onClick={() => handleLocaleChange("da")}>
+          <span className="fi fi-dk"></span> DA
+        </Styles.LangOption>
+        <Styles.LangOption onClick={() => handleLocaleChange("fr")}>
+          <span className="fi fi-fr"></span> FR
+        </Styles.LangOption>
+        <Styles.LangOption onClick={() => handleLocaleChange("nl")}>
+          <span className="fi fi-nl"></span> NL
+        </Styles.LangOption>
+        <Styles.LangOption onClick={() => handleLocaleChange("es")}>
+          <span className="fi fi-es"></span> ES
+        </Styles.LangOption>
       </Styles.LangDropdown>
     </Styles.LangSwitcherContainer>
   );

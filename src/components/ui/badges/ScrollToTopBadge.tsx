@@ -5,7 +5,7 @@ import styled, { keyframes } from "styled-components";
 import { useTranslations } from "next-intl";
 
 export default function ScrollToTopBadge() {
-  const t = useTranslations("Common");
+  const t = useTranslations("common");
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {

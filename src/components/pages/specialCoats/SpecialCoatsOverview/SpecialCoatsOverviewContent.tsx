@@ -14,7 +14,7 @@ import MobileView from "@/components/page-structure/MobileView";
 import SpecialCoatsPagination from "@/components/pages/specialCoats/SpecialCoatsOverview/SpecialCoatsPagination";
 
 export default function SpecialCoatsOverviewContent() {
-  const t = useTranslations();
+  const t = useTranslations("specialCoat");
 
   const currentItems = useSpecialCoatStore((state) => state.currentItems);
   const hasItems = currentItems.length > 0;
@@ -23,7 +23,7 @@ export default function SpecialCoatsOverviewContent() {
 
   return (
     <>
-      <PageHeader text={t("SpecialCoat.overview_title")} />
+      <PageHeader text={t("overview_title")} />
 
       <Suspense fallback={<div>Lade Filter...</div>}>
         <SpecialCoatFilterBar />
@@ -42,7 +42,7 @@ export default function SpecialCoatsOverviewContent() {
           </MobileView>
         </>
       ) : (
-        <EmptyState object="specialCoats" message="Keine speziellen Farbvarianten vorhanden." />
+        <EmptyState object="specialCoats" title={t("emptyState.title")} message="Keine speziellen Farbvarianten vorhanden." />
       )}
 
       <SpecialCoatsPagination />

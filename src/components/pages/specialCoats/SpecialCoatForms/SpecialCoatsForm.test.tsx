@@ -143,7 +143,7 @@ describe("SpecialCoatForm Integration Tests", () => {
       />,
     );
 
-    const submitBtn = screen.getByRole("button", { name: "SpecialCoat.form.saveSpecialCoat" });
+    const submitBtn = screen.getByRole("button", { name: "specialCoat.form.saveSpecialCoat" });
     fireEvent.click(submitBtn);
 
     await waitFor(() => {
@@ -162,7 +162,7 @@ describe("SpecialCoatForm Integration Tests", () => {
       />,
     );
 
-    fireEvent.click(screen.getByRole("button", { name: "SpecialCoat.form.saveSpecialCoat" }));
+    fireEvent.click(screen.getByRole("button", { name: "specialCoat.form.saveSpecialCoat" }));
 
     await waitFor(() => {
       expect(mockClearEditingSpecialCoat).toHaveBeenCalled();
@@ -180,7 +180,7 @@ describe("SpecialCoatForm Integration Tests", () => {
       />,
     );
 
-    fireEvent.click(screen.getByRole("button", { name: "SpecialCoat.form.saveSpecialCoat" }));
+    fireEvent.click(screen.getByRole("button", { name: "specialCoat.form.saveSpecialCoat" }));
 
     await waitFor(() => {
       expect(mockPush).toHaveBeenCalledWith("/specialcoats");
@@ -202,7 +202,7 @@ describe("SpecialCoatForm Integration Tests", () => {
     vi.clearAllMocks();
     mockSaveSpecialCoat.mockResolvedValue(false);
 
-    fireEvent.click(screen.getByRole("button", { name: "SpecialCoat.form.saveSpecialCoat" }));
+    fireEvent.click(screen.getByRole("button", { name: "specialCoat.form.saveSpecialCoat" }));
 
     await waitFor(() => {
       expect(mockSaveSpecialCoat).toHaveBeenCalled();
@@ -228,7 +228,7 @@ describe("SpecialCoatForm Integration Tests", () => {
     fireEvent.change(dateInput, { target: { value: "2026-08-01" } });
     fireEvent.change(animalInput, { target: { value: "5" } });
 
-    fireEvent.click(screen.getByRole("button", { name: "SpecialCoat.form.saveSpecialCoat" }));
+    fireEvent.click(screen.getByRole("button", { name: "specialCoat.form.saveSpecialCoat" }));
 
     await waitFor(() => {
       expect(mockSaveSpecialCoat).toHaveBeenCalledWith(

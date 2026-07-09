@@ -23,7 +23,7 @@ export default function OriginSection({
   selectedOrigins = [],
   setFormData,
 }: OriginSectionProps) {
-  const tAnimals = useTranslations("Animals");
+  const tAnimals = useTranslations("animal");
 
   const handleTransferChange = (newSelectedIds: number[]) => {
     setFormData((prev: any) => ({

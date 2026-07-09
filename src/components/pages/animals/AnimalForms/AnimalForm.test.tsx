@@ -144,7 +144,7 @@ describe("AnimalForm Integration Tests", () => {
       <AnimalForm languages={mockLanguages} biomes={mockBiomes} originsData={mockOrigins} />,
     );
 
-    fireEvent.click(screen.getByRole("button", { name: "Animals.form.saveAnimal" }));
+    fireEvent.click(screen.getByRole("button", { name: "animal.form.saveAnimal" }));
 
     await waitFor(() => {
       expect(toast.warn).toHaveBeenCalledWith("Bitte gib einen deutschen Namen ein!");
@@ -163,7 +163,7 @@ describe("AnimalForm Integration Tests", () => {
       <AnimalForm languages={mockLanguages} biomes={mockBiomes} originsData={mockOrigins} />,
     );
 
-    fireEvent.click(screen.getByRole("button", { name: "Animals.form.saveAnimal" }));
+    fireEvent.click(screen.getByRole("button", { name: "animal.form.saveAnimal" }));
 
     await waitFor(() => {
       expect(toast.warn).toHaveBeenCalledWith("Bitte wähle ein Gehege aus!");
@@ -180,7 +180,7 @@ describe("AnimalForm Integration Tests", () => {
     );
 
     fireEvent.change(screen.getByLabelText("Gehege"), { target: { value: "1" } });
-    fireEvent.click(screen.getByRole("button", { name: "Animals.form.saveAnimal" }));
+    fireEvent.click(screen.getByRole("button", { name: "animal.form.saveAnimal" }));
 
     await waitFor(() => {
       expect(mockSaveAnimal).toHaveBeenCalledTimes(1);
@@ -199,7 +199,7 @@ describe("AnimalForm Integration Tests", () => {
     mockSaveAnimal.mockResolvedValue(99);
 
     fireEvent.change(screen.getByLabelText("Gehege"), { target: { value: "1" } });
-    fireEvent.click(screen.getByRole("button", { name: "Animals.form.saveAnimal" }));
+    fireEvent.click(screen.getByRole("button", { name: "animal.form.saveAnimal" }));
 
     await waitFor(() => {
       expect(mockClearEditingAnimal).toHaveBeenCalled();
@@ -218,7 +218,7 @@ describe("AnimalForm Integration Tests", () => {
     mockSaveAnimal.mockResolvedValue(false);
 
     fireEvent.change(screen.getByLabelText("Gehege"), { target: { value: "1" } });
-    fireEvent.click(screen.getByRole("button", { name: "Animals.form.saveAnimal" }));
+    fireEvent.click(screen.getByRole("button", { name: "animal.form.saveAnimal" }));
 
     await waitFor(() => {
       expect(mockSaveAnimal).toHaveBeenCalled();
@@ -235,7 +235,7 @@ describe("AnimalForm Integration Tests", () => {
     );
 
     fireEvent.change(screen.getByLabelText("Gehege"), { target: { value: "1" } });
-    fireEvent.click(screen.getByRole("button", { name: "Animals.form.saveAnimal" }));
+    fireEvent.click(screen.getByRole("button", { name: "animal.form.saveAnimal" }));
 
     await waitFor(() => {
       expect(mockPush).toHaveBeenCalledWith("/animals/99");
@@ -258,7 +258,7 @@ describe("AnimalForm Integration Tests", () => {
     mockSaveAnimal.mockResolvedValue(10);
 
     fireEvent.change(screen.getByLabelText("Gehege"), { target: { value: "1" } });
-    fireEvent.click(screen.getByRole("button", { name: "Animals.form.saveAnimal" }));
+    fireEvent.click(screen.getByRole("button", { name: "animal.form.saveAnimal" }));
 
     await waitFor(() => {
       expect(mockPush).toHaveBeenCalledWith("/animals/10");
@@ -273,7 +273,7 @@ describe("AnimalForm Integration Tests", () => {
     );
 
     fireEvent.change(screen.getByLabelText("Gehege"), { target: { value: "3" } });
-    fireEvent.click(screen.getByRole("button", { name: "Animals.form.saveAnimal" }));
+    fireEvent.click(screen.getByRole("button", { name: "animal.form.saveAnimal" }));
 
     await waitFor(() => {
       expect(mockSaveAnimal).toHaveBeenCalledWith(

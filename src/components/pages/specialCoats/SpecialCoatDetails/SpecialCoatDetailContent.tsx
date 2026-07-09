@@ -20,8 +20,8 @@ export default function SpecialCoatDetailContent() {
   const deleteSpecialCoat = useSpecialCoatStore((state) => state.deleteSpecialCoat);
   const animal = useAnimalStore((state) => state.selectedAnimal);
 
-  const tCommon = useTranslations("Common");
-  const t = useTranslations();
+  const tSpecialCoat = useTranslations("specialCoat");
+  const tCommon = useTranslations("common");
   const router = useRouter();
 
   const { data: session } = useSession();
@@ -44,7 +44,7 @@ export default function SpecialCoatDetailContent() {
               router.push(`/specialcoats/${specialCoat.id}/edit`);
             }}
             onDelete={async () => {
-              const success = await deleteSpecialCoat(specialCoat.id, t);
+              const success = await deleteSpecialCoat(specialCoat.id, tSpecialCoat, tCommon);
               if (success) router.push("/specialcoats");
             }}
           />

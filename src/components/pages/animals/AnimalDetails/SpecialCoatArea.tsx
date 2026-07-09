@@ -10,7 +10,7 @@ import SpecialCoatCard from "./SpecialCoatCard";
 import { useAnimalStore } from "@/store/useAnimalStore";
 
 export default function SpecialCoatArea() {
-  const tAnimals = useTranslations("Animals");
+  const tAnimals = useTranslations("animal");
 
   const animal = useAnimalStore((state) => state.selectedAnimal);
   const coats = animal?.specialcoat;
