@@ -19,7 +19,7 @@ vi.mock("next/image", () => ({
 }));
 
 vi.mock("react-toastify", () => ({
-  toast: { warn: vi.fn() },
+  toast: { warn: vi.fn(), success: vi.fn() },
 }));
 
 const mockPush = vi.fn();
@@ -147,7 +147,7 @@ describe("AnimalForm Integration Tests", () => {
     fireEvent.click(screen.getByRole("button", { name: "animal.form.saveAnimal" }));
 
     await waitFor(() => {
-      expect(toast.warn).toHaveBeenCalledWith("Bitte gib einen deutschen Namen ein!");
+      expect(toast.warn).toHaveBeenCalledWith("animal.form.requiredName");
     });
 
     expect(mockSaveAnimal).not.toHaveBeenCalled();
@@ -166,7 +166,7 @@ describe("AnimalForm Integration Tests", () => {
     fireEvent.click(screen.getByRole("button", { name: "animal.form.saveAnimal" }));
 
     await waitFor(() => {
-      expect(toast.warn).toHaveBeenCalledWith("Bitte wähle ein Gehege aus!");
+      expect(toast.warn).toHaveBeenCalledWith("animal.form.requiredBiome");
     });
 
     expect(mockSaveAnimal).not.toHaveBeenCalled();

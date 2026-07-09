@@ -32,6 +32,7 @@
   "description": "Beschrijving",
   "descriptionPlaceholder": "Voer hier beschrijving in...",
   "pleaseSelect": "Selecteer...",
+  "loading": "Laden...",
   "loading_data": "Gegevens laden...",
   "buttons": {
     "edit": "Bewerken",
@@ -66,6 +67,7 @@
   },
   "noDescriptionAvailable": "Geen beschrijving beschikbaar",
   "error": "Er is een fout opgetreden",
+  "delete_failed": "Verwijderen mislukt",
   "errors": {
     "imageNotFound": "Afbeelding niet gevonden"
   }

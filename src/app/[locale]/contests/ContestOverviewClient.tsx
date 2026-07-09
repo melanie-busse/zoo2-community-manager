@@ -48,7 +48,7 @@ export default function ContestOverviewClient({ initialContests }: ContestOvervi
         }
       } catch (err) {
         console.error("Delete failed:", err);
-        toast.error("Löschen fehlgeschlagen");
+        toast.error(tCommon("delete_failed"));
       }
     }
   };

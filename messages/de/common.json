@@ -32,6 +32,7 @@
   "description": "Beschreibung",
   "descriptionPlaceholder": "Hier Beschreibung eingeben...",
   "pleaseSelect": "Bitte wählen...",
+  "loading": "Wird geladen...",
   "loading_data": "Daten werden geladen...",
   "buttons": {
     "edit": "Bearbeiten",
@@ -66,6 +67,7 @@
   },
   "noDescriptionAvailable": "Keine Beschreibung verfügbar",
   "error": "Ein Fehler ist aufgetreten",
+  "delete_failed": "Löschen fehlgeschlagen",
   "errors": {
     "imageNotFound": "Bild nicht gefunden"
   }

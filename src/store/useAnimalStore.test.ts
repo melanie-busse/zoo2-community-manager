@@ -110,7 +110,6 @@ describe("useAnimalStore", () => {
 
     expect(savedId).toBe(3);
     expect(fetch).toHaveBeenCalledWith("/api/animals", expect.any(Object));
-    expect(toast.success).toHaveBeenCalledWith("Tier erfolgreich erstellt!");
     expect(useAnimalStore.getState().allAnimals).toContainEqual(newAnimal);
   });
 

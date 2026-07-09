@@ -18,6 +18,10 @@ vi.mock("@/lib/prisma", () => ({
   },
 }));
 
+vi.mock("next-intl/server", () => ({
+  getTranslations: vi.fn().mockResolvedValue((key: string) => key),
+}));
+
 const makeParams = (id: string) => ({ params: Promise.resolve({ id }) });
 
 describe("SpecialCoats [id] API Route Handler", () => {
@@ -63,7 +67,7 @@ describe("SpecialCoats [id] API Route Handler", () => {
       const data = await response.json();
 
       expect(response.status).toBe(404);
-      expect(data.message).toBe("Farbvariante nicht gefunden");
+      expect(data.message).toBe("specialcoat.not_found");
     });
 
     test("gibt Status 500 zurück, wenn der Service einen Fehler wirft", async () => {
@@ -75,7 +79,7 @@ describe("SpecialCoats [id] API Route Handler", () => {
       const data = await response.json();
 
       expect(response.status).toBe(500);
-      expect(data.message).toBe("Fehler beim Laden");
+      expect(data.message).toBe("errors.load_error");
     });
   });
 
@@ -128,7 +132,7 @@ describe("SpecialCoats [id] API Route Handler", () => {
       const data = await response.json();
 
       expect(response.status).toBe(400);
-      expect(data.message).toBe("Ungültige ID");
+      expect(data.message).toBe("errors.invalid_id");
     });
 
     test("gibt Status 500 zurück, wenn updateSpecialCoat einen DB-Fehler wirft", async () => {
@@ -143,7 +147,7 @@ describe("SpecialCoats [id] API Route Handler", () => {
       const data = await response.json();
 
       expect(response.status).toBe(500);
-      expect(data.message).toBe("Fehler beim Aktualisieren");
+      expect(data.message).toBe("specialcoat.update_error");
     });
   });
 
@@ -178,7 +182,7 @@ describe("SpecialCoats [id] API Route Handler", () => {
       const data = await response.json();
 
       expect(response.status).toBe(400);
-      expect(data.message).toBe("Ungültige ID");
+      expect(data.message).toBe("errors.invalid_id");
       expect(prisma.$transaction).not.toHaveBeenCalled();
     });
 
@@ -193,7 +197,7 @@ describe("SpecialCoats [id] API Route Handler", () => {
       const data = await response.json();
 
       expect(response.status).toBe(500);
-      expect(data.message).toBe("Fehler beim Löschen");
+      expect(data.message).toBe("specialcoat.delete_error");
     });
   });
 });

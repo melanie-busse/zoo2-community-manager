@@ -12,7 +12,11 @@
   "form": {
     "createAnimal": "Opret nyt dyr",
     "editAnimal": "Rediger dyr",
-    "saveAnimal": "Gem dyr"
+    "saveAnimal": "Gem dyr",
+    "requiredName": "Indtast venligst et tysk navn!",
+    "requiredBiome": "Vælg venligst en indhegning!",
+    "selectAnimal": "Vælg dyr *",
+    "selectPlaceholder": "Skriv for at søge (f.eks. Løve)..."
   },
   "breeding": {
     "xpAndActions": "XP og handlinger",

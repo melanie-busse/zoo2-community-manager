@@ -1,14 +1,15 @@
 import { NextResponse } from "next/server";
+import { getTranslations } from "next-intl/server";
 
 import { createSpecialCoat, getAllSpecialCoats } from "@/service/SpecialCoatsService";
 
 export const dynamic = "force-dynamic";
 
 export async function GET(request: Request) {
-  try {
-    const { searchParams } = new URL(request.url);
-    const locale = searchParams.get("locale") || "de";
+  const { searchParams } = new URL(request.url);
+  const locale = searchParams.get("locale") || "de";
 
+  try {
     const specialCoats = await getAllSpecialCoats(locale);
 
     if (!specialCoats || specialCoats.length === 0) {
@@ -17,19 +18,23 @@ export async function GET(request: Request) {
 
     return NextResponse.json(specialCoats);
   } catch (error) {
+    const t = await getTranslations({ locale, namespace: "api" });
     console.error("API Error during GET (SpecialCoats):", error);
-    return NextResponse.json({ error: "Fehler beim Laden" }, { status: 500 });
+    return NextResponse.json({ error: t("errors.load_error") }, { status: 500 });
   }
 }
 
 export async function POST(request: Request) {
+  const { searchParams } = new URL(request.url);
+  const locale = searchParams.get("locale") || "de";
+  const t = await getTranslations({ locale, namespace: "api" });
+
   try {
     const body = await request.json();
 
-    // Validierung: Mindestens ein Tier muss zugewiesen sein und Texte müssen da sein
     if (!body.animalId || !body.texts || body.texts.length === 0) {
       return NextResponse.json(
-        { message: "Tier-ID und Übersetzungen sind Pflichtfelder." },
+        { message: t("specialcoat.required_fields") },
         { status: 400 },
       );
     }
@@ -40,7 +45,7 @@ export async function POST(request: Request) {
   } catch (error: any) {
     console.error("API Error during POST (SpecialCoats):", error);
     return NextResponse.json(
-      { message: "Fehler beim Erstellen der Farbvariante", error: error.message },
+      { message: t("specialcoat.create_error"), error: error.message },
       { status: 500 },
     );
   }

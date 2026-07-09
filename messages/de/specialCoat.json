@@ -22,7 +22,9 @@
   "messages": {
     "deleteErrorTitle": "Farbvariante löschen?",
     "confirmDelete": "Möchtest du diese Farbvariante wirklich löschen?",
-    "deleteSuccess": "Farbvariante erfolgreich gelöscht"
+    "deleteSuccess": "Farbvariante erfolgreich gelöscht",
+    "createSuccess": "Farbvariante erfolgreich erstellt!",
+    "editSuccess": "Farbvariante erfolgreich aktualisiert!"
   },
   "emptyState": {
     "title": "Oje, kein Tier da!"

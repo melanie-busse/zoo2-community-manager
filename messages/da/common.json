@@ -32,6 +32,7 @@
   "description": "Beskrivelse",
   "descriptionPlaceholder": "Indtast beskrivelse her...",
   "pleaseSelect": "Vælg venligst...",
+  "loading": "Indlæser...",
   "loading_data": "Indlæser data...",
   "buttons": {
     "edit": "Rediger",
@@ -66,6 +67,7 @@
   },
   "noDescriptionAvailable": "Ingen beskrivelse tilgængelig",
   "error": "Der opstod en fejl",
+  "delete_failed": "Sletning mislykkedes",
   "errors": {
     "imageNotFound": "Billede ikke fundet"
   }

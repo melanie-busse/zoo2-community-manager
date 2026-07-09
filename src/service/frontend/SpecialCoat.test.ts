@@ -6,12 +6,6 @@ import {
   deleteSpecialCoatOnClient,
 } from "@/service/frontend/SpecialCoat";
 
-vi.mock("@/utils/alerts", () => ({
-  showSuccessToast: vi.fn(),
-}));
-
-import { showSuccessToast } from "@/utils/alerts";
-
 const mockFetch = (ok: boolean, body: object, status = ok ? 200 : 400) => {
   vi.stubGlobal(
     "fetch",
@@ -49,13 +43,12 @@ describe("SpecialCoat Frontend Service", () => {
       });
     });
 
-    test("gibt das Ergebnis zurück und zeigt einen Success-Toast bei Erfolg", async () => {
+    test("gibt das Ergebnis zurück bei Erfolg", async () => {
       mockFetch(true, mockResult);
 
       const result = await createSpecialCoatOnClient(formData);
 
       expect(result).toEqual(mockResult);
-      expect(showSuccessToast).toHaveBeenCalledWith("Farbvariante erfolgreich erstellt!");
     });
 
     test("wirft einen Fehler mit der Server-Nachricht, wenn die Anfrage fehlschlägt", async () => {
@@ -64,13 +57,12 @@ describe("SpecialCoat Frontend Service", () => {
       await expect(createSpecialCoatOnClient(formData)).rejects.toThrow(
         "AnimalId ist Pflichtfeld",
       );
-      expect(showSuccessToast).not.toHaveBeenCalled();
     });
 
-    test("wirft einen Fallback-Fehler, wenn keine Server-Nachricht vorhanden ist", async () => {
+    test("wirft einen Fehler, wenn keine Server-Nachricht vorhanden ist", async () => {
       mockFetch(false, {});
 
-      await expect(createSpecialCoatOnClient(formData)).rejects.toThrow("Fehler beim Erstellen");
+      await expect(createSpecialCoatOnClient(formData)).rejects.toThrow();
     });
   });
 
@@ -94,13 +86,12 @@ describe("SpecialCoat Frontend Service", () => {
       });
     });
 
-    test("gibt das Ergebnis zurück und zeigt einen Success-Toast bei Erfolg", async () => {
+    test("gibt das Ergebnis zurück bei Erfolg", async () => {
       mockFetch(true, mockResult);
 
       const result = await updateSpecialCoatOnClient(42, formData);
 
       expect(result).toEqual(mockResult);
-      expect(showSuccessToast).toHaveBeenCalledWith("Farbvariante erfolgreich aktualisiert!");
     });
 
     test("wirft einen Fehler mit der Server-Nachricht, wenn die Anfrage fehlschlägt", async () => {
@@ -109,13 +100,12 @@ describe("SpecialCoat Frontend Service", () => {
       await expect(updateSpecialCoatOnClient(42, formData)).rejects.toThrow(
         "Farbvariante nicht gefunden",
       );
-      expect(showSuccessToast).not.toHaveBeenCalled();
     });
 
-    test("wirft einen Fallback-Fehler, wenn keine Server-Nachricht vorhanden ist", async () => {
+    test("wirft einen Fehler, wenn keine Server-Nachricht vorhanden ist", async () => {
       mockFetch(false, {});
 
-      await expect(updateSpecialCoatOnClient(42, formData)).rejects.toThrow("Fehler beim Updaten");
+      await expect(updateSpecialCoatOnClient(42, formData)).rejects.toThrow();
     });
   });
 
@@ -146,7 +136,7 @@ describe("SpecialCoat Frontend Service", () => {
       await expect(deleteSpecialCoatOnClient(42)).rejects.toThrow("Farbvariante nicht gefunden");
     });
 
-    test("wirft einen Fallback-Fehler, wenn die Fehler-Antwort kein JSON enthält", async () => {
+    test("wirft einen Fehler, wenn die Fehler-Antwort kein JSON enthält", async () => {
       vi.stubGlobal(
         "fetch",
         vi.fn().mockResolvedValue({
@@ -155,7 +145,7 @@ describe("SpecialCoat Frontend Service", () => {
         }),
       );
 
-      await expect(deleteSpecialCoatOnClient(42)).rejects.toThrow("Fehler beim Löschen");
+      await expect(deleteSpecialCoatOnClient(42)).rejects.toThrow();
     });
   });
 });

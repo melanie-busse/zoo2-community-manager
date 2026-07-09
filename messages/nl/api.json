@@ -1,0 +1,30 @@
+{
+  "errors": {
+    "load_error": "Fout bij het laden van gegevens",
+    "invalid_id": "Ongeldig ID",
+    "unauthorized": "Niet geautoriseerd",
+    "not_found": "Niet gevonden",
+    "server_error": "Er is een serverfout opgetreden"
+  },
+  "animal": {
+    "required_fields": "Naam (DE) en verblijfstype zijn verplichte velden.",
+    "create_error": "Fout bij het aanmaken van dier",
+    "update_success": "Dier succesvol bijgewerkt",
+    "update_error": "Fout bij het bijwerken van dier",
+    "delete_error": "Fout bij het verwijderen van dier",
+    "invalid_id": "Ongeldig dier-ID"
+  },
+  "specialcoat": {
+    "required_fields": "Dier-ID en vertalingen zijn verplichte velden.",
+    "not_found": "Kleurvariant niet gevonden",
+    "create_error": "Fout bij het aanmaken van kleurvariant",
+    "update_error": "Fout bij het bijwerken van kleurvariant",
+    "delete_error": "Fout bij het verwijderen van kleurvariant"
+  },
+  "contest": {
+    "not_found": "Wedstrijd niet gevonden",
+    "create_error": "Fout bij het aanmaken van wedstrijd",
+    "update_error": "Fout bij het bijwerken van wedstrijd",
+    "delete_error": "Fout bij het verwijderen van wedstrijd"
+  }
+}

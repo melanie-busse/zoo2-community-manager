@@ -13,6 +13,7 @@ vi.mock("@/store/useAnimalStore", () => ({
 vi.mock("react-toastify", () => ({
   toast: {
     warn: vi.fn(),
+    success: vi.fn(),
   },
 }));
 
@@ -146,7 +147,7 @@ describe("AnimalForm Integration Tests", () => {
     const submitBtn = screen.getByRole("button", { name: "animal.form.saveAnimal" });
     fireEvent.click(submitBtn);
 
-    expect(toast.warn).toHaveBeenCalledWith("Bitte wähle ein Gehege aus!");
+    expect(toast.warn).toHaveBeenCalledWith("animal.form.requiredBiome");
     expect(mockSaveAnimal).not.toHaveBeenCalled();
   });
 

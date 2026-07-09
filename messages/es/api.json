@@ -1,0 +1,30 @@
+{
+  "errors": {
+    "load_error": "Error al cargar los datos",
+    "invalid_id": "ID no válido",
+    "unauthorized": "No autorizado",
+    "not_found": "No encontrado",
+    "server_error": "Se ha producido un error en el servidor"
+  },
+  "animal": {
+    "required_fields": "El nombre (DE) y el tipo de recinto son campos obligatorios.",
+    "create_error": "Error al crear el animal",
+    "update_success": "Animal actualizado correctamente",
+    "update_error": "Error al actualizar el animal",
+    "delete_error": "Error al eliminar el animal",
+    "invalid_id": "ID de animal no válido"
+  },
+  "specialcoat": {
+    "required_fields": "El ID del animal y las traducciones son campos obligatorios.",
+    "not_found": "Variante de color no encontrada",
+    "create_error": "Error al crear la variante de color",
+    "update_error": "Error al actualizar la variante de color",
+    "delete_error": "Error al eliminar la variante de color"
+  },
+  "contest": {
+    "not_found": "Concurso no encontrado",
+    "create_error": "Error al crear el concurso",
+    "update_error": "Error al actualizar el concurso",
+    "delete_error": "Error al eliminar el concurso"
+  }
+}

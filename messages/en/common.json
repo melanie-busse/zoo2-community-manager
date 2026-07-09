@@ -32,6 +32,7 @@
   "description": "Description",
   "descriptionPlaceholder": "Enter description here...",
   "pleaseSelect": "Please select...",
+  "loading": "Loading...",
   "loading_data": "Loading data...",
   "buttons": {
     "edit": "Edit",
@@ -66,6 +67,7 @@
   },
   "noDescriptionAvailable": "No description available",
   "error": "An error occurred",
+  "delete_failed": "Delete failed",
   "errors": {
     "imageNotFound": "Image not found"
   }

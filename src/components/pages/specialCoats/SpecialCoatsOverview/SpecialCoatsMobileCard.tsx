@@ -40,13 +40,13 @@ export default function SpecialCoatsMobileCard({ specialCoat }: SpecialCoatMobil
   if (!specialCoat) return null;
 
   const isAdmin = session?.user?.role === "Director";
-  const displayName = specialCoat.animal?.animaltext?.[0]?.animalName ?? "Kein Name vorhanden";
+  const displayName = specialCoat.animal?.animaltext?.[0]?.animalName ?? tSpecialCoat("noName");
 
   return (
     <CardContainer onClick={() => router.push(`/specialcoats/${specialCoat.id}`)}>
       <CardHeaderRow>
         <Name>{displayName}</Name>
-        <Color>{specialCoat.specialcoatstext?.[0]?.color ?? "Keine Farbe vorhanden"} -</Color>
+        <Color>{specialCoat.specialcoatstext?.[0]?.color ?? tSpecialCoat("noColor")} -</Color>
 
         {isAdmin && (
           <ActionGroupBadge

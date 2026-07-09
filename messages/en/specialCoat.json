@@ -22,7 +22,9 @@
   "messages": {
     "deleteErrorTitle": "Delete Color Variant?",
     "confirmDelete": "Do you really want to delete this color variant?",
-    "deleteSuccess": "Color variant successfully deleted"
+    "deleteSuccess": "Color variant successfully deleted",
+    "createSuccess": "Color variant successfully created!",
+    "editSuccess": "Color variant successfully updated!"
   },
   "emptyState": {
     "title": "Oh no, no animals here!"

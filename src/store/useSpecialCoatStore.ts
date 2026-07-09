@@ -135,7 +135,7 @@ export const useSpecialCoatStore = create<SpecialCoatState>((set, get) => {
         return result.id as number;
       } catch (error: any) {
         console.error("Fetch Error:", error);
-        showErrorToast(error.message || "Netzwerkfehler beim Speichern.");
+        showErrorToast(error.message);
         return false;
       }
     },
@@ -240,11 +240,10 @@ export const useSpecialCoatStore = create<SpecialCoatState>((set, get) => {
 
     deleteSpecialCoat: async (id: number, t: any, tCommon: any) => {
       const confirmed = await confirmDeleteDialog({
-        title: t("messages.deleteErrorTitle") || "Löschen?",
-        text:
-          t("messages.confirmDelete") || "Möchtest du diese Variante wirklich löschen?",
-        confirmButtonText: tCommon("messages.yes_delete") || "Ja, löschen",
-        cancelButtonText: tCommon("messages.cancel") || "Abbrechen",
+        title: t("messages.deleteErrorTitle"),
+        text: t("messages.confirmDelete"),
+        confirmButtonText: tCommon("messages.yes_delete"),
+        cancelButtonText: tCommon("messages.cancel"),
       });
 
       if (!confirmed) return false;
@@ -278,11 +277,11 @@ export const useSpecialCoatStore = create<SpecialCoatState>((set, get) => {
           };
         });
 
-        showSuccessToast(t("messages.deleteSuccess") || "Erfolgreich gelöscht");
+        showSuccessToast(t("messages.deleteSuccess"));
         return true;
       } catch (error: any) {
         console.error("Delete Error:", error);
-        showErrorToast(error.message || "Fehler beim Löschen");
+        showErrorToast(error.message);
         return false;
       }
     },

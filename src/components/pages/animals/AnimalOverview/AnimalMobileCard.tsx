@@ -40,7 +40,7 @@ export default function AnimalMobileCard({ animal }: AnimalMobileCardProps) {
   if (!animal) return null;
 
   const isAdmin = session?.user?.role === "Director";
-  const displayName = animal.animaltext?.[0]?.animalName ?? "Kein Name vorhanden";
+  const displayName = animal.animaltext?.[0]?.animalName ?? tAnimal("noName");
 
   return (
     <CardContainer onClick={() => router.push(`/animals/${animal.id}`)}>

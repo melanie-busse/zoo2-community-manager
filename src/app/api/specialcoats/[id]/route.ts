@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { getTranslations } from "next-intl/server";
 import { prisma } from "@/lib/prisma";
 import { getSpecialCoatById, updateSpecialCoat } from "@/service/SpecialCoatsService";
 
@@ -7,25 +8,30 @@ interface RouteParams {
 }
 
 export async function GET(request: Request, { params }: RouteParams) {
-  try {
-    const { searchParams } = new URL(request.url);
-    const locale = searchParams.get("locale") ?? "de";
+  const { searchParams } = new URL(request.url);
+  const locale = searchParams.get("locale") ?? "de";
+  const t = await getTranslations({ locale, namespace: "api" });
 
+  try {
     const { id } = await params;
     const coat = await getSpecialCoatById(id, locale);
 
     if (!coat) {
-      return NextResponse.json({ message: "Farbvariante nicht gefunden" }, { status: 404 });
+      return NextResponse.json({ message: t("specialcoat.not_found") }, { status: 404 });
     }
 
     return NextResponse.json(coat);
   } catch (error) {
     console.error("GET SpecialCoat Error:", error);
-    return NextResponse.json({ message: "Fehler beim Laden" }, { status: 500 });
+    return NextResponse.json({ message: t("errors.load_error") }, { status: 500 });
   }
 }
 
 export async function PUT(request: Request, { params }: RouteParams) {
+  const { searchParams } = new URL(request.url);
+  const locale = searchParams.get("locale") ?? "de";
+  const t = await getTranslations({ locale, namespace: "api" });
+
   try {
     const { id } = await params;
     const body = await request.json();
@@ -37,20 +43,24 @@ export async function PUT(request: Request, { params }: RouteParams) {
     console.error("PUT SpecialCoat Error:", error);
 
     if (error.message?.includes("Invalid ID")) {
-      return NextResponse.json({ message: "Ungültige ID" }, { status: 400 });
+      return NextResponse.json({ message: t("errors.invalid_id") }, { status: 400 });
     }
 
-    return NextResponse.json({ message: "Fehler beim Aktualisieren" }, { status: 500 });
+    return NextResponse.json({ message: t("specialcoat.update_error") }, { status: 500 });
   }
 }
 
 export async function DELETE(request: Request, { params }: RouteParams) {
+  const { searchParams } = new URL(request.url);
+  const locale = searchParams.get("locale") ?? "de";
+  const t = await getTranslations({ locale, namespace: "api" });
+
   try {
     const { id } = await params;
     const coatId = Number(id);
 
     if (isNaN(coatId)) {
-      return NextResponse.json({ message: "Ungültige ID" }, { status: 400 });
+      return NextResponse.json({ message: t("errors.invalid_id") }, { status: 400 });
     }
 
     await prisma.$transaction([
@@ -62,6 +72,6 @@ export async function DELETE(request: Request, { params }: RouteParams) {
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error("DELETE SpecialCoat Error:", error);
-    return NextResponse.json({ message: "Fehler beim Löschen" }, { status: 500 });
+    return NextResponse.json({ message: t("specialcoat.delete_error") }, { status: 500 });
   }
 }

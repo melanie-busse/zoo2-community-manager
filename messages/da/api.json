@@ -1,0 +1,30 @@
+{
+  "errors": {
+    "load_error": "Fejl ved indlæsning af data",
+    "invalid_id": "Ugyldigt ID",
+    "unauthorized": "Ikke autoriseret",
+    "not_found": "Ikke fundet",
+    "server_error": "Der opstod en serverfejl"
+  },
+  "animal": {
+    "required_fields": "Navn (DE) og indhegningstype er obligatoriske felter.",
+    "create_error": "Fejl ved oprettelse af dyr",
+    "update_success": "Dyr opdateret",
+    "update_error": "Fejl ved opdatering af dyr",
+    "delete_error": "Fejl ved sletning af dyr",
+    "invalid_id": "Ugyldigt dyre-ID"
+  },
+  "specialcoat": {
+    "required_fields": "Dyre-ID og oversættelser er obligatoriske felter.",
+    "not_found": "Farvevariant ikke fundet",
+    "create_error": "Fejl ved oprettelse af farvevariant",
+    "update_error": "Fejl ved opdatering af farvevariant",
+    "delete_error": "Fejl ved sletning af farvevariant"
+  },
+  "contest": {
+    "not_found": "Konkurrence ikke fundet",
+    "create_error": "Fejl ved oprettelse af konkurrence",
+    "update_error": "Fejl ved opdatering af konkurrence",
+    "delete_error": "Fejl ved sletning af konkurrence"
+  }
+}

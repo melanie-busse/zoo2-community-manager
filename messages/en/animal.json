@@ -12,7 +12,11 @@
   "form": {
     "createAnimal": "Create New Animal",
     "editAnimal": "Edit Animal",
-    "saveAnimal": "Save Animal"
+    "saveAnimal": "Save Animal",
+    "requiredName": "Please enter a German name!",
+    "requiredBiome": "Please select an enclosure!",
+    "selectAnimal": "Select Animal *",
+    "selectPlaceholder": "Type to search (e.g. Lion)..."
   },
   "breeding": {
     "xpAndActions": "XP and Actions",

@@ -22,7 +22,9 @@
   "messages": {
     "deleteErrorTitle": "Slet fargevariant?",
     "confirmDelete": "Vil du virkelig slette denne fargevariant?",
-    "deleteSuccess": "Fargevariant slettet"
+    "deleteSuccess": "Fargevariant slettet",
+    "createSuccess": "Fargevariant oprettet!",
+    "editSuccess": "Fargevariant opdateret!"
   },
   "emptyState": {
     "title": "Åh nej, ingen dyr her!"

@@ -1,4 +1,7 @@
+"use client";
+
 import React, { useState, useEffect } from "react";
+import { useTranslations } from "next-intl";
 import Label from "@/components/ui/form/Label";
 
 interface AnimalSelectProps {
@@ -12,6 +15,7 @@ export default function AnimalSelectSection({
   formData,
   setFormData,
 }: AnimalSelectProps) {
+  const tAnimal = useTranslations("animal");
   // Lokaler State für den Text, den der Nutzer im Suchfeld sieht
   const [inputValue, setInputValue] = useState("");
 
@@ -48,14 +52,14 @@ export default function AnimalSelectSection({
 
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
-      <Label htmlFor="animalSearch">Tier auswählen *</Label>
+      <Label htmlFor="animalSearch">{tAnimal("form.selectAnimal")}</Label>
 
       {/* Das durchsuchbare Input-Feld */}
       <input
         id="animalSearch"
         type="text"
         list="animalsDatalist" // Verknüpfung zur Datalist unten
-        placeholder="Tippen zum Suchen (z.B. Löwe)..."
+        placeholder={tAnimal("form.selectPlaceholder")}
         value={inputValue}
         onChange={handleInputChange}
         autoComplete="off"

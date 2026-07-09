@@ -21,9 +21,9 @@ export default function ContestOverviewContent({
   handleDelete,
 }: ContestOverviewContentProps) {
   const router = useRouter();
-  const t = useTranslations();
+  const tContest = useTranslations("contest");
 
-  return <p>läuft</p>;
+  return <p>{tContest("status.running")}</p>;
   //   <>
   //     <PageHeader text={t("Contest.contestOverview.overview_title")} />
   //

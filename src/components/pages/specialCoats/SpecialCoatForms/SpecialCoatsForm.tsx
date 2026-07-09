@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
 
 import SubmitButton from "@/components/ui/form/SubmitButton";
 import { useSpecialCoatStore } from "@/store/useSpecialCoatStore";
@@ -65,6 +66,7 @@ export default function SpecialCoatForm({
 
       if (savedId !== false) {
         clearEditingSpecialCoat();
+        toast.success(tSpecialCoat(formData.id ? "messages.editSuccess" : "messages.createSuccess"));
         router.push("/specialcoats");
       }
     } catch (error) {

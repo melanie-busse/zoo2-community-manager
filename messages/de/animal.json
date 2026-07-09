@@ -12,7 +12,11 @@
   "form": {
     "createAnimal": "Neues Tier anlegen",
     "editAnimal": "Tier bearbeiten",
-    "saveAnimal": "Tier speichern"
+    "saveAnimal": "Tier speichern",
+    "requiredName": "Bitte gib einen deutschen Namen ein!",
+    "requiredBiome": "Bitte wähle ein Gehege aus!",
+    "selectAnimal": "Tier auswählen *",
+    "selectPlaceholder": "Tippen zum Suchen (z.B. Löwe)..."
   },
   "breeding": {
     "xpAndActions": "XP und Aktionen",

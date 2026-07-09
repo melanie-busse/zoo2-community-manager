@@ -22,7 +22,9 @@
   "messages": {
     "deleteErrorTitle": "Kleurvariant verwijderen?",
     "confirmDelete": "Wil je deze kleurvariant echt verwijderen?",
-    "deleteSuccess": "Kleurvariant succesvol verwijderd"
+    "deleteSuccess": "Kleurvariant succesvol verwijderd",
+    "createSuccess": "Kleurvariant succesvol aangemaakt!",
+    "editSuccess": "Kleurvariant succesvol bijgewerkt!"
   },
   "emptyState": {
     "title": "Oh nee, geen dieren hier!"

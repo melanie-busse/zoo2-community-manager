@@ -22,7 +22,9 @@
   "messages": {
     "deleteErrorTitle": "¿Eliminar variante de color?",
     "confirmDelete": "¿Realmente quieres eliminar esta variante de color?",
-    "deleteSuccess": "Variante de color eliminada con éxito"
+    "deleteSuccess": "Variante de color eliminada con éxito",
+    "createSuccess": "¡Variante de color creada con éxito!",
+    "editSuccess": "¡Variante de color actualizada con éxito!"
   },
   "emptyState": {
     "title": "¡Vaya, no hay animales aquí!"

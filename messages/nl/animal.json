@@ -12,7 +12,11 @@
   "form": {
     "createAnimal": "Nieuw dier aanmaken",
     "editAnimal": "Dier bewerken",
-    "saveAnimal": "Dier opslaan"
+    "saveAnimal": "Dier opslaan",
+    "requiredName": "Voer een Duitse naam in!",
+    "requiredBiome": "Selecteer een verblijf!",
+    "selectAnimal": "Dier selecteren *",
+    "selectPlaceholder": "Typ om te zoeken (bijv. Leeuw)..."
   },
   "breeding": {
     "xpAndActions": "XP en acties",

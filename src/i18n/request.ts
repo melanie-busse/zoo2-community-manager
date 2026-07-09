@@ -9,6 +9,7 @@ const namespaces = [
     'navigation',
     'page',
     'common',
+    'api',
 ] as const;
 
 export default getRequestConfig(async ({requestLocale}) => {

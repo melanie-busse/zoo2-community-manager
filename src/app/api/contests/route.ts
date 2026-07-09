@@ -1,29 +1,27 @@
 import { NextResponse } from "next/server";
 import { getServerSession } from "next-auth/next";
+import { getTranslations } from "next-intl/server";
 import { authOptions } from "../auth/[...nextauth]/route";
 import { createContest } from "@/service/ContestService";
 
 export async function POST(req: Request) {
+  const { searchParams } = new URL(req.url);
+  const locale = searchParams.get("locale") || "de";
+  const t = await getTranslations({ locale, namespace: "api" });
+
   try {
-    // 1. Session prüfen
     const session = await getServerSession(authOptions);
 
-    // Zugriffsschutz: Nur eingeloggte User (oder später spezifische Rollen)
     if (!session) {
-      return NextResponse.json({ message: "Nicht autorisiert" }, { status: 401 });
+      return NextResponse.json({ message: t("errors.unauthorized") }, { status: 401 });
     }
 
-    // 2. Body parsen (im App Router asynchron!)
     const body = await req.json();
-    // 3. Service aufrufen
     const result = await createContest(body);
 
-    // 4. Erfolgsantwort senden
     return NextResponse.json({ success: true, contest: result }, { status: 201 });
   } catch (error) {
     console.error("API Error [Contests]:", error);
-
-    // Differenzierung zwischen Validierungsfehlern und Serverfehlern
-    return NextResponse.json({ message: "Fehler beim Erstellen des Contests" }, { status: 500 });
+    return NextResponse.json({ message: t("contest.create_error") }, { status: 500 });
   }
 }

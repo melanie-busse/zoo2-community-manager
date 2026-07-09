@@ -8,6 +8,10 @@ vi.mock("@/service/SpecialCoatsService", () => ({
   createSpecialCoat: vi.fn(),
 }));
 
+vi.mock("next-intl/server", () => ({
+  getTranslations: vi.fn().mockResolvedValue((key: string) => key),
+}));
+
 describe("SpecialCoats API Route Handler", () => {
   beforeEach(() => {
     vi.clearAllMocks();
@@ -52,7 +56,7 @@ describe("SpecialCoats API Route Handler", () => {
       const data = await response.json();
 
       expect(response.status).toBe(500);
-      expect(data).toEqual({ error: "Fehler beim Laden" });
+      expect(data).toEqual({ error: "errors.load_error" });
     });
   });
 
@@ -92,7 +96,7 @@ describe("SpecialCoats API Route Handler", () => {
       const data = await response.json();
 
       expect(response.status).toBe(400);
-      expect(data.message).toBe("Tier-ID und Übersetzungen sind Pflichtfelder.");
+      expect(data.message).toBe("specialcoat.required_fields");
       expect(createSpecialCoat).not.toHaveBeenCalled();
     });
 
@@ -106,7 +110,7 @@ describe("SpecialCoats API Route Handler", () => {
       const data = await response.json();
 
       expect(response.status).toBe(400);
-      expect(data.message).toBe("Tier-ID und Übersetzungen sind Pflichtfelder.");
+      expect(data.message).toBe("specialcoat.required_fields");
       expect(createSpecialCoat).not.toHaveBeenCalled();
     });
 
@@ -120,7 +124,7 @@ describe("SpecialCoats API Route Handler", () => {
       const data = await response.json();
 
       expect(response.status).toBe(400);
-      expect(data.message).toBe("Tier-ID und Übersetzungen sind Pflichtfelder.");
+      expect(data.message).toBe("specialcoat.required_fields");
     });
 
     test("gibt Status 500 zurück, wenn beim Speichern ein DB-Fehler auftritt", async () => {
@@ -135,7 +139,7 @@ describe("SpecialCoats API Route Handler", () => {
       const data = await response.json();
 
       expect(response.status).toBe(500);
-      expect(data.message).toBe("Fehler beim Erstellen der Farbvariante");
+      expect(data.message).toBe("specialcoat.create_error");
     });
   });
 });
