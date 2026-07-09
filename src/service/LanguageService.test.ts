@@ -44,7 +44,7 @@ describe("Language Service", () => {
     const result = await getAllLanguages();
 
     expect(result).toEqual([]);
-    expect(consoleErrorSpy).toHaveBeenCalledWith("Fehler im LanguageService:", expect.any(Error));
+    expect(consoleErrorSpy).toHaveBeenCalledWith("[LanguageService] Error in getAllLanguages:", expect.any(Error));
 
     consoleErrorSpy.mockRestore();
   });

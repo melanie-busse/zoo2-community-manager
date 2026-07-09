@@ -25,8 +25,8 @@ export async function getAllAnimals(locale: string = "de") {
       orderBy: { id: "asc" },
     });
   } catch (error) {
-    console.error(`[AnimalService] Fehler in getAllAnimals (${locale}):`, error);
-
+    // Auf einheitliches englisches Logging umgestellt
+    console.error(`[AnimalService] Error in getAllAnimals (${locale}):`, error);
     return [];
   }
 }
@@ -38,7 +38,7 @@ export async function getAnimalById(
   const numericId = typeof id === "string" ? parseInt(id, 10) : id;
 
   if (isNaN(numericId)) {
-    console.warn(`getAnimalById aborted: ID is not a number: ${id}`);
+    console.warn(`[AnimalService] getAnimalById aborted: ID is not a number: ${id}`);
     return null;
   }
 
@@ -93,14 +93,11 @@ export async function createAnimal(animalData: any) {
 
   const formattedReleaseDate = releaseDate ? new Date(releaseDate) : null;
 
-  // 1. Basis-Objekt mit den garantierten/Pflicht-Feldern erstellen
   const insertData: any = {
     releaseDate: formattedReleaseDate,
     priceTypeId: currencyId ?? 1,
   };
 
-  // 2. Optionale numerische Felder NUR hinzufügen, wenn sie existieren.
-  // Das verhindert den Prisma-Typenkonflikt (number | undefined) beim Build!
   if (price) insertData.price = parseInt(price.toString(), 10);
   if (sellingPrice) insertData.sellingPrice = parseInt(sellingPrice.toString(), 10);
   if (popularity) insertData.popularity = parseInt(popularity.toString(), 10);
@@ -113,7 +110,6 @@ export async function createAnimal(animalData: any) {
     insertData.breedingProbability = parseInt(breedingProbability.toString(), 10);
 
   return await prisma.$transaction(async (tx) => {
-    // 3. Jetzt das sauber vorbereitete Objekt an Prisma übergeben
     const animal = await tx.animal.create({
       data: insertData,
     });

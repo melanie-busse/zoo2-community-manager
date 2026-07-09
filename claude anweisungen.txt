@@ -1,0 +1,11 @@
+in der Datei zoo2-texte.sql ist der SQL-Dump mit meinen Tier-, Biome-, XP- und Origin-Texten auf Deutsch (de) und Englisch (en).
+
+Bitte generiere mir analog dazu die INSERT INTO \animaltext`-Statements und für die anderen text-Tabellen für die Sprachen **Dänisch (da)**, **Niederländisch (nl)**, **Französisch (fr)** und **Spanisch (es`)**.
+
+Wichtig:
+
+Nutze für die Namen und Begriffe unbedingt die offiziellen Bezeichnungen aus dem Spiel 'Zoo 2: Animal Park', falls sie dir in deinen Trainingsdaten für diese Sprachen vorliegen.
+
+Die IDs (id) müssen fortlaufend hochgezählt werden (bzw. lass die id im Insert weg, wenn es ein AUTO_INCREMENT-Feld ist, oder zähle sie sauber ab ID 3 weiter aufwärts).
+
+Behalte das exakte Format bei.

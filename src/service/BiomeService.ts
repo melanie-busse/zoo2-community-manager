@@ -1,5 +1,6 @@
 import "server-only";
 import prisma from "@/lib/prisma";
+
 export async function getHabitatCount() {
   return prisma.biome.count();
 }
@@ -15,7 +16,7 @@ export async function getAllBiomes(locale: string = "de") {
       },
     });
   } catch (error) {
-    console.error("Fehler im BiomeService:", error);
+    console.error(`[BiomeService] Error in getAllBiomes (${locale}):`, error);
     return [];
   }
 }

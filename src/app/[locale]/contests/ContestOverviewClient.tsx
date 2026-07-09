@@ -43,7 +43,6 @@ export default function ContestOverviewClient({ initialContests }: ContestOvervi
         const res = await fetch(`/api/contests/${id}`, { method: "DELETE" });
         if (res.ok) {
           toast.success(tCommon("save_changes"));
-          // Liste lokal aktualisieren statt neu laden
           setContests((prev) => prev.filter((c) => c.id.toString() !== id));
         }
       } catch (err) {

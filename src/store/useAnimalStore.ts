@@ -205,11 +205,8 @@ export const useAnimalStore = create<AnimalState>((set) => {
         return { ...clearedState, ...runPipeline(state.allAnimals, clearedState) };
       }),
 
-    // Bearbeiten-Aktionen (direkt im selben Store)
     setEditingAnimal: (animal) => set({ editingAnimal: animal }),
     clearEditingAnimal: () => set({ editingAnimal: null }),
-
-    // Lösch-Aktion
     deleteAnimal: async (id: number, t: any, tCommon: any) => {
       const confirmed = await confirmDeleteDialog({
         title: t("messages.deleteErrorTitle"),

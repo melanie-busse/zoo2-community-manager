@@ -8,7 +8,6 @@ import { getCountSpecialCoats } from "@/service/SpecialCoatsService";
 export default async function IndexPage() {
   const t = await getTranslations("page");
 
-  // Daten auf dem Server holen
   const stats = {
     tierCount: await getCountAnimals(),
     specialCoatCount: await getCountSpecialCoats(),

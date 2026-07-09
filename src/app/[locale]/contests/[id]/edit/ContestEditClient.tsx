@@ -22,7 +22,7 @@ export default function ContestEditClient({ contest, statues }: any) {
       if (res.ok) {
         toast.success(t("successUpdated"));
         router.push("/contests");
-        router.refresh(); // Wichtig, damit die Tabelle die neuen Daten lädt
+        router.refresh();
       } else {
         const errorData = await res.json();
         toast.error(errorData.message || t("errorUpdating"));
