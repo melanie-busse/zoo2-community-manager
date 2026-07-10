@@ -11,7 +11,7 @@ interface PopularityDisplayProps {
 }
 
 export default function PopularityBadge({ popularity }: PopularityDisplayProps) {
-  const tCommon = useTranslations("Common");
+  const tCommon = useTranslations("common");
 
   const hasValue = popularity !== undefined && popularity !== null;
 

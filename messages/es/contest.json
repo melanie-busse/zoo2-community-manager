@@ -1,0 +1,27 @@
+{
+  "emptyState": {
+    "title": "No se encontraron concursos"
+  },
+  "status": {
+    "running": "En curso",
+    "upcoming": "Próximamente"
+  },
+  "contestOverview": {
+    "table": {
+      "period": "Período",
+      "statues_animals": "Estatuas / Animales",
+      "colorVariant": "Variante de color",
+      "status": "Estado"
+    },
+    "messages": {
+      "deleteErrorTitle": "¿Eliminar concurso?",
+      "confirmDelete": "¿Estás seguro de que quieres eliminar este concurso?",
+      "cancelButton": "Cancelar"
+    }
+  },
+  "contestForm": {
+    "maxStatues": "Máximo 4 estatuas permitidas",
+    "chooseStatues": "Por favor selecciona 3 o 4 estatuas",
+    "endDateBeforeStart": "La fecha de fin debe ser posterior a la fecha de inicio"
+  }
+}

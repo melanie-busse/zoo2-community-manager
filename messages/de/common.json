@@ -1,4 +1,14 @@
 {
+  "messages": {
+    "no_more_items": "Keine weiteren gefunden",
+    "none_selected": "Keine ausgewählt",
+    "yes_delete": "Ja, löschen!",
+    "cancel": "Abbrechen"
+  },
+  "tooltip": {
+    "removeRow": "Zeile entfernen",
+    "level": "Level"
+  },
   "price": "Preis",
   "time": "Zeit",
   "hours": "Stunden",
@@ -12,7 +22,57 @@
   "popularity": "Popularität",
   "actions": "Aktionen",
   "action": "Aktion",
+  "scroll_to_top": "Nach oben scrollen",
+  "saving": "Wird gespeichert...",
+  "save_changes": "Daten erfolgreich übermittelt!",
   "available": "Verfügbar",
+  "not_found": "Nicht gefunden",
   "chosen": "Ausgewählt",
-  "description": "Beschreibung"
+  "none_selected": "Keine ausgewählt",
+  "description": "Beschreibung",
+  "descriptionPlaceholder": "Hier Beschreibung eingeben...",
+  "pleaseSelect": "Bitte wählen...",
+  "loading": "Wird geladen...",
+  "loading_data": "Daten werden geladen...",
+  "buttons": {
+    "edit": "Bearbeiten",
+    "delete": "Löschen",
+    "add": "Hinzufügen"
+  },
+  "pagination": {
+    "prev": "Zurück",
+    "next": "Weiter"
+  },
+  "filter": {
+    "search_placeholder": "Suche nach Tieren...",
+    "all_enclosures": "Alle Gehege",
+    "all_levels": "Alle Levels",
+    "all_status": "Alle Status",
+    "status_prefix": "Status:",
+    "ready": "Fertig",
+    "missing_partner": "Partner fehlt",
+    "not_owned": "Nicht besitzt",
+    "level_label": "Level",
+    "results": {
+      "show": "Angezeigt",
+      "of": "von",
+      "unit": "Tiere gefunden"
+    }
+  },
+  "emptyState": {
+    "title": "Nichts gefunden",
+    "uppySad": "Uppy ist traurig",
+    "message": "Uppy hat überall gesucht, konnte aber nichts finden.",
+    "button": "Suche neu starten"
+  },
+  "noDescriptionAvailable": "Keine Beschreibung verfügbar",
+  "error": "Ein Fehler ist aufgetreten",
+  "delete_failed": "Löschen fehlgeschlagen",
+  "errors": {
+    "imageNotFound": "Bild nicht gefunden"
+  },
+  "currencies": {
+    "zoodollar": "Zoodollar",
+    "diamonds": "Diamanten"
+  }
 }

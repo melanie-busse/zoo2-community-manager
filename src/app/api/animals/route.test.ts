@@ -8,6 +8,10 @@ vi.mock("@/service/AnimalService", () => ({
   createAnimal: vi.fn(),
 }));
 
+vi.mock("next-intl/server", () => ({
+  getTranslations: vi.fn().mockResolvedValue((key: string) => key),
+}));
+
 const validBody = {
   biomeId: 3,
   animaltext: [{ languageCode: "de", animalName: "Löwe", animalDescription: "" }],
@@ -53,7 +57,7 @@ describe("Animals API Route Handler", () => {
       const data = await response.json();
 
       expect(response.status).toBe(500);
-      expect(data).toEqual({ error: "Fehler beim Laden" });
+      expect(data).toEqual({ error: "errors.load_error" });
     });
   });
 
@@ -84,7 +88,7 @@ describe("Animals API Route Handler", () => {
       const data = await response.json();
 
       expect(response.status).toBe(400);
-      expect(data.message).toBe("Name (DE) und Gehegetyp sind Pflichtfelder.");
+      expect(data.message).toBe("animal.required_fields");
       expect(createAnimal).not.toHaveBeenCalled();
     });
 
@@ -100,7 +104,7 @@ describe("Animals API Route Handler", () => {
       const data = await response.json();
 
       expect(response.status).toBe(500);
-      expect(data.message).toBe("Fehler beim Erstellen des Tieres");
+      expect(data.message).toBe("animal.create_error");
     });
   });
 });

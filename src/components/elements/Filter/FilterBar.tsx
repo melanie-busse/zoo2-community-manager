@@ -20,7 +20,7 @@ export default function FilterBar({
   showBiomeFilter = true,
   showLevelFilter = true,
 }: FilterBarProps) {
-  const t = useTranslations();
+  const t = useTranslations("common");
 
   const allAnimals = useAnimalStore((state) => state.allAnimals);
   const searchTerm = useAnimalStore((state) => state.searchTerm);
@@ -50,7 +50,7 @@ export default function FilterBar({
     <Styles.FilterBar>
       <Styles.SearchInput
         type="text"
-        placeholder={t("Filter.search_placeholder")}
+        placeholder={t("filter.search_placeholder")}
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />

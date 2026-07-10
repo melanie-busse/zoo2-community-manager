@@ -91,7 +91,7 @@ describe("NextAuth Route Configuration", () => {
       });
 
       expect(prisma.user.findUnique).toHaveBeenCalledWith({
-        where: { id: "db-user-999" },
+        where: { discordId: "db-user-999" },
       });
       expect(prisma.role.findUnique).toHaveBeenCalledWith({
         where: { id: 2 },

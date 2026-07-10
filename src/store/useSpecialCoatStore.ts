@@ -49,7 +49,7 @@ interface SpecialCoatState {
   // 6. Aktionen für Edit & Delete
   setEditingSpecialCoat: (coat: SpecialCoat | null) => void;
   clearEditingSpecialCoat: () => void;
-  deleteSpecialCoat: (id: number, t: any) => Promise<boolean>;
+  deleteSpecialCoat: (id: number, t: any, tCommon: any) => Promise<boolean>;
 }
 
 export const useSpecialCoatStore = create<SpecialCoatState>((set, get) => {
@@ -135,7 +135,7 @@ export const useSpecialCoatStore = create<SpecialCoatState>((set, get) => {
         return result.id as number;
       } catch (error: any) {
         console.error("Fetch Error:", error);
-        showErrorToast(error.message || "Netzwerkfehler beim Speichern.");
+        showErrorToast(error.message);
         return false;
       }
     },
@@ -238,13 +238,12 @@ export const useSpecialCoatStore = create<SpecialCoatState>((set, get) => {
     setEditingSpecialCoat: (coat) => set({ editingSpecialCoat: coat }),
     clearEditingSpecialCoat: () => set({ editingSpecialCoat: null }),
 
-    deleteSpecialCoat: async (id: number, t: any) => {
+    deleteSpecialCoat: async (id: number, t: any, tCommon: any) => {
       const confirmed = await confirmDeleteDialog({
-        title: t("SpecialCoat.messages.deleteErrorTitle") || "Löschen?",
-        text:
-          t("SpecialCoat.messages.confirmDelete") || "Möchtest du diese Variante wirklich löschen?",
-        confirmButtonText: t("Common.messages.yes_delete") || "Ja, löschen",
-        cancelButtonText: t("Common.messages.cancel") || "Abbrechen",
+        title: t("messages.deleteErrorTitle"),
+        text: t("messages.confirmDelete"),
+        confirmButtonText: tCommon("messages.yes_delete"),
+        cancelButtonText: tCommon("messages.cancel"),
       });
 
       if (!confirmed) return false;
@@ -278,11 +277,11 @@ export const useSpecialCoatStore = create<SpecialCoatState>((set, get) => {
           };
         });
 
-        showSuccessToast(t("SpecialCoat.messages.deleteSuccess") || "Erfolgreich gelöscht");
+        showSuccessToast(t("messages.deleteSuccess"));
         return true;
       } catch (error: any) {
         console.error("Delete Error:", error);
-        showErrorToast(error.message || "Fehler beim Löschen");
+        showErrorToast(error.message);
         return false;
       }
     },

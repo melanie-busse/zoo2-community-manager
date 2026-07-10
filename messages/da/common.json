@@ -1,0 +1,78 @@
+{
+  "messages": {
+    "no_more_items": "Ingen flere fundet",
+    "none_selected": "Ingen valgt",
+    "yes_delete": "Ja, slet!",
+    "cancel": "Annuller"
+  },
+  "tooltip": {
+    "removeRow": "Fjern række",
+    "level": "Niveau"
+  },
+  "price": "Pris",
+  "time": "Tid",
+  "hours": "Timer",
+  "minutes": "Minutter",
+  "language": "Sprog",
+  "allLanguages": "Alle sprog",
+  "name": "Navn",
+  "addRow": "+ Tilføj række",
+  "selling_price": "Salgspris",
+  "release": "Udgivelsesdato",
+  "popularity": "Popularitet",
+  "actions": "Handlinger",
+  "action": "Handling",
+  "scroll_to_top": "Rul til toppen",
+  "saving": "Gemmer...",
+  "save_changes": "Data indsendt!",
+  "available": "Tilgængelig",
+  "not_found": "Ikke fundet",
+  "chosen": "Valgt",
+  "none_selected": "Ingen valgt",
+  "description": "Beskrivelse",
+  "descriptionPlaceholder": "Indtast beskrivelse her...",
+  "pleaseSelect": "Vælg venligst...",
+  "loading": "Indlæser...",
+  "loading_data": "Indlæser data...",
+  "buttons": {
+    "edit": "Rediger",
+    "delete": "Slet",
+    "add": "Tilføj"
+  },
+  "pagination": {
+    "prev": "Forrige",
+    "next": "Næste"
+  },
+  "filter": {
+    "search_placeholder": "Søg efter dyr...",
+    "all_enclosures": "Alle indhegninger",
+    "all_levels": "Alle niveauer",
+    "all_status": "Alle statusser",
+    "status_prefix": "Status:",
+    "ready": "Klar",
+    "missing_partner": "Partner mangler",
+    "not_owned": "Ikke ejet",
+    "level_label": "Niveau",
+    "results": {
+      "show": "Viser",
+      "of": "af",
+      "unit": "dyr fundet"
+    }
+  },
+  "emptyState": {
+    "title": "Intet fundet",
+    "uppySad": "Uppy er ked af det",
+    "message": "Uppy ledte overalt, men kunne ikke finde noget.",
+    "button": "Nulstil søgning"
+  },
+  "noDescriptionAvailable": "Ingen beskrivelse tilgængelig",
+  "error": "Der opstod en fejl",
+  "delete_failed": "Sletning mislykkedes",
+  "errors": {
+    "imageNotFound": "Billede ikke fundet"
+  },
+  "currencies": {
+    "zoodollar": "Zoodollar",
+    "diamonds": "Diamanter"
+  }
+}

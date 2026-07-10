@@ -1,0 +1,30 @@
+{
+  "errors": {
+    "load_error": "Fehler beim Laden",
+    "invalid_id": "Ungültige ID",
+    "unauthorized": "Nicht autorisiert",
+    "not_found": "Nicht gefunden",
+    "server_error": "Ein Serverfehler ist aufgetreten"
+  },
+  "animal": {
+    "required_fields": "Name (DE) und Gehegetyp sind Pflichtfelder.",
+    "create_error": "Fehler beim Erstellen des Tieres",
+    "update_success": "Tier erfolgreich aktualisiert",
+    "update_error": "Fehler beim Aktualisieren des Tieres",
+    "delete_error": "Fehler beim Löschen des Tieres",
+    "invalid_id": "Ungültige Tier-ID"
+  },
+  "specialcoat": {
+    "required_fields": "Tier-ID und Übersetzungen sind Pflichtfelder.",
+    "not_found": "Farbvariante nicht gefunden",
+    "create_error": "Fehler beim Erstellen der Farbvariante",
+    "update_error": "Fehler beim Aktualisieren",
+    "delete_error": "Fehler beim Löschen"
+  },
+  "contest": {
+    "not_found": "Contest nicht gefunden",
+    "create_error": "Fehler beim Erstellen des Contests",
+    "update_error": "Fehler beim Aktualisieren des Contests",
+    "delete_error": "Fehler beim Löschen"
+  }
+}

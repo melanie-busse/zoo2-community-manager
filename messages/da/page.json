@@ -1,0 +1,27 @@
+{
+  "home": {
+    "stats": {
+      "animals": "Dyr",
+      "specialCoat": "Fargevarianter",
+      "biomes": "Indhegninger",
+      "regions": "Zooregioner"
+    },
+    "cards": {
+      "lexicon": {
+        "title": "Dyrleksikon",
+        "text": "Priser, stalsniveauer og indhegningsinfo på ét sted."
+      },
+      "specialCoat": {
+        "title": "Fargevarianter",
+        "text": "Administrer dine avlssucceser og sjældne varianter."
+      },
+      "club": {
+        "title": "Klub",
+        "text": "Bliv medlem af vores klub og vind flotte statuer i konkurrencerne."
+      }
+    }
+  },
+  "footer": {
+    "imprint": "Impressum"
+  }
+}

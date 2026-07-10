@@ -19,5 +19,8 @@ export default defineConfig({
         inline: ["next", "next-intl"],
       },
     },
+    alias: {
+      "server-only": path.resolve(__dirname, "./src/__mocks__/server-only.ts"),
+    },
   },
 });

@@ -1,0 +1,30 @@
+{
+  "title": "Zoo2: Animal Park Manager",
+  "login": {
+    "open_menu": "Menu openen",
+    "logout": "Uitloggen",
+    "button": "Inloggen",
+    "welcome": "Hoi"
+  },
+  "role": {
+    "role_admin": "Admin",
+    "role_Director": "Directeur",
+    "role_Employee": "Medewerker",
+    "role_Member": "Lid",
+    "role_Visitor": "Bezoeker",
+    "role_": "Geen rol"
+  },
+  "links": {
+    "home": "Home",
+    "animals": "Dieren",
+    "animal_overview": "Dierenoverzicht",
+    "animal_create": "Dier toevoegen",
+    "specialCoats": "Kleurvarianten",
+    "specialcoats_overview": "Kleurvarianten overzicht",
+    "specialcoats_create": "Kleurvariant toevoegen",
+    "club": "Club",
+    "club_statues": "Standbeelden",
+    "club_contests": "Wedstrijden",
+    "club_create_contest": "Wedstrijd aanmaken"
+  }
+}

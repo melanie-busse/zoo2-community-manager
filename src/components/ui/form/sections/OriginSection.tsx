@@ -23,7 +23,7 @@ export default function OriginSection({
   selectedOrigins = [],
   setFormData,
 }: OriginSectionProps) {
-  const tAnimals = useTranslations("Animals");
+  const tAnimals = useTranslations("animal");
 
   const handleTransferChange = (newSelectedIds: number[]) => {
     setFormData((prev: any) => ({
@@ -36,14 +36,13 @@ export default function OriginSection({
 
   return (
     <InfoAccordion
-      title={tAnimals("originSection.originTitle") || "Herkunft & Quellen"}
+      title={tAnimals("originSection.originTitle")}
       icon="/images/origins/shop.webp"
       defaultOpen={false}
     >
       <SectionColumn>
         <p className="description">
-          {tAnimals("originSection.originDescription") ||
-            "Wähle aus, wie dieses Tier im Spiel erworben werden kann."}
+          {tAnimals("originSection.originDescription")}
         </p>
 
         <OriginTransfer

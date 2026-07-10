@@ -20,8 +20,8 @@ export default function EnclosureTypeSection({
   setFormData,
   biomes = [],
 }: EnclosureTypeSectionProps) {
-  const tBiome = useTranslations("Biome");
-  const tCommon = useTranslations("Common");
+  const tBiome = useTranslations("biome");
+  const tCommon = useTranslations("common");
 
   const biomeOptions = Array.isArray(biomes)
     ? biomes.map((b) => ({

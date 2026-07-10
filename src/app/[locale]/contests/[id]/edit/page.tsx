@@ -11,7 +11,6 @@ interface EditContestPageProps {
 export default async function EditContestPage({ params }: EditContestPageProps) {
   const { id, locale } = await params;
 
-  // Daten parallel laden
   const [contest, statues] = await Promise.all([getContestById(id), getAllStatues()]);
 
   if (!contest) {

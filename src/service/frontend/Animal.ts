@@ -1,5 +1,3 @@
-import { showSuccessToast } from "@/utils/alerts";
-
 export async function createAnimalOnClient(formData: any): Promise<any> {
   const response = await fetch("/api/animals", {
     method: "POST",
@@ -10,10 +8,9 @@ export async function createAnimalOnClient(formData: any): Promise<any> {
   const result = await response.json();
 
   if (!response.ok) {
-    throw new Error(result.message || "Fehler beim Erstellen");
+    throw new Error(result.message);
   }
 
-  showSuccessToast("Tier erfolgreich erstellt!");
   return result;
 }
 
@@ -27,10 +24,9 @@ export async function updateAnimalOnClient(id: number, formData: any): Promise<a
   const result = await response.json();
 
   if (!response.ok) {
-    throw new Error(result.message || "Fehler beim Updaten");
+    throw new Error(result.message);
   }
 
-  showSuccessToast("Tier erfolgreich aktualisiert!");
   return result;
 }
 
@@ -41,6 +37,6 @@ export async function deleteAnimalOnClient(id: number): Promise<void> {
 
   if (!response.ok) {
     const result = await response.json().catch(() => ({}));
-    throw new Error(result.message || "Fehler beim Löschen");
+    throw new Error(result.message);
   }
 }

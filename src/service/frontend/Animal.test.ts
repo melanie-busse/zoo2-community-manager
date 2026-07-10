@@ -6,12 +6,6 @@ import {
   deleteAnimalOnClient,
 } from "@/service/frontend/Animal";
 
-vi.mock("@/utils/alerts", () => ({
-  showSuccessToast: vi.fn(),
-}));
-
-import { showSuccessToast } from "@/utils/alerts";
-
 const mockFetch = (ok: boolean, body: object, status = ok ? 200 : 400) => {
   vi.stubGlobal(
     "fetch",
@@ -49,26 +43,24 @@ describe("Animal Frontend Service", () => {
       });
     });
 
-    test("gibt das Ergebnis zurück und zeigt einen Success-Toast bei Erfolg", async () => {
+    test("gibt das Ergebnis zurück bei Erfolg", async () => {
       mockFetch(true, mockResult);
 
       const result = await createAnimalOnClient(formData);
 
       expect(result).toEqual(mockResult);
-      expect(showSuccessToast).toHaveBeenCalledWith("Tier erfolgreich erstellt!");
     });
 
     test("wirft einen Fehler mit der Server-Nachricht, wenn die Anfrage fehlschlägt", async () => {
       mockFetch(false, { message: "Name ist Pflichtfeld" });
 
       await expect(createAnimalOnClient(formData)).rejects.toThrow("Name ist Pflichtfeld");
-      expect(showSuccessToast).not.toHaveBeenCalled();
     });
 
-    test("wirft einen Fallback-Fehler, wenn keine Server-Nachricht vorhanden ist", async () => {
+    test("wirft einen Fehler, wenn keine Server-Nachricht vorhanden ist", async () => {
       mockFetch(false, {});
 
-      await expect(createAnimalOnClient(formData)).rejects.toThrow("Fehler beim Erstellen");
+      await expect(createAnimalOnClient(formData)).rejects.toThrow();
     });
   });
 
@@ -92,26 +84,24 @@ describe("Animal Frontend Service", () => {
       });
     });
 
-    test("gibt das Ergebnis zurück und zeigt einen Success-Toast bei Erfolg", async () => {
+    test("gibt das Ergebnis zurück bei Erfolg", async () => {
       mockFetch(true, mockResult);
 
       const result = await updateAnimalOnClient(42, formData);
 
       expect(result).toEqual(mockResult);
-      expect(showSuccessToast).toHaveBeenCalledWith("Tier erfolgreich aktualisiert!");
     });
 
     test("wirft einen Fehler mit der Server-Nachricht, wenn die Anfrage fehlschlägt", async () => {
       mockFetch(false, { message: "Tier nicht gefunden" });
 
       await expect(updateAnimalOnClient(42, formData)).rejects.toThrow("Tier nicht gefunden");
-      expect(showSuccessToast).not.toHaveBeenCalled();
     });
 
-    test("wirft einen Fallback-Fehler, wenn keine Server-Nachricht vorhanden ist", async () => {
+    test("wirft einen Fehler, wenn keine Server-Nachricht vorhanden ist", async () => {
       mockFetch(false, {});
 
-      await expect(updateAnimalOnClient(42, formData)).rejects.toThrow("Fehler beim Updaten");
+      await expect(updateAnimalOnClient(42, formData)).rejects.toThrow();
     });
   });
 
@@ -142,7 +132,7 @@ describe("Animal Frontend Service", () => {
       await expect(deleteAnimalOnClient(42)).rejects.toThrow("Tier nicht gefunden");
     });
 
-    test("wirft einen Fallback-Fehler, wenn die Fehler-Antwort kein JSON enthält", async () => {
+    test("wirft einen Fehler, wenn die Fehler-Antwort kein JSON enthält", async () => {
       vi.stubGlobal(
         "fetch",
         vi.fn().mockResolvedValue({
@@ -151,7 +141,7 @@ describe("Animal Frontend Service", () => {
         }),
       );
 
-      await expect(deleteAnimalOnClient(42)).rejects.toThrow("Fehler beim Löschen");
+      await expect(deleteAnimalOnClient(42)).rejects.toThrow();
     });
   });
 });

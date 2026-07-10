@@ -37,8 +37,8 @@ interface AnimalFormProps {
 }
 
 export default function AnimalForm({ animal, languages, biomes, originsData }: AnimalFormProps) {
-  const tAnimals = useTranslations("Animals");
-  const tCommon = useTranslations("Common");
+  const tAnimals = useTranslations("animal");
+  const tCommon = useTranslations("common");
   const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -67,12 +67,12 @@ export default function AnimalForm({ animal, languages, biomes, originsData }: A
       (t: any) => t.languageCode === "de",
     )?.animalName;
     if (!nameDe) {
-      toast.warn("Bitte gib einen deutschen Namen ein!");
+      toast.warn(tAnimals("form.requiredName"));
       return;
     }
 
     if (!formData.biomeId) {
-      toast.warn("Bitte wähle ein Gehege aus!");
+      toast.warn(tAnimals("form.requiredBiome"));
       return;
     }
 
@@ -82,6 +82,7 @@ export default function AnimalForm({ animal, languages, biomes, originsData }: A
 
       if (savedId !== false) {
         clearEditingAnimal();
+        toast.success(formData.id ? tAnimals("messages.editSuccess") : tAnimals("messages.createSuccess"));
         router.push(`/animals/${savedId}`);
       }
     } catch (error) {

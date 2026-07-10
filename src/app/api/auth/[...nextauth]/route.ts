@@ -9,7 +9,7 @@ const discordId = process.env.DISCORD_CLIENT_ID;
 const discordSecret = process.env.DISCORD_CLIENT_SECRET;
 
 if (!discordId || !discordSecret) {
-  throw new Error("Fehlende Discord Umgebungsvariablen in der .env!");
+  throw new Error("Missing Discord environment variables in .env!");
 }
 
 export const authOptions = {
@@ -19,7 +19,7 @@ export const authOptions = {
       clientSecret: discordSecret,
       profile(profile) {
         return {
-          id: profile.id, // Das ist die Discord-ID (String)
+          id: profile.id,
           name: profile.global_name || profile.username,
           email: profile.email,
           image: `https://cdn.discordapp.com/avatars/${profile.id}/${profile.avatar}.png`,
@@ -30,7 +30,6 @@ export const authOptions = {
   callbacks: {
     async signIn({ user }: { user: any }) {
       try {
-        // Wir upserten anhand der UNIQUE discordId
         await prisma.user.upsert({
           where: { discordId: user.id },
           update: {
@@ -38,28 +37,27 @@ export const authOptions = {
             image: user.image,
           },
           create: {
-            discordId: user.id, // Hier landet die lange Discord-ID
+            discordId: user.id,
             name: user.name,
             email: user.email,
             image: user.image,
-            roleId: 5, // Standard: Visitor
+            roleId: 5,
           },
         });
         return true;
       } catch (error) {
-        console.error("Datenbank-Fehler beim Login:", error);
+        console.error("[AUTH] Database error during signIn:", error);
         return true;
       }
     },
 
     async jwt({ token, user }: { token: any; user: any }) {
-      // Wenn der User sich frisch einloggt, holen wir seine interne DB-ID
       if (user) {
         const dbUser = await prisma.user.findUnique({
           where: { discordId: user.id },
         });
         if (dbUser) {
-          token.id = dbUser.id; // Wir packen die INTERNE Int-ID in den Token
+          token.id = dbUser.id;
         }
       }
       return token;
@@ -70,13 +68,13 @@ export const authOptions = {
         const userId = token?.id;
 
         if (!userId) {
-          console.warn("Session Callback: Keine User-ID im Token gefunden.");
+          console.warn("[AUTH] Session Callback: No user ID found in token.");
           return session;
         }
 
         // Wir suchen ganz entspannt mit der internen Int-ID (Zahl)
         const dbUser = await prisma.user.findUnique({
-          where: { id: userId },
+          where: { discordId: userId },
         });
 
         if (dbUser) {
@@ -92,7 +90,7 @@ export const authOptions = {
 
         return session;
       } catch (error) {
-        console.error("KRITISCHER FEHLER IM SESSION CALLBACK:", error);
+        console.error("[AUTH] CRITICAL ERROR IN SESSION CALLBACK:", error);
         return session;
       }
     },

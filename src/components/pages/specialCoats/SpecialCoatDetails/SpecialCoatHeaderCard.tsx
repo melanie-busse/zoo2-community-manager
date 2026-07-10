@@ -12,8 +12,8 @@ import FormattedDate from "@/components/ui/Formatted/FormattedDate";
 import { useSpecialCoatStore } from "@/store/useSpecialCoatStore";
 
 export default function SpecialCoatHeaderCard() {
-  const tCommon = useTranslations("Common");
-  const tSpecialCoat = useTranslations("SpecialCoat");
+  const tCommon = useTranslations("common");
+  const tSpecialCoat = useTranslations("specialCoat");
 
   const specialCoat = useSpecialCoatStore((state) => state.selectedSpecialCoat);
   if (!specialCoat) return null;
@@ -44,7 +44,11 @@ export default function SpecialCoatHeaderCard() {
                 {origins.map((item, index) => {
                   if (!item.origin) return null;
                   return (
-                    <Tooltip key={item.id ?? index} text={item.origin.name} position="top">
+                    <Tooltip
+                      key={item.id ?? index}
+                      text={item.origin?.origintext?.[0]?.originName || item.origin?.name || ""}
+                      position="top"
+                    >
                       <OriginBadge animalOrigin={item as any} />
                     </Tooltip>
                   );

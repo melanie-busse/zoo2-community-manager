@@ -1,0 +1,78 @@
+{
+  "messages": {
+    "no_more_items": "Geen verdere items gevonden",
+    "none_selected": "Geen geselecteerd",
+    "yes_delete": "Ja, verwijderen!",
+    "cancel": "Annuleren"
+  },
+  "tooltip": {
+    "removeRow": "Rij verwijderen",
+    "level": "Niveau"
+  },
+  "price": "Prijs",
+  "time": "Tijd",
+  "hours": "Uren",
+  "minutes": "Minuten",
+  "language": "Taal",
+  "allLanguages": "Alle talen",
+  "name": "Naam",
+  "addRow": "+ Rij toevoegen",
+  "selling_price": "Verkoopprijs",
+  "release": "Uitgiftedatum",
+  "popularity": "Populariteit",
+  "actions": "Acties",
+  "action": "Actie",
+  "scroll_to_top": "Naar boven scrollen",
+  "saving": "Opslaan...",
+  "save_changes": "Gegevens succesvol ingediend!",
+  "available": "Beschikbaar",
+  "not_found": "Niet gevonden",
+  "chosen": "Geselecteerd",
+  "none_selected": "Geen geselecteerd",
+  "description": "Beschrijving",
+  "descriptionPlaceholder": "Voer hier beschrijving in...",
+  "pleaseSelect": "Selecteer...",
+  "loading": "Laden...",
+  "loading_data": "Gegevens laden...",
+  "buttons": {
+    "edit": "Bewerken",
+    "delete": "Verwijderen",
+    "add": "Toevoegen"
+  },
+  "pagination": {
+    "prev": "Vorige",
+    "next": "Volgende"
+  },
+  "filter": {
+    "search_placeholder": "Zoek naar dieren...",
+    "all_enclosures": "Alle verblijven",
+    "all_levels": "Alle niveaus",
+    "all_status": "Alle statussen",
+    "status_prefix": "Status:",
+    "ready": "Klaar",
+    "missing_partner": "Partner ontbreekt",
+    "not_owned": "Niet in bezit",
+    "level_label": "Niveau",
+    "results": {
+      "show": "Weergeven",
+      "of": "van",
+      "unit": "dieren gevonden"
+    }
+  },
+  "emptyState": {
+    "title": "Niets gevonden",
+    "uppySad": "Uppy is verdrietig",
+    "message": "Uppy heeft overal gezocht, maar kon niets vinden.",
+    "button": "Zoekopdracht opnieuw starten"
+  },
+  "noDescriptionAvailable": "Geen beschrijving beschikbaar",
+  "error": "Er is een fout opgetreden",
+  "delete_failed": "Verwijderen mislukt",
+  "errors": {
+    "imageNotFound": "Afbeelding niet gevonden"
+  },
+  "currencies": {
+    "zoodollar": "Zoodollars",
+    "diamonds": "Diamanten"
+  }
+}

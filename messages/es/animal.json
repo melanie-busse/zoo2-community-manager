@@ -1,0 +1,67 @@
+{
+  "species": "Nombre",
+  "release": "Liberar",
+  "colorVariants": "Variantes de color",
+  "biomeCapacity": "Capacidad del recinto",
+  "animalCount": "Número de animales",
+  "biomeSize": "Tamaño del recinto",
+  "capacityTableLabel": "Animales vs. espacio del recinto",
+  "requiredSize": "Espacio necesario",
+  "noName": "Sin nombre disponible",
+  "overview_title": "Resumen de todos los animales",
+  "form": {
+    "createAnimal": "Crear nuevo animal",
+    "editAnimal": "Editar animal",
+    "saveAnimal": "Guardar animal",
+    "requiredName": "Por favor, introduce un nombre en alemán!",
+    "requiredBiome": "Por favor, selecciona un recinto!",
+    "selectAnimal": "Seleccionar animal *",
+    "selectPlaceholder": "Escribe para buscar (ej. León)..."
+  },
+  "breeding": {
+    "xpAndActions": "XP y acciones",
+    "breeding": "Cría",
+    "breedingChance": "Probabilidad de cría"
+  },
+  "basicInfoSection": {
+    "basicInfo": "Información básica",
+    "fields": {
+      "releaseDate": "Lanzamiento"
+    }
+  },
+  "translationSection": {
+    "title": "Traducciones (Nombre & Descripción)",
+    "fields": {
+      "name": "Nombre",
+      "language": "Idioma",
+      "description": "Descripción",
+      "descriptionPlaceholder": "Describe el animal..."
+    }
+  },
+  "priceSection": {
+    "pricesAndValues": "Precios y valores"
+  },
+  "xpSection": {
+    "actionsXp": "Acciones & XP"
+  },
+  "originSection": {
+    "originTitle": "Origen",
+    "originDescription": "¿Cómo se puede obtener este animal?"
+  },
+  "actions": {
+    "feed": "Alimentar",
+    "play": "Jugar",
+    "clean": "Limpiar"
+  },
+  "messages": {
+    "createSuccess": "¡Animal creado con éxito! 🐾",
+    "deleteSuccess": "¡Animal eliminado con éxito! 🐾",
+    "editSuccess": "¡Cambios guardados con éxito! 🐾",
+    "deleteError": "Error al eliminar el animal. Por favor, inténtalo de nuevo.",
+    "deleteErrorTitle": "¿Eliminar animal?",
+    "confirmDelete": "¿Estás seguro de que quieres eliminar este animal de forma permanente? Se perderán todos los datos vinculados, como textos y valores de XP."
+  },
+  "emptyState": {
+    "title": "¡Vaya, no hay animales aquí!"
+  }
+}

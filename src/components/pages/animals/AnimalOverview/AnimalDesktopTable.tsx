@@ -22,7 +22,9 @@ import { useRouter } from "@/i18n/routing";
 
 export default function AnimalDesktopTable() {
   const router = useRouter();
-  const t = useTranslations();
+  const tAnimal = useTranslations("animal");
+  const tBiome = useTranslations("biome");
+  const tCommon = useTranslations("common");
 
   const setEditingAnimal = useAnimalStore((state) => state.setEditingAnimal);
   const deleteAnimal = useAnimalStore((state) => state.deleteAnimal);
@@ -42,21 +44,21 @@ export default function AnimalDesktopTable() {
         <tr>
           <td></td>
           <SortableTableHeader
-            label={t("Animals.species")}
+            label={tAnimal("species")}
             onSort={() => toggleSort("name")}
             columnKey="name"
             currentSortBy={sortBy}
             sortDirection={sortDirection}
           />
           <SortableTableHeader
-            label={t("Biome.enclosure")}
+            label={tBiome("enclosure")}
             onSort={() => toggleSort("biomeName")}
             columnKey="biomeName"
             currentSortBy={sortBy}
             sortDirection={sortDirection}
           />
           <SortableTableHeader
-            label={t("Common.price")}
+            label={tCommon("price")}
             onSort={() => toggleSort("price")}
             columnKey="price"
             currentSortBy={sortBy}
@@ -64,14 +66,14 @@ export default function AnimalDesktopTable() {
             align="right"
           />
           <SortableTableHeader
-            label={t("Biome.shelterLevel")}
+            label={tBiome("shelterLevel")}
             onSort={() => toggleSort("shelterLevel")}
             columnKey="shelterLevel"
             currentSortBy={sortBy}
             sortDirection={sortDirection}
           />
           <SortableTableHeader
-            label={t("Common.selling_price")}
+            label={tCommon("selling_price")}
             onSort={() => toggleSort("sellingPrice")}
             columnKey="sellingPrice"
             currentSortBy={sortBy}
@@ -86,7 +88,7 @@ export default function AnimalDesktopTable() {
             sortDirection={sortDirection}
             align="right"
           />
-          {isAdmin && <Styles.TableCellRight>{t("Common.actions")}</Styles.TableCellRight>}
+          {isAdmin && <Styles.TableCellRight>{tCommon("actions")}</Styles.TableCellRight>}
         </tr>
       </thead>
       <tbody>
@@ -107,12 +109,12 @@ export default function AnimalDesktopTable() {
                 </Styles.TableThumbnail>
               </td>
               <td>
-                <strong>{animal.animaltext?.[0]?.animalName ?? t("Animal.noName")}</strong>
+                <strong>{animal.animaltext?.[0]?.animalName ?? tAnimal("noName")}</strong>
               </td>
               <td>
                 <BiomeBadge
                   image={getBiomeImage(animal.biome)}
-                  tooltipLabel={getBiomeName(animal.biome, t("Biome.noBiome"))}
+                  tooltipLabel={getBiomeName(animal.biome, tBiome("noBiome"))}
                 />
               </td>
               <Styles.TableCellRight>
@@ -140,7 +142,7 @@ export default function AnimalDesktopTable() {
                       router.push(`/animals/${animal.id}/edit`);
                     }}
                     onDelete={() => {
-                      deleteAnimal(animal.id, t);
+                      deleteAnimal(animal.id, tAnimal, tCommon);
                     }}
                   />
                 </Styles.TableCellRight>
@@ -150,7 +152,7 @@ export default function AnimalDesktopTable() {
         ) : (
           <tr>
             <Styles.TableEmptyState colSpan={isAdmin ? 8 : 7}>
-              {t("EmptyState.title")} 🐾
+              {tCommon("emptyState.title")} 🐾
             </Styles.TableEmptyState>
           </tr>
         )}

@@ -36,8 +36,8 @@ export default async function EditAnimalPage({ params }: EditAnimalPageProps) {
   const [animalRaw, languages, biomes, origins] = await Promise.all([
     getAnimalById(id),
     getAllLanguages(),
-    getAllBiomes(),
-    getAllOrigins(),
+    getAllBiomes(locale),
+    getAllOrigins(locale),
   ]);
 
   if (!animalRaw) {
@@ -46,7 +46,7 @@ export default async function EditAnimalPage({ params }: EditAnimalPageProps) {
 
   const serializedAnimal = JSON.parse(JSON.stringify(animalRaw));
 
-  const tAnimals = await getTranslations({ locale, namespace: "Animals" });
+  const tAnimals = await getTranslations({ locale, namespace: "animal" });
 
   return (
     <PageWrapper>

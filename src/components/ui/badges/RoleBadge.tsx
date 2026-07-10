@@ -18,14 +18,14 @@ interface RoleBadgeProps {
 }
 
 export default function RoleBadge({ role }: RoleBadgeProps) {
-  const t = useTranslations();
+  const t = useTranslations("navigation");
 
   const imageSrc = ROLE_IMAGES[role as keyof typeof ROLE_IMAGES] || ROLE_IMAGES.Visitor;
 
   return (
     <BadgeContainer>
       <RoleIconWrapper>
-        <Tooltip text={role ? t(`Header.Role.role_${role}`) : t("Header.Role.role_")}>
+        <Tooltip text={role ? t(`role.role_${role}`) : t("role.role_")}>
           <Image src={imageSrc} alt={role} width={45} height={45} priority />
         </Tooltip>
       </RoleIconWrapper>

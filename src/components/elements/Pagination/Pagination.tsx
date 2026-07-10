@@ -20,7 +20,7 @@ export default function Pagination({
   onNext: () => void;
   onPrev: () => void;
 }) {
-  const t = useTranslations();
+  const t = useTranslations("common");
 
   const totalPages = Math.ceil(filteredCount / itemsPerPage);
 
@@ -28,7 +28,7 @@ export default function Pagination({
 
   return (
     <Styles.SignpostAssembly>
-      <Tooltip text={t("Pagination.prev")}>
+      <Tooltip text={t("pagination.prev")}>
         <Styles.SignpostButton $direction="prev" onClick={onPrev} disabled={currentPage === 1} />
       </Tooltip>
 
@@ -38,7 +38,7 @@ export default function Pagination({
         </div>
       </Styles.PageIndicator>
 
-      <Tooltip text={t("Pagination.next")}>
+      <Tooltip text={t("pagination.next")}>
         <Styles.SignpostButton
           $direction="next"
           onClick={onNext}

@@ -23,8 +23,8 @@ describe("EmptyState", () => {
   test("rendert Fallback-Texte, wenn keine Props übergeben werden", () => {
     render(<EmptyState object="animal" />);
 
-    expect(screen.getByText("EmptyState.animal.title")).toBeInTheDocument();
-    expect(screen.getByText("EmptyState.message")).toBeInTheDocument();
+    expect(screen.getByText("emptyState.title")).toBeInTheDocument();
+    expect(screen.getByText("emptyState.message")).toBeInTheDocument();
   });
 
   test("führt den onResetAction Callback bei Klick aus", () => {

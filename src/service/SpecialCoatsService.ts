@@ -1,3 +1,4 @@
+import "server-only";
 import { prisma } from "@/lib/prisma";
 import { CreateSpecialCoatInput } from "@/types/specialCoat";
 
@@ -39,7 +40,8 @@ export async function getAllSpecialCoats(locale: string = "de") {
       },
     });
   } catch (error) {
-    console.error("Fehler beim Laden der SpecialCoats im Service:", error);
+    // Auf einheitliches englisches Logging umgestellt
+    console.error(`[SpecialCoatsService] Error loading SpecialCoats (${locale}):`, error);
     return [];
   }
 }
@@ -51,7 +53,7 @@ export async function getSpecialCoatById(
   const numericId = typeof id === "string" ? parseInt(id, 10) : id;
 
   if (isNaN(numericId)) {
-    console.warn(`getSpecialCoatById aborted: ID is not a number: ${id}`);
+    console.warn(`[SpecialCoatsService] getSpecialCoatById aborted: ID is not a number: ${id}`);
     return null;
   }
 
@@ -72,7 +74,11 @@ export async function getSpecialCoatById(
       },
       specialcoatsorigin: {
         include: {
-          origin: true,
+          origin: {
+            include: {
+              origintext: locale ? { where: { languageCode: locale } } : true,
+            },
+          },
         },
       },
     },
@@ -125,7 +131,7 @@ export async function updateSpecialCoat(id: number | string, data: any) {
   const numericId = typeof id === "string" ? parseInt(id, 10) : id;
 
   if (isNaN(numericId)) {
-    throw new Error(`updateSpecialCoat aborted: Invalid ID: ${id}`);
+    throw new Error(`[SpecialCoatsService] updateSpecialCoat aborted: Invalid ID: ${id}`);
   }
 
   return prisma.$transaction(async (tx) => {

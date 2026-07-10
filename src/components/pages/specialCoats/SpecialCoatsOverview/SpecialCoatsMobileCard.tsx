@@ -34,18 +34,19 @@ export default function SpecialCoatsMobileCard({ specialCoat }: SpecialCoatMobil
 
   const setEditingSpecialCoat = useSpecialCoatStore((state) => state.setEditingSpecialCoat);
   const deleteSpecialCoat = useSpecialCoatStore((state) => state.deleteSpecialCoat);
-  const t = useTranslations();
+  const tSpecialCoat = useTranslations("specialCoat");
+  const tCommon = useTranslations("common");
 
   if (!specialCoat) return null;
 
   const isAdmin = session?.user?.role === "Director";
-  const displayName = specialCoat.animal?.animaltext?.[0]?.animalName ?? "Kein Name vorhanden";
+  const displayName = specialCoat.animal?.animaltext?.[0]?.animalName ?? tSpecialCoat("noName");
 
   return (
     <CardContainer onClick={() => router.push(`/specialcoats/${specialCoat.id}`)}>
       <CardHeaderRow>
         <Name>{displayName}</Name>
-        <Color>{specialCoat.specialcoatstext?.[0]?.color ?? "Keine Farbe vorhanden"} -</Color>
+        <Color>{specialCoat.specialcoatstext?.[0]?.color ?? tSpecialCoat("noColor")} -</Color>
 
         {isAdmin && (
           <ActionGroupBadge
@@ -54,7 +55,7 @@ export default function SpecialCoatsMobileCard({ specialCoat }: SpecialCoatMobil
               setEditingSpecialCoat(specialCoat);
               router.push(`/specialcoats/${specialCoat.id}/edit`);
             }}
-            onDelete={() => deleteSpecialCoat(specialCoat.id, t)}
+            onDelete={() => deleteSpecialCoat(specialCoat.id, tSpecialCoat, tCommon)}
           />
         )}
       </CardHeaderRow>

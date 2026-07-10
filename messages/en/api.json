@@ -1,0 +1,30 @@
+{
+  "errors": {
+    "load_error": "Error loading data",
+    "invalid_id": "Invalid ID",
+    "unauthorized": "Unauthorized",
+    "not_found": "Not found",
+    "server_error": "A server error occurred"
+  },
+  "animal": {
+    "required_fields": "Name (DE) and enclosure type are required fields.",
+    "create_error": "Error creating animal",
+    "update_success": "Animal successfully updated",
+    "update_error": "Error updating animal",
+    "delete_error": "Error deleting animal",
+    "invalid_id": "Invalid animal ID"
+  },
+  "specialcoat": {
+    "required_fields": "Animal ID and translations are required fields.",
+    "not_found": "Color variant not found",
+    "create_error": "Error creating color variant",
+    "update_error": "Error updating color variant",
+    "delete_error": "Error deleting color variant"
+  },
+  "contest": {
+    "not_found": "Contest not found",
+    "create_error": "Error creating contest",
+    "update_error": "Error updating contest",
+    "delete_error": "Error deleting contest"
+  }
+}

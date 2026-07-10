@@ -1,0 +1,78 @@
+{
+  "messages": {
+    "no_more_items": "No se encontraron más elementos",
+    "none_selected": "Ninguno seleccionado",
+    "yes_delete": "¡Sí, eliminar!",
+    "cancel": "Cancelar"
+  },
+  "tooltip": {
+    "removeRow": "Eliminar fila",
+    "level": "Nivel"
+  },
+  "price": "Precio",
+  "time": "Tiempo",
+  "hours": "Horas",
+  "minutes": "Minutos",
+  "language": "Idioma",
+  "allLanguages": "Todos los idiomas",
+  "name": "Nombre",
+  "addRow": "+ Añadir fila",
+  "selling_price": "Precio de venta",
+  "release": "Fecha de lanzamiento",
+  "popularity": "Popularidad",
+  "actions": "Acciones",
+  "action": "Acción",
+  "scroll_to_top": "Volver arriba",
+  "saving": "Guardando...",
+  "save_changes": "¡Datos enviados con éxito!",
+  "available": "Disponible",
+  "not_found": "No encontrado",
+  "chosen": "Seleccionado",
+  "none_selected": "Ninguno seleccionado",
+  "description": "Descripción",
+  "descriptionPlaceholder": "Introduce la descripción aquí...",
+  "pleaseSelect": "Por favor, selecciona...",
+  "loading": "Cargando...",
+  "loading_data": "Cargando datos...",
+  "buttons": {
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "add": "Añadir"
+  },
+  "pagination": {
+    "prev": "Anterior",
+    "next": "Siguiente"
+  },
+  "filter": {
+    "search_placeholder": "Buscar animales...",
+    "all_enclosures": "Todos los recintos",
+    "all_levels": "Todos los niveles",
+    "all_status": "Todos los estados",
+    "status_prefix": "Estado:",
+    "ready": "Listo",
+    "missing_partner": "Falta pareja",
+    "not_owned": "No disponible",
+    "level_label": "Nivel",
+    "results": {
+      "show": "Mostrando",
+      "of": "de",
+      "unit": "animales encontrados"
+    }
+  },
+  "emptyState": {
+    "title": "Nada encontrado",
+    "uppySad": "Uppy está triste",
+    "message": "Uppy ha buscado por todas partes, pero no ha encontrado nada.",
+    "button": "Reiniciar búsqueda"
+  },
+  "noDescriptionAvailable": "No hay descripción disponible",
+  "error": "Se produjo un error",
+  "delete_failed": "Error al eliminar",
+  "errors": {
+    "imageNotFound": "Imagen no encontrada"
+  },
+  "currencies": {
+    "zoodollar": "Zoodólares",
+    "diamonds": "Diamantes"
+  }
+}

@@ -37,7 +37,7 @@ export default function DynamicRowInput({
   onChange,
   columns,
 }: DynamicRowInputProps) {
-  const tCommon = useTranslations("Common");
+  const tCommon = useTranslations("common");
 
   const safeRows = rows || [];
   const isBlockLayout = columns.some((col) => col.type === "textarea");

@@ -19,7 +19,8 @@ export default function ContestOverviewClient({ initialContests }: ContestOvervi
   const theme = useTheme();
   const [contests, setContests] = useState(initialContests || []);
   const router = useRouter();
-  const t = useTranslations();
+  const tContest = useTranslations("contest");
+  const tCommon = useTranslations("common");
 
   const handleEdit = (id: string) => {
     const targetPath = `/contests/${id}/edit`;
@@ -28,26 +29,25 @@ export default function ContestOverviewClient({ initialContests }: ContestOvervi
 
   const handleDelete = async (id: string) => {
     const result = await Swal.fire({
-      title: t("Contest.contestOverview.messages.deleteErrorTitle"),
-      text: t("Contest.contestOverview.messages.confirmDelete"),
+      title: tContest("contestOverview.messages.deleteErrorTitle"),
+      text: tContest("contestOverview.messages.confirmDelete"),
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: theme.button.confirm,
       cancelButtonColor: theme.button.cancel,
-      cancelButtonText: t("Contest.contestOverview.messages.cancelButton"),
+      cancelButtonText: tContest("contestOverview.messages.cancelButton"),
     });
 
     if (result.isConfirmed) {
       try {
         const res = await fetch(`/api/contests/${id}`, { method: "DELETE" });
         if (res.ok) {
-          toast.success(t("Common.save_changes"));
-          // Liste lokal aktualisieren statt neu laden
+          toast.success(tCommon("save_changes"));
           setContests((prev) => prev.filter((c) => c.id.toString() !== id));
         }
       } catch (err) {
         console.error("Delete failed:", err);
-        toast.error("Löschen fehlgeschlagen");
+        toast.error(tCommon("delete_failed"));
       }
     }
   };

@@ -80,7 +80,7 @@ describe("SpecialCodesDesktopTable", () => {
     expect(screen.getByText("Polarfuchs")).toBeInTheDocument();
     expect(screen.getByText("Weiß")).toBeInTheDocument();
     expect(screen.getByText("Level 3")).toBeInTheDocument();
-    expect(screen.queryByText("Common.actions")).not.toBeInTheDocument();
+    expect(screen.queryByText("actions")).not.toBeInTheDocument();
   });
 
   test("zeigt Admin-Spalte und Aktionen an, wenn der User 'Director' ist", () => {
@@ -88,14 +88,14 @@ describe("SpecialCodesDesktopTable", () => {
 
     render(<SpecialCoatsDesktopTable />);
 
-    expect(screen.getByText("Common.actions")).toBeInTheDocument();
+    expect(screen.getByText("actions")).toBeInTheDocument();
     expect(screen.getByText("Actions")).toBeInTheDocument(); // Der Button aus dem ActionGroupBadge Mock
   });
 
   test("triggert toggleSort beim Klick auf einen sortierbaren Header", () => {
     render(<SpecialCoatsDesktopTable />);
 
-    const speciesHeader = screen.getByText("SpecialCoat.species");
+    const speciesHeader = screen.getByText("species");
     fireEvent.click(speciesHeader);
 
     expect(mockToggleSort).toHaveBeenCalledWith("name");

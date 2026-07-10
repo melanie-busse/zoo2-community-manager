@@ -17,9 +17,9 @@ interface BreedingSectionProps {
 }
 
 export function BreedingSection({ formData, setFormData }: BreedingSectionProps) {
-  const tAnimals = useTranslations("Animals");
-  const tBiome = useTranslations("Biome");
-  const tCommon = useTranslations("Common");
+  const tAnimals = useTranslations("animal");
+  const tBiome = useTranslations("biome");
+  const tCommon = useTranslations("common");
 
   const stallOptions = [
     { value: "0", label: "Level 0" },

@@ -1,3 +1,4 @@
+import "server-only";
 import prisma from "@/lib/prisma";
 
 export async function getAllLanguages() {
@@ -8,7 +9,7 @@ export async function getAllLanguages() {
       },
     });
   } catch (error) {
-    console.error("Fehler im LanguageService:", error);
+    console.error("[LanguageService] Error in getAllLanguages:", error);
     return [];
   }
 }

@@ -22,10 +22,10 @@ export default async function CreateAnimalPage({ params }: CreateAnimalPageProps
   const [languages, biomes, origins] = await Promise.all([
     getAllLanguages(),
     getAllBiomes(locale),
-    getAllOrigins(),
+    getAllOrigins(locale),
   ]);
 
-  const tAnimals = await getTranslations({ locale, namespace: "Animals" });
+  const tAnimals = await getTranslations({ locale, namespace: "animal" });
 
   const session = await getServerSession(authOptions);
   if (!session || session.user?.role !== "Director") {

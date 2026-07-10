@@ -13,12 +13,12 @@ interface ActionGroupIconsProps {
 }
 
 export default function ActionGroupBadge({ id, onEdit, onDelete }: ActionGroupIconsProps) {
-  const t = useTranslations();
+  const t = useTranslations("common");
 
   return (
     <ActionGroup onClick={(e) => e.stopPropagation()}>
-      <ActionBadge type="edit" onClickAction={onEdit} tooltip={t("Buttons.edit")} />
-      <ActionBadge type="delete" onClickAction={onDelete} tooltip={t("Buttons.delete")} />
+      <ActionBadge type="edit" onClickAction={onEdit} tooltip={t("buttons.edit")} />
+      <ActionBadge type="delete" onClickAction={onDelete} tooltip={t("buttons.delete")} />
     </ActionGroup>
   );
 }

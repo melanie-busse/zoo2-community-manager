@@ -1,0 +1,27 @@
+{
+  "home": {
+    "stats": {
+      "animals": "Animales",
+      "specialCoat": "Variantes de color",
+      "biomes": "Recintos",
+      "regions": "Regiones del zoo"
+    },
+    "cards": {
+      "lexicon": {
+        "title": "Léxico de animales",
+        "text": "Precios, niveles de establo e información del recinto de un vistazo."
+      },
+      "specialCoat": {
+        "title": "Variantes de color",
+        "text": "Gestiona tus éxitos de cría y variantes raras."
+      },
+      "club": {
+        "title": "Club",
+        "text": "Sé miembro de nuestro club y gana increíbles estatuas en los concursos."
+      }
+    }
+  },
+  "footer": {
+    "imprint": "Aviso legal"
+  }
+}

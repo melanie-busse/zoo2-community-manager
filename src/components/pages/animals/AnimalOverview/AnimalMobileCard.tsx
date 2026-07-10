@@ -34,12 +34,13 @@ export default function AnimalMobileCard({ animal }: AnimalMobileCardProps) {
 
   const setEditingAnimal = useAnimalStore((state) => state.setEditingAnimal);
   const deleteAnimal = useAnimalStore((state) => state.deleteAnimal);
-  const t = useTranslations();
+  const tAnimal = useTranslations("animal");
+  const tCommon = useTranslations("common");
 
   if (!animal) return null;
 
   const isAdmin = session?.user?.role === "Director";
-  const displayName = animal.animaltext?.[0]?.animalName ?? "Kein Name vorhanden";
+  const displayName = animal.animaltext?.[0]?.animalName ?? tAnimal("noName");
 
   return (
     <CardContainer onClick={() => router.push(`/animals/${animal.id}`)}>
@@ -53,7 +54,7 @@ export default function AnimalMobileCard({ animal }: AnimalMobileCardProps) {
               setEditingAnimal(animal);
               router.push(`/animal/${animal.id}/edit`);
             }}
-            onDelete={() => deleteAnimal(animal.id, t)}
+            onDelete={() => deleteAnimal(animal.id, tAnimal, tCommon)}
           />
         )}
       </CardHeaderRow>

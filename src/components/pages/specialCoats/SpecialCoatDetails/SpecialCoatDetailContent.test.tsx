@@ -158,7 +158,7 @@ describe("SpecialCoatDetailContent Integration Test", () => {
 
     render(<SpecialCoatDetailContent />);
 
-    expect(screen.getByText("Common.not_found")).toBeInTheDocument();
+    expect(screen.getByText("common.not_found")).toBeInTheDocument();
   });
 
   test("rendert Name, Farbe und Beschreibung des zugehörigen Tieres", () => {
@@ -208,7 +208,7 @@ describe("SpecialCoatDetailContent Integration Test", () => {
 
     render(<SpecialCoatDetailContent />);
 
-    expect(screen.getByText("Common.loading_data")).toBeInTheDocument();
+    expect(screen.getByText("common.loading_data")).toBeInTheDocument();
   });
 
   test("zeigt Fallback-Beschreibung, wenn das Tier keine Beschreibung hat", () => {
@@ -223,6 +223,6 @@ describe("SpecialCoatDetailContent Integration Test", () => {
 
     render(<SpecialCoatDetailContent />);
 
-    expect(screen.getByText("Common.noDescriptionAvailable")).toBeInTheDocument();
+    expect(screen.getByText("common.noDescriptionAvailable")).toBeInTheDocument();
   });
 });

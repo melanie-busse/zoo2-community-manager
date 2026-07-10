@@ -89,6 +89,6 @@ describe("SpecialCoatArea", () => {
 
     render(<SpecialCoatArea />);
 
-    expect(screen.getByTestId("section-headline")).toHaveTextContent("Animals.colorVariants");
+    expect(screen.getByTestId("section-headline")).toHaveTextContent("animal.colorVariants");
   });
 });

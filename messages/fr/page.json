@@ -1,0 +1,27 @@
+{
+  "home": {
+    "stats": {
+      "animals": "Animaux",
+      "specialCoat": "Variantes de couleur",
+      "biomes": "Enclos",
+      "regions": "Régions du zoo"
+    },
+    "cards": {
+      "lexicon": {
+        "title": "Lexique des animaux",
+        "text": "Prix, niveaux d'abri et informations sur les enclos en un coup d'œil."
+      },
+      "specialCoat": {
+        "title": "Variantes de couleur",
+        "text": "Gérez vos succès d'élevage et vos variantes rares."
+      },
+      "club": {
+        "title": "Club",
+        "text": "Rejoignez notre club et gagnez de superbes statues lors des concours."
+      }
+    }
+  },
+  "footer": {
+    "imprint": "Mentions légales"
+  }
+}

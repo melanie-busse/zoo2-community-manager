@@ -1,6 +1,6 @@
 ---
 name: ship
-description: Run tests, linter, production build, and create a local git commit
+description: Stop dev server, run tests, linter, production build, create a local git commit, and restart dev server
 ---
 
 # Skill: /ship
@@ -8,6 +8,9 @@ description: Run tests, linter, production build, and create a local git commit
 When this skill is invoked, execute the following steps in order. Abort immediately if any step fails.
 
 ## Steps
+
+0. **Stop Development Server**
+   Execute `pkill -f "next-dev" || true` to ensure the dev server is not blocking any files or ports during build.
 
 1. **Run tests**
    Execute `npx vitest run` immediately without asking for confirmation.
@@ -27,7 +30,10 @@ When this skill is invoked, execute the following steps in order. Abort immediat
    - `git add .`
    - `git commit -m "<commit_message>"`
 
-5. **Final Instruction**
+5. **Restart Development Server**
+   Execute `npm run dev &` (or the appropriate dev command) to restart the development server in the background so the user can continue working immediately.
+
+6. **Final Instruction**
    Remind the user to execute `git push` manually due to the multi-account setup.
 
 Report the result of each step to the user as you go.

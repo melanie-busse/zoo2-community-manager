@@ -12,7 +12,7 @@ import ScrollToTopBadge from "@/components/ui/badges/ScrollToTopBadge";
 
 export const metadata: Metadata = {
   title: "Zoo 2: Animal Park Manager",
-  description: "Klub der tollen Tiere - Community Tool",
+  description: "The ultimate community and management tool for your zoo.",
 };
 
 interface LocaleLayoutProps {

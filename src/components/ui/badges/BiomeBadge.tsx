@@ -3,8 +3,6 @@
 import React from "react";
 import styled from "styled-components";
 import NextImage from "next/image";
-import { useTranslations } from "next-intl";
-
 import Tooltip from "@/components/ui/tooltip/Tooltip";
 import { habitatColors } from "@/constants/habitatConstants";
 import { Image } from "@/types/image";
@@ -24,8 +22,6 @@ export default function BiomeBadge({
   label,
   tooltipLabel,
 }: BiomeBadgeProps) {
-  const t = useTranslations();
-
   const BadgeContent = (
     <StyledBadge $biomeType={image.name}>
       <NextImage

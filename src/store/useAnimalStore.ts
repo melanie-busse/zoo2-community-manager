@@ -45,7 +45,7 @@ interface AnimalState {
   // 6. Aktionen für Edit & Delete
   setEditingAnimal: (animal: Animal | null) => void;
   clearEditingAnimal: () => void;
-  deleteAnimal: (id: number, t: any) => Promise<boolean>;
+  deleteAnimal: (id: number, t: any, tCommon: any) => Promise<boolean>;
 }
 
 export const useAnimalStore = create<AnimalState>((set) => {
@@ -124,7 +124,7 @@ export const useAnimalStore = create<AnimalState>((set) => {
         return result.id as number;
       } catch (error: any) {
         console.error("Fetch Error:", error);
-        showErrorToast(error.message || "Netzwerkfehler beim Speichern.");
+        showErrorToast(error.message);
         return false;
       }
     },
@@ -205,17 +205,14 @@ export const useAnimalStore = create<AnimalState>((set) => {
         return { ...clearedState, ...runPipeline(state.allAnimals, clearedState) };
       }),
 
-    // Bearbeiten-Aktionen (direkt im selben Store)
     setEditingAnimal: (animal) => set({ editingAnimal: animal }),
     clearEditingAnimal: () => set({ editingAnimal: null }),
-
-    // Lösch-Aktion
-    deleteAnimal: async (id: number, t: any) => {
+    deleteAnimal: async (id: number, t: any, tCommon: any) => {
       const confirmed = await confirmDeleteDialog({
-        title: t("Animals.messages.deleteErrorTitle") || "Löschen?",
-        text: t("Animals.messages.confirmDelete") || "Möchtest du dieses Tier wirklich löschen?",
-        confirmButtonText: t("Common.messages.yes_delete") || "Ja, löschen",
-        cancelButtonText: t("Common.messages.cancel") || "Abbrechen",
+        title: t("messages.deleteErrorTitle"),
+        text: t("messages.confirmDelete"),
+        confirmButtonText: tCommon("messages.yes_delete"),
+        cancelButtonText: tCommon("messages.cancel"),
       });
 
       if (!confirmed) return false;
@@ -247,11 +244,11 @@ export const useAnimalStore = create<AnimalState>((set) => {
           };
         });
 
-        showSuccessToast(t("Animals.messages.deleteSuccess") || "Erfolgreich gelöscht");
+        showSuccessToast(t("messages.deleteSuccess"));
         return true;
       } catch (error: any) {
         console.error("Delete Error:", error);
-        showErrorToast(error.message || "Fehler beim Löschen");
+        showErrorToast(error.message);
         return false;
       }
     },

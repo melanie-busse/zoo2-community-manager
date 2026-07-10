@@ -1,0 +1,67 @@
+{
+  "species": "Naam",
+  "release": "Vrijlaten",
+  "colorVariants": "Kleurvarianten",
+  "biomeCapacity": "Verblijfscapaciteit",
+  "animalCount": "Aantal dieren",
+  "biomeSize": "Verblijfsgrootte",
+  "capacityTableLabel": "Dieren vs. verblijfsruimte",
+  "requiredSize": "Benodigde ruimte",
+  "noName": "Geen naam beschikbaar",
+  "overview_title": "Overzicht van alle dieren",
+  "form": {
+    "createAnimal": "Nieuw dier aanmaken",
+    "editAnimal": "Dier bewerken",
+    "saveAnimal": "Dier opslaan",
+    "requiredName": "Voer een Duitse naam in!",
+    "requiredBiome": "Selecteer een verblijf!",
+    "selectAnimal": "Dier selecteren *",
+    "selectPlaceholder": "Typ om te zoeken (bijv. Leeuw)..."
+  },
+  "breeding": {
+    "xpAndActions": "XP en acties",
+    "breeding": "Fokken",
+    "breedingChance": "Fok kans"
+  },
+  "basicInfoSection": {
+    "basicInfo": "Basisinformatie",
+    "fields": {
+      "releaseDate": "Uitgiftedatum"
+    }
+  },
+  "translationSection": {
+    "title": "Vertalingen (Naam & Beschrijving)",
+    "fields": {
+      "name": "Naam",
+      "language": "Taal",
+      "description": "Beschrijving",
+      "descriptionPlaceholder": "Beschrijf het dier..."
+    }
+  },
+  "priceSection": {
+    "pricesAndValues": "Prijzen en waarden"
+  },
+  "xpSection": {
+    "actionsXp": "Acties & XP"
+  },
+  "originSection": {
+    "originTitle": "Herkomst",
+    "originDescription": "Hoe kun je dit dier verkrijgen?"
+  },
+  "actions": {
+    "feed": "Voeren",
+    "play": "Spelen",
+    "clean": "Schoonmaken"
+  },
+  "messages": {
+    "createSuccess": "Dier succesvol aangemaakt! 🐾",
+    "deleteSuccess": "Dier succesvol verwijderd! 🐾",
+    "editSuccess": "Wijzigingen succesvol opgeslagen! 🐾",
+    "deleteError": "Fout bij het verwijderen van het dier. Probeer het opnieuw.",
+    "deleteErrorTitle": "Dier verwijderen?",
+    "confirmDelete": "Weet je zeker dat je dit dier permanent wilt verwijderen? Alle gekoppelde gegevens zoals teksten en XP-waarden gaan verloren."
+  },
+  "emptyState": {
+    "title": "Oh nee, geen dieren hier!"
+  }
+}

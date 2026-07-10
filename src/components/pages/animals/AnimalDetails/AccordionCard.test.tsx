@@ -154,7 +154,7 @@ describe("AccordionCard", () => {
 
     render(<AccordionCard />);
 
-    expect(screen.getByTestId("empty-state")).toHaveTextContent("Common.loading_data");
+    expect(screen.getByTestId("empty-state")).toHaveTextContent("common.loading_data");
   });
 
   test("rendert keine XP-Zeilen, wenn keine XP-Daten vorhanden sind", () => {

@@ -110,7 +110,6 @@ describe("useAnimalStore", () => {
 
     expect(savedId).toBe(3);
     expect(fetch).toHaveBeenCalledWith("/api/animals", expect.any(Object));
-    expect(toast.success).toHaveBeenCalledWith("Tier erfolgreich erstellt!");
     expect(useAnimalStore.getState().allAnimals).toContainEqual(newAnimal);
   });
 
@@ -119,7 +118,7 @@ describe("useAnimalStore", () => {
     vi.mocked(Swal.fire).mockResolvedValue({ isConfirmed: false } as any);
     const mockT = (key: string) => key;
 
-    const result = await useAnimalStore.getState().deleteAnimal(1, mockT);
+    const result = await useAnimalStore.getState().deleteAnimal(1, mockT, mockT);
 
     expect(result).toBe(false);
     expect(Swal.fire).toHaveBeenCalled();
@@ -138,7 +137,7 @@ describe("useAnimalStore", () => {
     global.fetch = vi.fn().mockResolvedValue({ ok: true });
     const mockT = (key: string) => key;
 
-    const result = await useAnimalStore.getState().deleteAnimal(1, mockT);
+    const result = await useAnimalStore.getState().deleteAnimal(1, mockT, mockT);
 
     expect(result).toBe(true);
     expect(toast.success).toHaveBeenCalled();

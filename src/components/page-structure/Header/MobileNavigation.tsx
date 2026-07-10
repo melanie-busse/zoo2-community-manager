@@ -11,7 +11,7 @@ import Chevron from "@/components/ui/icons/Chevron";
 
 // @ts-expect-error -- Props werden ohne Typ-Definition übergeben
 export default function MobileNavigation({ isOpen, onClose }) {
-  const t = useTranslations();
+  const t = useTranslations("navigation");
   const [openSubMenu, setOpenSubMenu] = useState<string | null>(null);
   const { data: session } = useSession();
 
@@ -30,7 +30,7 @@ export default function MobileNavigation({ isOpen, onClose }) {
           if (item.href && !item.subMenu) {
             return (
               <Styles.MobileNavLink key={item.id} href={item.href} onClick={onClose}>
-                {t("Header.Navigation." + item.labelKey)}
+                {t("links." + item.labelKey)}
               </Styles.MobileNavLink>
             );
           }
@@ -39,7 +39,7 @@ export default function MobileNavigation({ isOpen, onClose }) {
           return (
             <Styles.MobileMenuWrapper key={item.id}>
               <Styles.MenuHeader onClick={() => toggleSubMenu(item.id)}>
-                {t("Header.Navigation." + item.labelKey)}
+                {t("links." + item.labelKey)}
                 <Chevron isOpen={isOpen} />
               </Styles.MenuHeader>
 
@@ -50,7 +50,7 @@ export default function MobileNavigation({ isOpen, onClose }) {
 
                   return (
                     <Styles.SubNavLink key={sub.href} href={sub.href} onClick={onClose}>
-                      {t("Header.Navigation." + sub.labelKey)}
+                      {t("links." + sub.labelKey)}
                     </Styles.SubNavLink>
                   );
                 })}

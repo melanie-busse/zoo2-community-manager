@@ -22,10 +22,10 @@ export default async function CreateSpecialCoatPage({ params }: CreateSpecialCoa
   const [allAnimals, languages, origins] = await Promise.all([
     getAllAnimals(locale),
     getAllLanguages(),
-    getAllOrigins(),
+    getAllOrigins(locale),
   ]);
 
-  const tSpecialCoat = await getTranslations({ locale, namespace: "SpecialCoat" });
+  const tSpecialCoat = await getTranslations({ locale, namespace: "specialCoat" });
 
   const session = await getServerSession(authOptions);
   if (!session || session.user?.role !== "Director") {

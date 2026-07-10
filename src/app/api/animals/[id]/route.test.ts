@@ -8,6 +8,10 @@ vi.mock("@/service/AnimalService", () => ({
   deleteAnimal: vi.fn(),
 }));
 
+vi.mock("next-intl/server", () => ({
+  getTranslations: vi.fn().mockResolvedValue((key: string) => key),
+}));
+
 const validBody = {
   biomeId: 10,
   animaltext: [{ languageCode: "de", animalName: "Erdmännchen (Neu)", animalDescription: "" }],
@@ -31,7 +35,7 @@ describe("Animal Dynamic PUT API Route Handler", () => {
 
     expect(updateAnimal).toHaveBeenCalledWith(42, validBody);
     expect(response.status).toBe(200);
-    expect(data).toEqual({ message: "Tier erfolgreich aktualisiert", id: 42 });
+    expect(data).toEqual({ message: "animal.update_success", id: 42 });
   });
 
   test("Gibt Status 400 zurück, wenn die ID keine Zahl ist", async () => {
@@ -44,7 +48,7 @@ describe("Animal Dynamic PUT API Route Handler", () => {
     const data = await response.json();
 
     expect(response.status).toBe(400);
-    expect(data.message).toBe("Ungültige Tier-ID");
+    expect(data.message).toBe("animal.invalid_id");
     expect(updateAnimal).not.toHaveBeenCalled();
   });
 
@@ -58,7 +62,7 @@ describe("Animal Dynamic PUT API Route Handler", () => {
     const data = await response.json();
 
     expect(response.status).toBe(400);
-    expect(data.message).toBe("Name (DE) und Gehegetyp sind Pflichtfelder.");
+    expect(data.message).toBe("animal.required_fields");
     expect(updateAnimal).not.toHaveBeenCalled();
   });
 
@@ -74,7 +78,7 @@ describe("Animal Dynamic PUT API Route Handler", () => {
     const data = await response.json();
 
     expect(response.status).toBe(500);
-    expect(data.message).toBe("Fehler beim Aktualisieren des Tieres");
+    expect(data.message).toBe("animal.update_error");
     expect(data.error).toBe("Datenbank-Timeout");
   });
 });
@@ -102,7 +106,7 @@ describe("Animal Dynamic DELETE API Route Handler", () => {
     const data = await response.json();
 
     expect(response.status).toBe(400);
-    expect(data.message).toBe("Ungültige Tier-ID");
+    expect(data.message).toBe("animal.invalid_id");
     expect(deleteAnimal).not.toHaveBeenCalled();
   });
 
@@ -115,7 +119,7 @@ describe("Animal Dynamic DELETE API Route Handler", () => {
     const data = await response.json();
 
     expect(response.status).toBe(500);
-    expect(data.message).toBe("Fehler beim Löschen des Tieres");
+    expect(data.message).toBe("animal.delete_error");
     expect(data.error).toBe("Constraint-Verletzung");
   });
 });

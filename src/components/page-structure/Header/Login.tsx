@@ -11,7 +11,7 @@ import { useClickOutside } from "@/hooks/useClickOutside";
 
 export default function Login() {
   const { data: session } = useSession();
-  const t = useTranslations();
+  const t = useTranslations("navigation");
   const [showLogout, setShowLogout] = useState(false);
   const wrapperRef = useRef<HTMLDivElement>(null);
 
@@ -31,20 +31,20 @@ export default function Login() {
               <Styles.UserImage src={user?.image || "/images/default-avatar.png"} alt="Profil" />
               {!showLogout && (
                 <Styles.AvatarTooltip className="avatar-tooltip">
-                  {t("Header.Login.open_menu")} 🐾
+                  {t("login.open_menu")} 🐾
                 </Styles.AvatarTooltip>
               )}
             </Styles.UserWrapper>
 
             {showLogout && (
               <Styles.LogoutBadge onClick={() => signOut({ callbackUrl: "/" })}>
-                {t("Header.Login.logout")} 👋
+                {t("login.logout")} 👋
               </Styles.LogoutBadge>
             )}
           </Styles.AvatarContainer>
         ) : (
           <Styles.HeaderButton onClick={() => signIn("discord")}>
-            {t("Header.Login.button")}
+            {t("login.button")}
           </Styles.HeaderButton>
         )}
       </Styles.TopRow>
@@ -54,7 +54,7 @@ export default function Login() {
           <Styles.FlexContainer>
             <RoleBadge role={userRole} />
             <Styles.WelcomeText>
-              {t("Header.Login.welcome")}, {user?.name?.split(" ")[0]}!
+              {t("login.welcome")}, {user?.name?.split(" ")[0]}!
             </Styles.WelcomeText>
           </Styles.FlexContainer>
         </Styles.BottomRow>

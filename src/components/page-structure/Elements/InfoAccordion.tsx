@@ -37,7 +37,7 @@ export default function InfoAccordion({
 const AccordionWrapper = styled.div`
   margin-bottom: 12px;
   border-radius: 12px;
-  overflow: hidden;
+  overflow: visible;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   background: white;
   border: 1px solid #e0e0e0;
@@ -81,8 +81,13 @@ const Chevron = styled.span<TransientOpenProps>`
 
 const AccordionBody = styled.div<TransientOpenProps>`
   padding: ${(props) => (props.$isOpen ? "16px" : "0 16px")};
-  max-height: ${(props) => (props.$isOpen ? "600px" : "0")};
-  overflow: hidden;
+
+  /* Wenn offen, darf nichts abgeschnitten werden; wenn zu, wird es versteckt */
+  overflow: ${(props) => (props.$isOpen ? "visible" : "hidden")};
+
+  /* Erlaubt dem Container im geöffneten Zustand unendlich zu wachsen */
+  max-height: ${(props) => (props.$isOpen ? "none" : "0")};
+
   transition: all 0.3s ease-in-out;
   border-top: ${(props) => (props.$isOpen ? "1px solid #eee" : "none")};
 `;

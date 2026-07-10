@@ -43,7 +43,7 @@ vi.mock("@/components/elements/Filter/CustomBadgeFilter", () => ({
 }));
 
 vi.mock("next-intl", () => ({
-  useTranslations: () => (key: string) => (key === "Filter.search_placeholder" ? "Suche..." : key),
+  useTranslations: () => (key: string) => (key === "filter.search_placeholder" ? "Suche..." : key),
 }));
 
 describe("FilterBar", () => {
