@@ -7,7 +7,7 @@ import { usePathname, useRouter } from "@/i18n/routing";
 import * as Styles from "./LangSwitcher.styles";
 import { useClickOutside } from "@/hooks/useClickOutside";
 import Chevron from "@/components/ui/icons/Chevron";
-import { FLAG_MAP } from "@/constants/languages";
+import { FLAG_MAP, SUPPORTED_LANGUAGES } from "@/constants/languages";
 
 export default function LangSwitcher() {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,24 +33,11 @@ export default function LangSwitcher() {
       </Styles.CurrentLanguage>
 
       <Styles.LangDropdown $show={isOpen}>
-        <Styles.LangOption onClick={() => handleLocaleChange("de")}>
-          <span className="fi fi-de"></span> DE
-        </Styles.LangOption>
-        <Styles.LangOption onClick={() => handleLocaleChange("en")}>
-          <span className="fi fi-gb"></span> EN
-        </Styles.LangOption>
-        <Styles.LangOption onClick={() => handleLocaleChange("da")}>
-          <span className="fi fi-dk"></span> DA
-        </Styles.LangOption>
-        <Styles.LangOption onClick={() => handleLocaleChange("fr")}>
-          <span className="fi fi-fr"></span> FR
-        </Styles.LangOption>
-        <Styles.LangOption onClick={() => handleLocaleChange("nl")}>
-          <span className="fi fi-nl"></span> NL
-        </Styles.LangOption>
-        <Styles.LangOption onClick={() => handleLocaleChange("es")}>
-          <span className="fi fi-es"></span> ES
-        </Styles.LangOption>
+        {SUPPORTED_LANGUAGES.map((lang) => (
+          <Styles.LangOption key={lang.code} onClick={() => handleLocaleChange(lang.code)}>
+            <span className={`fi ${lang.flag}`}></span> {lang.name}
+          </Styles.LangOption>
+        ))}
       </Styles.LangDropdown>
     </Styles.LangSwitcherContainer>
   );

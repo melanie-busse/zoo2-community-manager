@@ -1,18 +1,18 @@
 {
-  "overview_title": "Color Variants",
+  "overview_title": "Special Coats",
   "species": "Name",
   "color": "Color",
   "noName": "No name available",
   "noColor": "No color available",
   "form": {
-    "createSpecialCoat": "Create Color Variant",
-    "editSpecialCoat": "Edit Color Variant",
+    "createSpecialCoat": "Create Special Coat",
+    "editSpecialCoat": "Edit Special Coat",
     "saveSpecialCoat": "Save",
     "translationSection": {
       "title": "Translations (Name & Color)",
       "fields": {
         "language": "Language",
-        "name": "Variant Name",
+        "name": "Special Coat Name",
         "NamePlaceholder": "e.g. Halloween, Valentine's Day...",
         "color": "Color",
         "ColorPlaceholder": "e.g. striped"
@@ -20,13 +20,13 @@
     }
   },
   "messages": {
-    "deleteErrorTitle": "Delete Color Variant?",
-    "confirmDelete": "Do you really want to delete this color variant?",
-    "deleteSuccess": "Color variant successfully deleted",
-    "createSuccess": "Color variant successfully created!",
-    "editSuccess": "Color variant successfully updated!"
+    "deleteErrorTitle": "Delete Special Coat?",
+    "confirmDelete": "Do you really want to delete this special coat?",
+    "deleteSuccess": "Special coat successfully deleted",
+    "createSuccess": "Special coat successfully created!",
+    "editSuccess": "Special coat successfully updated!"
   },
   "emptyState": {
-    "title": "Oh no, no animals here!"
+    "title": "Oh no, no special coat here!"
   }
 }

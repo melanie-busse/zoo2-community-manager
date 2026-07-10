@@ -5,8 +5,8 @@ import { useTranslations } from "next-intl";
 
 import InfoAccordion from "@/components/page-structure/Elements/InfoAccordion";
 import DynamicRowInput from "@/components/ui/form/DynamicRowInput";
-import { languageFlags } from "@/constants/languageFlags";
 import SectionColumn from "@/components/ui/form/styling/SectionColumn";
+import { FLAG_MAP } from "@/constants/languages";
 
 interface TranslationSectionProps {
   formData: any;
@@ -27,7 +27,8 @@ export default function AnimalTranslationSection({
     ? dbLanguages.map((lang) => ({
         value: lang.code,
         label: lang.name,
-        icon: languageFlags[lang.code as keyof typeof languageFlags],
+        // Nutzt die neue, zentralisierte Flag-Map
+        icon: FLAG_MAP[lang.code] || "fi-un",
       }))
     : [];
 

@@ -35,14 +35,14 @@ export default async function EditSpecialCoatPage({ params }: EditSpecialCoatPag
     getSpecialCoatById(id),
     getAllLanguages(),
     getAllAnimals(locale),
-    getAllOrigins(),
+    getAllOrigins(locale),
   ]);
 
   if (!specialCoat) {
     notFound();
   }
 
-  const tSpecialCoat = await getTranslations({ locale, namespace: "SpecialCoat" });
+  const tSpecialCoat = await getTranslations({ locale, namespace: "specialCoat" });
 
   const preparedSpecialCoat = {
     ...specialCoat,

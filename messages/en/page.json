@@ -2,8 +2,8 @@
   "home": {
     "stats": {
       "animals": "Animals",
-      "specialCoat": "Color Variants",
-      "biomes": "Enclosures",
+      "specialCoat": "Special Coats",
+      "biomes": "Biomes",
       "regions": "Zoo Regions"
     },
     "cards": {
@@ -12,7 +12,7 @@
         "text": "Prices, shelter levels and enclosure info at a glance."
       },
       "specialCoat": {
-        "title": "Color Variants",
+        "title": "Special Coats",
         "text": "Manage your breeding successes and rare variants."
       },
       "club": {
