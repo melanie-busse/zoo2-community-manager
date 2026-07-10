@@ -12,13 +12,12 @@ interface OriginBadgeProps {
 export default function OriginBadge({ animalOrigin }: OriginBadgeProps) {
   const realOrigin = animalOrigin.origin;
 
-  // Sicherheitsnetz, falls die Relation im Service mal nicht inkludiert wurde
   if (!realOrigin) return null;
 
   return (
     <BadgeWrapper>
       <StyledImage
-        src={`/images/origins/${realOrigin.image || "placeholder.png"}`} // Geändert zu origin/
+        src={`/images/origins/${realOrigin.image || "placeholder.png"}`}
         alt={realOrigin.name || "Origin"}
         width={32}
         height={32}

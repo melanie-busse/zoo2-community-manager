@@ -70,5 +70,9 @@
   "delete_failed": "Delete failed",
   "errors": {
     "imageNotFound": "Image not found"
+  },
+  "currencies": {
+    "zoodollar": "Zoo Dollars",
+    "diamonds": "Diamonds"
   }
 }

@@ -22,8 +22,14 @@ export default function PriceSection({ formData, setFormData }: PriceSectionProp
   const tCommon = useTranslations("common");
 
   const currencyOptions = [
-    { value: "1", label: "Zoodollar" },
-    { value: "2", label: "Diamanten" },
+    {
+      value: "1",
+      label: tCommon("currencies.zoodollar") || "Zoodollar",
+    },
+    {
+      value: "2",
+      label: tCommon("currencies.diamonds") || "Diamanten",
+    },
   ];
 
   const handleNumberChange =

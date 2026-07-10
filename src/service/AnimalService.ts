@@ -25,7 +25,6 @@ export async function getAllAnimals(locale: string = "de") {
       orderBy: { id: "asc" },
     });
   } catch (error) {
-    // Auf einheitliches englisches Logging umgestellt
     console.error(`[AnimalService] Error in getAllAnimals (${locale}):`, error);
     return [];
   }
@@ -50,7 +49,11 @@ export async function getAnimalById(
         include: {
           specialcoatsorigin: {
             include: {
-              origin: true,
+              origin: {
+                include: {
+                  origintext: locale ? { where: { languageCode: locale } } : true,
+                },
+              },
             },
           },
         },
@@ -62,7 +65,15 @@ export async function getAnimalById(
       },
       animalxp: { include: { xptype: true } },
       priceType: true,
-      animalorigins: { include: { origin: true } },
+      animalorigins: {
+        include: {
+          origin: {
+            include: {
+              origintext: locale ? { where: { languageCode: locale } } : true,
+            },
+          },
+        },
+      },
       animalperenclosure: { orderBy: { numberAnimals: "asc" } },
     },
   });

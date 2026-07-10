@@ -19,8 +19,10 @@ export default function OriginBadgeList() {
         const realOrigin = item.origin;
         if (!realOrigin) return null;
 
+        const translatedName = realOrigin.origintext?.[0]?.originName || realOrigin.name;
+
         return (
-          <Tooltip key={item.id || index} text={realOrigin.name} position="top">
+          <Tooltip key={item.id || index} text={translatedName} position="top">
             <OriginBadge animalOrigin={item} />
           </Tooltip>
         );

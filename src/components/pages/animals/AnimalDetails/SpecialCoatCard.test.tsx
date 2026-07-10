@@ -1,12 +1,16 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render, screen } from "@/utils/test-utils";
 import { describe, test, expect, vi, beforeEach } from "vitest";
 
 import SpecialCoatCard from "./SpecialCoatCard";
 
-vi.mock("next-intl", () => ({
-  useTranslations: (namespace: string) => (key: string) => `${namespace}.${key}`,
-}));
+vi.mock("next-intl", async (importOriginal) => {
+  const actual = await importOriginal();
+  return {
+    ...actual,
+    useTranslations: (namespace: string) => (key: string) => `${namespace}.${key}`,
+  };
+});
 
 vi.mock("next/image", () => ({
   default: ({ src, alt, ...props }: any) => <img src={src} alt={alt} {...props} />,
@@ -82,10 +86,9 @@ describe("SpecialCoatCard", () => {
     render(<SpecialCoatCard specialCoat={mockCoat} />);
 
     expect(screen.getByTestId("origin-container")).toBeInTheDocument();
-    const originRows = screen.getAllByTestId("origin-row");
-    expect(originRows).toHaveLength(2);
-    expect(originRows[0]).toHaveAttribute("title", "Magische Truhe");
-    expect(originRows[1]).toHaveAttribute("title", "Shop");
+    expect(screen.getAllByTestId("origin-row")).toHaveLength(2);
+    expect(screen.getByAltText("Magische Truhe")).toBeInTheDocument();
+    expect(screen.getByAltText("Shop")).toBeInTheDocument();
   });
 
   test("rendert keinen Origin-Container, wenn keine Origins vorhanden sind", () => {
