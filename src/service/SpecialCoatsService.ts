@@ -74,7 +74,11 @@ export async function getSpecialCoatById(
       },
       specialcoatsorigin: {
         include: {
-          origin: true,
+          origin: {
+            include: {
+              origintext: locale ? { where: { languageCode: locale } } : true,
+            },
+          },
         },
       },
     },

@@ -149,7 +149,7 @@ describe("SpecialCoats Service", () => {
               },
             },
           },
-          specialcoatsorigin: { include: { origin: true } },
+          specialcoatsorigin: { include: { origin: { include: { origintext: { where: { languageCode: "de" } } } } } },
         },
       });
     });
