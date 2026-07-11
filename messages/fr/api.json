@@ -1,4 +1,5 @@
 {
+  "mayor_readonly_notice": "En tant que maire, vous pouvez tester toutes les fonctionnalités, mais aucune donnée ne sera enregistrée dans la base de données.",
   "errors": {
     "load_error": "Erreur lors du chargement des données",
     "invalid_id": "ID invalide",

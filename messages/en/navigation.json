@@ -12,6 +12,7 @@
     "role_Employee": "Employee",
     "role_Member": "Member",
     "role_Visitor": "Visitor",
+    "role_Mayor": "Mayor",
     "role_": "No role"
   },
   "links": {

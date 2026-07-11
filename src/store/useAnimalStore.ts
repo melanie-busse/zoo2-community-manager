@@ -2,6 +2,7 @@ import { create } from "zustand";
 import { Animal } from "@/types/animal";
 import { filterAnimals, sortAnimals, paginate } from "@/utils/AnimalUtil";
 import { confirmDeleteDialog, showErrorToast, showSuccessToast } from "@/utils/alerts";
+import { toast } from "react-toastify"; // Importiert, um den Info-Toast beim Löschen direkt anzuzeigen
 import {
   createAnimalOnClient,
   deleteAnimalOnClient,
@@ -16,7 +17,7 @@ interface AnimalState {
 
   // 2. Bearbeitungs-Zustand
   editingAnimal: Animal | null;
-  saveAnimal: (formData: any) => Promise<number | false>;
+  saveAnimal: (formData: any) => Promise<number | false | { error: string; message: string }>;
 
   // 3. Filter-Zustände
   searchTerm: string;
@@ -124,7 +125,17 @@ export const useAnimalStore = create<AnimalState>((set) => {
         return result.id as number;
       } catch (error: any) {
         console.error("Fetch Error:", error);
-        showErrorToast(error.message);
+
+        // Mayor-Schutz beim Speichern/Bearbeiten abfangen
+        const responseData = error?.response?.data || error?.data;
+        if (error?.status === 403 || responseData?.error === "MayorReadonly") {
+          return {
+            error: "MayorReadonly",
+            message: responseData?.message || "Read-only mode for Mayor.",
+          };
+        }
+
+        showErrorToast(error.message || "Fehler beim Speichern");
         return false;
       }
     },
@@ -178,7 +189,10 @@ export const useAnimalStore = create<AnimalState>((set) => {
         const totalPages = Math.ceil(state.filteredCount / state.itemsPerPage);
         if (state.currentPage >= totalPages) return {};
         const nextPage = state.currentPage + 1;
-        return { currentPage: nextPage, ...runPipeline(state.allAnimals, { ...state, currentPage: nextPage }) };
+        return {
+          currentPage: nextPage,
+          ...runPipeline(state.allAnimals, { ...state, currentPage: nextPage }),
+        };
       }),
 
     prevPage: () =>
@@ -207,6 +221,7 @@ export const useAnimalStore = create<AnimalState>((set) => {
 
     setEditingAnimal: (animal) => set({ editingAnimal: animal }),
     clearEditingAnimal: () => set({ editingAnimal: null }),
+
     deleteAnimal: async (id: number, t: any, tCommon: any) => {
       const confirmed = await confirmDeleteDialog({
         title: t("messages.deleteErrorTitle"),
@@ -248,6 +263,14 @@ export const useAnimalStore = create<AnimalState>((set) => {
         return true;
       } catch (error: any) {
         console.error("Delete Error:", error);
+
+        // Mayor-Schutz beim Löschen abfangen
+        const responseData = error?.response?.data || error?.data;
+        if (error?.status === 403 || responseData?.error === "MayorReadonly") {
+          toast.info(responseData?.message || t("messages.mayorReadonlyNotice"));
+          return false;
+        }
+
         showErrorToast(error.message);
         return false;
       }

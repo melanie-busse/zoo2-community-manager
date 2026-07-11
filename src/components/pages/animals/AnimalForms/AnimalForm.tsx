@@ -39,6 +39,7 @@ interface AnimalFormProps {
 export default function AnimalForm({ animal, languages, biomes, originsData }: AnimalFormProps) {
   const tAnimals = useTranslations("animal");
   const tCommon = useTranslations("common");
+
   const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -55,17 +56,13 @@ export default function AnimalForm({ animal, languages, biomes, originsData }: A
     }
   }, [animal, setEditingAnimal, clearEditingAnimal]);
 
-  const [formData, setFormData] = useState<any>(() =>
-    mapAnimalToForm(animal, languages),
-  );
+  const [formData, setFormData] = useState<any>(() => mapAnimalToForm(animal, languages));
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (isSubmitting) return;
 
-    const nameDe = formData.animaltext?.find(
-      (t: any) => t.languageCode === "de",
-    )?.animalName;
+    const nameDe = formData.animaltext?.find((t: any) => t.languageCode === "de")?.animalName;
     if (!nameDe) {
       toast.warn(tAnimals("form.requiredName"));
       return;
@@ -80,9 +77,17 @@ export default function AnimalForm({ animal, languages, biomes, originsData }: A
     try {
       const savedId = await saveAnimal(formData);
 
+      if (savedId && typeof savedId === "object" && (savedId as any).error === "MayorReadonly") {
+        toast.info((savedId as any).message);
+        setIsSubmitting(false);
+        return;
+      }
+
       if (savedId !== false) {
         clearEditingAnimal();
-        toast.success(formData.id ? tAnimals("messages.editSuccess") : tAnimals("messages.createSuccess"));
+        toast.success(
+          formData.id ? tAnimals("messages.editSuccess") : tAnimals("messages.createSuccess"),
+        );
         router.push(`/animals/${savedId}`);
       }
     } catch (error) {

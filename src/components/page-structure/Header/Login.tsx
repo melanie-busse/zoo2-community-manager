@@ -11,14 +11,21 @@ import { useClickOutside } from "@/hooks/useClickOutside";
 
 export default function Login() {
   const { data: session } = useSession();
-  const t = useTranslations("navigation");
+  const tNav = useTranslations("navigation");
+  const tUser = useTranslations("user");
+
   const [showLogout, setShowLogout] = useState(false);
+  const [showLoginDropdown, setShowLoginDropdown] = useState(false);
+
   const wrapperRef = useRef<HTMLDivElement>(null);
 
   const user = session?.user;
   const userRole = user?.role || "";
 
-  useClickOutside(wrapperRef, () => setShowLogout(false));
+  useClickOutside(wrapperRef, () => {
+    setShowLogout(false);
+    setShowLoginDropdown(false);
+  });
 
   return (
     <Styles.LoginWrapper ref={wrapperRef}>
@@ -31,21 +38,34 @@ export default function Login() {
               <Styles.UserImage src={user?.image || "/images/default-avatar.png"} alt="Profil" />
               {!showLogout && (
                 <Styles.AvatarTooltip className="avatar-tooltip">
-                  {t("login.open_menu")} 🐾
+                  {tNav("login.open_menu")} 🐾
                 </Styles.AvatarTooltip>
               )}
             </Styles.UserWrapper>
 
             {showLogout && (
               <Styles.LogoutBadge onClick={() => signOut({ callbackUrl: "/" })}>
-                {t("login.logout")} 👋
+                {tNav("login.logout")} 👋
               </Styles.LogoutBadge>
             )}
           </Styles.AvatarContainer>
         ) : (
-          <Styles.HeaderButton onClick={() => signIn("discord")}>
-            {t("login.button")}
-          </Styles.HeaderButton>
+          <Styles.DropdownContainer>
+            <Styles.HeaderButton onClick={() => setShowLoginDropdown(!showLoginDropdown)}>
+              {tNav("login.button")}
+            </Styles.HeaderButton>
+
+            {showLoginDropdown && (
+              <Styles.Menu onMouseLeave={() => setShowLoginDropdown(false)}>
+                <Styles.MenuItem onClick={() => signIn("discord")}>
+                  {tUser("Auth.loginWithDiscord")} 🎮
+                </Styles.MenuItem>
+                <Styles.MenuItem onClick={() => signIn("mayor-login")}>
+                  {tUser("Auth.loginAsMayor")} 🎩
+                </Styles.MenuItem>
+              </Styles.Menu>
+            )}
+          </Styles.DropdownContainer>
         )}
       </Styles.TopRow>
 
@@ -54,7 +74,7 @@ export default function Login() {
           <Styles.FlexContainer>
             <RoleBadge role={userRole} />
             <Styles.WelcomeText>
-              {t("login.welcome")}, {user?.name?.split(" ")[0]}!
+              {tNav("login.welcome")}, {user?.name?.split(" ")[0]}!
             </Styles.WelcomeText>
           </Styles.FlexContainer>
         </Styles.BottomRow>
@@ -62,3 +82,4 @@ export default function Login() {
     </Styles.LoginWrapper>
   );
 }
+

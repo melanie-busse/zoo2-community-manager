@@ -1,0 +1,9 @@
+{
+  "Auth": {
+    "login": "Inloggen",
+    "loginWithDiscord": "Inloggen met Discord",
+    "loginAsMayor": "Inloggen als burgemeester",
+    "mayorReadonlyNotice": "Als burgemeester kun je formulieren testen, maar er worden geen gegevens opgeslagen."
+  },
+  "mayor_readonly_notice": "Als burgemeester kun je alle functies testen, maar er worden geen gegevens opgeslagen in de database."
+}

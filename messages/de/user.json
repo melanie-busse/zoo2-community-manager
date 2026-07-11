@@ -1,0 +1,10 @@
+{
+  "Auth": {
+    "login": "Anmelden",
+    "loginWithDiscord": "Mit Discord einloggen",
+    "loginAsMayor": "Als Bürgermeister einloggen",
+    "mayorReadonlyNotice": "Als Bürgermeister kannst du Formulare testen, aber es werden keine Daten gespeichert."
+  },
+
+  "mayor_readonly_notice": "Als Bürgermeister darfst du alle Funktionen testen, aber es werden keine Daten in der Datenbank gespeichert."
+}

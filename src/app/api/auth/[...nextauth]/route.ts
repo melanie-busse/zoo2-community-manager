@@ -3,6 +3,7 @@ export const dynamic = "force-dynamic";
 
 import NextAuth from "next-auth";
 import DiscordProvider from "next-auth/providers/discord";
+import CredentialsProvider from "next-auth/providers/credentials";
 import prisma from "@/lib/prisma";
 
 const discordId = process.env.DISCORD_CLIENT_ID;
@@ -26,9 +27,35 @@ export const authOptions = {
         };
       },
     }),
+
+    CredentialsProvider({
+      id: "mayor-login",
+      name: "Mayor",
+      credentials: {},
+      async authorize() {
+        const mayorUser = await prisma.user.findFirst({
+          where: { roleId: 0 },
+        });
+
+        if (mayorUser) {
+          return {
+            id: mayorUser.id.toString(),
+            name: mayorUser.name,
+            email: mayorUser.email,
+            image: "/images/user/mayor-avatar.png",
+            isMayor: true,
+          };
+        }
+        return null;
+      },
+    }),
   ],
   callbacks: {
-    async signIn({ user }: { user: any }) {
+    async signIn({ user, account }: { user: any; account: any }) {
+      if (account?.provider === "mayor-login") {
+        return true;
+      }
+
       try {
         await prisma.user.upsert({
           where: { discordId: user.id },
@@ -51,13 +78,19 @@ export const authOptions = {
       }
     },
 
-    async jwt({ token, user }: { token: any; user: any }) {
+    async jwt({ token, user, account }: { token: any; user: any; account: any }) {
       if (user) {
-        const dbUser = await prisma.user.findUnique({
-          where: { discordId: user.id },
-        });
-        if (dbUser) {
-          token.id = dbUser.id;
+        if (user.isMayor || account?.provider === "mayor-login") {
+          token.id = user.id;
+          token.isMayor = true;
+        } else {
+          const dbUser = await prisma.user.findUnique({
+            where: { discordId: user.id },
+          });
+          if (dbUser) {
+            token.id = dbUser.id;
+            token.isMayor = false;
+          }
         }
       }
       return token;
@@ -72,10 +105,19 @@ export const authOptions = {
           return session;
         }
 
-        // Wir suchen ganz entspannt mit der internen Int-ID (Zahl)
-        const dbUser = await prisma.user.findUnique({
-          where: { discordId: userId },
-        });
+        let dbUser = null;
+
+        if (token.isMayor) {
+          dbUser = await prisma.user.findFirst({
+            where: { roleId: 0 },
+          });
+        } else {
+
+          dbUser = await prisma.user.findUnique({
+            where: { id: Number(userId) },
+
+          });
+        }
 
         if (dbUser) {
           session.user.id = dbUser.id;
@@ -94,6 +136,9 @@ export const authOptions = {
         return session;
       }
     },
+  },
+  session: {
+    strategy: "jwt" as const,
   },
   secret: process.env.NEXTAUTH_SECRET,
 };

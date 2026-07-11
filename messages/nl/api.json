@@ -1,4 +1,5 @@
 {
+  "mayor_readonly_notice": "Als burgemeester kun je alle functies testen, maar er worden geen gegevens opgeslagen in de database.",
   "errors": {
     "load_error": "Fout bij het laden van gegevens",
     "invalid_id": "Ongeldig ID",

@@ -1,0 +1,9 @@
+{
+  "Auth": {
+    "login": "Log ind",
+    "loginWithDiscord": "Log ind med Discord",
+    "loginAsMayor": "Log ind som borgmester",
+    "mayorReadonlyNotice": "Som borgmester kan du teste formularer, men ingen data vil blive gemt."
+  },
+  "mayor_readonly_notice": "Som borgmester kan du teste alle funktioner, men ingen data vil blive gemt i databasen."
+}

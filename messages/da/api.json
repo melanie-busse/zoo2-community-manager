@@ -1,4 +1,5 @@
 {
+  "mayor_readonly_notice": "Som borgmester kan du teste alle funktioner, men ingen data vil blive gemt i databasen.",
   "errors": {
     "load_error": "Fejl ved indlæsning af data",
     "invalid_id": "Ugyldigt ID",

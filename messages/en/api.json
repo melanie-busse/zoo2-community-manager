@@ -1,4 +1,5 @@
 {
+  "mayor_readonly_notice": "As Mayor you can test all features, but no data will be saved to the database.",
   "errors": {
     "load_error": "Error loading data",
     "invalid_id": "Invalid ID",

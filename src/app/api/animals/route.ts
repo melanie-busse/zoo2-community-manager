@@ -1,12 +1,13 @@
 import { NextResponse } from "next/server";
 import { getTranslations } from "next-intl/server";
+import { getServerSession } from "next-auth/next";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
 import { getAllAnimals, createAnimal } from "@/service/AnimalService";
 
 export const dynamic = "force-dynamic";
 
 export async function GET(request: Request) {
-  // Wir definieren locale und t direkt hier oben, damit sie im gesamten Scope (auch im catch) verfügbar sind
   const { searchParams } = new URL(request.url);
   const locale = searchParams.get("locale") || "de";
 
@@ -14,7 +15,6 @@ export async function GET(request: Request) {
     const animals = await getAllAnimals(locale);
 
     if (!animals || animals.length === 0) {
-      // Ein englisches Log ist im Backend Standard und spart Übersetzungs-Overhead in den JSON-Dateien
       console.warn(
         `[API] No animals found for locale '${locale}' (database might be empty or offline).`,
       );
@@ -32,11 +32,23 @@ export async function POST(request: Request) {
   const { searchParams } = new URL(request.url);
   const locale = searchParams.get("locale") || "de";
   const t = await getTranslations({ locale, namespace: "api" });
+  const tUser = await getTranslations({ locale, namespace: "user" });
 
   try {
+    const session = await getServerSession(authOptions);
+
+    if (session?.user?.roleId === 0 || session?.user?.role === "Mayor") {
+      return NextResponse.json(
+        {
+          message: tUser("mayor_readonly_notice"),
+          error: "MayorReadonly",
+        },
+        { status: 403 },
+      );
+    }
+
     const body = await request.json();
 
-    // Wir suchen den Namen basierend auf dem aktuellen locale, falls vorhanden, sonst fallback auf 'de'
     const currentName =
       body.animaltext?.find((t: any) => t.languageCode === locale)?.animalName ||
       body.animaltext?.find((t: any) => t.languageCode === "de")?.animalName;

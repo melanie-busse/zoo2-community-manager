@@ -6,8 +6,8 @@ import { useSession } from "next-auth/react";
 
 import * as Styles from "./Navigation.styles";
 import { navConfig } from "@/config/navigationData";
-import Login from "@/components/page-structure/Header/Login";
 import Chevron from "@/components/ui/icons/Chevron";
+import Login from "@/components/page-structure/Header/Login";
 
 // @ts-expect-error -- Props werden ohne Typ-Definition übergeben
 export default function MobileNavigation({ isOpen, onClose }) {
@@ -23,10 +23,8 @@ export default function MobileNavigation({ isOpen, onClose }) {
     <Styles.Overlay $isOpen={isOpen}>
       <Styles.MenuContent>
         {navConfig.map((item) => {
-          // Falls der Hauptpunkt Auth braucht und wir nicht eingeloggt sind: überspringen
           if (item.requiresAuth && !session) return null;
 
-          // Fall A: Einfacher Link (z.B. Home)
           if (item.href && !item.subMenu) {
             return (
               <Styles.MobileNavLink key={item.id} href={item.href} onClick={onClose}>
@@ -35,7 +33,6 @@ export default function MobileNavigation({ isOpen, onClose }) {
             );
           }
 
-          // Fall B: Dropdown / Menügruppe
           return (
             <Styles.MobileMenuWrapper key={item.id}>
               <Styles.MenuHeader onClick={() => toggleSubMenu(item.id)}>
@@ -45,7 +42,6 @@ export default function MobileNavigation({ isOpen, onClose }) {
 
               <Styles.SubMenu $isOpen={openSubMenu === item.id}>
                 {item.subMenu?.map((sub) => {
-                  // Prüfe Auth für Untermenüpunkte
                   if (sub.requiresAuth && !session) return null;
 
                   return (

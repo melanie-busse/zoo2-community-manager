@@ -12,6 +12,14 @@ vi.mock("next-intl/server", () => ({
   getTranslations: vi.fn().mockResolvedValue((key: string) => key),
 }));
 
+vi.mock("next-auth/next", () => ({
+  getServerSession: vi.fn().mockResolvedValue({ user: { role: "Director" } }),
+}));
+
+vi.mock("@/app/api/auth/[...nextauth]/route", () => ({
+  authOptions: {},
+}));
+
 const validBody = {
   biomeId: 3,
   animaltext: [{ languageCode: "de", animalName: "Löwe", animalDescription: "" }],

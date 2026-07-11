@@ -1,4 +1,5 @@
 {
+  "mayor_readonly_notice": "Como alcalde, puedes probar todas las funciones, pero no se guardarán datos en la base de datos.",
   "errors": {
     "load_error": "Error al cargar los datos",
     "invalid_id": "ID no válido",
