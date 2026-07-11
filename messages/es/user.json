@@ -1,0 +1,9 @@
+{
+  "Auth": {
+    "login": "Iniciar sesión",
+    "loginWithDiscord": "Iniciar sesión con Discord",
+    "loginAsMayor": "Iniciar sesión como alcalde",
+    "mayorReadonlyNotice": "Como alcalde, puedes probar los formularios, pero no se guardarán datos."
+  },
+  "mayor_readonly_notice": "Como alcalde, puedes probar todas las funciones, pero no se guardarán datos en la base de datos."
+}

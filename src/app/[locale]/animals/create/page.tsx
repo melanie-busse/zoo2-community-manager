@@ -28,7 +28,8 @@ export default async function CreateAnimalPage({ params }: CreateAnimalPageProps
   const tAnimals = await getTranslations({ locale, namespace: "animal" });
 
   const session = await getServerSession(authOptions);
-  if (!session || session.user?.role !== "Director") {
+  const allowedRoles = ["Director", "Mayor"];
+  if (!session || !allowedRoles.includes(session.user?.role ?? "")) {
     redirect(`/${locale}/animals`);
   }
 

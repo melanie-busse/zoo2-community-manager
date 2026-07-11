@@ -12,6 +12,7 @@
     "role_Employee": "Medewerker",
     "role_Member": "Lid",
     "role_Visitor": "Bezoeker",
+    "role_Mayor": "Burgemeester",
     "role_": "Geen rol"
   },
   "links": {

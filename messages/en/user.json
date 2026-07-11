@@ -1,0 +1,9 @@
+{
+  "Auth": {
+    "login": "Login",
+    "loginWithDiscord": "Login with Discord",
+    "loginAsMayor": "Login as Mayor",
+    "mayorReadonlyNotice": "As Mayor you can test forms, but no data will be saved to the database."
+  },
+  "mayor_readonly_notice": "As Mayor you can test all features, but no data will be saved to the database."
+}

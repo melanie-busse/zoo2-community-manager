@@ -1,4 +1,5 @@
 {
+  "mayor_readonly_notice": "Als Bürgermeister darfst du alle Funktionen testen, aber es werden keine Daten in der Datenbank gespeichert.",
   "errors": {
     "load_error": "Fehler beim Laden",
     "invalid_id": "Ungültige ID",

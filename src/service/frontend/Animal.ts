@@ -8,7 +8,10 @@ export async function createAnimalOnClient(formData: any): Promise<any> {
   const result = await response.json();
 
   if (!response.ok) {
-    throw new Error(result.message);
+    const error: any = new Error(result.message);
+    error.status = response.status;
+    error.data = result;
+    throw error;
   }
 
   return result;
@@ -24,7 +27,10 @@ export async function updateAnimalOnClient(id: number, formData: any): Promise<a
   const result = await response.json();
 
   if (!response.ok) {
-    throw new Error(result.message);
+    const error: any = new Error(result.message);
+    error.status = response.status;
+    error.data = result;
+    throw error;
   }
 
   return result;

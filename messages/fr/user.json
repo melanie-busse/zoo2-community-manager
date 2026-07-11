@@ -1,0 +1,9 @@
+{
+  "Auth": {
+    "login": "Se connecter",
+    "loginWithDiscord": "Se connecter avec Discord",
+    "loginAsMayor": "Se connecter en tant que maire",
+    "mayorReadonlyNotice": "En tant que maire, vous pouvez tester les formulaires, mais aucune donnée ne sera enregistrée."
+  },
+  "mayor_readonly_notice": "En tant que maire, vous pouvez tester toutes les fonctionnalités, mais aucune donnée ne sera enregistrée dans la base de données."
+}

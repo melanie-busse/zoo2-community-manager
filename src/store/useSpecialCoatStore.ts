@@ -2,6 +2,7 @@ import { create } from "zustand";
 import { SpecialCoat } from "@/types/specialCoat";
 import { filterSpecialCoats, sortSpecialCoats, paginate } from "@/utils/SpecialCoatUtil";
 import { confirmDeleteDialog, showErrorToast, showSuccessToast } from "@/utils/alerts";
+import { toast } from "react-toastify";
 import {
   createSpecialCoatOnClient,
   deleteSpecialCoatOnClient,
@@ -18,7 +19,7 @@ interface SpecialCoatState {
 
   // 2. Bearbeitungs-Zustand
   editingSpecialCoat: SpecialCoat | null;
-  saveSpecialCoat: (formData: any) => Promise<number | false>;
+  saveSpecialCoat: (formData: any) => Promise<number | false | { error: string; message: string }>;
 
   // 3. Filter-Zustände
   searchTerm: string;
@@ -135,7 +136,17 @@ export const useSpecialCoatStore = create<SpecialCoatState>((set, get) => {
         return result.id as number;
       } catch (error: any) {
         console.error("Fetch Error:", error);
-        showErrorToast(error.message);
+
+        // Mayor-Schutz beim Speichern abfangen
+        const responseData = error?.response?.data || error?.data;
+        if (error?.status === 403 || responseData?.error === "MayorReadonly") {
+          return {
+            error: "MayorReadonly",
+            message: responseData?.message || "Read-only mode for Mayor.",
+          };
+        }
+
+        showErrorToast(error.message || "Fehler beim Speichern");
         return false;
       }
     },
@@ -281,6 +292,14 @@ export const useSpecialCoatStore = create<SpecialCoatState>((set, get) => {
         return true;
       } catch (error: any) {
         console.error("Delete Error:", error);
+
+        // Mayor-Schutz beim Löschen abfangen
+        const responseData = error?.response?.data || error?.data;
+        if (error?.status === 403 || responseData?.error === "MayorReadonly") {
+          toast.info(responseData?.message || t("messages.mayorReadonlyNotice"));
+          return false;
+        }
+
         showErrorToast(error.message);
         return false;
       }

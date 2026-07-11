@@ -27,7 +27,8 @@ export default async function EditSpecialCoatPage({ params }: EditSpecialCoatPag
   }
 
   const session = await getServerSession(authOptions);
-  if (!session || session.user?.role !== "Director") {
+  const allowedRoles = ["Director", "Mayor"];
+  if (!session || !allowedRoles.includes(session.user?.role ?? "")) {
     redirect(`/${locale}/specialcoats`);
   }
 

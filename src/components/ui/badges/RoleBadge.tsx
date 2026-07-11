@@ -11,6 +11,7 @@ const ROLE_IMAGES = {
   Employee: "/images/roles/Lucy.webp",
   Member: "/images/roles/Jenkins.webp",
   Visitor: "/images/roles/Vicky.webp",
+  Mayor: "/images/roles/Mayor.webp",
 };
 
 interface RoleBadgeProps {
@@ -53,8 +54,6 @@ const RoleIconWrapper = styled.div`
   border-radius: 50%;
   border: 3px solid ${({ theme }) => theme.colors.ui.icon};
 
-  /* WICHTIG: Kein overflow: hidden! (Für den Tooltip) */
-  /* WICHTIG: position: relative, damit der Tooltip darauf referenziert */
   position: relative;
 
   background-color: ${({ theme }) => theme.colors.accent.warm};
@@ -64,16 +63,11 @@ const RoleIconWrapper = styled.div`
   animation: ${popIn} 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transition: all 0.3s ease;
 
-  /* --- HIER KOMMT DER FIX FÜR DAS BILD --- */
   img {
-    object-fit: cover; /* WICHTIG: Das Bild wird skaliert und nicht verzerrt */
+    object-fit: cover;
     width: 100%;
     height: 100%;
-
-    /* NEU: Da der Wrapper das overflow nicht macht, muss das Bild selbst rund sein */
     border-radius: 50%;
-
-    /* NEU: Erzwingt, dass das Bild innerhalb des Wrappers bleibt (Box-Model Fix) */
     display: block;
   }
 `;
@@ -84,11 +78,8 @@ export const BadgeContainer = styled.div`
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-
-  /* Der Container sollte eine feste Fläche haben, die sich nicht bewegt */
   padding: 5px;
 
-  /* TRIGGER: Wenn der Container gehovert wird, animiere das Icon darin */
   &:hover ${RoleIconWrapper} {
     animation: ${hoverBounce} 0.4s forwards;
     border-color: ${({ theme }) => theme.colors.accent.main};

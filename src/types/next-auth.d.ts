@@ -8,6 +8,20 @@ declare module "next-auth" {
       email?: string | null;
       image?: string | null;
       role?: string | null;
+      roleId?: number;
     };
+  }
+
+  interface User {
+    roleId?: number;
+    role?: string | null;
+    isMayor?: boolean;
+  }
+}
+
+declare module "next-auth/jwt" {
+  interface JWT {
+    id?: string;
+    isMayor?: boolean;
   }
 }

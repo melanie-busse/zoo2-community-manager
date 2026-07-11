@@ -12,6 +12,7 @@
     "role_Employee": "Mitarbeiter",
     "role_Member": "Mitglied",
     "role_Visitor": "Besucher",
+    "role_Mayor": "Bürgermeister",
     "role_": "Keine Rolle"
   },
   "links": {

@@ -64,9 +64,17 @@ export default function SpecialCoatForm({
     try {
       const savedId = await saveSpecialCoat(formData);
 
+      if (savedId && typeof savedId === "object" && (savedId as any).error === "MayorReadonly") {
+        toast.info((savedId as any).message || tSpecialCoat("messages.mayorReadonlyNotice"));
+        setIsSubmitting(false);
+        return;
+      }
+
       if (savedId !== false) {
         clearEditingSpecialCoat();
-        toast.success(tSpecialCoat(formData.id ? "messages.editSuccess" : "messages.createSuccess"));
+        toast.success(
+          tSpecialCoat(formData.id ? "messages.editSuccess" : "messages.createSuccess"),
+        );
         router.push("/specialcoats");
       }
     } catch (error) {

@@ -12,6 +12,7 @@
     "role_Employee": "Medarbejder",
     "role_Member": "Medlem",
     "role_Visitor": "Besøgende",
+    "role_Mayor": "Borgmester",
     "role_": "Ingen rolle"
   },
   "links": {

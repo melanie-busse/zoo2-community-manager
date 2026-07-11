@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 import { getTranslations } from "next-intl/server";
+import { getServerSession } from "next-auth/next";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { prisma } from "@/lib/prisma";
 import { getSpecialCoatById, updateSpecialCoat } from "@/service/SpecialCoatsService";
 
@@ -31,8 +33,21 @@ export async function PUT(request: Request, { params }: RouteParams) {
   const { searchParams } = new URL(request.url);
   const locale = searchParams.get("locale") ?? "de";
   const t = await getTranslations({ locale, namespace: "api" });
+  const tUser = await getTranslations({ locale, namespace: "user" });
 
   try {
+    const session = await getServerSession(authOptions);
+
+    if (session?.user?.roleId === 0 || session?.user?.role === "Mayor") {
+      return NextResponse.json(
+        {
+          message: tUser("mayor_readonly_notice"),
+          error: "MayorReadonly",
+        },
+        { status: 403 },
+      );
+    }
+
     const { id } = await params;
     const body = await request.json();
 
@@ -54,8 +69,22 @@ export async function DELETE(request: Request, { params }: RouteParams) {
   const { searchParams } = new URL(request.url);
   const locale = searchParams.get("locale") ?? "de";
   const t = await getTranslations({ locale, namespace: "api" });
+  const tUser = await getTranslations({ locale, namespace: "user" });
 
   try {
+
+    const session = await getServerSession(authOptions);
+
+    if (session?.user?.roleId === 0 || session?.user?.role === "Mayor") {
+      return NextResponse.json(
+        {
+          message: tUser("mayor_readonly_notice"),
+          error: "MayorReadonly",
+        },
+        { status: 403 },
+      );
+    }
+
     const { id } = await params;
     const coatId = Number(id);
 

@@ -77,9 +77,9 @@ describe("NextAuth Route Configuration", () => {
       const mockSession = {
         user: { name: "Melanie", email: "melanie@zoo2.de" },
       };
-      const mockToken = { id: "db-user-999" };
+      const mockToken = { id: 999, isMayor: false };
 
-      const mockDbUser = { id: "db-user-999", roleId: 2 };
+      const mockDbUser = { id: 999, roleId: 2 };
       const mockDbRole = { id: 2, name: "Admin" };
 
       vi.mocked(prisma.user.findUnique).mockResolvedValue(mockDbUser as any);
@@ -91,13 +91,13 @@ describe("NextAuth Route Configuration", () => {
       });
 
       expect(prisma.user.findUnique).toHaveBeenCalledWith({
-        where: { discordId: "db-user-999" },
+        where: { id: 999 },
       });
       expect(prisma.role.findUnique).toHaveBeenCalledWith({
         where: { id: 2 },
       });
 
-      expect(updatedSession.user.id).toBe("db-user-999");
+      expect(updatedSession.user.id).toBe(999);
       expect(updatedSession.user.roleId).toBe(2);
       expect(updatedSession.user.role).toBe("Admin");
     });
