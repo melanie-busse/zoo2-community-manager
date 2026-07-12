@@ -1,0 +1,56 @@
+{"parse":
+{
+"title":"Lion",
+"pageid":320,
+
+"wikitext":{
+"*":"{
+{Example|
+
+title1 = Lion|
+biome = Savanna|
+game = Play Plateau|
+coin_food=| Haben wir im Augenblick noch nicht
+
+breeding:
+shelter_level = 0|
+probability = 4%|
+cost = 3,200|
+duration = 9h|
+
+image1 = Zoo savanna lion.JPG|
+release_date=16th April 2018|
+price=40 [[File:D.png|15px]]| D.png = Diamond - c.png = Coins
+
+size=85|
+
+XP - price (Duration)
+feeding=29 (2h 25m)|
+playing=57 (4h 50m)|
+cleaning=86 (7h 17m)|
+
+card=Epic (purple)| Color of puzzlepiece -> wird nicht brenötigt
+x2_XP_feed=29}} ?
+
+SpecialCoat:
+{{Coat_Box|
+image1 = White Lion.JPG|
+row1 = White|
+obtained_from=[[Collections]]|
+release_date=23rd June 2020}}\n
+
+Description wie man ihn bekommt -> brauchen wir nicht
+Lion can be purchased for 40 diamonds at level 19. A <u>free lion</u> is awarded for achieving [[Zoo and reputation levels#Zoo Titles (reputation)|Zoo Title]] 2 from the Mayor Quests. A second <u>free lion</u> is awarded for reaching level 42. Their puzzle pieces are available from any main zoo [[Chests and Keys|chest]] and the [[Prize Wheel|prize wheel]]. Lions can be purchased from the [[Rescue Center]], the [[Ice Cream Vendor]], and on rare occasion a [[Super Deals|Super Deal]]. They are needed for [[Club contests|Contests]] and [[Collections]] (White variant is also needed for Collections). They have been featured as [[Monthly rewards|login rewards]] in various calendars as early as 2018.
+
+\n\n==\u00a0
+Description==\nLions are some of the biggest members of the cat family. The Lion is a big wild cat with short, tawny-colored fur and white underparts. The long tail ends with a black tuft. These animals display sexual dimorphism with males, having their distinctive manes, ranging in color from black to blond. Still found in large parts of sub-Sahara Africa and a small patch of western India, Lions are the only big cat that lives in larger social groups.  A Lions roar can be heard by humans up to 8 km (5 miles) away.\n\nLions are generalist hypercarnivores. They primarily hunt on zebras, antelopes, gazelles, deer, buffalos, young giraffes, warthogs, wildebeest, young elephants, and less frequently - on hares and birds.
+
+Dise wird wieder nicht benötigt.
+\n\n==Unlocking in Game-play==\n*Lions are featured in a Level 19 Quest ~ [[Quests#King|King of the Animals]]. Lions can be purchased for 40 diamonds.\n*A Lion is given as reward for achieving the [[Zoo_and_reputation_levels#Zoo_Titles_.28reputation.29|2nd Zoo Title]]\n*A 2nd Lion is a reward for reaching [[Level rewards|Zoo Level 42]] \n*It may also be available through the [[Monthly rewards|Monthly Rewards]]\n*There may be two breeding quest after Level 49,5, <small>one of which includes placing the Savanna [[Shelters#Savanna|Shelter]]</small>\n*You will need a \"Level 3+\" Lion to complete certain [[Collections]]\n*Their puzzle piece is [[Epic Pieces|purple]]\n\n
+
+==Number of animals per enclosure==\nPlayers can have up to 6 Lions per enclosure:\n{|
+ class=\"article-table\"\n!Animals\n!Enclosure size \n|-\n|-\n|1\n|9\n|-\n|2\n|11\n|-\n|3\n|16\n|-\n|4\n| 22\n|-\n|5\n|27\n|-\n| 6\n|32 \n|}\n\n
+
+ ==Popularity, selling and release==\n{| class=\"article-table\"\n!Level\n!Popularity\n!Selling Price\n!Release exp.\n|-\n|1\n|400\n|4,000\n|400\n|-\n|2\n| 420\n|4,200\n| 420\n|-\n|3\n|440\n|4,400\n|440\n|-\n|4\n|460 \n|4,600\n|460\n|-\n|5\n|480\n|4,800\n|480\n|-\n|6\n|500\n|5,000\n|500\n|-\n|7\n|520\n|5,200\n|520\n|-\n|8\n|540\n|5,400\n|540\n|-\n|9\n|560\n|5,600\n|560\n|-\n|10\n|580\n|5,800\n|580\n|-\n|11\n|600\n|6,000\n|600\n|-\n|12\n|620\n|6,200\n|620\n|-\n|13\n|640\n|6,400\n|640\n|-\n|14\n|660\n|6,600\n|660\n|-\n|15\n|680\n|6,800\n|680\n|-\n|16\n|700\n|7,000\n|700\n|-\n|17\n|720\n|7,200\n|720\n|-\n|18\n|740\n|7,400\n|740\n|-\n|19\n|760\n|7,600\n|760\n|-\n|20\n|780\n|7,800\n|780\n|}\n
+
+ Each new level will add 5% of the base popularity to their popularity, sell price and release experience. So if the base popularity is 1000, each level will increase the popularity by 50.<div align=\"right\">[[Zoo 2: Animal Park - Animals|Return to Animal Page]]</div>\n[[Category:Animal]]\n__NOTOC__\n__NOEDITSECTION__\n__NONEWSECTIONLINK__\n[[Category:Feline]]\n[[Category:Panthera]]\n[[Category:Mammal]]\n[[Category:Savanna]]\n[[Category:Lion]]"}}}
