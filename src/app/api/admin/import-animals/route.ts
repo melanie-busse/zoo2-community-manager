@@ -84,7 +84,7 @@ export async function POST(request: Request) {
             {
               languageCode: "en",
               name: variant.name,
-              color: variant.name, // Oder Standardfarbe/Hexcode falls vorhanden
+              color: variant.color,
             },
           ],
         };

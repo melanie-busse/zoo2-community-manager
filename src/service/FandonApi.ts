@@ -131,12 +131,13 @@ function parseInteractionForService(rawStyle: string | null) {
 /**
  * Holt alle Farbvarianten inkl. Herkunfts-Array und Release-Datum
  */
-function extractColorVariants(wikitext: string) {
+function extractColorVariants(name: string, wikitext: string) {
   const variants: {
     name: string;
+    color: string;
     imageName: string | null;
     obtainedFrom: string[];
-    releaseDate: string | null
+    releaseDate: string | null;
   }[] = [];
 
   const coatBoxRegex = /\{\{Coat_Box[\s\S]*?\}\}/g;
@@ -144,12 +145,13 @@ function extractColorVariants(wikitext: string) {
 
   if (matches) {
     matches.forEach((box) => {
-      const nameMatch = box.match(/\|\s*row1\s*=\s*([^\|\}\n]+)/);
+      const colorMatch = box.match(/\|\s*row1\s*=\s*([^\|\}\n]+)/);
       const imageMatch = box.match(/\|\s*image1\s*=\s*([^\|\}\n]+)/);
+
       const obtainedMatch = box.match(/\|\s*obtained_from\s*=\s*([^\|\}\n]+)/);
       const releaseMatch = box.match(/\|\s*release_date\s*=\s*([^\|\}\n]+)/);
 
-      if (nameMatch && nameMatch[1]) {
+      if (colorMatch && colorMatch[1]) {
         const obtainedList: string[] = [];
 
         if (obtainedMatch && obtainedMatch[1]) {
@@ -164,15 +166,16 @@ function extractColorVariants(wikitext: string) {
 
           // Fallback: Falls keine Wiki-Links gefunden wurden, aber Text da steht (z.B. Plain Text)
           if (obtainedList.length === 0 && rawObtained.trim()) {
-            obtainedList.push(rawObtained.replace(/[\[\]]/g, '').trim());
+            obtainedList.push(rawObtained.replace(/[\[\]]/g, "").trim());
           }
         }
 
         variants.push({
-          name: nameMatch[1].trim(),
+          name: name,
           imageName: imageMatch && imageMatch[1] ? imageMatch[1].trim() : null,
+          color: colorMatch[1].trim(),
           obtainedFrom: obtainedList, // Übergabe des Arrays
-          releaseDate: releaseMatch && releaseMatch[1] ? releaseMatch[1].trim() : null
+          releaseDate: releaseMatch && releaseMatch[1] ? releaseMatch[1].trim() : null,
         });
       }
     });
@@ -269,7 +272,7 @@ export function parseAnimalData(apiResult: any, originIds: number[] = []) {
     origins: originIds.map((id) => ({ id })),
 
     // Angereicherte Farbvarianten für den nächsten Step
-    rawColorVariants: extractColorVariants(wikitext),
+    rawColorVariants: extractColorVariants(apiResult.title, wikitext),
     imageName: extractValue(wikitext, "image1"),
   };
 }
