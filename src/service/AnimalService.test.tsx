@@ -193,12 +193,9 @@ describe("Animal Service", () => {
 
       expect(txMock.animalText.createMany).toHaveBeenCalledWith({
         data: [
-          {
-            animalId: 42,
-            languageCode: "de",
-            animalName: "Löwe (Update)",
-            animalDescription: "Neuer Text",
-          },
+          { animalId: 42, languageCode: "en", animalName: "Löwe (Update)", animalDescription: "Neuer Text" },
+          { animalId: 42, languageCode: "de", animalName: "Löwe (Update)", animalDescription: "Neuer Text" },
+          { animalId: 42, languageCode: "da", animalName: "Löwe (Update)", animalDescription: "Neuer Text" },
         ],
       });
 

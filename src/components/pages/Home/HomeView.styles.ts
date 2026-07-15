@@ -58,14 +58,6 @@ export const ContentWrapper = styled.div`
   }
 `;
 
-export const Badge = styled.span`
-  background: ${({ theme }) => theme.colors.primary["900"]};
-  color: ${({ theme }) => theme.colors.ui.white}
-  padding: 6px 16px;
-  border-radius: ${({ theme }) => theme.borderRadius};
-  font-weight: bold;
-`;
-
 export const StatsBar = styled.div`
   display: flex;
   justify-content: center;

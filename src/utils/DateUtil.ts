@@ -21,8 +21,8 @@ export const toISODate = (dateInput: string | Date) => {
   try {
     const d = new Date(dateInput);
     return d.toISOString().split("T")[0];
-  } catch (e) {
-    return "";
+  } catch (e: any) {
+    return e.message;
   }
 };
 
@@ -35,4 +35,19 @@ export const formatInitialDate = (date: any) => {
 
   const dateString = String(date);
   return dateString.includes("T") ? dateString.split("T")[0] : dateString;
+};
+
+/**
+ * Konvertiert einen Datums-String (z.B. aus dem Fandom Wiki) in ein valides JavaScript Date-Objekt.
+ * Liefert null zurück, falls der String ungültig oder leer ist, damit Prisma nicht abstürzt.
+ */
+export const parseBackendDate = (dateInput: string | null | undefined): Date | null => {
+  if (!dateInput) return null;
+
+  let cleanedInput = dateInput.trim();
+  if (cleanedInput === "") return null;
+
+  cleanedInput = cleanedInput.replace(/(\d+)(st|nd|rd|th)\b/i, "$1");
+  const parsedDate = new Date(cleanedInput);
+  return !isNaN(parsedDate.getTime()) ? parsedDate : null;
 };

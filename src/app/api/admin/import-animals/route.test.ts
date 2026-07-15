@@ -1,9 +1,10 @@
 import { describe, test, expect, vi, beforeEach } from "vitest";
 import { POST } from "./route";
 
-vi.mock("@/service/FandonApi", () => ({
+vi.mock("@/service/FandomApi", () => ({
   fetchAnimalDetails: vi.fn(),
   parseAnimalData: vi.fn(),
+  extractIconsFromOverview: vi.fn().mockReturnValue([]),
 }));
 
 vi.mock("@/service/AnimalService", () => ({
@@ -26,7 +27,7 @@ vi.mock("@/lib/prisma", () => ({
   },
 }));
 
-import { fetchAnimalDetails, parseAnimalData } from "@/service/FandonApi";
+import { fetchAnimalDetails, parseAnimalData, extractIconsFromOverview } from "@/service/FandomApi";
 import { createAnimal } from "@/service/AnimalService";
 import { createSpecialCoat } from "@/service/SpecialCoatsService";
 import { prisma } from "@/lib/prisma";
@@ -186,5 +187,85 @@ describe("POST /api/admin/import-animals", () => {
 
     expect(response.status).toBe(500);
     expect(data.error).toBe("DB-Fehler");
+  });
+
+  test("importiert erfolgreich, auch wenn kein Origin in der DB matcht (leere originIds)", async () => {
+    vi.mocked(fetchAnimalDetails).mockResolvedValue({ title: "Red Fox", wikitext: { "*": "" } });
+    vi.mocked(extractIconsFromOverview).mockReturnValue(["Some_Icon.png"]);
+    vi.mocked(prisma.origin.findMany).mockResolvedValue([]);
+    vi.mocked(parseAnimalData).mockReturnValue({ ...mockParsedAnimal });
+    vi.mocked(prisma.biome.findFirst).mockResolvedValue({ id: 3, identifier: "Meadow" } as any);
+    vi.mocked(createAnimal).mockResolvedValue({ id: 99 } as any);
+
+    const request = new Request("http://localhost/api/admin/import-animals", {
+      method: "POST",
+      body: JSON.stringify({ pageTitle: "Red Fox" }),
+    });
+
+    const response = await POST(request);
+    const data = await response.json();
+
+    expect(response.status).toBe(200);
+    expect(data.success).toBe(true);
+    expect(data.originIds).toEqual([]);
+  });
+
+  test("importiert trotzdem erfolgreich, wenn das Laden der Übersichtsseite fehlschlägt", async () => {
+    vi.mocked(fetchAnimalDetails)
+      .mockResolvedValueOnce({ title: "Red Fox", wikitext: { "*": "" } }) // Tier
+      .mockRejectedValueOnce(new Error("Network error")); // Übersichtsseite
+    vi.mocked(parseAnimalData).mockReturnValue({ ...mockParsedAnimal });
+    vi.mocked(prisma.biome.findFirst).mockResolvedValue({ id: 3, identifier: "Meadow" } as any);
+    vi.mocked(createAnimal).mockResolvedValue({ id: 99 } as any);
+
+    const request = new Request("http://localhost/api/admin/import-animals", {
+      method: "POST",
+      body: JSON.stringify({ pageTitle: "Red Fox" }),
+    });
+
+    const response = await POST(request);
+    const data = await response.json();
+
+    expect(response.status).toBe(200);
+    expect(data.success).toBe(true);
+    expect(data.originIds).toEqual([]);
+  });
+
+  test("gibt 500 zurück, wenn createSpecialCoat nach erfolgreichem createAnimal fehlschlägt", async () => {
+    const parsedWithCoats = {
+      ...mockParsedAnimal,
+      rawColorVariants: [
+        { name: "Arctic Fox", imageName: "ArcticFox.png", obtainedFrom: ["Magic Chest"], releaseDate: "2024-03-01" },
+      ],
+    };
+
+    vi.mocked(fetchAnimalDetails).mockResolvedValue({ title: "Red Fox", wikitext: { "*": "" } });
+    vi.mocked(parseAnimalData).mockReturnValue(parsedWithCoats);
+    vi.mocked(prisma.biome.findFirst).mockResolvedValue({ id: 3, identifier: "Meadow" } as any);
+    vi.mocked(createAnimal).mockResolvedValue({ id: 99 } as any);
+    vi.mocked(prisma.origin.findMany).mockResolvedValue([]);
+    vi.mocked(createSpecialCoat).mockRejectedValue(new Error("Coat-DB-Fehler"));
+
+    const request = new Request("http://localhost/api/admin/import-animals", {
+      method: "POST",
+      body: JSON.stringify({ pageTitle: "Red Fox" }),
+    });
+
+    const response = await POST(request);
+    const data = await response.json();
+
+    expect(response.status).toBe(500);
+    expect(data.error).toBe("Coat-DB-Fehler");
+  });
+
+  test("gibt 500 zurück bei ungültigem JSON im Request-Body", async () => {
+    const request = new Request("http://localhost/api/admin/import-animals", {
+      method: "POST",
+      body: "kein json {{{",
+      headers: { "Content-Type": "application/json" },
+    });
+
+    const response = await POST(request);
+    expect(response.status).toBe(500);
   });
 });

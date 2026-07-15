@@ -1,18 +1,17 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
-import { fetchAnimalDetails, parseAnimalData } from "@/service/FandonApi";
+import { fetchAnimalDetails, parseAnimalData, extractIconsFromOverview } from "@/service/FandomApi";
 import { createAnimal } from "@/service/AnimalService";
 import { createSpecialCoat } from "@/service/SpecialCoatsService";
 
 export async function POST(request: Request) {
   try {
-    const { pageTitle, originIdsFromOverview } = await request.json();
+    const { pageTitle } = await request.json();
 
     if (!pageTitle) {
       return NextResponse.json({ error: "pageTitle ist erforderlich" }, { status: 400 });
     }
 
-    // 1. Details aus dem Fandom Wiki laden
     const wikiJson = await fetchAnimalDetails(pageTitle);
     if (!wikiJson) {
       return NextResponse.json(
@@ -21,8 +20,36 @@ export async function POST(request: Request) {
       );
     }
 
-    // 2. Daten "steckerfertig" für den AnimalService parsen
-    const parsedAnimal = parseAnimalData(wikiJson, originIdsFromOverview || []);
+    let originIds: number[] = [];
+    try {
+      const overviewPage = await fetchAnimalDetails("Animals");
+      const overviewWikitext = overviewPage?.wikitext?.["*"] || "";
+
+      if (overviewWikitext) {
+        const wikiIcons = extractIconsFromOverview(overviewWikitext, pageTitle);
+
+        if (wikiIcons.length > 0) {
+          const dbOrigins = await prisma.origin.findMany({
+            where: {
+              wiki_icon_name: {
+                in: wikiIcons,
+              },
+            },
+            select: { id: true },
+          });
+          originIds = dbOrigins.map((o) => o.id);
+          console.log(`Gemappte Origin-IDs aus der DB:`, originIds);
+        }
+      }
+    } catch (overviewError) {
+      console.error(
+        "Fehler beim Laden/Parsen der Übersichtsseite. Fahre ohne Origins fort:",
+        overviewError,
+      );
+    }
+
+    const parsedAnimal = parseAnimalData(wikiJson, originIds);
+
     if (!parsedAnimal) {
       return NextResponse.json(
         { error: `Fehler beim Parsen der Daten für ${pageTitle}` },
@@ -30,18 +57,16 @@ export async function POST(request: Request) {
       );
     }
 
-    // 3. Dynamische Biome-ID aus der DB holen
     let biome = null;
 
     if (parsedAnimal.wikiBiomeName) {
       biome = await prisma.biome.findFirst({
         where: {
-          identifier: parsedAnimal.wikiBiomeName, // Einfacher, direkter String-Match
+          identifier: parsedAnimal.wikiBiomeName,
         },
       });
     }
 
-    // Falls das Biom neu im Spiel ist und in deiner DB fehlt, legen wir es dynamisch an
     if (!biome && parsedAnimal.wikiBiomeName) {
       biome = await prisma.biome.create({
         data: {
@@ -49,37 +74,35 @@ export async function POST(request: Request) {
         },
       });
     }
-    // BiomeId an das Objekt hängen
+
     const finalAnimalData = {
       ...parsedAnimal,
-      biomeId: biome ? biome.id : 1, // Fallback auf ID 1, falls gar nichts greift
+      biomeId: biome ? biome.id : 1,
     };
 
-    // 4. Haupttier über deinen Service in der DB anlegen
     const newAnimal = await createAnimal(finalAnimalData);
 
-    // 5. Farbvarianten verarbeiten (jetzt, wo newAnimal.id existiert!)
     const createdCoats = [];
     if (parsedAnimal.rawColorVariants && parsedAnimal.rawColorVariants.length > 0) {
       for (const variant of parsedAnimal.rawColorVariants) {
-        // Dynamisch die IDs für die Herkunft (Origins) aus der DB holen
-        // Wir matchen die Wiki-Strings (z.B. "Collections") gegen deine DB-Namen
         const dbOrigins = await prisma.origin.findMany({
           where: {
-            name: { in: variant.obtainedFrom }, // identifier nutzen und ohne mode!
+            origintext: {
+              some: {
+                originName: { in: variant.obtainedFrom },
+              },
+            },
           },
+          select: { id: true },
         });
 
-        // Falls eine Herkunftsart in deiner DB fehlt, legen wir sie optional an
-        // oder nehmen nur die, die wir matchen konnten:
-        const originIds = dbOrigins.map((o) => o.id);
+        const variantOriginIds = dbOrigins.map((o) => o.id);
 
-        // Input-Objekt für deinen createSpecialCoat-Service bauen
         const coatInput = {
           animalId: newAnimal.id,
           releaseDate: variant.releaseDate ? new Date(variant.releaseDate) : new Date(),
           image: variant.imageName || "",
-          originIds: originIds,
+          originIds: variantOriginIds,
           texts: [
             {
               languageCode: "en",
@@ -89,7 +112,6 @@ export async function POST(request: Request) {
           ],
         };
 
-        // Über deinen Service anlegen lassen
         const newCoat = await createSpecialCoat(coatInput);
         createdCoats.push(newCoat);
       }
@@ -100,6 +122,7 @@ export async function POST(request: Request) {
       message: `Tier '${pageTitle}' und ${createdCoats.length} Farbvarianten erfolgreich importiert.`,
       animal: newAnimal,
       coats: createdCoats,
+      originIds,
     });
   } catch (error: any) {
     console.error("Import Fehler:", error);

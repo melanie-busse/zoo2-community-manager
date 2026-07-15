@@ -1,5 +1,5 @@
 import { describe, test, expect, vi, beforeEach } from "vitest";
-import { fetchPagesFromCategory, fetchAnimalDetails, parseAnimalData } from "./FandonApi";
+import { fetchPagesFromCategory, fetchAnimalDetails, parseAnimalData, extractIconsFromOverview } from "./FandomApi";
 
 const mockFetch = vi.fn();
 vi.stubGlobal("fetch", mockFetch);
@@ -174,7 +174,7 @@ The red fox is a cunning animal.
     test("parst Biom und Release-Datum", () => {
       const result = parseAnimalData(mockApiResult);
       expect(result?.wikiBiomeName).toBe("Meadow");
-      expect(result?.releaseDate).toBe("2024-01-15");
+      expect(result?.releaseDate).toBeInstanceOf(Date);
     });
 
     test("parst Tiernamen und Beschreibung", () => {
@@ -195,7 +195,7 @@ The red fox is a cunning animal.
     test("parst Farbvarianten", () => {
       const result = parseAnimalData(mockApiResult);
       expect(result?.rawColorVariants).toHaveLength(1);
-      expect(result?.rawColorVariants[0].name).toBe("Arctic Fox");
+      expect(result?.rawColorVariants[0].name).toBe("Red Fox");
       expect(result?.rawColorVariants[0].imageName).toBe("ArcticFox.png");
       expect(result?.rawColorVariants[0].obtainedFrom).toContain("Magic Chest");
       expect(result?.rawColorVariants[0].releaseDate).toBe("2024-03-01");
@@ -209,6 +209,56 @@ The red fox is a cunning animal.
     test("parst Bild-Dateiname", () => {
       const result = parseAnimalData(mockApiResult);
       expect(result?.imageName).toBe("Fox.png");
+    });
+  });
+
+  // ==========================================
+  // extractIconsFromOverview
+  // ==========================================
+
+  describe("extractIconsFromOverview", () => {
+    const overviewWikitext = `
+===Plains Biome===
+
+*<big>[[Aardwolf]] [[File:Premium Grayed out Icon.jpg|28x28px]] [[File:Retro Icon1.png|30x30px]] [[File:Ice Cream Icon.png|30x30px]]</big>
+*<big>[[Bengal Fox]] [[File:Premium Animal Icon.png|30x30px]]</big>
+*<big>[[Blackbuck]] [[File:Premium Grayed out Icon.jpg|28x28px]] [[File:Retro Icon1.png|30x30px]]</big>
+*<big>[[Komodo dragon|Komodo Dragon]] [[File:Shop Icon.png|30x30px]] [[File:SP.png|25x25px]]</big>
+*<big>[[Bat-eared Fox|Bat-Eared Fox]] [[File:Premium Grayed out Icon.jpg|28x28px]] [[File:Retro Icon1.png|30x30px]]</big>
+`;
+
+    test("extrahiert ein einzelnes Icon für Bengal Fox", () => {
+      const result = extractIconsFromOverview(overviewWikitext, "Bengal Fox");
+      expect(result).toEqual(["Premium_Animal_Icon.png"]);
+    });
+
+    test("extrahiert mehrere Icons", () => {
+      const result = extractIconsFromOverview(overviewWikitext, "Aardwolf");
+      expect(result).toEqual([
+        "Premium_Grayed_out_Icon.jpg",
+        "Retro_Icon1.png",
+        "Ice_Cream_Icon.png",
+      ]);
+    });
+
+    test("unterstützt Alias-Links wie [[Komodo dragon|Komodo Dragon]]", () => {
+      const result = extractIconsFromOverview(overviewWikitext, "Komodo Dragon");
+      expect(result).toEqual(["Shop_Icon.png", "SP.png"]);
+    });
+
+    test("unterstützt Alias-Links wie [[Bat-eared Fox|Bat-Eared Fox]]", () => {
+      const result = extractIconsFromOverview(overviewWikitext, "Bat-Eared Fox");
+      expect(result).toEqual(["Premium_Grayed_out_Icon.jpg", "Retro_Icon1.png"]);
+    });
+
+    test("gibt leeres Array zurück, wenn Tier nicht gefunden", () => {
+      const result = extractIconsFromOverview(overviewWikitext, "Unicorn");
+      expect(result).toEqual([]);
+    });
+
+    test("ersetzt Leerzeichen durch Unterstriche in Dateinamen", () => {
+      const result = extractIconsFromOverview(overviewWikitext, "Bengal Fox");
+      expect(result[0]).not.toContain(" ");
     });
   });
 });

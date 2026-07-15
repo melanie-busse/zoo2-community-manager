@@ -225,13 +225,27 @@ export async function updateAnimal(id: number, animalData: any) {
     await tx.animalText.deleteMany({ where: { animalId: id } });
 
     if (Array.isArray(animaltext) && animaltext.length > 0) {
+      // Den englischen Eintrag als Basis für Fallbacks finden
+      const englishText = animaltext.find((t) => t.languageCode === "en") || animaltext[0];
+
+      // Liste aller unterstützten Sprachen in deiner App
+      const supportedLanguages = ["en", "de", "da"];
+
+      const textInserts = supportedLanguages.map((lang) => {
+        // Schauen, ob für diese Sprache bereits Daten mitgeliefert wurden
+        const existingText = animaltext.find((t) => t.languageCode === lang);
+
+        return {
+          animalId: animal.id,
+          languageCode: lang,
+          // Wenn de oder da fehlt, nehmen wir vorerst den englischen Namen/Beschreibung als Platzhalter
+          animalName: existingText?.animalName || englishText.animalName || "",
+          animalDescription: existingText?.animalDescription || englishText.animalDescription || "",
+        };
+      });
+
       await tx.animalText.createMany({
-        data: animaltext.map((t: any) => ({
-          animalId: id,
-          languageCode: t.languageCode,
-          animalName: t.animalName || "",
-          animalDescription: t.animalDescription || "",
-        })),
+        data: textInserts,
       });
     }
 

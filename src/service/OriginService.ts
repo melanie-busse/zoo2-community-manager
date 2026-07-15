@@ -7,12 +7,14 @@ export async function getAllOrigins(locale: string = "de") {
       origintext: locale ? { where: { languageCode: locale } } : true,
     },
     orderBy: {
-      name: "asc",
+      origintext: {
+        _count: "asc",
+      },
     },
   });
 
   return result.map((origin) => ({
     ...origin,
-    name: origin.origintext?.[0]?.originName ?? origin.name,
+    name: origin.origintext?.[0]?.originName ?? "",
   }));
 }

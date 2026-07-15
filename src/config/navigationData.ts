@@ -56,4 +56,10 @@ export const navConfig: NavItem[] = [
   //     },
   //   ],
   // },
+  {
+    id: "admin",
+    labelKey: "admin",
+    basePath: "/admin",
+    subMenu: [{ labelKey: "import-animals", href: "/admin/import-animals", requiresAuth: true }],
+  },
 ];
