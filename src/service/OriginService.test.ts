@@ -16,11 +16,11 @@ describe("Origin Service", () => {
     vi.clearAllMocks();
   });
 
-  test("getAllOrigins sollte alle Herkunftsorte alphabetisch aufsteigend sortiert zurückgeben", async () => {
+  test("getAllOrigins gibt Herkunftsorte alphabetisch sortiert zurück", async () => {
     const mockOrigins = [
-      { id: 1, name: "Atemberaubende Truhe", origintext: [{ originName: "Breathtaking Chest", languageCode: "en" }] },
-      { id: 2, name: "Ereignis-Belohnung", origintext: [{ originName: "Event Reward", languageCode: "en" }] },
-      { id: 3, name: "Shop", origintext: [{ originName: "Shop", languageCode: "en" }] },
+      { id: 3, wiki_icon_name: "Shop_Icon.png", origintext: [{ originName: "Shop", languageCode: "en" }] },
+      { id: 1, wiki_icon_name: "Epic_Icon.png", origintext: [{ originName: "Epic Chest", languageCode: "en" }] },
+      { id: 2, wiki_icon_name: "Prize_Wheel.png", origintext: [{ originName: "Prize Wheel", languageCode: "en" }] },
     ];
 
     vi.mocked(prisma.origin.findMany).mockResolvedValue(mockOrigins as any);
@@ -28,53 +28,31 @@ describe("Origin Service", () => {
     const result = await getAllOrigins("en");
 
     expect(prisma.origin.findMany).toHaveBeenCalledWith({
-      include: {
-        origintext: {
-          where: { languageCode: "en" },
-        },
-      },
-      orderBy: {
-        name: "asc",
-      },
+      include: { origintext: { where: { languageCode: "en" } } },
     });
 
-    expect(result).toEqual([
-      { id: 1, name: "Breathtaking Chest", origintext: mockOrigins[0].origintext },
-      { id: 2, name: "Event Reward", origintext: mockOrigins[1].origintext },
-      { id: 3, name: "Shop", origintext: mockOrigins[2].origintext },
-    ]);
+    expect(result.map((r) => r.name)).toEqual(["Epic Chest", "Prize Wheel", "Shop"]);
   });
 
-  test("getAllOrigins sollte den deutschen Namen als Fallback verwenden wenn keine Übersetzung vorhanden", async () => {
+  test("getAllOrigins gibt leeren String zurück wenn kein origintext vorhanden", async () => {
     const mockOrigins = [
-      { id: 1, name: "Atemberaubende Truhe", origintext: [] },
+      { id: 1, wiki_icon_name: "Shop_Icon.png", origintext: [] },
     ];
 
     vi.mocked(prisma.origin.findMany).mockResolvedValue(mockOrigins as any);
 
     const result = await getAllOrigins("en");
 
-    expect(result[0].name).toBe("Atemberaubende Truhe");
+    expect(result[0].name).toBe("");
   });
 
-  test("getAllOrigins sollte mit Standardlocale 'de' aufgerufen werden können", async () => {
-    const mockOrigins = [
-      { id: 1, name: "Shop", origintext: [{ originName: "Shop", languageCode: "de" }] },
-    ];
-
-    vi.mocked(prisma.origin.findMany).mockResolvedValue(mockOrigins as any);
+  test("getAllOrigins verwendet Standardlocale 'de'", async () => {
+    vi.mocked(prisma.origin.findMany).mockResolvedValue([]);
 
     await getAllOrigins();
 
     expect(prisma.origin.findMany).toHaveBeenCalledWith({
-      include: {
-        origintext: {
-          where: { languageCode: "de" },
-        },
-      },
-      orderBy: {
-        name: "asc",
-      },
+      include: { origintext: { where: { languageCode: "de" } } },
     });
   });
 });

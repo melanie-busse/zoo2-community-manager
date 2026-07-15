@@ -7,6 +7,31 @@ import PageWrapper from "@/components/page-structure/page/PageWrapper";
 import PageHeader from "@/components/page-structure/page/PageHeader";
 import Table from "@/components/page-structure/Table/Table";
 
+const LS_KEY = "wiki_synced_animals";
+
+function getSyncedTitles(): Set<string> {
+  try {
+    const raw = localStorage.getItem(LS_KEY);
+    return new Set(raw ? JSON.parse(raw) : []);
+  } catch {
+    return new Set();
+  }
+}
+
+function addSyncedTitle(title: string) {
+  try {
+    const current = getSyncedTitles();
+    current.add(title);
+    localStorage.setItem(LS_KEY, JSON.stringify(Array.from(current)));
+  } catch {}
+}
+
+function clearSyncedTitles() {
+  try {
+    localStorage.removeItem(LS_KEY);
+  } catch {}
+}
+
 interface AnimalStatus {
   title: string;
   status: "imported" | "missing";
@@ -18,22 +43,29 @@ interface Summary {
   missing: number;
 }
 
+type ActionState = "idle" | "loading" | "success" | "error";
+
 export default function WikiDashboard() {
   const [loading, setLoading] = useState(true);
   const [summary, setSummary] = useState<Summary | null>(null);
   const [animals, setAnimals] = useState<AnimalStatus[]>([]);
   const [filter, setFilter] = useState<"all" | "missing" | "imported">("all");
-  const [importingMap, setImportingMap] = useState<Record<string, "idle" | "loading" | "success">>(
-    {},
-  );
+  const [importingMap, setImportingMap] = useState<Record<string, ActionState>>({});
+  const [updatingMap, setUpdatingMap] = useState<Record<string, ActionState>>({});
+  const [syncedTitles, setSyncedTitles] = useState<Set<string>>(() => getSyncedTitles());
 
   const loadStatus = async () => {
+    setLoading(true);
+    clearSyncedTitles();
+    setSyncedTitles(new Set());
     try {
-      const res = await fetch("../../../api/admin/import-animals/status");
+      const res = await fetch("/api/admin/import-animals/status");
       const data = await res.json();
       if (res.ok) {
         setSummary(data.summary);
         setAnimals(data.animals);
+        setImportingMap({});
+        setUpdatingMap({});
       }
     } catch (err) {
       console.error("Fehler beim Laden des Status:", err);
@@ -61,18 +93,18 @@ export default function WikiDashboard() {
     };
 
     fetchInitialData();
-
     return () => {
       isMounted = false;
     };
   }, []);
+
   const handleSingleImport = async (title: string) => {
     setImportingMap((prev) => ({ ...prev, [title]: "loading" }));
     try {
       const res = await fetch("/api/admin/import-animals", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ pageTitle: title, originIdsFromOverview: [] }),
+        body: JSON.stringify({ pageTitle: title }),
       });
 
       if (res.ok) {
@@ -80,21 +112,39 @@ export default function WikiDashboard() {
         setAnimals((prev) =>
           prev.map((a) => (a.title === title ? { ...a, status: "imported" } : a)),
         );
-
         if (summary) {
-          setSummary({
-            ...summary,
-            imported: summary.imported + 1,
-            missing: summary.missing - 1,
-          });
+          setSummary({ ...summary, imported: summary.imported + 1, missing: summary.missing - 1 });
         }
       } else {
-        setImportingMap((prev) => ({ ...prev, [title]: "idle" }));
+        setImportingMap((prev) => ({ ...prev, [title]: "error" }));
         alert(`Fehler beim Import von ${title}`);
       }
     } catch (err) {
       console.error(err);
-      setImportingMap((prev) => ({ ...prev, [title]: "idle" }));
+      setImportingMap((prev) => ({ ...prev, [title]: "error" }));
+    }
+  };
+
+  const handleSingleUpdate = async (title: string) => {
+    setUpdatingMap((prev) => ({ ...prev, [title]: "loading" }));
+    try {
+      const res = await fetch("/api/admin/import-animals", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ pageTitle: title }),
+      });
+
+      if (res.ok) {
+        setUpdatingMap((prev) => ({ ...prev, [title]: "success" }));
+        addSyncedTitle(title);
+        setSyncedTitles((prev) => new Set([...prev, title]));
+      } else {
+        setUpdatingMap((prev) => ({ ...prev, [title]: "error" }));
+        alert(`Fehler beim Aktualisieren von ${title}`);
+      }
+    } catch (err) {
+      console.error(err);
+      setUpdatingMap((prev) => ({ ...prev, [title]: "error" }));
     }
   };
 
@@ -114,7 +164,6 @@ export default function WikiDashboard() {
   return (
     <PageWrapper>
       <PageHeader text={"Zoo 2 Fandom Manager"} />
-      <Styles.RefreshButton onClick={loadStatus}>Neu laden</Styles.RefreshButton>
 
       {summary && (
         <Styles.StatsGrid>
@@ -141,7 +190,7 @@ export default function WikiDashboard() {
           Fehlend ({summary?.missing || 0})
         </Styles.FilterButton>
         <Styles.FilterButton $active={filter === "imported"} onClick={() => setFilter("imported")}>
-          Importiert ({summary?.imported || 0})
+          In DB ({summary?.imported || 0})
         </Styles.FilterButton>
       </Styles.FilterBar>
 
@@ -155,27 +204,48 @@ export default function WikiDashboard() {
         </thead>
         <tbody>
           {filteredAnimals.map((animal) => {
-            const currentImportStatus = importingMap[animal.title] || "idle";
+            const importState = importingMap[animal.title] || "idle";
+            const updateState = updatingMap[animal.title] || "idle";
+            const isSynced = syncedTitles.has(animal.title);
+
             return (
               <tr key={animal.title}>
                 <Styles.Td style={{ fontWeight: 600 }}>{animal.title}</Styles.Td>
                 <Styles.Td>
-                  <Styles.StatusBadge $status={animal.status}>
-                    {animal.status === "imported" ? "Synchronisiert" : "Fehlt in DB"}
-                  </Styles.StatusBadge>
+                  {animal.status === "missing" ? (
+                    <Styles.StatusBadge $status="missing">Fehlt in DB</Styles.StatusBadge>
+                  ) : isSynced || updateState === "success" ? (
+                    <Styles.StatusBadge2 $status="updated">Aktualisiert</Styles.StatusBadge2>
+                  ) : (
+                    <Styles.StatusBadge $status="imported">Synchronisiert</Styles.StatusBadge>
+                  )}
                 </Styles.Td>
                 <Styles.Td style={{ textAlign: "right" }}>
                   {animal.status === "missing" ? (
                     <Styles.ActionButton
                       onClick={() => handleSingleImport(animal.title)}
-                      disabled={currentImportStatus === "loading"}
+                      disabled={importState === "loading"}
                     >
-                      {currentImportStatus === "loading" ? "Importiert..." : "Importieren"}
+                      {importState === "loading" ? "Importiert..." : "Importieren"}
                     </Styles.ActionButton>
+                  ) : isSynced && updateState === "idle" ? (
+                    <Styles.UpdateButton
+                      onClick={() => handleSingleUpdate(animal.title)}
+                      style={{ background: "#6b7280" }}
+                    >
+                      Erneut synchronisieren
+                    </Styles.UpdateButton>
                   ) : (
-                    <Styles.ActionButton $success disabled>
-                      ✓ Bereit
-                    </Styles.ActionButton>
+                    <Styles.UpdateButton
+                      onClick={() => handleSingleUpdate(animal.title)}
+                      disabled={updateState === "loading" || updateState === "success"}
+                    >
+                      {updateState === "loading"
+                        ? "Aktualisiert..."
+                        : updateState === "success"
+                          ? "✓ Fertig"
+                          : "Aktualisieren"}
+                    </Styles.UpdateButton>
                   )}
                 </Styles.Td>
               </tr>

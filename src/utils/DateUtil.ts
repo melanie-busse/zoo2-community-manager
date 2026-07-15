@@ -20,9 +20,10 @@ export const formatLocaleDate = (date: Date | string | null, locale: string = "d
 export const toISODate = (dateInput: string | Date) => {
   try {
     const d = new Date(dateInput);
+    if (isNaN(d.getTime())) return "";
     return d.toISOString().split("T")[0];
-  } catch (e: any) {
-    return e.message;
+  } catch {
+    return "";
   }
 };
 

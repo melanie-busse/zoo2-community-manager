@@ -126,3 +126,32 @@ export const ActionButton = styled.button<{ $success?: boolean }>`
     cursor: not-allowed;
   }
 `;
+
+export const UpdateButton = styled.button`
+  background: #e37400;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 13px;
+  &:hover {
+    background: #b85c00;
+  }
+  &:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+  }
+`;
+
+export const StatusBadge2 = styled.span<{ $status: "imported" | "missing" | "updated" }>`
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  background: ${({ $status }) =>
+    $status === "imported" ? "#e6f4ea" : $status === "updated" ? "#fef3c7" : "#fce8e6"};
+  color: ${({ $status }) =>
+    $status === "imported" ? "#137333" : $status === "updated" ? "#92400e" : "#c5221f"};
+`;
