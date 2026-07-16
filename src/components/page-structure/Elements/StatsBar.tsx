@@ -29,16 +29,16 @@ export const StyledStatsBar = styled.div`
   width: 100%;
   max-width: 1100px;
   margin: 0 auto 50px auto;
-  background: rgba(255, 255, 255, 0.5);
+  background: ${({ theme }) => theme.colors.ui.glassWhiteRicher};
 
-  backdrop-filter: ${({ theme }) => theme.glass.blur || "blur(10px)"};
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: ${({ theme }) => theme.glass.blur};
+  -webkit-backdrop-filter: ${({ theme }) => theme.glass.blur};
 
-  border: 1px solid rgba(120, 255, 120, 0.15);
+  border: 1px solid ${({ theme }) => theme.colors.primary[700]};
 
   padding: 20px 40px;
   border-radius: 50px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: ${({ theme }) => theme.shadows.boxShadow};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     display: grid;

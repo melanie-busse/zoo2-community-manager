@@ -7,6 +7,7 @@ import { Animal } from "@/types/animal";
 
 vi.mock("@/components/page-structure/Table/Table.styles", () => ({
   TableCellRight: ({ children }: { children: React.ReactNode }) => <td>{children}</td>,
+  TableHeaderRight: ({ children }: { children: React.ReactNode }) => <th>{children}</th>,
   TableThumbnail: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
   TableEmptyState: ({ children, colSpan }: { children: React.ReactNode; colSpan?: number }) => (
     <td colSpan={colSpan}>{children}</td>

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 
 import * as Styles from "./WikiDashboard.styles";
 import PageWrapper from "@/components/page-structure/page/PageWrapper";
@@ -8,6 +9,8 @@ import PageHeader from "@/components/page-structure/page/PageHeader";
 import Table from "@/components/page-structure/Table/Table";
 import StatsBar from "@/components/page-structure/Elements/StatsBar";
 import ActionBadge from "@/components/ui/badges/ActionBadge";
+import { TableCellRight, TableHeaderRight } from "@/components/page-structure/Table/Table.styles";
+import WikiDashboardFilterBar from "@/components/elements/Filter/WikiDashboardFilterBar";
 
 const LS_KEY = "wiki_synced_animals";
 
@@ -28,12 +31,6 @@ function addSyncedTitle(title: string) {
   } catch {}
 }
 
-function clearSyncedTitles() {
-  try {
-    localStorage.removeItem(LS_KEY);
-  } catch {}
-}
-
 interface AnimalStatus {
   title: string;
   status: "imported" | "missing";
@@ -48,6 +45,7 @@ interface Summary {
 type ActionState = "idle" | "loading" | "success" | "error";
 
 export default function WikiDashboard() {
+  const t = useTranslations("admin");
   const [loading, setLoading] = useState(true);
   const [summary, setSummary] = useState<Summary | null>(null);
   const [animals, setAnimals] = useState<AnimalStatus[]>([]);
@@ -55,26 +53,6 @@ export default function WikiDashboard() {
   const [importingMap, setImportingMap] = useState<Record<string, ActionState>>({});
   const [updatingMap, setUpdatingMap] = useState<Record<string, ActionState>>({});
   const [syncedTitles, setSyncedTitles] = useState<Set<string>>(() => getSyncedTitles());
-
-  const loadStatus = async () => {
-    setLoading(true);
-    clearSyncedTitles();
-    setSyncedTitles(new Set());
-    try {
-      const res = await fetch("/api/admin/import-animals/status");
-      const data = await res.json();
-      if (res.ok) {
-        setSummary(data.summary);
-        setAnimals(data.animals);
-        setImportingMap({});
-        setUpdatingMap({});
-      }
-    } catch (err) {
-      console.error("Fehler beim Laden des Status:", err);
-    } finally {
-      setLoading(false);
-    }
-  };
 
   useEffect(() => {
     let isMounted = true;
@@ -88,7 +66,7 @@ export default function WikiDashboard() {
           setAnimals(data.animals);
         }
       } catch (err) {
-        console.error("Fehler beim initialen Laden:", err);
+        console.error("Error during initial loading:", err);
       } finally {
         if (isMounted) setLoading(false);
       }
@@ -119,7 +97,7 @@ export default function WikiDashboard() {
         }
       } else {
         setImportingMap((prev) => ({ ...prev, [title]: "error" }));
-        alert(`Fehler beim Import von ${title}`);
+        alert(t("error_import", { title }));
       }
     } catch (err) {
       console.error(err);
@@ -142,7 +120,7 @@ export default function WikiDashboard() {
         setSyncedTitles((prev) => new Set([...prev, title]));
       } else {
         setUpdatingMap((prev) => ({ ...prev, [title]: "error" }));
-        alert(`Fehler beim Aktualisieren von ${title}`);
+        alert(t("error_update", { title }));
       }
     } catch (err) {
       console.error(err);
@@ -156,12 +134,10 @@ export default function WikiDashboard() {
     const isSynced = syncedTitles.has(a.title) || updatingMap[a.title] === "success";
 
     if (filter === "needs_update") {
-      // Nur importierte Tiere, die noch NICHT aktualisiert wurden
       return a.status === "imported" && !isSynced;
     }
 
     if (filter === "imported") {
-      // "In DB" zeigt weiterhin stur alle importierten Tiere an (egal ob aktualisiert oder nicht)
       return a.status === "imported";
     }
 
@@ -171,58 +147,39 @@ export default function WikiDashboard() {
   const data = [
     {
       number: summary?.total ?? 0,
-      label: "Im Wiki Gesamt",
+      label: t("stats_total"),
     },
     {
       number: summary?.imported ?? 0,
-      label: "In deiner DB",
+      label: t("stats_in_db"),
     },
     {
       number: summary?.missing ?? 0,
-      label: "Fehlende Tiere",
+      label: t("stats_missing"),
     },
   ];
 
   if (loading)
     return (
       <PageWrapper>
-        <p>Lade Daten und vergleiche mit MariaDB...</p>
+        <p>{t("loading")}</p>
       </PageWrapper>
     );
 
   return (
     <PageWrapper>
-      <PageHeader text={"Zoo 2 Fandom Manager"} />
+      <PageHeader text={t("title")} />
 
       {summary && <StatsBar data={data} />}
 
-      <Styles.FilterBar>
-        <Styles.FilterButton $active={filter === "all"} onClick={() => setFilter("all")}>
-          Alle
-        </Styles.FilterButton>
-
-        <Styles.FilterButton $active={filter === "missing"} onClick={() => setFilter("missing")}>
-          Fehlend
-        </Styles.FilterButton>
-
-        <Styles.FilterButton $active={filter === "imported"} onClick={() => setFilter("imported")}>
-          In DB
-        </Styles.FilterButton>
-
-        <Styles.FilterButton
-          $active={filter === "needs_update"}
-          onClick={() => setFilter("needs_update")}
-        >
-          Update ausstehend
-        </Styles.FilterButton>
-      </Styles.FilterBar>
+      <WikiDashboardFilterBar filter={filter} onFilterChange={setFilter} />
 
       <Table>
         <thead>
           <tr>
-            <Styles.Th>Tiername (Wiki)</Styles.Th>
-            <Styles.Th>Status</Styles.Th>
-            <Styles.Th style={{ textAlign: "right" }}>Aktion</Styles.Th>
+            <th>{t("table_animal_name")}</th>
+            <th>{t("table_status")}</th>
+            <TableHeaderRight>{t("table_action")}</TableHeaderRight>
           </tr>
         </thead>
         <tbody>
@@ -233,39 +190,41 @@ export default function WikiDashboard() {
 
             return (
               <tr key={animal.title}>
-                <Styles.Td style={{ fontWeight: 600 }}>{animal.title}</Styles.Td>
-                <Styles.Td>
+                <td style={{ fontWeight: 600 }}>{animal.title}</td>
+                <td>
                   {animal.status === "missing" ? (
-                    <Styles.StatusBadge $status="missing">Fehlt in DB</Styles.StatusBadge>
+                    <Styles.StatusBadge $status="missing">{t("status_missing")}</Styles.StatusBadge>
                   ) : isSynced || updateState === "success" ? (
-                    <Styles.StatusBadge2 $status="updated">Aktualisiert</Styles.StatusBadge2>
+                    <Styles.StatusBadge2 $status="updated">
+                      {t("status_updated")}
+                    </Styles.StatusBadge2>
                   ) : (
-                    <Styles.StatusBadge $status="imported">Synchronisiert</Styles.StatusBadge>
+                    <Styles.StatusBadge $status="imported">{t("status_synced")}</Styles.StatusBadge>
                   )}
-                </Styles.Td>
-                <Styles.Td style={{ textAlign: "right" }}>
+                </td>
+                <TableCellRight>
                   {animal.status === "missing" ? (
                     <ActionBadge
                       type="import"
                       onClickAction={() => handleSingleImport(animal.title)}
-                      tooltip="Importieren"
+                      tooltip={t("tooltip_import")}
                       disabled={importState === "loading"}
                     />
                   ) : isSynced && updateState === "idle" ? (
                     <ActionBadge
                       type="sync"
                       onClickAction={() => handleSingleUpdate(animal.title)}
-                      tooltip="Erneut synchronisieren"
+                      tooltip={t("tooltip_resync")}
                     />
                   ) : (
                     <ActionBadge
                       type="update"
                       onClickAction={() => handleSingleUpdate(animal.title)}
-                      tooltip="Aktualisieren"
+                      tooltip={t("tooltip_update")}
                       disabled={updateState === "loading" || updateState === "success"}
                     />
                   )}
-                </Styles.Td>
+                </TableCellRight>
               </tr>
             );
           })}

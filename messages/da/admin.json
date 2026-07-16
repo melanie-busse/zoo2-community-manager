@@ -1,0 +1,22 @@
+{
+  "title": "Zoo 2 Fandom Manager",
+  "loading": "Indlæser data og sammenligner med MariaDB...",
+  "stats_total": "I alt i Wiki",
+  "stats_in_db": "I din DB",
+  "stats_missing": "Manglende dyr",
+  "filter_all": "Alle",
+  "filter_missing": "Manglende",
+  "filter_in_db": "I DB",
+  "filter_needs_update": "Opdatering afventer",
+  "table_animal_name": "Dyrenavn (Wiki)",
+  "table_status": "Status",
+  "table_action": "Handling",
+  "status_missing": "Mangler i DB",
+  "status_updated": "Opdateret",
+  "status_synced": "Synkroniseret",
+  "tooltip_import": "Importer",
+  "tooltip_resync": "Synkroniser igen",
+  "tooltip_update": "Opdater",
+  "error_import": "Fejl ved import af {title}",
+  "error_update": "Fejl ved opdatering af {title}"
+}

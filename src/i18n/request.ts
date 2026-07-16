@@ -2,6 +2,7 @@ import { getRequestConfig } from "next-intl/server";
 import { routing } from "./routing";
 
 const namespaces = [
+  "admin",
   "animal",
   "biome",
   "specialCoat",

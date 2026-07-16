@@ -1,0 +1,22 @@
+{
+  "title": "Zoo 2 Fandom Manager",
+  "loading": "Gegevens laden en vergelijken met MariaDB...",
+  "stats_total": "Totaal in Wiki",
+  "stats_in_db": "In jouw DB",
+  "stats_missing": "Ontbrekende dieren",
+  "filter_all": "Alle",
+  "filter_missing": "Ontbrekend",
+  "filter_in_db": "In DB",
+  "filter_needs_update": "Update in behandeling",
+  "table_animal_name": "Dierenaam (Wiki)",
+  "table_status": "Status",
+  "table_action": "Actie",
+  "status_missing": "Ontbreekt in DB",
+  "status_updated": "Bijgewerkt",
+  "status_synced": "Gesynchroniseerd",
+  "tooltip_import": "Importeren",
+  "tooltip_resync": "Opnieuw synchroniseren",
+  "tooltip_update": "Bijwerken",
+  "error_import": "Fout bij importeren van {title}",
+  "error_update": "Fout bij bijwerken van {title}"
+}

@@ -20,11 +20,15 @@ export async function fetchPagesFromCategory(categoryName: string): Promise<stri
 
   try {
     const response = await fetch(`${FANDOM_API_URL}?${params.toString()}`);
-    if (!response.ok) throw new Error(`Fandom API antwortete mit Status: ${response.status}`);
+
+    if (!response.ok)
+      throw new Error(`The Fandom API responded with the status: ${response.status}`);
+
     const data = await response.json();
+
     return data.query?.categorymembers?.map((member: WikiCategoryMember) => member.title) || [];
   } catch (error) {
-    console.error(`Fehler beim Laden der Kategorie "${categoryName}":`, error);
+    console.error(`Error loading the category "${categoryName}":`, error);
     return [];
   }
 }
@@ -40,11 +44,14 @@ export async function fetchAnimalDetails(pageTitle: string): Promise<any> {
 
   try {
     const response = await fetch(`${FANDOM_API_URL}?${params.toString()}`);
-    if (!response.ok) throw new Error(`Fandom API Details-Fehler: ${response.status}`);
+
+    if (!response.ok) throw new Error(`Fandom API Details-Error: ${response.status}`);
+
     const data = await response.json();
+
     return data.parse || null;
   } catch (error) {
-    console.error(`Fehler beim Laden der Details für "${pageTitle}":`, error);
+    console.error(`Error loading details for "${pageTitle}":`, error);
     return null;
   }
 }
@@ -66,8 +73,7 @@ function extractDescription(wikitext: string): string {
   if (match && match[1]) {
     return match[1]
       .replace(/<[^>]*>/g, "") // HTML-Tags entfernen
-      .replace(/\[\[([^\]|]*)\|?([^\]]*)\]\]/g, "$2") // Wiki-Links bereinigen
-      .trim();
+      .replace(/\[\[([^\]|]*)\|?([^\]]*)\]\]/g, "$2");
   }
   return "";
 }

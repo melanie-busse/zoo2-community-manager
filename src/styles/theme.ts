@@ -49,17 +49,31 @@ export const theme = {
     ui: {
       white: "#ffffff",
       whiteSoft: "#f0f4eb", // whiteLight
+      whiteFrost: "#f8fafc",
       bodyBg: "#c4f3fb",
       textMain: "#2c3531",
       border: "#d1e8e2",
+      borderLight: "rgba(224, 231, 213, 0.5)",
+      borderMuted: "#cbd5e1",
       icon: "#68B300",
       pageBg: "#d6efc0", //lime
 
       // Transparente Layer (Glas-Effekte)
       glassWhite: "rgba(255, 255, 255, 0.3)", // grey
       glassWhiteRich: "rgba(255, 255, 255, 0.4)", // greyLight
+      glassWhiteRicher: "rgba(255, 255, 255, 0.5)",
+      glassWhiteStrong: "rgba(255, 255, 255, 0.8)",
       overlayDark: "rgba(0, 0, 0, 0.2)", // black
       overlayLight: "rgba(0, 0, 0, 0.05)", // dropdownLink
+    },
+    // Semantische Statusfarben
+    status: {
+      successBg: "#e6f4ea",
+      successText: "#137333",
+      errorBg: "#fce8e6",
+      errorText: "#c5221f",
+      warningBg: "#fef3c7",
+      warningText: "#92400e",
     },
     header: {
       bg: "#ffaf4a",
@@ -74,6 +88,7 @@ export const theme = {
     soft: "0 8px 32px rgba(0, 0, 0, 0.2)",
     headerButton: "0 2px 8px rgba(255, 140, 0, 0.3)",
     headerButtonHover: "0 4px 12px rgba(255, 140, 0, 0.5)",
+    boxShadow: "0 4px 15px rgba(0, 0, 0, 0.05)",
   },
   breakpoints: {
     mobile: "768px",

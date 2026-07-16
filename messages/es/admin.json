@@ -1,0 +1,22 @@
+{
+  "title": "Zoo 2 Fandom Manager",
+  "loading": "Cargando datos y comparando con MariaDB...",
+  "stats_total": "Total en Wiki",
+  "stats_in_db": "En tu BD",
+  "stats_missing": "Animales faltantes",
+  "filter_all": "Todos",
+  "filter_missing": "Faltantes",
+  "filter_in_db": "En BD",
+  "filter_needs_update": "Actualización pendiente",
+  "table_animal_name": "Nombre del animal (Wiki)",
+  "table_status": "Estado",
+  "table_action": "Acción",
+  "status_missing": "Falta en BD",
+  "status_updated": "Actualizado",
+  "status_synced": "Sincronizado",
+  "tooltip_import": "Importar",
+  "tooltip_resync": "Sincronizar de nuevo",
+  "tooltip_update": "Actualizar",
+  "error_import": "Error al importar {title}",
+  "error_update": "Error al actualizar {title}"
+}

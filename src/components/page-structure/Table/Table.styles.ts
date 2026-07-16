@@ -69,6 +69,10 @@ export const TableCellRight = styled.td`
   padding-right: 20px;
 `;
 
+export const TableHeaderRight = styled.th`
+  text-align: right !important;
+`;
+
 export const TableThumbnail = styled.div`
   display: flex;
   align-items: center;
