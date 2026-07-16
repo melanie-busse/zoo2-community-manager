@@ -26,7 +26,11 @@ export async function fetchPagesFromCategory(categoryName: string): Promise<stri
 
     const data = await response.json();
 
-    return data.query?.categorymembers?.map((member: WikiCategoryMember) => member.title) || [];
+    return (
+      data.query?.categorymembers
+        ?.filter((member: WikiCategoryMember) => member.ns === 0 && member.title !== "Animals")
+        .map((member: WikiCategoryMember) => member.title) || []
+    );
   } catch (error) {
     console.error(`Error loading the category "${categoryName}":`, error);
     return [];

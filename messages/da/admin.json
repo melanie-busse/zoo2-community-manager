@@ -18,5 +18,9 @@
   "tooltip_resync": "Synkroniser igen",
   "tooltip_update": "Opdater",
   "error_import": "Fejl ved import af {title}",
-  "error_update": "Fejl ved opdatering af {title}"
+  "error_update": "Fejl ved opdatering af {title}",
+  "bulk_import_all": "Importer alle",
+  "bulk_update_all": "Opdater alle",
+  "bulk_progress": "{done} / {total}",
+  "no_missing_animals": "Alle dyr er allerede i databasen."
 }

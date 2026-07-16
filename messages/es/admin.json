@@ -18,5 +18,9 @@
   "tooltip_resync": "Sincronizar de nuevo",
   "tooltip_update": "Actualizar",
   "error_import": "Error al importar {title}",
-  "error_update": "Error al actualizar {title}"
+  "error_update": "Error al actualizar {title}",
+  "bulk_import_all": "Importar todos",
+  "bulk_update_all": "Actualizar todos",
+  "bulk_progress": "{done} / {total}",
+  "no_missing_animals": "Todos los animales ya están en la base de datos."
 }

@@ -34,6 +34,42 @@ describe("FandomApi", () => {
       expect(mockFetch.mock.calls[0][0]).toContain("cmtitle=Category%3AAnimals");
     });
 
+    test("filtert Unterkategorien (ns !== 0) heraus", async () => {
+      mockFetch.mockResolvedValue({
+        ok: true,
+        json: async () => ({
+          query: {
+            categorymembers: [
+              { pageid: 1, ns: 0, title: "Fox" },
+              { pageid: 2, ns: 14, title: "Category:Afrotheria" },
+              { pageid: 3, ns: 14, title: "Category:Ape" },
+              { pageid: 4, ns: 0, title: "Bear" },
+            ],
+          },
+        }),
+      });
+
+      const result = await fetchPagesFromCategory("Animal");
+      expect(result).toEqual(["Fox", "Bear"]);
+    });
+
+    test("filtert die Übersichtsseite 'Animals' heraus", async () => {
+      mockFetch.mockResolvedValue({
+        ok: true,
+        json: async () => ({
+          query: {
+            categorymembers: [
+              { pageid: 1, ns: 0, title: "Animals" },
+              { pageid: 2, ns: 0, title: "Fox" },
+            ],
+          },
+        }),
+      });
+
+      const result = await fetchPagesFromCategory("Animal");
+      expect(result).toEqual(["Fox"]);
+    });
+
     test("gibt leeres Array zurück, wenn keine Treffer vorhanden sind", async () => {
       mockFetch.mockResolvedValue({
         ok: true,
