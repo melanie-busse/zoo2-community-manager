@@ -20,4 +20,10 @@ export const Button = styled.button`
   &:active {
     transform: scale(0.95);
   }
+
+  &:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
 `;

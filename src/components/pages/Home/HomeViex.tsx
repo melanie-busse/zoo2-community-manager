@@ -1,6 +1,7 @@
 "use client";
 
 import * as Styles from "./HomeView.styles";
+import StatsBar from "@/components/page-structure/Elements/StatsBar";
 
 interface HomeViewProps {
   stats: {
@@ -12,6 +13,24 @@ interface HomeViewProps {
 }
 
 export default function HomeView({ stats, t }: HomeViewProps) {
+  const data = [
+    {
+      number: stats.tierCount,
+      label: t.stats_animals,
+    },
+    {
+      number: stats.specialCoatCount,
+      label: t.stats_specialCoat,
+    },
+    {
+      number: stats.habitatCount,
+      label: t.stats_biomes,
+    },
+    {
+      number: 6,
+      label: t.stats_regions,
+    },
+  ];
   return (
     <Styles.FullPageContainer>
       <Styles.HeroSection>
@@ -20,24 +39,7 @@ export default function HomeView({ stats, t }: HomeViewProps) {
             Zoo 2: Animal Park <span>Manager</span>
           </h1>
 
-          <Styles.StatsBar>
-            <Styles.StatItem>
-              <div className="number">{stats.tierCount}</div>
-              <div className="label">{t.stats_animals}</div>
-            </Styles.StatItem>
-            <Styles.StatItem>
-              <div className="number">{stats.specialCoatCount}</div>
-              <div className="label">{t.stats_specialCoat}</div>
-            </Styles.StatItem>
-            <Styles.StatItem>
-              <div className="number">{stats.habitatCount}</div>
-              <div className="label">{t.stats_biomes}</div>
-            </Styles.StatItem>
-            <Styles.StatItem>
-              <div className="number">6</div>
-              <div className="label">{t.stats_regions}</div>
-            </Styles.StatItem>
-          </Styles.StatsBar>
+          <StatsBar data={data} />
 
           <Styles.ActionGrid>
             <Styles.MenuCard href="/AnimalOverview" $color="#4ca64c">

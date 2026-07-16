@@ -5,7 +5,7 @@ import NextImage from "next/image";
 import * as Styles from "./Badge.styles";
 import Tooltip from "@/components/ui/tooltip/Tooltip";
 
-export type ActionBadgeType = "edit" | "delete" | "add" | "view";
+export type ActionBadgeType = "edit" | "delete" | "add" | "view" | "import" | "update" | "sync";
 
 interface ActionBadgeProps {
   type: ActionBadgeType;
@@ -14,6 +14,7 @@ interface ActionBadgeProps {
   altText?: string;
   onClickAction: () => void;
   size?: number;
+  disabled?: boolean;
 }
 
 const ACTION_CONFIG = {
@@ -21,6 +22,9 @@ const ACTION_CONFIG = {
   delete: { src: "/images/icons/trash.webp", defaultAlt: "Delete" },
   add: { src: "/images/icons/add.webp", defaultAlt: "Add" },
   view: { src: "/images/icons/view.webp", defaultAlt: "View" },
+  import: { src: "/images/icons/database_import.png", defaultAlt: "Import" },
+  update: { src: "/images/icons/database_update.png", defaultAlt: "Update" },
+  sync: { src: "/images/icons/sync.png", defaultAlt: "Sync" },
 };
 
 export default function ActionBadge({

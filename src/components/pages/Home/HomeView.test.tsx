@@ -4,6 +4,19 @@ import { render, screen } from "@testing-library/react";
 
 import HomeView from "@/components/pages/Home/HomeViex";
 
+vi.mock("@/components/page-structure/Elements/StatsBar", () => ({
+  default: ({ data }: { data: { number: number; label: string }[] }) => (
+    <div>
+      {data.map((item) => (
+        <div key={item.label}>
+          <span>{item.number}</span>
+          <span>{item.label}</span>
+        </div>
+      ))}
+    </div>
+  ),
+}));
+
 vi.mock("./HomeView.styles", () => ({
   FullPageContainer: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
   HeroSection: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,

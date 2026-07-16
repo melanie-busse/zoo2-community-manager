@@ -1,76 +1,56 @@
 import styled from "styled-components";
 
-export const Header = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 24px;
-`;
-
-export const RefreshButton = styled.button`
-  background: #333;
-  color: white;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 600;
-  &:hover {
-    background: #555;
-  }
-  &:disabled {
-    background: #ccc;
-    cursor: not-allowed;
-  }
-`;
-
-export const StatsGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin-bottom: 32px;
-`;
-
-export const StatCard = styled.div<{ $color: string }>`
-  background: white;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  padding: 20px;
-  border-left: 5px solid ${({ $color }) => $color};
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
-`;
-
-export const StatLabel = styled.div`
-  font-size: 14px;
-  color: #666;
-  text-transform: uppercase;
-  font-weight: 600;
-`;
-
-export const StatValue = styled.div`
-  font-size: 28px;
-  font-weight: bold;
-  color: #333;
-  margin-top: 4px;
-`;
-
 export const FilterBar = styled.div`
   display: flex;
-  gap: 12px;
-  margin-bottom: 16px;
+  gap: 15px;
+  align-items: center;
+  justify-content: center; /* Zentriert die Filter-Optionen */
+
+  background-color: #f3f9f4; /* Zartes, helles Natur-Grün für den Hintergrund */
+  border: 2px solid #065f46; /* Dunkelgrüner, klarer Rahmen */
+  border-radius: 20px; /* Schön weich abgerundete Ecken */
+  padding: 12px 24px;
+
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto 30px auto;
+  box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px;
+    border-radius: 16px;
+  }
 `;
 
-export const FilterButton = styled.button<{ $active: boolean }>`
-  background: ${({ $active }) => ($active ? "#0070f3" : "white")};
-  color: ${({ $active }) => ($active ? "white" : "#333")};
-  border: 1px solid ${({ $active }) => ($active ? "#0070f3" : "#ccc")};
-  padding: 8px 16px;
-  border-radius: 20px;
+export const FilterButton = styled.button<{ $active?: boolean }>`
+  background-color: ${(props) => (props.$active ? "#0e7a4a" : "#ffffff")};
+  color: ${(props) => (props.$active ? "#ffffff" : "#2d3748")}; /* Dunkles Grau/Grün für gute Lesbarkeit */
+
+  border: 1px solid ${(props) => (props.$active ? "#0e7a4a" : "#e2e8f0")};
+  border-radius: 12px;
+
+  padding: 10px 24px;
+  font-size: 0.95rem;
+  font-weight: 600;
   cursor: pointer;
-  font-weight: 500;
-  transition: all 0.2s;
+  transition: all 0.2s ease-in-out;
+  font-family: inherit;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 140px; /* Gibt den Buttons eine einheitliche Struktur */
+
   &:hover {
-    border-color: #0070f3;
+    background-color: ${(props) => (props.$active ? "#1a4332" : "#f8fafc")};
+    border-color: ${(props) => (props.$active ? "#1a4332" : "#cbd5e1")};
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
   }
 `;
 
@@ -110,7 +90,7 @@ export const StatusBadge = styled.span<{ $status: "imported" | "missing" }>`
 `;
 
 export const ActionButton = styled.button<{ $success?: boolean }>`
-  background: ${({ $success }) => ($success ? "#137333" : "#0070f3")};
+  //background: ${({ $success }) => ($success ? "#137333" : "#0070f3")};
   color: white;
   border: none;
   padding: 6px 12px;
@@ -119,7 +99,7 @@ export const ActionButton = styled.button<{ $success?: boolean }>`
   cursor: pointer;
   font-size: 13px;
   &:hover {
-    background: ${({ $success }) => ($success ? "#0f5d29" : "#0051a2")};
+    //background: ${({ $success }) => ($success ? "#0f5d29" : "#0051a2")};
   }
   &:disabled {
     background: #ccc;

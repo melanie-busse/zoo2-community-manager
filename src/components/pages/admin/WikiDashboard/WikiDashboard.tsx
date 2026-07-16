@@ -6,6 +6,8 @@ import * as Styles from "./WikiDashboard.styles";
 import PageWrapper from "@/components/page-structure/page/PageWrapper";
 import PageHeader from "@/components/page-structure/page/PageHeader";
 import Table from "@/components/page-structure/Table/Table";
+import StatsBar from "@/components/page-structure/Elements/StatsBar";
+import ActionBadge from "@/components/ui/badges/ActionBadge";
 
 const LS_KEY = "wiki_synced_animals";
 
@@ -49,7 +51,7 @@ export default function WikiDashboard() {
   const [loading, setLoading] = useState(true);
   const [summary, setSummary] = useState<Summary | null>(null);
   const [animals, setAnimals] = useState<AnimalStatus[]>([]);
-  const [filter, setFilter] = useState<"all" | "missing" | "imported">("all");
+  const [filter, setFilter] = useState<"all" | "missing" | "imported" | "needs_update">("all");
   const [importingMap, setImportingMap] = useState<Record<string, ActionState>>({});
   const [updatingMap, setUpdatingMap] = useState<Record<string, ActionState>>({});
   const [syncedTitles, setSyncedTitles] = useState<Set<string>>(() => getSyncedTitles());
@@ -150,9 +152,36 @@ export default function WikiDashboard() {
 
   const filteredAnimals = animals.filter((a) => {
     if (filter === "missing") return a.status === "missing";
-    if (filter === "imported") return a.status === "imported";
-    return true;
+
+    const isSynced = syncedTitles.has(a.title) || updatingMap[a.title] === "success";
+
+    if (filter === "needs_update") {
+      // Nur importierte Tiere, die noch NICHT aktualisiert wurden
+      return a.status === "imported" && !isSynced;
+    }
+
+    if (filter === "imported") {
+      // "In DB" zeigt weiterhin stur alle importierten Tiere an (egal ob aktualisiert oder nicht)
+      return a.status === "imported";
+    }
+
+    return true; // "all"
   });
+
+  const data = [
+    {
+      number: summary?.total ?? 0,
+      label: "Im Wiki Gesamt",
+    },
+    {
+      number: summary?.imported ?? 0,
+      label: "In deiner DB",
+    },
+    {
+      number: summary?.missing ?? 0,
+      label: "Fehlende Tiere",
+    },
+  ];
 
   if (loading)
     return (
@@ -165,32 +194,26 @@ export default function WikiDashboard() {
     <PageWrapper>
       <PageHeader text={"Zoo 2 Fandom Manager"} />
 
-      {summary && (
-        <Styles.StatsGrid>
-          <Styles.StatCard $color="#0070f3">
-            <Styles.StatLabel>Im Wiki Gesamt</Styles.StatLabel>
-            <Styles.StatValue>{summary.total}</Styles.StatValue>
-          </Styles.StatCard>
-          <Styles.StatCard $color="#137333">
-            <Styles.StatLabel>In deiner DB</Styles.StatLabel>
-            <Styles.StatValue>{summary.imported}</Styles.StatValue>
-          </Styles.StatCard>
-          <Styles.StatCard $color="#c5221f">
-            <Styles.StatLabel>Fehlende Tiere</Styles.StatLabel>
-            <Styles.StatValue>{summary.missing}</Styles.StatValue>
-          </Styles.StatCard>
-        </Styles.StatsGrid>
-      )}
+      {summary && <StatsBar data={data} />}
 
       <Styles.FilterBar>
         <Styles.FilterButton $active={filter === "all"} onClick={() => setFilter("all")}>
-          Alle ({animals.length})
+          Alle
         </Styles.FilterButton>
+
         <Styles.FilterButton $active={filter === "missing"} onClick={() => setFilter("missing")}>
-          Fehlend ({summary?.missing || 0})
+          Fehlend
         </Styles.FilterButton>
+
         <Styles.FilterButton $active={filter === "imported"} onClick={() => setFilter("imported")}>
-          In DB ({summary?.imported || 0})
+          In DB
+        </Styles.FilterButton>
+
+        <Styles.FilterButton
+          $active={filter === "needs_update"}
+          onClick={() => setFilter("needs_update")}
+        >
+          Update ausstehend
         </Styles.FilterButton>
       </Styles.FilterBar>
 
@@ -222,30 +245,25 @@ export default function WikiDashboard() {
                 </Styles.Td>
                 <Styles.Td style={{ textAlign: "right" }}>
                   {animal.status === "missing" ? (
-                    <Styles.ActionButton
-                      onClick={() => handleSingleImport(animal.title)}
+                    <ActionBadge
+                      type="import"
+                      onClickAction={() => handleSingleImport(animal.title)}
+                      tooltip="Importieren"
                       disabled={importState === "loading"}
-                    >
-                      {importState === "loading" ? "Importiert..." : "Importieren"}
-                    </Styles.ActionButton>
+                    />
                   ) : isSynced && updateState === "idle" ? (
-                    <Styles.UpdateButton
-                      onClick={() => handleSingleUpdate(animal.title)}
-                      style={{ background: "#6b7280" }}
-                    >
-                      Erneut synchronisieren
-                    </Styles.UpdateButton>
+                    <ActionBadge
+                      type="sync"
+                      onClickAction={() => handleSingleUpdate(animal.title)}
+                      tooltip="Erneut synchronisieren"
+                    />
                   ) : (
-                    <Styles.UpdateButton
-                      onClick={() => handleSingleUpdate(animal.title)}
+                    <ActionBadge
+                      type="update"
+                      onClickAction={() => handleSingleUpdate(animal.title)}
+                      tooltip="Aktualisieren"
                       disabled={updateState === "loading" || updateState === "success"}
-                    >
-                      {updateState === "loading"
-                        ? "Aktualisiert..."
-                        : updateState === "success"
-                          ? "✓ Fertig"
-                          : "Aktualisieren"}
-                    </Styles.UpdateButton>
+                    />
                   )}
                 </Styles.Td>
               </tr>
