@@ -1,7 +1,7 @@
 import { describe, test, expect, vi, beforeEach } from "vitest";
 import { POST, PUT } from "./route";
 
-vi.mock("@/service/FandomApi", () => ({
+vi.mock("@/service/FandomService", () => ({
   fetchAnimalDetails: vi.fn(),
   parseAnimalData: vi.fn(),
   extractIconsFromOverview: vi.fn().mockReturnValue([]),
@@ -14,6 +14,14 @@ vi.mock("@/service/AnimalService", () => ({
 
 vi.mock("@/service/SpecialCoatsService", () => ({
   createSpecialCoat: vi.fn(),
+}));
+
+vi.mock("@/service/LanguageService", () => ({
+  getAllLanguages: vi.fn().mockResolvedValue([{ code: "en" }, { code: "de" }]),
+}));
+
+vi.mock("@/utils/translate", () => ({
+  translateText: vi.fn().mockResolvedValue(""),
 }));
 
 vi.mock("@/lib/prisma", () => ({
@@ -35,9 +43,14 @@ vi.mock("@/lib/prisma", () => ({
   },
 }));
 
-import { fetchAnimalDetails, parseAnimalData, extractIconsFromOverview } from "@/service/FandomApi";
+import {
+  fetchAnimalDetails,
+  parseAnimalData,
+  extractIconsFromOverview,
+} from "@/service/FandomService";
 import { createAnimal, updateAnimal } from "@/service/AnimalService";
 import { createSpecialCoat } from "@/service/SpecialCoatsService";
+import { translateText } from "@/utils/translate";
 import { prisma } from "@/lib/prisma";
 
 const mockParsedAnimal = {
@@ -46,7 +59,7 @@ const mockParsedAnimal = {
   wikiBiomeName: "Meadow",
   releaseDate: "2024-01-15",
   biomeId: undefined,
-  rawColorVariants: [],
+  specialCoats: [],
   animaltext: [{ languageCode: "en", animalName: "Red Fox", animalDescription: "" }],
 };
 
@@ -143,12 +156,12 @@ describe("POST /api/admin/import-animals", () => {
   test("importiert Farbvarianten und matcht Origins aus der DB", async () => {
     const parsedWithCoats = {
       ...mockParsedAnimal,
-      rawColorVariants: [
+      specialCoats: [
         {
-          name: "Arctic Fox",
-          imageName: "ArcticFox.png",
-          obtainedFrom: ["Magic Chest"],
+          image: "ArcticFox.png",
+          origin: ["Magic Chest"],
           releaseDate: "2024-03-01",
+          texts: [{ languageCode: "en", name: "Arctic Fox", color: "Arctic" }],
         },
       ],
     };
@@ -174,7 +187,7 @@ describe("POST /api/admin/import-animals", () => {
       expect.objectContaining({
         animalId: 99,
         originIds: [5],
-        texts: [expect.objectContaining({ name: "Arctic Fox", languageCode: "en" })],
+        texts: expect.arrayContaining([expect.objectContaining({ name: "Arctic Fox", languageCode: "en" })]),
       }),
     );
   });
@@ -242,8 +255,13 @@ describe("POST /api/admin/import-animals", () => {
   test("gibt 500 zurück, wenn createSpecialCoat nach erfolgreichem createAnimal fehlschlägt", async () => {
     const parsedWithCoats = {
       ...mockParsedAnimal,
-      rawColorVariants: [
-        { name: "Arctic Fox", imageName: "ArcticFox.png", obtainedFrom: ["Magic Chest"], releaseDate: "2024-03-01" },
+      specialCoats: [
+        {
+          image: "ArcticFox.png",
+          origin: ["Magic Chest"],
+          releaseDate: "2024-03-01",
+          texts: [{ languageCode: "en", name: "Arctic Fox", color: "Arctic" }],
+        },
       ],
     };
 
@@ -310,9 +328,17 @@ describe("PUT /api/admin/import-animals", () => {
 
   test("gibt 404 zurück, wenn Wiki-Daten nicht gefunden werden", async () => {
     vi.mocked(prisma.animalText.findFirst).mockResolvedValue({
-      id: 1, animalId: 42, languageCode: "en", animalName: "African Buffalo", animalDescription: "",
+      id: 1,
+      animalId: 42,
+      languageCode: "en",
+      animalName: "African Buffalo",
+      animalDescription: "",
     });
-    vi.mocked(prisma.animal.findUnique).mockResolvedValue({ id: 42, biomeId: 3, image: null } as any);
+    vi.mocked(prisma.animal.findUnique).mockResolvedValue({
+      id: 42,
+      biomeId: 3,
+      image: null,
+    } as any);
     vi.mocked(fetchAnimalDetails).mockResolvedValue(null);
 
     const response = await PUT(makeRequest({ pageTitle: "African Buffalo" }));
@@ -324,9 +350,17 @@ describe("PUT /api/admin/import-animals", () => {
 
   test("gibt 500 zurück, wenn parseAnimalData null zurückgibt", async () => {
     vi.mocked(prisma.animalText.findFirst).mockResolvedValue({
-      id: 1, animalId: 42, languageCode: "en", animalName: "African Buffalo", animalDescription: "",
+      id: 1,
+      animalId: 42,
+      languageCode: "en",
+      animalName: "African Buffalo",
+      animalDescription: "",
     });
-    vi.mocked(prisma.animal.findUnique).mockResolvedValue({ id: 42, biomeId: 3, image: null } as any);
+    vi.mocked(prisma.animal.findUnique).mockResolvedValue({
+      id: 42,
+      biomeId: 3,
+      image: null,
+    } as any);
     vi.mocked(fetchAnimalDetails).mockResolvedValue({ title: "African Buffalo", wikitext: {} });
     vi.mocked(parseAnimalData).mockReturnValue(null);
 
@@ -338,10 +372,21 @@ describe("PUT /api/admin/import-animals", () => {
 
   test("aktualisiert ein Tier erfolgreich", async () => {
     vi.mocked(prisma.animalText.findFirst).mockResolvedValue({
-      id: 1, animalId: 42, languageCode: "en", animalName: "African Buffalo", animalDescription: "",
+      id: 1,
+      animalId: 42,
+      languageCode: "en",
+      animalName: "African Buffalo",
+      animalDescription: "",
     });
-    vi.mocked(prisma.animal.findUnique).mockResolvedValue({ id: 42, biomeId: 3, image: null } as any);
-    vi.mocked(fetchAnimalDetails).mockResolvedValue({ title: "African Buffalo", wikitext: { "*": "" } });
+    vi.mocked(prisma.animal.findUnique).mockResolvedValue({
+      id: 42,
+      biomeId: 3,
+      image: null,
+    } as any);
+    vi.mocked(fetchAnimalDetails).mockResolvedValue({
+      title: "African Buffalo",
+      wikitext: { "*": "" },
+    });
     vi.mocked(parseAnimalData).mockReturnValue({ ...mockParsedAnimal });
     vi.mocked(prisma.animalText.findMany).mockResolvedValue([]);
     vi.mocked(prisma.biome.findFirst).mockResolvedValue({ id: 3, identifier: "Meadow" } as any);
@@ -358,10 +403,21 @@ describe("PUT /api/admin/import-animals", () => {
 
   test("behält das vorhandene Biome aus der DB bei (biomeId !== 1)", async () => {
     vi.mocked(prisma.animalText.findFirst).mockResolvedValue({
-      id: 1, animalId: 42, languageCode: "en", animalName: "African Buffalo", animalDescription: "",
+      id: 1,
+      animalId: 42,
+      languageCode: "en",
+      animalName: "African Buffalo",
+      animalDescription: "",
     });
-    vi.mocked(prisma.animal.findUnique).mockResolvedValue({ id: 42, biomeId: 7, image: null } as any);
-    vi.mocked(fetchAnimalDetails).mockResolvedValue({ title: "African Buffalo", wikitext: { "*": "" } });
+    vi.mocked(prisma.animal.findUnique).mockResolvedValue({
+      id: 42,
+      biomeId: 7,
+      image: null,
+    } as any);
+    vi.mocked(fetchAnimalDetails).mockResolvedValue({
+      title: "African Buffalo",
+      wikitext: { "*": "" },
+    });
     vi.mocked(parseAnimalData).mockReturnValue({ ...mockParsedAnimal });
     vi.mocked(prisma.animalText.findMany).mockResolvedValue([]);
     vi.mocked(updateAnimal).mockResolvedValue({ id: 42 } as any);
@@ -375,13 +431,25 @@ describe("PUT /api/admin/import-animals", () => {
 
   test("schützt vorhandenes Bild aus der DB", async () => {
     vi.mocked(prisma.animalText.findFirst).mockResolvedValue({
-      id: 1, animalId: 42, languageCode: "en", animalName: "African Buffalo", animalDescription: "",
+      id: 1,
+      animalId: 42,
+      languageCode: "en",
+      animalName: "African Buffalo",
+      animalDescription: "",
     });
     vi.mocked(prisma.animal.findUnique).mockResolvedValue({
-      id: 42, biomeId: 3, image: "existing_image.png",
+      id: 42,
+      biomeId: 3,
+      image: "existing_image.png",
     } as any);
-    vi.mocked(fetchAnimalDetails).mockResolvedValue({ title: "African Buffalo", wikitext: { "*": "" } });
-    vi.mocked(parseAnimalData).mockReturnValue({ ...mockParsedAnimal, imageName: "wiki_image.png" });
+    vi.mocked(fetchAnimalDetails).mockResolvedValue({
+      title: "African Buffalo",
+      wikitext: { "*": "" },
+    });
+    vi.mocked(parseAnimalData).mockReturnValue({
+      ...mockParsedAnimal,
+      imageName: "wiki_image.png",
+    });
     vi.mocked(prisma.animalText.findMany).mockResolvedValue([]);
     vi.mocked(prisma.biome.findFirst).mockResolvedValue({ id: 3, identifier: "Meadow" } as any);
     vi.mocked(updateAnimal).mockResolvedValue({ id: 42 } as any);
@@ -394,29 +462,53 @@ describe("PUT /api/admin/import-animals", () => {
     );
   });
 
-  test("überschreibt Wiki-Texte mit vorhandenen DB-Übersetzungen", async () => {
+  test("schützt vorhandene nicht-englische DB-Übersetzungen", async () => {
     vi.mocked(prisma.animalText.findFirst).mockResolvedValue({
-      id: 1, animalId: 42, languageCode: "en", animalName: "African Buffalo", animalDescription: "",
+      id: 1,
+      animalId: 42,
+      languageCode: "en",
+      animalName: "African Buffalo",
+      animalDescription: "Same description",
     });
-    vi.mocked(prisma.animal.findUnique).mockResolvedValue({ id: 42, biomeId: 3, image: null } as any);
-    vi.mocked(fetchAnimalDetails).mockResolvedValue({ title: "African Buffalo", wikitext: { "*": "" } });
+    vi.mocked(prisma.animal.findUnique).mockResolvedValue({
+      id: 42,
+      biomeId: 3,
+      image: null,
+    } as any);
+    vi.mocked(fetchAnimalDetails).mockResolvedValue({
+      title: "African Buffalo",
+      wikitext: { "*": "" },
+    });
     vi.mocked(parseAnimalData).mockReturnValue({
       ...mockParsedAnimal,
-      animaltext: [{ languageCode: "en", animalName: "African Buffalo", animalDescription: "Wiki text" }],
+      animaltext: [
+        { languageCode: "en", animalName: "African Buffalo", animalDescription: "Same description" },
+      ],
     });
     vi.mocked(prisma.animalText.findMany).mockResolvedValue([
-      { id: 10, animalId: 42, languageCode: "en", animalName: "Afrikanischer Büffel", animalDescription: "DB-Text" },
+      {
+        id: 10,
+        animalId: 42,
+        languageCode: "de",
+        animalName: "Afrikanischer Büffel",
+        animalDescription: "DB-Text auf Deutsch",
+      },
     ] as any);
     vi.mocked(prisma.biome.findFirst).mockResolvedValue({ id: 3, identifier: "Meadow" } as any);
     vi.mocked(updateAnimal).mockResolvedValue({ id: 42 } as any);
 
     await PUT(makeRequest({ pageTitle: "African Buffalo" }));
 
+    // "de" hat einen DB-Text und das englische Original hat sich nicht geändert → schützen
     expect(updateAnimal).toHaveBeenCalledWith(
       42,
       expect.objectContaining({
         animaltext: expect.arrayContaining([
-          expect.objectContaining({ languageCode: "en", animalName: "Afrikanischer Büffel", animalDescription: "DB-Text" }),
+          expect.objectContaining({
+            languageCode: "de",
+            animalName: "Afrikanischer Büffel",
+            animalDescription: "DB-Text auf Deutsch",
+          }),
         ]),
       }),
     );
@@ -424,10 +516,21 @@ describe("PUT /api/admin/import-animals", () => {
 
   test("gibt 500 zurück, wenn updateAnimal einen Fehler wirft", async () => {
     vi.mocked(prisma.animalText.findFirst).mockResolvedValue({
-      id: 1, animalId: 42, languageCode: "en", animalName: "African Buffalo", animalDescription: "",
+      id: 1,
+      animalId: 42,
+      languageCode: "en",
+      animalName: "African Buffalo",
+      animalDescription: "",
     });
-    vi.mocked(prisma.animal.findUnique).mockResolvedValue({ id: 42, biomeId: 3, image: null } as any);
-    vi.mocked(fetchAnimalDetails).mockResolvedValue({ title: "African Buffalo", wikitext: { "*": "" } });
+    vi.mocked(prisma.animal.findUnique).mockResolvedValue({
+      id: 42,
+      biomeId: 3,
+      image: null,
+    } as any);
+    vi.mocked(fetchAnimalDetails).mockResolvedValue({
+      title: "African Buffalo",
+      wikitext: { "*": "" },
+    });
     vi.mocked(parseAnimalData).mockReturnValue({ ...mockParsedAnimal });
     vi.mocked(prisma.animalText.findMany).mockResolvedValue([]);
     vi.mocked(prisma.biome.findFirst).mockResolvedValue({ id: 3, identifier: "Meadow" } as any);
@@ -438,5 +541,109 @@ describe("PUT /api/admin/import-animals", () => {
 
     expect(response.status).toBe(500);
     expect(data.error).toBe("Update-DB-Fehler");
+  });
+
+  test("übersetzt Texte neu, wenn sich die englische Beschreibung geändert hat", async () => {
+    vi.mocked(translateText).mockResolvedValue("Übersetzt");
+
+    vi.mocked(prisma.animalText.findFirst).mockResolvedValue({
+      id: 1,
+      animalId: 42,
+      languageCode: "en",
+      animalName: "African Buffalo",
+      animalDescription: "Old description",
+    });
+    vi.mocked(prisma.animal.findUnique).mockResolvedValue({
+      id: 42,
+      biomeId: 3,
+      image: null,
+    } as any);
+    // extractDescriptionFromWiki parst "New description." → ≠ "Old description" → hasChanged = true
+    vi.mocked(fetchAnimalDetails).mockResolvedValue({
+      title: "African Buffalo",
+      wikitext: { "*": "{{AnimalInfo}}\nNew description.\n== Behavior ==" },
+    });
+    vi.mocked(parseAnimalData).mockReturnValue({
+      ...mockParsedAnimal,
+      animaltext: [{ languageCode: "en", animalName: "African Buffalo", animalDescription: "" }],
+    });
+    vi.mocked(prisma.animalText.findMany).mockResolvedValue([
+      {
+        id: 1,
+        animalId: 42,
+        languageCode: "en",
+        animalName: "African Buffalo",
+        animalDescription: "Old description",
+      },
+      {
+        id: 10,
+        animalId: 42,
+        languageCode: "de",
+        animalName: "Afrikanischer Büffel",
+        animalDescription: "Alter DB-Text",
+      },
+    ] as any);
+    vi.mocked(prisma.biome.findFirst).mockResolvedValue({ id: 3, identifier: "Meadow" } as any);
+    vi.mocked(updateAnimal).mockResolvedValue({ id: 42 } as any);
+
+    await PUT(makeRequest({ pageTitle: "African Buffalo" }));
+
+    // translateText muss für "de" aufgerufen worden sein (nicht der DB-Text wiederverwendet)
+    expect(translateText).toHaveBeenCalled();
+    expect(updateAnimal).toHaveBeenCalledWith(
+      42,
+      expect.objectContaining({
+        animaltext: expect.arrayContaining([
+          expect.objectContaining({ languageCode: "de", animalName: "Übersetzt" }),
+        ]),
+      }),
+    );
+  });
+});
+
+describe("POST /api/admin/import-animals – buildCoatTexts", () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
+
+  test("übersetzt Farbvarianten-Texte für nicht-englische Sprachen", async () => {
+    vi.mocked(translateText).mockResolvedValue("Übersetzt");
+
+    const parsedWithCoats = {
+      ...mockParsedAnimal,
+      specialCoats: [
+        {
+          image: "ArcticFox.png",
+          origin: ["Magic Chest"],
+          releaseDate: "2024-03-01",
+          texts: [{ languageCode: "en", name: "Arctic Fox", color: "Arctic" }],
+        },
+      ],
+    };
+
+    vi.mocked(fetchAnimalDetails).mockResolvedValue({ title: "Red Fox", wikitext: { "*": "" } });
+    vi.mocked(parseAnimalData).mockReturnValue(parsedWithCoats);
+    vi.mocked(prisma.biome.findFirst).mockResolvedValue({ id: 3, identifier: "Meadow" } as any);
+    vi.mocked(createAnimal).mockResolvedValue({ id: 99 } as any);
+    vi.mocked(prisma.origin.findMany).mockResolvedValue([]);
+    vi.mocked(createSpecialCoat).mockResolvedValue({ id: 1 } as any);
+
+    const request = new Request("http://localhost/api/admin/import-animals", {
+      method: "POST",
+      body: JSON.stringify({ pageTitle: "Red Fox" }),
+    });
+
+    await POST(request);
+
+    // getAllLanguages liefert en + de → buildCoatTexts soll für "de" translateText aufrufen
+    expect(translateText).toHaveBeenCalled();
+    expect(createSpecialCoat).toHaveBeenCalledWith(
+      expect.objectContaining({
+        texts: expect.arrayContaining([
+          expect.objectContaining({ languageCode: "en", name: "Arctic Fox" }),
+          expect.objectContaining({ languageCode: "de", name: "Übersetzt" }),
+        ]),
+      }),
+    );
   });
 });
