@@ -4,6 +4,11 @@ import { translateText } from "./translate";
 const mockFetch = vi.fn();
 vi.stubGlobal("fetch", mockFetch);
 
+const myMemorySuccess = (translatedText: string) => ({
+  ok: true,
+  json: async () => ({ responseData: { translatedText }, responseStatus: 200 }),
+});
+
 beforeEach(() => {
   vi.clearAllMocks();
 });
@@ -22,34 +27,25 @@ describe("translateText", () => {
   });
 
   test("gibt übersetzten Text zurück bei Erfolg", async () => {
-    mockFetch.mockResolvedValue({
-      ok: true,
-      json: async () => ({ translation: "Löwe" }),
-    });
+    mockFetch.mockResolvedValue(myMemorySuccess("Löwe"));
 
     const result = await translateText("Lion", "de");
     expect(result).toBe("Löwe");
   });
 
-  test("ruft die Lingva-API mit korrekter URL auf", async () => {
-    mockFetch.mockResolvedValue({
-      ok: true,
-      json: async () => ({ translation: "Löwe" }),
-    });
+  test("ruft die MyMemory-API mit korrekter URL auf", async () => {
+    mockFetch.mockResolvedValue(myMemorySuccess("Löwe"));
 
     await translateText("Lion", "de");
 
-    expect(mockFetch).toHaveBeenCalledWith(
-      "https://lingva.ml/api/v1/en/de/Lion",
-      expect.objectContaining({ method: "GET" })
-    );
+    const calledUrl = mockFetch.mock.calls[0][0] as string;
+    expect(calledUrl).toContain("mymemory.translated.net");
+    expect(calledUrl).toContain("q=Lion");
+    expect(calledUrl).toContain("langpair=en|de");
   });
 
   test("encoded Sonderzeichen in der URL", async () => {
-    mockFetch.mockResolvedValue({
-      ok: true,
-      json: async () => ({ translation: "Komodo-Waran" }),
-    });
+    mockFetch.mockResolvedValue(myMemorySuccess("Komodo-Waran"));
 
     await translateText("Komodo Dragon", "de");
 
@@ -57,10 +53,10 @@ describe("translateText", () => {
     expect(calledUrl).toContain("Komodo%20Dragon");
   });
 
-  test("gibt Originaltext zurück wenn translation fehlt in der Antwort", async () => {
+  test("gibt Originaltext zurück wenn responseStatus nicht 200", async () => {
     mockFetch.mockResolvedValue({
       ok: true,
-      json: async () => ({}),
+      json: async () => ({ responseData: { translatedText: "QUERY LENGTH LIMIT EXCEEDED" }, responseStatus: 403 }),
     });
 
     const result = await translateText("Lion", "de");
@@ -68,10 +64,7 @@ describe("translateText", () => {
   });
 
   test("gibt Originaltext zurück bei HTTP-Fehler (Fallback)", async () => {
-    mockFetch.mockResolvedValue({
-      ok: false,
-      status: 503,
-    });
+    mockFetch.mockResolvedValue({ ok: false, status: 503 });
 
     const result = await translateText("Lion", "de");
     expect(result).toBe("Lion");
@@ -85,15 +78,12 @@ describe("translateText", () => {
   });
 
   test("funktioniert mit verschiedenen Zielsprachen", async () => {
-    mockFetch.mockResolvedValue({
-      ok: true,
-      json: async () => ({ translation: "Leeuw" }),
-    });
+    mockFetch.mockResolvedValue(myMemorySuccess("Leeuw"));
 
     const result = await translateText("Lion", "nl");
     expect(result).toBe("Leeuw");
 
     const calledUrl = mockFetch.mock.calls[0][0] as string;
-    expect(calledUrl).toContain("/en/nl/");
+    expect(calledUrl).toContain("langpair=en|nl");
   });
 });

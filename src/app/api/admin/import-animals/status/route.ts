@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
-import { fetchPagesFromCategory } from "@/service/FandomApi";
+import { fetchPagesFromCategory } from "@/service/FandomService";
 
 export async function GET() {
   try {

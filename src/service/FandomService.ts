@@ -131,7 +131,6 @@ function parseInteractionForService(rawStyle: string | null) {
  */
 function extractSpecialCoats(name: string, wikitext: string) {
   const specialCoats: {
-    image: string | null;
     origin: string[];
     releaseDate: string | null;
     texts: { languageCode: string; name: string; color: string }[];
@@ -146,7 +145,6 @@ function extractSpecialCoats(name: string, wikitext: string) {
 
       if (!colorMatch?.[1]) continue;
 
-      const imageMatch = box.match(/\|\s*image1\s*=\s*([^\|\}\n]+)/);
       const originMatch = box.match(/\|\s*obtained_from\s*=\s*([^\|\}\n]+)/);
       const releaseMatch = box.match(/\|\s*release_date\s*=\s*([^\|\}\n]+)/);
 
@@ -159,7 +157,6 @@ function extractSpecialCoats(name: string, wikitext: string) {
       }
 
       specialCoats.push({
-        image: imageMatch?.[1]?.trim() ?? null,
         origin: originList,
         releaseDate: releaseMatch?.[1]?.trim() ?? null,
         texts: [{ languageCode: "en", name, color: colorMatch[1].trim() }],
@@ -283,6 +280,5 @@ export function parseAnimalData(apiResult: any, originIds: number[] = []) {
     enclosureSizes,
     origins: originIds.map((id) => ({ id })),
     specialCoats,
-    imageName: extractValue(wikitext, "image1"),
   };
 }

@@ -1,8 +1,17 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
-import { fetchAnimalDetails, parseAnimalData, extractIconsFromOverview } from "@/service/FandomApi";
+import {
+  fetchAnimalDetails,
+  parseAnimalData,
+  extractIconsFromOverview,
+} from "@/service/FandomService";
 import { createAnimal, updateAnimal } from "@/service/AnimalService";
 import { createSpecialCoat } from "@/service/SpecialCoatsService";
+import { translateText } from "@/utils/translate";
+import { getAllLanguages } from "@/service/LanguageService";
+import { parseBackendDate } from "@/utils/DateUtil";
+
+const delay = () => new Promise((r) => setTimeout(r, 400));
 
 async function resolveOriginIds(pageTitle: string): Promise<number[]> {
   try {
@@ -19,16 +28,116 @@ async function resolveOriginIds(pageTitle: string): Promise<number[]> {
     });
     return dbOrigins.map((o) => o.id);
   } catch {
-    console.error("Fehler beim Laden der Übersichtsseite. Fahre ohne Origins fort.");
+    console.error("Failed to load overview page. Continuing without origins.");
     return [];
   }
 }
 
 async function resolveBiome(biomeName: string | null | undefined) {
   if (!biomeName) return null;
-  const existing = await prisma.biome.findFirst({ where: { identifier: biomeName } });
+
+  // Normalisierung: Kleinbuchstaben + Leerzeichen → Unterstriche
+  const normalized = biomeName.toLowerCase().replace(/\s+/g, "_");
+  // Kandidaten: Original, normalisiert, normalisiert ohne abschließendes 's' (z.B. "Grasslands" → "grassland")
+  const candidates = [...new Set([biomeName, normalized, normalized.replace(/s$/, "")])];
+
+  const existing = await prisma.biome.findFirst({ where: { identifier: { in: candidates } } });
   if (existing) return existing;
-  return prisma.biome.create({ data: { identifier: biomeName } });
+
+  return prisma.biome.create({ data: { identifier: normalized } });
+}
+
+function extractDescriptionFromWiki(wikiJson: any): string {
+  const wikitext = wikiJson.wikitext?.["*"] || "";
+
+  // Primär: Text nach {{AnimalInfo...}} vor dem ersten == Abschnitt
+  const templateMatch = wikitext.match(
+    /\{\{AnimalInfo[\s\S]*?\}\}\s*([\s\S]*?)(?===\s*Behavior\s*==|==\s*Breeding\s*==|\s*$)/i,
+  );
+  if (templateMatch?.[1]?.trim()) {
+    return templateMatch[1]
+      .replace(/\[\[.*?\|(.*?)\]\]/g, "$1")
+      .replace(/\[\[(.*?)\]\]/g, "$1")
+      .trim();
+  }
+
+  // Fallback: ==Description== Abschnitt (für {{Animal|...}} Einzeiler-Templates)
+  const sectionMatch = wikitext.match(/==\s*Description\s*:?\s*==\s*\n([\s\S]*?)(?===|$)/i);
+  if (sectionMatch?.[1]?.trim()) {
+    return sectionMatch[1]
+      .replace(/<[^>]*>/g, "")
+      .replace(/\[\[([^\]|]*)\|?([^\]]*)\]\]/g, "$2")
+      .trim();
+  }
+
+  return "";
+}
+
+type Language = { code: string };
+type AnimalTextEntry = { languageCode: string; animalName: string; animalDescription: string };
+
+async function buildAnimalTexts(
+  name: string,
+  englishDescription: string,
+  dbLanguages: Language[],
+  existingTexts: {
+    languageCode: string;
+    animalName: string;
+    animalDescription: string | null;
+  }[] = [],
+  hasEnglishTextChanged = true,
+): Promise<AnimalTextEntry[]> {
+  const texts: AnimalTextEntry[] = [];
+
+  for (const lang of dbLanguages) {
+    if (lang.code === "en") {
+      texts.push({ languageCode: "en", animalName: name, animalDescription: englishDescription });
+      continue;
+    }
+
+    const existing = existingTexts.find((t) => t.languageCode === lang.code);
+    if (existing && !hasEnglishTextChanged) {
+      texts.push({
+        languageCode: lang.code,
+        animalName: existing.animalName,
+        animalDescription: existing.animalDescription ?? "",
+      });
+      continue;
+    }
+
+    const translatedName = await translateText(name, lang.code);
+    await delay();
+    const translatedDesc = englishDescription
+      ? await translateText(englishDescription, lang.code)
+      : "";
+    await delay();
+    texts.push({
+      languageCode: lang.code,
+      animalName: translatedName,
+      animalDescription: translatedDesc,
+    });
+  }
+
+  return texts;
+}
+
+async function buildCoatTexts(
+  enText: { languageCode: string; name: string; color: string },
+  dbLanguages: Language[],
+) {
+  const texts = [];
+  for (const lang of dbLanguages) {
+    if (lang.code === "en") {
+      texts.push(enText);
+      continue;
+    }
+    const translatedName = await translateText(enText.name, lang.code);
+    await delay();
+    const translatedColor = await translateText(enText.color, lang.code);
+    await delay();
+    texts.push({ languageCode: lang.code, name: translatedName, color: translatedColor });
+  }
+  return texts;
 }
 
 export async function POST(request: Request) {
@@ -36,13 +145,13 @@ export async function POST(request: Request) {
     const { pageTitle } = await request.json();
 
     if (!pageTitle) {
-      return NextResponse.json({ error: "pageTitle ist erforderlich" }, { status: 400 });
+      return NextResponse.json({ error: "pageTitle is required" }, { status: 400 });
     }
 
     const wikiJson = await fetchAnimalDetails(pageTitle);
     if (!wikiJson) {
       return NextResponse.json(
-        { error: `Keine Wiki-Daten für ${pageTitle} gefunden` },
+        { error: `No wiki data found for "${pageTitle}"` },
         { status: 404 },
       );
     }
@@ -52,43 +161,68 @@ export async function POST(request: Request) {
 
     if (!parsedAnimal) {
       return NextResponse.json(
-        { error: `Fehler beim Parsen der Daten für ${pageTitle}` },
+        { error: `Failed to parse wiki data for "${pageTitle}"` },
         { status: 500 },
       );
     }
+
+    const dbLanguages = await getAllLanguages();
+    const englishDescription = extractDescriptionFromWiki(wikiJson);
+
+    parsedAnimal.animaltext = await buildAnimalTexts(pageTitle, englishDescription, dbLanguages);
 
     const biome = await resolveBiome(parsedAnimal.wikiBiomeName);
     const newAnimal = await createAnimal({ ...parsedAnimal, biomeId: biome ? biome.id : 1 });
 
     const createdCoats = [];
-    if (parsedAnimal.rawColorVariants && parsedAnimal.rawColorVariants.length > 0) {
-      for (const variant of parsedAnimal.rawColorVariants) {
-        const dbOrigins = await prisma.origin.findMany({
-          where: { origintext: { some: { originName: { in: variant.obtainedFrom } } } },
+    console.log(`[Import] ${parsedAnimal.specialCoats?.length ?? 0} special coats found:`, parsedAnimal.specialCoats?.map((c: any) => c.texts[0]?.color));
+    for (const specialCoat of parsedAnimal.specialCoats ?? []) {
+      try {
+        // Suche nach exaktem Match, dann Fallback auf Teilstring-Match
+        // (Wiki: "Zoo Academy" → DB: "Academy")
+        let dbOrigins = await prisma.origin.findMany({
+          where: { origintext: { some: { originName: { in: specialCoat.origin } } } },
           select: { id: true },
         });
 
+        if (dbOrigins.length === 0 && specialCoat.origin.length > 0) {
+          const allOrigins = await prisma.origin.findMany({
+            select: { id: true, origintext: { select: { originName: true } } },
+          });
+          dbOrigins = allOrigins.filter((o) =>
+            o.origintext.some((ot) =>
+              specialCoat.origin.some(
+                (wikiName: string) =>
+                  wikiName.toLowerCase().includes(ot.originName.toLowerCase()) ||
+                  ot.originName.toLowerCase().includes(wikiName.toLowerCase()),
+              ),
+            ),
+          );
+        }
+
         const newCoat = await createSpecialCoat({
           animalId: newAnimal.id,
-          releaseDate: variant.releaseDate ? new Date(variant.releaseDate) : new Date(),
-          image: variant.imageName || "",
+          releaseDate: parseBackendDate(specialCoat.releaseDate) ?? new Date(),
+          image: null,
           originIds: dbOrigins.map((o) => o.id),
-          texts: [{ languageCode: "en", name: variant.name, color: variant.color }],
+          texts: await buildCoatTexts(specialCoat.texts[0], dbLanguages),
         });
         createdCoats.push(newCoat);
+      } catch (coatError: any) {
+        console.error(`[Import] Failed to create special coat '${specialCoat.texts[0]?.color}':`, coatError?.message ?? coatError);
       }
     }
 
     return NextResponse.json({
       success: true,
-      message: `Tier '${pageTitle}' und ${createdCoats.length} Farbvarianten erfolgreich importiert.`,
+      message: `Animal '${pageTitle}' and ${createdCoats.length} special coat(s) successfully imported.`,
       animal: newAnimal,
       coats: createdCoats,
       originIds,
     });
   } catch (error: any) {
-    console.error("Import Fehler:", error);
-    return NextResponse.json({ error: error.message || "Interner Serverfehler" }, { status: 500 });
+    console.error("Import error:", error);
+    return NextResponse.json({ error: error.message || "Internal server error" }, { status: 500 });
   }
 }
 
@@ -97,30 +231,26 @@ export async function PUT(request: Request) {
     const { pageTitle } = await request.json();
 
     if (!pageTitle) {
-      return NextResponse.json({ error: "pageTitle ist erforderlich" }, { status: 400 });
+      return NextResponse.json({ error: "pageTitle is required" }, { status: 400 });
     }
 
-    // 1. Tier per englischem Namen in der DB suchen, um die ID und bestehende Daten zu holen
     const existingText = await prisma.animalText.findFirst({
       where: { animalName: pageTitle, languageCode: "en" },
     });
 
     if (!existingText) {
       return NextResponse.json(
-        { error: `Tier '${pageTitle}' nicht in der DB gefunden` },
+        { error: `Animal '${pageTitle}' not found in database` },
         { status: 404 },
       );
     }
 
-    // Wir holen das komplette bestehende Tier aus der DB, um Bild und Gehege zu prüfen
-    const existingAnimal = await prisma.animal.findUnique({
-      where: { id: existingText.animalId },
-    });
+    const existingAnimal = await prisma.animal.findUnique({ where: { id: existingText.animalId } });
 
     const wikiJson = await fetchAnimalDetails(pageTitle);
     if (!wikiJson) {
       return NextResponse.json(
-        { error: `Keine Wiki-Daten für ${pageTitle} gefunden` },
+        { error: `No wiki data found for "${pageTitle}"` },
         { status: 404 },
       );
     }
@@ -130,65 +260,47 @@ export async function PUT(request: Request) {
 
     if (!parsedAnimal) {
       return NextResponse.json(
-        { error: `Fehler beim Parsen der Daten für ${pageTitle}` },
+        { error: `Failed to parse wiki data for "${pageTitle}"` },
         { status: 500 },
       );
     }
 
-    // =========================================================================
-    // SPERRE 1: Vorhandene Übersetzungen aus der DB schützen
-    // =========================================================================
     const dbTexts = await prisma.animalText.findMany({
       where: { animalId: existingText.animalId },
     });
+    const englishDescription = extractDescriptionFromWiki(wikiJson);
+    const currentDbEnglishText =
+      dbTexts.find((t) => t.languageCode === "en")?.animalDescription || "";
+    const hasEnglishTextChanged = currentDbEnglishText.trim() !== englishDescription.trim();
 
-    for (const textEntry of parsedAnimal.animaltext) {
-      const dbLangText = dbTexts.find((t) => t.languageCode === textEntry.languageCode);
-      if (dbLangText) {
-        textEntry.animalName = dbLangText.animalName;
-        textEntry.animalDescription = dbLangText.animalDescription ?? "";
-      }
-    }
+    const dbLanguages = await getAllLanguages();
+    parsedAnimal.animaltext = await buildAnimalTexts(
+      pageTitle,
+      englishDescription,
+      dbLanguages,
+      dbTexts,
+      hasEnglishTextChanged,
+    );
 
-    // =========================================================================
-    // SPERRE 2: Bild und Gehege (Biome) schützen
-    // =========================================================================
+    const biome =
+      existingAnimal?.biomeId && existingAnimal.biomeId !== 1
+        ? { id: existingAnimal.biomeId }
+        : await resolveBiome(parsedAnimal.wikiBiomeName);
 
-    // Falls in der DB bereits ein Bildpfad hinterlegt ist, behalten wir diesen bei
-    // und ignorieren den (eventuell abweichenden oder leeren) Wert aus dem Fandom-Parser.
-    if (existingAnimal && existingAnimal.image) {
-      parsedAnimal.imageName = existingAnimal.image;
-    }
-
-    // Gehege-Auflösung:
-    // Wenn in der DB bereits ein gültiges Gehege (biomeId) eingetragen ist, das NICHT das Standardgehege (z.B. ID 1) ist,
-    // behalten wir dieses bei und überspringen die Zuordnung aus dem Wiki.
-    let finalBiomeId: number | undefined;
-
-    if (existingAnimal && existingAnimal.biomeId && existingAnimal.biomeId !== 1) {
-      finalBiomeId = existingAnimal.biomeId;
-    } else {
-      // Andernfalls (wenn noch das Standardgehege drin ist oder kein Tier gefunden wurde)
-      // lösen wir das Gehege ganz normal über den Wiki-Namen auf.
-      const biome = await resolveBiome(parsedAnimal.wikiBiomeName);
-      finalBiomeId = biome ? biome.id : undefined;
-    }
-    // =========================================================================
-
-    // Der Service bekommt nun das absolut sichere Objekt übergeben.
     const updatedAnimal = await updateAnimal(existingText.animalId, {
       ...parsedAnimal,
-      biomeId: finalBiomeId,
+      biomeId: biome?.id,
+      ...(existingAnimal?.image ? { imageName: existingAnimal.image } : {}),
     });
 
     return NextResponse.json({
       success: true,
-      message: `Tier '${pageTitle}' erfolgreich aktualisiert (Bilder, Gehege und Übersetzungen wurden geschützt).`,
+      message: `Animal '${pageTitle}' successfully updated (images/biome preserved, translations updated if needed).`,
       animal: updatedAnimal,
       originIds,
     });
   } catch (error: any) {
-    console.error("Update Fehler:", error);
-    return NextResponse.json({ error: error.message || "Interner Serverfehler" }, { status: 500 });
+    console.error("Update error:", error);
+    return NextResponse.json({ error: error.message || "Internal server error" }, { status: 500 });
   }
 }

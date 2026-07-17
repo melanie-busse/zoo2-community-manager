@@ -26,6 +26,8 @@
     "club": "Club",
     "club_statues": "Standbeelden",
     "club_contests": "Wedstrijden",
-    "club_create_contest": "Wedstrijd aanmaken"
+    "club_create_contest": "Wedstrijd aanmaken",
+    "admin": "Admin",
+    "import-animals": "Dieren importeren"
   }
 }

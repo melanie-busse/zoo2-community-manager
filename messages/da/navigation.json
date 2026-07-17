@@ -26,6 +26,8 @@
     "club": "Klub",
     "club_statues": "Statuer",
     "club_contests": "Konkurrencer",
-    "club_create_contest": "Opret konkurrence"
+    "club_create_contest": "Opret konkurrence",
+    "admin": "Admin",
+    "import-animals": "Importér dyr"
   }
 }

@@ -239,7 +239,6 @@ The red fox is a cunning animal.
       expect(result?.specialCoats[0].texts[0].name).toBe("Red Fox");
       expect(result?.specialCoats[0].texts[0].color).toBe("Arctic Fox");
       expect(result?.specialCoats[0].texts[0].languageCode).toBe("en");
-      expect(result?.specialCoats[0].image).toBe("ArcticFox.png");
       expect(result?.specialCoats[0].origin).toContain("Magic Chest");
       expect(result?.specialCoats[0].releaseDate).toBe("2024-03-01");
     });
@@ -247,11 +246,6 @@ The red fox is a cunning animal.
     test("mappt originIds korrekt", () => {
       const result = parseAnimalData(mockApiResult, [10, 20]);
       expect(result?.origins).toEqual([{ id: 10 }, { id: 20 }]);
-    });
-
-    test("parst Bild-Dateiname", () => {
-      const result = parseAnimalData(mockApiResult);
-      expect(result?.imageName).toBe("Fox.png");
     });
   });
 

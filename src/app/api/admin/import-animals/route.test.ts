@@ -78,7 +78,7 @@ describe("POST /api/admin/import-animals", () => {
     const data = await response.json();
 
     expect(response.status).toBe(400);
-    expect(data.error).toBe("pageTitle ist erforderlich");
+    expect(data.error).toBe("pageTitle is required");
   });
 
   test("gibt 404 zurück, wenn fetchAnimalDetails null zurückgibt", async () => {
@@ -129,7 +129,7 @@ describe("POST /api/admin/import-animals", () => {
     expect(response.status).toBe(200);
     expect(data.success).toBe(true);
     expect(data.message).toContain("Red Fox");
-    expect(data.message).toContain("0 Farbvarianten");
+    expect(data.message).toContain("0 special coat(s)");
     expect(createAnimal).toHaveBeenCalledWith(expect.objectContaining({ biomeId: 3 }));
   });
 
@@ -148,7 +148,7 @@ describe("POST /api/admin/import-animals", () => {
     await POST(request);
 
     expect(prisma.biome.create).toHaveBeenCalledWith({
-      data: { identifier: "Meadow" },
+      data: { identifier: "meadow" },
     });
     expect(createAnimal).toHaveBeenCalledWith(expect.objectContaining({ biomeId: 7 }));
   });
@@ -182,7 +182,7 @@ describe("POST /api/admin/import-animals", () => {
     const data = await response.json();
 
     expect(data.success).toBe(true);
-    expect(data.message).toContain("1 Farbvarianten");
+    expect(data.message).toContain("1 special coat(s)");
     expect(createSpecialCoat).toHaveBeenCalledWith(
       expect.objectContaining({
         animalId: 99,
@@ -252,7 +252,7 @@ describe("POST /api/admin/import-animals", () => {
     expect(data.originIds).toEqual([]);
   });
 
-  test("gibt 500 zurück, wenn createSpecialCoat nach erfolgreichem createAnimal fehlschlägt", async () => {
+  test("importiert trotzdem erfolgreich, auch wenn createSpecialCoat fehlschlägt (Fehler wird pro Coat abgefangen)", async () => {
     const parsedWithCoats = {
       ...mockParsedAnimal,
       specialCoats: [
@@ -280,8 +280,9 @@ describe("POST /api/admin/import-animals", () => {
     const response = await POST(request);
     const data = await response.json();
 
-    expect(response.status).toBe(500);
-    expect(data.error).toBe("Coat-DB-Fehler");
+    expect(response.status).toBe(200);
+    expect(data.success).toBe(true);
+    expect(data.coats).toEqual([]);
   });
 
   test("gibt 500 zurück bei ungültigem JSON im Request-Body", async () => {
@@ -312,7 +313,7 @@ describe("PUT /api/admin/import-animals", () => {
     const data = await response.json();
 
     expect(response.status).toBe(400);
-    expect(data.error).toBe("pageTitle ist erforderlich");
+    expect(data.error).toBe("pageTitle is required");
   });
 
   test("gibt 404 zurück, wenn Tier nicht in der DB existiert", async () => {
@@ -323,7 +324,7 @@ describe("PUT /api/admin/import-animals", () => {
 
     expect(response.status).toBe(404);
     expect(data.error).toContain("African Buffalo");
-    expect(data.error).toContain("nicht in der DB gefunden");
+    expect(data.error).toContain("not found in database");
   });
 
   test("gibt 404 zurück, wenn Wiki-Daten nicht gefunden werden", async () => {
