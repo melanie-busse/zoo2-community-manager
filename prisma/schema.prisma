@@ -269,10 +269,15 @@ model PriceTypeText {
 }
 
 model SpecialCoat {
-  id          Int      @id @unique(map: "specialCoatesindex") @default(autoincrement())
-  animalId    Int
-  releaseDate DateTime
-  image       String?  @db.VarChar(255)
+  id                       Int      @id @unique(map: "specialCoatesindex") @default(autoincrement())
+  animalId                 Int
+  releaseDate              DateTime
+  parentWithCoatNeeded     Boolean  @default(false)
+  chanceBaseWithoutParent  Float    @default(0.0)
+  chanceBaseWithOneParent  Float    @default(0.0)
+  chanceEventWithoutParent Float    @default(0.0)
+  chanceEventWithOneParent Float    @default(0.0)
+  image                    String?  @db.VarChar(255)
 
   animal             Animal               @relation(fields: [animalId], references: [id], onDelete: Cascade, map: "specialCoat_animalId_fkey")
   specialcoatstext   SpecialCoatsText[]

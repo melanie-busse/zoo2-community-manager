@@ -6,14 +6,26 @@ export const BulkActionBar = styled.div`
   margin-bottom: ${({ theme }) => theme.spacing(2)};
 `;
 
-export const BulkButton = styled.button<{ $variant: "import" | "update" }>`
+export const BulkButton = styled.button<{ $variant: "import" | "update" | "sync" }>`
   background-color: ${({ $variant, theme }) =>
-    $variant === "import" ? theme.colors.status.successBg : theme.colors.status.warningBg};
+    $variant === "import"
+      ? theme.colors.status.successBg
+      : $variant === "sync"
+        ? theme.colors.status.infoBg
+        : theme.colors.status.warningBg};
   color: ${({ $variant, theme }) =>
-    $variant === "import" ? theme.colors.status.successText : theme.colors.status.warningText};
+    $variant === "import"
+      ? theme.colors.status.successText
+      : $variant === "sync"
+        ? theme.colors.status.infoText
+        : theme.colors.status.warningText};
   border: 2px solid
     ${({ $variant, theme }) =>
-      $variant === "import" ? theme.colors.status.successText : theme.colors.status.warningText};
+      $variant === "import"
+        ? theme.colors.status.successText
+        : $variant === "sync"
+          ? theme.colors.status.infoText
+          : theme.colors.status.warningText};
   border-radius: ${({ theme }) => theme.borderRadius.main};
   padding: ${({ theme }) => theme.spacing(1)} ${({ theme }) => theme.spacing(2)};
   font-size: 0.9rem;

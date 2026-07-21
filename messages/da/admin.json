@@ -22,5 +22,7 @@
   "bulk_import_all": "Importer alle",
   "bulk_update_all": "Opdater alle",
   "bulk_progress": "{done} / {total}",
-  "no_missing_animals": "Alle dyr er allerede i databasen."
+  "no_missing_animals": "Alle dyr er allerede i databasen.",
+  "sync_breeding_chances": "Synkroniser avlschancer",
+  "error_sync_breeding_chances": "Fejl ved synkronisering af avlschancer"
 }

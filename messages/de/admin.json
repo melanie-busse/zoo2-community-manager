@@ -22,5 +22,7 @@
   "bulk_import_all": "Alle importieren",
   "bulk_update_all": "Alle aktualisieren",
   "bulk_progress": "{done} / {total}",
-  "no_missing_animals": "Alle Tiere sind bereits in der Datenbank."
+  "no_missing_animals": "Alle Tiere sind bereits in der Datenbank.",
+  "sync_breeding_chances": "Zuchtchancen synchronisieren",
+  "error_sync_breeding_chances": "Fehler beim Synchronisieren der Zuchtchancen"
 }

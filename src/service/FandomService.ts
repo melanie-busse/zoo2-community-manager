@@ -1,4 +1,7 @@
+import wtf from "wtf_wikipedia";
+
 import { parseBackendDate } from "@/utils/DateUtil";
+import prisma from "@/lib/prisma";
 
 const FANDOM_API_URL = "https://zoo2animalpark.fandom.com/api.php";
 
@@ -49,7 +52,7 @@ export async function fetchAnimalDetails(pageTitle: string): Promise<any> {
   try {
     const response = await fetch(`${FANDOM_API_URL}?${params.toString()}`);
 
-    if (!response.ok) throw new Error(`Fandom API Details-Error: ${response.status}`);
+    if (!response.ok) throw new Error(`Fandom API details error: ${response.status}`);
 
     const data = await response.json();
 
@@ -66,41 +69,29 @@ function extractValue(wikitext: string, key: string): string | null {
   return match && match[1] ? match[1].trim() : null;
 }
 
-/**
- * Extrahiert die echte Beschreibung aus dem == Description == Abschnitt
- * Jetzt fehlertolerant ohne harten Doppelpunkt-Zwang
- */
 function extractDescription(wikitext: string): string {
-  const descRegex = /==\s*Description\s*:?\s*==\s*\n([\s\S]*?)(?===\s*|$)/i;
-  const match = wikitext.match(descRegex);
-
-  if (match && match[1]) {
-    return match[1].replace(/<[^>]*>/g, "").replace(/\[\[([^\]|]*)\|?([^\]]*)\]\]/g, "$2");
-  }
-  return "";
+  const section = wtf(wikitext).section("Description");
+  return section ? section.text({}).trim() : "";
 }
 
-/**
- * Parsed die Tabelle für Gehegegrößen
- */
-function extractEnclosureSizes(wikitext: string) {
-  const sizes: { animalCount: number; size: number }[] = [];
-  const tableBlockRegex = /==\s*Number of animals per enclosure\s*==[\s\S]*?\{\|([\s\S]*?)\|\}/i;
-  const match = wikitext.match(tableBlockRegex);
+function extractEnclosureSizes(wikitext: string): { animalCount: number; size: number }[] {
+  const section = wtf(wikitext).section("Number of animals per enclosure");
+  if (!section) return [];
 
-  if (match && match[1]) {
-    const rows = match[1].split(/\|-/);
-    rows.forEach((row) => {
-      const values = row.match(/\|\s*(\d+)\s*\n\|\s*(\d+)/);
-      if (values) {
-        sizes.push({
-          animalCount: parseInt(values[1], 10),
-          size: parseInt(values[2], 10),
-        });
-      }
-    });
-  }
-  return sizes;
+  const rawTables = section.tables() as any;
+  const tables: any[] = Array.isArray(rawTables) ? rawTables : rawTables ? [rawTables] : [];
+  if (tables.length === 0) return [];
+
+  const rows: Record<string, { text: string }>[] = tables[0].json({}) ?? [];
+
+  return rows
+    .map((row) => {
+      const values = Object.values(row);
+      const animalCount = parseInt(values[0]?.text ?? "", 10);
+      const size = parseInt(values[1]?.text ?? "", 10);
+      return isNaN(animalCount) || isNaN(size) ? null : { animalCount, size };
+    })
+    .filter((row): row is { animalCount: number; size: number } => row !== null);
 }
 
 function durationToMinutes(durationStr: string): number {
@@ -126,50 +117,40 @@ function parseInteractionForService(rawStyle: string | null) {
   return { xp, durationHours: hours, durationMinutes: minutes };
 }
 
-/**
- * Holt alle Farbvarianten inkl. Herkunfts-Array und Release-Datum
- */
-function extractSpecialCoats(name: string, wikitext: string) {
-  const specialCoats: {
-    origin: string[];
-    releaseDate: string | null;
-    texts: { languageCode: string; name: string; color: string }[];
-  }[] = [];
+function extractSpecialCoats(
+  name: string,
+  wikitext: string,
+): {
+  origin: string[];
+  releaseDate: string | null;
+  texts: { languageCode: string; name: string; color: string }[];
+}[] {
+  const templates = wtf(wikitext).templates() as any[];
 
-  const coatBoxRegex = /\{\{Coat_Box[\s\S]*?\}\}/g;
-  const matches = wikitext.match(coatBoxRegex);
+  return templates
+    .map((t) => t.json() as Record<string, string>)
+    .filter((params) => params.template === "coat box")
+    .flatMap((params) => {
+      const color = params.row1?.trim();
+      if (!color) return [];
 
-  if (matches) {
-    for (const box of matches) {
-      const colorMatch = box.match(/\|\s*row1\s*=\s*([^\|\}\n]+)/);
+      // wtf_wikipedia resolves wiki links to plain text; split on commas for multiple sources
+      const rawOrigin = params.obtained_from?.trim() ?? "";
+      const originList = rawOrigin ? rawOrigin.split(/\s*,\s*/).filter(Boolean) : [];
 
-      if (!colorMatch?.[1]) continue;
-
-      const originMatch = box.match(/\|\s*obtained_from\s*=\s*([^\|\}\n]+)/);
-      const releaseMatch = box.match(/\|\s*release_date\s*=\s*([^\|\}\n]+)/);
-
-      const rawOrigin = originMatch?.[1] ?? "";
-      const originList = rawOrigin
-        ? [...rawOrigin.matchAll(/\[\[([^\]|]+)(?:\|[^\]]+)?\]\]/g)].map((m) => m[1].trim())
-        : [];
-      if (originList.length === 0 && rawOrigin.trim()) {
-        originList.push(rawOrigin.replace(/[\[\]]/g, "").trim());
-      }
-
-      specialCoats.push({
-        origin: originList,
-        releaseDate: releaseMatch?.[1]?.trim() ?? null,
-        texts: [{ languageCode: "en", name, color: colorMatch[1].trim() }],
-      });
-    }
-  }
-  return specialCoats;
+      return [
+        {
+          origin: originList,
+          releaseDate: params.release_date?.trim() ?? null,
+          texts: [{ languageCode: "en", name, color }],
+        },
+      ];
+    });
 }
 
 /**
- * Holt die Daten der BaseTabelle
+ * Extracts base values (popularity, selling price, release XP) from the base stats table.
  */
-
 function extractBaseTableValues(wikitext: string) {
   const tableRegex = /\|\s*1\s*\n\|\s*([\d,]+)\s*\n\|\s*([\d,]+)\s*\n\|\s*([\d,]+)/;
   const match = wikitext.match(tableRegex);
@@ -183,12 +164,12 @@ function extractBaseTableValues(wikitext: string) {
 }
 
 /**
- * Sucht auf der Übersichtsseite nach dem Tiernamen und extrahiert alle direkt dahinterliegenden Icons.
- * Liefert z.B. ["Shop_Icon.png", "Epic_Icon_E.png"]
+ * Finds the line for the given animal on the overview page and extracts all icons immediately following it.
+ * Returns e.g. ["Shop_Icon.png", "Epic_Icon_E.png"]
  */
 export function extractIconsFromOverview(overviewWikitext: string, animalName: string): string[] {
-  // Findet die gesamte Zeile, die [[AnimalName]] oder [[DisplayName|AnimalName]] enthält.
-  // Behandelt auch Alias-Links wie [[Komodo dragon|Komodo Dragon]] oder [[Bat-eared Fox|Bat-Eared Fox]].
+  // Matches the full line containing [[AnimalName]] or [[DisplayName|AnimalName]].
+  // Also handles alias links like [[Komodo dragon|Komodo Dragon]] or [[Bat-eared Fox|Bat-Eared Fox]].
   const escapedName = animalName.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   const regex = new RegExp(
     `^[^\\n]*\\[\\[(?:[^|\\]]+\\|)?${escapedName}(?:\\|[^\\]]+)?\\][^\\n]*$`,
@@ -199,12 +180,12 @@ export function extractIconsFromOverview(overviewWikitext: string, animalName: s
   const foundIcons: string[] = [];
 
   if (lineMatch && lineMatch[0]) {
-    // Extrahiert alle [[File:Dateiname.png|...]] aus der gefundenen Zeile
+    // Extracts all [[File:filename.png|...]] occurrences from the matched line
     const fileRegex = /\[\[File:\s*([^|\]\n]+)/gi;
     let fileMatch;
 
     while ((fileMatch = fileRegex.exec(lineMatch[0])) !== null) {
-      // Leerzeichen werden durch Unterstriche ersetzt, damit es genau auf die DB-Einträge matched
+      // Replace spaces with underscores to match the DB entries exactly
       const fileName = fileMatch[1].trim().replace(/ /g, "_");
       foundIcons.push(fileName);
     }
@@ -214,9 +195,9 @@ export function extractIconsFromOverview(overviewWikitext: string, animalName: s
 }
 
 /**
- * Verarbeitet das Fandom-Ergebnis.
- * @param apiResult Das JSON von der API
- * @param originIds Optionale IDs der Herkunft, die du von der Übersichtsseite ausliest
+ * Parses the Fandom API result into a structured animal object.
+ * @param apiResult The JSON returned by the API
+ * @param originIds Optional origin IDs resolved from the overview page
  */
 export function parseAnimalData(apiResult: any, originIds: number[] = []) {
   const wikitext = apiResult.wikitext?.["*"];
@@ -281,4 +262,79 @@ export function parseAnimalData(apiResult: any, originIds: number[] = []) {
     origins: originIds.map((id) => ({ id })),
     specialCoats,
   };
+}
+
+function parseChanceToNumber(rawChance: string | null | undefined): number {
+  if (!rawChance || rawChance.trim() === "-" || rawChance.trim() === "0%") {
+    return 0;
+  }
+  return parseFloat(rawChance.replace("%", "").trim()) || 0;
+}
+
+function parseParentNeeded(rawText: string | null | undefined): boolean {
+  if (!rawText) return false;
+  return rawText.toLowerCase().trim().includes("yes");
+}
+
+export async function syncBreedingChancesFromApi(): Promise<void> {
+  const pageData = await fetchAnimalDetails("Special_Coats");
+  const wikitext = pageData?.wikitext?.["*"];
+  if (!wikitext) throw new Error("Could not load the wikitext of the Special_Coats page.");
+
+  const rawTables = wtf(wikitext).tables() as any;
+  const tables: any[] = Array.isArray(rawTables) ? rawTables : rawTables ? [rawTables] : [];
+  if (tables.length === 0) throw new Error("No table found on the Special_Coats page.");
+
+  // Columns: Animal | Coat | Obtained from | Parent needed | Base (no parent) | Base (1 parent) | Event (no parent)
+  const rows: Record<string, { text: string }>[] = tables[0].json({}) ?? [];
+  let currentAnimalName = "";
+  let updated = 0;
+
+  for (const row of rows) {
+    const cells = Object.values(row);
+    if (cells.length < 6) continue;
+
+    const rawAnimalName = cells[0]?.text?.trim() ?? "";
+    const coatColor = cells[1]?.text?.trim() ?? "";
+    // cells[2] = obtained from — no corresponding DB field exists
+    const parentNeededText = cells[3]?.text?.trim() ?? "";
+    const baseWithoutParent = cells[4]?.text?.trim() ?? "";
+    const baseWithOneParent = cells[5]?.text?.trim() ?? "";
+    const eventWithoutParent = cells[6]?.text?.trim() ?? "";
+
+    if (rawAnimalName) currentAnimalName = rawAnimalName;
+    if (!currentAnimalName || !coatColor || coatColor.toLowerCase().includes("special coat"))
+      continue;
+
+    const animalTextEntry = await prisma.animalText.findFirst({
+      where: { animalName: currentAnimalName, languageCode: "en" },
+      select: { animalId: true },
+    });
+    if (!animalTextEntry) continue;
+
+    const coatTextEntry = await prisma.specialCoatsText.findFirst({
+      where: {
+        specialcoat: { animalId: animalTextEntry.animalId },
+        color: coatColor,
+        languageCode: "en",
+      },
+      select: { specialCoatId: true },
+    });
+    if (!coatTextEntry) continue;
+
+    await prisma.specialCoat.update({
+      where: { id: coatTextEntry.specialCoatId },
+      data: {
+        parentWithCoatNeeded: parseParentNeeded(parentNeededText),
+        chanceBaseWithoutParent: parseChanceToNumber(baseWithoutParent),
+        chanceBaseWithOneParent: parseChanceToNumber(baseWithOneParent),
+        chanceEventWithoutParent: parseChanceToNumber(eventWithoutParent),
+      },
+    });
+
+    console.log(`[API-Sync] ${currentAnimalName} – ${coatColor} updated.`);
+    updated++;
+  }
+
+  console.log(`[API-Sync] ${updated} special coat(s) successfully synced.`);
 }

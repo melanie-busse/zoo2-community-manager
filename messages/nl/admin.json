@@ -22,5 +22,7 @@
   "bulk_import_all": "Alles importeren",
   "bulk_update_all": "Alles bijwerken",
   "bulk_progress": "{done} / {total}",
-  "no_missing_animals": "Alle dieren zijn al in de database."
+  "no_missing_animals": "Alle dieren zijn al in de database.",
+  "sync_breeding_chances": "Kweerkansen synchroniseren",
+  "error_sync_breeding_chances": "Fout bij synchroniseren van kweerkansen"
 }

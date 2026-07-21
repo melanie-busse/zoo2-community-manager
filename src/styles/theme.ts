@@ -74,6 +74,8 @@ export const theme = {
       errorText: "#c5221f",
       warningBg: "#fef3c7",
       warningText: "#92400e",
+      infoBg: "#dbeafe",
+      infoText: "#1d4ed8",
     },
     header: {
       bg: "#ffaf4a",

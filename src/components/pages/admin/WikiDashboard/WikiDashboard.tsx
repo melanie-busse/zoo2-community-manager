@@ -56,6 +56,7 @@ export default function WikiDashboard() {
   const [bulkImporting, setBulkImporting] = useState(false);
   const [bulkUpdating, setBulkUpdating] = useState(false);
   const [bulkProgress, setBulkProgress] = useState<{ done: number; total: number } | null>(null);
+  const [syncingBreeding, setSyncingBreeding] = useState(false);
 
   useEffect(() => {
     let isMounted = true;
@@ -143,6 +144,18 @@ export default function WikiDashboard() {
     setBulkProgress(null);
   };
 
+  const handleSyncBreedingChances = async () => {
+    setSyncingBreeding(true);
+    try {
+      const res = await fetch("/api/admin/sync-breeding-chances", { method: "POST" });
+      if (!res.ok) alert(t("error_sync_breeding_chances"));
+    } catch {
+      alert(t("error_sync_breeding_chances"));
+    } finally {
+      setSyncingBreeding(false);
+    }
+  };
+
   const handleBulkUpdate = async () => {
     const toUpdate = animals.filter(
       (a) =>
@@ -216,6 +229,13 @@ export default function WikiDashboard() {
           disabled={bulkImporting || bulkUpdating || summary?.imported === 0}
         >
           {t("bulk_update_all")}
+        </Styles.BulkButton>
+        <Styles.BulkButton
+          $variant="sync"
+          onClick={handleSyncBreedingChances}
+          disabled={bulkImporting || bulkUpdating || syncingBreeding}
+        >
+          {t("sync_breeding_chances")}
         </Styles.BulkButton>
         {bulkProgress && (
           <Styles.ProgressText>
