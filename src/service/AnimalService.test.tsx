@@ -7,6 +7,7 @@ import {
   getCountAnimals,
   createAnimal,
   updateAnimal,
+  deleteAnimal,
 } from "@/service/AnimalService";
 
 const txMock = {
@@ -40,6 +41,7 @@ vi.mock("@/lib/prisma", () => ({
       count: vi.fn(),
       findMany: vi.fn(),
       findUnique: vi.fn(),
+      delete: vi.fn(),
     },
     specialCoat: {
       count: vi.fn(),
@@ -67,6 +69,12 @@ describe("Animal Service", () => {
     expect(result).toEqual(mockAnimalsFromDb);
   });
 
+  test("getAllAnimals should return empty array on database error", async () => {
+    vi.mocked(prisma.animal.findMany).mockRejectedValue(new Error("DB error"));
+    const result = await getAllAnimals("en");
+    expect(result).toEqual([]);
+  });
+
   describe("getAnimalById", () => {
     test("should successfully return an animal with filtered language tracks", async () => {
       const mockAnimal = { id: 42, animaltext: [{ name: "Lion" }] };
@@ -80,6 +88,12 @@ describe("Animal Service", () => {
       const result = await getAnimalById("invalid-id", "en");
       expect(result).toBeNull();
       consoleWarnSpy.mockRestore();
+    });
+
+    test("should return null when animal is not found in the database", async () => {
+      vi.mocked(prisma.animal.findUnique).mockResolvedValue(null);
+      const result = await getAnimalById(999, "en");
+      expect(result).toBeNull();
     });
   });
 
@@ -193,12 +207,7 @@ describe("Animal Service", () => {
 
       expect(txMock.animalText.createMany).toHaveBeenCalledWith({
         data: [
-          {
-            animalId: 42,
-            languageCode: "de",
-            animalName: "Löwe (Update)",
-            animalDescription: "Neuer Text",
-          },
+          { animalId: 42, languageCode: "de", animalName: "Löwe (Update)", animalDescription: "Neuer Text" },
         ],
       });
 
@@ -207,6 +216,17 @@ describe("Animal Service", () => {
       });
 
       expect(result).toEqual({ id: 42 });
+    });
+  });
+
+  describe("deleteAnimal", () => {
+    test("should delete an animal by id", async () => {
+      vi.mocked(prisma.animal.delete).mockResolvedValue({ id: 5 } as any);
+
+      const result = await deleteAnimal(5);
+
+      expect(prisma.animal.delete).toHaveBeenCalledWith({ where: { id: 5 } });
+      expect(result).toEqual({ id: 5 });
     });
   });
 });

@@ -11,9 +11,10 @@ export function getBiomeImage(biome: Biome | null | undefined): Image {
     };
   }
 
+  const identifier = /^[\w-]+$/.test(biome.identifier ?? "") ? biome.identifier : "placeholder";
   return {
     name: biome.image || "placeholder.png",
-    path: `/images/biomes/${biome.identifier}/area.webp`,
+    path: `/images/biomes/${identifier}/area.webp`,
     alt: biome.biomestext?.[0]?.biomeName || "Gehegebild",
   };
 }
@@ -28,9 +29,10 @@ export function getShelterImage(biome: Biome | null | undefined): Image {
     };
   }
 
+  const identifier = /^[\w-]+$/.test(biome.identifier ?? "") ? biome.identifier : "placeholder";
   return {
     name: biome.image || "placeholder.png",
-    path: `/images/biomes/${biome.identifier}/shelter.png`,
+    path: `/images/biomes/${identifier}/shelter.png`,
     alt: biome.biomestext?.[0]?.biomeName || "Stall",
   };
 }

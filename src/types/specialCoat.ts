@@ -15,6 +15,11 @@ export interface SpecialCoat {
   releaseDate: Date | string;
   image: string | null;
   ownedAmount?: number;
+  parentWithCoatNeeded?: boolean;
+  chanceBaseWithoutParent?: number;
+  chanceBaseWithOneParent?: number;
+  chanceEventWithoutParent?: number;
+  chanceEventWithOneParent?: number;
 
   animal?: Animal;
   specialcoatsorigin?: SpecialCoatOrigin[];

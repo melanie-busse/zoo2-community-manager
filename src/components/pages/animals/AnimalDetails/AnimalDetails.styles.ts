@@ -69,9 +69,7 @@ export const Wrapper = styled.div`
     margin-left: -16px;
     margin-right: -16px;
     width: calc(100% + 32px);
-
-    /* Bestimme hier jetzt deinen WUNSCH-Abstand zum echten Displayrand */
-    padding-left: 8px; /* Ändere das auf 4px oder 0px, wenn es noch schmaler sein soll! */
+    padding-left: 8px;
     padding-right: 8px;
   }
 
@@ -88,7 +86,6 @@ export const TopBar = styled.div`
   box-sizing: border-box;
 
   @media (max-width: 1023px) {
-    /* Gibt den Admin-Buttons einen minimalen Abstand vom Rand */
     padding: 0 8px;
   }
 `;
@@ -101,7 +98,6 @@ export const MainGrid = styled.div`
   box-sizing: border-box;
 
   @media (max-width: 1023px) {
-    /* Schrumpft die Boxen minimal, damit links und rechts ein perfekter, kleiner Spalt entsteht */
     width: calc(100% - 16px);
     margin-left: auto;
     margin-right: auto;
@@ -196,7 +192,7 @@ export const TitleRow = styled.div`
 export const TextContent = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%; /* Sorgt dafür, dass der Textblock die volle Breite der InfoSection einnimmt */
+  width: 100%;
 
   h1 {
     color: #2d5a27;
@@ -214,7 +210,7 @@ export const TextContent = styled.div`
 export const TitleHeadlineRow = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Schiebt die Herkunft jetzt bis ganz nach rechts */
+  justify-content: space-between;
   width: 100%;
   gap: 16px;
   flex-wrap: wrap;
@@ -287,7 +283,6 @@ export const StatsGrid = styled.div`
     }
   }
 
-  /* Mobil: Schaltet das Grid komplett ab, damit die Gruppen stur untereinander fließen */
   @media (max-width: 768px) {
     display: flex;
     flex-direction: column;

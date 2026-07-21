@@ -19,6 +19,7 @@ import { getBiomeImage, getBiomeName, getShelterImage } from "@/utils/BiomeUtil"
 import LinkedRow from "@/components/page-structure/Table/LinkedRow";
 import { useAnimalStore } from "@/store/useAnimalStore";
 import { useRouter } from "@/i18n/routing";
+import { TableCellRight, TableHeaderRight } from "@/components/page-structure/Table/Table.styles";
 
 export default function AnimalDesktopTable() {
   const router = useRouter();
@@ -88,7 +89,7 @@ export default function AnimalDesktopTable() {
             sortDirection={sortDirection}
             align="right"
           />
-          {isAdmin && <Styles.TableCellRight>{tCommon("actions")}</Styles.TableCellRight>}
+          {isAdmin && <TableHeaderRight>{tCommon("actions")}</TableHeaderRight>}
         </tr>
       </thead>
       <tbody>

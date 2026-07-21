@@ -13,8 +13,6 @@ interface GameBadgeProps {
 }
 
 export default function GameBadge({ image, size = 50, borderColor = "#4ca64c" }: GameBadgeProps) {
-  const t = useTranslations("common");
-
   return (
     <IconFrame $size={size} $borderColor={borderColor}>
       <StyledImage
@@ -22,15 +20,13 @@ export default function GameBadge({ image, size = 50, borderColor = "#4ca64c" }:
         alt={image.name}
         onError={(e) => {
           const target = e.target as HTMLImageElement;
-          console.error(t("errors.imageNotFound"), image.path);
-          target.src = "/images/placeholder.png";
+          target.src = "/images/placeholder.jpg";
         }}
       />
     </IconFrame>
   );
 }
 
-// Interface für die Styled Components
 interface StyledFrameProps {
   $size: number;
   $borderColor: string;

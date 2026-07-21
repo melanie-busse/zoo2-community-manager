@@ -26,6 +26,8 @@
     "club": "Club",
     "club_statues": "Statues",
     "club_contests": "Concours",
-    "club_create_contest": "Créer un concours"
+    "club_create_contest": "Créer un concours",
+    "admin": "Admin",
+    "import-animals": "Importer des animaux"
   }
 }

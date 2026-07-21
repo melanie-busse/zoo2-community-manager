@@ -84,6 +84,37 @@ export const FilterBar = styled.div`
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
 `;
 
+export const FilterButton = styled.button<{ $active?: boolean }>`
+  background-color: ${({ $active, theme }) =>
+    $active ? theme.colors.primary[500] : theme.colors.ui.glassWhiteStrong};
+  color: ${({ $active, theme }) => ($active ? theme.colors.ui.white : theme.colors.primary[900])};
+  border: 2px solid ${({ theme }) => theme.colors.ui.borderLight};
+  border-radius: 12px;
+
+  padding: 12px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-family: inherit;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 140px;
+
+  &:hover {
+    background-color: ${({ $active, theme }) =>
+      $active ? theme.colors.primary[700] : theme.colors.ui.whiteFrost};
+    border-color: ${({ $active, theme }) =>
+      $active ? theme.colors.primary[700] : theme.colors.ui.borderMuted};
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+`;
+
 export const SearchInput = styled.input`
   flex: 2;
   min-width: 250px;

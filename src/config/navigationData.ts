@@ -1,7 +1,7 @@
 interface SubMenuItem {
   labelKey: string;
   href: string;
-  requiresAuth?: boolean; // Optional: Wenn nicht gesetzt, ist es öffentlich
+  requiresAuth?: boolean;
 }
 
 interface NavItem {
@@ -56,4 +56,11 @@ export const navConfig: NavItem[] = [
   //     },
   //   ],
   // },
+  {
+    id: "admin",
+    labelKey: "admin",
+    basePath: "/admin",
+    requiresAuth: true,
+    subMenu: [{ labelKey: "import-animals", href: "/admin/import-animals", requiresAuth: true }],
+  },
 ];

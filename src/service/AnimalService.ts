@@ -5,7 +5,7 @@ export async function getCountAnimals() {
   return prisma.animal.count();
 }
 
-export async function getAllAnimals(locale: string = "de") {
+export async function getAllAnimals(locale = "de") {
   try {
     return await prisma.animal.findMany({
       include: {
@@ -30,10 +30,7 @@ export async function getAllAnimals(locale: string = "de") {
   }
 }
 
-export async function getAnimalById(
-  id: number | string,
-  locale: string | null = null,
-): Promise<any | null> {
+export async function getAnimalById(id: number | string, locale: string | null = null): Promise<any> {
   const numericId = typeof id === "string" ? parseInt(id, 10) : id;
 
   if (isNaN(numericId)) {
@@ -127,7 +124,7 @@ export async function createAnimal(animalData: any) {
 
     if (Array.isArray(animaltext) && animaltext.length > 0) {
       await tx.animalText.createMany({
-        data: animaltext.map((t: any) => ({
+        data: animaltext.map((t) => ({
           animalId: animal.id,
           languageCode: t.languageCode,
           animalName: t.animalName || "",
@@ -137,7 +134,7 @@ export async function createAnimal(animalData: any) {
     }
 
     const xpTypeMap: Record<string, number> = { feed: 1, play: 2, clean: 3 };
-    const xpData = [];
+    const xpData: any[] = [];
 
     if (actions) {
       for (const [key, action] of Object.entries(actions) as [string, any][]) {
@@ -222,12 +219,14 @@ export async function updateAnimal(id: number, animalData: any) {
       },
     });
 
+    // Alte Texte löschen
     await tx.animalText.deleteMany({ where: { animalId: id } });
 
+    // Neue Texte direkt so speichern, wie sie von der API aufbereitet wurden
     if (Array.isArray(animaltext) && animaltext.length > 0) {
       await tx.animalText.createMany({
-        data: animaltext.map((t: any) => ({
-          animalId: id,
+        data: animaltext.map((t) => ({
+          animalId: animal.id,
           languageCode: t.languageCode,
           animalName: t.animalName || "",
           animalDescription: t.animalDescription || "",
@@ -238,7 +237,7 @@ export async function updateAnimal(id: number, animalData: any) {
     await tx.animalXP.deleteMany({ where: { animalId: id } });
 
     const xpTypeMap: Record<string, number> = { feed: 1, play: 2, clean: 3 };
-    const xpData = [];
+    const xpData: any[] = [];
 
     if (actions) {
       for (const [key, action] of Object.entries(actions) as [string, any][]) {
