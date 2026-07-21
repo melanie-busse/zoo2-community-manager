@@ -4,7 +4,18 @@ import {
   fetchAnimalDetails,
   parseAnimalData,
   extractIconsFromOverview,
+  syncBreedingChancesFromApi,
 } from "./FandomService";
+
+vi.mock("@/lib/prisma", () => ({
+  default: {
+    animalText: { findFirst: vi.fn() },
+    specialCoatsText: { findFirst: vi.fn() },
+    specialCoat: { update: vi.fn() },
+  },
+}));
+
+import prisma from "@/lib/prisma";
 
 const mockFetch = vi.fn();
 vi.stubGlobal("fetch", mockFetch);
@@ -470,5 +481,104 @@ The [[Red Fox|fox]] is beautiful.
       const result = extractIconsFromOverview(overviewWikitext, "Bengal Fox");
       expect(result[0]).not.toContain(" ");
     });
+  });
+});
+
+// ==========================================
+// syncBreedingChancesFromApi
+// ==========================================
+
+const BREEDING_TABLE_WIKITEXT = `{| class="wikitable"
+|-
+! Animal !! Special Coat !! Obtained from !! Parent needed !! Base (no parent) !! Base (1 parent) !! Event (no parent)
+|-
+| Fox || Arctic Fox || Magic Chest || Yes || 5% || 10% || 3%
+|-
+| || White Fox || Breeding || No || 2% || 4% || 0%
+|}`;
+
+describe("syncBreedingChancesFromApi", () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
+
+  function mockWikiResponse(wikitext: string) {
+    mockFetch.mockResolvedValue({
+      ok: true,
+      json: async () => ({ parse: { title: "Special_Coats", wikitext: { "*": wikitext } } }),
+    });
+  }
+
+  test("throws when the API returns no wikitext", async () => {
+    mockFetch.mockResolvedValue({
+      ok: true,
+      json: async () => ({ parse: { wikitext: {} } }),
+    });
+
+    await expect(syncBreedingChancesFromApi()).rejects.toThrow(
+      "Could not load the wikitext of the Special_Coats page.",
+    );
+  });
+
+  test("throws when no table is found in the wikitext", async () => {
+    mockWikiResponse("No table here.");
+
+    await expect(syncBreedingChancesFromApi()).rejects.toThrow(
+      "No table found on the Special_Coats page.",
+    );
+  });
+
+  test("updates a coat when animal and coat are found in the DB", async () => {
+    mockWikiResponse(BREEDING_TABLE_WIKITEXT);
+    vi.mocked(prisma.animalText.findFirst).mockResolvedValue({ animalId: 1 } as any);
+    vi.mocked(prisma.specialCoatsText.findFirst).mockResolvedValue({ specialCoatId: 10 } as any);
+    vi.mocked(prisma.specialCoat.update).mockResolvedValue({} as any);
+
+    await syncBreedingChancesFromApi();
+
+    expect(prisma.specialCoat.update).toHaveBeenCalledWith({
+      where: { id: 10 },
+      data: {
+        parentWithCoatNeeded: true,
+        chanceBaseWithoutParent: 5,
+        chanceBaseWithOneParent: 10,
+        chanceEventWithoutParent: 3,
+      },
+    });
+  });
+
+  test("handles continuation rows: uses animal name from the previous row", async () => {
+    mockWikiResponse(BREEDING_TABLE_WIKITEXT);
+    vi.mocked(prisma.animalText.findFirst).mockResolvedValue({ animalId: 1 } as any);
+    vi.mocked(prisma.specialCoatsText.findFirst).mockResolvedValue({ specialCoatId: 11 } as any);
+    vi.mocked(prisma.specialCoat.update).mockResolvedValue({} as any);
+
+    await syncBreedingChancesFromApi();
+
+    // Both rows (Arctic Fox + White Fox) belong to "Fox"
+    expect(prisma.animalText.findFirst).toHaveBeenCalledTimes(2);
+    expect(prisma.animalText.findFirst).toHaveBeenCalledWith({
+      where: { animalName: "Fox", languageCode: "en" },
+      select: { animalId: true },
+    });
+  });
+
+  test("skips rows when the animal is not found in the DB", async () => {
+    mockWikiResponse(BREEDING_TABLE_WIKITEXT);
+    vi.mocked(prisma.animalText.findFirst).mockResolvedValue(null);
+
+    await syncBreedingChancesFromApi();
+
+    expect(prisma.specialCoat.update).not.toHaveBeenCalled();
+  });
+
+  test("skips rows when the special coat is not found in the DB", async () => {
+    mockWikiResponse(BREEDING_TABLE_WIKITEXT);
+    vi.mocked(prisma.animalText.findFirst).mockResolvedValue({ animalId: 1 } as any);
+    vi.mocked(prisma.specialCoatsText.findFirst).mockResolvedValue(null);
+
+    await syncBreedingChancesFromApi();
+
+    expect(prisma.specialCoat.update).not.toHaveBeenCalled();
   });
 });
