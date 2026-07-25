@@ -1,6 +1,7 @@
 import { Animal } from "@/types/animal";
 import { User } from "@/types/user";
 import { Statue } from "@/types/statue";
+import { SpecialCoat } from "@/types/specialCoat";
 
 export interface Contest {
   id: number;
@@ -10,6 +11,7 @@ export interface Contest {
 
   contestdonation?: ContestDonation[];
   conteststatue?: ContestStatue[];
+  contestspecialcoat?: ContestSpecialCoat[];
 }
 
 export interface ContestDonation {
@@ -25,4 +27,11 @@ export interface ContestStatue {
   id: number;
   contest: Contest;
   statue: Statue;
+}
+
+export interface ContestSpecialCoat {
+  id: number;
+  contestId: number;
+  specialCoatId: number;
+  specialcoat?: SpecialCoat;
 }

@@ -30,6 +30,26 @@ export const StatueGroup = styled.div`
   width: 100%;
   min-width: 0;
 `;
+
+export const StatueRow = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  width: 100%;
+`;
+
+/* Container für die Farbvariante, schiebt die Card nach rechts */
+export const ColorVariantWrapper = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+
+  /* Verhindert, dass die Card breiter wird als nötig */
+  > div {
+    max-width: 220px;
+  }
+`;
+
 export const AnimalCard = styled.div`
   display: flex;
   align-items: center;
@@ -139,4 +159,20 @@ export const TinyName = styled(Name)`
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 100%;
+`;
+
+export const DesktopOnly = styled.div`
+  display: block;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    display: none;
+  }
+`;
+
+export const MobileOnly = styled.div`
+  display: none;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    display: block;
+  }
 `;

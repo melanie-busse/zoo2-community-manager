@@ -12,7 +12,9 @@ export const Row = styled.div`
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
-  align-items: flex-end;
+  justify-content: center; /* Zentriert die Inputs horizontal */
+  align-items: center; /* Richtet Felder & Checkbox auf einer Höhe aus */
+  margin-bottom: 20px; /* Optional: etwas Abstand nach unten */
 `;
 
 export const InputGroup = styled.div`
@@ -41,14 +43,24 @@ export const CheckboxGroup = styled.div`
   align-items: center;
   gap: 10px;
   padding-bottom: 10px;
+  padding-left: 10px;
+  margin-top: 30px;
+
   label {
     font-weight: bold;
     color: #555;
     cursor: pointer;
   }
+
   input {
     cursor: pointer;
     width: 18px;
     height: 18px;
   }
+`;
+
+export const checkboxContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 5px;
 `;

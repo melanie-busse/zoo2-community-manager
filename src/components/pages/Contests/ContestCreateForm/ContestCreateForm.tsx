@@ -7,17 +7,20 @@ import { useTranslations } from "next-intl";
 import { Contest } from "@/types/contest";
 import { ContestCreateFormContent } from "@/components/pages/Contests/ContestCreateForm/ContestCreateFormContent";
 import { Statue } from "@/types/statue";
+import { SpecialCoat } from "@/types/specialCoat";
 import { getStatueName } from "@/utils/ContestUtil";
 import { toISODate } from "@/utils/DateUtil";
 
 interface ContestFormProps {
   statues?: Statue[];
+  contestSpecialCoats?: SpecialCoat[];
   initialData?: Contest | null;
   onSubmit: (data: any) => Promise<void>;
 }
 
 export default function ContestForm({
   statues = [],
+  contestSpecialCoats = [],
   initialData = null,
   onSubmit,
 }: ContestFormProps) {
@@ -36,7 +39,10 @@ export default function ContestForm({
   // 2. Gewählte Statuen State
   const [selectedStatues, setSelectedStatues] = useState<{ id: number; name: string }[]>([]);
 
-  // 3. Effekt zum Laden der Daten (wichtig für den Edit-Modus)
+  // 3. Gewählte Farbvarianten State
+  const [selectedSpecialCoatIds, setSelectedSpecialCoatIds] = useState<number[]>([]);
+
+  // 4. Effekt zum Laden der Daten (wichtig für den Edit-Modus)
   useEffect(() => {
     if (initialData) {
       // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -53,6 +59,11 @@ export default function ContestForm({
         }));
         // eslint-disable-next-line react-hooks/set-state-in-effect
         setSelectedStatues(preselected);
+      }
+
+      if (initialData.contestspecialcoat) {
+        // eslint-disable-next-line react-hooks/set-state-in-effect
+        setSelectedSpecialCoatIds(initialData.contestspecialcoat.map((link: any) => link.specialCoatId));
       }
     } else {
       // Default-Werte für neuen Contest (nächster Mittwoch)
@@ -77,6 +88,15 @@ export default function ContestForm({
     }
   }, [initialData]);
 
+  // Verfügbare SpecialCoats für den Transfer (Name aus Text oder Tier-Name)
+  const specialCoatItems = (contestSpecialCoats || []).map((coat) => ({
+    id: coat.id,
+    name:
+      coat.specialcoatstext?.[0]?.name ||
+      coat.animal?.animaltext?.[0]?.animalName ||
+      `Coat #${coat.id}`,
+  }));
+
   // Verfügbare Statuen filtern (alle minus die bereits gewählten)
   const availableStatues = (statues || [])
     .filter((statue) => !selectedStatues.find((s) => s.id === statue.id))
@@ -85,23 +105,19 @@ export default function ContestForm({
       name: getStatueName(statue, "Unbekannte Statue"),
     }));
 
-  const handleMoveRight = (statue: { id: number; name: string }) => {
-    if (selectedStatues.length >= 4) {
-      toast.warn(tContest("contestForm.maxStatues"));
-      return;
-    }
-    setSelectedStatues([...selectedStatues, statue]);
-  };
-
-  const handleMoveLeft = (statue: { id: number; name: string }) => {
-    setSelectedStatues(selectedStatues.filter((s) => s.id !== statue.id));
+  const handleStatueIdsChange = (newIds: number[]) => {
+    const allStatues = (statues || []).map((s) => ({
+      id: s.id,
+      name: getStatueName(s, "Unbekannte Statue"),
+    }));
+    setSelectedStatues(allStatues.filter((s) => newIds.includes(s.id)));
   };
 
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Validierung: Zoo 2 Contests benötigen immer genau 4 Statuen
-    if (selectedStatues.length < 3 || selectedStatues.length > 4) {
+    // Validierung: Zoo 2 Contests benötigen immer genau 3 Statuen
+    if (selectedStatues.length < 2 || selectedStatues.length > 3) {
       toast.error(tContest("contestForm.chooseStatues"));
       return;
     }
@@ -115,6 +131,7 @@ export default function ContestForm({
     const submissionData = {
       ...formData,
       statuenIds: selectedStatues.map((s) => s.id),
+      specialCoatIds: selectedSpecialCoatIds,
     };
 
     setIsSubmitting(true);
@@ -135,8 +152,10 @@ export default function ContestForm({
       setFormData={setFormData}
       selectedStatues={selectedStatues}
       availableStatues={availableStatues}
-      handleMoveRight={handleMoveRight}
-      handleMoveLeft={handleMoveLeft}
+      onStatueIdsChange={handleStatueIdsChange}
+      specialCoatItems={specialCoatItems}
+      selectedSpecialCoatIds={selectedSpecialCoatIds}
+      onSpecialCoatIdsChange={setSelectedSpecialCoatIds}
       isSubmitting={isSubmitting}
     />
   );

@@ -7,6 +7,7 @@
     "upcoming": "Binnenkort"
   },
   "contestOverview": {
+    "overview_title": "Wedstrijden",
     "table": {
       "period": "Periode",
       "statues_animals": "Beelden / Dieren",
@@ -16,12 +17,25 @@
     "messages": {
       "deleteErrorTitle": "Wedstrijd verwijderen?",
       "confirmDelete": "Weet je zeker dat je deze wedstrijd wilt verwijderen?",
-      "cancelButton": "Annuleren"
+      "cancelButton": "Annuleren",
+      "deleteSuccess": "Wedstrijd verwijderd"
     }
   },
   "contestForm": {
+    "createTitle": "Wedstrijd aanmaken",
+    "editTitle": "Wedstrijd bewerken",
+    "startDate": "Startdatum",
+    "endDate": "Einddatum",
+    "activeContest": "Actief",
+    "statuesChoise": "Kies beelden:",
+    "saveContest": "Wedstrijd opslaan",
     "maxStatues": "Maximaal 4 beelden toegestaan",
     "chooseStatues": "Selecteer 3 of 4 beelden",
-    "endDateBeforeStart": "Einddatum moet na startdatum liggen"
+    "specialCoatsChoice": "Kies kleurvarianten:",
+    "endDateBeforeStart": "Einddatum moet na startdatum liggen",
+    "successCreated": "Wedstrijd aangemaakt",
+    "successUpdated": "Wedstrijd bijgewerkt",
+    "errorCreating": "Fout bij aanmaken wedstrijd",
+    "errorUpdating": "Fout bij bijwerken wedstrijd"
   }
 }

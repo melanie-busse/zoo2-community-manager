@@ -7,6 +7,7 @@
     "upcoming": "Próximamente"
   },
   "contestOverview": {
+    "overview_title": "Concursos",
     "table": {
       "period": "Período",
       "statues_animals": "Estatuas / Animales",
@@ -16,12 +17,25 @@
     "messages": {
       "deleteErrorTitle": "¿Eliminar concurso?",
       "confirmDelete": "¿Estás seguro de que quieres eliminar este concurso?",
-      "cancelButton": "Cancelar"
+      "cancelButton": "Cancelar",
+      "deleteSuccess": "Concurso eliminado correctamente"
     }
   },
   "contestForm": {
+    "createTitle": "Crear concurso",
+    "editTitle": "Editar concurso",
+    "startDate": "Fecha de inicio",
+    "endDate": "Fecha de fin",
+    "activeContest": "Activo",
+    "statuesChoise": "Elige estatuas:",
+    "saveContest": "Guardar concurso",
     "maxStatues": "Máximo 4 estatuas permitidas",
     "chooseStatues": "Por favor selecciona 3 o 4 estatuas",
-    "endDateBeforeStart": "La fecha de fin debe ser posterior a la fecha de inicio"
+    "specialCoatsChoice": "Elegir variantes de color:",
+    "endDateBeforeStart": "La fecha de fin debe ser posterior a la fecha de inicio",
+    "successCreated": "Concurso creado correctamente",
+    "successUpdated": "Concurso actualizado correctamente",
+    "errorCreating": "Error al crear el concurso",
+    "errorUpdating": "Error al actualizar el concurso"
   }
 }

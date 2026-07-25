@@ -31,7 +31,7 @@ vi.mock("@/lib/prisma", () => ({
       create: vi.fn(),
     },
     origin: {
-      findMany: vi.fn(),
+      findMany: vi.fn().mockResolvedValue([]),
     },
     animalText: {
       findFirst: vi.fn(),
@@ -39,6 +39,9 @@ vi.mock("@/lib/prisma", () => ({
     },
     animal: {
       findUnique: vi.fn(),
+    },
+    specialCoatsText: {
+      findMany: vi.fn().mockResolvedValue([]),
     },
   },
 }));
@@ -53,7 +56,7 @@ import { createSpecialCoat } from "@/service/SpecialCoatsService";
 import { translateText } from "@/utils/translate";
 import { prisma } from "@/lib/prisma";
 
-const mockParsedAnimal = {
+const mockParsedAnimal: any = {
   price: 1500,
   currencyId: 1,
   wikiBiomeName: "Meadow",
@@ -607,9 +610,7 @@ describe("POST /api/admin/import-animals – buildCoatTexts", () => {
     vi.clearAllMocks();
   });
 
-  test("übersetzt Farbvarianten-Texte für nicht-englische Sprachen", async () => {
-    vi.mocked(translateText).mockResolvedValue("Übersetzt");
-
+  test("verwendet den englischen Namen und die Farbe für alle Sprachen unverändert", async () => {
     const parsedWithCoats = {
       ...mockParsedAnimal,
       specialCoats: [
@@ -636,13 +637,14 @@ describe("POST /api/admin/import-animals – buildCoatTexts", () => {
 
     await POST(request);
 
-    // getAllLanguages liefert en + de → buildCoatTexts soll für "de" translateText aufrufen
-    expect(translateText).toHaveBeenCalled();
+    // Both name and color are translated for non-English locales
+    expect(translateText).toHaveBeenCalledWith("Arctic Fox", "de");
+    expect(translateText).toHaveBeenCalledWith("Arctic", "de");
     expect(createSpecialCoat).toHaveBeenCalledWith(
       expect.objectContaining({
         texts: expect.arrayContaining([
-          expect.objectContaining({ languageCode: "en", name: "Arctic Fox" }),
-          expect.objectContaining({ languageCode: "de", name: "Übersetzt" }),
+          expect.objectContaining({ languageCode: "en", name: "Arctic Fox", color: "Arctic" }),
+          expect.objectContaining({ languageCode: "de" }),
         ]),
       }),
     );

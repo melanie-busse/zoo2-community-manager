@@ -172,12 +172,13 @@ model StatueText {
 }
 
 model Contest {
-  id              Int               @id @unique(map: "contests") @default(autoincrement())
-  startDate       DateTime
-  endDate         DateTime
-  active          Int
-  contestdonation ContestDonation[]
-  conteststatue   ContestStatue[]
+  id                   Int                    @id @unique(map: "contests") @default(autoincrement())
+  startDate            DateTime
+  endDate              DateTime
+  active               Int
+  contestdonation      ContestDonation[]
+  conteststatue        ContestStatue[]
+  contestspecialcoat   ContestSpecialCoat[]
 
   @@map("contest")
 }
@@ -277,14 +278,28 @@ model SpecialCoat {
   chanceBaseWithOneParent  Float    @default(0.0)
   chanceEventWithoutParent Float    @default(0.0)
   chanceEventWithOneParent Float    @default(0.0)
+  isContestSpecialCoat     Boolean  @default(false)
   image                    String?  @db.VarChar(255)
 
-  animal             Animal               @relation(fields: [animalId], references: [id], onDelete: Cascade, map: "specialCoat_animalId_fkey")
-  specialcoatstext   SpecialCoatsText[]
-  specialcoatsorigin SpecialCoatsOrigin[]
+  animal               Animal               @relation(fields: [animalId], references: [id], onDelete: Cascade, map: "specialCoat_animalId_fkey")
+  specialcoatstext     SpecialCoatsText[]
+  specialcoatsorigin   SpecialCoatsOrigin[]
+  contestspecialcoat   ContestSpecialCoat[]
 
   @@index([animalId], map: "specialCoat_animalId_idx")
   @@map("specialcoat")
+}
+
+model ContestSpecialCoat {
+  id            Int         @id @default(autoincrement())
+  contestId     Int
+  specialCoatId Int
+  contest       Contest     @relation(fields: [contestId], references: [id], onDelete: Cascade, map: "contestSpecialCoat_contestId_fkey")
+  specialcoat   SpecialCoat @relation(fields: [specialCoatId], references: [id], onDelete: Cascade, map: "contestSpecialCoat_specialCoatId_fkey")
+
+  @@index([contestId], map: "contestSpecialCoat_contestId_idx")
+  @@index([specialCoatId], map: "contestSpecialCoat_specialCoatId_idx")
+  @@map("contestspecialcoat")
 }
 
 model SpecialCoatsText {

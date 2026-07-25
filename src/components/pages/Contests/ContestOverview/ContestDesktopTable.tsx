@@ -3,6 +3,7 @@
 import React from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { useSession } from "next-auth/react";
+import styled from "styled-components";
 
 import * as Styles from "./ContestOverview.styles";
 import Table from "@/components/page-structure/Table/Table";
@@ -14,7 +15,7 @@ import ActionGroupBadge from "@/components/ui/badges/ActionGroupBadge";
 import { StatusBadge } from "@/components/ui/badges/StatusBadge";
 import { getStatueName } from "@/utils/ContestUtil";
 import { getAnimalImage } from "@/utils/AnimalUtil";
-import styled from "styled-components";
+import { getSpecialCoatImage } from "@/utils/SpecialCoatUtil";
 
 interface ContestDesktopTableProps {
   contests: Contest[];
@@ -41,9 +42,7 @@ export default function ContestDesktopTable({
         <tr>
           <ThPeriod>{tContest("contestOverview.table.period")}</ThPeriod>
           <th colSpan={3}>{tContest("contestOverview.table.statues_animals")}</th>
-          <th style={{ textAlign: "right", paddingRight: "50px" }}>
-            {tContest("contestOverview.table.colorVariant")}
-          </th>
+          <ThColorVariant>{tContest("contestOverview.table.colorVariant")}</ThColorVariant>
           <ThStatus>{tContest("contestOverview.table.status")}</ThStatus>
           <ActionsHeadline text={tCommon("actions")} />
         </tr>
@@ -70,9 +69,9 @@ export default function ContestDesktopTable({
                 </Styles.DateWrapper>
               </td>
 
-              {/* Die Statuen/Tiere */}
-              <td colSpan={4}>
-                <Styles.StatueGroup>
+              {/* 3 Statuen nebeneinander in einer Zeile */}
+              <td colSpan={3}>
+                <Styles.StatueRow>
                   {contest.conteststatue?.map((contestStatue) => {
                     return (
                       <Styles.AnimalCard key={contestStatue.id}>
@@ -88,12 +87,40 @@ export default function ContestDesktopTable({
                       </Styles.AnimalCard>
                     );
                   })}
-                </Styles.StatueGroup>
+                </Styles.StatueRow>
               </td>
 
+              {/* Farbvariante rechtsbündig ausgerichtet */}
+              <TdColorVariant>
+                <Styles.ColorVariantWrapper>
+                  {contest.contestspecialcoat?.map((link) => {
+                    const coat = link.specialcoat;
+                    if (!coat) return null;
+                    const name =
+                      coat.specialcoatstext?.[0]?.name ||
+                      coat.animal?.animaltext?.[0]?.animalName ||
+                      `Coat #${coat.id}`;
+                    return (
+                      <Styles.AnimalCard key={link.id}>
+                        <ThumbnailBadge
+                          image={getSpecialCoatImage(coat)}
+                          biome={coat.animal?.biome}
+                          name={name}
+                          size={55}
+                        />
+                        <span>{name}</span>
+                      </Styles.AnimalCard>
+                    );
+                  })}
+                </Styles.ColorVariantWrapper>
+              </TdColorVariant>
+
+              {/* Status */}
               <td>
                 <StatusBadge isActive={isActive} />
               </td>
+
+              {/* Aktionen */}
               {isAdmin && (
                 <td
                   style={{
@@ -118,14 +145,22 @@ export default function ContestDesktopTable({
   );
 }
 
+/* Tabellen-Styles für korrekte Ausrichtung */
 const ThPeriod = styled.th`
   width: 110px;
   text-align: center;
-  justify-content: center;
-  align-items: center;
 `;
 
 const ThStatus = styled.th`
   width: 100px;
   text-align: center;
+`;
+
+const ThColorVariant = styled.th`
+  text-align: right;
+  padding-right: 20px;
+`;
+
+const TdColorVariant = styled.td`
+  padding-right: 20px;
 `;

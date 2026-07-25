@@ -10,10 +10,12 @@ interface ContestCreateFormContentProps {
   handleFormSubmit: (e: React.FormEvent) => Promise<void>;
   formData: any;
   setFormData: React.Dispatch<React.SetStateAction<any>>;
-  selectedStatues: any[];
-  availableStatues: any[];
-  handleMoveRight: (statue: any) => void;
-  handleMoveLeft: (statue: any) => void;
+  selectedStatues: { id: number; name: string }[];
+  availableStatues: { id: number; name: string }[];
+  onStatueIdsChange: (ids: number[]) => void;
+  specialCoatItems: { id: number; name: string }[];
+  selectedSpecialCoatIds: number[];
+  onSpecialCoatIdsChange: (ids: number[]) => void;
   isSubmitting: boolean;
 }
 
@@ -23,17 +25,20 @@ export function ContestCreateFormContent({
   setFormData,
   selectedStatues,
   availableStatues,
-  handleMoveRight,
-  handleMoveLeft,
+  onStatueIdsChange,
+  specialCoatItems,
+  selectedSpecialCoatIds,
+  onSpecialCoatIdsChange,
   isSubmitting,
 }: ContestCreateFormContentProps) {
-  const t = useTranslations();
+  const t = useTranslations("contest");
+  const tCommon = useTranslations("common");
 
   return (
     <form onSubmit={handleFormSubmit}>
       <Styles.Row>
         <Styles.InputGroup>
-          <label>{t("Contest.contestForm.startDate")}</label>
+          <label>{t("contestForm.startDate")}</label>
           <input
             type="date"
             value={formData.startDate}
@@ -47,7 +52,7 @@ export function ContestCreateFormContent({
         </Styles.InputGroup>
 
         <Styles.InputGroup>
-          <label>{t("Contest.contestForm.endDate")}</label>
+          <label>{t("contestForm.endDate")}</label>
           <input
             type="date"
             value={formData.endDate}
@@ -63,22 +68,42 @@ export function ContestCreateFormContent({
         </Styles.InputGroup>
 
         <Styles.CheckboxGroup>
-          <input
-            type="checkbox"
-            id="active"
-            checked={formData.active === 1}
-            onChange={(e) => setFormData({ ...formData, active: e.target.checked ? 1 : 0 })}
-          />
-          <label htmlFor="aktiv">{t("Contest.contestForm.activeContest")}</label>
+          <Styles.checkboxContainer>
+            <input
+              type="checkbox"
+              id="active"
+              checked={formData.active === 1}
+              onChange={(e) => setFormData({ ...formData, active: e.target.checked ? 1 : 0 })}
+            />
+            <label htmlFor="active">{t("contestForm.activeContest")}</label>
+          </Styles.checkboxContainer>
         </Styles.CheckboxGroup>
       </Styles.Row>
 
       <Styles.SectionHeadline>
-        {t("Contest.contestForm.statuesChoise")} ({selectedStatues.length} / 4)
+        {t("contestForm.statuesChoise")} ({selectedStatues.length} / 3)
       </Styles.SectionHeadline>
 
+      <OriginTransfer
+        allOrigins={[...availableStatues, ...selectedStatues]}
+        selectedIds={selectedStatues.map((s) => s.id)}
+        onChange={onStatueIdsChange}
+        maxSelected={3}
+      />
+
+      <Styles.SectionHeadline>
+        {t("contestForm.specialCoatsChoice")} ({selectedSpecialCoatIds.length} / 1)
+      </Styles.SectionHeadline>
+
+      <OriginTransfer
+        allOrigins={specialCoatItems}
+        selectedIds={selectedSpecialCoatIds}
+        onChange={onSpecialCoatIdsChange}
+        maxSelected={1}
+      />
+
       <SubmitButton
-        label={isSubmitting ? t("Common.save_changes") : t("Contest.contestForm.saveContest")}
+        label={isSubmitting ? tCommon("save_changes") : t("contestForm.saveContest")}
         isSubmitting={isSubmitting}
       />
     </form>

@@ -1,5 +1,4 @@
-scp D:\Entwicklung\zoo2-community-manager\prisma\zoo2-texte-i18n.sql melanie@212.227.109.225/zoo2-manager
-
+scp D:\Entwicklung\zoo2-community-manager\prisma\fandom.sql melanie@212.227.109.225:/zoo2-manager/
 docker exec -i zoo2-manager-db-1 mariadb -u root -pEYTSHpRVbOYu3G9evtDT zoo2_prod < /home/melanie/zoo2-manager/zoo2-texte-i18n.sql
 
 docker exec -it zoo2-manager-db-1 mariadb -u root -pEYTSHpRVbOYu3G9evtDT zoo2_prod

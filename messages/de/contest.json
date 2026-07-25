@@ -7,6 +7,7 @@
     "upcoming": "Demnächst"
   },
   "contestOverview": {
+    "overview_title": "Wettbewerbe",
     "table": {
       "period": "Zeitraum",
       "statues_animals": "Statuen / Tiere",
@@ -16,12 +17,25 @@
     "messages": {
       "deleteErrorTitle": "Wettbewerb löschen?",
       "confirmDelete": "Möchtest du diesen Wettbewerb wirklich löschen?",
-      "cancelButton": "Abbrechen"
+      "cancelButton": "Abbrechen",
+      "deleteSuccess": "Wettbewerb erfolgreich gelöscht"
     }
   },
   "contestForm": {
-    "maxStatues": "Maximal 4 Statuen erlaubt",
-    "chooseStatues": "Bitte 3 oder 4 Statuen auswählen",
-    "endDateBeforeStart": "Enddatum muss nach Startdatum liegen"
+    "createTitle": "Wettbewerb erstellen",
+    "editTitle": "Wettbewerb bearbeiten",
+    "startDate": "Startdatum",
+    "endDate": "Enddatum",
+    "activeContest": "Aktiv",
+    "statuesChoise": "Wähle Statuen aus:",
+    "saveContest": "Wettbewerb speichern",
+    "maxStatues": "Maximal 3 Statuen erlaubt",
+    "chooseStatues": "Bitte 3 Statuen auswählen",
+    "specialCoatsChoice": "Farbvarianten auswählen:",
+    "endDateBeforeStart": "Enddatum muss nach Startdatum liegen",
+    "successCreated": "Wettbewerb erfolgreich erstellt",
+    "successUpdated": "Wettbewerb erfolgreich aktualisiert",
+    "errorCreating": "Fehler beim Erstellen des Wettbewerbs",
+    "errorUpdating": "Fehler beim Aktualisieren des Wettbewerbs"
   }
 }

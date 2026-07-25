@@ -1,11 +1,16 @@
 import ContestCreateClient from "./ContestCreateClient";
-import { getAllStatues } from "@/service/ContestService";
+import { getAllStatues, getContestSpecialCoats } from "@/service/ContestService";
 
 export default async function CreateContestPage() {
-  const allStatues = await getAllStatues();
+  const [allStatues, allSpecialCoats] = await Promise.all([
+    getAllStatues(),
+    getContestSpecialCoats(),
+  ]);
 
-  // Plain Objects für den Client vorbereiten (Date-Handling)
-  const statues = JSON.parse(JSON.stringify(allStatues));
-
-  return <ContestCreateClient statues={statues} />;
+  return (
+    <ContestCreateClient
+      statues={JSON.parse(JSON.stringify(allStatues))}
+      contestSpecialCoats={JSON.parse(JSON.stringify(allSpecialCoats))}
+    />
+  );
 }

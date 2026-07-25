@@ -1,7 +1,7 @@
 import React from "react";
 import { notFound } from "next/navigation";
 
-import { getAllStatues, getContestById } from "@/service/ContestService";
+import { getAllStatues, getContestById, getContestSpecialCoats } from "@/service/ContestService";
 import ContestEditClient from "./ContestEditClient";
 
 interface EditContestPageProps {
@@ -11,7 +11,11 @@ interface EditContestPageProps {
 export default async function EditContestPage({ params }: EditContestPageProps) {
   const { id, locale } = await params;
 
-  const [contest, statues] = await Promise.all([getContestById(id), getAllStatues()]);
+  const [contest, statues, allSpecialCoats] = await Promise.all([
+    getContestById(id),
+    getAllStatues(),
+    getContestSpecialCoats(locale),
+  ]);
 
   if (!contest) {
     notFound();
@@ -21,6 +25,7 @@ export default async function EditContestPage({ params }: EditContestPageProps) 
     <ContestEditClient
       contest={JSON.parse(JSON.stringify(contest))}
       statues={JSON.parse(JSON.stringify(statues))}
+      contestSpecialCoats={JSON.parse(JSON.stringify(allSpecialCoats))}
     />
   );
 }

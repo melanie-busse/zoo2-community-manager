@@ -1,46 +1,40 @@
 "use client";
 
 import React from "react";
-import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { toast } from "react-toastify";
+import { useRouter } from "@/i18n/routing";
 
 import PageHeader from "@/components/page-structure/page/PageHeader";
 import ContestForm from "@/components/pages/Contests/ContestCreateForm/ContestCreateForm";
+import { useContestStore } from "@/store/useContestStore";
 import { Statue } from "@/types/statue";
+import { SpecialCoat } from "@/types/specialCoat";
 
 interface ContestCreateClientProps {
   statues: Statue[];
+  contestSpecialCoats: SpecialCoat[];
 }
 
-export default function ContestCreateClient({ statues }: ContestCreateClientProps) {
-  const t = useTranslations();
+export default function ContestCreateClient({ statues, contestSpecialCoats }: ContestCreateClientProps) {
+  const t = useTranslations("contest");
   const router = useRouter();
+  const { saveContest } = useContestStore();
 
   const handleCreate = async (formData: any) => {
-    try {
-      const res = await fetch("/api/contests", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-
-      if (res.ok) {
-        toast.success(t("Contest.contestForm.successCreated"));
-        router.push("/contests");
-        router.refresh();
-      } else {
-        toast.error(t("Contest.contestForm.errorCreating"));
-      }
-    } catch (error) {
-      toast.error(t("Contest.contestForm.errorCreating"));
+    const result = await saveContest(formData);
+    if (result !== false) {
+      toast.success(t("contestForm.successCreated"));
+      router.push("/contests");
+    } else {
+      toast.error(t("contestForm.errorCreating"));
     }
   };
 
   return (
     <>
-      <PageHeader text={t("Contest.contestForm.createTitle")} />
-      <ContestForm statues={statues} onSubmit={handleCreate} />
+      <PageHeader text={t("contestForm.createTitle")} />
+      <ContestForm statues={statues} contestSpecialCoats={contestSpecialCoats} onSubmit={handleCreate} />
     </>
   );
 }

@@ -1,5 +1,24 @@
 import prisma from "@/lib/prisma";
 
+export async function getContestSpecialCoats(locale: string = "de") {
+  return prisma.specialCoat.findMany({
+    where: { isContestSpecialCoat: true },
+    include: {
+      specialcoatstext: {
+        where: { languageCode: locale },
+      },
+      animal: {
+        include: {
+          animaltext: {
+            where: { languageCode: locale },
+          },
+        },
+      },
+    },
+    orderBy: { id: "asc" },
+  });
+}
+
 export async function getAllContests(locale: string = "de") {
   const contests = await prisma.contest.findMany({
     include: {
@@ -10,6 +29,24 @@ export async function getAllContests(locale: string = "de") {
               animal: {
                 include: {
                   biome: true,
+                  animaltext: {
+                    where: { languageCode: locale },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+      contestspecialcoat: {
+        include: {
+          specialcoat: {
+            include: {
+              specialcoatstext: {
+                where: { languageCode: locale },
+              },
+              animal: {
+                include: {
                   animaltext: {
                     where: { languageCode: locale },
                   },
@@ -49,6 +86,12 @@ export async function createContest(data: any) {
           statueId: id,
         })),
       },
+
+      contestspecialcoat: {
+        create: (data.specialCoatIds ?? []).map((id: number) => ({
+          specialCoatId: id,
+        })),
+      },
     },
   });
 }
@@ -62,11 +105,16 @@ export async function updateContest(id: number, data: any) {
       active: data.active,
 
       conteststatue: {
-        // 1. Alle alten Verknüpfungen für diesen Wettbewerb entfernen
         deleteMany: {},
-
         create: data.statuenIds.map((id: number) => ({
           statueId: id,
+        })),
+      },
+
+      contestspecialcoat: {
+        deleteMany: {},
+        create: (data.specialCoatIds ?? []).map((id: number) => ({
+          specialCoatId: id,
         })),
       },
     },
@@ -125,6 +173,24 @@ export async function getContestById(id: string, locale: string = "de") {
                           where: { languageCode: locale },
                         },
                       },
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+        contestspecialcoat: {
+          include: {
+            specialcoat: {
+              include: {
+                specialcoatstext: {
+                  where: { languageCode: locale },
+                },
+                animal: {
+                  include: {
+                    animaltext: {
+                      where: { languageCode: locale },
                     },
                   },
                 },

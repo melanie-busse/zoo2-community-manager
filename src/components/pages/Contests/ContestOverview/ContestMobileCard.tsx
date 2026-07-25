@@ -10,7 +10,9 @@ import { StatusBadge } from "@/components/ui/badges/StatusBadge";
 import { useSession } from "next-auth/react";
 import ActionGroupBadge from "@/components/ui/badges/ActionGroupBadge";
 import { getAnimalImage } from "@/utils/AnimalUtil";
+import { getSpecialCoatImage } from "@/utils/SpecialCoatUtil";
 import { useLocale } from "next-intl";
+import { getStatueName } from "@/utils/ContestUtil";
 
 interface ContestMobileCardProps {
   contest: Contest;
@@ -62,8 +64,6 @@ export default function ContestMobileCard({
 
           if (!animal) return null;
 
-          const animalname = animal.name || "Unbekannt";
-
           return (
             <Styles.AnimalItem key={contestStatue.id}>
               {contestStatue.statue.animal.image && (
@@ -74,7 +74,29 @@ export default function ContestMobileCard({
                   size={65}
                 />
               )}
-              <Styles.TinyName>{animalname}</Styles.TinyName>
+              <Styles.TinyName>
+                {getStatueName(contestStatue.statue, "unbekannte Statue")}
+              </Styles.TinyName>
+            </Styles.AnimalItem>
+          );
+        })}
+
+        {contest.contestspecialcoat?.map((link) => {
+          const coat = link.specialcoat;
+          if (!coat) return null;
+          const name =
+            coat.specialcoatstext?.[0]?.name ||
+            coat.animal?.animaltext?.[0]?.animalName ||
+            `Coat #${coat.id}`;
+          return (
+            <Styles.AnimalItem key={link.id}>
+              <ThumbnailBadge
+                image={getSpecialCoatImage(coat)}
+                biome={coat.animal?.biome}
+                name={name}
+                size={65}
+              />
+              <Styles.TinyName>{name}</Styles.TinyName>
             </Styles.AnimalItem>
           );
         })}
