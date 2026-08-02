@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
+import { useSession } from "next-auth/react";
 
 import PageWrapper from "@/components/page-structure/page/PageWrapper";
 import ContestEntryForm from "@/components/pages/Contests/ContestentryForm/ContestEntryForm";
@@ -25,19 +26,23 @@ let rowCounter = 0;
 export default function ContestEntriesClient({ contest, members }: ContestEntriesClientProps) {
   const router = useRouter();
   const t = useTranslations("contest");
+  const { data: session } = useSession();
 
+  const sessionUserId = session?.user?.id ? String(session.user.id) : "";
   const [selectedMemberId, setSelectedMemberId] = useState("");
   const [entries, setEntries] = useState<Record<number, EntryRow[]>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const effectiveMemberId = selectedMemberId || sessionUserId;
+
   useEffect(() => {
     async function loadEntries() {
-      if (!selectedMemberId) {
+      if (!effectiveMemberId) {
         setEntries({});
         return;
       }
 
-      const existing = await getContestEntriesForUser(contest.id, parseInt(selectedMemberId));
+      const existing = await getContestEntriesForUser(contest.id, parseInt(effectiveMemberId));
 
       if (existing.length === 0) {
         setEntries({});
@@ -53,7 +58,7 @@ export default function ContestEntriesClient({ contest, members }: ContestEntrie
     }
 
     loadEntries();
-  }, [selectedMemberId, contest.id]);
+  }, [effectiveMemberId, contest.id]);
 
   const columns: ColumnDefinition[] = [
     { key: "level", label: t("contestOverview.entry.level"), type: "number", placeholder: "1" },
@@ -91,7 +96,7 @@ export default function ContestEntriesClient({ contest, members }: ContestEntrie
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!selectedMemberId) return;
+    if (!effectiveMemberId) return;
 
     const flatEntries = Object.entries(entries).flatMap(([animalId, rows]) =>
       rows
@@ -107,7 +112,7 @@ export default function ContestEntriesClient({ contest, members }: ContestEntrie
 
     setIsSubmitting(true);
     try {
-      await submitContestEntries(contest.id, parseInt(selectedMemberId), flatEntries);
+      await submitContestEntries(contest.id, parseInt(effectiveMemberId), flatEntries);
       router.push(`/contests/${contest.id}`);
     } catch {
       // error is shown implicitly; could add toast here
@@ -121,7 +126,7 @@ export default function ContestEntriesClient({ contest, members }: ContestEntrie
       <ContestEntryForm
         contest={contest}
         members={mappedMembers}
-        selectedMemberId={selectedMemberId}
+        selectedMemberId={effectiveMemberId}
         onMemberChange={setSelectedMemberId}
         entries={entries}
         columns={columns}

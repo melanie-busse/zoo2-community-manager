@@ -11,12 +11,10 @@ import ActionGroupBadge from "@/components/ui/badges/ActionGroupBadge";
 import ThumbnailBadge from "@/components/ui/badges/ThumbnailBadge";
 import { AnimalStats } from "@/utils/ContestUtil";
 import type { getContestById } from "@/service/ContestService";
-import PageWrapper from "@/components/page-structure/page/PageWrapper";
 import ContentWrapper from "@/components/page-structure/page/ContentWrapper";
 
 type ContestDetail = NonNullable<Awaited<ReturnType<typeof getContestById>>>;
 type ContestAnimal = ContestDetail["conteststatue"][number]["statue"]["animal"];
-type ContestSpecialCoat = ContestDetail["contestspecialcoat"];
 
 interface Analysis {
   animal: ContestAnimal;
@@ -45,78 +43,78 @@ export default function ContestDetailView({
   return (
     <RelativeWrapper>
       <ContentWrapper>
-      <AdminActions>
-        <ActionGroupBadge id={contest.id} onEdit={onEdit} onDelete={onDelete} />
-      </AdminActions>
+        <AdminActions>
+          <ActionGroupBadge id={contest.id} onEdit={onEdit} onDelete={onDelete} />
+        </AdminActions>
 
-      <PageHeader text={t("contestOverview.details.headline")} />
+        <PageHeader text={t("contestOverview.details.headline")} />
 
-      <MetaInfo>
-        <FormattedDate date={contest.startDate} /> – <FormattedDate date={contest.endDate} />
-      </MetaInfo>
+        <MetaInfo>
+          <FormattedDate date={contest.startDate} /> – <FormattedDate date={contest.endDate} />
+        </MetaInfo>
 
-      {!isExpired && (
-        <ActionRow>
-          <Link href={`/contests/${contest.id}/entries`}>
-            <StyledButton type="button">{t("contestOverview.details.postAnimals")}</StyledButton>
-          </Link>
-        </ActionRow>
-      )}
+        {!isExpired && (
+          <ActionRow>
+            <Link href={`/contests/${contest.id}/entries`}>
+              <StyledButton type="button">{t("contestOverview.details.postAnimals")}</StyledButton>
+            </Link>
+          </ActionRow>
+        )}
 
-      <TierGrid>
-        {analysis?.map(({ animal, stats }) => {
-          const animalName = animal.animaltext?.[0]?.animalName ?? "";
-          const biomeIdentifier = animal.biome?.identifier ?? "standard";
-          const biomeName = biomeIdentifier;
-          const animalImage = animal.image ?? "placeholder.png";
-          const imagePath =
-            animalImage === "placeholder.png"
-              ? "/images/placeholder.jpg"
-              : `/images/animals/${biomeIdentifier}/${animalImage}`;
+        <AnimalGrid>
+          {analysis?.map(({ animal, stats }) => {
+            const animalName = animal.animaltext?.[0]?.animalName ?? "";
+            const biomeIdentifier = animal.biome?.identifier ?? "standard";
+            const biomeName = biomeIdentifier;
+            const animalImage = animal.image ?? "placeholder.png";
+            const imagePath =
+              animalImage === "placeholder.png"
+                ? "/images/placeholder.jpg"
+                : `/images/animals/${biomeIdentifier}/${animalImage}`;
 
-          return (
-            <TierCard key={animal.id}>
-              <TierHeader>
-                <ThumbnailBadge
-                  image={{ path: imagePath, name: animalName, alt: animalName }}
-                  name={animalName}
-                  biome={{ name: biomeName }}
-                  size={50}
-                />
-                <TitleGroup>
-                  <h3>{animalName}</h3>
-                  <GrandTotal>{stats.totalWeighted.toLocaleString()} Pkt.</GrandTotal>
-                </TitleGroup>
-              </TierHeader>
+            return (
+              <AnimalCard key={animal.id}>
+                <AnimalHeader>
+                  <ThumbnailBadge
+                    image={{ path: imagePath, name: animalName, alt: animalName }}
+                    name={animalName}
+                    biome={{ name: biomeName }}
+                    size={50}
+                  />
+                  <TitleGroup>
+                    <h3>{animalName}</h3>
+                    <GrandTotal>{stats.totalWeighted.toLocaleString()} Pkt.</GrandTotal>
+                  </TitleGroup>
+                </AnimalHeader>
 
-              <List>
-                <ListHeader>
-                  <span>{t("contestOverview.details.rank")}</span>
-                  <span>{t("contestOverview.details.member")}</span>
-                  <span>{t("contestOverview.details.points")}</span>
-                </ListHeader>
+                <List>
+                  <ListHeader>
+                    <span>{t("contestOverview.details.rank")}</span>
+                    <span>{t("contestOverview.details.member")}</span>
+                    <span>{t("contestOverview.details.points")}</span>
+                  </ListHeader>
 
-                {stats.rankedUser.map((m, i) => (
-                  <Row key={i}>
-                    <Badge>{i + 1}</Badge>
-                    <Name>{m.name}</Name>
-                    <Points>
-                      <small>
-                        {m.rawSum} × {m.multiplier}
-                      </small>
-                      <strong>{m.weighted.toLocaleString()}</strong>
-                    </Points>
-                  </Row>
-                ))}
+                  {stats.rankedUser.map((m, i) => (
+                    <Row key={i}>
+                      <Badge>{i + 1}</Badge>
+                      <Name>{m.name}</Name>
+                      <Points>
+                        <small>
+                          {m.rawSum} × {m.multiplier}
+                        </small>
+                        <strong>{m.weighted.toLocaleString()}</strong>
+                      </Points>
+                    </Row>
+                  ))}
 
-                {stats.rankedUser.length === 0 && (
-                  <Empty>{t("contestOverview.details.noPosts")}</Empty>
-                )}
-              </List>
-            </TierCard>
-          );
-        })}
-      </TierGrid>
+                  {stats.rankedUser.length === 0 && (
+                    <Empty>{t("contestOverview.details.noPosts")}</Empty>
+                  )}
+                </List>
+              </AnimalCard>
+            );
+          })}
+        </AnimalGrid>
       </ContentWrapper>
     </RelativeWrapper>
   );
@@ -181,13 +179,13 @@ const StyledButton = styled.button`
   }
 `;
 
-const TierGrid = styled.div`
+const AnimalGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: ${({ theme }) => theme.spacing(2.5)};
 `;
 
-const TierCard = styled.div`
+const AnimalCard = styled.div`
   background: ${({ theme }) => theme.colors.ui.white};
   border-radius: ${({ theme }) => theme.borderRadius.main};
   border: 1px solid ${({ theme }) => theme.colors.ui.border};
@@ -195,7 +193,7 @@ const TierCard = styled.div`
   box-shadow: ${({ theme }) => theme.shadows.boxShadow};
 `;
 
-const TierHeader = styled.div`
+const AnimalHeader = styled.div`
   background: ${({ theme }) => theme.colors.ui.whiteSoft};
   padding: ${({ theme }) => theme.spacing(2)};
   display: flex;
