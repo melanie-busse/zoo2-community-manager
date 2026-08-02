@@ -26,6 +26,7 @@
     "not_found": "Contest not found",
     "create_error": "Error creating contest",
     "update_error": "Error updating contest",
-    "delete_error": "Error deleting contest"
+    "delete_error": "Error deleting contest",
+    "entry_error": "Error saving entries"
   }
 }

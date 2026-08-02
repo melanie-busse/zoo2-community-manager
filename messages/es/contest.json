@@ -8,6 +8,23 @@
   },
   "contestOverview": {
     "overview_title": "Concursos",
+    "entry": {
+      "title": "Enviar animales",
+      "clubMember": "Miembro del club",
+      "chooseMember": "Seleccionar miembro...",
+      "level": "Nivel",
+      "count": "Cantidad",
+      "successSaved": "Entradas guardadas correctamente",
+      "errorSaving": "Error al guardar las entradas"
+    },
+    "details": {
+      "headline": "Planificación del concurso",
+      "postAnimals": "Enviar animales",
+      "rank": "Rango",
+      "member": "Miembro",
+      "points": "Puntos",
+      "noPosts": "Aún no hay entradas"
+    },
     "table": {
       "period": "Período",
       "statues_animals": "Estatuas / Animales",

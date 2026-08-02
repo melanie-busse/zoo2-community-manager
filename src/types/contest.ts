@@ -16,10 +16,12 @@ export interface Contest {
 
 export interface ContestDonation {
   id: number;
-  contest: Contest;
+  contest?: Contest;
   animal: Animal;
-  statue: Statue;
-  puzzlePiece?: number | null;
+  statue?: Statue;
+  level?: number;
+  count?: number;
+  timestamp?: Date | string | null;
   user?: User;
 }
 

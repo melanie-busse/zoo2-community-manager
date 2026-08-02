@@ -8,6 +8,23 @@
   },
   "contestOverview": {
     "overview_title": "Wedstrijden",
+    "entry": {
+      "title": "Dieren indienen",
+      "clubMember": "Clublid",
+      "chooseMember": "Selecteer lid...",
+      "level": "Niveau",
+      "count": "Aantal",
+      "successSaved": "Inzendingen opgeslagen",
+      "errorSaving": "Fout bij opslaan van inzendingen"
+    },
+    "details": {
+      "headline": "Wedstrijd-planning",
+      "postAnimals": "Dieren indienen",
+      "rank": "Rang",
+      "member": "Lid",
+      "points": "Punten",
+      "noPosts": "Nog geen inzendingen"
+    },
     "table": {
       "period": "Periode",
       "statues_animals": "Beelden / Dieren",

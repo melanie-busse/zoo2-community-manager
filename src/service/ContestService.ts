@@ -192,6 +192,13 @@ export async function getContestById(id: string, locale: string = "de") {
                     animaltext: {
                       where: { languageCode: locale },
                     },
+                    biome: {
+                      include: {
+                        biomestext: {
+                          where: { languageCode: locale },
+                        },
+                      },
+                    },
                   },
                 },
               },
@@ -211,4 +218,59 @@ export async function getContestById(id: string, locale: string = "de") {
     console.error(`Fehler in getContestById für ID ${id}:`, error);
     throw error;
   }
+}
+
+export async function getResultsByContestId(id: string) {
+  return prisma.contestDonation.findMany({
+    where: { contestId: parseInt(id) },
+    include: {
+      animal: true,
+      user: {
+        select: {
+          upjersname: true,
+          name: true,
+          id: true,
+        },
+      },
+    },
+  });
+}
+
+export async function getMembers() {
+  return prisma.user.findMany({
+    select: {
+      id: true,
+      name: true,
+      upjersname: true,
+    },
+    orderBy: [{ upjersname: "asc" }, { name: "asc" }],
+  });
+}
+
+export async function getEntriesByContestAndUser(contestId: number, userId: number) {
+  return prisma.contestDonation.findMany({
+    where: { contestId, userId },
+    select: {
+      id: true,
+      animalId: true,
+      level: true,
+      count: true,
+    },
+  });
+}
+
+export async function createContestEntries(
+  contestId: number,
+  userId: number,
+  entries: Array<{ animalId: number; level: number; count: number }>,
+) {
+  return prisma.contestDonation.createMany({
+    data: entries.map((e) => ({
+      contestId,
+      userId,
+      animalId: e.animalId,
+      level: e.level,
+      count: e.count,
+    })),
+  });
 }

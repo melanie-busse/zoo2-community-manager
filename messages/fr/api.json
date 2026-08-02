@@ -26,6 +26,7 @@
     "not_found": "Concours non trouvé",
     "create_error": "Erreur lors de la création du concours",
     "update_error": "Erreur lors de la mise à jour du concours",
-    "delete_error": "Erreur lors de la suppression du concours"
+    "delete_error": "Erreur lors de la suppression du concours",
+    "entry_error": "Erreur lors de l'enregistrement des entrées"
   }
 }

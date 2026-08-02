@@ -26,6 +26,7 @@
     "not_found": "Wedstrijd niet gevonden",
     "create_error": "Fout bij het aanmaken van wedstrijd",
     "update_error": "Fout bij het bijwerken van wedstrijd",
-    "delete_error": "Fout bij het verwijderen van wedstrijd"
+    "delete_error": "Fout bij het verwijderen van wedstrijd",
+    "entry_error": "Fout bij opslaan van inzendingen"
   }
 }

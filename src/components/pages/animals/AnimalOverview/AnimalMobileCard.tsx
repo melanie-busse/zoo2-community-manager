@@ -76,7 +76,7 @@ export default function AnimalMobileCard({ animal }: AnimalMobileCardProps) {
 
           <ShelterLevelBadge
             image={getShelterImage(animal.biome)}
-            level={animal.shelterLevel}
+            level={animal.shelterLevel ?? 0}
             habitat={animal.biome?.identifier}
           />
         </CardIconsRow>

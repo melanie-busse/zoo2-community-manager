@@ -8,6 +8,23 @@
   },
   "contestOverview": {
     "overview_title": "Konkurrencer",
+    "entry": {
+      "title": "Indsend dyr",
+      "clubMember": "Klubmedlem",
+      "chooseMember": "Vælg medlem...",
+      "level": "Niveau",
+      "count": "Antal",
+      "successSaved": "Indlæg gemt",
+      "errorSaving": "Fejl ved gemning af indlæg"
+    },
+    "details": {
+      "headline": "Konkurrence-planlægning",
+      "postAnimals": "Indsend dyr",
+      "rank": "Placering",
+      "member": "Medlem",
+      "points": "Point",
+      "noPosts": "Ingen indlæg endnu"
+    },
     "table": {
       "period": "Periode",
       "statues_animals": "Statuer / Dyr",

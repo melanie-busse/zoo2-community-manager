@@ -29,3 +29,14 @@ UPDATE `specialcoat` SET `image` = 'Pavian.jpg', `isContestSpecialCoat` = '1' WH
 UPDATE `specialcoat` SET `image` = 'Komodowaran.jpg', `isContestSpecialCoat` = '1' WHERE `specialcoat`.`id` = 137;
 UPDATE `specialcoat` SET `image` = 'Schneeschaf.jpg', `isContestSpecialCoat` = '1' WHERE `specialcoat`.`id` = 138;
 UPDATE `specialcoat` SET `image` = 'Hamster', `isContestSpecialCoat` = '1' WHERE `specialcoat`.`id` = 140;
+
+ALTER TABLE `user` ADD `upjersname` VARCHAR(255) NOT NULL AFTER `name`;
+UPDATE `user` SET `upjersname` = 'Luna' WHERE `user`.`id` = 1;
+
+ALTER TABLE `contest` CHANGE `active` `active` TINYINT(11) NOT NULL;
+
+ALTER TABLE `contestdonation`
+  DROP COLUMN `puzzlePiece`,
+  ADD COLUMN `level` INT NOT NULL,
+  ADD COLUMN `count` INT NOT NULL,
+  ADD COLUMN `timestamp` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3);

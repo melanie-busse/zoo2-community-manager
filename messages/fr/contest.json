@@ -8,6 +8,23 @@
   },
   "contestOverview": {
     "overview_title": "Concours",
+    "entry": {
+      "title": "Soumettre des animaux",
+      "clubMember": "Membre du club",
+      "chooseMember": "Sélectionner un membre...",
+      "level": "Niveau",
+      "count": "Quantité",
+      "successSaved": "Entrées enregistrées avec succès",
+      "errorSaving": "Erreur lors de l'enregistrement des entrées"
+    },
+    "details": {
+      "headline": "Planification du concours",
+      "postAnimals": "Soumettre des animaux",
+      "rank": "Rang",
+      "member": "Membre",
+      "points": "Points",
+      "noPosts": "Aucune entrée pour l'instant"
+    },
     "table": {
       "period": "Période",
       "statues_animals": "Statues / Animaux",

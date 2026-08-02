@@ -93,7 +93,7 @@ export function getAnimalImage(animal: Animal): Image {
   return {
     name: animal.image || "placeholder.png",
 
-    path: `/images/animals/${animal.biome.identifier}/${animal.image}`,
+    path: `/images/animals/${animal.biome?.identifier}/${animal.image}`,
 
     alt: animal.animaltext?.[0]?.animalName || "Tierbild",
   };

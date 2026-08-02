@@ -9,7 +9,7 @@ import InputField from "@/components/ui/form/InputField";
 import Selectbox from "@/components/ui/form/Selectbox";
 import Textarea from "./Textarea";
 
-interface ColumnDefinition {
+export interface ColumnDefinition {
   key: string;
   label: string;
   type: "text" | "select" | "textarea" | string;

@@ -124,8 +124,8 @@ export default function AnimalDesktopTable() {
               <td>
                 <ShelterLevelBadge
                   image={getShelterImage(animal.biome)}
-                  level={animal.shelterLevel}
-                  habitat={animal.biome.identifier}
+                  level={animal.shelterLevel ?? 0}
+                  habitat={animal.biome?.identifier}
                 />
               </td>
               <Styles.TableCellRight>

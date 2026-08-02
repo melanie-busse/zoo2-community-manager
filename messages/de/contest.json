@@ -8,6 +8,23 @@
   },
   "contestOverview": {
     "overview_title": "Wettbewerbe",
+    "details": {
+      "headline": "Wettbewerbs-Planung",
+      "postAnimals": "Tiere eintragen",
+      "rank": "Rang",
+      "member": "Mitglied",
+      "points": "Punkte",
+      "noPosts": "Noch keine Einträge"
+    },
+    "entry": {
+      "title": "Tiere eintragen",
+      "clubMember": "Vereinsmitglied",
+      "chooseMember": "Mitglied auswählen...",
+      "level": "Stufe",
+      "count": "Anzahl",
+      "successSaved": "Einträge erfolgreich gespeichert",
+      "errorSaving": "Fehler beim Speichern der Einträge"
+    },
     "table": {
       "period": "Zeitraum",
       "statues_animals": "Statuen / Tiere",

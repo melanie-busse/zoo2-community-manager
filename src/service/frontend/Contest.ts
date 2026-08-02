@@ -36,6 +36,32 @@ export async function updateContestOnClient(id: number, formData: any): Promise<
   return result;
 }
 
+export async function getContestEntriesForUser(
+  contestId: number,
+  userId: number,
+): Promise<Array<{ id: number; animalId: number; level: number; count: number }>> {
+  const response = await fetch(`/api/contests/${contestId}/entries?userId=${userId}`);
+  if (!response.ok) return [];
+  return response.json();
+}
+
+export async function submitContestEntries(
+  contestId: number,
+  userId: number,
+  entries: Array<{ animalId: number; level: number; count: number }>,
+): Promise<void> {
+  const response = await fetch(`/api/contests/${contestId}/entries`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ userId, entries }),
+  });
+
+  if (!response.ok) {
+    const result = await response.json().catch(() => ({}));
+    throw new Error(result.message);
+  }
+}
+
 export async function deleteContestOnClient(id: number): Promise<void> {
   const response = await fetch(`/api/contests/${id}`, {
     method: "DELETE",

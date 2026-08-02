@@ -8,6 +8,23 @@
   },
   "contestOverview": {
     "overview_title": "Contests",
+    "details": {
+      "headline": "Contest Planning",
+      "postAnimals": "Submit Animals",
+      "rank": "Rank",
+      "member": "Member",
+      "points": "Points",
+      "noPosts": "No entries yet"
+    },
+    "entry": {
+      "title": "Submit Animals",
+      "clubMember": "Club member",
+      "chooseMember": "Select member...",
+      "level": "Level",
+      "count": "Count",
+      "successSaved": "Entries saved successfully",
+      "errorSaving": "Error saving entries"
+    },
     "table": {
       "period": "Period",
       "statues_animals": "Statues / Animals",
