@@ -94,6 +94,10 @@ export default function ContestEntriesClient({ contest, members }: ContestEntrie
     },
   };
 
+  const handleCancel = () => {
+    router.push(`/contests/${contest.id}`);
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!effectiveMemberId) return;
@@ -132,6 +136,7 @@ export default function ContestEntriesClient({ contest, members }: ContestEntrie
         columns={columns}
         handlers={handlers}
         onSubmit={handleSubmit}
+        onCancel={handleCancel}
         isSubmitting={isSubmitting}
       />
     </PageWrapper>

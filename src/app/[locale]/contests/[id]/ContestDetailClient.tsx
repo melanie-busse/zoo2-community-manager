@@ -35,8 +35,8 @@ export default function ContestDetailClient({ contest, results }: ContestDetailC
   };
 
   const animals = contest.conteststatue?.map((link) => ({
-    animal: link.statue.animal,
-    stats: calculateAnimalStats(link.statue.animal.id, results),
+    animal: link.animal,
+    stats: calculateAnimalStats(link.animal.id, results),
   }));
 
   const specialCoats = contest.contestspecialcoat?.map((link) => ({

@@ -24,15 +24,11 @@ export async function getAllContests(locale: string = "de") {
     include: {
       conteststatue: {
         include: {
-          statue: {
+          animal: {
             include: {
-              animal: {
-                include: {
-                  biome: true,
-                  animaltext: {
-                    where: { languageCode: locale },
-                  },
-                },
+              biome: true,
+              animaltext: {
+                where: { languageCode: locale },
               },
             },
           },
@@ -79,11 +75,11 @@ export async function createContest(data: any) {
     data: {
       startDate: new Date(data.startDate),
       endDate: new Date(data.endDate),
-      active: data.active,
+      active: Boolean(data.active),
 
       conteststatue: {
         create: data.statuenIds.map((id: number) => ({
-          statueId: id,
+          animalId: id,
         })),
       },
 
@@ -102,12 +98,12 @@ export async function updateContest(id: number, data: any) {
     data: {
       startDate: new Date(data.startDate),
       endDate: new Date(data.endDate),
-      active: data.active,
+      active: Boolean(data.active),
 
       conteststatue: {
         deleteMany: {},
         create: data.statuenIds.map((id: number) => ({
-          statueId: id,
+          animalId: id,
         })),
       },
 
@@ -128,26 +124,21 @@ export async function deleteContest(id: number) {
 }
 
 export async function getAllStatues(locale: string = "de") {
-  return prisma.statue.findMany({
+  return prisma.animal.findMany({
+    where: { isContestAnimal: true },
     include: {
-      statuetext: {
+      animaltext: {
         where: { languageCode: locale },
       },
-      animal: {
+      biome: {
         include: {
-          animaltext: {
+          biomestext: {
             where: { languageCode: locale },
-          },
-          biome: {
-            include: {
-              biomestext: {
-                where: { languageCode: locale },
-              },
-            },
           },
         },
       },
     },
+    orderBy: { id: "asc" },
   });
 }
 
@@ -160,19 +151,15 @@ export async function getContestById(id: string, locale: string = "de") {
       include: {
         conteststatue: {
           include: {
-            statue: {
+            animal: {
               include: {
-                animal: {
+                animaltext: {
+                  where: { languageCode: locale },
+                },
+                biome: {
                   include: {
-                    animaltext: {
+                    biomestext: {
                       where: { languageCode: locale },
-                    },
-                    biome: {
-                      include: {
-                        biomestext: {
-                          where: { languageCode: locale },
-                        },
-                      },
                     },
                   },
                 },

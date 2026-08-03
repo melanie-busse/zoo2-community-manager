@@ -6,16 +6,17 @@ import { useTranslations } from "next-intl";
 
 import { Contest } from "@/types/contest";
 import { ContestCreateFormContent } from "@/components/pages/Contests/ContestCreateForm/ContestCreateFormContent";
-import { Statue } from "@/types/statue";
+import { Animal } from "@/types/animal";
 import { SpecialCoat } from "@/types/specialCoat";
 import { getStatueName } from "@/utils/ContestUtil";
 import { toISODate } from "@/utils/DateUtil";
 
 interface ContestFormProps {
-  statues?: Statue[];
+  statues?: Animal[];
   contestSpecialCoats?: SpecialCoat[];
   initialData?: Contest | null;
   onSubmit: (data: any) => Promise<void>;
+  onCancel?: () => void;
 }
 
 export default function ContestForm({
@@ -23,6 +24,7 @@ export default function ContestForm({
   contestSpecialCoats = [],
   initialData = null,
   onSubmit,
+  onCancel,
 }: ContestFormProps) {
   const tContest = useTranslations("contest");
   const tCommon = useTranslations("common");
@@ -54,8 +56,8 @@ export default function ContestForm({
 
       if (initialData.conteststatue) {
         const preselected = initialData.conteststatue.map((link: any) => ({
-          id: link.statue?.id,
-          name: getStatueName(link.statue, "Unbekannte Statue"),
+          id: link.animal?.id,
+          name: getStatueName(link.animal, "Unbekannte Statue"),
         }));
         // eslint-disable-next-line react-hooks/set-state-in-effect
         setSelectedStatues(preselected);
@@ -99,16 +101,16 @@ export default function ContestForm({
 
   // Verfügbare Statuen filtern (alle minus die bereits gewählten)
   const availableStatues = (statues || [])
-    .filter((statue) => !selectedStatues.find((s) => s.id === statue.id))
-    .map((statue) => ({
-      id: statue.id,
-      name: getStatueName(statue, "Unbekannte Statue"),
+    .filter((animal) => !selectedStatues.find((s) => s.id === animal.id))
+    .map((animal) => ({
+      id: animal.id,
+      name: getStatueName(animal, "Unbekannte Statue"),
     }));
 
   const handleStatueIdsChange = (newIds: number[]) => {
-    const allStatues = (statues || []).map((s) => ({
-      id: s.id,
-      name: getStatueName(s, "Unbekannte Statue"),
+    const allStatues = (statues || []).map((animal) => ({
+      id: animal.id,
+      name: getStatueName(animal, "Unbekannte Statue"),
     }));
     setSelectedStatues(allStatues.filter((s) => newIds.includes(s.id)));
   };
@@ -157,6 +159,7 @@ export default function ContestForm({
       selectedSpecialCoatIds={selectedSpecialCoatIds}
       onSpecialCoatIdsChange={setSelectedSpecialCoatIds}
       isSubmitting={isSubmitting}
+      onCancel={onCancel}
     />
   );
 }

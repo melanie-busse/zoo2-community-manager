@@ -1,9 +1,9 @@
-import { Statue } from "@/types/statue";
+import { Animal } from "@/types/animal";
 import { ContestDonation } from "@/types/contest";
 import { RankedUser } from "@/types/user";
 
-export function getStatueName(statue: Statue, fallback: string) {
-  return statue.animal.animaltext?.[0]?.animalName || fallback;
+export function getStatueName(animal: Animal, fallback: string) {
+  return animal.animaltext?.[0]?.animalName || fallback;
 }
 
 export interface AnimalStats {

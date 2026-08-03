@@ -59,23 +59,22 @@ export default function ContestMobileCard({
 
       <Styles.AnimalGrid>
         {contest.conteststatue?.map((contestStatue) => {
-          const statue = contestStatue.statue;
-          const animal = statue.animal;
+          const animal = contestStatue.animal;
 
           if (!animal) return null;
 
           return (
             <Styles.AnimalItem key={contestStatue.id}>
-              {contestStatue.statue.animal.image && (
+              {animal.image && (
                 <ThumbnailBadge
-                  image={getAnimalImage(contestStatue.statue.animal)}
-                  name={contestStatue.statue.animal.name}
-                  biome={contestStatue.statue.animal.biome}
+                  image={getAnimalImage(animal)}
+                  name={animal.name}
+                  biome={animal.biome}
                   size={65}
                 />
               )}
               <Styles.TinyName>
-                {getStatueName(contestStatue.statue, "unbekannte Statue")}
+                {getStatueName(animal, "unbekannte Statue")}
               </Styles.TinyName>
             </Styles.AnimalItem>
           );

@@ -101,5 +101,11 @@ UPDATE `animal` SET `isContestAnimal` = TRUE, `statueImage` = 'statue-schneeeule
 
 ALTER TABLE `statue` DROP INDEX `statue_animalId_key`;
 ALTER TABLE `conteststatue` CHANGE `statueId` `animalId` INT(11) NOT NULL;
+
+ALTER TABLE `conteststatue`
+    DROP FOREIGN KEY `contestStatue_statueId_fkey`,
+    ADD CONSTRAINT `contestStatue_animalId_fkey`
+        FOREIGN KEY (`animalId`) REFERENCES `animal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
 DROP TABLE `statuetext`;
 DROP TABLE `statue`;

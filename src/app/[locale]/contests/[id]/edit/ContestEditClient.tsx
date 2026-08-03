@@ -9,12 +9,12 @@ import PageHeader from "@/components/page-structure/page/PageHeader";
 import ContestForm from "@/components/pages/Contests/ContestCreateForm/ContestCreateForm";
 import { useContestStore } from "@/store/useContestStore";
 import { Contest } from "@/types/contest";
-import { Statue } from "@/types/statue";
+import { Animal } from "@/types/animal";
 import { SpecialCoat } from "@/types/specialCoat";
 
 interface ContestEditClientProps {
   contest: Contest;
-  statues: Statue[];
+  statues: Animal[];
   contestSpecialCoats: SpecialCoat[];
 }
 
@@ -33,10 +33,20 @@ export default function ContestEditClient({ contest, statues, contestSpecialCoat
     }
   };
 
+  const handleCancel = () => {
+    router.push("/contests");
+  };
+
   return (
     <>
       <PageHeader text={t("contestForm.editTitle")} />
-      <ContestForm statues={statues} contestSpecialCoats={contestSpecialCoats} initialData={contest} onSubmit={handleUpdate} />
+      <ContestForm
+        statues={statues}
+        contestSpecialCoats={contestSpecialCoats}
+        initialData={contest}
+        onSubmit={handleUpdate}
+        onCancel={handleCancel}
+      />
     </>
   );
 }

@@ -84,6 +84,8 @@ model Animal {
   breedingCost        Int?
   breedingDuration    Int?
   breedingProbability Int?
+  isContestAnimal     Boolean
+  statueImage         String?
   biome               Biome                @relation(fields: [biomeId], references: [id])
   animalorigins       AnimalOrigin[]
   animalperenclosure  AnimalPerEnclosure[]
@@ -91,7 +93,7 @@ model Animal {
   animalxp            AnimalXP[]
   contestdonation     ContestDonation[]
   specialcoat         SpecialCoat[]
-  statue              Statue?
+  contestStatues      ContestStatue[]
 
   @@index([biomeId], map: "animal_biomeId_fkey")
   @@index([priceTypeId], map: "animal_priceTypeId_fkey")
@@ -144,32 +146,6 @@ model RolesText {
 
   @@unique([roleId, languageCode], map: "rolesText_roleId_languageCode_key")
   @@map("rolestext")
-}
-
-model Statue {
-  id            Int             @id @unique(map: "conteststatuesindex") @default(autoincrement())
-  animalId      Int             @unique
-  price         Int?
-  priceTypeId   Int?
-  popularity    Int?
-  sellingPrice  Int?
-  image         String?         @db.VarChar(255)
-  conteststatue ContestStatue[]
-  animal        Animal          @relation(fields: [animalId], references: [id])
-  statuetext    StatueText[]
-
-  @@map("statue")
-}
-
-model StatueText {
-  id           Int    @id @default(autoincrement())
-  statueId     Int
-  languageCode String @db.VarChar(5)
-  statueName   String @db.VarChar(255)
-  statue       Statue @relation(fields: [statueId], references: [id], onDelete: Cascade, map: "statueText_statueId_fkey")
-
-  @@unique([statueId, languageCode], map: "statueText_statueId_languageCode_key")
-  @@map("statuetext")
 }
 
 model Contest {
@@ -241,12 +217,12 @@ model ContestDonation {
 model ContestStatue {
   id        Int     @id @default(autoincrement())
   contestId Int
-  statueId  Int
+  animalId  Int
   contest   Contest @relation(fields: [contestId], references: [id], onDelete: Cascade, map: "contestStatue_contestId_fkey")
-  statue    Statue  @relation(fields: [statueId], references: [id], onDelete: Cascade, map: "contestStatue_statueId_fkey")
+  animal    Animal  @relation(fields: [animalId], references: [id], onDelete: Cascade, map: "contestStatue_animalId_fkey")
 
   @@index([contestId], map: "contestStatue_contestId_fkey")
-  @@index([statueId], map: "contestStatue_statueId_fkey")
+  @@index([animalId], map: "contestStatue_animalId_fkey")
   @@map("conteststatue")
 }
 

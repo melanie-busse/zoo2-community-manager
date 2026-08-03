@@ -22,6 +22,8 @@ export interface Animal {
   breedingCost?: number | null;
   breedingDuration?: number | null;
   breedingProbability?: number | null;
+  isContestAnimal?: boolean;
+  statueImage?: string | null;
 
   // Relationen
   animalxp?: Xp[];

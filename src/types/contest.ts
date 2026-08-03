@@ -1,6 +1,5 @@
 import { Animal } from "@/types/animal";
 import { User } from "@/types/user";
-import { Statue } from "@/types/statue";
 import { SpecialCoat } from "@/types/specialCoat";
 
 export interface Contest {
@@ -18,7 +17,6 @@ export interface ContestDonation {
   id: number;
   contest?: Contest;
   animal: Animal;
-  statue?: Statue;
   level?: number;
   count?: number;
   timestamp?: Date | string | null;
@@ -28,7 +26,7 @@ export interface ContestDonation {
 export interface ContestStatue {
   id: number;
   contest: Contest;
-  statue: Statue;
+  animal: Animal;
 }
 
 export interface ContestSpecialCoat {

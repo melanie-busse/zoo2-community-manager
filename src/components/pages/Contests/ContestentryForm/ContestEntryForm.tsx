@@ -10,6 +10,7 @@ import FormSelect from "@/components/ui/form/Selectbox";
 import DynamicRowInput, { ColumnDefinition } from "@/components/ui/form/DynamicRowInput";
 import SubmitButton from "@/components/ui/form/SubmitButton";
 import ThumbnailBadge from "@/components/ui/badges/ThumbnailBadge";
+import * as ContestFormStyles from "@/components/pages/Contests/ContestCreateForm/ContestCreateForm.styles";
 import type { getContestById } from "@/service/ContestService";
 import type { User } from "@/types/user";
 
@@ -31,6 +32,7 @@ interface ContestEntryFormProps {
   columns: ColumnDefinition[];
   handlers: EntryHandlers;
   onSubmit: (e: React.FormEvent) => void;
+  onCancel: () => void;
   isSubmitting: boolean;
 }
 
@@ -43,6 +45,7 @@ export default function ContestEntryForm({
   columns,
   handlers,
   onSubmit,
+  onCancel,
   isSubmitting,
 }: ContestEntryFormProps) {
   const t = useTranslations("contest");
@@ -72,8 +75,7 @@ export default function ContestEntryForm({
         />
       </Section>
 
-      {contest.conteststatue.map(({ statue }) => {
-        const animal = statue.animal;
+      {contest.conteststatue.map(({ animal }) => {
         const animalName = animal.animaltext?.[0]?.animalName ?? "";
         const biomeIdentifier = animal.biome?.identifier ?? "standard";
         const animalImage = animal.image ?? "placeholder.png";
@@ -143,10 +145,15 @@ export default function ContestEntryForm({
         );
       })}
 
-      <SubmitButton
-        label={isSubmitting ? tCommon("saving") : tCommon("save")}
-        isSubmitting={isSubmitting}
-      />
+      <ContestFormStyles.ButtonRow>
+        <SubmitButton
+          label={isSubmitting ? tCommon("saving") : tCommon("save")}
+          isSubmitting={isSubmitting}
+        />
+        <ContestFormStyles.CancelButton type="button" onClick={onCancel}>
+          {tCommon("messages.cancel")}
+        </ContestFormStyles.CancelButton>
+      </ContestFormStyles.ButtonRow>
     </form>
   );
 }

@@ -14,7 +14,7 @@ import type { getContestById } from "@/service/ContestService";
 import ContentWrapper from "@/components/page-structure/page/ContentWrapper";
 
 type ContestDetail = NonNullable<Awaited<ReturnType<typeof getContestById>>>;
-type ContestAnimal = ContestDetail["conteststatue"][number]["statue"]["animal"];
+type ContestAnimal = ContestDetail["conteststatue"][number]["animal"];
 
 interface Analysis {
   animal: ContestAnimal;

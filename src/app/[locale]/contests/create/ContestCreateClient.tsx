@@ -8,11 +8,11 @@ import { useRouter } from "@/i18n/routing";
 import PageHeader from "@/components/page-structure/page/PageHeader";
 import ContestForm from "@/components/pages/Contests/ContestCreateForm/ContestCreateForm";
 import { useContestStore } from "@/store/useContestStore";
-import { Statue } from "@/types/statue";
+import { Animal } from "@/types/animal";
 import { SpecialCoat } from "@/types/specialCoat";
 
 interface ContestCreateClientProps {
-  statues: Statue[];
+  statues: Animal[];
   contestSpecialCoats: SpecialCoat[];
 }
 

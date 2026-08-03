@@ -17,6 +17,7 @@ interface ContestCreateFormContentProps {
   selectedSpecialCoatIds: number[];
   onSpecialCoatIdsChange: (ids: number[]) => void;
   isSubmitting: boolean;
+  onCancel?: () => void;
 }
 
 export function ContestCreateFormContent({
@@ -30,6 +31,7 @@ export function ContestCreateFormContent({
   selectedSpecialCoatIds,
   onSpecialCoatIdsChange,
   isSubmitting,
+  onCancel,
 }: ContestCreateFormContentProps) {
   const t = useTranslations("contest");
   const tCommon = useTranslations("common");
@@ -102,10 +104,17 @@ export function ContestCreateFormContent({
         maxSelected={1}
       />
 
-      <SubmitButton
-        label={isSubmitting ? tCommon("save_changes") : t("contestForm.saveContest")}
-        isSubmitting={isSubmitting}
-      />
+      <Styles.ButtonRow>
+        <SubmitButton
+          label={isSubmitting ? tCommon("save_changes") : t("contestForm.saveContest")}
+          isSubmitting={isSubmitting}
+        />
+        {onCancel && (
+          <Styles.CancelButton type="button" onClick={onCancel}>
+            {tCommon("messages.cancel")}
+          </Styles.CancelButton>
+        )}
+      </Styles.ButtonRow>
     </form>
   );
 }
