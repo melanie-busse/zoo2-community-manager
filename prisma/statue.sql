@@ -1,0 +1,136 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Erstellungszeit: 03. Aug 2026 um 09:09
+-- Server-Version: 10.4.32-MariaDB
+-- PHP-Version: 8.2.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Datenbank: `zoo2-community-manager`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `statue`
+--
+
+CREATE TABLE `statue` (
+  `id` int(11) NOT NULL,
+  `animalId` int(11) NOT NULL,
+  `price` int(11) DEFAULT NULL,
+  `priceTypeId` int(11) DEFAULT NULL,
+  `popularity` int(11) DEFAULT NULL,
+  `sellingPrice` int(11) DEFAULT NULL,
+  `image` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Daten für Tabelle `statue`
+--
+
+INSERT INTO `statue` (`id`, `animalId`, `price`, `priceTypeId`, `popularity`, `sellingPrice`, `image`) VALUES
+(1, 502, 100, 1, 1000, 10000, 'statue-afrikanischer-elefant.webp'),
+(2, 401, 100, 1, 1000, 10000, 'statue-afrikanischer-esel.webp'),
+(3, 503, 100, 1, 1000, 10000, 'statue-afrikanischer-strauss.webp'),
+(4, 402, 100, 1, 1000, 10000, 'statue-alpaka.webp'),
+(5, 202, 100, 1, 1000, 10000, 'statue-amerikanischer-bison.webp'),
+(6, 304, 100, 1, 1000, 10000, 'statue-blauschopf-krontaube.webp'),
+(7, 506, 100, 1, 1000, 10000, 'statue-breitmaulnashorn.webp'),
+(8, 703, 100, 1, 1000, 10000, 'statue-eisbaer.webp'),
+(9, 308, 100, 1, 1000, 10000, 'statue-elch.webp'),
+(10, 509, 100, 1, 1000, 10000, 'statue-erdferkel.webp'),
+(11, 310, 100, 1, 1000, 10000, 'statue-europaeischer-dachs.webp'),
+(12, 211, 100, 1, 1000, 10000, 'statue-flamingo.webp'),
+(13, 512, 100, 1, 1000, 10000, 'statue-flusspferd.webp'),
+(14, 611, 100, 1, 1000, 10000, 'statue-grosse-anakonda.webp'),
+(15, 107, 100, 1, 1000, 10000, 'statue-grosser-panda.webp'),
+(16, 216, 100, 1, 1000, 10000, 'statue-guerteltier.webp'),
+(17, 108, 100, 1, 1000, 10000, 'statue-hase.webp'),
+(18, 109, 100, 1, 1000, 10000, 'statue-hausschwein.webp'),
+(19, 110, 100, 1, 1000, 10000, 'statue-hausziege.webp'),
+(20, 614, 100, 1, 1000, 10000, 'statue-hellroter-ara.webp'),
+(21, 709, 100, 1, 1000, 10000, 'statue-kaiserpinguin.webp'),
+(22, 322, 100, 1, 1000, 10000, 'statue-koala.webp'),
+(23, 418, 100, 1, 1000, 10000, 'statue-kodiakbaer.webp'),
+(24, 621, 100, 1, 1000, 10000, 'statue-komodowaran.webp'),
+(25, 520, 100, 1, 1000, 10000, 'statue-loewe.webp'),
+(26, 420, 100, 1, 1000, 10000, 'statue-luchs.webp'),
+(27, 627, 100, 1, 1000, 10000, 'statue-mandrill.webp'),
+(28, 324, 100, 1, 1000, 10000, 'statue-mondbaer.webp'),
+(29, 521, 100, 1, 1000, 10000, 'statue-netzgiraffe.webp'),
+(30, 634, 100, 1, 1000, 10000, 'statue-nilkrokodil.webp'),
+(31, 326, 100, 1, 1000, 10000, 'statue-okapi.webp'),
+(32, 423, 100, 1, 1000, 10000, 'statue-ozelot.webp'),
+(33, 638, 100, 1, 1000, 10000, 'statue-panter.webp'),
+(34, 424, 100, 1, 1000, 10000, 'statue-pavian.webp'),
+(35, 224, 100, 1, 1000, 10000, 'statue-pfau.webp'),
+(36, 124, 100, 1, 1000, 10000, 'statue-pferd.webp'),
+(37, 713, 100, 1, 1000, 10000, 'statue-polarfuchs.webp'),
+(38, 714, 100, 1, 1000, 10000, 'statue-polarwolf.webp'),
+(39, 227, 100, 1, 1000, 10000, 'statue-riesenschildkroete.webp'),
+(40, 641, 100, 1, 1000, 10000, 'statue-riesen-tukan.webp'),
+(41, 329, 100, 1, 1000, 10000, 'statue-roter-panda.webp'),
+(42, 229, 100, 1, 1000, 10000, 'statue-rotes-riesenkanguru.webp'),
+(43, 331, 100, 1, 1000, 10000, 'statue-rotfuchs.webp'),
+(44, 128, 100, 1, 1000, 10000, 'statue-schaf.webp'),
+(45, 332, 100, 1, 1000, 10000, 'statue-schimpanse.webp'),
+(46, 717, 100, 1, 1000, 10000, 'statue-schneehase.webp'),
+(47, 232, 100, 1, 1000, 10000, 'statue-sekretaer.webp'),
+(48, 237, 100, 1, 1000, 10000, 'statue-steppenzebra.webp'),
+(49, 136, 100, 1, 1000, 10000, 'statue-tapir.webp'),
+(50, 430, 100, 1, 1000, 10000, 'statue-weisskopfadler.webp'),
+(51, 340, 100, 1, 1000, 10000, 'statue-wildschwein.webp'),
+(52, 431, 100, 1, 1000, 10000, 'statue-wolf.webp'),
+(53, 103, 100, 1, 1000, 10000, 'statue-bieber.webp'),
+(54, 819, 100, 1, 1000, 10000, 'statue-mandarinente.webp'),
+(55, 715, 100, 1, 1000, 10000, 'statue-schneeeule.webp');
+
+--
+-- Indizes der exportierten Tabellen
+--
+
+--
+-- Indizes für die Tabelle `statue`
+--
+ALTER TABLE `statue`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `conteststatuesindex` (`id`),
+  ADD UNIQUE KEY `statue_animalId_key` (`animalId`);
+
+--
+-- AUTO_INCREMENT für exportierte Tabellen
+--
+
+--
+-- AUTO_INCREMENT für Tabelle `statue`
+--
+ALTER TABLE `statue`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+
+--
+-- Constraints der exportierten Tabellen
+--
+
+--
+-- Constraints der Tabelle `statue`
+--
+ALTER TABLE `statue`
+  ADD CONSTRAINT `statue_animalId_fkey` FOREIGN KEY (`animalId`) REFERENCES `animal` (`id`) ON UPDATE CASCADE;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
