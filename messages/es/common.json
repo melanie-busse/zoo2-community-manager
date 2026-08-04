@@ -54,6 +54,8 @@
     "missing_partner": "Falta pareja",
     "not_owned": "No disponible",
     "level_label": "Nivel",
+    "has_statue": "Solo con estatua",
+    "contest_only": "Solo variantes de concurso",
     "results": {
       "show": "Mostrando",
       "of": "de",

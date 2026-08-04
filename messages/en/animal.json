@@ -2,6 +2,7 @@
   "species": "Name",
   "release": "Release",
   "colorVariants": "Color Variants",
+  "statue": "Statue",
   "biomeCapacity": "Enclosure Capacity",
   "animalCount": "Number of Animals",
   "biomeSize": "Enclosure Size",

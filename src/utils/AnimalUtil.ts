@@ -7,6 +7,7 @@ interface FilterOptions {
   searchTerm: string;
   selectedBiome: string | null;
   selectedShelterLevel: string | null;
+  hasStatueFilter?: boolean;
 }
 
 interface SortOptions {
@@ -16,7 +17,7 @@ interface SortOptions {
 
 export function filterAnimals(
   animals: Animal[] | undefined,
-  { searchTerm, selectedBiome, selectedShelterLevel }: FilterOptions,
+  { searchTerm, selectedBiome, selectedShelterLevel, hasStatueFilter = false }: FilterOptions,
 ): Animal[] {
   if (!animals) return [];
 
@@ -33,6 +34,10 @@ export function filterAnimals(
     }
 
     if (selectedShelterLevel !== null && String(animal.shelterLevel) !== selectedShelterLevel) {
+      return false;
+    }
+
+    if (hasStatueFilter && !animal.statueImage) {
       return false;
     }
 

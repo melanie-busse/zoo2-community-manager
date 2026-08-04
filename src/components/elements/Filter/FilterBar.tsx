@@ -14,11 +14,13 @@ import { useAnimalStore } from "@/store/useAnimalStore";
 interface FilterBarProps {
   showBiomeFilter?: boolean;
   showLevelFilter?: boolean;
+  showStatueFilter?: boolean;
 }
 
 export default function FilterBar({
   showBiomeFilter = true,
   showLevelFilter = true,
+  showStatueFilter = false,
 }: FilterBarProps) {
   const t = useTranslations("common");
 
@@ -26,10 +28,12 @@ export default function FilterBar({
   const searchTerm = useAnimalStore((state) => state.searchTerm);
   const selectedBiome = useAnimalStore((state) => state.selectedBiome);
   const selectedLevel = useAnimalStore((state) => state.selectedShelterLevel);
+  const hasStatueFilter = useAnimalStore((state) => state.hasStatueFilter);
 
   const setSearchTerm = useAnimalStore((state) => state.setSearchTerm);
   const setSelectedBiome = useAnimalStore((state) => state.setSelectedBiome);
   const setSelectedLevel = useAnimalStore((state) => state.setSelectedShelterLevel);
+  const setHasStatueFilter = useAnimalStore((state) => state.setHasStatueFilter);
 
   const uniqueBiomes = Array.from(
     new Map(
@@ -95,6 +99,17 @@ export default function FilterBar({
             );
           }}
         />
+      )}
+
+      {showStatueFilter && (
+        <Styles.CheckboxLabel>
+          <input
+            type="checkbox"
+            checked={hasStatueFilter}
+            onChange={(e) => setHasStatueFilter(e.target.checked)}
+          />
+          {t("filter.has_statue")}
+        </Styles.CheckboxLabel>
       )}
     </Styles.FilterBar>
   );

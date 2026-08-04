@@ -7,6 +7,7 @@ interface FilterOptions {
   selectedBiome: string | null;
   selectedShelterLevel: number | null;
   inventoryStatus: InventoryStatusFilter;
+  contestOnly?: boolean;
 }
 
 interface SortOptions {
@@ -16,7 +17,7 @@ interface SortOptions {
 
 export function filterSpecialCoats(
   coats: SpecialCoat[] | undefined,
-  { searchTerm, selectedBiome, selectedShelterLevel, inventoryStatus }: FilterOptions,
+  { searchTerm, selectedBiome, selectedShelterLevel, inventoryStatus, contestOnly = false }: FilterOptions,
 ): SpecialCoat[] {
   if (!coats) return [];
 
@@ -50,6 +51,8 @@ export function filterSpecialCoats(
     if (inventoryStatus === "missing_partner" && amount !== 1) return false;
     if (inventoryStatus === "ready" && amount < 2) return false;
     if (inventoryStatus === "not_owned" && amount !== 0) return false;
+
+    if (contestOnly && !coat.isContestSpecialCoat) return false;
 
     return true;
   });

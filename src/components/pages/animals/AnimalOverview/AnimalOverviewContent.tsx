@@ -27,7 +27,7 @@ export default function AnimalOverviewContent() {
       <PageHeader text={t("overview_title")} />
 
       <Suspense fallback={<div>{tCommon("loading")}</div>}>
-        <FilterBar />
+        <FilterBar showStatueFilter />
       </Suspense>
 
       <ResultsInfo currentCount={currentCount} totalCount={totalCount} />

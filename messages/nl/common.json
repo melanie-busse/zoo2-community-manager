@@ -54,6 +54,8 @@
     "missing_partner": "Partner ontbreekt",
     "not_owned": "Niet in bezit",
     "level_label": "Niveau",
+    "has_statue": "Alleen met standbeeld",
+    "contest_only": "Alleen wedstrijdvarianten",
     "results": {
       "show": "Weergeven",
       "of": "van",

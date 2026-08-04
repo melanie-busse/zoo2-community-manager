@@ -412,3 +412,22 @@ export const OriginContainer = styled.div`
   gap: 6px;
   align-items: center;
 `;
+
+export const StatueCardWrapper = styled.div`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #f9f9f9;
+  border: 2px solid #e0e0e0;
+  border-radius: 15px;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transform: translateY(-5px);
+    border-color: #4a7c2a;
+    background: #ffffff;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  }
+`;

@@ -54,6 +54,8 @@
     "missing_partner": "Partner fehlt",
     "not_owned": "Nicht besitzt",
     "level_label": "Level",
+    "has_statue": "Nur mit Statue",
+    "contest_only": "Nur Wettbewerb-Varianten",
     "results": {
       "show": "Angezeigt",
       "of": "von",

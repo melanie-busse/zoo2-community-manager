@@ -15,6 +15,7 @@ export interface SpecialCoat {
   releaseDate: Date | string;
   image: string | null;
   ownedAmount?: number;
+  isContestSpecialCoat?: boolean;
   parentWithCoatNeeded?: boolean;
   chanceBaseWithoutParent?: number;
   chanceBaseWithOneParent?: number;

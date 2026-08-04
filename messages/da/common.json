@@ -54,6 +54,8 @@
     "missing_partner": "Partner mangler",
     "not_owned": "Ikke ejet",
     "level_label": "Niveau",
+    "has_statue": "Kun med statue",
+    "contest_only": "Kun konkurrencevarianter",
     "results": {
       "show": "Viser",
       "of": "af",

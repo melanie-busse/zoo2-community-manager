@@ -9,6 +9,7 @@ import * as Styles from "./AnimalDetails.styles";
 
 import HeaderCard from "./HeaderCard";
 import SpecialCoatArea from "./SpecialCoatArea";
+import StatueArea from "./StatueArea";
 import AccordionCard from "./AccordionCard";
 import ActionGroupBadge from "@/components/ui/badges/ActionGroupBadge";
 import Textarea from "@/components/page-structure/Elements/Textarea";
@@ -63,6 +64,7 @@ export default function AnimalDetailContent({}) {
           />
 
           <SpecialCoatArea />
+          <StatueArea />
         </Styles.PrimaryColumn>
 
         <Styles.SecondaryColumn>

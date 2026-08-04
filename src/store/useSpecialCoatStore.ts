@@ -26,6 +26,7 @@ interface SpecialCoatState {
   selectedBiome: string | null;
   selectedShelterLevel: number | null;
   inventoryStatus: InventoryStatusFilter;
+  contestOnly: boolean;
   sortBy: string;
   sortDirection: "asc" | "desc";
   currentPage: number;
@@ -45,6 +46,7 @@ interface SpecialCoatState {
   setSelectedBiome: (biome: string | null) => void;
   setSelectedShelterLevel: (level: number | null) => void;
   setInventoryStatusFilter: (status: InventoryStatusFilter) => void;
+  setContestOnly: (value: boolean) => void;
   resetFilters: () => void;
 
   // 6. Aktionen für Edit & Delete
@@ -60,6 +62,7 @@ export const useSpecialCoatStore = create<SpecialCoatState>((set, get) => {
       selectedBiome: state.selectedBiome,
       selectedShelterLevel: state.selectedShelterLevel,
       inventoryStatus: state.inventoryStatus,
+      contestOnly: state.contestOnly,
     });
 
     const sorted = sortSpecialCoats(filtered, {
@@ -86,6 +89,7 @@ export const useSpecialCoatStore = create<SpecialCoatState>((set, get) => {
     selectedBiome: null,
     selectedShelterLevel: null,
     inventoryStatus: "all",
+    contestOnly: false,
     sortBy: "coatName",
     sortDirection: "asc",
     currentPage: 1,
@@ -230,6 +234,12 @@ export const useSpecialCoatStore = create<SpecialCoatState>((set, get) => {
         };
       }),
 
+    setContestOnly: (value) =>
+      set((state) => {
+        const nextState = { ...state, contestOnly: value, currentPage: 1 };
+        return { contestOnly: value, currentPage: 1, ...runPipeline(state.allSpecialCoats, nextState) };
+      }),
+
     resetFilters: () =>
       set((state) => {
         const clearedState = {
@@ -238,6 +248,7 @@ export const useSpecialCoatStore = create<SpecialCoatState>((set, get) => {
           selectedBiome: null,
           selectedShelterLevel: null,
           inventoryStatus: "all" as const,
+          contestOnly: false,
           sortBy: "coatName",
           sortDirection: "asc" as const,
           currentPage: 1,
@@ -272,6 +283,7 @@ export const useSpecialCoatStore = create<SpecialCoatState>((set, get) => {
             selectedBiome: state.selectedBiome,
             selectedShelterLevel: state.selectedShelterLevel,
             inventoryStatus: state.inventoryStatus,
+            contestOnly: state.contestOnly,
           });
 
           const totalPages = Math.ceil(filtered.length / state.itemsPerPage);

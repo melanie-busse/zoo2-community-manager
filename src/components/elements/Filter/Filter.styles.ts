@@ -140,6 +140,24 @@ export const ScaledBadge = styled.div`
   margin: -10px;
 `;
 
+export const CheckboxLabel = styled.label`
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: ${({ theme }) => theme.fonts.text};
+  color: ${({ theme }) => theme.colors.primary[900]};
+  white-space: nowrap;
+
+  input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: ${({ theme }) => theme.colors.primary[500]};
+    cursor: pointer;
+  }
+`;
+
 export const StatusDot = styled.span<{ $color: string }>`
   width: 12px;
   height: 12px;
