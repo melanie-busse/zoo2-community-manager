@@ -46,13 +46,14 @@
     "activeContest": "Actief",
     "statuesChoise": "Kies beelden:",
     "saveContest": "Wedstrijd opslaan",
-    "maxStatues": "Maximaal 4 beelden toegestaan",
-    "chooseStatues": "Selecteer 3 of 4 beelden",
-    "specialCoatsChoice": "Kies kleurvarianten:",
+    "maxStatues": "Maximaal 3 beelden toegestaan",
+    "chooseStatues": "Selecteer 3 beelden",
+    "specialCoatsChoice": "Kies kleurvariante:",
     "endDateBeforeStart": "Einddatum moet na startdatum liggen",
     "successCreated": "Wedstrijd aangemaakt",
     "successUpdated": "Wedstrijd bijgewerkt",
     "errorCreating": "Fout bij aanmaken wedstrijd",
-    "errorUpdating": "Fout bij bijwerken wedstrijd"
+    "errorUpdating": "Fout bij bijwerken wedstrijd",
+    "unknown_statue": "Onbekend beeld"
   }
 }

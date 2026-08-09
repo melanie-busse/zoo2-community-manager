@@ -5,9 +5,10 @@ import { useTranslations } from "next-intl";
 import React from "react";
 import SubmitButton from "@/components/ui/form/SubmitButton";
 import OriginTransfer from "@/components/ui/OriginTransfer/OriginTransfer";
+import Label from "@/components/ui/form/Label";
 
 interface ContestCreateFormContentProps {
-  handleFormSubmit: (e: React.FormEvent) => Promise<void>;
+  handleFormSubmit: (e: React.SubmitEvent) => Promise<void>;
   formData: any;
   setFormData: React.Dispatch<React.SetStateAction<any>>;
   selectedStatues: { id: number; name: string }[];
@@ -40,7 +41,7 @@ export function ContestCreateFormContent({
     <form onSubmit={handleFormSubmit}>
       <Styles.Row>
         <Styles.InputGroup>
-          <label>{t("contestForm.startDate")}</label>
+          <Label>{t("contestForm.startDate")}</Label>
           <input
             type="date"
             value={formData.startDate}

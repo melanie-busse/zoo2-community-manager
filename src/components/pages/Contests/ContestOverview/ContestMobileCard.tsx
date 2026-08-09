@@ -33,7 +33,6 @@ export default function ContestMobileCard({
 
   const options: Intl.DateTimeFormatOptions = { day: "2-digit", month: "2-digit", year: "numeric" };
 
-  // Date-Parsing für String-Daten (aus JSON)
   const start = new Date(contest.startDate);
   const end = new Date(contest.endDate);
   const now = new Date();

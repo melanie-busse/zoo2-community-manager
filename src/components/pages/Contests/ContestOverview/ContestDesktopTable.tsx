@@ -3,7 +3,6 @@
 import React from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { useSession } from "next-auth/react";
-import styled from "styled-components";
 
 import * as Styles from "./ContestOverview.styles";
 import Table from "@/components/page-structure/Table/Table";
@@ -40,10 +39,12 @@ export default function ContestDesktopTable({
     <Table>
       <thead>
         <tr>
-          <ThPeriod>{tContest("contestOverview.table.period")}</ThPeriod>
+          <Styles.ThPeriod>{tContest("contestOverview.table.period")}</Styles.ThPeriod>
           <th colSpan={3}>{tContest("contestOverview.table.statues_animals")}</th>
-          <ThColorVariant>{tContest("contestOverview.table.colorVariant")}</ThColorVariant>
-          <ThStatus>{tContest("contestOverview.table.status")}</ThStatus>
+          <Styles.ThColorVariant>
+            {tContest("contestOverview.table.colorVariant")}
+          </Styles.ThColorVariant>
+          <Styles.ThStatus>{tContest("contestOverview.table.status")}</Styles.ThStatus>
           <ActionsHeadline text={tCommon("actions")} />
         </tr>
       </thead>
@@ -60,7 +61,6 @@ export default function ContestDesktopTable({
 
           return (
             <LinkedRow key={contest.id} path={`/contests/${contest.id}`}>
-              {/* Zeitraum */}
               <td>
                 <Styles.DateWrapper>
                   <span>{startDateStr}</span>
@@ -69,7 +69,6 @@ export default function ContestDesktopTable({
                 </Styles.DateWrapper>
               </td>
 
-              {/* 3 Statuen nebeneinander in einer Zeile */}
               <td colSpan={3}>
                 <Styles.StatueRow>
                   {contest.conteststatue?.map((contestStatue) => {
@@ -90,8 +89,7 @@ export default function ContestDesktopTable({
                 </Styles.StatueRow>
               </td>
 
-              {/* Farbvariante rechtsbündig ausgerichtet */}
-              <TdColorVariant>
+              <Styles.TdColorVariant>
                 <Styles.ColorVariantWrapper>
                   {contest.contestspecialcoat?.map((link) => {
                     const coat = link.specialcoat;
@@ -113,14 +111,12 @@ export default function ContestDesktopTable({
                     );
                   })}
                 </Styles.ColorVariantWrapper>
-              </TdColorVariant>
+              </Styles.TdColorVariant>
 
-              {/* Status */}
               <td>
                 <StatusBadge isActive={isActive} />
               </td>
 
-              {/* Aktionen */}
               {isAdmin && (
                 <td
                   style={{
@@ -144,23 +140,3 @@ export default function ContestDesktopTable({
     </Table>
   );
 }
-
-/* Tabellen-Styles für korrekte Ausrichtung */
-const ThPeriod = styled.th`
-  width: 110px;
-  text-align: center;
-`;
-
-const ThStatus = styled.th`
-  width: 100px;
-  text-align: center;
-`;
-
-const ThColorVariant = styled.th`
-  text-align: right;
-  padding-right: 20px;
-`;
-
-const TdColorVariant = styled.td`
-  padding-right: 20px;
-`;

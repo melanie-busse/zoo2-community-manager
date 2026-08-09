@@ -31,20 +31,16 @@ export default function ContestForm({
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // 1. Formular-Daten State
   const [formData, setFormData] = useState({
     startDate: "",
     endDate: "",
     active: 1,
   });
 
-  // 2. Gewählte Statuen State
   const [selectedStatues, setSelectedStatues] = useState<{ id: number; name: string }[]>([]);
 
-  // 3. Gewählte Farbvarianten State
   const [selectedSpecialCoatIds, setSelectedSpecialCoatIds] = useState<number[]>([]);
 
-  // 4. Effekt zum Laden der Daten (wichtig für den Edit-Modus)
   useEffect(() => {
     if (initialData) {
       // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -57,18 +53,19 @@ export default function ContestForm({
       if (initialData.conteststatue) {
         const preselected = initialData.conteststatue.map((link: any) => ({
           id: link.animal?.id,
-          name: getStatueName(link.animal, "Unbekannte Statue"),
+          name: getStatueName(link.animal, tContest("contestForm.unknown_statue")),
         }));
-        // eslint-disable-next-line react-hooks/set-state-in-effect
+
         setSelectedStatues(preselected);
       }
 
       if (initialData.contestspecialcoat) {
-        // eslint-disable-next-line react-hooks/set-state-in-effect
-        setSelectedSpecialCoatIds(initialData.contestspecialcoat.map((link: any) => link.specialCoatId));
+        setSelectedSpecialCoatIds(
+          initialData.contestspecialcoat.map((link: any) => link.specialCoatId),
+        );
       }
     } else {
-      // Default-Werte für neuen Contest (nächster Mittwoch)
+      // Default-Value for new Contest (next Wednesday)
       const getNextWednesday = (date: Date) => {
         const result = new Date(date);
         const day = result.getDay();
@@ -81,7 +78,6 @@ export default function ContestForm({
       const end = new Date(start);
       end.setDate(start.getDate() + 7);
 
-      // eslint-disable-next-line react-hooks/set-state-in-effect
       setFormData({
         startDate: toISODate(start),
         endDate: toISODate(end),
@@ -90,7 +86,6 @@ export default function ContestForm({
     }
   }, [initialData]);
 
-  // Verfügbare SpecialCoats für den Transfer (Name aus Text oder Tier-Name)
   const specialCoatItems = (contestSpecialCoats || []).map((coat) => ({
     id: coat.id,
     name:
@@ -99,18 +94,17 @@ export default function ContestForm({
       `Coat #${coat.id}`,
   }));
 
-  // Verfügbare Statuen filtern (alle minus die bereits gewählten)
   const availableStatues = (statues || [])
     .filter((animal) => !selectedStatues.find((s) => s.id === animal.id))
     .map((animal) => ({
       id: animal.id,
-      name: getStatueName(animal, "Unbekannte Statue"),
+      name: getStatueName(animal, tContest("contestForm.unknown_statue")),
     }));
 
   const handleStatueIdsChange = (newIds: number[]) => {
     const allStatues = (statues || []).map((animal) => ({
       id: animal.id,
-      name: getStatueName(animal, "Unbekannte Statue"),
+      name: getStatueName(animal, tContest("contestForm.unknown_statue")),
     }));
     setSelectedStatues(allStatues.filter((s) => newIds.includes(s.id)));
   };

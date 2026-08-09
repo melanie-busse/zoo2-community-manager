@@ -2,7 +2,7 @@ import { create } from "zustand";
 import { Animal } from "@/types/animal";
 import { filterAnimals, sortAnimals, paginate } from "@/utils/AnimalUtil";
 import { confirmDeleteDialog, showErrorToast, showSuccessToast } from "@/utils/alerts";
-import { toast } from "react-toastify"; // Importiert, um den Info-Toast beim Löschen direkt anzuzeigen
+import { toast } from "react-toastify";
 import {
   createAnimalOnClient,
   deleteAnimalOnClient,
@@ -211,7 +211,11 @@ export const useAnimalStore = create<AnimalState>((set) => {
     setHasStatueFilter: (value) =>
       set((state) => {
         const nextState = { ...state, hasStatueFilter: value, currentPage: 1 };
-        return { hasStatueFilter: value, currentPage: 1, ...runPipeline(state.allAnimals, nextState) };
+        return {
+          hasStatueFilter: value,
+          currentPage: 1,
+          ...runPipeline(state.allAnimals, nextState),
+        };
       }),
 
     resetFilters: () =>

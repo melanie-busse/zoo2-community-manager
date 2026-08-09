@@ -12,9 +12,9 @@ export const Row = styled.div`
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
-  justify-content: center; /* Zentriert die Inputs horizontal */
-  align-items: center; /* Richtet Felder & Checkbox auf einer Höhe aus */
-  margin-bottom: 20px; /* Optional: etwas Abstand nach unten */
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
 `;
 
 export const InputGroup = styled.div`
@@ -99,7 +99,11 @@ export const CancelButton = styled.button`
 
   &:hover {
     transform: translateY(-2px);
-    background: linear-gradient(180deg, rgba(160, 160, 160, 0.35) 0%, rgba(120, 120, 120, 0.25) 100%);
+    background: linear-gradient(
+      180deg,
+      rgba(160, 160, 160, 0.35) 0%,
+      rgba(120, 120, 120, 0.25) 100%
+    );
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
   }
 

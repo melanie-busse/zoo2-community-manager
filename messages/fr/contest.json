@@ -46,13 +46,14 @@
     "activeContest": "Actif",
     "statuesChoise": "Choisir des statues :",
     "saveContest": "Enregistrer le concours",
-    "maxStatues": "Maximum 4 statues autorisées",
-    "chooseStatues": "Veuillez sélectionner 3 ou 4 statues",
-    "specialCoatsChoice": "Choisir des variantes de couleur :",
+    "maxStatues": "Maximum 3 statues autorisées",
+    "chooseStatues": "Veuillez sélectionner 3 statues",
+    "specialCoatsChoice": "Choisir la variante de couleur:",
     "endDateBeforeStart": "La date de fin doit être après la date de début",
     "successCreated": "Concours créé avec succès",
     "successUpdated": "Concours mis à jour avec succès",
     "errorCreating": "Erreur lors de la création du concours",
-    "errorUpdating": "Erreur lors de la mise à jour du concours"
+    "errorUpdating": "Erreur lors de la mise à jour du concours",
+    "unknown_statue": "Statue inconnue"
   }
 }

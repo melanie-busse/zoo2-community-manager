@@ -46,13 +46,14 @@
     "activeContest": "Active",
     "statuesChoise": "Choose statues:",
     "saveContest": "Save contest",
-    "maxStatues": "Maximum 4 statues allowed",
-    "chooseStatues": "Please select 3 or 4 statues",
-    "specialCoatsChoice": "Choose color variants:",
+    "maxStatues": "Maximum 3 statues allowed",
+    "chooseStatues": "Please select 3 statues",
+    "specialCoatsChoice": "Choose color variant:",
     "endDateBeforeStart": "End date must be after start date",
     "successCreated": "Contest created successfully",
     "successUpdated": "Contest updated successfully",
     "errorCreating": "Error creating contest",
-    "errorUpdating": "Error updating contest"
+    "errorUpdating": "Error updating contest",
+    "unknown_statue": "Unknown statue"
   }
 }

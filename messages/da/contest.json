@@ -53,6 +53,7 @@
     "successCreated": "Konkurrence oprettet",
     "successUpdated": "Konkurrence opdateret",
     "errorCreating": "Fejl ved oprettelse af konkurrence",
-    "errorUpdating": "Fejl ved opdatering af konkurrence"
+    "errorUpdating": "Fejl ved opdatering af konkurrence",
+    "unknown_statue": "Ukendt statue"
   }
 }

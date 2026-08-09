@@ -9,7 +9,7 @@ export const DateWrapper = styled.div`
   font-weight: 700;
   font-size: 0.8rem;
   line-height: 1.1;
-  color: #333;
+  color: ${({ theme }) => theme.colors.grey[600]};
   padding: 4px 0;
 `;
 
@@ -22,15 +22,6 @@ export const Divider = styled.span`
   user-select: none;
 `;
 
-export const StatueGroup = styled.div`
-  display: grid;
-  /* Erhöht auf 150px für bessere Lesbarkeit */
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 10px;
-  width: 100%;
-  min-width: 0;
-`;
-
 export const StatueRow = styled.div`
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -38,13 +29,11 @@ export const StatueRow = styled.div`
   width: 100%;
 `;
 
-/* Container für die Farbvariante, schiebt die Card nach rechts */
 export const ColorVariantWrapper = styled.div`
   display: flex;
   justify-content: flex-end;
   width: 100%;
 
-  /* Verhindert, dass die Card breiter wird als nötig */
   > div {
     max-width: 220px;
   }
@@ -54,10 +43,10 @@ export const AnimalCard = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
-  background: white;
+  background: ${({ theme }) => theme.colors.ui.white};
   padding: 6px 10px;
   border-radius: 10px;
-  border: 1px solid #e0e0e0;
+  border: 1px solid ${({ theme }) => theme.colors.white[100]};
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   width: 100%;
   height: 100%;
@@ -68,26 +57,20 @@ export const AnimalCard = styled.div`
     line-height: 1.2;
     white-space: normal;
 
-    /* 1. Line-Clamping */
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
 
-    /* 2. Worttrennung erzwingen */
-    /* 'anywhere' ist stärker als 'break-word' und erlaubt Trennung an Silben */
     overflow-wrap: anywhere;
 
-    /* 3. Hyphens mit Präfixen */
     hyphens: auto;
     -webkit-hyphens: auto;
     -moz-hyphens: auto;
     -ms-hyphens: auto;
 
-    /* 4. Verhindert, dass 'word-break' die 'hyphens' Regel überschreibt */
     word-break: normal;
 
-    /* Hilft dem Browser, die Breite für die Trennung besser zu kalkulieren */
     flex: 1;
     min-width: 0;
   }
@@ -95,18 +78,18 @@ export const AnimalCard = styled.div`
 
 export const SubText = styled.span`
   font-size: 0.7rem;
-  color: #888;
+  color: ${({ theme }) => theme.colors.grey[100]};
   text-transform: uppercase;
   letter-spacing: 0.5px;
 `;
 
 export const Card = styled.div`
-  background: white;
+  background: ${({ theme }) => theme.colors.ui.white};
   border-radius: 12px;
   padding: 12px;
   margin-bottom: 12px;
-  border: 1px solid ${({ theme }) => theme.colors.ui.border || "#eee"};
-  box-shadow: ${({ theme }) => theme.shadows.soft || "0 2px 4px rgba(0,0,0,0.02)"};
+  border: 1px solid ${({ theme }) => theme.colors.ui.border};
+  box-shadow: ${({ theme }) => theme.shadows.soft};
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -117,7 +100,7 @@ export const CardHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #f5f5f5;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.white[200]};
   padding-bottom: 8px;
 `;
 
@@ -127,7 +110,7 @@ export const DateInfo = styled.div`
   gap: 6px;
   font-size: 0.85rem;
   font-weight: 700;
-  color: #333;
+  color: ${({ theme }) => theme.colors.grey[600]};
   svg {
     color: ${({ theme }) => theme.colors.primary[600]};
   }
@@ -145,16 +128,16 @@ export const AnimalItem = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
-  background: #fdfdfd;
+  background: ${({ theme }) => theme.colors.white[300]};
   padding: 6px;
   border-radius: 8px;
-  border: 1px solid #f0f0f0;
+  border: 1px solid ${({ theme }) => theme.colors.white[400]};
 `;
 
 export const TinyName = styled(Name)`
   font-size: 0.7rem;
   margin-top: 4px;
-  color: #444;
+  color: ${({ theme }) => theme.colors.grey[700]};
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -175,4 +158,23 @@ export const MobileOnly = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
     display: block;
   }
+`;
+
+export const ThPeriod = styled.th`
+  width: 110px;
+  text-align: center;
+`;
+
+export const ThStatus = styled.th`
+  width: 100px;
+  text-align: center;
+`;
+
+export const ThColorVariant = styled.th`
+  text-align: right;
+  padding-right: 20px;
+`;
+
+export const TdColorVariant = styled.td`
+  padding-right: 20px;
 `;

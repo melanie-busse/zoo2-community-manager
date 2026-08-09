@@ -18,9 +18,9 @@
     },
     "entry": {
       "title": "Tiere eintragen",
-      "clubMember": "Vereinsmitglied",
+      "clubMember": "Klubmitglied",
       "chooseMember": "Mitglied auswählen...",
-      "level": "Stufe",
+      "level": "Level",
       "count": "Anzahl",
       "successSaved": "Einträge erfolgreich gespeichert",
       "errorSaving": "Fehler beim Speichern der Einträge"
@@ -48,11 +48,12 @@
     "saveContest": "Wettbewerb speichern",
     "maxStatues": "Maximal 3 Statuen erlaubt",
     "chooseStatues": "Bitte 3 Statuen auswählen",
-    "specialCoatsChoice": "Farbvarianten auswählen:",
+    "specialCoatsChoice": "Farbvariante auswählen:",
     "endDateBeforeStart": "Enddatum muss nach Startdatum liegen",
     "successCreated": "Wettbewerb erfolgreich erstellt",
     "successUpdated": "Wettbewerb erfolgreich aktualisiert",
     "errorCreating": "Fehler beim Erstellen des Wettbewerbs",
-    "errorUpdating": "Fehler beim Aktualisieren des Wettbewerbs"
+    "errorUpdating": "Fehler beim Aktualisieren des Wettbewerbs",
+    "unknown_statue": "Unbekannte Statue"
   }
 }

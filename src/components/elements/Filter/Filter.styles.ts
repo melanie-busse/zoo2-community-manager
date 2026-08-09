@@ -10,7 +10,8 @@ export const SelectWrapper = styled.div`
 export const SelectHeader = styled.div<{ $isOpen: boolean }>`
   padding: 0 16px;
   height: 48px;
-  border: 2px solid ${(props) => (props.$isOpen ? props.theme.colors.primary[100] : "#e0e7d5")};
+  border: 2px solid
+    ${(props) => (props.$isOpen ? props.theme.colors.primary[100] : props.theme.colors.system.honeydew)};
   border-radius: 12px;
   background: ${({ theme }) => theme.colors.ui.white};
   cursor: pointer;

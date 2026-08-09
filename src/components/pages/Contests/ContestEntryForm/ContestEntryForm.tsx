@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import styled from "styled-components";
 import { useTranslations } from "next-intl";
 
 import PageHeader from "@/components/page-structure/page/PageHeader";
@@ -11,6 +10,7 @@ import DynamicRowInput, { ColumnDefinition } from "@/components/ui/form/DynamicR
 import SubmitButton from "@/components/ui/form/SubmitButton";
 import ThumbnailBadge from "@/components/ui/badges/ThumbnailBadge";
 import * as ContestFormStyles from "@/components/pages/Contests/ContestCreateForm/ContestCreateForm.styles";
+import * as Styles from "@/components/pages/Contests/ContestEntryForm/ContestEntryForm.styles";
 import type { getContestById } from "@/service/ContestService";
 import type { User } from "@/types/user";
 
@@ -31,7 +31,7 @@ interface ContestEntryFormProps {
   entries: Record<number, EntryRow[]>;
   columns: ColumnDefinition[];
   handlers: EntryHandlers;
-  onSubmit: (e: React.FormEvent) => void;
+  onSubmit: (e: React.SubmitEvent) => void;
   onCancel: () => void;
   isSubmitting: boolean;
 }
@@ -53,14 +53,14 @@ export default function ContestEntryForm({
 
   return (
     <form onSubmit={onSubmit}>
-      <HeaderSection>
+      <Styles.HeaderSection>
         <PageHeader text={t("contestOverview.entry.title")} />
-        <DateRange>
+        <Styles.DateRange>
           <FormattedDate date={contest.startDate} /> – <FormattedDate date={contest.endDate} />
-        </DateRange>
-      </HeaderSection>
+        </Styles.DateRange>
+      </Styles.HeaderSection>
 
-      <Section>
+      <Styles.Section>
         <FormSelect
           id="member-select"
           label={t("contestOverview.entry.clubMember")}
@@ -73,7 +73,7 @@ export default function ContestEntryForm({
           }))}
           required
         />
-      </Section>
+      </Styles.Section>
 
       {contest.conteststatue.map(({ animal }) => {
         const animalName = animal.animaltext?.[0]?.animalName ?? "";
@@ -85,8 +85,8 @@ export default function ContestEntryForm({
             : `/images/animals/${biomeIdentifier}/${animalImage}`;
 
         return (
-          <AnimalSection key={animal.id}>
-            <AnimalHeader>
+          <Styles.AnimalSection key={animal.id}>
+            <Styles.AnimalHeader>
               <ThumbnailBadge
                 image={{ path: imagePath, name: animalName, alt: animalName }}
                 name={animalName}
@@ -94,7 +94,7 @@ export default function ContestEntryForm({
                 size={45}
               />
               <h3>{animalName}</h3>
-            </AnimalHeader>
+            </Styles.AnimalHeader>
 
             <DynamicRowInput
               columns={columns}
@@ -105,7 +105,7 @@ export default function ContestEntryForm({
                 handlers.handleRowChange(animal.id, rowId, key, value)
               }
             />
-          </AnimalSection>
+          </Styles.AnimalSection>
         );
       })}
 
@@ -121,8 +121,8 @@ export default function ContestEntryForm({
         const displayName = coatName ? `${animalName} – ${coatName}` : animalName;
 
         return (
-          <SpecialCoatSection key={specialcoat.id}>
-            <AnimalHeader>
+          <Styles.SpecialCoatSection key={specialcoat.id}>
+            <Styles.AnimalHeader>
               <ThumbnailBadge
                 image={{ path: imagePath, name: displayName, alt: displayName }}
                 name={displayName}
@@ -130,7 +130,7 @@ export default function ContestEntryForm({
                 size={45}
               />
               <h3>{displayName}</h3>
-            </AnimalHeader>
+            </Styles.AnimalHeader>
 
             <DynamicRowInput
               columns={columns}
@@ -141,7 +141,7 @@ export default function ContestEntryForm({
                 handlers.handleRowChange(animal.id, rowId, key, value)
               }
             />
-          </SpecialCoatSection>
+          </Styles.SpecialCoatSection>
         );
       })}
 
@@ -157,43 +157,3 @@ export default function ContestEntryForm({
     </form>
   );
 }
-
-const HeaderSection = styled.div`
-  text-align: center;
-  margin-bottom: ${({ theme }) => theme.spacing(4)};
-`;
-
-const DateRange = styled.p`
-  font-weight: bold;
-  color: ${({ theme }) => theme.colors.primary["500"]};
-`;
-
-const Section = styled.div`
-  background: ${({ theme }) => theme.colors.ui.white};
-  padding: ${({ theme }) => theme.spacing(2.5)};
-  border-radius: ${({ theme }) => theme.borderRadius.main};
-  margin-bottom: ${({ theme }) => theme.spacing(2.5)};
-  border: 1px solid ${({ theme }) => theme.colors.ui.border};
-  box-shadow: ${({ theme }) => theme.shadows.boxShadow};
-`;
-
-const AnimalSection = styled(Section)`
-  border-left: 5px solid ${({ theme }) => theme.colors.primary["100"]};
-`;
-
-const SpecialCoatSection = styled(Section)`
-  border-left: 5px solid ${({ theme }) => theme.colors.primary["500"]};
-`;
-
-const AnimalHeader = styled.div`
-  display: flex;
-  align-items: center;
-  gap: ${({ theme }) => theme.spacing(2)};
-  margin-bottom: ${({ theme }) => theme.spacing(2)};
-
-  h3 {
-    margin: 0;
-    font-size: 1.2rem;
-    color: ${({ theme }) => theme.colors.ui.textMain};
-  }
-`;
