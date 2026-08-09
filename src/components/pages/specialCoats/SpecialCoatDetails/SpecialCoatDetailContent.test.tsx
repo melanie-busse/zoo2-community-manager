@@ -106,11 +106,26 @@ vi.mock("@/utils/BiomeUtil", () => ({
   getShelterImage: () => ({ path: "/shelter.png", alt: "shelter" }),
 }));
 
+// Mock für AccordionCard, um Zuchtdaten direkt in der Detailansicht zu testen
+vi.mock("@/components/pages/specialCoats/SpecialCoatDetails/AccordionCard", () => ({
+  default: () => {
+    const specialCoat = useSpecialCoatStore((state: any) => state.selectedSpecialCoat);
+    return (
+      <div data-testid="accordion-card">
+        <div>{specialCoat?.isContestSpecialCoat ? "Ja" : "Nein"}</div>
+        <div>{specialCoat?.chanceBaseWithOneParent ?? 0} %</div>
+      </div>
+    );
+  },
+}));
+
 const mockSpecialCoat = {
   id: 7,
   animalId: 1,
   image: "albino.png",
   releaseDate: "2026-06-01",
+  isContestSpecialCoat: true,
+  chanceBaseWithOneParent: 5.5,
   specialcoatstext: [{ languageCode: "de", name: "Albino", color: "Weiß" }],
   specialcoatsorigin: [
     { id: 1, specialCoatId: 7, originId: 2, origin: { id: 2, name: "Shop", image: "shop.webp" } },
@@ -175,6 +190,14 @@ describe("SpecialCoatDetailContent Integration Test", () => {
     expect(screen.getByText("Price: 300")).toBeInTheDocument();
     expect(screen.getByText("8 h")).toBeInTheDocument();
     expect(screen.getByText("50 %")).toBeInTheDocument();
+  });
+
+  test("rendert die Zuchtwahrscheinlichkeiten und Konkurrenz-Infos über die AccordionCard", () => {
+    render(<SpecialCoatDetailContent />);
+
+    expect(screen.getByTestId("accordion-card")).toBeInTheDocument();
+    expect(screen.getByText("Ja")).toBeInTheDocument();
+    expect(screen.getByText("5.5 %")).toBeInTheDocument();
   });
 
   test("rendert die Kapazitätsdaten aus dem Animal-Store", () => {

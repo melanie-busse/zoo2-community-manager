@@ -38,6 +38,12 @@ export interface CreateSpecialCoatInput {
   animalId: number;
   releaseDate: Date | string;
   image: string | null;
+  isContestSpecialCoat?: boolean;
+  parentWithCoatNeeded?: boolean;
+  chanceBaseWithoutParent?: number;
+  chanceBaseWithOneParent?: number;
+  chanceEventWithoutParent?: number;
+  chanceEventWithOneParent?: number;
   texts: {
     languageCode: string;
     name: string;

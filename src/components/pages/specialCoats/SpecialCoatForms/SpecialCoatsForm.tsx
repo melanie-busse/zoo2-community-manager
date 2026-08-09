@@ -17,6 +17,7 @@ import AnimalSelectSection from "@/components/ui/form/sections/AnimalSelectSecti
 import SpecialCoatTranslationSection from "@/components/ui/form/sections/SpecialCoatTranslationSection";
 import { mapSpecialCoatToForm } from "@/utils/SpecialCoatUtil";
 import styled from "styled-components";
+import { BreedingChanceSection } from "@/components/ui/form/sections/BreedingChanceSection";
 
 interface OriginOption {
   id: number;
@@ -102,6 +103,9 @@ export default function SpecialCoatForm({
             setFormData={setFormData}
             dbLanguages={languages}
           />
+
+          <BreedingChanceSection formData={formData} setFormData={setFormData} />
+
           <OriginSection
             originsData={originsData}
             selectedOrigins={formData.origins || []}

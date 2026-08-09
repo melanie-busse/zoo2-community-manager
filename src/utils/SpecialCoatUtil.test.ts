@@ -1,5 +1,5 @@
 import { describe, test, expect } from "vitest";
-import { getSpecialCoatImage, filterSpecialCoats } from "./SpecialCoatUtil";
+import { getSpecialCoatImage, filterSpecialCoats, mapSpecialCoatToForm } from "./SpecialCoatUtil";
 import { SpecialCoat } from "@/types/specialCoat";
 
 const mockCoats: SpecialCoat[] = [
@@ -9,7 +9,14 @@ const mockCoats: SpecialCoat[] = [
     releaseDate: "2024-01-01",
     image: "coat1.png",
     isContestSpecialCoat: true,
-    specialcoatstext: [{ id: 1, specialCoatId: 1, languageCode: "de", color: "Weiß", name: "Schneefuchs" }],
+    parentWithCoatNeeded: true,
+    chanceBaseWithoutParent: 0,
+    chanceBaseWithOneParent: 5.0,
+    chanceEventWithoutParent: 1.0,
+    chanceEventWithOneParent: 10.0,
+    specialcoatstext: [
+      { id: 1, specialCoatId: 1, languageCode: "de", color: "Weiß", name: "Schneefuchs" },
+    ],
     animal: { id: 10, shelterLevel: 3, biome: { id: 1, identifier: "arctic" } } as any,
   },
   {
@@ -18,7 +25,14 @@ const mockCoats: SpecialCoat[] = [
     releaseDate: "2024-02-01",
     image: "coat2.png",
     isContestSpecialCoat: false,
-    specialcoatstext: [{ id: 2, specialCoatId: 2, languageCode: "de", color: "Schwarz", name: "Nachtrabe" }],
+    parentWithCoatNeeded: false,
+    chanceBaseWithoutParent: 2.0,
+    chanceBaseWithOneParent: 10.0,
+    chanceEventWithoutParent: 0,
+    chanceEventWithOneParent: 0,
+    specialcoatstext: [
+      { id: 2, specialCoatId: 2, languageCode: "de", color: "Schwarz", name: "Nachtrabe" },
+    ],
     animal: { id: 11, shelterLevel: 5, biome: { id: 2, identifier: "jungle" } } as any,
   },
 ];
@@ -106,5 +120,40 @@ describe("getSpecialCoatImage", () => {
     const result = getSpecialCoatImage(mockSpecialCoat);
 
     expect(result.alt).toBe("Tierbild");
+  });
+});
+
+describe("mapSpecialCoatToForm", () => {
+  test("sollte Standardwerte für Formularfelder setzen, wenn kein SpecialCoat übergeben wird", () => {
+    const mockLanguages = [{ code: "de", name: "Deutsch" }];
+    const result = mapSpecialCoatToForm(undefined, mockLanguages);
+
+    expect(result).toEqual(
+      expect.objectContaining({
+        animalId: null,
+        releaseDate: "",
+        isContestSpecialCoat: false,
+        parentWithCoatNeeded: false,
+        chanceBaseWithoutParent: null,
+        chanceBaseWithOneParent: null,
+        chanceEventWithoutParent: null,
+        chanceEventWithOneParent: null,
+      }),
+    );
+  });
+
+  test("sollte alle Werte inkl. Zuchteigenschaften korrekt in das Formular-Format mappen", () => {
+    const mockLanguages = [{ code: "de", name: "Deutsch" }];
+    const coat = mockCoats[0];
+
+    const result = mapSpecialCoatToForm(coat, mockLanguages);
+
+    expect(result.animalId).toBe(10);
+    expect(result.isContestSpecialCoat).toBe(true);
+    expect(result.parentWithCoatNeeded).toBe(true);
+    expect(result.chanceBaseWithoutParent).toBe(0);
+    expect(result.chanceBaseWithOneParent).toBe(5.0);
+    expect(result.chanceEventWithoutParent).toBe(1.0);
+    expect(result.chanceEventWithOneParent).toBe(10.0);
   });
 });

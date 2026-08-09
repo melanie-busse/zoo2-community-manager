@@ -7,12 +7,11 @@ import { useSession } from "next-auth/react";
 import * as Styles from "@/components/pages/animals/AnimalDetails/AnimalDetails.styles";
 
 import SpecialCoatHeaderCard from "./SpecialCoatHeaderCard";
-import AccordionCard from "@/components/pages/animals/AnimalDetails/AccordionCard";
 import ActionGroupBadge from "@/components/ui/badges/ActionGroupBadge";
-import Textarea from "@/components/page-structure/Elements/Textarea";
 import { useSpecialCoatStore } from "@/store/useSpecialCoatStore";
 import { useAnimalStore } from "@/store/useAnimalStore";
 import { useRouter } from "@/i18n/routing";
+import BreedingSection from "@/components/pages/specialCoats/SpecialCoatDetails/BreedingSection";
 
 export default function SpecialCoatDetailContent() {
   const specialCoat = useSpecialCoatStore((state) => state.selectedSpecialCoat);
@@ -52,19 +51,7 @@ export default function SpecialCoatDetailContent() {
       )}
 
       <SpecialCoatHeaderCard />
-
-      <Styles.MainGrid>
-        <Styles.PrimaryColumn>
-          <Textarea
-            label={tCommon("description")}
-            text={displayDescription ?? tCommon("noDescriptionAvailable")}
-          />
-        </Styles.PrimaryColumn>
-
-        <Styles.SecondaryColumn>
-          <AccordionCard />
-        </Styles.SecondaryColumn>
-      </Styles.MainGrid>
+      <BreedingSection />
     </Styles.Wrapper>
   );
 }

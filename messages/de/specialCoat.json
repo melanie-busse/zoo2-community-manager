@@ -28,5 +28,14 @@
   },
   "emptyState": {
     "title": "Oje, kein Tier da!"
+  },
+  "breeding": {
+    "title": "Zuchtwahrscheinlichkeit",
+    "isContestSpecialCoat": "Wettbewerbs-Farbvariante",
+    "parentWithCoatNeeded": "Elternteil mit Variante benötigt",
+    "chanceBaseWithoutParent": "Basischance (ohne Elternteil)",
+    "chanceBaseWithOneParent": "Basischance (ein Elternteil)",
+    "chanceEventWithoutParent": "Eventchance (ohne Elternteil)",
+    "chanceEventWithOneParent": "Eventchance (ein Elternteil)"
   }
 }

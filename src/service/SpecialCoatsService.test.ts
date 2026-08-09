@@ -149,7 +149,9 @@ describe("SpecialCoats Service", () => {
               },
             },
           },
-          specialcoatsorigin: { include: { origin: { include: { origintext: { where: { languageCode: "de" } } } } } },
+          specialcoatsorigin: {
+            include: { origin: { include: { origintext: { where: { languageCode: "de" } } } } },
+          },
         },
       });
     });
@@ -206,6 +208,12 @@ describe("SpecialCoats Service", () => {
       animalId: 10,
       releaseDate: "2026-06-01",
       image: "polarbear.png",
+      isContestSpecialCoat: true,
+      parentWithCoatNeeded: false,
+      chanceBaseWithoutParent: 0,
+      chanceBaseWithOneParent: 5.0,
+      chanceEventWithoutParent: 1.0,
+      chanceEventWithOneParent: 10.0,
       texts: [{ languageCode: "de", name: "Polarbär", color: "Weiß" }],
       originIds: [1, 2],
     };
@@ -217,7 +225,7 @@ describe("SpecialCoats Service", () => {
       specialcoatsorigin: [{ origin: { id: 1 } }, { origin: { id: 2 } }],
     };
 
-    test("sollte einen SpecialCoat mit Texten und Origins erstellen", async () => {
+    test("sollte einen SpecialCoat mit Zuchtwahrscheinlichkeiten, Texten und Origins erstellen", async () => {
       vi.mocked(prisma.specialCoat.create).mockResolvedValue(mockCreatedCoat as any);
       vi.mocked(prisma.specialCoat.findUnique).mockResolvedValue(mockFinalCoat as any);
 
@@ -228,6 +236,12 @@ describe("SpecialCoats Service", () => {
           animalId: 10,
           releaseDate: new Date("2026-06-01"),
           image: "polarbear.png",
+          isContestSpecialCoat: true,
+          parentWithCoatNeeded: false,
+          chanceBaseWithoutParent: 0,
+          chanceBaseWithOneParent: 5.0,
+          chanceEventWithoutParent: 1.0,
+          chanceEventWithOneParent: 10.0,
           specialcoatstext: {
             create: [{ languageCode: "de", name: "Polarbär", color: "Weiß" }],
           },
@@ -263,6 +277,12 @@ describe("SpecialCoats Service", () => {
       animalId: 10,
       releaseDate: "2026-07-01",
       image: "updated.png",
+      isContestSpecialCoat: false,
+      parentWithCoatNeeded: true,
+      chanceBaseWithoutParent: 0.5,
+      chanceBaseWithOneParent: 2.0,
+      chanceEventWithoutParent: 0,
+      chanceEventWithOneParent: 0,
       texts: [{ languageCode: "de", name: "Neuer Name", color: "Blau" }],
       originIds: [3],
     };
@@ -273,7 +293,7 @@ describe("SpecialCoats Service", () => {
       specialcoatsorigin: [{ origin: { id: 3 } }],
     };
 
-    test("sollte Coat, Texte und Origins in einer Transaktion aktualisieren", async () => {
+    test("sollte Coat inkl. Zuchtdaten, Texte und Origins in einer Transaktion aktualisieren", async () => {
       txMock.specialCoat.findUnique.mockResolvedValue(mockUpdatedCoat);
 
       const result = await updateSpecialCoat(42, mockUpdateData);
@@ -286,6 +306,12 @@ describe("SpecialCoats Service", () => {
           animalId: 10,
           releaseDate: new Date("2026-07-01"),
           image: "updated.png",
+          isContestSpecialCoat: false,
+          parentWithCoatNeeded: true,
+          chanceBaseWithoutParent: 0.5,
+          chanceBaseWithOneParent: 2.0,
+          chanceEventWithoutParent: 0,
+          chanceEventWithOneParent: 0,
         },
       });
 

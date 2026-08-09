@@ -95,6 +95,14 @@ export async function createSpecialCoat(data: CreateSpecialCoatInput) {
       animalId: data.animalId,
       releaseDate: new Date(data.releaseDate),
       image: data.image,
+      // Neue Boolean- und Prozentfelder für Zuchtwahrscheinlichkeiten
+      isContestSpecialCoat: Boolean(data.isContestSpecialCoat),
+      parentWithCoatNeeded: Boolean(data.parentWithCoatNeeded),
+      chanceBaseWithoutParent: data.chanceBaseWithoutParent ?? 0,
+      chanceBaseWithOneParent: data.chanceBaseWithOneParent ?? 0,
+      chanceEventWithoutParent: data.chanceEventWithoutParent ?? 0,
+      chanceEventWithOneParent: data.chanceEventWithOneParent ?? 0,
+
       specialcoatstext: {
         create: data.texts.map((text) => ({
           languageCode: text.languageCode,
@@ -141,6 +149,13 @@ export async function updateSpecialCoat(id: number | string, data: any) {
         animalId: data.animalId,
         releaseDate: data.releaseDate ? new Date(data.releaseDate) : undefined,
         image: data.image,
+
+        isContestSpecialCoat: Boolean(data.isContestSpecialCoat),
+        parentWithCoatNeeded: Boolean(data.parentWithCoatNeeded),
+        chanceBaseWithoutParent: data.chanceBaseWithoutParent ?? 0,
+        chanceBaseWithOneParent: data.chanceBaseWithOneParent ?? 0,
+        chanceEventWithoutParent: data.chanceEventWithoutParent ?? 0,
+        chanceEventWithOneParent: data.chanceEventWithOneParent ?? 0,
       },
     });
 
