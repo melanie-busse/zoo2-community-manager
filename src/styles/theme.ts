@@ -30,6 +30,18 @@ export const theme = {
       800: "#004d4d", // petrolDarker
       900: "#2d5a27", // greenDark
     },
+    white: {
+      100: "#e0e0e0",
+      200: "#f5f5f5",
+      300: "#fdfdfd",
+      400: "#f0f0f0",
+    },
+
+    grey: {
+      100: "#888",
+      600: "#333",
+      700: "#444",
+    },
     // Akzent-Farben (Orange/Gelb für Buttons & Highlights)
     accent: {
       light: "#DAE67F", // yellowLight

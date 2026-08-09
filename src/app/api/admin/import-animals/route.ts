@@ -140,6 +140,64 @@ async function buildCoatTexts(
   return texts;
 }
 
+async function resolveOriginIdsForCoat(wikiOrigins: string[]): Promise<number[]> {
+  let dbOrigins = await prisma.origin.findMany({
+    where: { origintext: { some: { originName: { in: wikiOrigins } } } },
+    select: { id: true },
+  });
+
+  if (dbOrigins.length === 0 && wikiOrigins.length > 0) {
+    const allOrigins = await prisma.origin.findMany({
+      select: { id: true, origintext: { select: { originName: true } } },
+    });
+    dbOrigins = allOrigins.filter((o) =>
+      o.origintext.some((ot) =>
+        wikiOrigins.some(
+          (wikiName) =>
+            wikiName.toLowerCase().includes(ot.originName.toLowerCase()) ||
+            ot.originName.toLowerCase().includes(wikiName.toLowerCase()),
+        ),
+      ),
+    );
+  }
+
+  return dbOrigins.map((o) => o.id);
+}
+
+async function syncMissingCoats(
+  animalId: number,
+  wikiCoats: any[],
+  dbLanguages: { code: string }[],
+): Promise<any[]> {
+  const existingCoats = await prisma.specialCoatsText.findMany({
+    where: { specialcoat: { animalId }, languageCode: "en" },
+    select: { color: true },
+  });
+  const existingColors = new Set(existingCoats.map((c) => c.color));
+
+  const created = [];
+  for (const coat of wikiCoats) {
+    const color = coat.texts[0]?.color;
+    if (!color || existingColors.has(color)) continue;
+
+    try {
+      const originIds = await resolveOriginIdsForCoat(coat.origin);
+      const newCoat = await createSpecialCoat({
+        animalId,
+        releaseDate: parseBackendDate(coat.releaseDate) ?? new Date(),
+        image: null,
+        originIds,
+        texts: await buildCoatTexts(coat.texts[0], dbLanguages),
+      });
+      created.push(newCoat);
+      console.log(`[Import] Created missing special coat '${color}' for animal ${animalId}`);
+    } catch (coatError: any) {
+      console.error(`[Import] Failed to create special coat '${color}':`, coatError?.message ?? coatError);
+    }
+  }
+  return created;
+}
+
 export async function POST(request: Request) {
   try {
     const { pageTitle } = await request.json();
@@ -174,44 +232,7 @@ export async function POST(request: Request) {
     const biome = await resolveBiome(parsedAnimal.wikiBiomeName);
     const newAnimal = await createAnimal({ ...parsedAnimal, biomeId: biome ? biome.id : 1 });
 
-    const createdCoats = [];
-    console.log(`[Import] ${parsedAnimal.specialCoats?.length ?? 0} special coats found:`, parsedAnimal.specialCoats?.map((c: any) => c.texts[0]?.color));
-    for (const specialCoat of parsedAnimal.specialCoats ?? []) {
-      try {
-        // Suche nach exaktem Match, dann Fallback auf Teilstring-Match
-        // (Wiki: "Zoo Academy" → DB: "Academy")
-        let dbOrigins = await prisma.origin.findMany({
-          where: { origintext: { some: { originName: { in: specialCoat.origin } } } },
-          select: { id: true },
-        });
-
-        if (dbOrigins.length === 0 && specialCoat.origin.length > 0) {
-          const allOrigins = await prisma.origin.findMany({
-            select: { id: true, origintext: { select: { originName: true } } },
-          });
-          dbOrigins = allOrigins.filter((o) =>
-            o.origintext.some((ot) =>
-              specialCoat.origin.some(
-                (wikiName: string) =>
-                  wikiName.toLowerCase().includes(ot.originName.toLowerCase()) ||
-                  ot.originName.toLowerCase().includes(wikiName.toLowerCase()),
-              ),
-            ),
-          );
-        }
-
-        const newCoat = await createSpecialCoat({
-          animalId: newAnimal.id,
-          releaseDate: parseBackendDate(specialCoat.releaseDate) ?? new Date(),
-          image: null,
-          originIds: dbOrigins.map((o) => o.id),
-          texts: await buildCoatTexts(specialCoat.texts[0], dbLanguages),
-        });
-        createdCoats.push(newCoat);
-      } catch (coatError: any) {
-        console.error(`[Import] Failed to create special coat '${specialCoat.texts[0]?.color}':`, coatError?.message ?? coatError);
-      }
-    }
+    const createdCoats = await syncMissingCoats(newAnimal.id, parsedAnimal.specialCoats ?? [], dbLanguages);
 
     return NextResponse.json({
       success: true,
@@ -272,15 +293,9 @@ export async function PUT(request: Request) {
     const currentDbEnglishText =
       dbTexts.find((t) => t.languageCode === "en")?.animalDescription || "";
     const hasEnglishTextChanged = currentDbEnglishText.trim() !== englishDescription.trim();
-
     const dbLanguages = await getAllLanguages();
-    parsedAnimal.animaltext = await buildAnimalTexts(
-      pageTitle,
-      englishDescription,
-      dbLanguages,
-      dbTexts,
-      hasEnglishTextChanged,
-    );
+
+    parsedAnimal.animaltext = await buildAnimalTexts(pageTitle, englishDescription, dbLanguages, dbTexts, hasEnglishTextChanged);
 
     const biome =
       existingAnimal?.biomeId && existingAnimal.biomeId !== 1
@@ -293,10 +308,17 @@ export async function PUT(request: Request) {
       ...(existingAnimal?.image ? { imageName: existingAnimal.image } : {}),
     });
 
+    const newCoats = await syncMissingCoats(
+      existingText.animalId,
+      parsedAnimal.specialCoats ?? [],
+      dbLanguages,
+    );
+
     return NextResponse.json({
       success: true,
-      message: `Animal '${pageTitle}' successfully updated (images/biome preserved, translations updated if needed).`,
+      message: `Animal '${pageTitle}' successfully updated. ${newCoats.length} new special coat(s) added.`,
       animal: updatedAnimal,
+      newCoats,
       originIds,
     });
   } catch (error: any) {

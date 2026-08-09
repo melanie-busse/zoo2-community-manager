@@ -23,6 +23,7 @@
   "actions": "Acciones",
   "action": "Acción",
   "scroll_to_top": "Volver arriba",
+  "save": "Guardar",
   "saving": "Guardando...",
   "save_changes": "¡Datos enviados con éxito!",
   "available": "Disponible",
@@ -53,6 +54,8 @@
     "missing_partner": "Falta pareja",
     "not_owned": "No disponible",
     "level_label": "Nivel",
+    "has_statue": "Solo con estatua",
+    "contest_only": "Solo variantes de concurso",
     "results": {
       "show": "Mostrando",
       "of": "de",

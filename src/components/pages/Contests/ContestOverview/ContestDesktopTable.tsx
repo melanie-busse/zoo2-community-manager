@@ -14,7 +14,7 @@ import ActionGroupBadge from "@/components/ui/badges/ActionGroupBadge";
 import { StatusBadge } from "@/components/ui/badges/StatusBadge";
 import { getStatueName } from "@/utils/ContestUtil";
 import { getAnimalImage } from "@/utils/AnimalUtil";
-import styled from "styled-components";
+import { getSpecialCoatImage } from "@/utils/SpecialCoatUtil";
 
 interface ContestDesktopTableProps {
   contests: Contest[];
@@ -39,12 +39,12 @@ export default function ContestDesktopTable({
     <Table>
       <thead>
         <tr>
-          <ThPeriod>{tContest("contestOverview.table.period")}</ThPeriod>
+          <Styles.ThPeriod>{tContest("contestOverview.table.period")}</Styles.ThPeriod>
           <th colSpan={3}>{tContest("contestOverview.table.statues_animals")}</th>
-          <th style={{ textAlign: "right", paddingRight: "50px" }}>
+          <Styles.ThColorVariant>
             {tContest("contestOverview.table.colorVariant")}
-          </th>
-          <ThStatus>{tContest("contestOverview.table.status")}</ThStatus>
+          </Styles.ThColorVariant>
+          <Styles.ThStatus>{tContest("contestOverview.table.status")}</Styles.ThStatus>
           <ActionsHeadline text={tCommon("actions")} />
         </tr>
       </thead>
@@ -61,7 +61,6 @@ export default function ContestDesktopTable({
 
           return (
             <LinkedRow key={contest.id} path={`/contests/${contest.id}`}>
-              {/* Zeitraum */}
               <td>
                 <Styles.DateWrapper>
                   <span>{startDateStr}</span>
@@ -70,30 +69,54 @@ export default function ContestDesktopTable({
                 </Styles.DateWrapper>
               </td>
 
-              {/* Die Statuen/Tiere */}
-              <td colSpan={4}>
-                <Styles.StatueGroup>
+              <td colSpan={3}>
+                <Styles.StatueRow>
                   {contest.conteststatue?.map((contestStatue) => {
                     return (
                       <Styles.AnimalCard key={contestStatue.id}>
-                        {contestStatue.statue.animal.image && (
+                        {contestStatue.animal.image && (
                           <ThumbnailBadge
-                            image={getAnimalImage(contestStatue.statue.animal)}
-                            name={contestStatue.statue.animal.image}
-                            biome={contestStatue.statue.animal.biome}
+                            image={getAnimalImage(contestStatue.animal)}
+                            name={contestStatue.animal.image}
+                            biome={contestStatue.animal.biome}
                             size={55}
                           />
                         )}
-                        <span>{getStatueName(contestStatue.statue, "unbekannte Statue")}</span>
+                        <span>{getStatueName(contestStatue.animal, "unbekannte Statue")}</span>
                       </Styles.AnimalCard>
                     );
                   })}
-                </Styles.StatueGroup>
+                </Styles.StatueRow>
               </td>
+
+              <Styles.TdColorVariant>
+                <Styles.ColorVariantWrapper>
+                  {contest.contestspecialcoat?.map((link) => {
+                    const coat = link.specialcoat;
+                    if (!coat) return null;
+                    const name =
+                      coat.specialcoatstext?.[0]?.name ||
+                      coat.animal?.animaltext?.[0]?.animalName ||
+                      `Coat #${coat.id}`;
+                    return (
+                      <Styles.AnimalCard key={link.id}>
+                        <ThumbnailBadge
+                          image={getSpecialCoatImage(coat)}
+                          biome={coat.animal?.biome}
+                          name={name}
+                          size={55}
+                        />
+                        <span>{name}</span>
+                      </Styles.AnimalCard>
+                    );
+                  })}
+                </Styles.ColorVariantWrapper>
+              </Styles.TdColorVariant>
 
               <td>
                 <StatusBadge isActive={isActive} />
               </td>
+
               {isAdmin && (
                 <td
                   style={{
@@ -117,15 +140,3 @@ export default function ContestDesktopTable({
     </Table>
   );
 }
-
-const ThPeriod = styled.th`
-  width: 110px;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-`;
-
-const ThStatus = styled.th`
-  width: 100px;
-  text-align: center;
-`;

@@ -26,6 +26,7 @@
     "not_found": "Contest nicht gefunden",
     "create_error": "Fehler beim Erstellen des Contests",
     "update_error": "Fehler beim Aktualisieren des Contests",
-    "delete_error": "Fehler beim Löschen"
+    "delete_error": "Fehler beim Löschen",
+    "entry_error": "Fehler beim Speichern der Einträge"
   }
 }

@@ -7,6 +7,24 @@
     "upcoming": "Upcoming"
   },
   "contestOverview": {
+    "overview_title": "Contests",
+    "details": {
+      "headline": "Contest Planning",
+      "postAnimals": "Submit Animals",
+      "rank": "Rank",
+      "member": "Member",
+      "points": "Points",
+      "noPosts": "No entries yet"
+    },
+    "entry": {
+      "title": "Submit Animals",
+      "clubMember": "Club member",
+      "chooseMember": "Select member...",
+      "level": "Level",
+      "count": "Count",
+      "successSaved": "Entries saved successfully",
+      "errorSaving": "Error saving entries"
+    },
     "table": {
       "period": "Period",
       "statues_animals": "Statues / Animals",
@@ -16,12 +34,26 @@
     "messages": {
       "deleteErrorTitle": "Delete contest?",
       "confirmDelete": "Are you sure you want to delete this contest?",
-      "cancelButton": "Cancel"
+      "cancelButton": "Cancel",
+      "deleteSuccess": "Contest deleted successfully"
     }
   },
   "contestForm": {
-    "maxStatues": "Maximum 4 statues allowed",
-    "chooseStatues": "Please select 3 or 4 statues",
-    "endDateBeforeStart": "End date must be after start date"
+    "createTitle": "Create Contest",
+    "editTitle": "Edit Contest",
+    "startDate": "Start date",
+    "endDate": "End date",
+    "activeContest": "Active",
+    "statuesChoise": "Choose statues:",
+    "saveContest": "Save contest",
+    "maxStatues": "Maximum 3 statues allowed",
+    "chooseStatues": "Please select 3 statues",
+    "specialCoatsChoice": "Choose color variant:",
+    "endDateBeforeStart": "End date must be after start date",
+    "successCreated": "Contest created successfully",
+    "successUpdated": "Contest updated successfully",
+    "errorCreating": "Error creating contest",
+    "errorUpdating": "Error updating contest",
+    "unknown_statue": "Unknown statue"
   }
 }

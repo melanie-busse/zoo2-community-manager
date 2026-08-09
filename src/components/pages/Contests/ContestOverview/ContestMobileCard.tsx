@@ -10,7 +10,9 @@ import { StatusBadge } from "@/components/ui/badges/StatusBadge";
 import { useSession } from "next-auth/react";
 import ActionGroupBadge from "@/components/ui/badges/ActionGroupBadge";
 import { getAnimalImage } from "@/utils/AnimalUtil";
+import { getSpecialCoatImage } from "@/utils/SpecialCoatUtil";
 import { useLocale } from "next-intl";
+import { getStatueName } from "@/utils/ContestUtil";
 
 interface ContestMobileCardProps {
   contest: Contest;
@@ -31,7 +33,6 @@ export default function ContestMobileCard({
 
   const options: Intl.DateTimeFormatOptions = { day: "2-digit", month: "2-digit", year: "numeric" };
 
-  // Date-Parsing für String-Daten (aus JSON)
   const start = new Date(contest.startDate);
   const end = new Date(contest.endDate);
   const now = new Date();
@@ -57,24 +58,43 @@ export default function ContestMobileCard({
 
       <Styles.AnimalGrid>
         {contest.conteststatue?.map((contestStatue) => {
-          const statue = contestStatue.statue;
-          const animal = statue.animal;
+          const animal = contestStatue.animal;
 
           if (!animal) return null;
 
-          const animalname = animal.name || "Unbekannt";
-
           return (
             <Styles.AnimalItem key={contestStatue.id}>
-              {contestStatue.statue.animal.image && (
+              {animal.image && (
                 <ThumbnailBadge
-                  image={getAnimalImage(contestStatue.statue.animal)}
-                  name={contestStatue.statue.animal.name}
-                  biome={contestStatue.statue.animal.biome}
+                  image={getAnimalImage(animal)}
+                  name={animal.name}
+                  biome={animal.biome}
                   size={65}
                 />
               )}
-              <Styles.TinyName>{animalname}</Styles.TinyName>
+              <Styles.TinyName>
+                {getStatueName(animal, "unbekannte Statue")}
+              </Styles.TinyName>
+            </Styles.AnimalItem>
+          );
+        })}
+
+        {contest.contestspecialcoat?.map((link) => {
+          const coat = link.specialcoat;
+          if (!coat) return null;
+          const name =
+            coat.specialcoatstext?.[0]?.name ||
+            coat.animal?.animaltext?.[0]?.animalName ||
+            `Coat #${coat.id}`;
+          return (
+            <Styles.AnimalItem key={link.id}>
+              <ThumbnailBadge
+                image={getSpecialCoatImage(coat)}
+                biome={coat.animal?.biome}
+                name={name}
+                size={65}
+              />
+              <Styles.TinyName>{name}</Styles.TinyName>
             </Styles.AnimalItem>
           );
         })}

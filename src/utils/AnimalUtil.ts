@@ -7,6 +7,7 @@ interface FilterOptions {
   searchTerm: string;
   selectedBiome: string | null;
   selectedShelterLevel: string | null;
+  hasStatueFilter?: boolean;
 }
 
 interface SortOptions {
@@ -16,7 +17,7 @@ interface SortOptions {
 
 export function filterAnimals(
   animals: Animal[] | undefined,
-  { searchTerm, selectedBiome, selectedShelterLevel }: FilterOptions,
+  { searchTerm, selectedBiome, selectedShelterLevel, hasStatueFilter = false }: FilterOptions,
 ): Animal[] {
   if (!animals) return [];
 
@@ -33,6 +34,10 @@ export function filterAnimals(
     }
 
     if (selectedShelterLevel !== null && String(animal.shelterLevel) !== selectedShelterLevel) {
+      return false;
+    }
+
+    if (hasStatueFilter && !animal.statueImage) {
       return false;
     }
 
@@ -93,7 +98,7 @@ export function getAnimalImage(animal: Animal): Image {
   return {
     name: animal.image || "placeholder.png",
 
-    path: `/images/animals/${animal.biome.identifier}/${animal.image}`,
+    path: `/images/animals/${animal.biome?.identifier}/${animal.image}`,
 
     alt: animal.animaltext?.[0]?.animalName || "Tierbild",
   };

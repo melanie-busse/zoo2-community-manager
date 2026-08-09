@@ -26,6 +26,7 @@
     "not_found": "Konkurrence ikke fundet",
     "create_error": "Fejl ved oprettelse af konkurrence",
     "update_error": "Fejl ved opdatering af konkurrence",
-    "delete_error": "Fejl ved sletning af konkurrence"
+    "delete_error": "Fejl ved sletning af konkurrence",
+    "entry_error": "Fejl ved gemning af indlæg"
   }
 }

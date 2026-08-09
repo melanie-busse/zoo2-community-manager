@@ -76,6 +76,34 @@ describe("Animal Utilities", () => {
       expect(result).toHaveLength(1);
       expect(result[0].id).toBe(1);
     });
+
+    test("filtert auf Tiere mit Statue, wenn hasStatueFilter aktiv", () => {
+      const animalsWithStatue = [
+        { ...mockAnimals[0], statueImage: "statue-erdmaennchen.webp" },
+        { ...mockAnimals[1], statueImage: null },
+      ];
+      const result = filterAnimals(animalsWithStatue as any, {
+        searchTerm: "",
+        selectedBiome: null,
+        selectedShelterLevel: null,
+        hasStatueFilter: true,
+      });
+      expect(result).toHaveLength(1);
+      expect(result[0].id).toBe(1);
+    });
+
+    test("zeigt alle Tiere, wenn hasStatueFilter nicht gesetzt", () => {
+      const animalsWithStatue = [
+        { ...mockAnimals[0], statueImage: "statue-erdmaennchen.webp" },
+        { ...mockAnimals[1], statueImage: null },
+      ];
+      const result = filterAnimals(animalsWithStatue as any, {
+        searchTerm: "",
+        selectedBiome: null,
+        selectedShelterLevel: null,
+      });
+      expect(result).toHaveLength(2);
+    });
   });
 
   describe("sortAnimals", () => {

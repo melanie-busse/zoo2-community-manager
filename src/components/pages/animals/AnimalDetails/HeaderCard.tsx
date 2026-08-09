@@ -91,7 +91,7 @@ export default function HeaderCard() {
             <GameBadge image={biomeImage} size={45} />
             <ShelterLevelBadge
               image={getShelterImage(animal.biome)}
-              level={animal.shelterLevel}
+              level={animal.shelterLevel ?? 0}
               habitat={animal.biome?.name}
               size={45}
               showTooltip={true}

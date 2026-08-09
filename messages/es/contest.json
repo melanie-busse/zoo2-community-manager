@@ -7,6 +7,24 @@
     "upcoming": "Próximamente"
   },
   "contestOverview": {
+    "overview_title": "Concursos",
+    "entry": {
+      "title": "Enviar animales",
+      "clubMember": "Miembro del club",
+      "chooseMember": "Seleccionar miembro...",
+      "level": "Nivel",
+      "count": "Cantidad",
+      "successSaved": "Entradas guardadas correctamente",
+      "errorSaving": "Error al guardar las entradas"
+    },
+    "details": {
+      "headline": "Planificación del concurso",
+      "postAnimals": "Enviar animales",
+      "rank": "Rango",
+      "member": "Miembro",
+      "points": "Puntos",
+      "noPosts": "Aún no hay entradas"
+    },
     "table": {
       "period": "Período",
       "statues_animals": "Estatuas / Animales",
@@ -16,12 +34,26 @@
     "messages": {
       "deleteErrorTitle": "¿Eliminar concurso?",
       "confirmDelete": "¿Estás seguro de que quieres eliminar este concurso?",
-      "cancelButton": "Cancelar"
+      "cancelButton": "Cancelar",
+      "deleteSuccess": "Concurso eliminado correctamente"
     }
   },
   "contestForm": {
-    "maxStatues": "Máximo 4 estatuas permitidas",
-    "chooseStatues": "Por favor selecciona 3 o 4 estatuas",
-    "endDateBeforeStart": "La fecha de fin debe ser posterior a la fecha de inicio"
+    "createTitle": "Crear concurso",
+    "editTitle": "Editar concurso",
+    "startDate": "Fecha de inicio",
+    "endDate": "Fecha de fin",
+    "activeContest": "Activo",
+    "statuesChoise": "Elige estatuas:",
+    "saveContest": "Guardar concurso",
+    "maxStatues": "Máximo 3 estatuas permitidas",
+    "chooseStatues": "Por favor selecciona 3 estatuas",
+    "specialCoatsChoice": "Seleccionar variante de color:",
+    "endDateBeforeStart": "La fecha de fin debe ser posterior a la fecha de inicio",
+    "successCreated": "Concurso creado correctamente",
+    "successUpdated": "Concurso actualizado correctamente",
+    "errorCreating": "Error al crear el concurso",
+    "errorUpdating": "Error al actualizar el concurso",
+    "unknown_statue": "Estatua desconocida"
   }
 }

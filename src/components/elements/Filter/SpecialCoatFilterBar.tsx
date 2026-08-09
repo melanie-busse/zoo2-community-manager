@@ -33,11 +33,13 @@ export default function SpecialCoatFilterBar() {
   const selectedBiome = useSpecialCoatStore((state) => state.selectedBiome);
   const selectedShelterLevel = useSpecialCoatStore((state) => state.selectedShelterLevel);
   const inventoryStatus = useSpecialCoatStore((state) => state.inventoryStatus);
+  const contestOnly = useSpecialCoatStore((state) => state.contestOnly);
 
   const setSearchTerm = useSpecialCoatStore((state) => state.setSearchTerm);
   const setBiomeFilter = useSpecialCoatStore((state) => state.setSelectedBiome);
   const setShelterLevelFilter = useSpecialCoatStore((state) => state.setSelectedShelterLevel);
   const setInventoryStatus = useSpecialCoatStore((state) => state.setInventoryStatusFilter);
+  const setContestOnly = useSpecialCoatStore((state) => state.setContestOnly);
 
   const uniqueBiomes = Array.from(
     new Map(
@@ -121,6 +123,15 @@ export default function SpecialCoatFilterBar() {
           );
         }}
       />
+
+      <Styles.CheckboxLabel>
+        <input
+          type="checkbox"
+          checked={contestOnly}
+          onChange={(e) => setContestOnly(e.target.checked)}
+        />
+        {t("filter.contest_only")}
+      </Styles.CheckboxLabel>
     </Styles.FilterBar>
   );
 }

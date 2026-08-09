@@ -23,6 +23,7 @@
   "actions": "Actions",
   "action": "Action",
   "scroll_to_top": "Scroll to top",
+  "save": "Save",
   "saving": "Saving...",
   "save_changes": "Data successfully submitted!",
   "available": "Available",
@@ -53,6 +54,8 @@
     "missing_partner": "Partner missing",
     "not_owned": "Not owned",
     "level_label": "Level",
+    "has_statue": "With statue only",
+    "contest_only": "Contest variants only",
     "results": {
       "show": "Showing",
       "of": "of",

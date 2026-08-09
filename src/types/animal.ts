@@ -6,9 +6,9 @@ import { SpecialCoat } from "@/types/specialCoat";
 
 export interface Animal {
   id: number;
-  name: string;
-  biome: Biome;
-  shelterLevel: number;
+  name?: string;
+  biome?: Biome;
+  shelterLevel?: number | null;
 
   // Optionale Felder
   releaseDate?: Date | string | null;
@@ -22,14 +22,16 @@ export interface Animal {
   breedingCost?: number | null;
   breedingDuration?: number | null;
   breedingProbability?: number | null;
+  isContestAnimal?: boolean;
+  statueImage?: string | null;
 
   // Relationen
   animalxp?: Xp[];
-  game: any[];
-  animalorigins: AnimalOrigin[];
-  animaltext: AnimalText[];
-  specialcoat: SpecialCoat[];
-  animalperenclosure: AnimalPerEnclosure[];
+  game?: any[];
+  animalorigins?: AnimalOrigin[];
+  animaltext?: AnimalText[];
+  specialcoat?: SpecialCoat[];
+  animalperenclosure?: AnimalPerEnclosure[];
 }
 
 export interface AnimalText {

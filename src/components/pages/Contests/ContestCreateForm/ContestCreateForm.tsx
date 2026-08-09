@@ -6,37 +6,41 @@ import { useTranslations } from "next-intl";
 
 import { Contest } from "@/types/contest";
 import { ContestCreateFormContent } from "@/components/pages/Contests/ContestCreateForm/ContestCreateFormContent";
-import { Statue } from "@/types/statue";
+import { Animal } from "@/types/animal";
+import { SpecialCoat } from "@/types/specialCoat";
 import { getStatueName } from "@/utils/ContestUtil";
 import { toISODate } from "@/utils/DateUtil";
 
 interface ContestFormProps {
-  statues?: Statue[];
+  statues?: Animal[];
+  contestSpecialCoats?: SpecialCoat[];
   initialData?: Contest | null;
   onSubmit: (data: any) => Promise<void>;
+  onCancel?: () => void;
 }
 
 export default function ContestForm({
   statues = [],
+  contestSpecialCoats = [],
   initialData = null,
   onSubmit,
+  onCancel,
 }: ContestFormProps) {
   const tContest = useTranslations("contest");
   const tCommon = useTranslations("common");
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // 1. Formular-Daten State
   const [formData, setFormData] = useState({
     startDate: "",
     endDate: "",
     active: 1,
   });
 
-  // 2. Gewählte Statuen State
   const [selectedStatues, setSelectedStatues] = useState<{ id: number; name: string }[]>([]);
 
-  // 3. Effekt zum Laden der Daten (wichtig für den Edit-Modus)
+  const [selectedSpecialCoatIds, setSelectedSpecialCoatIds] = useState<number[]>([]);
+
   useEffect(() => {
     if (initialData) {
       // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -48,14 +52,20 @@ export default function ContestForm({
 
       if (initialData.conteststatue) {
         const preselected = initialData.conteststatue.map((link: any) => ({
-          id: link.statue?.id,
-          name: getStatueName(link.statue, "Unbekannte Statue"),
+          id: link.animal?.id,
+          name: getStatueName(link.animal, tContest("contestForm.unknown_statue")),
         }));
-        // eslint-disable-next-line react-hooks/set-state-in-effect
+
         setSelectedStatues(preselected);
       }
+
+      if (initialData.contestspecialcoat) {
+        setSelectedSpecialCoatIds(
+          initialData.contestspecialcoat.map((link: any) => link.specialCoatId),
+        );
+      }
     } else {
-      // Default-Werte für neuen Contest (nächster Mittwoch)
+      // Default-Value for new Contest (next Wednesday)
       const getNextWednesday = (date: Date) => {
         const result = new Date(date);
         const day = result.getDay();
@@ -68,7 +78,6 @@ export default function ContestForm({
       const end = new Date(start);
       end.setDate(start.getDate() + 7);
 
-      // eslint-disable-next-line react-hooks/set-state-in-effect
       setFormData({
         startDate: toISODate(start),
         endDate: toISODate(end),
@@ -77,31 +86,34 @@ export default function ContestForm({
     }
   }, [initialData]);
 
-  // Verfügbare Statuen filtern (alle minus die bereits gewählten)
+  const specialCoatItems = (contestSpecialCoats || []).map((coat) => ({
+    id: coat.id,
+    name:
+      coat.specialcoatstext?.[0]?.name ||
+      coat.animal?.animaltext?.[0]?.animalName ||
+      `Coat #${coat.id}`,
+  }));
+
   const availableStatues = (statues || [])
-    .filter((statue) => !selectedStatues.find((s) => s.id === statue.id))
-    .map((statue) => ({
-      id: statue.id,
-      name: getStatueName(statue, "Unbekannte Statue"),
+    .filter((animal) => !selectedStatues.find((s) => s.id === animal.id))
+    .map((animal) => ({
+      id: animal.id,
+      name: getStatueName(animal, tContest("contestForm.unknown_statue")),
     }));
 
-  const handleMoveRight = (statue: { id: number; name: string }) => {
-    if (selectedStatues.length >= 4) {
-      toast.warn(tContest("contestForm.maxStatues"));
-      return;
-    }
-    setSelectedStatues([...selectedStatues, statue]);
-  };
-
-  const handleMoveLeft = (statue: { id: number; name: string }) => {
-    setSelectedStatues(selectedStatues.filter((s) => s.id !== statue.id));
+  const handleStatueIdsChange = (newIds: number[]) => {
+    const allStatues = (statues || []).map((animal) => ({
+      id: animal.id,
+      name: getStatueName(animal, tContest("contestForm.unknown_statue")),
+    }));
+    setSelectedStatues(allStatues.filter((s) => newIds.includes(s.id)));
   };
 
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Validierung: Zoo 2 Contests benötigen immer genau 4 Statuen
-    if (selectedStatues.length < 3 || selectedStatues.length > 4) {
+    // Validierung: Zoo 2 Contests benötigen immer genau 3 Statuen
+    if (selectedStatues.length < 2 || selectedStatues.length > 3) {
       toast.error(tContest("contestForm.chooseStatues"));
       return;
     }
@@ -115,6 +127,7 @@ export default function ContestForm({
     const submissionData = {
       ...formData,
       statuenIds: selectedStatues.map((s) => s.id),
+      specialCoatIds: selectedSpecialCoatIds,
     };
 
     setIsSubmitting(true);
@@ -135,9 +148,12 @@ export default function ContestForm({
       setFormData={setFormData}
       selectedStatues={selectedStatues}
       availableStatues={availableStatues}
-      handleMoveRight={handleMoveRight}
-      handleMoveLeft={handleMoveLeft}
+      onStatueIdsChange={handleStatueIdsChange}
+      specialCoatItems={specialCoatItems}
+      selectedSpecialCoatIds={selectedSpecialCoatIds}
+      onSpecialCoatIdsChange={setSelectedSpecialCoatIds}
       isSubmitting={isSubmitting}
+      onCancel={onCancel}
     />
   );
 }

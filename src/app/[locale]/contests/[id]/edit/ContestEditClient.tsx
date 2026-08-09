@@ -1,41 +1,52 @@
 "use client";
 
 import React from "react";
-import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { toast } from "react-toastify";
+import { useRouter } from "@/i18n/routing";
+
 import PageHeader from "@/components/page-structure/page/PageHeader";
 import ContestForm from "@/components/pages/Contests/ContestCreateForm/ContestCreateForm";
+import { useContestStore } from "@/store/useContestStore";
+import { Contest } from "@/types/contest";
+import { Animal } from "@/types/animal";
+import { SpecialCoat } from "@/types/specialCoat";
 
-export default function ContestEditClient({ contest, statues }: any) {
-  const t = useTranslations("Contest.contestForm");
+interface ContestEditClientProps {
+  contest: Contest;
+  statues: Animal[];
+  contestSpecialCoats: SpecialCoat[];
+}
+
+export default function ContestEditClient({ contest, statues, contestSpecialCoats }: ContestEditClientProps) {
+  const t = useTranslations("contest");
   const router = useRouter();
+  const { saveContest } = useContestStore();
 
   const handleUpdate = async (formData: any) => {
-    try {
-      const res = await fetch(`/api/contests/${contest.id}`, {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-
-      if (res.ok) {
-        toast.success(t("successUpdated"));
-        router.push("/contests");
-        router.refresh();
-      } else {
-        const errorData = await res.json();
-        toast.error(errorData.message || t("errorUpdating"));
-      }
-    } catch (err) {
-      toast.error(t("networkError"));
+    const result = await saveContest({ ...formData, id: contest.id });
+    if (result !== false) {
+      toast.success(t("contestForm.successUpdated"));
+      router.push("/contests");
+    } else {
+      toast.error(t("contestForm.errorUpdating"));
     }
+  };
+
+  const handleCancel = () => {
+    router.push("/contests");
   };
 
   return (
     <>
-      <PageHeader text={t("editTitle")} />
-      <ContestForm statues={statues} initialData={contest} onSubmit={handleUpdate} />
+      <PageHeader text={t("contestForm.editTitle")} />
+      <ContestForm
+        statues={statues}
+        contestSpecialCoats={contestSpecialCoats}
+        initialData={contest}
+        onSubmit={handleUpdate}
+        onCancel={handleCancel}
+      />
     </>
   );
 }

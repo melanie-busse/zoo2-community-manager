@@ -35,7 +35,7 @@ export default function AccordionCard() {
         <DataRow label={tBiomes("shelterLevel")}>
           <ShelterLevelBadge
             image={getShelterImage(animal.biome)}
-            level={animal.shelterLevel}
+            level={animal.shelterLevel ?? 0}
             habitat={animal.biome?.name}
             size={35}
             showTooltip={false}

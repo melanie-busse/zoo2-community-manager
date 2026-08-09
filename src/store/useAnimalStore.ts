@@ -2,7 +2,7 @@ import { create } from "zustand";
 import { Animal } from "@/types/animal";
 import { filterAnimals, sortAnimals, paginate } from "@/utils/AnimalUtil";
 import { confirmDeleteDialog, showErrorToast, showSuccessToast } from "@/utils/alerts";
-import { toast } from "react-toastify"; // Importiert, um den Info-Toast beim Löschen direkt anzuzeigen
+import { toast } from "react-toastify";
 import {
   createAnimalOnClient,
   deleteAnimalOnClient,
@@ -23,6 +23,7 @@ interface AnimalState {
   searchTerm: string;
   selectedBiome: string | null;
   selectedShelterLevel: string | null;
+  hasStatueFilter: boolean;
   sortBy: string;
   sortDirection: "asc" | "desc";
   currentPage: number;
@@ -41,6 +42,7 @@ interface AnimalState {
   setSearchTerm: (term: string) => void;
   setSelectedBiome: (biome: string | null) => void;
   setSelectedShelterLevel: (level: string | null) => void;
+  setHasStatueFilter: (value: boolean) => void;
   resetFilters: () => void;
 
   // 6. Aktionen für Edit & Delete
@@ -55,6 +57,7 @@ export const useAnimalStore = create<AnimalState>((set) => {
       searchTerm: state.searchTerm,
       selectedBiome: state.selectedBiome,
       selectedShelterLevel: state.selectedShelterLevel,
+      hasStatueFilter: state.hasStatueFilter,
     });
 
     const sorted = sortAnimals(filtered, {
@@ -77,6 +80,7 @@ export const useAnimalStore = create<AnimalState>((set) => {
     searchTerm: "",
     selectedBiome: null,
     selectedShelterLevel: null,
+    hasStatueFilter: false,
     sortBy: "name",
     sortDirection: "asc",
     currentPage: 1,
@@ -204,6 +208,16 @@ export const useAnimalStore = create<AnimalState>((set) => {
         };
       }),
 
+    setHasStatueFilter: (value) =>
+      set((state) => {
+        const nextState = { ...state, hasStatueFilter: value, currentPage: 1 };
+        return {
+          hasStatueFilter: value,
+          currentPage: 1,
+          ...runPipeline(state.allAnimals, nextState),
+        };
+      }),
+
     resetFilters: () =>
       set((state) => {
         const clearedState = {
@@ -211,6 +225,7 @@ export const useAnimalStore = create<AnimalState>((set) => {
           searchTerm: "",
           selectedBiome: null,
           selectedShelterLevel: null,
+          hasStatueFilter: false,
           sortBy: "name",
           sortDirection: "asc" as const,
           currentPage: 1,
@@ -243,6 +258,7 @@ export const useAnimalStore = create<AnimalState>((set) => {
             searchTerm: state.searchTerm,
             selectedBiome: state.selectedBiome,
             selectedShelterLevel: state.selectedShelterLevel,
+            hasStatueFilter: state.hasStatueFilter,
           });
 
           const totalPages = Math.ceil(filtered.length / state.itemsPerPage);

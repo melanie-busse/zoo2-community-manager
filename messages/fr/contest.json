@@ -7,6 +7,24 @@
     "upcoming": "À venir"
   },
   "contestOverview": {
+    "overview_title": "Concours",
+    "entry": {
+      "title": "Soumettre des animaux",
+      "clubMember": "Membre du club",
+      "chooseMember": "Sélectionner un membre...",
+      "level": "Niveau",
+      "count": "Quantité",
+      "successSaved": "Entrées enregistrées avec succès",
+      "errorSaving": "Erreur lors de l'enregistrement des entrées"
+    },
+    "details": {
+      "headline": "Planification du concours",
+      "postAnimals": "Soumettre des animaux",
+      "rank": "Rang",
+      "member": "Membre",
+      "points": "Points",
+      "noPosts": "Aucune entrée pour l'instant"
+    },
     "table": {
       "period": "Période",
       "statues_animals": "Statues / Animaux",
@@ -16,12 +34,26 @@
     "messages": {
       "deleteErrorTitle": "Supprimer le concours ?",
       "confirmDelete": "Êtes-vous sûr de vouloir supprimer ce concours ?",
-      "cancelButton": "Annuler"
+      "cancelButton": "Annuler",
+      "deleteSuccess": "Concours supprimé avec succès"
     }
   },
   "contestForm": {
-    "maxStatues": "Maximum 4 statues autorisées",
-    "chooseStatues": "Veuillez sélectionner 3 ou 4 statues",
-    "endDateBeforeStart": "La date de fin doit être après la date de début"
+    "createTitle": "Créer un concours",
+    "editTitle": "Modifier le concours",
+    "startDate": "Date de début",
+    "endDate": "Date de fin",
+    "activeContest": "Actif",
+    "statuesChoise": "Choisir des statues :",
+    "saveContest": "Enregistrer le concours",
+    "maxStatues": "Maximum 3 statues autorisées",
+    "chooseStatues": "Veuillez sélectionner 3 statues",
+    "specialCoatsChoice": "Choisir la variante de couleur:",
+    "endDateBeforeStart": "La date de fin doit être après la date de début",
+    "successCreated": "Concours créé avec succès",
+    "successUpdated": "Concours mis à jour avec succès",
+    "errorCreating": "Erreur lors de la création du concours",
+    "errorUpdating": "Erreur lors de la mise à jour du concours",
+    "unknown_statue": "Statue inconnue"
   }
 }

@@ -9,6 +9,7 @@ vi.mock("@/components/elements/Filter/Filter.styles", () => ({
   SearchInput: (props: any) => <input {...props} />,
   ScaledBadge: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
   StatusDot: () => <span />,
+  CheckboxLabel: ({ children }: { children: React.ReactNode }) => <label>{children}</label>,
 }));
 
 vi.mock("@/utils/BiomeUtil", () => ({
@@ -35,6 +36,7 @@ const mockSetSearchTerm = vi.fn();
 const mockSetSelectedBiome = vi.fn();
 const mockSetSelectedShelterLevel = vi.fn();
 const mockSetInventoryStatus = vi.fn();
+const mockSetContestOnly = vi.fn();
 
 const mockCoats = [
   {
@@ -52,10 +54,12 @@ vi.mock("@/store/useSpecialCoatStore", () => ({
       selectedBiome: null,
       selectedShelterLevel: null,
       inventoryStatus: "all",
+      contestOnly: false,
       setSearchTerm: mockSetSearchTerm,
       setSelectedBiome: mockSetSelectedBiome,
       setSelectedShelterLevel: mockSetSelectedShelterLevel,
       setInventoryStatusFilter: mockSetInventoryStatus,
+      setContestOnly: mockSetContestOnly,
     }),
 }));
 

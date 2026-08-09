@@ -84,6 +84,8 @@ model Animal {
   breedingCost        Int?
   breedingDuration    Int?
   breedingProbability Int?
+  isContestAnimal     Boolean
+  statueImage         String?
   biome               Biome                @relation(fields: [biomeId], references: [id])
   animalorigins       AnimalOrigin[]
   animalperenclosure  AnimalPerEnclosure[]
@@ -91,7 +93,7 @@ model Animal {
   animalxp            AnimalXP[]
   contestdonation     ContestDonation[]
   specialcoat         SpecialCoat[]
-  statue              Statue?
+  contestStatues      ContestStatue[]
 
   @@index([biomeId], map: "animal_biomeId_fkey")
   @@index([priceTypeId], map: "animal_priceTypeId_fkey")
@@ -114,6 +116,7 @@ model User {
   id              Int               @id @default(autoincrement())
   discordId       String            @unique @db.VarChar(255)
   name            String?           @db.VarChar(255)
+  upjersname      String?           @db.VarChar(255)
   email           String?           @unique @db.VarChar(255)
   image           String?           @db.Text
   roleId          Int               @default(5)
@@ -145,39 +148,14 @@ model RolesText {
   @@map("rolestext")
 }
 
-model Statue {
-  id            Int             @id @unique(map: "conteststatuesindex") @default(autoincrement())
-  animalId      Int             @unique
-  price         Int?
-  priceTypeId   Int?
-  popularity    Int?
-  sellingPrice  Int?
-  image         String?         @db.VarChar(255)
-  conteststatue ContestStatue[]
-  animal        Animal          @relation(fields: [animalId], references: [id])
-  statuetext    StatueText[]
-
-  @@map("statue")
-}
-
-model StatueText {
-  id           Int    @id @default(autoincrement())
-  statueId     Int
-  languageCode String @db.VarChar(5)
-  statueName   String @db.VarChar(255)
-  statue       Statue @relation(fields: [statueId], references: [id], onDelete: Cascade, map: "statueText_statueId_fkey")
-
-  @@unique([statueId, languageCode], map: "statueText_statueId_languageCode_key")
-  @@map("statuetext")
-}
-
 model Contest {
-  id              Int               @id @unique(map: "contests") @default(autoincrement())
-  startDate       DateTime
-  endDate         DateTime
-  active          Int
-  contestdonation ContestDonation[]
-  conteststatue   ContestStatue[]
+  id                 Int                  @id @unique(map: "contests") @default(autoincrement())
+  startDate          DateTime
+  endDate            DateTime
+  active             Boolean
+  contestdonation    ContestDonation[]
+  conteststatue      ContestStatue[]
+  contestspecialcoat ContestSpecialCoat[]
 
   @@map("contest")
 }
@@ -219,14 +197,16 @@ model AnimalXP {
 }
 
 model ContestDonation {
-  id          Int     @id @default(autoincrement())
-  contestId   Int
-  userId      Int
-  animalId    Int
-  puzzlePiece Int
-  animal      Animal  @relation(fields: [animalId], references: [id], map: "contestDonation_animalId_fkey")
-  contest     Contest @relation(fields: [contestId], references: [id], onDelete: Cascade, map: "contestDonation_contestId_fkey")
-  user        User    @relation(fields: [userId], references: [id], map: "contestDonation_userId_fkey")
+  id        Int      @id @default(autoincrement())
+  contestId Int
+  userId    Int
+  animalId  Int
+  level     Int
+  count     Int
+  timestamp DateTime @default(now())
+  animal    Animal   @relation(fields: [animalId], references: [id], map: "contestDonation_animalId_fkey")
+  contest   Contest  @relation(fields: [contestId], references: [id], onDelete: Cascade, map: "contestDonation_contestId_fkey")
+  user      User     @relation(fields: [userId], references: [id], map: "contestDonation_userId_fkey")
 
   @@index([animalId], map: "contestDonation_animalId_fkey")
   @@index([contestId], map: "contestDonation_contestId_idx")
@@ -237,12 +217,12 @@ model ContestDonation {
 model ContestStatue {
   id        Int     @id @default(autoincrement())
   contestId Int
-  statueId  Int
+  animalId  Int
   contest   Contest @relation(fields: [contestId], references: [id], onDelete: Cascade, map: "contestStatue_contestId_fkey")
-  statue    Statue  @relation(fields: [statueId], references: [id], onDelete: Cascade, map: "contestStatue_statueId_fkey")
+  animal    Animal  @relation(fields: [animalId], references: [id], onDelete: Cascade, map: "contestStatue_animalId_fkey")
 
   @@index([contestId], map: "contestStatue_contestId_fkey")
-  @@index([statueId], map: "contestStatue_statueId_fkey")
+  @@index([animalId], map: "contestStatue_animalId_fkey")
   @@map("conteststatue")
 }
 
@@ -277,14 +257,28 @@ model SpecialCoat {
   chanceBaseWithOneParent  Float    @default(0.0)
   chanceEventWithoutParent Float    @default(0.0)
   chanceEventWithOneParent Float    @default(0.0)
+  isContestSpecialCoat     Boolean  @default(false)
   image                    String?  @db.VarChar(255)
 
   animal             Animal               @relation(fields: [animalId], references: [id], onDelete: Cascade, map: "specialCoat_animalId_fkey")
   specialcoatstext   SpecialCoatsText[]
   specialcoatsorigin SpecialCoatsOrigin[]
+  contestspecialcoat ContestSpecialCoat[]
 
   @@index([animalId], map: "specialCoat_animalId_idx")
   @@map("specialcoat")
+}
+
+model ContestSpecialCoat {
+  id            Int         @id @default(autoincrement())
+  contestId     Int
+  specialCoatId Int
+  contest       Contest     @relation(fields: [contestId], references: [id], onDelete: Cascade, map: "contestSpecialCoat_contestId_fkey")
+  specialcoat   SpecialCoat @relation(fields: [specialCoatId], references: [id], onDelete: Cascade, map: "contestSpecialCoat_specialCoatId_fkey")
+
+  @@index([contestId], map: "contestSpecialCoat_contestId_idx")
+  @@index([specialCoatId], map: "contestSpecialCoat_specialCoatId_idx")
+  @@map("contestspecialcoat")
 }
 
 model SpecialCoatsText {

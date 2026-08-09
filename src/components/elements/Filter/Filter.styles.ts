@@ -10,7 +10,8 @@ export const SelectWrapper = styled.div`
 export const SelectHeader = styled.div<{ $isOpen: boolean }>`
   padding: 0 16px;
   height: 48px;
-  border: 2px solid ${(props) => (props.$isOpen ? props.theme.colors.primary[100] : "#e0e7d5")};
+  border: 2px solid
+    ${(props) => (props.$isOpen ? props.theme.colors.primary[100] : props.theme.colors.system.honeydew)};
   border-radius: 12px;
   background: ${({ theme }) => theme.colors.ui.white};
   cursor: pointer;
@@ -138,6 +139,24 @@ export const SearchInput = styled.input`
 export const ScaledBadge = styled.div`
   transform: scale(0.7);
   margin: -10px;
+`;
+
+export const CheckboxLabel = styled.label`
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-family: ${({ theme }) => theme.fonts.text};
+  color: ${({ theme }) => theme.colors.primary[900]};
+  white-space: nowrap;
+
+  input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: ${({ theme }) => theme.colors.primary[500]};
+    cursor: pointer;
+  }
 `;
 
 export const StatusDot = styled.span<{ $color: string }>`

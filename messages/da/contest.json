@@ -7,6 +7,24 @@
     "upcoming": "Kommende"
   },
   "contestOverview": {
+    "overview_title": "Konkurrencer",
+    "entry": {
+      "title": "Indsend dyr",
+      "clubMember": "Klubmedlem",
+      "chooseMember": "Vælg medlem...",
+      "level": "Niveau",
+      "count": "Antal",
+      "successSaved": "Indlæg gemt",
+      "errorSaving": "Fejl ved gemning af indlæg"
+    },
+    "details": {
+      "headline": "Konkurrence-planlægning",
+      "postAnimals": "Indsend dyr",
+      "rank": "Placering",
+      "member": "Medlem",
+      "points": "Point",
+      "noPosts": "Ingen indlæg endnu"
+    },
     "table": {
       "period": "Periode",
       "statues_animals": "Statuer / Dyr",
@@ -16,12 +34,26 @@
     "messages": {
       "deleteErrorTitle": "Slet konkurrence?",
       "confirmDelete": "Er du sikker på, at du vil slette denne konkurrence?",
-      "cancelButton": "Annuller"
+      "cancelButton": "Annuller",
+      "deleteSuccess": "Konkurrence slettet"
     }
   },
   "contestForm": {
+    "createTitle": "Opret konkurrence",
+    "editTitle": "Rediger konkurrence",
+    "startDate": "Startdato",
+    "endDate": "Slutdato",
+    "activeContest": "Aktiv",
+    "statuesChoise": "Vælg statuer:",
+    "saveContest": "Gem konkurrence",
     "maxStatues": "Maksimalt 4 statuer tilladt",
     "chooseStatues": "Vælg venligst 3 eller 4 statuer",
-    "endDateBeforeStart": "Slutdatoen skal være efter startdatoen"
+    "specialCoatsChoice": "Vælg farvevarianter:",
+    "endDateBeforeStart": "Slutdatoen skal være efter startdatoen",
+    "successCreated": "Konkurrence oprettet",
+    "successUpdated": "Konkurrence opdateret",
+    "errorCreating": "Fejl ved oprettelse af konkurrence",
+    "errorUpdating": "Fejl ved opdatering af konkurrence",
+    "unknown_statue": "Ukendt statue"
   }
 }

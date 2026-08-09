@@ -1,12 +1,19 @@
-import { redirect } from "@/i18n/routing";
-import { getLocale } from "next-intl/server";
+import { notFound } from "next/navigation";
+import ContestDetailClient from "./ContestDetailClient";
+import { getContestById, getResultsByContestId } from "@/service/ContestService";
 
-export default async function ContestIdPage({ params }: { params: Promise<{ id: string }> }) {
+interface PageProps {
+  params: Promise<{ id: string }>;
+}
+
+export default async function ContestDetailPage({ params }: PageProps) {
   const { id } = await params;
-  const locale = await getLocale();
 
-  redirect({
-    href: `/contests/${id}/edit`,
-    locale: locale,
-  });
+  const [contest, results] = await Promise.all([getContestById(id), getResultsByContestId(id)]);
+
+  if (!contest) {
+    notFound();
+  }
+
+  return <ContestDetailClient contest={contest!} results={results} />;
 }

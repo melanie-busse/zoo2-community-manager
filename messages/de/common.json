@@ -23,6 +23,7 @@
   "actions": "Aktionen",
   "action": "Aktion",
   "scroll_to_top": "Nach oben scrollen",
+  "save": "Speichern",
   "saving": "Wird gespeichert...",
   "save_changes": "Daten erfolgreich übermittelt!",
   "available": "Verfügbar",
@@ -53,6 +54,8 @@
     "missing_partner": "Partner fehlt",
     "not_owned": "Nicht besitzt",
     "level_label": "Level",
+    "has_statue": "Nur mit Statue",
+    "contest_only": "Nur Wettbewerb-Varianten",
     "results": {
       "show": "Angezeigt",
       "of": "von",
