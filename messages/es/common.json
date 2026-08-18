@@ -47,8 +47,9 @@
   "filter": {
     "search_placeholder": "Buscar animales...",
     "all_enclosures": "Todos los recintos",
-    "all_levels": "Todos los niveles",
+    "all_levels": "Todos los niveles del establo",
     "all_status": "Todos los estados",
+    "all_regions": "Todas las regiones",
     "no_region": "Sin región",
     "status_prefix": "Estado:",
     "ready": "Listo",

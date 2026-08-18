@@ -8,6 +8,7 @@ import PageHeader from "@/components/page-structure/page/PageHeader";
 import ResultsInfo from "@/components/elements/Filter/ResultInfo";
 import { useSpecialCoatStore } from "@/store/useSpecialCoatStore";
 import SpecialCoatFilterBar from "@/components/elements/Filter/SpecialCoatFilterBar";
+import SpecialCoatsInventoryFilterBar from "@/components/elements/Filter/SpecialCoatsInventoryFilterBar";
 import SpecialCoatsMobileCard from "@/components/pages/specialCoats/SpecialCoatsOverview/SpecialCoatsMobileCard";
 import MobileView from "@/components/page-structure/MobileView";
 import SpecialCoatsPagination from "@/components/pages/specialCoats/SpecialCoatsOverview/SpecialCoatsPagination";
@@ -33,6 +34,7 @@ export default function SpecialCoatsInventoryContent({ userInventory, regions }:
 
       <Suspense fallback={<div>{tCommon("loading")}</div>}>
         <SpecialCoatFilterBar />
+        <SpecialCoatsInventoryFilterBar regions={regions} />
       </Suspense>
 
       <ResultsInfo currentCount={currentCount} totalCount={totalCount} />

@@ -47,8 +47,9 @@
   "filter": {
     "search_placeholder": "Zoek naar dieren...",
     "all_enclosures": "Alle verblijven",
-    "all_levels": "Alle niveaus",
+    "all_levels": "Alle stalniveaus",
     "all_status": "Alle statussen",
+    "all_regions": "Alle regio's",
     "no_region": "Geen regio",
     "status_prefix": "Status:",
     "ready": "Klaar",

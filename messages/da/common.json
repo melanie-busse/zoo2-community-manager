@@ -47,8 +47,9 @@
   "filter": {
     "search_placeholder": "Søg efter dyr...",
     "all_enclosures": "Alle indhegninger",
-    "all_levels": "Alle niveauer",
+    "all_levels": "Alle stalsniveauer",
     "all_status": "Alle statusser",
+    "all_regions": "Alle regioner",
     "no_region": "Ingen region",
     "status_prefix": "Status:",
     "ready": "Klar",

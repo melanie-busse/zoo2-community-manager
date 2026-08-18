@@ -47,8 +47,9 @@
   "filter": {
     "search_placeholder": "Suche nach Tieren...",
     "all_enclosures": "Alle Gehege",
-    "all_levels": "Alle Levels",
+    "all_levels": "Alle Stall-Levels",
     "all_status": "Alle Status",
+    "all_regions": "Alle Regionen",
     "no_region": "Keine Region",
     "status_prefix": "Status:",
     "ready": "Fertig",

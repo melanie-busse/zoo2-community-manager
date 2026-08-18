@@ -8,6 +8,10 @@ interface FilterOptions {
   selectedShelterLevel: number | null;
   inventoryStatus: InventoryStatusFilter;
   contestOnly?: boolean;
+  filterRegionId?: number | null;
+  filterLevel10?: boolean;
+  filterLevel20?: boolean;
+  filterGlitter?: boolean;
 }
 
 interface SortOptions {
@@ -23,6 +27,10 @@ export function filterSpecialCoats(
     selectedShelterLevel,
     inventoryStatus,
     contestOnly = false,
+    filterRegionId = null,
+    filterLevel10 = false,
+    filterLevel20 = false,
+    filterGlitter = false,
   }: FilterOptions,
 ): SpecialCoat[] {
   if (!coats) return [];
@@ -59,6 +67,11 @@ export function filterSpecialCoats(
     if (inventoryStatus === "not_owned" && amount !== 0) return false;
 
     if (contestOnly && !coat.isContestSpecialCoat) return false;
+
+    if (filterLevel10 && !coat.inventoryLevel10) return false;
+    if (filterLevel20 && !coat.inventoryLevel20) return false;
+    if (filterGlitter && !coat.inventoryGlitter) return false;
+    if (filterRegionId !== null && coat.inventoryRegionId !== filterRegionId) return false;
 
     return true;
   });

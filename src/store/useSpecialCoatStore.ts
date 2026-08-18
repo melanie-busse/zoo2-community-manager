@@ -27,6 +27,10 @@ interface SpecialCoatState {
   selectedShelterLevel: number | null;
   inventoryStatus: InventoryStatusFilter;
   contestOnly: boolean;
+  filterRegionId: number | null;
+  filterLevel10: boolean;
+  filterLevel20: boolean;
+  filterGlitter: boolean;
   sortBy: string;
   sortDirection: "asc" | "desc";
   currentPage: number;
@@ -47,6 +51,10 @@ interface SpecialCoatState {
   setSelectedShelterLevel: (level: number | null) => void;
   setInventoryStatusFilter: (status: InventoryStatusFilter) => void;
   setContestOnly: (value: boolean) => void;
+  setFilterRegionId: (id: number | null) => void;
+  setFilterLevel10: (value: boolean) => void;
+  setFilterLevel20: (value: boolean) => void;
+  setFilterGlitter: (value: boolean) => void;
   resetFilters: () => void;
 
   // 6. Aktionen für Edit & Delete
@@ -63,6 +71,10 @@ export const useSpecialCoatStore = create<SpecialCoatState>((set, get) => {
       selectedShelterLevel: state.selectedShelterLevel,
       inventoryStatus: state.inventoryStatus,
       contestOnly: state.contestOnly,
+      filterRegionId: state.filterRegionId,
+      filterLevel10: state.filterLevel10,
+      filterLevel20: state.filterLevel20,
+      filterGlitter: state.filterGlitter,
     });
 
     const sorted = sortSpecialCoats(filtered, {
@@ -90,6 +102,10 @@ export const useSpecialCoatStore = create<SpecialCoatState>((set, get) => {
     selectedShelterLevel: null,
     inventoryStatus: "all",
     contestOnly: false,
+    filterRegionId: null,
+    filterLevel10: false,
+    filterLevel20: false,
+    filterGlitter: false,
     sortBy: "coatName",
     sortDirection: "asc",
     currentPage: 1,
@@ -240,6 +256,30 @@ export const useSpecialCoatStore = create<SpecialCoatState>((set, get) => {
         return { contestOnly: value, currentPage: 1, ...runPipeline(state.allSpecialCoats, nextState) };
       }),
 
+    setFilterRegionId: (id) =>
+      set((state) => {
+        const nextState = { ...state, filterRegionId: id, currentPage: 1 };
+        return { filterRegionId: id, currentPage: 1, ...runPipeline(state.allSpecialCoats, nextState) };
+      }),
+
+    setFilterLevel10: (value) =>
+      set((state) => {
+        const nextState = { ...state, filterLevel10: value, currentPage: 1 };
+        return { filterLevel10: value, currentPage: 1, ...runPipeline(state.allSpecialCoats, nextState) };
+      }),
+
+    setFilterLevel20: (value) =>
+      set((state) => {
+        const nextState = { ...state, filterLevel20: value, currentPage: 1 };
+        return { filterLevel20: value, currentPage: 1, ...runPipeline(state.allSpecialCoats, nextState) };
+      }),
+
+    setFilterGlitter: (value) =>
+      set((state) => {
+        const nextState = { ...state, filterGlitter: value, currentPage: 1 };
+        return { filterGlitter: value, currentPage: 1, ...runPipeline(state.allSpecialCoats, nextState) };
+      }),
+
     resetFilters: () =>
       set((state) => {
         const clearedState = {
@@ -249,6 +289,10 @@ export const useSpecialCoatStore = create<SpecialCoatState>((set, get) => {
           selectedShelterLevel: null,
           inventoryStatus: "all" as const,
           contestOnly: false,
+          filterRegionId: null,
+          filterLevel10: false,
+          filterLevel20: false,
+          filterGlitter: false,
           sortBy: "coatName",
           sortDirection: "asc" as const,
           currentPage: 1,
@@ -284,6 +328,10 @@ export const useSpecialCoatStore = create<SpecialCoatState>((set, get) => {
             selectedShelterLevel: state.selectedShelterLevel,
             inventoryStatus: state.inventoryStatus,
             contestOnly: state.contestOnly,
+            filterRegionId: state.filterRegionId,
+            filterLevel10: state.filterLevel10,
+            filterLevel20: state.filterLevel20,
+            filterGlitter: state.filterGlitter,
           });
 
           const totalPages = Math.ceil(filtered.length / state.itemsPerPage);

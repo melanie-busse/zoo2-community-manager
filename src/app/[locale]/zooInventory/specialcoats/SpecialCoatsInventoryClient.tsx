@@ -21,6 +21,10 @@ export default function SpecialCoatsInventoryClient({
   const coatsWithInventory = specialCoats.map((coat: any) => ({
     ...coat,
     ownedAmount: inventoryMap.get(coat.id)?.count ?? 0,
+    inventoryLevel10: inventoryMap.get(coat.id)?.level10 ?? false,
+    inventoryLevel20: inventoryMap.get(coat.id)?.level20 ?? false,
+    inventoryGlitter: inventoryMap.get(coat.id)?.glitterAnimal ?? false,
+    inventoryRegionId: inventoryMap.get(coat.id)?.regionId ?? null,
   }));
   setInitialSpecialCoats(coatsWithInventory);
 
