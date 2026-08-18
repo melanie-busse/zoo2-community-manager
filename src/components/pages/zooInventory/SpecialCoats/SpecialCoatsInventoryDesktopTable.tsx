@@ -13,12 +13,23 @@ import { useSpecialCoatStore } from "@/store/useSpecialCoatStore";
 import { getSpecialCoatImage } from "@/utils/SpecialCoatUtil";
 
 interface SpecialCoatsDesktopTableProps {
-  userInventory?: { specialCoatId: number; count: number; level10: boolean; level20: boolean; glitterAnimal: boolean }[];
+  userInventory?: {
+    specialCoatId: number;
+    count: number;
+    level10: boolean;
+    level20: boolean;
+    glitterAnimal: boolean;
+  }[];
 }
 
-type InventoryMap = Record<number, { count: number; level10: boolean; level20: boolean; glitterAnimal: boolean }>;
+type InventoryMap = Record<
+  number,
+  { count: number; level10: boolean; level20: boolean; glitterAnimal: boolean }
+>;
 
-function buildInventoryMap(userInventory: SpecialCoatsDesktopTableProps["userInventory"]): InventoryMap {
+function buildInventoryMap(
+  userInventory: SpecialCoatsDesktopTableProps["userInventory"],
+): InventoryMap {
   return (userInventory ?? []).reduce<InventoryMap>((acc, item) => {
     acc[item.specialCoatId] = {
       count: item.count,
@@ -87,14 +98,8 @@ export default function SpecialCoatsInventoryDesktopTable({
             currentSortBy={sortBy}
             sortDirection={sortDirection}
           />
-          <SortableTableHeader
-            label={tSpecialCoat("color")}
-            onSort={() => toggleSort("color")}
-            columnKey="color"
-            currentSortBy={sortBy}
-            sortDirection={sortDirection}
-          />
-          <Styles.TableCellRight>Anzahl Tiere</Styles.TableCellRight>
+          <Styles.TableCellRight>Anzahl</Styles.TableCellRight>
+          <Styles.TableCellRight>Partner nötig</Styles.TableCellRight>
           <Styles.TableCellRight>Level 10</Styles.TableCellRight>
           <Styles.TableCellRight>Level 20</Styles.TableCellRight>
           <Styles.TableCellRight>Glitzertier</Styles.TableCellRight>
@@ -128,11 +133,8 @@ export default function SpecialCoatsInventoryDesktopTable({
                   <strong>
                     {specialCoat.specialcoatstext?.[0]?.name ?? tSpecialCoat("noName")}
                   </strong>
-                </td>
-                <td>
-                  <strong>
-                    {specialCoat.specialcoatstext?.[0]?.color ?? tSpecialCoat("noColor")}
-                  </strong>
+                  <br />
+                  <span>{specialCoat.specialcoatstext?.[0]?.color ?? tSpecialCoat("noColor")}</span>
                 </td>
                 <Styles.TableCellRight onClick={(e) => e.stopPropagation()}>
                   <select
@@ -144,6 +146,14 @@ export default function SpecialCoatsInventoryDesktopTable({
                     <option value="1">1</option>
                     <option value="2">2</option>
                   </select>
+                </Styles.TableCellRight>
+                <Styles.TableCellRight>
+                  <input
+                    type="checkbox"
+                    readOnly
+                    checked={specialCoat.parentWithCoatNeeded ?? false}
+                    style={{ width: "18px", height: "18px", cursor: "default" }}
+                  />
                 </Styles.TableCellRight>
                 <Styles.TableCellRight onClick={(e) => e.stopPropagation()}>
                   <input

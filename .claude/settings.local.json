@@ -8,7 +8,9 @@
       "Bash(grep:*)",
       "Bash(pkill -f \"next-dev\")",
       "Bash(taskkill /F /IM node.exe)",
-      "Bash(npx next:*)"
+      "Bash(npx next:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ]
   }
 }
