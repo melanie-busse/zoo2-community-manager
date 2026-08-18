@@ -106,18 +106,6 @@ vi.mock("@/utils/BiomeUtil", () => ({
   getShelterImage: () => ({ path: "/shelter.png", alt: "shelter" }),
 }));
 
-// Mock für AccordionCard, um Zuchtdaten direkt in der Detailansicht zu testen
-vi.mock("@/components/pages/specialCoats/SpecialCoatDetails/AccordionCard", () => ({
-  default: () => {
-    const specialCoat = useSpecialCoatStore((state: any) => state.selectedSpecialCoat);
-    return (
-      <div data-testid="accordion-card">
-        <div>{specialCoat?.isContestSpecialCoat ? "Ja" : "Nein"}</div>
-        <div>{specialCoat?.chanceBaseWithOneParent ?? 0} %</div>
-      </div>
-    );
-  },
-}));
 
 const mockSpecialCoat = {
   id: 7,
@@ -176,12 +164,11 @@ describe("SpecialCoatDetailContent Integration Test", () => {
     expect(screen.getByText("common.not_found")).toBeInTheDocument();
   });
 
-  test("rendert Name, Farbe und Beschreibung des zugehörigen Tieres", () => {
+  test("rendert Name und Farbe des SpecialCoats", () => {
     render(<SpecialCoatDetailContent />);
 
     expect(screen.getByRole("heading", { level: 1 })).toHaveTextContent("Albino");
     expect(screen.getByText("Weiß")).toBeInTheDocument();
-    expect(screen.getByText("König der Savanne.")).toBeInTheDocument();
   });
 
   test("rendert die Zuchtdaten aus dem Animal-Store", () => {
@@ -192,19 +179,18 @@ describe("SpecialCoatDetailContent Integration Test", () => {
     expect(screen.getByText("50 %")).toBeInTheDocument();
   });
 
-  test("rendert die Zuchtwahrscheinlichkeiten und Konkurrenz-Infos über die AccordionCard", () => {
+  test("rendert die Zuchtwahrscheinlichkeiten des SpecialCoats in der BreedingSection", () => {
     render(<SpecialCoatDetailContent />);
 
-    expect(screen.getByTestId("accordion-card")).toBeInTheDocument();
-    expect(screen.getByText("Ja")).toBeInTheDocument();
     expect(screen.getByText("5.5 %")).toBeInTheDocument();
+    expect(screen.getByText("specialCoat.breeding.title")).toBeInTheDocument();
   });
 
-  test("rendert die Kapazitätsdaten aus dem Animal-Store", () => {
+  test("rendert die Basischancen aus dem SpecialCoat in der BreedingSection", () => {
     render(<SpecialCoatDetailContent />);
 
-    expect(screen.getByText("2")).toBeInTheDocument();
-    expect(screen.getByText("12")).toBeInTheDocument();
+    expect(screen.getByText("Basischance")).toBeInTheDocument();
+    expect(screen.getByText("Eventchance")).toBeInTheDocument();
   });
 
   test("zeigt keinen Admin-Badge für normale User", () => {
@@ -224,28 +210,19 @@ describe("SpecialCoatDetailContent Integration Test", () => {
     expect(screen.getByTestId("admin-action-badge")).toBeInTheDocument();
   });
 
-  test("zeigt Empty State in der Kapazitäten-Tabelle, wenn keine Daten vorhanden", () => {
+  test("zeigt keine BreedingSection, wenn kein Tier im Store vorhanden ist", () => {
     vi.mocked(useAnimalStore).mockImplementation((selector) =>
-      selector({ selectedAnimal: { ...mockAnimal, animalperenclosure: [] } } as any),
+      selector({ selectedAnimal: null } as any),
     );
 
     render(<SpecialCoatDetailContent />);
 
-    expect(screen.getByText("common.loading_data")).toBeInTheDocument();
+    expect(screen.queryByText("specialCoat.breeding.title")).not.toBeInTheDocument();
   });
 
-  test("zeigt Fallback-Beschreibung, wenn das Tier keine Beschreibung hat", () => {
-    vi.mocked(useAnimalStore).mockImplementation((selector) =>
-      selector({
-        selectedAnimal: {
-          ...mockAnimal,
-          animaltext: [{ animalName: "Löwe", animalDescription: undefined }],
-        },
-      } as any),
-    );
-
+  test("zeigt Contest-Badge im Header, wenn isContestSpecialCoat true ist", () => {
     render(<SpecialCoatDetailContent />);
 
-    expect(screen.getByText("common.noDescriptionAvailable")).toBeInTheDocument();
+    expect(screen.getByText("specialCoat.breeding.isContestSpecialCoat")).toBeInTheDocument();
   });
 });

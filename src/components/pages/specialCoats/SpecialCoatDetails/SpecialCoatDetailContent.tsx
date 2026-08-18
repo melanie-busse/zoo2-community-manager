@@ -9,7 +9,6 @@ import * as Styles from "@/components/pages/animals/AnimalDetails/AnimalDetails.
 import SpecialCoatHeaderCard from "./SpecialCoatHeaderCard";
 import ActionGroupBadge from "@/components/ui/badges/ActionGroupBadge";
 import { useSpecialCoatStore } from "@/store/useSpecialCoatStore";
-import { useAnimalStore } from "@/store/useAnimalStore";
 import { useRouter } from "@/i18n/routing";
 import BreedingSection from "@/components/pages/specialCoats/SpecialCoatDetails/BreedingSection";
 
@@ -17,7 +16,6 @@ export default function SpecialCoatDetailContent() {
   const specialCoat = useSpecialCoatStore((state) => state.selectedSpecialCoat);
   const setEditingSpecialCoat = useSpecialCoatStore((state) => state.setEditingSpecialCoat);
   const deleteSpecialCoat = useSpecialCoatStore((state) => state.deleteSpecialCoat);
-  const animal = useAnimalStore((state) => state.selectedAnimal);
 
   const tSpecialCoat = useTranslations("specialCoat");
   const tCommon = useTranslations("common");
@@ -29,8 +27,6 @@ export default function SpecialCoatDetailContent() {
   if (!specialCoat) {
     return <div>{tCommon("not_found")}</div>;
   }
-
-  const displayDescription = animal?.animaltext?.[0]?.animalDescription;
 
   return (
     <Styles.Wrapper>

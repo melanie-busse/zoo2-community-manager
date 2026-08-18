@@ -136,7 +136,6 @@ export function BreedingChanceSection({ formData, setFormData }: BreedingChanceS
   );
 }
 
-/* --- Layout & Block Styles --- */
 const SubGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
@@ -166,7 +165,6 @@ const BlockTitle = styled.h4`
   padding-bottom: 4px;
 `;
 
-/* --- Checkbox Styles --- */
 const CheckboxGroup = styled.div`
   display: flex;
   align-items: center;

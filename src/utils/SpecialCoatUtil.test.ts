@@ -130,14 +130,14 @@ describe("mapSpecialCoatToForm", () => {
 
     expect(result).toEqual(
       expect.objectContaining({
-        animalId: null,
+        animalId: "",
         releaseDate: "",
         isContestSpecialCoat: false,
         parentWithCoatNeeded: false,
-        chanceBaseWithoutParent: null,
-        chanceBaseWithOneParent: null,
-        chanceEventWithoutParent: null,
-        chanceEventWithOneParent: null,
+        chanceBaseWithoutParent: "",
+        chanceBaseWithOneParent: "",
+        chanceEventWithoutParent: "",
+        chanceEventWithOneParent: "",
       }),
     );
   });

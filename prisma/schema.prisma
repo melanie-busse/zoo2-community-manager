@@ -113,16 +113,17 @@ model AnimalText {
 }
 
 model User {
-  id              Int               @id @default(autoincrement())
-  discordId       String            @unique @db.VarChar(255)
-  name            String?           @db.VarChar(255)
-  upjersname      String?           @db.VarChar(255)
-  email           String?           @unique @db.VarChar(255)
-  image           String?           @db.Text
-  roleId          Int               @default(5)
-  last_login      DateTime?         @default(now()) @db.DateTime(0)
-  contestdonation ContestDonation[]
-  role            Role              @relation(fields: [roleId], references: [id])
+  id                       Int                       @id @default(autoincrement())
+  discordId                String                    @unique @db.VarChar(255)
+  name                     String?                   @db.VarChar(255)
+  upjersname               String?                   @db.VarChar(255)
+  email                    String?                   @unique @db.VarChar(255)
+  image                    String?                   @db.Text
+  roleId                   Int                       @default(5)
+  last_login               DateTime?                 @default(now()) @db.DateTime(0)
+  contestdonation          ContestDonation[]
+  role                     Role                      @relation(fields: [roleId], references: [id])
+  zooInventorySpecialCoats ZooInventorySpecialCoat[]
 
   @@index([roleId], map: "user_roleId_fkey")
   @@map("user")
@@ -260,10 +261,11 @@ model SpecialCoat {
   isContestSpecialCoat     Boolean  @default(false)
   image                    String?  @db.VarChar(255)
 
-  animal             Animal               @relation(fields: [animalId], references: [id], onDelete: Cascade, map: "specialCoat_animalId_fkey")
-  specialcoatstext   SpecialCoatsText[]
-  specialcoatsorigin SpecialCoatsOrigin[]
-  contestspecialcoat ContestSpecialCoat[]
+  animal                   Animal                    @relation(fields: [animalId], references: [id], onDelete: Cascade, map: "specialCoat_animalId_fkey")
+  specialcoatstext         SpecialCoatsText[]
+  specialcoatsorigin       SpecialCoatsOrigin[]
+  contestspecialcoat       ContestSpecialCoat[]
+  zooInventorySpecialCoats ZooInventorySpecialCoat[]
 
   @@index([animalId], map: "specialCoat_animalId_idx")
   @@map("specialcoat")
@@ -323,4 +325,47 @@ model XPTypeText {
 
   @@unique([xpTypeId, languageCode], map: "xpTypeText_xpTypeId_languageCode_key")
   @@map("xptypetext")
+}
+
+model ZooInventorySpecialCoat {
+  id            Int         @id @default(autoincrement())
+  specialCoatId Int
+  userid        Int
+  count         Int
+  level10       Boolean     @default(false)
+  level20       Boolean     @default(false)
+  glitterAnimal Boolean     @default(false)
+  specialCoat   SpecialCoat @relation(fields: [specialCoatId], references: [id])
+  user          User        @relation(fields: [userid], references: [id])
+
+  @@unique([userid, specialCoatId], map: "userid_specialCoatId")
+  @@index([specialCoatId], map: "specialCoatOrigin_specialCoatId_idx")
+  @@map("zooinventoryspecialcoat")
+}
+
+model Region {
+  id          Int      @id @default(autoincrement())
+  price       Int
+  terrainid   Int
+  releasedate DateTime
+  unlocklevel Int
+  identifier  String   @db.VarChar(255)
+
+  regionTexts RegionText[]
+
+  @@index([identifier])
+  @@map("region")
+}
+
+model RegionText {
+  id           Int    @id @default(autoincrement())
+  regionid     Int
+  languageCode String @db.VarChar(255)
+  name         String @db.VarChar(255)
+
+  region Region @relation(fields: [regionid], references: [id])
+
+  @@unique([regionid, languageCode])
+  @@index([languageCode])
+  @@map("regiontext")
 }

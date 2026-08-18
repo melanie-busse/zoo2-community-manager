@@ -40,7 +40,6 @@ export async function getAllSpecialCoats(locale: string = "de") {
       },
     });
   } catch (error) {
-    // Auf einheitliches englisches Logging umgestellt
     console.error(`[SpecialCoatsService] Error loading SpecialCoats (${locale}):`, error);
     return [];
   }

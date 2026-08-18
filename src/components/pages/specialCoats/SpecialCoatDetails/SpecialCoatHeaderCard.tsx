@@ -11,7 +11,6 @@ import Tooltip from "@/components/ui/tooltip/Tooltip";
 import FormattedDate from "@/components/ui/Formatted/FormattedDate";
 import { useSpecialCoatStore } from "@/store/useSpecialCoatStore";
 import Link from "next/link";
-import DataRow from "@/components/ui/DataRow";
 
 export default function SpecialCoatHeaderCard() {
   const tCommon = useTranslations("common");
