@@ -1,6 +1,6 @@
 import PageWrapper from "@/components/page-structure/page/PageWrapper";
 import { getAllSpecialCoats } from "@/service/SpecialCoatsService";
-import SpecialCoatsInventoryClient from "@/app/[locale]/my-collections/specialcoats/SpecialCoatsInventoryClient";
+import SpecialCoatsInventoryClient from "@/app/[locale]/zooInventory/specialcoats/SpecialCoatsInventoryClient";
 
 export default async function SpecialCoatsOverviewPage({
   params,

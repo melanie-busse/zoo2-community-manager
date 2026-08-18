@@ -11,7 +11,7 @@ import SpecialCoatFilterBar from "@/components/elements/Filter/SpecialCoatFilter
 import SpecialCoatsMobileCard from "@/components/pages/specialCoats/SpecialCoatsOverview/SpecialCoatsMobileCard";
 import MobileView from "@/components/page-structure/MobileView";
 import SpecialCoatsPagination from "@/components/pages/specialCoats/SpecialCoatsOverview/SpecialCoatsPagination";
-import SpecialCoatsInventoryDesktopTable from "@/components/pages/my-collections/SpecialCoats/SpecialCoatsInventoryDesktopTable";
+import SpecialCoatsInventoryDesktopTable from "@/components/pages/zooInventory/SpecialCoats/SpecialCoatsInventoryDesktopTable";
 
 export default function SpecialCoatsInventoryContent() {
   const t = useTranslations("specialCoat");
