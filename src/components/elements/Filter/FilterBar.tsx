@@ -4,7 +4,7 @@ import React from "react";
 import { useTranslations } from "next-intl";
 
 import * as Styles from "@/components/elements/Filter/Filter.styles";
-import CustomBadgeFilter from "@/components/elements/Filter/CustomBadgeFilter";
+import SelectBoxWithImage from "@/components/ui/form/SelectBoxWithImage";
 import BiomeBadge from "@/components/ui/badges/BiomeBadge";
 import ShelterLevelBadge from "@/components/ui/badges/ShelterLevelBadge";
 import { Biome } from "@/types/biome";
@@ -60,7 +60,7 @@ export default function FilterBar({
       />
 
       {showBiomeFilter && (
-        <CustomBadgeFilter
+        <SelectBoxWithImage
           items={uniqueBiomes}
           selectedValue={selectedBiome ?? "all"}
           onSelectAction={(val) => setSelectedBiome(val === "all" ? null : val)}
@@ -73,7 +73,7 @@ export default function FilterBar({
       )}
 
       {showLevelFilter && (
-        <CustomBadgeFilter
+        <SelectBoxWithImage
           items={uniqueLevels}
           selectedValue={selectedLevel ?? "all"}
           onSelectAction={(val) => setSelectedLevel(val === "all" ? null : val)}

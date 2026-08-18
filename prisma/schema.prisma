@@ -335,8 +335,10 @@ model ZooInventorySpecialCoat {
   level10       Boolean     @default(false)
   level20       Boolean     @default(false)
   glitterAnimal Boolean     @default(false)
+  regionId      Int?
   specialCoat   SpecialCoat @relation(fields: [specialCoatId], references: [id])
   user          User        @relation(fields: [userid], references: [id])
+  region        Region?     @relation(fields: [regionId], references: [id])
 
   @@unique([userid, specialCoatId], map: "userid_specialCoatId")
   @@index([specialCoatId], map: "specialCoatOrigin_specialCoatId_idx")
@@ -351,7 +353,8 @@ model Region {
   unlocklevel Int
   identifier  String   @db.VarChar(255)
 
-  regionTexts RegionText[]
+  regionTexts          RegionText[]
+  zooInventorySpecialCoats ZooInventorySpecialCoat[]
 
   @@index([identifier])
   @@map("region")

@@ -18,7 +18,7 @@ vi.mock("@/utils/BiomeUtil", () => ({
   getShelterImage: () => "/mock-shelter.png",
 }));
 
-vi.mock("@/components/elements/Filter/CustomBadgeFilter", () => ({
+vi.mock("@/components/ui/form/SelectBoxWithImage", () => ({
   default: ({ items, onSelectAction, allLabelKey }: any) => (
     <div>
       <button onClick={() => onSelectAction(items[0] ? "mocked_value" : "all")}>

@@ -15,9 +15,10 @@ import SpecialCoatsInventoryDesktopTable from "@/components/pages/zooInventory/S
 
 interface SpecialCoatsInventoryContentProps {
   userInventory: any[];
+  regions: any[];
 }
 
-export default function SpecialCoatsInventoryContent({ userInventory }: SpecialCoatsInventoryContentProps) {
+export default function SpecialCoatsInventoryContent({ userInventory, regions }: SpecialCoatsInventoryContentProps) {
   const t = useTranslations("specialCoat");
   const tCommon = useTranslations("common");
 
@@ -38,7 +39,7 @@ export default function SpecialCoatsInventoryContent({ userInventory }: SpecialC
 
       {hasItems ? (
         <>
-          <SpecialCoatsInventoryDesktopTable userInventory={userInventory} />
+          <SpecialCoatsInventoryDesktopTable userInventory={userInventory} regions={regions} />
 
           <MobileView>
             {currentItems.map((specialCoat) => (

@@ -11,6 +11,14 @@ import Table from "@/components/page-structure/Table/Table";
 import LinkedRow from "@/components/page-structure/Table/LinkedRow";
 import { useSpecialCoatStore } from "@/store/useSpecialCoatStore";
 import { getSpecialCoatImage } from "@/utils/SpecialCoatUtil";
+import SelectBoxWithImage from "@/components/ui/form/SelectBoxWithImage";
+import RegionBadge from "@/components/ui/badges/RegionBadge";
+
+interface Region {
+  id: number;
+  identifier: string;
+  regionTexts: { name: string }[];
+}
 
 interface SpecialCoatsDesktopTableProps {
   userInventory?: {
@@ -19,12 +27,20 @@ interface SpecialCoatsDesktopTableProps {
     level10: boolean;
     level20: boolean;
     glitterAnimal: boolean;
+    regionId: number | null;
   }[];
+  regions?: Region[];
 }
 
 type InventoryMap = Record<
   number,
-  { count: number; level10: boolean; level20: boolean; glitterAnimal: boolean }
+  {
+    count: number;
+    level10: boolean;
+    level20: boolean;
+    glitterAnimal: boolean;
+    regionId: number | null;
+  }
 >;
 
 function buildInventoryMap(
@@ -36,6 +52,7 @@ function buildInventoryMap(
       level10: item.level10,
       level20: item.level20,
       glitterAnimal: item.glitterAnimal,
+      regionId: item.regionId,
     };
     return acc;
   }, {});
@@ -43,6 +60,7 @@ function buildInventoryMap(
 
 export default function SpecialCoatsInventoryDesktopTable({
   userInventory = [],
+  regions = [],
 }: SpecialCoatsDesktopTableProps) {
   const tSpecialCoat = useTranslations("specialCoat");
   const tCommon = useTranslations("common");
@@ -59,11 +77,17 @@ export default function SpecialCoatsInventoryDesktopTable({
 
   const handleChange = async (
     specialCoatId: number,
-    field: "count" | "level10" | "level20" | "glitterAnimal",
-    value: number | boolean,
+    field: "count" | "level10" | "level20" | "glitterAnimal" | "regionId",
+    value: number | boolean | null,
   ) => {
     setInventoryState((prev) => {
-      const defaults = { count: 0, level10: false, level20: false, glitterAnimal: false };
+      const defaults = {
+        count: 0,
+        level10: false,
+        level20: false,
+        glitterAnimal: false,
+        regionId: null,
+      };
       const current = prev[specialCoatId] ?? defaults;
       return {
         ...prev,
@@ -103,6 +127,7 @@ export default function SpecialCoatsInventoryDesktopTable({
           <Styles.TableCellRight>Level 10</Styles.TableCellRight>
           <Styles.TableCellRight>Level 20</Styles.TableCellRight>
           <Styles.TableCellRight>Glitzertier</Styles.TableCellRight>
+          <Styles.TableCellRight>Region</Styles.TableCellRight>
         </tr>
       </thead>
       <tbody>
@@ -113,6 +138,7 @@ export default function SpecialCoatsInventoryDesktopTable({
             const currentLevel10 = item?.level10 ?? false;
             const currentLevel20 = item?.level20 ?? false;
             const currentGlitter = item?.glitterAnimal ?? false;
+            const currentRegionId = item?.regionId ?? null;
 
             return (
               <LinkedRow
@@ -179,6 +205,39 @@ export default function SpecialCoatsInventoryDesktopTable({
                       handleChange(specialCoat.id, "glitterAnimal", e.target.checked)
                     }
                     style={{ width: "18px", height: "18px", cursor: "pointer" }}
+                  />
+                </Styles.TableCellRight>
+                <Styles.TableCellRight onClick={(e) => e.stopPropagation()}>
+                  <SelectBoxWithImage<Region>
+                    items={regions}
+                    selectedValue={currentRegionId !== null ? String(currentRegionId) : "all"}
+                    onSelectAction={(val) =>
+                      handleChange(specialCoat.id, "regionId", val === "all" ? null : Number(val))
+                    }
+                    allLabelKey="no_region"
+                    showLabel={false}
+                    compact={true}
+                    renderAllBadge={() => (
+                      <RegionBadge
+                        image={{ path: "/images/icons/globus.png", name: "globus", alt: "Keine Region" }}
+                        size={40}
+                        showTooltip={true}
+                        tooltipLabel="Keine Region"
+                      />
+                    )}
+                    getIdentifier={(region) => String(region.id)}
+                    renderBadge={(region) => (
+                      <RegionBadge
+                        image={{
+                          path: `/images/regions/${region.identifier}/icon.jpg`,
+                          name: region.regionTexts[0]?.name ?? region.identifier,
+                          alt: region.regionTexts[0]?.name ?? region.identifier,
+                        }}
+                        size={40}
+                        showTooltip={true}
+                        tooltipLabel={region.regionTexts[0]?.name ?? region.identifier}
+                      />
+                    )}
                   />
                 </Styles.TableCellRight>
               </LinkedRow>
