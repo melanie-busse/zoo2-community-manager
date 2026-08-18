@@ -56,13 +56,13 @@ export const navConfig: NavItem[] = [
     ],
   },
   {
-    id: "my-collection",
-    labelKey: "my-collection",
-    href: "/my-collections",
+    id: "inventory",
+    labelKey: "inventory",
+    basePath: "/zooInventory",
     subMenu: [
       {
-        labelKey: "my-collection_specialcoats",
-        href: "/my-collection/specialcoats",
+        labelKey: "inventory_specialcoats",
+        href: "/zooInventory/specialcoats",
         requiresAuth: true,
       },
     ],

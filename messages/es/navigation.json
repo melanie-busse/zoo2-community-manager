@@ -28,6 +28,8 @@
     "club_contests": "Concursos",
     "club_create_contest": "Crear concurso",
     "admin": "Admin",
+    "inventory": "Inventario",
+    "inventory_specialcoats": "Variantes de color",
     "import-animals": "Importar animales"
   }
 }

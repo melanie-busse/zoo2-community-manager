@@ -28,6 +28,8 @@
     "club_contests": "Contests",
     "club_create_contest": "Create Contest",
     "admin": "Admin",
+    "inventory": "Inventory",
+    "inventory_specialcoats": "Special Coats",
     "import-animals": "Import animals"
   }
 }

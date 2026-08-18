@@ -28,6 +28,8 @@
     "club_contests": "Konkurrencer",
     "club_create_contest": "Opret konkurrence",
     "admin": "Admin",
+    "inventory": "Inventar",
+    "inventory_specialcoats": "Farvevarianter",
     "import-animals": "Importér dyr"
   }
 }
