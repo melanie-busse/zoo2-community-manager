@@ -7,7 +7,8 @@
       "Bash(grep -n \"session\\\\|role\\\\|findFirst\" /d/Entwicklung/zoo2-community-manager/src/app/api/auth/[...nextauth]/route.ts)",
       "Bash(grep:*)",
       "Bash(pkill -f \"next-dev\")",
-      "Bash(taskkill /F /IM node.exe)"
+      "Bash(taskkill /F /IM node.exe)",
+      "Bash(npx next:*)"
     ]
   }
 }

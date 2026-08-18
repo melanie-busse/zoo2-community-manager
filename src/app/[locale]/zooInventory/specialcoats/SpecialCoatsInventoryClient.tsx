@@ -6,13 +6,15 @@ import SpecialCoatsInventoryContent from "@/components/pages/zooInventory/Specia
 
 interface SpecialCoatsCollectionClientProps {
   specialCoats: any[];
+  userInventory: any[];
 }
 
 export default function SpecialCoatsInventoryClient({
   specialCoats,
+  userInventory,
 }: SpecialCoatsCollectionClientProps) {
   const setInitialSpecialCoats = useSpecialCoatStore((state) => state.setInitialSpecialCoats);
   setInitialSpecialCoats(specialCoats);
 
-  return <SpecialCoatsInventoryContent />;
+  return <SpecialCoatsInventoryContent userInventory={userInventory} />;
 }

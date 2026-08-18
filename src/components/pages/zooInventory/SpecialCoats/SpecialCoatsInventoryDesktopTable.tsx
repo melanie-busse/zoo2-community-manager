@@ -1,8 +1,7 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { useTranslations } from "next-intl";
-import { useSession } from "next-auth/react";
 
 import * as Styles from "@/components/page-structure/Table/Table.styles";
 
@@ -12,20 +11,34 @@ import Table from "@/components/page-structure/Table/Table";
 import LinkedRow from "@/components/page-structure/Table/LinkedRow";
 import { useSpecialCoatStore } from "@/store/useSpecialCoatStore";
 import { getSpecialCoatImage } from "@/utils/SpecialCoatUtil";
-import { useRouter } from "@/i18n/routing";
 
 interface SpecialCoatsDesktopTableProps {
-  userInventory?: any[]; // Übergibt das geladene Inventar des Users
+  userInventory?: { specialCoatId: number; count: number; level10: boolean; level20: boolean; glitterAnimal: boolean }[];
+}
+
+type InventoryMap = Record<number, { count: number; level10: boolean; level20: boolean; glitterAnimal: boolean }>;
+
+function buildInventoryMap(userInventory: SpecialCoatsDesktopTableProps["userInventory"]): InventoryMap {
+  return (userInventory ?? []).reduce<InventoryMap>((acc, item) => {
+    acc[item.specialCoatId] = {
+      count: item.count,
+      level10: item.level10,
+      level20: item.level20,
+      glitterAnimal: item.glitterAnimal,
+    };
+    return acc;
+  }, {});
 }
 
 export default function SpecialCoatsInventoryDesktopTable({
   userInventory = [],
 }: SpecialCoatsDesktopTableProps) {
-  const router = useRouter();
   const tSpecialCoat = useTranslations("specialCoat");
   const tCommon = useTranslations("common");
 
-  const { data: session } = useSession();
+  const [inventoryState, setInventoryState] = useState<InventoryMap>(() =>
+    buildInventoryMap(userInventory),
+  );
 
   const specialCoats = useSpecialCoatStore((state) => state.currentItems);
   const sortBy = useSpecialCoatStore((state) => state.sortBy);
@@ -33,29 +46,29 @@ export default function SpecialCoatsInventoryDesktopTable({
   const toggleSort = useSpecialCoatStore((state) => state.toggleSort);
   const setSelectedSpecialCoat = useSpecialCoatStore((state) => state.setSelectedSpecialCoat);
 
-  // Handler zum Speichern der Änderungen in der Datenbank via API-Route
   const handleChange = async (
     specialCoatId: number,
     field: "count" | "level10" | "level20" | "glitterAnimal",
-    value: any,
+    value: number | boolean,
   ) => {
-    try {
-      const parsedValue = field === "count" ? Number(value) : Boolean(value);
+    setInventoryState((prev) => {
+      const defaults = { count: 0, level10: false, level20: false, glitterAnimal: false };
+      const current = prev[specialCoatId] ?? defaults;
+      return {
+        ...prev,
+        [specialCoatId]: { ...defaults, ...current, [field]: value },
+      };
+    });
 
-      const response = await fetch("/api/zoo-inventory", {
+    try {
+      const response = await fetch("/api/zooInventory", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          specialCoatId,
-          field,
-          value: parsedValue,
-        }),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ specialCoatId, field, value }),
       });
 
       if (!response.ok) {
-        throw new Error("Fehler beim Speichern in der Datenbank");
+        console.error("Fehler beim Speichern in der Datenbank");
       }
     } catch (error) {
       console.error("Fehler beim Aktualisieren des Zoo-Inventars:", error);
@@ -90,13 +103,11 @@ export default function SpecialCoatsInventoryDesktopTable({
       <tbody>
         {specialCoats.length > 0 ? (
           specialCoats.map((specialCoat) => {
-            // Finde den passenden Inventar-Eintrag des angemeldeten Users für diese Farbvariante
-            const inventoryItem = userInventory.find((inv) => inv.specialCoatId === specialCoat.id);
-
-            const currentCount = inventoryItem?.count ?? 0;
-            const currentLevel10 = inventoryItem?.level10 ?? false;
-            const currentLevel20 = inventoryItem?.level20 ?? false;
-            const currentGlitter = inventoryItem?.glitterAnimal ?? false;
+            const item = inventoryState[specialCoat.id];
+            const currentCount = item?.count ?? 0;
+            const currentLevel10 = item?.level10 ?? false;
+            const currentLevel20 = item?.level20 ?? false;
+            const currentGlitter = item?.glitterAnimal ?? false;
 
             return (
               <LinkedRow
@@ -125,8 +136,8 @@ export default function SpecialCoatsInventoryDesktopTable({
                 </td>
                 <Styles.TableCellRight onClick={(e) => e.stopPropagation()}>
                   <select
-                    defaultValue={currentCount}
-                    onChange={(e) => handleChange(specialCoat.id, "count", e.target.value)}
+                    value={currentCount}
+                    onChange={(e) => handleChange(specialCoat.id, "count", Number(e.target.value))}
                     style={{ padding: "4px 8px", borderRadius: "4px", border: "1px solid #ccc" }}
                   >
                     <option value="0">0</option>
@@ -137,7 +148,7 @@ export default function SpecialCoatsInventoryDesktopTable({
                 <Styles.TableCellRight onClick={(e) => e.stopPropagation()}>
                   <input
                     type="checkbox"
-                    defaultChecked={currentLevel10}
+                    checked={currentLevel10}
                     onChange={(e) => handleChange(specialCoat.id, "level10", e.target.checked)}
                     style={{ width: "18px", height: "18px", cursor: "pointer" }}
                   />
@@ -145,7 +156,7 @@ export default function SpecialCoatsInventoryDesktopTable({
                 <Styles.TableCellRight onClick={(e) => e.stopPropagation()}>
                   <input
                     type="checkbox"
-                    defaultChecked={currentLevel20}
+                    checked={currentLevel20}
                     onChange={(e) => handleChange(specialCoat.id, "level20", e.target.checked)}
                     style={{ width: "18px", height: "18px", cursor: "pointer" }}
                   />
@@ -153,7 +164,7 @@ export default function SpecialCoatsInventoryDesktopTable({
                 <Styles.TableCellRight onClick={(e) => e.stopPropagation()}>
                   <input
                     type="checkbox"
-                    defaultChecked={currentGlitter}
+                    checked={currentGlitter}
                     onChange={(e) =>
                       handleChange(specialCoat.id, "glitterAnimal", e.target.checked)
                     }

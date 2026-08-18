@@ -1,6 +1,18 @@
 import "server-only";
 import { prisma } from "@/lib/prisma";
 
+export async function getZooInventoryForUser(userId: number | string) {
+  const numericUserId = typeof userId === "string" ? parseInt(userId, 10) : userId;
+
+  if (isNaN(numericUserId)) {
+    return [];
+  }
+
+  return prisma.zooInventorySpecialCoat.findMany({
+    where: { userid: numericUserId },
+  });
+}
+
 export async function updateZooInventory(
   userId: number | string,
   specialCoatId: number | string,

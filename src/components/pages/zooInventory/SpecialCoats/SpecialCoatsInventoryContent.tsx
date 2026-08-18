@@ -13,7 +13,11 @@ import MobileView from "@/components/page-structure/MobileView";
 import SpecialCoatsPagination from "@/components/pages/specialCoats/SpecialCoatsOverview/SpecialCoatsPagination";
 import SpecialCoatsInventoryDesktopTable from "@/components/pages/zooInventory/SpecialCoats/SpecialCoatsInventoryDesktopTable";
 
-export default function SpecialCoatsInventoryContent() {
+interface SpecialCoatsInventoryContentProps {
+  userInventory: any[];
+}
+
+export default function SpecialCoatsInventoryContent({ userInventory }: SpecialCoatsInventoryContentProps) {
   const t = useTranslations("specialCoat");
   const tCommon = useTranslations("common");
 
@@ -34,7 +38,7 @@ export default function SpecialCoatsInventoryContent() {
 
       {hasItems ? (
         <>
-          <SpecialCoatsInventoryDesktopTable />
+          <SpecialCoatsInventoryDesktopTable userInventory={userInventory} />
 
           <MobileView>
             {currentItems.map((specialCoat) => (
