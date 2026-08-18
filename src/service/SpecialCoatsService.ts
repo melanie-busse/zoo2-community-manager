@@ -113,7 +113,7 @@ export async function createSpecialCoat(data: CreateSpecialCoatInput) {
   });
 
   if (data.originIds && data.originIds.length > 0) {
-    await prisma.specialCoatsOrigin.createMany({
+    await prisma.specialCoatOrigin.createMany({
       data: data.originIds.map((id) => ({
         specialCoatId: newCoat.id,
         originId: id,
@@ -174,12 +174,12 @@ export async function updateSpecialCoat(id: number | string, data: any) {
     }
 
     if (data.originIds) {
-      await tx.specialCoatsOrigin.deleteMany({
+      await tx.specialCoatOrigin.deleteMany({
         where: { specialCoatId: numericId },
       });
 
       if (data.originIds.length > 0) {
-        await tx.specialCoatsOrigin.createMany({
+        await tx.specialCoatOrigin.createMany({
           data: data.originIds.map((originId: number) => ({
             specialCoatId: numericId,
             originId: originId,
