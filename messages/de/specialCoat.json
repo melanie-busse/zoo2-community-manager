@@ -29,6 +29,15 @@
   "emptyState": {
     "title": "Oje, kein Tier da!"
   },
+  "inventory": {
+    "title": "Mein Zoo-Inventar",
+    "count": "Anzahl",
+    "partner_needed": "Partner nötig",
+    "level10": "Level 10",
+    "level20": "Level 20",
+    "glitter_animal": "Glitzertier",
+    "region": "Region"
+  },
   "breeding": {
     "title": "Zuchtwahrscheinlichkeit",
     "isContestSpecialCoat": "Wettbewerbs-Farbvariante",

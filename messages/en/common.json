@@ -53,7 +53,7 @@
     "status_prefix": "Status:",
     "ready": "Ready",
     "missing_partner": "Partner missing",
-    "not_owned": "Not owned",
+    "not_owned": "Missing",
     "level_label": "Level",
     "has_statue": "With statue only",
     "contest_only": "Contest variants only",

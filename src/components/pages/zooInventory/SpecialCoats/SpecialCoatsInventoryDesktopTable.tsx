@@ -122,12 +122,12 @@ export default function SpecialCoatsInventoryDesktopTable({
             currentSortBy={sortBy}
             sortDirection={sortDirection}
           />
-          <Styles.TableCellRight>Anzahl</Styles.TableCellRight>
-          <Styles.TableCellRight>Partner nötig</Styles.TableCellRight>
-          <Styles.TableCellRight>Level 10</Styles.TableCellRight>
-          <Styles.TableCellRight>Level 20</Styles.TableCellRight>
-          <Styles.TableCellRight>Glitzertier</Styles.TableCellRight>
-          <Styles.TableCellRight>Region</Styles.TableCellRight>
+          <Styles.TableCellRight>{tSpecialCoat("inventory.count")}</Styles.TableCellRight>
+          <Styles.TableCellRight>{tSpecialCoat("inventory.partner_needed")}</Styles.TableCellRight>
+          <Styles.TableCellRight>{tSpecialCoat("inventory.level10")}</Styles.TableCellRight>
+          <Styles.TableCellRight>{tSpecialCoat("inventory.level20")}</Styles.TableCellRight>
+          <Styles.TableCellRight>{tSpecialCoat("inventory.glitter_animal")}</Styles.TableCellRight>
+          <Styles.TableCellRight>{tSpecialCoat("inventory.region")}</Styles.TableCellRight>
         </tr>
       </thead>
       <tbody>

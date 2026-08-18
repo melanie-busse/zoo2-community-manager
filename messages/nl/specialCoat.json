@@ -28,5 +28,14 @@
   },
   "emptyState": {
     "title": "Oh nee, geen dieren hier!"
+  },
+  "inventory": {
+    "title": "Mijn zoo-inventaris",
+    "count": "Aantal",
+    "partner_needed": "Partner nodig",
+    "level10": "Level 10",
+    "level20": "Level 20",
+    "glitter_animal": "Glitterdier",
+    "region": "Regio"
   }
 }

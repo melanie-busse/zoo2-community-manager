@@ -16,7 +16,13 @@ export default function SpecialCoatsInventoryClient({
   regions,
 }: SpecialCoatsCollectionClientProps) {
   const setInitialSpecialCoats = useSpecialCoatStore((state) => state.setInitialSpecialCoats);
-  setInitialSpecialCoats(specialCoats);
+
+  const inventoryMap = new Map(userInventory.map((inv: any) => [inv.specialCoatId, inv]));
+  const coatsWithInventory = specialCoats.map((coat: any) => ({
+    ...coat,
+    ownedAmount: inventoryMap.get(coat.id)?.count ?? 0,
+  }));
+  setInitialSpecialCoats(coatsWithInventory);
 
   return <SpecialCoatsInventoryContent userInventory={userInventory} regions={regions} />;
 }

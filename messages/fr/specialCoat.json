@@ -28,5 +28,14 @@
   },
   "emptyState": {
     "title": "Oh non, aucun animal ici !"
+  },
+  "inventory": {
+    "title": "Mon inventaire de zoo",
+    "count": "Quantité",
+    "partner_needed": "Partenaire requis",
+    "level10": "Niveau 10",
+    "level20": "Niveau 20",
+    "glitter_animal": "Animal scintillant",
+    "region": "Région"
   }
 }
