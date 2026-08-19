@@ -52,6 +52,7 @@ describe("NextAuth Route Configuration", () => {
           email: "gamer@zoo2.de",
           image: "avatar.png",
           roleId: 5,
+          upjersname: "",
         },
       });
       expect(result).toBe(true);

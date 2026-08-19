@@ -34,7 +34,7 @@ vi.mock("@/store/useAnimalStore", () => ({
   useAnimalStore: (selector: (state: typeof storeState) => any) => selector(storeState),
 }));
 
-vi.mock("@/components/elements/Filter/CustomBadgeFilter", () => ({
+vi.mock("@/components/ui/form/SelectBoxWithImage", () => ({
   default: ({ items, onSelectAction, allLabelKey }: any) => (
     <div>
       <button onClick={() => onSelectAction(items[0])}>{allLabelKey}</button>

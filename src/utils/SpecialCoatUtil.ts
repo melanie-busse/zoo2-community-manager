@@ -8,6 +8,10 @@ interface FilterOptions {
   selectedShelterLevel: number | null;
   inventoryStatus: InventoryStatusFilter;
   contestOnly?: boolean;
+  filterRegionId?: number | null;
+  filterLevel10?: boolean;
+  filterLevel20?: boolean;
+  filterGlitter?: boolean;
 }
 
 interface SortOptions {
@@ -17,7 +21,17 @@ interface SortOptions {
 
 export function filterSpecialCoats(
   coats: SpecialCoat[] | undefined,
-  { searchTerm, selectedBiome, selectedShelterLevel, inventoryStatus, contestOnly = false }: FilterOptions,
+  {
+    searchTerm,
+    selectedBiome,
+    selectedShelterLevel,
+    inventoryStatus,
+    contestOnly = false,
+    filterRegionId = null,
+    filterLevel10 = false,
+    filterLevel20 = false,
+    filterGlitter = false,
+  }: FilterOptions,
 ): SpecialCoat[] {
   if (!coats) return [];
 
@@ -53,6 +67,11 @@ export function filterSpecialCoats(
     if (inventoryStatus === "not_owned" && amount !== 0) return false;
 
     if (contestOnly && !coat.isContestSpecialCoat) return false;
+
+    if (filterLevel10 && !coat.inventoryLevel10) return false;
+    if (filterLevel20 && !coat.inventoryLevel20) return false;
+    if (filterGlitter && !coat.inventoryGlitter) return false;
+    if (filterRegionId !== null && coat.inventoryRegionId !== filterRegionId) return false;
 
     return true;
   });
@@ -121,6 +140,12 @@ export const createEmptyForm = (languages: Array<{ code: string }>) => ({
   animalId: "",
   releaseDate: "",
   image: "",
+  isContestSpecialCoat: false,
+  parentWithCoatNeeded: false,
+  chanceBaseWithoutParent: "",
+  chanceBaseWithOneParent: "",
+  chanceEventWithoutParent: "",
+  chanceEventWithOneParent: "",
   origins: [],
   texts: languages.length > 0 ? [{ languageCode: languages[0].code, name: "", color: "" }] : [],
 });
@@ -147,6 +172,12 @@ export const mapSpecialCoatToForm = (coat: any, languages: any[]) => {
     animalId: coat.animalId || "",
     releaseDate: coat.releaseDate ? new Date(coat.releaseDate).toISOString().split("T")[0] : "",
     image: coat.image || "",
+    isContestSpecialCoat: coat?.isContestSpecialCoat ?? false,
+    parentWithCoatNeeded: coat?.parentWithCoatNeeded ?? false,
+    chanceBaseWithoutParent: coat?.chanceBaseWithoutParent ?? "",
+    chanceBaseWithOneParent: coat?.chanceBaseWithOneParent ?? "",
+    chanceEventWithoutParent: coat?.chanceEventWithoutParent ?? "",
+    chanceEventWithOneParent: coat?.chanceEventWithOneParent ?? "",
     origins: flatOrigins,
     texts: mappedTexts,
   };

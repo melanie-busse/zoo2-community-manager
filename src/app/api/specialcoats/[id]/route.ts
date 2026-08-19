@@ -94,7 +94,7 @@ export async function DELETE(request: Request, { params }: RouteParams) {
 
     await prisma.$transaction([
       prisma.specialCoatsText.deleteMany({ where: { specialCoatId: coatId } }),
-      prisma.specialCoatsOrigin.deleteMany({ where: { specialCoatId: coatId } }),
+      prisma.specialCoatOrigin.deleteMany({ where: { specialCoatId: coatId } }),
       prisma.specialCoat.delete({ where: { id: coatId } }),
     ]);
 

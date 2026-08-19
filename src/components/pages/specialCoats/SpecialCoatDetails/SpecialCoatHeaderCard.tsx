@@ -10,6 +10,7 @@ import OriginBadge from "@/components/ui/badges/OriginBadge";
 import Tooltip from "@/components/ui/tooltip/Tooltip";
 import FormattedDate from "@/components/ui/Formatted/FormattedDate";
 import { useSpecialCoatStore } from "@/store/useSpecialCoatStore";
+import Link from "next/link";
 
 export default function SpecialCoatHeaderCard() {
   const tCommon = useTranslations("common");
@@ -39,7 +40,9 @@ export default function SpecialCoatHeaderCard() {
         <Styles.TitleRow>
           <Styles.TextContent>
             <Styles.TitleHeadlineRow>
-              <h1>{displayName}</h1>
+              <Link href={`/de/animals/${specialCoat.animal?.id}`}>
+                <h1>{displayName}</h1>
+              </Link>
               <Styles.OriginRow>
                 {origins.map((item, index) => {
                   if (!item.origin) return null;
@@ -71,12 +74,30 @@ export default function SpecialCoatHeaderCard() {
                 />
               </span>
             </Styles.ReleaseDate>
+
+            {specialCoat.isContestSpecialCoat && (
+              <ContestTextBadge>{tSpecialCoat("breeding.isContestSpecialCoat")}</ContestTextBadge>
+            )}
           </Styles.TextContent>
         </Styles.TitleRow>
       </Styles.InfoSection>
     </Styles.DesktopCardContainer>
   );
 }
+
+export const ContestTextBadge = styled.div`
+  display: inline-flex;
+  align-items: center;
+  margin-top: 20px;
+  padding: 4px 10px;
+  background-color: #f1f8e9;
+  border: 1px solid #c8e6c9;
+  border-radius: 6px;
+  color: #2e7d32;
+  font-size: 0.85rem;
+  font-weight: 600;
+  width: fit-content;
+`;
 
 const CoatImageContainer = styled.div`
   width: 100%;

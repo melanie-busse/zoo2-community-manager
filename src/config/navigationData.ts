@@ -43,7 +43,6 @@ export const navConfig: NavItem[] = [
     labelKey: "club",
     basePath: "/contests",
     subMenu: [
-      // { labelKey: "club_statues", href: "/contests/statues" },
       {
         labelKey: "club_contests",
         href: "/contests",
@@ -56,6 +55,19 @@ export const navConfig: NavItem[] = [
       },
     ],
   },
+  {
+    id: "inventory",
+    labelKey: "inventory",
+    basePath: "/zooInventory",
+    subMenu: [
+      {
+        labelKey: "inventory_specialcoats",
+        href: "/zooInventory/specialcoats",
+        requiresAuth: true,
+      },
+    ],
+  },
+
   {
     id: "admin",
     labelKey: "admin",

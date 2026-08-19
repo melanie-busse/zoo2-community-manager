@@ -4,7 +4,7 @@ import React from "react";
 import { useTranslations } from "next-intl";
 
 import * as Styles from "@/components/elements/Filter/Filter.styles";
-import CustomBadgeFilter from "./CustomBadgeFilter";
+import SelectBoxWithImage from "@/components/ui/form/SelectBoxWithImage";
 import BiomeBadge from "@/components/ui/badges/BiomeBadge";
 import ShelterLevelBadge from "@/components/ui/badges/ShelterLevelBadge";
 
@@ -69,7 +69,7 @@ export default function SpecialCoatFilterBar() {
         onChange={(e) => setSearchTerm(e.target.value)}
       />
 
-      <CustomBadgeFilter<InventoryStatusItem>
+      <SelectBoxWithImage<InventoryStatusItem>
         items={INVENTORY_STATUS_ITEMS}
         selectedValue={inventoryStatus}
         onSelectAction={(value) => setInventoryStatus(value as InventoryStatusFilter)}
@@ -80,7 +80,7 @@ export default function SpecialCoatFilterBar() {
         renderBadge={(item) => <Styles.StatusDot $color={item.color} />}
       />
 
-      <CustomBadgeFilter<Biome>
+      <SelectBoxWithImage<Biome>
         items={uniqueBiomes}
         selectedValue={selectedBiome ?? "all"}
         onSelectAction={(val) => setBiomeFilter(val === "all" ? null : val)}
@@ -91,7 +91,7 @@ export default function SpecialCoatFilterBar() {
         )}
       />
 
-      <CustomBadgeFilter<SpecialCoat>
+      <SelectBoxWithImage<SpecialCoat>
         items={uniqueLevels}
         selectedValue={selectedShelterLevel !== null ? String(selectedShelterLevel) : "all"}
         onSelectAction={(val) => {

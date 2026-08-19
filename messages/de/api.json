@@ -5,7 +5,9 @@
     "invalid_id": "Ungültige ID",
     "unauthorized": "Nicht autorisiert",
     "not_found": "Nicht gefunden",
-    "server_error": "Ein Serverfehler ist aufgetreten"
+    "server_error": "Ein Serverfehler ist aufgetreten",
+    "save_error": "Fehler beim Speichern",
+    "required_fields": "Pflichtfelder fehlen"
   },
   "animal": {
     "required_fields": "Name (DE) und Gehegetyp sind Pflichtfelder.",

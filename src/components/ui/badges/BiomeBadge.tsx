@@ -29,7 +29,6 @@ export default function BiomeBadge({
         alt={image.alt}
         width={size}
         height={size}
-        // Verhindert Layout-Shift, falls das Bild kurz lädt
         style={{ objectFit: "contain" }}
       />
       {label && <LabelText>{label}</LabelText>}

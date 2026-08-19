@@ -28,5 +28,14 @@
   },
   "emptyState": {
     "title": "Oh no, no special coat here!"
+  },
+  "inventory": {
+    "title": "My Zoo Inventory",
+    "count": "Count",
+    "partner_needed": "Partner needed",
+    "level10": "Level 10",
+    "level20": "Level 20",
+    "glitter_animal": "Glitter Animal",
+    "region": "Region"
   }
 }

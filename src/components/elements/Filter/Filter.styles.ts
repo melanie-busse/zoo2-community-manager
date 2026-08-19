@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-export const SelectWrapper = styled.div`
+export const SelectWrapper = styled.div<{ $compact?: boolean; $isOpen?: boolean }>`
   position: relative;
-  min-width: 240px;
+  min-width: ${({ $compact }) => ($compact ? "auto" : "240px")};
   font-family: ${({ theme }) => theme.fonts.text};
-  z-index: 100;
+  z-index: ${({ $isOpen }) => ($isOpen ? 1000 : 100)};
 `;
 
 export const SelectHeader = styled.div<{ $isOpen: boolean }>`

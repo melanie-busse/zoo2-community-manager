@@ -75,7 +75,7 @@ export async function createContest(data: any) {
     data: {
       startDate: new Date(data.startDate),
       endDate: new Date(data.endDate),
-      active: Boolean(data.active),
+      active: data.active ? 1 : 0,
 
       conteststatue: {
         create: data.statuenIds.map((id: number) => ({
@@ -98,7 +98,7 @@ export async function updateContest(id: number, data: any) {
     data: {
       startDate: new Date(data.startDate),
       endDate: new Date(data.endDate),
-      active: Boolean(data.active),
+      active: data.active ? 1 : 0,
 
       conteststatue: {
         deleteMany: {},

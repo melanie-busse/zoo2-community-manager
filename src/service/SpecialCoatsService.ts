@@ -40,7 +40,6 @@ export async function getAllSpecialCoats(locale: string = "de") {
       },
     });
   } catch (error) {
-    // Auf einheitliches englisches Logging umgestellt
     console.error(`[SpecialCoatsService] Error loading SpecialCoats (${locale}):`, error);
     return [];
   }
@@ -95,6 +94,14 @@ export async function createSpecialCoat(data: CreateSpecialCoatInput) {
       animalId: data.animalId,
       releaseDate: new Date(data.releaseDate),
       image: data.image,
+      // Neue Boolean- und Prozentfelder für Zuchtwahrscheinlichkeiten
+      isContestSpecialCoat: Boolean(data.isContestSpecialCoat),
+      parentWithCoatNeeded: Boolean(data.parentWithCoatNeeded),
+      chanceBaseWithoutParent: data.chanceBaseWithoutParent ?? 0,
+      chanceBaseWithOneParent: data.chanceBaseWithOneParent ?? 0,
+      chanceEventWithoutParent: data.chanceEventWithoutParent ?? 0,
+      chanceEventWithOneParent: data.chanceEventWithOneParent ?? 0,
+
       specialcoatstext: {
         create: data.texts.map((text) => ({
           languageCode: text.languageCode,
@@ -106,7 +113,7 @@ export async function createSpecialCoat(data: CreateSpecialCoatInput) {
   });
 
   if (data.originIds && data.originIds.length > 0) {
-    await prisma.specialCoatsOrigin.createMany({
+    await prisma.specialCoatOrigin.createMany({
       data: data.originIds.map((id) => ({
         specialCoatId: newCoat.id,
         originId: id,
@@ -141,6 +148,13 @@ export async function updateSpecialCoat(id: number | string, data: any) {
         animalId: data.animalId,
         releaseDate: data.releaseDate ? new Date(data.releaseDate) : undefined,
         image: data.image,
+
+        isContestSpecialCoat: Boolean(data.isContestSpecialCoat),
+        parentWithCoatNeeded: Boolean(data.parentWithCoatNeeded),
+        chanceBaseWithoutParent: data.chanceBaseWithoutParent ?? 0,
+        chanceBaseWithOneParent: data.chanceBaseWithOneParent ?? 0,
+        chanceEventWithoutParent: data.chanceEventWithoutParent ?? 0,
+        chanceEventWithOneParent: data.chanceEventWithOneParent ?? 0,
       },
     });
 
@@ -160,12 +174,12 @@ export async function updateSpecialCoat(id: number | string, data: any) {
     }
 
     if (data.originIds) {
-      await tx.specialCoatsOrigin.deleteMany({
+      await tx.specialCoatOrigin.deleteMany({
         where: { specialCoatId: numericId },
       });
 
       if (data.originIds.length > 0) {
-        await tx.specialCoatsOrigin.createMany({
+        await tx.specialCoatOrigin.createMany({
           data: data.originIds.map((originId: number) => ({
             specialCoatId: numericId,
             originId: originId,

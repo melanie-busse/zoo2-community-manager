@@ -1,11 +1,11 @@
-datasource db {
-  provider = "mysql"
-  url      = env("DATABASE_URL")
-}
-
 generator client {
   provider        = "prisma-client-js"
   previewFeatures = ["driverAdapters"]
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
 }
 
 model Language {
@@ -21,14 +21,15 @@ model Biome {
   identifier                String       @unique
   price                     Int?
   priceTypeId               Int?
-  priceType                 PriceType?   @relation(fields: [priceTypeId], references: [id])
   expansionsCost            Int?
   priceTypeExpansionsCostId Int?
   size                      Int?
   image                     String?      @db.VarChar(255)
   animals                   Animal[]
+  priceType                 PriceType?   @relation(fields: [priceTypeId], references: [id])
   biomestext                BiomesText[]
 
+  @@index([priceTypeId], map: "biome_priceTypeId_fkey")
   @@map("biome")
 }
 
@@ -45,12 +46,12 @@ model BiomesText {
 }
 
 model Origin {
-  id                  Int                  @id @unique(map: "originindex") @default(autoincrement())
-  wiki_icon_name      String               @db.VarChar(255)
-  image               String?              @db.VarChar(255)
-  animalorigin        AnimalOrigin[]
-  origintext          OriginText[]
-  specialCoatsOrigins SpecialCoatsOrigin[]
+  id                 Int                 @id @unique(map: "originindex") @default(autoincrement())
+  wiki_icon_name     String              @db.VarChar(255)
+  image              String?             @db.VarChar(255)
+  animalorigin       AnimalOrigin[]
+  origintext         OriginText[]
+  specialcoatorigin  SpecialCoatOrigin[]
 
   @@map("origin")
 }
@@ -72,7 +73,6 @@ model Animal {
   releaseDate         DateTime?
   price               Int?
   priceTypeId         Int?
-  priceType           PriceType?           @relation(fields: [priceTypeId], references: [id])
   sellingPrice        Int?
   popularity          Int?
   releaseExp          Int?
@@ -87,13 +87,14 @@ model Animal {
   isContestAnimal     Boolean
   statueImage         String?
   biome               Biome                @relation(fields: [biomeId], references: [id])
+  priceType           PriceType?           @relation(fields: [priceTypeId], references: [id])
   animalorigins       AnimalOrigin[]
   animalperenclosure  AnimalPerEnclosure[]
   animaltext          AnimalText[]
   animalxp            AnimalXP[]
   contestdonation     ContestDonation[]
-  specialcoat         SpecialCoat[]
   contestStatues      ContestStatue[]
+  specialcoat         SpecialCoat[]
 
   @@index([biomeId], map: "animal_biomeId_fkey")
   @@index([priceTypeId], map: "animal_priceTypeId_fkey")
@@ -113,14 +114,14 @@ model AnimalText {
 }
 
 model User {
-  id              Int               @id @default(autoincrement())
-  discordId       String            @unique @db.VarChar(255)
+  id              Int               @unique @default(autoincrement())
   name            String?           @db.VarChar(255)
-  upjersname      String?           @db.VarChar(255)
+  upjersname      String            @db.VarChar(255)
   email           String?           @unique @db.VarChar(255)
   image           String?           @db.Text
-  roleId          Int               @default(5)
+  roleId          Int
   last_login      DateTime?         @default(now()) @db.DateTime(0)
+  discordId       String            @unique(map: "discordId") @db.VarChar(255)
   contestdonation ContestDonation[]
   role            Role              @relation(fields: [roleId], references: [id])
 
@@ -149,12 +150,12 @@ model RolesText {
 }
 
 model Contest {
-  id                 Int                  @id @unique(map: "contests") @default(autoincrement())
-  startDate          DateTime
-  endDate            DateTime
-  active             Boolean
-  contestdonation    ContestDonation[]
-  conteststatue      ContestStatue[]
+  id               Int                  @id @unique(map: "contests") @default(autoincrement())
+  startDate        DateTime
+  endDate          DateTime
+  active           Int                  @db.TinyInt
+  contestdonation  ContestDonation[]
+  conteststatue    ContestStatue[]
   contestspecialcoat ContestSpecialCoat[]
 
   @@map("contest")
@@ -218,11 +219,11 @@ model ContestStatue {
   id        Int     @id @default(autoincrement())
   contestId Int
   animalId  Int
-  contest   Contest @relation(fields: [contestId], references: [id], onDelete: Cascade, map: "contestStatue_contestId_fkey")
   animal    Animal  @relation(fields: [animalId], references: [id], onDelete: Cascade, map: "contestStatue_animalId_fkey")
+  contest   Contest @relation(fields: [contestId], references: [id], onDelete: Cascade, map: "contestStatue_contestId_fkey")
 
-  @@index([contestId], map: "contestStatue_contestId_fkey")
-  @@index([animalId], map: "contestStatue_animalId_fkey")
+  @@index([animalId], map: "conteststatue_animalId_fkey")
+  @@index([contestId], map: "conteststatue_contestId_fkey")
   @@map("conteststatue")
 }
 
@@ -231,8 +232,8 @@ model PriceType {
   name          String          @db.VarChar(50)
   image         String?         @db.VarChar(50)
   animals       Animal[]
-  pricetypetext PriceTypeText[]
   biome         Biome[]
+  pricetypetext PriceTypeText[]
 
   @@map("pricetype")
 }
@@ -249,21 +250,20 @@ model PriceTypeText {
 }
 
 model SpecialCoat {
-  id                       Int      @id @unique(map: "specialCoatesindex") @default(autoincrement())
+  id                       Int                   @id @unique(map: "specialCoatesindex") @default(autoincrement())
   animalId                 Int
   releaseDate              DateTime
-  parentWithCoatNeeded     Boolean  @default(false)
-  chanceBaseWithoutParent  Float    @default(0.0)
-  chanceBaseWithOneParent  Float    @default(0.0)
-  chanceEventWithoutParent Float    @default(0.0)
-  chanceEventWithOneParent Float    @default(0.0)
-  isContestSpecialCoat     Boolean  @default(false)
-  image                    String?  @db.VarChar(255)
-
-  animal             Animal               @relation(fields: [animalId], references: [id], onDelete: Cascade, map: "specialCoat_animalId_fkey")
-  specialcoatstext   SpecialCoatsText[]
-  specialcoatsorigin SpecialCoatsOrigin[]
-  contestspecialcoat ContestSpecialCoat[]
+  parentWithCoatNeeded     Boolean               @default(false)
+  chanceBaseWithoutParent  Float                 @default(0)
+  chanceBaseWithOneParent  Float                 @default(0)
+  chanceEventWithoutParent Float                 @default(0)
+  chanceEventWithOneParent Float                 @default(0)
+  image                    String?               @db.VarChar(255)
+  isContestSpecialCoat     Boolean               @default(false)
+  animal                   Animal                @relation(fields: [animalId], references: [id], onDelete: Cascade, map: "specialCoat_animalId_fkey")
+  specialcoatstext         SpecialCoatsText[]
+  specialcoatsorigin       SpecialCoatOrigin[]
+  contestspecialcoat       ContestSpecialCoat[]
 
   @@index([animalId], map: "specialCoat_animalId_idx")
   @@map("specialcoat")
@@ -293,18 +293,6 @@ model SpecialCoatsText {
   @@map("specialcoatstext")
 }
 
-model SpecialCoatsOrigin {
-  id            Int         @id @unique(map: "originindex") @default(autoincrement())
-  specialCoatId Int
-  originId      Int?
-  specialCoat   SpecialCoat @relation(fields: [specialCoatId], references: [id], onDelete: Cascade, map: "specialCoatOrigin_specialCoatId_fkey")
-  origin        Origin?     @relation(fields: [originId], references: [id], onDelete: Cascade, map: "specialCoatOrigin_originId_fkey")
-
-  @@index([specialCoatId], map: "specialCoatOrigin_specialCoatId_idx")
-  @@index([originId], map: "specialCoatOrigin_originId_idx")
-  @@map("specialCoatorigin")
-}
-
 model XPType {
   id         Int          @id @default(autoincrement())
   name       String       @db.VarChar(50)
@@ -323,4 +311,53 @@ model XPTypeText {
 
   @@unique([xpTypeId, languageCode], map: "xpTypeText_xpTypeId_languageCode_key")
   @@map("xptypetext")
+}
+
+model ZooInventorySpecialCoat {
+  id            Int      @id @default(autoincrement())
+  specialCoatId Int      @map("specialcoatid")
+  userid        Int
+  count         Int?
+  level10       Boolean? @map("level10")
+  level20       Boolean? @map("level20")
+  glitterAnimal Boolean? @map("glitteranimal")
+  regionId      Int?
+
+  @@unique([userid, specialCoatId], map: "userid_specialCoatId")
+  @@map("zooinventoryspecialcoat")
+}
+
+model Region {
+  id          Int          @id @default(autoincrement())
+  price       Int
+  terrainid   Int
+  releasedate DateTime
+  unlocklevel Int
+  identifier  String       @db.VarChar(255)
+  regionTexts RegionText[]
+
+  @@map("region")
+}
+
+model RegionText {
+  id           Int    @id @default(autoincrement())
+  regionid     Int
+  languageCode String @db.VarChar(255)
+  name         String @db.VarChar(255)
+  region       Region @relation(fields: [regionid], references: [id], onDelete: Cascade, map: "regionText_regionId_fkey")
+
+  @@index([regionid], map: "regionText_regionId_idx")
+  @@map("regiontext")
+}
+
+model SpecialCoatOrigin {
+  id            Int         @id @default(autoincrement())
+  specialCoatId Int
+  originId      Int
+  specialcoat   SpecialCoat @relation(fields: [specialCoatId], references: [id], onDelete: Cascade, map: "specialCoatOrigin_specialCoatId_fkey")
+  origin        Origin      @relation(fields: [originId], references: [id], onDelete: Cascade, map: "specialCoatOrigin_originId_fkey")
+
+  @@index([specialCoatId], map: "specialCoatOrigin_specialCoatId_idx")
+  @@index([originId], map: "specialCoatOrigin_originId_idx")
+  @@map("specialcoatorigin")
 }

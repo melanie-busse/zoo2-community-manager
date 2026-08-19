@@ -2,7 +2,7 @@ import React from "react";
 import { describe, test, expect, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 
-import HomeView from "@/components/pages/Home/HomeViex";
+import HomeView from "@/components/pages/home/HomeViex";
 
 vi.mock("@/components/page-structure/Elements/StatsBar", () => ({
   default: ({ data }: { data: { number: number; label: string }[] }) => (

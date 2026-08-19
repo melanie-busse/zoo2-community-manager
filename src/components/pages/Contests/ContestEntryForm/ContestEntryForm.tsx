@@ -9,8 +9,8 @@ import FormSelect from "@/components/ui/form/Selectbox";
 import DynamicRowInput, { ColumnDefinition } from "@/components/ui/form/DynamicRowInput";
 import SubmitButton from "@/components/ui/form/SubmitButton";
 import ThumbnailBadge from "@/components/ui/badges/ThumbnailBadge";
-import * as ContestFormStyles from "@/components/pages/Contests/ContestCreateForm/ContestCreateForm.styles";
-import * as Styles from "@/components/pages/Contests/ContestEntryForm/ContestEntryForm.styles";
+import * as ContestFormStyles from "@/components/pages/contests/ContestCreateForm/ContestCreateForm.styles";
+import * as Styles from "@/components/pages/contests/ContestEntryForm/ContestEntryForm.styles";
 import type { getContestById } from "@/service/ContestService";
 import type { User } from "@/types/user";
 

@@ -6,7 +6,7 @@ import { useTranslations } from "next-intl";
 import { useSession } from "next-auth/react";
 
 import PageWrapper from "@/components/page-structure/page/PageWrapper";
-import ContestEntryForm from "@/components/pages/Contests/ContestEntryForm/ContestEntryForm";
+import ContestEntryForm from "@/components/pages/contests/ContestEntryForm/ContestEntryForm";
 import { submitContestEntries, getContestEntriesForUser } from "@/service/frontend/Contest";
 import type { getContestById, getMembers } from "@/service/ContestService";
 import type { ColumnDefinition } from "@/components/ui/form/DynamicRowInput";

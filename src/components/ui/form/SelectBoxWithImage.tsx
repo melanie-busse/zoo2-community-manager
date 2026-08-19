@@ -16,9 +16,14 @@ interface CustomBadgeFilterProps<T> {
   renderBadge: (value: T) => React.ReactNode;
   getIdentifier: (value: T) => string;
   getLabelKey?: (value: T) => string;
+  getLabel?: (value: T) => string;
+  showLabel?: boolean;
+  compact?: boolean;
+  renderAllBadge?: () => React.ReactNode;
+  renderAllOption?: () => React.ReactNode;
 }
 
-export default function CustomBadgeFilter<T>({
+export default function SelectBoxWithImage<T>({
   items,
   selectedValue,
   onSelectAction,
@@ -26,7 +31,12 @@ export default function CustomBadgeFilter<T>({
   labelPrefixKey,
   renderBadge,
   getIdentifier,
-  getLabelKey, // 💡 NEU
+  getLabelKey,
+  getLabel,
+  showLabel = true,
+  compact = false,
+  renderAllBadge,
+  renderAllOption,
 }: CustomBadgeFilterProps<T>) {
   const t = useTranslations("common");
   const [isOpen, setIsOpen] = useState(false);
@@ -38,6 +48,9 @@ export default function CustomBadgeFilter<T>({
   const selectedItem = items.find((item) => getIdentifier(item) === selectedValue);
 
   const renderLabelText = (item: T) => {
+    if (getLabel) {
+      return getLabel(item);
+    }
     if (getLabelKey) {
       return t("filter." + getLabelKey(item));
     }
@@ -45,17 +58,19 @@ export default function CustomBadgeFilter<T>({
   };
 
   return (
-    <Styles.SelectWrapper ref={wrapperRef}>
+    <Styles.SelectWrapper ref={wrapperRef} $compact={compact} $isOpen={isOpen}>
       <Styles.SelectHeader onClick={() => setIsOpen(!isOpen)} $isOpen={isOpen}>
         {isAllSelected ? (
-          <span>{t("filter." + allLabelKey)}</span>
+          renderAllBadge ? renderAllBadge() : <span>{showLabel ? t("filter." + allLabelKey) : "–"}</span>
         ) : (
           <Styles.SelectedValue>
             {selectedItem && renderBadge(selectedItem)}
-            <Styles.Label>
-              {labelPrefixKey && `${t("filter." + labelPrefixKey)} `}
-              {selectedItem ? renderLabelText(selectedItem) : selectedValue}
-            </Styles.Label>
+            {showLabel && (
+              <Styles.Label>
+                {labelPrefixKey && `${t("filter." + labelPrefixKey)} `}
+                {selectedItem ? renderLabelText(selectedItem) : selectedValue}
+              </Styles.Label>
+            )}
           </Styles.SelectedValue>
         )}
         <Chevron isOpen={isOpen} />
@@ -69,7 +84,7 @@ export default function CustomBadgeFilter<T>({
               setIsOpen(false);
             }}
           >
-            {t("filter." + allLabelKey)}
+            {(renderAllOption ?? renderAllBadge)?.() ?? (showLabel ? t("filter." + allLabelKey) : "–")}
           </Styles.Option>
 
           {items.map((item) => {
@@ -83,10 +98,12 @@ export default function CustomBadgeFilter<T>({
                 }}
               >
                 {renderBadge(item)}
-                <Styles.Label>
-                  {labelPrefixKey && `${t("filter." + labelPrefixKey)} `}
-                  {renderLabelText(item)}
-                </Styles.Label>
+                {showLabel && (
+                  <Styles.Label>
+                    {labelPrefixKey && `${t("filter." + labelPrefixKey)} `}
+                    {renderLabelText(item)}
+                  </Styles.Label>
+                )}
               </Styles.Option>
             );
           })}

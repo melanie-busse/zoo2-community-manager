@@ -6,7 +6,7 @@ import { useRouter } from "@/i18n/routing";
 
 import { Contest } from "@/types/contest";
 import { useContestStore } from "@/store/useContestStore";
-import ContestOverviewContent from "@/components/pages/Contests/ContestOverview/ContestOverviewContent";
+import ContestOverviewContent from "@/components/pages/contests/ContestOverview/ContestOverviewContent";
 
 interface ContestOverviewClientProps {
   initialContests: Contest[];

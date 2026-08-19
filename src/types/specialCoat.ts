@@ -15,6 +15,10 @@ export interface SpecialCoat {
   releaseDate: Date | string;
   image: string | null;
   ownedAmount?: number;
+  inventoryLevel10?: boolean;
+  inventoryLevel20?: boolean;
+  inventoryGlitter?: boolean;
+  inventoryRegionId?: number | null;
   isContestSpecialCoat?: boolean;
   parentWithCoatNeeded?: boolean;
   chanceBaseWithoutParent?: number;
@@ -38,6 +42,12 @@ export interface CreateSpecialCoatInput {
   animalId: number;
   releaseDate: Date | string;
   image: string | null;
+  isContestSpecialCoat?: boolean;
+  parentWithCoatNeeded?: boolean;
+  chanceBaseWithoutParent?: number;
+  chanceBaseWithOneParent?: number;
+  chanceEventWithoutParent?: number;
+  chanceEventWithOneParent?: number;
   texts: {
     languageCode: string;
     name: string;

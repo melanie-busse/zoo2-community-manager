@@ -28,5 +28,14 @@
   },
   "emptyState": {
     "title": "¡Vaya, no hay animales aquí!"
+  },
+  "inventory": {
+    "title": "Mi inventario del zoo",
+    "count": "Cantidad",
+    "partner_needed": "Pareja necesaria",
+    "level10": "Nivel 10",
+    "level20": "Nivel 20",
+    "glitter_animal": "Animal brillante",
+    "region": "Región"
   }
 }

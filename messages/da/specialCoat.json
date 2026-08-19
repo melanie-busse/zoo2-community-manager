@@ -28,5 +28,14 @@
   },
   "emptyState": {
     "title": "Åh nej, ingen dyr her!"
+  },
+  "inventory": {
+    "title": "Mit zoo-inventar",
+    "count": "Antal",
+    "partner_needed": "Partner nødvendig",
+    "level10": "Level 10",
+    "level20": "Level 20",
+    "glitter_animal": "Glitterdyr",
+    "region": "Region"
   }
 }

@@ -18,7 +18,7 @@ const txMock = {
     deleteMany: vi.fn(),
     createMany: vi.fn(),
   },
-  specialCoatsOrigin: {
+  specialCoatOrigin: {
     deleteMany: vi.fn(),
     createMany: vi.fn(),
   },
@@ -32,7 +32,7 @@ vi.mock("@/lib/prisma", () => ({
       findUnique: vi.fn(),
       create: vi.fn(),
     },
-    specialCoatsOrigin: {
+    specialCoatOrigin: {
       createMany: vi.fn(),
     },
     $transaction: vi.fn((callback) => callback(txMock)),
@@ -149,7 +149,9 @@ describe("SpecialCoats Service", () => {
               },
             },
           },
-          specialcoatsorigin: { include: { origin: { include: { origintext: { where: { languageCode: "de" } } } } } },
+          specialcoatsorigin: {
+            include: { origin: { include: { origintext: { where: { languageCode: "de" } } } } },
+          },
         },
       });
     });
@@ -206,6 +208,12 @@ describe("SpecialCoats Service", () => {
       animalId: 10,
       releaseDate: "2026-06-01",
       image: "polarbear.png",
+      isContestSpecialCoat: true,
+      parentWithCoatNeeded: false,
+      chanceBaseWithoutParent: 0,
+      chanceBaseWithOneParent: 5.0,
+      chanceEventWithoutParent: 1.0,
+      chanceEventWithOneParent: 10.0,
       texts: [{ languageCode: "de", name: "Polarbär", color: "Weiß" }],
       originIds: [1, 2],
     };
@@ -217,7 +225,7 @@ describe("SpecialCoats Service", () => {
       specialcoatsorigin: [{ origin: { id: 1 } }, { origin: { id: 2 } }],
     };
 
-    test("sollte einen SpecialCoat mit Texten und Origins erstellen", async () => {
+    test("sollte einen SpecialCoat mit Zuchtwahrscheinlichkeiten, Texten und Origins erstellen", async () => {
       vi.mocked(prisma.specialCoat.create).mockResolvedValue(mockCreatedCoat as any);
       vi.mocked(prisma.specialCoat.findUnique).mockResolvedValue(mockFinalCoat as any);
 
@@ -228,13 +236,19 @@ describe("SpecialCoats Service", () => {
           animalId: 10,
           releaseDate: new Date("2026-06-01"),
           image: "polarbear.png",
+          isContestSpecialCoat: true,
+          parentWithCoatNeeded: false,
+          chanceBaseWithoutParent: 0,
+          chanceBaseWithOneParent: 5.0,
+          chanceEventWithoutParent: 1.0,
+          chanceEventWithOneParent: 10.0,
           specialcoatstext: {
             create: [{ languageCode: "de", name: "Polarbär", color: "Weiß" }],
           },
         },
       });
 
-      expect(prisma.specialCoatsOrigin.createMany).toHaveBeenCalledWith({
+      expect(prisma.specialCoatOrigin.createMany).toHaveBeenCalledWith({
         data: [
           { specialCoatId: 99, originId: 1 },
           { specialCoatId: 99, originId: 2 },
@@ -250,7 +264,7 @@ describe("SpecialCoats Service", () => {
 
       await createSpecialCoat({ ...mockInput, originIds: [] });
 
-      expect(prisma.specialCoatsOrigin.createMany).not.toHaveBeenCalled();
+      expect(prisma.specialCoatOrigin.createMany).not.toHaveBeenCalled();
     });
   });
 
@@ -263,6 +277,12 @@ describe("SpecialCoats Service", () => {
       animalId: 10,
       releaseDate: "2026-07-01",
       image: "updated.png",
+      isContestSpecialCoat: false,
+      parentWithCoatNeeded: true,
+      chanceBaseWithoutParent: 0.5,
+      chanceBaseWithOneParent: 2.0,
+      chanceEventWithoutParent: 0,
+      chanceEventWithOneParent: 0,
       texts: [{ languageCode: "de", name: "Neuer Name", color: "Blau" }],
       originIds: [3],
     };
@@ -273,7 +293,7 @@ describe("SpecialCoats Service", () => {
       specialcoatsorigin: [{ origin: { id: 3 } }],
     };
 
-    test("sollte Coat, Texte und Origins in einer Transaktion aktualisieren", async () => {
+    test("sollte Coat inkl. Zuchtdaten, Texte und Origins in einer Transaktion aktualisieren", async () => {
       txMock.specialCoat.findUnique.mockResolvedValue(mockUpdatedCoat);
 
       const result = await updateSpecialCoat(42, mockUpdateData);
@@ -286,6 +306,12 @@ describe("SpecialCoats Service", () => {
           animalId: 10,
           releaseDate: new Date("2026-07-01"),
           image: "updated.png",
+          isContestSpecialCoat: false,
+          parentWithCoatNeeded: true,
+          chanceBaseWithoutParent: 0.5,
+          chanceBaseWithOneParent: 2.0,
+          chanceEventWithoutParent: 0,
+          chanceEventWithOneParent: 0,
         },
       });
 
@@ -296,10 +322,10 @@ describe("SpecialCoats Service", () => {
         data: [{ specialCoatId: 42, languageCode: "de", name: "Neuer Name", color: "Blau" }],
       });
 
-      expect(txMock.specialCoatsOrigin.deleteMany).toHaveBeenCalledWith({
+      expect(txMock.specialCoatOrigin.deleteMany).toHaveBeenCalledWith({
         where: { specialCoatId: 42 },
       });
-      expect(txMock.specialCoatsOrigin.createMany).toHaveBeenCalledWith({
+      expect(txMock.specialCoatOrigin.createMany).toHaveBeenCalledWith({
         data: [{ specialCoatId: 42, originId: 3 }],
       });
 
@@ -311,8 +337,8 @@ describe("SpecialCoats Service", () => {
 
       await updateSpecialCoat(42, { ...mockUpdateData, originIds: [] });
 
-      expect(txMock.specialCoatsOrigin.deleteMany).toHaveBeenCalled();
-      expect(txMock.specialCoatsOrigin.createMany).not.toHaveBeenCalled();
+      expect(txMock.specialCoatOrigin.deleteMany).toHaveBeenCalled();
+      expect(txMock.specialCoatOrigin.createMany).not.toHaveBeenCalled();
     });
 
     test("sollte Texte und Origins nicht anfassen, wenn sie nicht im Update-Payload sind", async () => {
@@ -321,7 +347,7 @@ describe("SpecialCoats Service", () => {
       await updateSpecialCoat(42, { animalId: 10, image: "neu.png" });
 
       expect(txMock.specialCoatsText.deleteMany).not.toHaveBeenCalled();
-      expect(txMock.specialCoatsOrigin.deleteMany).not.toHaveBeenCalled();
+      expect(txMock.specialCoatOrigin.deleteMany).not.toHaveBeenCalled();
     });
 
     test("sollte einen Fehler werfen, wenn die ID ungültig ist", async () => {

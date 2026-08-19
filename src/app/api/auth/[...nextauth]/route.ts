@@ -69,6 +69,7 @@ export const authOptions = {
             email: user.email,
             image: user.image,
             roleId: 5,
+            upjersname: "",
           },
         });
         return true;

@@ -2,8 +2,6 @@
 
 import React from "react";
 import styled from "styled-components";
-import { useTranslations } from "next-intl";
-
 import { Image } from "@/types/image";
 
 interface GameBadgeProps {

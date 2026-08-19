@@ -28,6 +28,8 @@
     "club_contests": "Wedstrijden",
     "club_create_contest": "Wedstrijd aanmaken",
     "admin": "Admin",
+    "inventory": "Inventaris",
+    "inventory_specialcoats": "Kleurvarianten",
     "import-animals": "Dieren importeren"
   }
 }
