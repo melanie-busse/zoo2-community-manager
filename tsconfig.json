@@ -40,6 +40,10 @@
   "exclude": [
     "node_modules",
     "**/*.test.ts",
-    "**/*.test.tsx"
+    "**/*.test.tsx",
+    "src/components/pages/home",
+    "src/components/pages/Home",
+    "src/components/pages/contests",
+    "src/components/pages/Contests"
   ]
 }
