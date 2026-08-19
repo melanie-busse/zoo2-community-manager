@@ -2,11 +2,11 @@
 
 import { useTranslations } from "next-intl";
 import PageHeader from "@/components/page-structure/page/PageHeader";
-import ContestDesktopTable from "@/components/pages/contests/ContestOverview/ContestDesktopTable";
+import ContestDesktopTable from "@/components/pages/Contests/ContestOverview/ContestDesktopTable";
 import { Contest } from "@/types/contest";
-import ContestMobileCard from "@/components/pages/contests/ContestOverview/ContestMobileCard";
+import ContestMobileCard from "@/components/pages/Contests/ContestOverview/ContestMobileCard";
 import EmptyState from "@/components/elements/EmptyState/EmptyState";
-import * as Styles from "@/components/pages/contests/ContestOverview/ContestOverview.styles";
+import * as Styles from "@/components/pages/Contests/ContestOverview/ContestOverview.styles";
 import React from "react";
 import { useRouter } from "@/i18n/routing";
 

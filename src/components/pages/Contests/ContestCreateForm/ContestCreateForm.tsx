@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import { useTranslations } from "next-intl";
 
 import { Contest } from "@/types/contest";
-import { ContestCreateFormContent } from "@/components/pages/contests/ContestCreateForm/ContestCreateFormContent";
+import { ContestCreateFormContent } from "@/components/pages/Contests/ContestCreateForm/ContestCreateFormContent";
 import { Animal } from "@/types/animal";
 import { SpecialCoat } from "@/types/specialCoat";
 import { getStatueName } from "@/utils/ContestUtil";
