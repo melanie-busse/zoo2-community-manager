@@ -1,6 +1,6 @@
 import { getTranslations } from "next-intl/server";
 import PageWrapper from "@/components/page-structure/page/PageWrapper";
-import HomeView from "@/components/pages/Home/HomeView";
+import HomeView from "@/components/pages/home/HomeView";
 import { getCountAnimals } from "@/service/AnimalService";
 import { getHabitatCount } from "@/service/BiomeService";
 import { getCountSpecialCoats } from "@/service/SpecialCoatsService";
