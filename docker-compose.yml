@@ -11,10 +11,14 @@ services:
   phpmyadmin:
     image: phpmyadmin:latest
     restart: always
+    ports:
+      - "8087:80"
     environment:
       PMA_HOST: db
-      PMA_PORT: 8087:80
+      PMA_PORT: 3306
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+    depends_on:
+      - db
 
   app:
     build: .
