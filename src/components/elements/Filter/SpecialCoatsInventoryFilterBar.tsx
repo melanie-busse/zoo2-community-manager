@@ -43,7 +43,8 @@ export default function SpecialCoatsInventoryFilterBar({
         onSelectAction={(val) => setFilterRegionId(val === "all" ? null : Number(val))}
         allLabelKey="all_regions"
         getIdentifier={(region) => String(region.id)}
-        renderAllBadge={() => (
+        getLabel={(region) => region.regionTexts[0]?.name ?? region.identifier}
+        renderAllOption={() => (
           <RegionBadge
             image={{ path: "/images/icons/globus.png", name: "globus", alt: tCommon("filter.all_regions") }}
             size={28}

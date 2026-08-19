@@ -16,9 +16,11 @@ interface CustomBadgeFilterProps<T> {
   renderBadge: (value: T) => React.ReactNode;
   getIdentifier: (value: T) => string;
   getLabelKey?: (value: T) => string;
+  getLabel?: (value: T) => string;
   showLabel?: boolean;
   compact?: boolean;
   renderAllBadge?: () => React.ReactNode;
+  renderAllOption?: () => React.ReactNode;
 }
 
 export default function SelectBoxWithImage<T>({
@@ -29,10 +31,12 @@ export default function SelectBoxWithImage<T>({
   labelPrefixKey,
   renderBadge,
   getIdentifier,
-  getLabelKey, // 💡 NEU
+  getLabelKey,
+  getLabel,
   showLabel = true,
   compact = false,
   renderAllBadge,
+  renderAllOption,
 }: CustomBadgeFilterProps<T>) {
   const t = useTranslations("common");
   const [isOpen, setIsOpen] = useState(false);
@@ -44,6 +48,9 @@ export default function SelectBoxWithImage<T>({
   const selectedItem = items.find((item) => getIdentifier(item) === selectedValue);
 
   const renderLabelText = (item: T) => {
+    if (getLabel) {
+      return getLabel(item);
+    }
     if (getLabelKey) {
       return t("filter." + getLabelKey(item));
     }
@@ -77,7 +84,7 @@ export default function SelectBoxWithImage<T>({
               setIsOpen(false);
             }}
           >
-            {renderAllBadge ? renderAllBadge() : (showLabel ? t("filter." + allLabelKey) : "–")}
+            {(renderAllOption ?? renderAllBadge)?.() ?? (showLabel ? t("filter." + allLabelKey) : "–")}
           </Styles.Option>
 
           {items.map((item) => {

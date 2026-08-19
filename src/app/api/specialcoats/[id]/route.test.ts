@@ -13,7 +13,7 @@ vi.mock("@/lib/prisma", () => ({
   prisma: {
     $transaction: vi.fn(),
     specialCoatsText: { deleteMany: vi.fn() },
-    specialCoatsOrigin: { deleteMany: vi.fn() },
+    specialCoatOrigin: { deleteMany: vi.fn() },
     specialCoat: { delete: vi.fn() },
   },
 }));

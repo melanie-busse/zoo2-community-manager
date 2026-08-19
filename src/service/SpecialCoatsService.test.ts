@@ -18,7 +18,7 @@ const txMock = {
     deleteMany: vi.fn(),
     createMany: vi.fn(),
   },
-  specialCoatsOrigin: {
+  specialCoatOrigin: {
     deleteMany: vi.fn(),
     createMany: vi.fn(),
   },
@@ -32,7 +32,7 @@ vi.mock("@/lib/prisma", () => ({
       findUnique: vi.fn(),
       create: vi.fn(),
     },
-    specialCoatsOrigin: {
+    specialCoatOrigin: {
       createMany: vi.fn(),
     },
     $transaction: vi.fn((callback) => callback(txMock)),
@@ -248,7 +248,7 @@ describe("SpecialCoats Service", () => {
         },
       });
 
-      expect(prisma.specialCoatsOrigin.createMany).toHaveBeenCalledWith({
+      expect(prisma.specialCoatOrigin.createMany).toHaveBeenCalledWith({
         data: [
           { specialCoatId: 99, originId: 1 },
           { specialCoatId: 99, originId: 2 },
@@ -264,7 +264,7 @@ describe("SpecialCoats Service", () => {
 
       await createSpecialCoat({ ...mockInput, originIds: [] });
 
-      expect(prisma.specialCoatsOrigin.createMany).not.toHaveBeenCalled();
+      expect(prisma.specialCoatOrigin.createMany).not.toHaveBeenCalled();
     });
   });
 
@@ -322,10 +322,10 @@ describe("SpecialCoats Service", () => {
         data: [{ specialCoatId: 42, languageCode: "de", name: "Neuer Name", color: "Blau" }],
       });
 
-      expect(txMock.specialCoatsOrigin.deleteMany).toHaveBeenCalledWith({
+      expect(txMock.specialCoatOrigin.deleteMany).toHaveBeenCalledWith({
         where: { specialCoatId: 42 },
       });
-      expect(txMock.specialCoatsOrigin.createMany).toHaveBeenCalledWith({
+      expect(txMock.specialCoatOrigin.createMany).toHaveBeenCalledWith({
         data: [{ specialCoatId: 42, originId: 3 }],
       });
 
@@ -337,8 +337,8 @@ describe("SpecialCoats Service", () => {
 
       await updateSpecialCoat(42, { ...mockUpdateData, originIds: [] });
 
-      expect(txMock.specialCoatsOrigin.deleteMany).toHaveBeenCalled();
-      expect(txMock.specialCoatsOrigin.createMany).not.toHaveBeenCalled();
+      expect(txMock.specialCoatOrigin.deleteMany).toHaveBeenCalled();
+      expect(txMock.specialCoatOrigin.createMany).not.toHaveBeenCalled();
     });
 
     test("sollte Texte und Origins nicht anfassen, wenn sie nicht im Update-Payload sind", async () => {
@@ -347,7 +347,7 @@ describe("SpecialCoats Service", () => {
       await updateSpecialCoat(42, { animalId: 10, image: "neu.png" });
 
       expect(txMock.specialCoatsText.deleteMany).not.toHaveBeenCalled();
-      expect(txMock.specialCoatsOrigin.deleteMany).not.toHaveBeenCalled();
+      expect(txMock.specialCoatOrigin.deleteMany).not.toHaveBeenCalled();
     });
 
     test("sollte einen Fehler werfen, wenn die ID ungültig ist", async () => {
