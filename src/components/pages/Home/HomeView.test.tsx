@@ -2,7 +2,7 @@ import React from "react";
 import { describe, test, expect, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 
-import HomeView from "@/components/pages/home/HomeView";
+import HomeView from "@/components/pages/Home/HomeView";
 
 vi.mock("@/components/page-structure/Elements/StatsBar", () => ({
   default: ({ data }: { data: { number: number; label: string }[] }) => (
@@ -17,7 +17,7 @@ vi.mock("@/components/page-structure/Elements/StatsBar", () => ({
   ),
 }));
 
-vi.mock("@/components/pages/home/HomeView.styles", () => ({
+vi.mock("@/components/pages/Home/HomeView.styles", () => ({
   FullPageContainer: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
   HeroSection: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
   ContentWrapper: ({ children }: { children: React.ReactNode }) => <div>{children}</div>,
