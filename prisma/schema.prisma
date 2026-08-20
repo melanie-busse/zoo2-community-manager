@@ -218,7 +218,7 @@ model ContestDonation {
 model ContestStatue {
   id        Int     @id @default(autoincrement())
   contestId Int
-  animalId  Int     @default(0)
+  animalId  Int
   animal    Animal  @relation(fields: [animalId], references: [id], onDelete: Cascade, map: "contestStatue_animalId_fkey")
   contest   Contest @relation(fields: [contestId], references: [id], onDelete: Cascade, map: "contestStatue_contestId_fkey")
 
