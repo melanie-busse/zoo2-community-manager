@@ -37,13 +37,11 @@ export default function OriginSection({
   return (
     <InfoAccordion
       title={tAnimals("originSection.originTitle")}
-      icon="/images/origins/shop.webp"
+      icon="/images/origins/shop.png"
       defaultOpen={false}
     >
       <SectionColumn>
-        <p className="description">
-          {tAnimals("originSection.originDescription")}
-        </p>
+        <p className="description">{tAnimals("originSection.originDescription")}</p>
 
         <OriginTransfer
           allOrigins={originsData}
