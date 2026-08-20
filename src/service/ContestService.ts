@@ -78,9 +78,12 @@ export async function createContest(data: any) {
       active: data.active ? 1 : 0,
 
       conteststatue: {
-        create: data.statuenIds.map((id: number) => ({
-          animalId: id,
-        })),
+        create: data.statuenIds.map((id: number) => {
+          console.log("Statuen/Animal ID:", id);
+          return {
+            animalId: id,
+          };
+        }),
       },
 
       contestspecialcoat: {
