@@ -20,7 +20,6 @@ export function getBiomeImage(biome: Biome | null | undefined): Image {
 }
 
 export function getShelterImage(biome: Biome | null | undefined): Image {
-  // Robustheits-Check für den Initial-Load
   if (!biome) {
     return {
       name: "placeholder.png",
@@ -45,4 +44,27 @@ export function getBiomeName(biome: Biome | null | undefined, fallback: string):
 export function getBiomeDescription(biome: Biome | null | undefined, fallback: string): string {
   if (!biome) return fallback;
   return biome.biomestext?.[0]?.biomeDescription || fallback;
+}
+
+export function extractUniqueShelterLevels<T extends { shelterLevel?: number | null }>(
+  items: T[],
+): T[] {
+  return Array.from(
+    new Map(
+      items
+        .filter((item) => item.shelterLevel !== null && item.shelterLevel !== undefined)
+        .map((item) => [item.shelterLevel, item]),
+    ).values(),
+  ).sort((a, b) => (a.shelterLevel ?? 0) - (b.shelterLevel ?? 0));
+}
+
+export function extractUniqueBiomes<T extends { biome?: Biome | null }>(items: T[]): Biome[] {
+  return Array.from(
+    new Map(
+      items
+        .map((item) => item.biome)
+        .filter((b): b is Biome => b !== null && b !== undefined)
+        .map((b) => [b.id, b]),
+    ).values(),
+  );
 }
