@@ -1,5 +1,12 @@
 import { describe, test, expect } from "vitest";
-import { getBiomeImage, getShelterImage, getBiomeName, getBiomeDescription } from "./BiomeUtil";
+import {
+  getBiomeImage,
+  getShelterImage,
+  getBiomeName,
+  getBiomeDescription,
+  extractUniqueBiomes,
+  extractUniqueShelterLevels,
+} from "./BiomeUtil";
 
 describe("Biome Utilities", () => {
   const mockBiome = {
@@ -76,6 +83,69 @@ describe("Biome Utilities", () => {
         path: "/images/biomes/placeholder/shelter.png",
         alt: "Stall",
       });
+    });
+  });
+
+  describe("extractUniqueBiomes", () => {
+    test("gibt leeres Array zurück wenn keine Items vorhanden", () => {
+      expect(extractUniqueBiomes([])).toHaveLength(0);
+    });
+
+    test("filtert Items ohne Biome heraus", () => {
+      expect(extractUniqueBiomes([{ biome: null }, { biome: undefined }, {}])).toHaveLength(0);
+    });
+
+    test("dedupliziert nach Biome-ID", () => {
+      const items = [{ biome: mockBiome }, { biome: mockBiome }, { biome: mockEmptyBiome }];
+      const result = extractUniqueBiomes(items);
+      expect(result).toHaveLength(2);
+      expect(result.map((b) => b.id)).toEqual(expect.arrayContaining([1, 2]));
+    });
+
+    test("gibt alle Biome zurück wenn alle eindeutig sind", () => {
+      const anotherBiome = { ...mockBiome, id: 3 };
+      const items = [{ biome: mockBiome }, { biome: mockEmptyBiome }, { biome: anotherBiome }];
+      expect(extractUniqueBiomes(items)).toHaveLength(3);
+    });
+
+    test("verarbeitet gemischte Items mit und ohne Biome", () => {
+      const items = [{ biome: mockBiome }, { biome: null }, { biome: mockEmptyBiome }, {}];
+      expect(extractUniqueBiomes(items)).toHaveLength(2);
+    });
+  });
+
+  describe("extractUniqueShelterLevels", () => {
+    test("gibt leeres Array zurück wenn keine Items vorhanden", () => {
+      expect(extractUniqueShelterLevels([])).toHaveLength(0);
+    });
+
+    test("filtert Items ohne shelterLevel heraus", () => {
+      expect(
+        extractUniqueShelterLevels([{ shelterLevel: null }, { shelterLevel: undefined }]),
+      ).toHaveLength(0);
+    });
+
+    test("dedupliziert nach shelterLevel", () => {
+      const items = [{ shelterLevel: 5 }, { shelterLevel: 5 }, { shelterLevel: 10 }];
+      expect(extractUniqueShelterLevels(items)).toHaveLength(2);
+    });
+
+    test("sortiert aufsteigend nach shelterLevel", () => {
+      const items = [{ shelterLevel: 10 }, { shelterLevel: 3 }, { shelterLevel: 7 }, { shelterLevel: 1 }];
+      const result = extractUniqueShelterLevels(items);
+      expect(result.map((i) => i.shelterLevel)).toEqual([1, 3, 7, 10]);
+    });
+
+    test("verarbeitet gemischte Items mit und ohne shelterLevel", () => {
+      const items = [
+        { shelterLevel: 5 },
+        { shelterLevel: null },
+        { shelterLevel: 10 },
+        { shelterLevel: undefined },
+      ];
+      const result = extractUniqueShelterLevels(items);
+      expect(result).toHaveLength(2);
+      expect(result.map((i) => i.shelterLevel)).toEqual([5, 10]);
     });
   });
 

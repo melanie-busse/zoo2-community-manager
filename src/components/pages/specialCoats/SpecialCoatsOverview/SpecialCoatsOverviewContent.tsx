@@ -7,7 +7,6 @@ import EmptyState from "@/components/elements/EmptyState/EmptyState";
 import PageHeader from "@/components/page-structure/page/PageHeader";
 import ResultsInfo from "@/components/elements/Filter/ResultInfo";
 import { useSpecialCoatStore } from "@/store/useSpecialCoatStore";
-import SpecialCoatFilterBar from "@/components/elements/Filter/SpecialCoatFilterBar";
 import SpecialCodesDesktopTable from "@/components/pages/specialCoats/SpecialCoatsOverview/SpecialCoatsDesktopTable";
 import SpecialCoatsMobileCard from "@/components/pages/specialCoats/SpecialCoatsOverview/SpecialCoatsMobileCard";
 import MobileView from "@/components/page-structure/MobileView";
