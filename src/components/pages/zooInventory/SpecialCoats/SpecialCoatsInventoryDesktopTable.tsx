@@ -219,7 +219,11 @@ export default function SpecialCoatsInventoryDesktopTable({
                     compact={true}
                     renderAllBadge={() => (
                       <RegionBadge
-                        image={{ path: "/images/icons/globus.png", name: "globus", alt: "Keine Region" }}
+                        image={{
+                          path: "/images/icons/globus.png",
+                          name: "globus",
+                          alt: "Keine Region",
+                        }}
                         size={40}
                         showTooltip={true}
                         tooltipLabel="Keine Region"
@@ -229,7 +233,7 @@ export default function SpecialCoatsInventoryDesktopTable({
                     renderBadge={(region) => (
                       <RegionBadge
                         image={{
-                          path: `/images/regions/${region.identifier}/icon.jpg`,
+                          path: `/images/regions/${region.identifier.charAt(0).toLowerCase() + region.identifier.slice(1)}/icon.jpg`,
                           name: region.regionTexts[0]?.name ?? region.identifier,
                           alt: region.regionTexts[0]?.name ?? region.identifier,
                         }}
