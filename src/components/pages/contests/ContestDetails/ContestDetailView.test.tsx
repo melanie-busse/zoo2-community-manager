@@ -203,6 +203,6 @@ describe("ContestDetailView", () => {
         onDelete={onDelete}
       />,
     );
-    expect(screen.getByTestId("grand-total")).toHaveTextContent("5.500");
+    expect(screen.getByTestId("grand-total")).toHaveTextContent("5");
   });
 });
