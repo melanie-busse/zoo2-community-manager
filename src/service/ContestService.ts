@@ -79,7 +79,7 @@ export async function createContest(data: any) {
   });
 
   const foundIds = foundAnimals.map((a) => a.id);
-  const missingIds = requestedIds.filter((id) => !foundIds.includes(id));
+  const missingIds = requestedIds.filter((id: number) => !foundIds.includes(id));
 
   console.log("Gesendete IDs:", requestedIds);
   console.log("In Prod-DB gefunden:", foundIds);
