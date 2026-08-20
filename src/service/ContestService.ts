@@ -87,9 +87,12 @@ export async function createContest(data: any) {
       },
 
       contestspecialcoat: {
-        create: (data.specialCoatIds ?? []).map((id: number) => ({
-          specialCoatId: id,
-        })),
+        create: (data.specialCoatIds ?? []).map((id: number) => {
+          console.log("Specialcoat:", id);
+          return {
+            specialCoatId: id,
+          };
+        }),
       },
     },
   });
