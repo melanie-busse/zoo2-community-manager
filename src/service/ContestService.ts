@@ -71,6 +71,20 @@ export async function getAllContests(locale: string = "de") {
 }
 
 export async function createContest(data: any) {
+  const requestedIds = data.statuenIds.map(Number);
+
+  const foundAnimals = await prisma.animal.findMany({
+    where: { id: { in: requestedIds } },
+    select: { id: true },
+  });
+
+  const foundIds = foundAnimals.map((a) => a.id);
+  const missingIds = requestedIds.filter((id) => !foundIds.includes(id));
+
+  console.log("Gesendete IDs:", requestedIds);
+  console.log("In Prod-DB gefunden:", foundIds);
+  console.log("In Prod-DB FEHLEND:", missingIds);
+
   return prisma.contest.create({
     data: {
       startDate: new Date(data.startDate),
