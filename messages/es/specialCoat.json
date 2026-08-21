@@ -29,6 +29,7 @@
   "emptyState": {
     "title": "¡Vaya, no hay animales aquí!"
   },
+  "contest_inventory_title": "Mis variantes de color del concurso",
   "inventory": {
     "title": "Mi inventario del zoo",
     "count": "Cantidad",

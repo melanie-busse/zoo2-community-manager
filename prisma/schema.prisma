@@ -341,6 +341,17 @@ model ZooInventoryAnimal {
   @@map("zooinventoryanimal")
 }
 
+model ZooInventoryContestSpecialCoat {
+  id            Int  @id @default(autoincrement())
+  specialCoatId Int  @map("specialcoatid")
+  userid        Int
+  puzzlePieces  Int? @map("puzzlepieces")
+  regionId      Int?
+
+  @@unique([userid, specialCoatId], map: "userid_specialCoatId_contest")
+  @@map("zooinventorycontestspecialcoat")
+}
+
 model ZooInventoryStatue {
   id           Int  @id @default(autoincrement())
   animalId     Int  @map("animalid")

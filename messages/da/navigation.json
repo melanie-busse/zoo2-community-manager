@@ -32,6 +32,7 @@
     "inventory_specialcoats": "Farvevarianter",
     "inventory_animals": "Dyr",
     "inventory_statues": "Statuer",
+    "inventory_contest_special_coats": "Konkurrence-farvevarianter",
     "import-animals": "Importér dyr"
   }
 }

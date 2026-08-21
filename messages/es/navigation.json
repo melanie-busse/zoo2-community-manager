@@ -32,6 +32,7 @@
     "inventory_specialcoats": "Variantes de color",
     "inventory_animals": "Animales",
     "inventory_statues": "Estatuas",
+    "inventory_contest_special_coats": "Variantes de color del concurso",
     "import-animals": "Importar animales"
   }
 }
