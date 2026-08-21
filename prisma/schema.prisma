@@ -327,6 +327,20 @@ model ZooInventorySpecialCoat {
   @@map("zooinventoryspecialcoat")
 }
 
+model ZooInventoryAnimal {
+  id            Int      @id @default(autoincrement())
+  animalId      Int      @map("animalid")
+  userid        Int
+  count         Int?
+  level10       Boolean? @map("level10")
+  level20       Boolean? @map("level20")
+  glitterAnimal Boolean? @map("glitteranimal")
+  regionId      Int?
+
+  @@unique([userid, animalId], map: "userid_animalId")
+  @@map("zooinventoryanimal")
+}
+
 model Region {
   id          Int          @id @default(autoincrement())
   price       Int

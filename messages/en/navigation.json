@@ -30,6 +30,7 @@
     "admin": "Admin",
     "inventory": "Inventory",
     "inventory_specialcoats": "Special Coats",
+    "inventory_animals": "Animals",
     "import-animals": "Import animals"
   }
 }

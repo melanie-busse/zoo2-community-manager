@@ -30,6 +30,7 @@
     "admin": "Admin",
     "inventory": "Inventaris",
     "inventory_specialcoats": "Kleurvarianten",
+    "inventory_animals": "Dieren",
     "import-animals": "Dieren importeren"
   }
 }

@@ -104,6 +104,95 @@ describe("Animal Utilities", () => {
       });
       expect(result).toHaveLength(2);
     });
+
+    test("filtert nach filterRegionId — gibt nur Tiere mit passender inventoryRegionId zurück", () => {
+      const animals = [
+        { ...mockAnimals[0], inventoryRegionId: 3 },
+        { ...mockAnimals[1], inventoryRegionId: 7 },
+      ];
+      const result = filterAnimals(animals as any, {
+        searchTerm: "",
+        selectedBiome: null,
+        selectedShelterLevel: null,
+        filterRegionId: 3,
+      });
+      expect(result).toHaveLength(1);
+      expect(result[0].id).toBe(1);
+    });
+
+    test("zeigt alle Tiere, wenn filterRegionId null ist", () => {
+      const animals = [
+        { ...mockAnimals[0], inventoryRegionId: 3 },
+        { ...mockAnimals[1], inventoryRegionId: 7 },
+      ];
+      const result = filterAnimals(animals as any, {
+        searchTerm: "",
+        selectedBiome: null,
+        selectedShelterLevel: null,
+        filterRegionId: null,
+      });
+      expect(result).toHaveLength(2);
+    });
+
+    test("filtert nach filterLevel10 — gibt nur Tiere mit inventoryLevel10=true zurück", () => {
+      const animals = [
+        { ...mockAnimals[0], inventoryLevel10: true },
+        { ...mockAnimals[1], inventoryLevel10: false },
+      ];
+      const result = filterAnimals(animals as any, {
+        searchTerm: "",
+        selectedBiome: null,
+        selectedShelterLevel: null,
+        filterLevel10: true,
+      });
+      expect(result).toHaveLength(1);
+      expect(result[0].id).toBe(1);
+    });
+
+    test("filtert nach filterLevel20 — gibt nur Tiere mit inventoryLevel20=true zurück", () => {
+      const animals = [
+        { ...mockAnimals[0], inventoryLevel20: false },
+        { ...mockAnimals[1], inventoryLevel20: true },
+      ];
+      const result = filterAnimals(animals as any, {
+        searchTerm: "",
+        selectedBiome: null,
+        selectedShelterLevel: null,
+        filterLevel20: true,
+      });
+      expect(result).toHaveLength(1);
+      expect(result[0].id).toBe(2);
+    });
+
+    test("filtert nach filterGlitter — gibt nur Tiere mit inventoryGlitter=true zurück", () => {
+      const animals = [
+        { ...mockAnimals[0], inventoryGlitter: true },
+        { ...mockAnimals[1], inventoryGlitter: true },
+      ];
+      const result = filterAnimals(animals as any, {
+        searchTerm: "",
+        selectedBiome: null,
+        selectedShelterLevel: null,
+        filterGlitter: true,
+      });
+      expect(result).toHaveLength(2);
+    });
+
+    test("kombiniert mehrere Inventory-Filter korrekt", () => {
+      const animals = [
+        { ...mockAnimals[0], inventoryLevel10: true, inventoryRegionId: 3 },
+        { ...mockAnimals[1], inventoryLevel10: true, inventoryRegionId: 7 },
+      ];
+      const result = filterAnimals(animals as any, {
+        searchTerm: "",
+        selectedBiome: null,
+        selectedShelterLevel: null,
+        filterLevel10: true,
+        filterRegionId: 3,
+      });
+      expect(result).toHaveLength(1);
+      expect(result[0].id).toBe(1);
+    });
   });
 
   describe("sortAnimals", () => {

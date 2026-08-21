@@ -64,5 +64,13 @@
   },
   "emptyState": {
     "title": "Oje, kein Tier da!"
+  },
+  "inventory": {
+    "title": "Mein Tierinventar",
+    "count": "Anzahl",
+    "level10": "Level 10",
+    "level20": "Level 20",
+    "glitter_animal": "Glitzertier",
+    "region": "Region"
   }
 }

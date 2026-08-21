@@ -24,6 +24,10 @@ interface AnimalState {
   selectedBiome: string | null;
   selectedShelterLevel: string | null;
   hasStatueFilter: boolean;
+  filterRegionId: number | null;
+  filterLevel10: boolean;
+  filterLevel20: boolean;
+  filterGlitter: boolean;
   sortBy: string;
   sortDirection: "asc" | "desc";
   currentPage: number;
@@ -43,6 +47,10 @@ interface AnimalState {
   setSelectedBiome: (biome: string | null) => void;
   setSelectedShelterLevel: (level: string | null) => void;
   setHasStatueFilter: (value: boolean) => void;
+  setFilterRegionId: (id: number | null) => void;
+  setFilterLevel10: (value: boolean) => void;
+  setFilterLevel20: (value: boolean) => void;
+  setFilterGlitter: (value: boolean) => void;
   resetFilters: () => void;
 
   // 6. Aktionen für Edit & Delete
@@ -58,6 +66,10 @@ export const useAnimalStore = create<AnimalState>((set) => {
       selectedBiome: state.selectedBiome,
       selectedShelterLevel: state.selectedShelterLevel,
       hasStatueFilter: state.hasStatueFilter,
+      filterRegionId: state.filterRegionId,
+      filterLevel10: state.filterLevel10,
+      filterLevel20: state.filterLevel20,
+      filterGlitter: state.filterGlitter,
     });
 
     const sorted = sortAnimals(filtered, {
@@ -81,6 +93,10 @@ export const useAnimalStore = create<AnimalState>((set) => {
     selectedBiome: null,
     selectedShelterLevel: null,
     hasStatueFilter: false,
+    filterRegionId: null,
+    filterLevel10: false,
+    filterLevel20: false,
+    filterGlitter: false,
     sortBy: "name",
     sortDirection: "asc",
     currentPage: 1,
@@ -218,6 +234,42 @@ export const useAnimalStore = create<AnimalState>((set) => {
         };
       }),
 
+    setFilterRegionId: (id) =>
+      set((state) => {
+        const nextState = { ...state, filterRegionId: id, currentPage: 1 };
+        return { filterRegionId: id, currentPage: 1, ...runPipeline(state.allAnimals, nextState) };
+      }),
+
+    setFilterLevel10: (value) =>
+      set((state) => {
+        const nextState = { ...state, filterLevel10: value, currentPage: 1 };
+        return {
+          filterLevel10: value,
+          currentPage: 1,
+          ...runPipeline(state.allAnimals, nextState),
+        };
+      }),
+
+    setFilterLevel20: (value) =>
+      set((state) => {
+        const nextState = { ...state, filterLevel20: value, currentPage: 1 };
+        return {
+          filterLevel20: value,
+          currentPage: 1,
+          ...runPipeline(state.allAnimals, nextState),
+        };
+      }),
+
+    setFilterGlitter: (value) =>
+      set((state) => {
+        const nextState = { ...state, filterGlitter: value, currentPage: 1 };
+        return {
+          filterGlitter: value,
+          currentPage: 1,
+          ...runPipeline(state.allAnimals, nextState),
+        };
+      }),
+
     resetFilters: () =>
       set((state) => {
         const clearedState = {
@@ -226,6 +278,10 @@ export const useAnimalStore = create<AnimalState>((set) => {
           selectedBiome: null,
           selectedShelterLevel: null,
           hasStatueFilter: false,
+          filterRegionId: null,
+          filterLevel10: false,
+          filterLevel20: false,
+          filterGlitter: false,
           sortBy: "name",
           sortDirection: "asc" as const,
           currentPage: 1,
