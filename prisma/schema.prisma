@@ -341,6 +341,17 @@ model ZooInventoryAnimal {
   @@map("zooinventoryanimal")
 }
 
+model ZooInventoryStatue {
+  id           Int  @id @default(autoincrement())
+  animalId     Int  @map("animalid")
+  userid       Int
+  puzzlePieces Int? @map("puzzlepieces")
+  regionId     Int?
+
+  @@unique([userid, animalId], map: "userid_animalId_statue")
+  @@map("zooinventorystatue")
+}
+
 model Region {
   id          Int          @id @default(autoincrement())
   price       Int

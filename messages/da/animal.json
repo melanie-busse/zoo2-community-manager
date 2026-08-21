@@ -72,5 +72,9 @@
     "level20": "Level 20",
     "glitter_animal": "Glitterdyr",
     "region": "Region"
+  },
+  "statue": {
+    "inventory_title": "Mit statueinventar",
+    "puzzle_pieces": "Puslespilsbrikker"
   }
 }
