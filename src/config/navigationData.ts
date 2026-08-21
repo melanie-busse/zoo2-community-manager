@@ -72,6 +72,11 @@ export const navConfig: NavItem[] = [
         href: "/zooInventory/animals",
         requiresAuth: true,
       },
+      {
+        labelKey: "inventory_statues",
+        href: "/zooInventory/statues",
+        requiresAuth: true,
+      },
     ],
   },
 

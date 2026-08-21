@@ -72,5 +72,9 @@
     "level20": "Level 20",
     "glitter_animal": "Glitterdier",
     "region": "Regio"
+  },
+  "statue": {
+    "inventory_title": "Mijn standbeeldeninventaris",
+    "puzzle_pieces": "Puzzelstukjes"
   }
 }

@@ -72,5 +72,9 @@
     "level20": "Niveau 20",
     "glitter_animal": "Animal pailleté",
     "region": "Région"
+  },
+  "statue": {
+    "inventory_title": "Mon inventaire de statues",
+    "puzzle_pieces": "Pièces de puzzle"
   }
 }

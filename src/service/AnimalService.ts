@@ -30,6 +30,30 @@ export async function getAllAnimals(locale = "de") {
   }
 }
 
+export async function getAllContestAnimals(locale = "de") {
+  try {
+    return await prisma.animal.findMany({
+      where: { isContestAnimal: true },
+      include: {
+        animaltext: {
+          where: { languageCode: locale },
+        },
+        biome: {
+          include: {
+            biomestext: {
+              where: { languageCode: locale },
+            },
+          },
+        },
+      },
+      orderBy: { id: "asc" },
+    });
+  } catch (error) {
+    console.error(`[AnimalService] Error in getAllContestAnimals (${locale}):`, error);
+    return [];
+  }
+}
+
 export async function getAnimalById(id: number | string, locale: string | null = null): Promise<any> {
   const numericId = typeof id === "string" ? parseInt(id, 10) : id;
 
