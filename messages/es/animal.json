@@ -64,5 +64,13 @@
   },
   "emptyState": {
     "title": "¡Vaya, no hay animales aquí!"
+  },
+  "inventory": {
+    "title": "Mi inventario de animales",
+    "count": "Cantidad",
+    "level10": "Nivel 10",
+    "level20": "Nivel 20",
+    "glitter_animal": "Animal brillante",
+    "region": "Región"
   }
 }

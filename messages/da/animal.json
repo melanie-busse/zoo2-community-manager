@@ -64,5 +64,13 @@
   },
   "emptyState": {
     "title": "Åh nej, ingen dyr her!"
+  },
+  "inventory": {
+    "title": "Mit dyrelager",
+    "count": "Antal",
+    "level10": "Level 10",
+    "level20": "Level 20",
+    "glitter_animal": "Glitterdyr",
+    "region": "Region"
   }
 }

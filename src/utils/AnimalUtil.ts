@@ -8,6 +8,10 @@ interface FilterOptions {
   selectedBiome: string | null;
   selectedShelterLevel: string | null;
   hasStatueFilter?: boolean;
+  filterRegionId?: number | null;
+  filterLevel10?: boolean;
+  filterLevel20?: boolean;
+  filterGlitter?: boolean;
 }
 
 interface SortOptions {
@@ -17,7 +21,16 @@ interface SortOptions {
 
 export function filterAnimals(
   animals: Animal[] | undefined,
-  { searchTerm, selectedBiome, selectedShelterLevel, hasStatueFilter = false }: FilterOptions,
+  {
+    searchTerm,
+    selectedBiome,
+    selectedShelterLevel,
+    hasStatueFilter = false,
+    filterRegionId = null,
+    filterLevel10 = false,
+    filterLevel20 = false,
+    filterGlitter = false,
+  }: FilterOptions,
 ): Animal[] {
   if (!animals) return [];
 
@@ -38,6 +51,14 @@ export function filterAnimals(
     }
 
     if (hasStatueFilter && !animal.statueImage) {
+      return false;
+    }
+
+    if (filterLevel10 && !(animal as any).inventoryLevel10) return false;
+    if (filterLevel20 && !(animal as any).inventoryLevel20) return false;
+    if (filterGlitter && !(animal as any).inventoryGlitter) return false;
+
+    if (filterRegionId !== null && (animal as any).inventoryRegionId !== filterRegionId) {
       return false;
     }
 

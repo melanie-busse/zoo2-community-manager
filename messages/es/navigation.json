@@ -30,6 +30,7 @@
     "admin": "Admin",
     "inventory": "Inventario",
     "inventory_specialcoats": "Variantes de color",
+    "inventory_animals": "Animales",
     "import-animals": "Importar animales"
   }
 }

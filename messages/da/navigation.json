@@ -30,6 +30,7 @@
     "admin": "Admin",
     "inventory": "Inventar",
     "inventory_specialcoats": "Farvevarianter",
+    "inventory_animals": "Dyr",
     "import-animals": "Importér dyr"
   }
 }
