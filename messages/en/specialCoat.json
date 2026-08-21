@@ -29,6 +29,7 @@
   "emptyState": {
     "title": "Oh no, no special coat here!"
   },
+  "contest_inventory_title": "My Contest Special Coats",
   "inventory": {
     "title": "My Zoo Inventory",
     "count": "Count",

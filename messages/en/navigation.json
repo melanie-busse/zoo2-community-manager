@@ -32,6 +32,7 @@
     "inventory_specialcoats": "Special Coats",
     "inventory_animals": "Animals",
     "inventory_statues": "Statues",
+    "inventory_contest_special_coats": "Contest Special Coats",
     "import-animals": "Import animals"
   }
 }

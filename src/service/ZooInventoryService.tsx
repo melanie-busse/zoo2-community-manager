@@ -108,6 +108,53 @@ export async function updateZooInventoryAnimal(
   });
 }
 
+export async function getZooInventoryContestSpecialCoatsForUser(userId: number | string) {
+  const numericUserId = typeof userId === "string" ? parseInt(userId, 10) : userId;
+
+  if (isNaN(numericUserId)) {
+    return [];
+  }
+
+  return prisma.zooInventoryContestSpecialCoat.findMany({
+    where: { userid: numericUserId },
+  });
+}
+
+export async function updateZooInventoryContestSpecialCoat(
+  userId: number | string,
+  specialCoatId: number | string,
+  field: "puzzlePieces" | "regionId",
+  value: number | null,
+) {
+  const numericUserId = typeof userId === "string" ? parseInt(userId, 10) : userId;
+  const numericCoatId =
+    typeof specialCoatId === "string" ? parseInt(specialCoatId, 10) : specialCoatId;
+
+  if (isNaN(numericUserId) || isNaN(numericCoatId)) {
+    throw new Error(
+      `[ZooInventoryService] updateZooInventoryContestSpecialCoat aborted: Invalid ID provided.`,
+    );
+  }
+
+  const parsedValue = value === null ? null : Number(value);
+
+  return prisma.zooInventoryContestSpecialCoat.upsert({
+    where: {
+      userid_specialCoatId: {
+        userid: numericUserId,
+        specialCoatId: numericCoatId,
+      },
+    },
+    update: { [field]: parsedValue },
+    create: {
+      userid: numericUserId,
+      specialCoatId: numericCoatId,
+      puzzlePieces: field === "puzzlePieces" ? parsedValue : null,
+      regionId: field === "regionId" ? parsedValue : null,
+    },
+  });
+}
+
 export async function getZooInventoryStatuesForUser(userId: number | string) {
   const numericUserId = typeof userId === "string" ? parseInt(userId, 10) : userId;
 

@@ -12,6 +12,13 @@ export async function getContestSpecialCoats(locale: string = "de") {
           animaltext: {
             where: { languageCode: locale },
           },
+          biome: {
+            include: {
+              biomestext: {
+                where: { languageCode: locale },
+              },
+            },
+          },
         },
       },
     },
