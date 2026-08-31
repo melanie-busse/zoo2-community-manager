@@ -95,6 +95,7 @@ export default function SelectBoxWithImage<T>({
     isOpen && dropdownPos
       ? createPortal(
           <Styles.OptionsListPortal
+            onMouseDown={(e) => e.stopPropagation()}
             style={{
               position: "fixed",
               left: dropdownPos.left,
