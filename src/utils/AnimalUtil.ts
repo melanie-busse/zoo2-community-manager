@@ -50,7 +50,7 @@ export function filterAnimals(
       return false;
     }
 
-    if (hasStatueFilter && !animal.statueImage) {
+    if (hasStatueFilter && !animal.isContestAnimal) {
       return false;
     }
 

@@ -76,9 +76,9 @@ export default function StatueInventoryDesktopTable({
               <LinkedRow key={statue.id} path={`/animals/${statue.id}`}>
                 <td>
                   <Styles.TableThumbnail>
-                    {statue.statueImage ? (
+                    {statue.identifier && statue.biome?.identifier ? (
                       <Image
-                        src={`/images/statues/${statue.statueImage}`}
+                        src={`/images/animals/${statue.biome.identifier}/${statue.identifier}/statue/image.webp`}
                         alt={statue.animaltext?.[0]?.animalName ?? ""}
                         width={48}
                         height={48}

@@ -125,7 +125,7 @@ function _getNestedValue(coat: SpecialCoat, sortBy: string): string | number {
 export function getSpecialCoatImage(specialCoat: SpecialCoat): Image {
   const biome = specialCoat.animal?.biome?.identifier;
   const animalId = specialCoat.animal?.identifier;
-  const coatFolder = specialCoat.identifier ? specialCoat.identifier.replace(`${animalId}_`, "") : "";
+  const coatFolder = specialCoat.identifier && animalId ? specialCoat.identifier.slice(animalId.length + 1) : "";
   const path =
     biome && animalId && coatFolder
       ? `/images/animals/${biome}/${animalId}/specialcoats/${coatFolder}/image.jpg`

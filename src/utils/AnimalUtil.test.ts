@@ -79,8 +79,8 @@ describe("Animal Utilities", () => {
 
     test("filtert auf Tiere mit Statue, wenn hasStatueFilter aktiv", () => {
       const animalsWithStatue = [
-        { ...mockAnimals[0], statueImage: "statue-erdmaennchen.webp" },
-        { ...mockAnimals[1], statueImage: null },
+        { ...mockAnimals[0], isContestAnimal: true },
+        { ...mockAnimals[1], isContestAnimal: false },
       ];
       const result = filterAnimals(animalsWithStatue as any, {
         searchTerm: "",
@@ -94,8 +94,8 @@ describe("Animal Utilities", () => {
 
     test("zeigt alle Tiere, wenn hasStatueFilter nicht gesetzt", () => {
       const animalsWithStatue = [
-        { ...mockAnimals[0], statueImage: "statue-erdmaennchen.webp" },
-        { ...mockAnimals[1], statueImage: null },
+        { ...mockAnimals[0], isContestAnimal: true },
+        { ...mockAnimals[1], isContestAnimal: false },
       ];
       const result = filterAnimals(animalsWithStatue as any, {
         searchTerm: "",

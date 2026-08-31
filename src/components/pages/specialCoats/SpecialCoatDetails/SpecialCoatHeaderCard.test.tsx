@@ -42,9 +42,9 @@ vi.mock("@/components/ui/Formatted/FormattedDate", () => ({
 
 const mockSpecialCoat = {
   id: 7,
-  identifier: "grassland_goat_albino",
+  identifier: "domestic_goat_albino",
   releaseDate: "2026-06-01",
-  animal: { identifier: "grassland_goat", biome: { identifier: "grassland" } },
+  animal: { identifier: "domestic_goat", biome: { identifier: "grassland" } },
   specialcoatstext: [{ languageCode: "de", name: "Albino", color: "Weiß" }],
   specialcoatsorigin: [
     { id: 1, specialCoatId: 7, originId: 2, origin: { id: 2, name: "Shop", image: "shop.webp" } },
@@ -139,7 +139,7 @@ describe("SpecialCoatHeaderCard", () => {
 
     expect(screen.getByRole("img")).toHaveAttribute(
       "src",
-      "/images/animals/grassland/grassland_goat/specialcoats/albino/image.jpg",
+      "/images/animals/grassland/domestic_goat/specialcoats/albino/image.jpg",
     );
   });
 

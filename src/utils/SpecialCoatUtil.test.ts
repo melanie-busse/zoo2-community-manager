@@ -75,16 +75,16 @@ describe("filterSpecialCoats", () => {
 describe("getSpecialCoatImage", () => {
   test("sollte das korrekte Image-Objekt zurückgeben, wenn ein Bild und Text vorhanden sind", () => {
     const mockSpecialCoat = {
-      identifier: "grassland_goat_white",
-      animal: { identifier: "grassland_goat", biome: { identifier: "grassland" } },
+      identifier: "domestic_goat_white",
+      animal: { identifier: "domestic_goat", biome: { identifier: "grassland" } },
       specialcoatstext: [{ name: "Weiße Ziege" }],
     } as unknown as SpecialCoat;
 
     const result = getSpecialCoatImage(mockSpecialCoat);
 
     expect(result).toEqual({
-      name: "grassland_goat_white",
-      path: "/images/animals/grassland/grassland_goat/specialcoats/white/image.jpg",
+      name: "domestic_goat_white",
+      path: "/images/animals/grassland/domestic_goat/specialcoats/white/image.jpg",
       alt: "Weiße Ziege",
     });
   });

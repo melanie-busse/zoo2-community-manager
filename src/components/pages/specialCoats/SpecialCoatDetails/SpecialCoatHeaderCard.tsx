@@ -26,7 +26,7 @@ export default function SpecialCoatHeaderCard() {
 
   const biome = specialCoat.animal?.biome?.identifier;
   const animalId = specialCoat.animal?.identifier;
-  const coatFolder = specialCoat.identifier ? specialCoat.identifier.replace(`${animalId}_`, "") : "";
+  const coatFolder = specialCoat.identifier && animalId ? specialCoat.identifier.slice(animalId.length + 1) : "";
   const imagePath =
     biome && animalId && coatFolder
       ? `/images/animals/${biome}/${animalId}/specialcoats/${coatFolder}/image.jpg`

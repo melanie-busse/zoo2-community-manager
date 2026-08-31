@@ -52,9 +52,9 @@ export default function StatueInventoryMobileCard({
       <CardDivider />
 
       <InventoryRow>
-        {statue.statueImage ? (
+        {statue.identifier && statue.biome?.identifier ? (
           <Image
-            src={`/images/statues/${statue.statueImage}`}
+            src={`/images/animals/${statue.biome.identifier}/${statue.identifier}/statue/image.webp`}
             alt={displayName}
             width={60}
             height={60}
