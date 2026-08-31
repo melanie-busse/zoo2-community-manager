@@ -305,7 +305,7 @@ export async function PUT(request: Request) {
     const updatedAnimal = await updateAnimal(existingText.animalId, {
       ...parsedAnimal,
       biomeId: biome?.id,
-      ...(existingAnimal?.image ? { imageName: existingAnimal.image } : {}),
+      ...(existingAnimal?.identifier ? { imageName: existingAnimal.identifier } : {}),
     });
 
     const newCoats = await syncMissingCoats(

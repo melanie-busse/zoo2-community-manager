@@ -117,10 +117,10 @@ export function calculateTotalXP(animal: Animal): number {
 
 export function getAnimalImage(animal: Animal): Image {
   return {
-    name: animal.image || "placeholder.png",
-
-    path: `/images/animals/${animal.biome?.identifier}/${animal.image}`,
-
+    name: animal.identifier || "placeholder",
+    path: animal.identifier
+      ? `/images/animals/${animal.biome?.identifier}/${animal.identifier}/image.jpg`
+      : "/images/placeholder.jpg",
     alt: animal.animaltext?.[0]?.animalName || "Tierbild",
   };
 }

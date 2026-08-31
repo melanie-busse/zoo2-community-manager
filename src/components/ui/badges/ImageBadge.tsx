@@ -10,15 +10,10 @@ export default function ImageBadge() {
   const animal = useAnimalStore((state) => state.selectedAnimal);
   if (!animal) return null;
 
-  // 1. Convert Denglish schema properties to clean English paths
   const biomeName = animal.biome?.identifier;
-  const animalImage = animal.image || "placeholder.png";
-
-  const imagePath =
-    animalImage === "placeholder.png"
-      ? "/images/placeholder.jpg"
-      : `/images/animals/${biomeName}/${animalImage}`;
-  // 2. Safety check: Replace duplicate slashes with a single slash
+  const imagePath = animal.identifier
+    ? `/images/animals/${biomeName}/${animal.identifier}/image.jpg`
+    : "/images/placeholder.jpg";
   const cleanPath = imagePath.replace(/([^:]\/)\/+/g, "$1");
 
   // 3. Get translated name for accessible alt text

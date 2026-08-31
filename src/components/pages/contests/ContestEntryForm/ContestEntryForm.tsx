@@ -78,11 +78,9 @@ export default function ContestEntryForm({
       {contest.conteststatue.map(({ animal }) => {
         const animalName = animal.animaltext?.[0]?.animalName ?? "";
         const biomeIdentifier = animal.biome?.identifier ?? "standard";
-        const animalImage = animal.image ?? "placeholder.png";
-        const imagePath =
-          animalImage === "placeholder.png"
-            ? "/images/placeholder.jpg"
-            : `/images/animals/${biomeIdentifier}/${animalImage}`;
+        const imagePath = animal.identifier
+          ? `/images/animals/${biomeIdentifier}/${animal.identifier}/image.jpg`
+          : "/images/placeholder.jpg";
 
         return (
           <Styles.AnimalSection key={animal.id}>

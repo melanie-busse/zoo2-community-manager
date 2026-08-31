@@ -444,7 +444,7 @@ describe("PUT /api/admin/import-animals", () => {
     vi.mocked(prisma.animal.findUnique).mockResolvedValue({
       id: 42,
       biomeId: 3,
-      image: "existing_image.png",
+      identifier: "existing_image.png",
     } as any);
     vi.mocked(fetchAnimalDetails).mockResolvedValue({
       title: "African Buffalo",

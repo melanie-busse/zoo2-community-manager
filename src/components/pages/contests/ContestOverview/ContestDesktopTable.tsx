@@ -74,10 +74,10 @@ export default function ContestDesktopTable({
                   {contest.conteststatue?.map((contestStatue) => {
                     return (
                       <Styles.AnimalCard key={contestStatue.id}>
-                        {contestStatue.animal.image && (
+                        {contestStatue.animal.identifier && (
                           <ThumbnailBadge
                             image={getAnimalImage(contestStatue.animal)}
-                            name={contestStatue.animal.image}
+                            name={contestStatue.animal.identifier}
                             biome={contestStatue.animal.biome}
                             size={55}
                           />

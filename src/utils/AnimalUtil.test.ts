@@ -18,7 +18,7 @@ describe("Animal Utilities", () => {
       id: 1,
       name: "Erdmännchen",
       shelterLevel: 2,
-      image: "erdmaennchen.png",
+      identifier: "erdmaennchen",
       sellingPrice: 500,
       biome: { id: 10, identifier: "grassland", name: "Grasland" },
       animaltext: [{ animalName: "Süßes Erdmännchen" }],
@@ -28,7 +28,7 @@ describe("Animal Utilities", () => {
       id: 2,
       name: "Löwe",
       shelterLevel: 5,
-      image: "loewe.png",
+      identifier: "loewe",
       sellingPrice: 2000,
       biome: { id: 11, identifier: "savanna", name: "Savanne" },
       animaltext: [{ animalName: "Großer Löwe" }], // 💡 FIX: Name für die Suchfunktion hinterlegt
@@ -231,8 +231,8 @@ describe("Animal Utilities", () => {
     test("baut den korrekten Bild-Pfad zusammen", () => {
       const imageObj = getAnimalImage(mockAnimals[0]);
       expect(imageObj).toEqual({
-        name: "erdmaennchen.png",
-        path: "/images/animals/grassland/erdmaennchen.png",
+        name: "erdmaennchen",
+        path: "/images/animals/grassland/erdmaennchen/image.jpg",
         alt: "Süßes Erdmännchen",
       });
     });

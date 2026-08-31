@@ -76,7 +76,7 @@ model Animal {
   sellingPrice        Int?
   popularity          Int?
   releaseExp          Int?
-  image               String?              @db.VarChar(255)
+  identifier          String?              @db.VarChar(255)
   biomeId             Int
   size                Int?
   gameId              Int?
