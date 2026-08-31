@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
+import { createPortal } from "react-dom";
 import { useTranslations } from "next-intl";
 
 import * as Styles from "@/components/elements/Filter/Filter.styles";
@@ -23,6 +24,13 @@ interface CustomBadgeFilterProps<T> {
   renderAllOption?: () => React.ReactNode;
 }
 
+interface DropdownPosition {
+  top?: number;
+  bottom?: number;
+  left: number;
+  width: number;
+}
+
 export default function SelectBoxWithImage<T>({
   items,
   selectedValue,
@@ -40,9 +48,35 @@ export default function SelectBoxWithImage<T>({
 }: CustomBadgeFilterProps<T>) {
   const t = useTranslations("common");
   const [isOpen, setIsOpen] = useState(false);
+  const [dropdownPos, setDropdownPos] = useState<DropdownPosition | null>(null);
   const wrapperRef = useRef<HTMLDivElement>(null);
 
   useClickOutside(wrapperRef, () => setIsOpen(false));
+
+  const updatePosition = useCallback(() => {
+    if (!wrapperRef.current) return;
+    const rect = wrapperRef.current.getBoundingClientRect();
+    const spaceBelow = window.innerHeight - rect.bottom;
+    const dropUp = spaceBelow < 270;
+    setDropdownPos({
+      left: rect.left + window.scrollX,
+      width: rect.width,
+      ...(dropUp
+        ? { bottom: window.innerHeight - rect.top - window.scrollY }
+        : { top: rect.bottom + window.scrollY + 8 }),
+    });
+  }, []);
+
+  useEffect(() => {
+    if (!isOpen) return;
+    updatePosition();
+    window.addEventListener("scroll", updatePosition, true);
+    window.addEventListener("resize", updatePosition);
+    return () => {
+      window.removeEventListener("scroll", updatePosition, true);
+      window.removeEventListener("resize", updatePosition);
+    };
+  }, [isOpen, updatePosition]);
 
   const isAllSelected = selectedValue === "all" || selectedValue === "Alle";
   const selectedItem = items.find((item) => getIdentifier(item) === selectedValue);
@@ -56,6 +90,53 @@ export default function SelectBoxWithImage<T>({
     }
     return getIdentifier(item);
   };
+
+  const dropdown =
+    isOpen && dropdownPos
+      ? createPortal(
+          <Styles.OptionsListPortal
+            style={{
+              position: "fixed",
+              left: dropdownPos.left,
+              width: dropdownPos.width,
+              ...(dropdownPos.top !== undefined
+                ? { top: dropdownPos.top - window.scrollY }
+                : { bottom: dropdownPos.bottom }),
+            }}
+          >
+            <Styles.Option
+              onClick={() => {
+                onSelectAction("all");
+                setIsOpen(false);
+              }}
+            >
+              {(renderAllOption ?? renderAllBadge)?.() ?? (showLabel ? t("filter." + allLabelKey) : "–")}
+            </Styles.Option>
+
+            {items.map((item) => {
+              const id = getIdentifier(item);
+              return (
+                <Styles.Option
+                  key={id}
+                  onClick={() => {
+                    onSelectAction(id);
+                    setIsOpen(false);
+                  }}
+                >
+                  {renderBadge(item)}
+                  {showLabel && (
+                    <Styles.Label>
+                      {labelPrefixKey && `${t("filter." + labelPrefixKey)} `}
+                      {renderLabelText(item)}
+                    </Styles.Label>
+                  )}
+                </Styles.Option>
+              );
+            })}
+          </Styles.OptionsListPortal>,
+          document.body,
+        )
+      : null;
 
   return (
     <Styles.SelectWrapper ref={wrapperRef} $compact={compact} $isOpen={isOpen}>
@@ -76,39 +157,7 @@ export default function SelectBoxWithImage<T>({
         <Chevron isOpen={isOpen} />
       </Styles.SelectHeader>
 
-      {isOpen && (
-        <Styles.OptionsList>
-          <Styles.Option
-            onClick={() => {
-              onSelectAction("all");
-              setIsOpen(false);
-            }}
-          >
-            {(renderAllOption ?? renderAllBadge)?.() ?? (showLabel ? t("filter." + allLabelKey) : "–")}
-          </Styles.Option>
-
-          {items.map((item) => {
-            const id = getIdentifier(item);
-            return (
-              <Styles.Option
-                key={id}
-                onClick={() => {
-                  onSelectAction(id);
-                  setIsOpen(false);
-                }}
-              >
-                {renderBadge(item)}
-                {showLabel && (
-                  <Styles.Label>
-                    {labelPrefixKey && `${t("filter." + labelPrefixKey)} `}
-                    {renderLabelText(item)}
-                  </Styles.Label>
-                )}
-              </Styles.Option>
-            );
-          })}
-        </Styles.OptionsList>
-      )}
+      {dropdown}
     </Styles.SelectWrapper>
   );
 }

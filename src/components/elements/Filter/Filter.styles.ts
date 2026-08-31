@@ -36,9 +36,12 @@ export const Label = styled.span`
   color: ${({ theme }) => theme.colors.primary[900]};
 `;
 
-export const OptionsList = styled.div`
+export const OptionsList = styled.div<{ $dropUp?: boolean }>`
   position: absolute;
-  top: calc(100% + 8px);
+  ${({ $dropUp }) =>
+    $dropUp
+      ? "bottom: calc(100% + 8px); top: auto;"
+      : "top: calc(100% + 8px); bottom: auto;"}
   left: 0;
   right: 0;
   background: ${({ theme }) => theme.colors.ui.white};
@@ -46,6 +49,17 @@ export const OptionsList = styled.div`
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   z-index: 999;
+  max-height: 250px;
+  overflow-y: auto;
+  padding: 8px;
+`;
+
+export const OptionsListPortal = styled.div`
+  background: ${({ theme }) => theme.colors.ui.white};
+  border: 1px solid rgba(76, 166, 76, 0.2);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  z-index: 9999;
   max-height: 250px;
   overflow-y: auto;
   padding: 8px;
