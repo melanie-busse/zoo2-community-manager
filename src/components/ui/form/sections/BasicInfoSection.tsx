@@ -32,6 +32,25 @@ export default function BasicInfoSection({ formData, setFormData }: BasicInfoSec
     >
       <SectionColumn>
         <FormGroup>
+          <Label htmlFor="identifier">{tAnimals("basicInfoSection.fields.identifier")}</Label>
+          <input
+            id="identifier"
+            type="text"
+            value={formData.identifier ?? ""}
+            onChange={(e) =>
+              setFormData((prev: any) => ({ ...prev, identifier: e.target.value || null }))
+            }
+            style={{
+              padding: "10px 14px",
+              borderRadius: "8px",
+              border: "1px solid #ccc",
+              fontSize: "1rem",
+              width: "100%",
+            }}
+          />
+        </FormGroup>
+
+        <FormGroup>
           <Label htmlFor="releaseDate">{tAnimals("basicInfoSection.fields.releaseDate")}</Label>
           <DatePickerField
             id="releaseDate"

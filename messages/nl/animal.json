@@ -26,7 +26,8 @@
   "basicInfoSection": {
     "basicInfo": "Basisinformatie",
     "fields": {
-      "releaseDate": "Uitgiftedatum"
+      "releaseDate": "Uitgiftedatum",
+      "identifier": "Identifier"
     }
   },
   "translationSection": {
