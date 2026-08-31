@@ -38,6 +38,7 @@ vi.mock("./AnimalDetails.styles", () => ({
     </div>
   ),
   SpecialCoatName: ({ children }: any) => <span data-testid="coat-name">{children}</span>,
+  SpecialCoatColor: ({ children }: any) => <span data-testid="coat-color">{children}</span>,
   ReleaseDate: ({ children }: any) => <div data-testid="release-date">{children}</div>,
   OriginContainer: ({ children }: any) => <div data-testid="origin-container">{children}</div>,
   OriginRowSpecialCoat: ({ children, title }: any) => (
@@ -49,7 +50,7 @@ vi.mock("./AnimalDetails.styles", () => ({
 
 const mockCoat = {
   id: 50,
-  image: "albino.png",
+  identifier: "savanna_fox_albino",
   releaseDate: "2026-06-01",
   specialcoatstext: [{ name: "Albino-Fuchs", languageCode: "de", color: "Weiß" }],
   specialcoatsorigin: [
@@ -64,26 +65,26 @@ describe("SpecialCoatCard", () => {
   });
 
   test("zeigt den Namen der Farbvariante aus specialcoatstext an", () => {
-    render(<SpecialCoatCard specialCoat={mockCoat} />);
+    render(<SpecialCoatCard specialCoat={mockCoat} imagePath="/images/placeholder.jpg" />);
 
     expect(screen.getByTestId("coat-name")).toHaveTextContent("Albino-Fuchs");
     expect(screen.getByTestId("coat-card")).toHaveAttribute("title", "Albino-Fuchs");
   });
 
   test("zeigt das formatierte Release-Datum an", () => {
-    render(<SpecialCoatCard specialCoat={mockCoat} />);
+    render(<SpecialCoatCard specialCoat={mockCoat} imagePath="/images/placeholder.jpg" />);
 
     expect(screen.getByTestId("release-date")).toHaveTextContent("01.06.2026");
   });
 
   test("rendert ein SpecialCoatBadge mit dem korrekten Namen", () => {
-    render(<SpecialCoatCard specialCoat={mockCoat} />);
+    render(<SpecialCoatCard specialCoat={mockCoat} imagePath="/images/placeholder.jpg" />);
 
     expect(screen.getByTestId("special-coat-badge")).toHaveTextContent("Albino-Fuchs");
   });
 
   test("rendert Origin-Bilder, wenn Origins vorhanden sind", () => {
-    render(<SpecialCoatCard specialCoat={mockCoat} />);
+    render(<SpecialCoatCard specialCoat={mockCoat} imagePath="/images/placeholder.jpg" />);
 
     expect(screen.getByTestId("origin-container")).toBeInTheDocument();
     expect(screen.getAllByTestId("origin-row")).toHaveLength(2);
@@ -94,7 +95,7 @@ describe("SpecialCoatCard", () => {
   test("rendert keinen Origin-Container, wenn keine Origins vorhanden sind", () => {
     const coatWithoutOrigins = { ...mockCoat, specialcoatsorigin: [] };
 
-    render(<SpecialCoatCard specialCoat={coatWithoutOrigins} />);
+    render(<SpecialCoatCard specialCoat={coatWithoutOrigins} imagePath="/images/placeholder.jpg" />);
 
     expect(screen.queryByTestId("origin-container")).not.toBeInTheDocument();
   });
@@ -102,13 +103,13 @@ describe("SpecialCoatCard", () => {
   test("zeigt '---' als Release-Datum, wenn kein Datum vorhanden ist", () => {
     const coatWithoutDate = { ...mockCoat, releaseDate: null };
 
-    render(<SpecialCoatCard specialCoat={coatWithoutDate} />);
+    render(<SpecialCoatCard specialCoat={coatWithoutDate} imagePath="/images/placeholder.jpg" />);
 
     expect(screen.getByTestId("release-date")).toHaveTextContent("---");
   });
 
   test("navigiert zur SpecialCoat-Detailseite beim Klick auf die Karte", () => {
-    render(<SpecialCoatCard specialCoat={mockCoat} />);
+    render(<SpecialCoatCard specialCoat={mockCoat} imagePath="/images/placeholder.jpg" />);
 
     screen.getByTestId("coat-card").click();
 
@@ -118,7 +119,7 @@ describe("SpecialCoatCard", () => {
   test("zeigt einen leeren Namen, wenn specialcoatstext fehlt", () => {
     const coatWithoutText = { ...mockCoat, specialcoatstext: [] };
 
-    render(<SpecialCoatCard specialCoat={coatWithoutText} />);
+    render(<SpecialCoatCard specialCoat={coatWithoutText} imagePath="/images/placeholder.jpg" />);
 
     expect(screen.getByTestId("coat-name")).toHaveTextContent("");
   });

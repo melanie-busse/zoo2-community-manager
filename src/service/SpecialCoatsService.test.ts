@@ -207,7 +207,7 @@ describe("SpecialCoats Service", () => {
     const mockInput = {
       animalId: 10,
       releaseDate: "2026-06-01",
-      image: "polarbear.png",
+      identifier: "polarbear",
       isContestSpecialCoat: true,
       parentWithCoatNeeded: false,
       chanceBaseWithoutParent: 0,
@@ -235,7 +235,7 @@ describe("SpecialCoats Service", () => {
         data: {
           animalId: 10,
           releaseDate: new Date("2026-06-01"),
-          image: "polarbear.png",
+          identifier: "polarbear",
           isContestSpecialCoat: true,
           parentWithCoatNeeded: false,
           chanceBaseWithoutParent: 0,
@@ -276,7 +276,7 @@ describe("SpecialCoats Service", () => {
     const mockUpdateData = {
       animalId: 10,
       releaseDate: "2026-07-01",
-      image: "updated.png",
+      identifier: "updated",
       isContestSpecialCoat: false,
       parentWithCoatNeeded: true,
       chanceBaseWithoutParent: 0.5,
@@ -305,7 +305,7 @@ describe("SpecialCoats Service", () => {
         data: {
           animalId: 10,
           releaseDate: new Date("2026-07-01"),
-          image: "updated.png",
+          identifier: "updated",
           isContestSpecialCoat: false,
           parentWithCoatNeeded: true,
           chanceBaseWithoutParent: 0.5,
@@ -344,7 +344,7 @@ describe("SpecialCoats Service", () => {
     test("sollte Texte und Origins nicht anfassen, wenn sie nicht im Update-Payload sind", async () => {
       txMock.specialCoat.findUnique.mockResolvedValue(mockUpdatedCoat);
 
-      await updateSpecialCoat(42, { animalId: 10, image: "neu.png" });
+      await updateSpecialCoat(42, { animalId: 10, identifier: "neu" });
 
       expect(txMock.specialCoatsText.deleteMany).not.toHaveBeenCalled();
       expect(txMock.specialCoatOrigin.deleteMany).not.toHaveBeenCalled();

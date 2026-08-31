@@ -13,7 +13,9 @@ export default function SpecialCoatArea() {
   const tAnimals = useTranslations("animal");
 
   const animal = useAnimalStore((state) => state.selectedAnimal);
-  const coats = animal?.specialcoat;
+  const coats = animal?.specialcoat?.filter(
+    (coat) => !animal.statueImage || coat.identifier !== animal.statueImage,
+  );
 
   if (!coats || coats.length === 0) {
     return null;
@@ -27,9 +29,16 @@ export default function SpecialCoatArea() {
       </Styles.SectionHeadline>
 
       <Styles.SpecialCoatGrid>
-        {coats.map((coat: SpecialCoat) => (
-          <SpecialCoatCard key={coat.id} specialCoat={coat} />
-        ))}
+        {coats.map((coat: SpecialCoat) => {
+          const biome = animal?.biome?.identifier;
+          const animalId = animal?.identifier;
+          const coatFolder = coat.identifier ? coat.identifier.replace(`${animalId}_`, "") : "";
+          const imagePath =
+            biome && animalId && coatFolder
+              ? `/images/animals/${biome}/${animalId}/specialcoats/${coatFolder}/image.jpg`
+              : "/images/placeholder.jpg";
+          return <SpecialCoatCard key={coat.id} specialCoat={coat} imagePath={imagePath} />;
+        })}
       </Styles.SpecialCoatGrid>
     </>
   );

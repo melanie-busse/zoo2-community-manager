@@ -19,7 +19,7 @@ export default function StatueArea() {
     <>
       <Styles.SectionHeadline>
         <span style={{ fontSize: "1.2rem" }}>🗿</span>
-        {tAnimal("statue")}
+        {tAnimal("statue.title")}
       </Styles.SectionHeadline>
 
       <Styles.SpecialCoatGrid>

@@ -68,6 +68,7 @@ export async function getAnimalById(id: number | string, locale: string | null =
       animaltext: locale ? { where: { languageCode: locale } } : true,
       specialcoat: {
         include: {
+          specialcoatstext: locale ? { where: { languageCode: locale } } : true,
           specialcoatsorigin: {
             include: {
               origin: {

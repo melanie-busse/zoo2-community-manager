@@ -75,47 +75,41 @@ describe("filterSpecialCoats", () => {
 describe("getSpecialCoatImage", () => {
   test("sollte das korrekte Image-Objekt zurückgeben, wenn ein Bild und Text vorhanden sind", () => {
     const mockSpecialCoat = {
-      image: "polar-fox.png",
-      specialcoatstext: [
-        {
-          name: "Polarfuchs",
-        },
-      ],
-    } as SpecialCoat;
+      identifier: "grassland_goat_white",
+      animal: { identifier: "grassland_goat", biome: { identifier: "grassland" } },
+      specialcoatstext: [{ name: "Weiße Ziege" }],
+    } as unknown as SpecialCoat;
 
     const result = getSpecialCoatImage(mockSpecialCoat);
 
     expect(result).toEqual({
-      name: "polar-fox.png",
-      path: "/images/specialCoat/polar-fox.png",
-      alt: "Polarfuchs",
+      name: "grassland_goat_white",
+      path: "/images/animals/grassland/grassland_goat/specialcoats/white/image.jpg",
+      alt: "Weiße Ziege",
     });
   });
 
-  test("sollte auf Fallbacks zurückgreifen, wenn image und specialcoatstext fehlen", () => {
+  test("sollte auf Fallbacks zurückgreifen, wenn identifier und specialcoatstext fehlen", () => {
     const mockSpecialCoat = {
-      image: null,
+      identifier: null,
       specialcoatstext: [],
     } as unknown as SpecialCoat;
 
     const result = getSpecialCoatImage(mockSpecialCoat);
 
     expect(result).toEqual({
-      name: "placeholder.png",
-      path: "/images/specialCoat/null", // Da template literal: specialCoat.image ist null
+      name: "placeholder",
+      path: "/images/placeholder.jpg",
       alt: "Tierbild",
     });
   });
 
   test("sollte den Fallback-Alt-Text nutzen, wenn specialcoatstext zwar existiert, aber leer ist", () => {
     const mockSpecialCoat = {
-      image: "zebra.png",
-      specialcoatstext: [
-        {
-          name: "", // Leerer Name
-        },
-      ],
-    } as SpecialCoat;
+      identifier: "grassland_goat_white",
+      animal: { identifier: "grassland_goat", biome: { identifier: "grassland" } },
+      specialcoatstext: [{ name: "" }],
+    } as unknown as SpecialCoat;
 
     const result = getSpecialCoatImage(mockSpecialCoat);
 

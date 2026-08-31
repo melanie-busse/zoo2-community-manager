@@ -2,7 +2,6 @@
   "species": "Naam",
   "release": "Vrijlaten",
   "colorVariants": "Kleurvarianten",
-  "statue": "Standbeeld",
   "biomeCapacity": "Verblijfscapaciteit",
   "animalCount": "Aantal dieren",
   "biomeSize": "Verblijfsgrootte",
@@ -74,6 +73,7 @@
     "region": "Regio"
   },
   "statue": {
+    "title": "Standbeeld",
     "inventory_title": "Mijn standbeeldeninventaris",
     "puzzle_pieces": "Puzzelstukjes"
   }

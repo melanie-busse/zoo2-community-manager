@@ -2,7 +2,6 @@
   "species": "Name",
   "release": "Auswildern",
   "colorVariants": "Farbvarianten",
-  "statue": "Statue",
   "biomeCapacity": "Gehegekapazität",
   "animalCount": "Anzahl Tiere",
   "biomeSize": "Gehegegröße",
@@ -74,6 +73,7 @@
     "region": "Region"
   },
   "statue": {
+    "title": "Statue",
     "inventory_title": "Mein Statueninventar",
     "puzzle_pieces": "Puzzleteile"
   }

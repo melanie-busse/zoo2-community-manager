@@ -14,14 +14,16 @@ import Tooltip from "@/components/ui/tooltip/Tooltip";
 
 interface SpecialCoatCardProps {
   specialCoat: SpecialCoat;
+  imagePath: string;
 }
 
-export default function SpecialCoatCard({ specialCoat }: SpecialCoatCardProps) {
+export default function SpecialCoatCard({ specialCoat, imagePath }: SpecialCoatCardProps) {
   const tCommon = useTranslations("common");
   const router = useRouter();
   const origins = specialCoat.specialcoatsorigin?.map((o) => o.origin).filter(Boolean) ?? [];
 
   const displayName = specialCoat.specialcoatstext?.[0]?.name || "";
+  const displayColor = specialCoat.specialcoatstext?.[0]?.color || "";
   const releaseDate = specialCoat.releaseDate
     ? String(formatLocaleDate(specialCoat.releaseDate))
     : "---";
@@ -32,9 +34,10 @@ export default function SpecialCoatCard({ specialCoat }: SpecialCoatCardProps) {
       onClick={() => router.push(`/specialcoats/${specialCoat.id}`)}
       style={{ cursor: "pointer" }}
     >
-      <SpecialCoatBadge image={specialCoat.image} displayName={displayName} />
+      <SpecialCoatBadge path={imagePath} displayName={displayName} />
 
       <Styles.SpecialCoatName>{displayName}</Styles.SpecialCoatName>
+      {displayColor && <Styles.SpecialCoatColor>🎨 {displayColor}</Styles.SpecialCoatColor>}
 
       <Styles.ReleaseDate>
         📅 {tCommon("release")}: {releaseDate}

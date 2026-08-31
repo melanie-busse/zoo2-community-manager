@@ -2,7 +2,6 @@
   "species": "Nombre",
   "release": "Liberar",
   "colorVariants": "Variantes de color",
-  "statue": "Estatua",
   "biomeCapacity": "Capacidad del recinto",
   "animalCount": "Número de animales",
   "biomeSize": "Tamaño del recinto",
@@ -74,6 +73,7 @@
     "region": "Región"
   },
   "statue": {
+    "title": "Estatua",
     "inventory_title": "Mi inventario de estatuas",
     "puzzle_pieces": "Piezas de puzle"
   }

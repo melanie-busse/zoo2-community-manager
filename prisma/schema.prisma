@@ -258,7 +258,7 @@ model SpecialCoat {
   chanceBaseWithOneParent  Float                @default(0)
   chanceEventWithoutParent Float                @default(0)
   chanceEventWithOneParent Float                @default(0)
-  image                    String?              @db.VarChar(255)
+  identifier               String?              @db.VarChar(255)
   isContestSpecialCoat     Boolean              @default(false)
   animal                   Animal               @relation(fields: [animalId], references: [id], onDelete: Cascade, map: "specialCoat_animalId_fkey")
   specialcoatstext         SpecialCoatsText[]

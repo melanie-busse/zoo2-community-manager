@@ -2,7 +2,6 @@
   "species": "Navn",
   "release": "Udsætning",
   "colorVariants": "Fargevarianter",
-  "statue": "Statue",
   "biomeCapacity": "Indhegningskapacitet",
   "animalCount": "Antal dyr",
   "biomeSize": "Indhegningsstørrelse",
@@ -74,6 +73,7 @@
     "region": "Region"
   },
   "statue": {
+    "title": "Statue",
     "inventory_title": "Mit statueinventar",
     "puzzle_pieces": "Puslespilsbrikker"
   }

@@ -42,8 +42,9 @@ vi.mock("@/components/ui/Formatted/FormattedDate", () => ({
 
 const mockSpecialCoat = {
   id: 7,
-  image: "albino.png",
+  identifier: "grassland_goat_albino",
   releaseDate: "2026-06-01",
+  animal: { identifier: "grassland_goat", biome: { identifier: "grassland" } },
   specialcoatstext: [{ languageCode: "de", name: "Albino", color: "Weiß" }],
   specialcoatsorigin: [
     { id: 1, specialCoatId: 7, originId: 2, origin: { id: 2, name: "Shop", image: "shop.webp" } },
@@ -120,7 +121,7 @@ describe("SpecialCoatHeaderCard", () => {
   test("nutzt das Placeholder-Bild, wenn kein Bild gesetzt ist", () => {
     vi.mocked(useSpecialCoatStore).mockImplementation((selector) =>
       selector({
-        selectedSpecialCoat: { ...mockSpecialCoat, image: null },
+        selectedSpecialCoat: { ...mockSpecialCoat, identifier: null },
       } as any),
     );
 
@@ -136,7 +137,10 @@ describe("SpecialCoatHeaderCard", () => {
 
     render(<SpecialCoatHeaderCard />);
 
-    expect(screen.getByRole("img")).toHaveAttribute("src", "/images/specialCoat/albino.png");
+    expect(screen.getByRole("img")).toHaveAttribute(
+      "src",
+      "/images/animals/grassland/grassland_goat/specialcoats/albino/image.jpg",
+    );
   });
 
   test("zeigt keine Farbanzeige, wenn die Farbe leer ist", () => {

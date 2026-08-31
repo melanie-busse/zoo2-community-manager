@@ -111,7 +111,7 @@ export default function ContestEntryForm({
         const animal = specialcoat.animal;
         const animalName = animal.animaltext?.[0]?.animalName ?? "";
         const coatName = specialcoat.specialcoatstext?.[0]?.name ?? "";
-        const coatImage = specialcoat.image ?? "placeholder.png";
+        const coatImage = specialcoat.identifier ?? "placeholder.png";
         const imagePath =
           coatImage === "placeholder.png"
             ? "/images/placeholder.jpg"

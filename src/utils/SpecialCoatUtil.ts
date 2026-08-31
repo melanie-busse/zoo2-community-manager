@@ -123,11 +123,16 @@ function _getNestedValue(coat: SpecialCoat, sortBy: string): string | number {
 }
 
 export function getSpecialCoatImage(specialCoat: SpecialCoat): Image {
+  const biome = specialCoat.animal?.biome?.identifier;
+  const animalId = specialCoat.animal?.identifier;
+  const coatFolder = specialCoat.identifier ? specialCoat.identifier.replace(`${animalId}_`, "") : "";
+  const path =
+    biome && animalId && coatFolder
+      ? `/images/animals/${biome}/${animalId}/specialcoats/${coatFolder}/image.jpg`
+      : "/images/placeholder.jpg";
   return {
-    name: specialCoat.image || "placeholder.png",
-
-    path: `/images/specialCoat/${specialCoat.image}`,
-
+    name: specialCoat.identifier || "placeholder",
+    path,
     alt: specialCoat.specialcoatstext?.[0]?.name || "Tierbild",
   };
 }
@@ -139,7 +144,7 @@ export function getSpecialCoatName(specialCoat: SpecialCoat, fallback: string): 
 export const createEmptyForm = (languages: Array<{ code: string }>) => ({
   animalId: "",
   releaseDate: "",
-  image: "",
+  identifier: "",
   isContestSpecialCoat: false,
   parentWithCoatNeeded: false,
   chanceBaseWithoutParent: "",
@@ -171,7 +176,7 @@ export const mapSpecialCoatToForm = (coat: any, languages: any[]) => {
     id: coat.id,
     animalId: coat.animalId || "",
     releaseDate: coat.releaseDate ? new Date(coat.releaseDate).toISOString().split("T")[0] : "",
-    image: coat.image || "",
+    identifier: coat.identifier || "",
     isContestSpecialCoat: coat?.isContestSpecialCoat ?? false,
     parentWithCoatNeeded: coat?.parentWithCoatNeeded ?? false,
     chanceBaseWithoutParent: coat?.chanceBaseWithoutParent ?? "",

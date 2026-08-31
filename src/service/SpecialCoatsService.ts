@@ -93,7 +93,7 @@ export async function createSpecialCoat(data: CreateSpecialCoatInput) {
     data: {
       animalId: data.animalId,
       releaseDate: new Date(data.releaseDate),
-      image: data.image,
+      identifier: data.identifier,
       // Neue Boolean- und Prozentfelder für Zuchtwahrscheinlichkeiten
       isContestSpecialCoat: Boolean(data.isContestSpecialCoat),
       parentWithCoatNeeded: Boolean(data.parentWithCoatNeeded),
@@ -147,7 +147,7 @@ export async function updateSpecialCoat(id: number | string, data: any) {
       data: {
         animalId: data.animalId,
         releaseDate: data.releaseDate ? new Date(data.releaseDate) : undefined,
-        image: data.image,
+        identifier: data.identifier,
 
         isContestSpecialCoat: Boolean(data.isContestSpecialCoat),
         parentWithCoatNeeded: Boolean(data.parentWithCoatNeeded),

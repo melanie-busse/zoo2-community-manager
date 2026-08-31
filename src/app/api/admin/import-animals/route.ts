@@ -185,7 +185,7 @@ async function syncMissingCoats(
       const newCoat = await createSpecialCoat({
         animalId,
         releaseDate: parseBackendDate(coat.releaseDate) ?? new Date(),
-        image: null,
+        identifier: null,
         originIds,
         texts: await buildCoatTexts(coat.texts[0], dbLanguages),
       });

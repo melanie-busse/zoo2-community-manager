@@ -13,7 +13,7 @@ export interface SpecialCoat {
   id: number;
   animalId: number;
   releaseDate: Date | string;
-  image: string | null;
+  identifier: string | null;
   ownedAmount?: number;
   inventoryLevel10?: boolean;
   inventoryLevel20?: boolean;
@@ -41,7 +41,7 @@ export interface SpecialCoatOrigin {
 export interface CreateSpecialCoatInput {
   animalId: number;
   releaseDate: Date | string;
-  image: string | null;
+  identifier: string | null;
   isContestSpecialCoat?: boolean;
   parentWithCoatNeeded?: boolean;
   chanceBaseWithoutParent?: number;

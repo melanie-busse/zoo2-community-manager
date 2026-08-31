@@ -17,7 +17,7 @@ export default function StatueCard({ statueImage }: StatueCardProps) {
     <Styles.StatueCardWrapper>
       <NextImage
         src={`/images/statues/${statueImage}`}
-        alt={tAnimal("statue")}
+        alt={tAnimal("statue.title")}
         width={200}
         height={200}
         style={{ objectFit: "contain", borderRadius: "8px", display: "block" }}
