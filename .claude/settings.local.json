@@ -13,7 +13,11 @@
       "Bash(git commit:*)",
       "Bash(node:*)",
       "Bash(npx prisma:*)",
-      "Bash(npx tsc:*)"
+      "Bash(npx tsc:*)",
+      "Bash(python3:*)",
+      "Read(//mnt/c/Users/micro/**)",
+      "Read(//mnt/c/Users/**)",
+      "Bash(echo $ANTHROPIC_API_KEY)"
     ]
   }
 }
