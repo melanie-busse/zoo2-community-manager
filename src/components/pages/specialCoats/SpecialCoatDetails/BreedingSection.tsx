@@ -141,21 +141,21 @@ export default function BreedingSection() {
 
         <SectionGrid>
           <ChanceGroup>
-            <GroupTitle>Basischance</GroupTitle>
-            <DataRow label="ohne Elternteil">
+            <GroupTitle>{tSpecialCoat("breeding.chanceBaseTitle")}</GroupTitle>
+            <DataRow label={tSpecialCoat("breeding.withoutParent")}>
               <strong>{specialCoat.chanceBaseWithoutParent ?? 0} %</strong>
             </DataRow>
-            <DataRow label="mit Elternteil">
+            <DataRow label={tSpecialCoat("breeding.withOneParent")}>
               <strong>{specialCoat.chanceBaseWithOneParent ?? 0} %</strong>
             </DataRow>
           </ChanceGroup>
 
           <ChanceGroup>
-            <GroupTitle>Eventchance</GroupTitle>
-            <DataRow label="ohne Elternteil">
+            <GroupTitle>{tSpecialCoat("breeding.chanceEventTitle")}</GroupTitle>
+            <DataRow label={tSpecialCoat("breeding.withoutParent")}>
               <strong>{specialCoat.chanceEventWithoutParent ?? 0} %</strong>
             </DataRow>
-            <DataRow label="mit Elternteil">
+            <DataRow label={tSpecialCoat("breeding.withOneParent")}>
               <strong>{specialCoat.chanceEventWithOneParent ?? 0} %</strong>
             </DataRow>
           </ChanceGroup>

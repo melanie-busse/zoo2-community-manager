@@ -38,5 +38,18 @@
     "level20": "Level 20",
     "glitter_animal": "Glitter Animal",
     "region": "Region"
+  },
+  "breeding": {
+    "title": "Breeding Probability",
+    "isContestSpecialCoat": "Contest Special Coat",
+    "parentWithCoatNeeded": "Parent with coat required",
+    "chanceBaseTitle": "Base chance",
+    "chanceEventTitle": "Event chance",
+    "withoutParent": "without parent",
+    "withOneParent": "with one parent",
+    "chanceBaseWithoutParent": "Base chance (without parent)",
+    "chanceBaseWithOneParent": "Base chance (one parent)",
+    "chanceEventWithoutParent": "Event chance (without parent)",
+    "chanceEventWithOneParent": "Event chance (one parent)"
   }
 }

@@ -209,6 +209,7 @@ export async function updateAnimal(id: number, animalData: any) {
   const {
     animaltext,
     releaseDate,
+    identifier,
     price,
     currencyId,
     sellingPrice,
@@ -231,6 +232,7 @@ export async function updateAnimal(id: number, animalData: any) {
       where: { id: id },
       data: {
         releaseDate: formattedReleaseDate,
+        identifier: identifier ?? null,
         price: price,
         priceTypeId: currencyId ?? 1,
         sellingPrice: sellingPrice,
