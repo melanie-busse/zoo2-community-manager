@@ -35,6 +35,7 @@ export interface Animal {
 
 export interface AnimalText {
   id: number;
+  languageCode: string;
   animalName: string;
   animalDescription: string;
 }

@@ -37,9 +37,11 @@ export function filterAnimals(
   return animals.filter((animal) => {
     if (searchTerm.trim() !== "") {
       const query = searchTerm.toLowerCase();
-      const name = animal.animaltext?.[0]?.animalName?.toLowerCase() ?? "";
       const id = animal.id.toString();
-      if (!name.includes(query) && !id.includes(query)) return false;
+      const matchesName = animal.animaltext?.some(
+        (t) => t.animalName?.toLowerCase().includes(query),
+      ) ?? false;
+      if (!matchesName && !id.includes(query)) return false;
     }
 
     if (selectedBiome !== null && getBiomeName(animal.biome, "") !== selectedBiome) {
@@ -183,6 +185,7 @@ export const mapAnimalToForm = (data: any, languages: Array<{ code: string }>) =
         durationMinutes: totalMinutesClean % 60 || null,
       },
     },
+    breedingLevel: data.shelterLevel ?? 0,
     origins: data.animalorigins?.map((o: any) => ({ id: o.originId })) || [],
     enclosureSizes: data.animalperenclosure?.map((size: any) => ({
       animalCount: size.numberAnimals,

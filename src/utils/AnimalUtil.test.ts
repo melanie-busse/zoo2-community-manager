@@ -47,6 +47,20 @@ describe("Animal Utilities", () => {
       expect(result[0].id).toBe(2);
     });
 
+    test("filtert nach englischem Namen (zweiter animaltext-Eintrag)", () => {
+      const animals = [
+        { ...mockAnimals[0], animaltext: [{ animalName: "Süßes Erdmännchen" }, { animalName: "Meerkat" }] },
+        { ...mockAnimals[1], animaltext: [{ animalName: "Großer Löwe" }, { animalName: "Lion" }] },
+      ];
+      const result = filterAnimals(animals as any, {
+        searchTerm: "lion",
+        selectedBiome: null,
+        selectedShelterLevel: null,
+      });
+      expect(result).toHaveLength(1);
+      expect(result[0].id).toBe(2);
+    });
+
     test("filtert nach Suchbegriff (ID)", () => {
       const result = filterAnimals(mockAnimals, {
         searchTerm: "1",
