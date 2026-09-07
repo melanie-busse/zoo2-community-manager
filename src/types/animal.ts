@@ -23,6 +23,7 @@ export interface Animal {
   breedingDuration?: number | null;
   breedingProbability?: number | null;
   isContestAnimal?: boolean;
+  isLocked?: boolean;
 
   // Relationen
   animalxp?: Xp[];

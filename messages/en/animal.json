@@ -28,7 +28,8 @@
     "fields": {
       "releaseDate": "Release",
       "identifier": "Identifier",
-      "isContestAnimal": "Contest Animal"
+      "isContestAnimal": "Contest Animal",
+      "isLocked": "Lock names & descriptions (no auto-import)"
     }
   },
   "translationSection": {

@@ -28,7 +28,8 @@
     "fields": {
       "releaseDate": "Udgivelse",
       "identifier": "Identifier",
-      "isContestAnimal": "Konkurrencedyr"
+      "isContestAnimal": "Konkurrencedyr",
+      "isLocked": "Lås navne og beskrivelser (ingen auto-import)"
     }
   },
   "translationSection": {

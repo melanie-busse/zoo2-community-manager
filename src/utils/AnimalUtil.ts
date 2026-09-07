@@ -101,6 +101,10 @@ function _getNestedValue(obj: any, path: string): string | number {
     return obj.sellingPrice || 0;
   }
 
+  if (path === "name") {
+    return obj.animaltext?.[0]?.animalName ?? "";
+  }
+
   return path.split(".").reduce((acc, part) => acc && acc[part], obj) || 0;
 }
 

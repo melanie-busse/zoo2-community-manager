@@ -85,6 +85,7 @@ model Animal {
   breedingDuration    Int?
   breedingProbability Int?
   isContestAnimal     Boolean              @default(false)
+  isLocked            Boolean              @default(false)
   biome               Biome                @relation(fields: [biomeId], references: [id])
   priceType           PriceType?           @relation(fields: [priceTypeId], references: [id])
   animalorigins       AnimalOrigin[]

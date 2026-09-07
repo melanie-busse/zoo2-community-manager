@@ -289,13 +289,22 @@ export async function PUT(request: Request) {
     const dbTexts = await prisma.animalText.findMany({
       where: { animalId: existingText.animalId },
     });
-    const englishDescription = extractDescriptionFromWiki(wikiJson);
-    const currentDbEnglishText =
-      dbTexts.find((t) => t.languageCode === "en")?.animalDescription || "";
-    const hasEnglishTextChanged = currentDbEnglishText.trim() !== englishDescription.trim();
     const dbLanguages = await getAllLanguages();
 
-    parsedAnimal.animaltext = await buildAnimalTexts(pageTitle, englishDescription, dbLanguages, dbTexts, hasEnglishTextChanged);
+    if (existingAnimal?.isLocked) {
+      parsedAnimal.animaltext = dbTexts.map((t) => ({
+        languageCode: t.languageCode,
+        animalName: t.animalName,
+        animalDescription: t.animalDescription ?? "",
+      }));
+    } else {
+      const englishDescription = extractDescriptionFromWiki(wikiJson);
+      const currentDbEnglishText =
+        dbTexts.find((t) => t.languageCode === "en")?.animalDescription || "";
+      const hasEnglishTextChanged = currentDbEnglishText.trim() !== englishDescription.trim();
+
+      parsedAnimal.animaltext = await buildAnimalTexts(pageTitle, englishDescription, dbLanguages, dbTexts, hasEnglishTextChanged);
+    }
 
     const biome =
       existingAnimal?.biomeId && existingAnimal.biomeId !== 1

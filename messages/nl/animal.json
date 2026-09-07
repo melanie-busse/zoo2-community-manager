@@ -28,7 +28,8 @@
     "fields": {
       "releaseDate": "Uitgiftedatum",
       "identifier": "Identifier",
-      "isContestAnimal": "Wedstrijddier"
+      "isContestAnimal": "Wedstrijddier",
+      "isLocked": "Namen en beschrijvingen vergrendelen (geen auto-import)"
     }
   },
   "translationSection": {

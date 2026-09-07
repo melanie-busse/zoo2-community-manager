@@ -28,7 +28,8 @@
     "fields": {
       "releaseDate": "Release",
       "identifier": "Identifier",
-      "isContestAnimal": "Wettbewerbstier"
+      "isContestAnimal": "Wettbewerbstier",
+      "isLocked": "Namen & Beschreibungen gesperrt (kein Auto-Import)"
     }
   },
   "translationSection": {
