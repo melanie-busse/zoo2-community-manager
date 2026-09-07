@@ -27,7 +27,8 @@
     "basicInfo": "Basisinformatie",
     "fields": {
       "releaseDate": "Uitgiftedatum",
-      "identifier": "Identifier"
+      "identifier": "Identifier",
+      "isContestAnimal": "Wedstrijddier"
     }
   },
   "translationSection": {

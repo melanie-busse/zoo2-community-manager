@@ -27,7 +27,8 @@
     "basicInfo": "Grundoplysninger",
     "fields": {
       "releaseDate": "Udgivelse",
-      "identifier": "Identifier"
+      "identifier": "Identifier",
+      "isContestAnimal": "Konkurrencedyr"
     }
   },
   "translationSection": {

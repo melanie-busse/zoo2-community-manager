@@ -27,7 +27,8 @@
     "basicInfo": "Informations de base",
     "fields": {
       "releaseDate": "Sortie",
-      "identifier": "Identifiant"
+      "identifier": "Identifiant",
+      "isContestAnimal": "Animal de concours"
     }
   },
   "translationSection": {
