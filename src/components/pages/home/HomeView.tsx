@@ -42,19 +42,19 @@ export default function HomeView({ stats, t }: HomeViewProps) {
           <StatsBar data={data} />
 
           <Styles.ActionGrid>
-            <Styles.MenuCard href="/AnimalOverview" $color="#4ca64c">
+            <Styles.MenuCard href="/animals" $color="#4ca64c">
               <Styles.Icon>🐾</Styles.Icon>
               <h3>{t.cards_lexicon_title}</h3>
               <p>{t.cards_lexicon_text}</p>
             </Styles.MenuCard>
 
-            <Styles.MenuCard href="/varianten" $color="#3498db">
+            <Styles.MenuCard href="/specialcoats" $color="#3498db">
               <Styles.Icon>🎨</Styles.Icon>
               <h3>{t.cards_specialCoat_title}</h3>
               <p>{t.cards_specialCoat_text}</p>
             </Styles.MenuCard>
 
-            <Styles.MenuCard href="/klub" $color="#f39c12">
+            <Styles.MenuCard href="/contests" $color="#f39c12">
               <Styles.Icon>🏆</Styles.Icon>
               <h3>{t.cards_club_title}</h3>
               <p>{t.cards_club_text}</p>

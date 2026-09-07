@@ -59,6 +59,21 @@ export default function BasicInfoSection({ formData, setFormData }: BasicInfoSec
             $width="200px"
           />
         </FormGroup>
+
+        <FormGroup>
+          <label style={{ display: "flex", alignItems: "center", gap: "10px", cursor: "pointer" }}>
+            <input
+              id="isContestAnimal"
+              type="checkbox"
+              checked={Boolean(formData.isContestAnimal)}
+              onChange={(e) =>
+                setFormData((prev: any) => ({ ...prev, isContestAnimal: e.target.checked }))
+              }
+              style={{ width: "18px", height: "18px", cursor: "pointer" }}
+            />
+            {tAnimals("basicInfoSection.fields.isContestAnimal")}
+          </label>
+        </FormGroup>
       </SectionColumn>
     </InfoAccordion>
   );

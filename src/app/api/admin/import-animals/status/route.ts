@@ -16,18 +16,33 @@ export async function GET() {
     const dbAnimalTexts = await prisma.animalText.findMany({
       select: {
         animalName: true,
+        animal: {
+          select: {
+            biome: {
+              select: {
+                id: true,
+                identifier: true,
+                biomestext: { select: { id: true, biomeName: true, biomeDescription: true } },
+              },
+            },
+          },
+        },
       },
     });
 
-    // Set für schnellen O(1) Abgleich erstellen (alles in Lowercase für fehlertoleranten Vergleich)
-    const dbNames = new Set(dbAnimalTexts.map((t) => t.animalName.toLowerCase()));
+    // Map für schnellen O(1) Abgleich erstellen (alles in Lowercase für fehlertoleranten Vergleich)
+    const dbNameToBiome = new Map(
+      dbAnimalTexts.map((t) => [t.animalName.toLowerCase(), t.animal?.biome ?? null]),
+    );
 
     // 3. Status für jedes Wiki-Tier bestimmen
     const comparisonList = wikiTitles.map((title) => {
-      const isImported = dbNames.has(title.toLowerCase());
+      const key = title.toLowerCase();
+      const isImported = dbNameToBiome.has(key);
       return {
         title,
         status: isImported ? "imported" : "missing",
+        biome: isImported ? (dbNameToBiome.get(key) ?? null) : null,
       };
     });
 

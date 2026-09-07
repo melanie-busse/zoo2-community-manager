@@ -189,8 +189,8 @@ describe("SpecialCoatDetailContent Integration Test", () => {
   test("rendert die Basischancen aus dem SpecialCoat in der BreedingSection", () => {
     render(<SpecialCoatDetailContent />);
 
-    expect(screen.getByText("Basischance")).toBeInTheDocument();
-    expect(screen.getByText("Eventchance")).toBeInTheDocument();
+    expect(screen.getByText("specialCoat.breeding.chanceBaseTitle")).toBeInTheDocument();
+    expect(screen.getByText("specialCoat.breeding.chanceEventTitle")).toBeInTheDocument();
   });
 
   test("zeigt keinen Admin-Badge für normale User", () => {
