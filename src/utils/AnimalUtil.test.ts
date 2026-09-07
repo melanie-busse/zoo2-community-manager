@@ -219,6 +219,25 @@ describe("Animal Utilities", () => {
       const result = sortAnimals(mockAnimals, { sortBy: "xp", sortDirection: "desc" });
       expect(result[0].id).toBe(2); // Löwe (300 XP) > Erdmännchen (150 XP)
     });
+
+    test("sortiert nach Name (animaltext[0].animalName) aufsteigend", () => {
+      const result = sortAnimals(mockAnimals, { sortBy: "name", sortDirection: "asc" });
+      expect(result[0].id).toBe(2); // "Großer Löwe" < "Süßes Erdmännchen"
+    });
+
+    test("sortiert nach Name (animaltext[0].animalName) absteigend", () => {
+      const result = sortAnimals(mockAnimals, { sortBy: "name", sortDirection: "desc" });
+      expect(result[0].id).toBe(1); // "Süßes Erdmännchen" > "Großer Löwe"
+    });
+
+    test("sortiert nach Name korrekt wenn animaltext fehlt", () => {
+      const animalsWithoutText = [
+        { ...mockAnimals[0], animaltext: undefined },
+        { ...mockAnimals[1] },
+      ] as any[];
+      const result = sortAnimals(animalsWithoutText, { sortBy: "name", sortDirection: "asc" });
+      expect(result[0].id).toBe(1); // leerer String sortiert vor "Großer Löwe"
+    });
   });
 
   describe("paginate", () => {
