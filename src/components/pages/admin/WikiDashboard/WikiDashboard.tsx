@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
+import Link from "next/link";
 
 import * as Styles from "./WikiDashboard.styles";
 import PageWrapper from "@/components/page-structure/page/PageWrapper";
@@ -12,7 +13,7 @@ import Table from "@/components/page-structure/Table/Table";
 import StatsBar from "@/components/page-structure/Elements/StatsBar";
 import ActionBadge from "@/components/ui/badges/ActionBadge";
 import { TableCellRight, TableHeaderRight } from "@/components/page-structure/Table/Table.styles";
-import WikiDashboardFilterBar from "@/components/elements/Filter/WikiDashboardFilterBar";
+import WikiDashboardFilterBar from "@/components/pages/admin/WikiDashboard/WikiDashboardFilterBar";
 
 const LS_KEY = "wiki_synced_animals";
 
@@ -36,6 +37,7 @@ function addSyncedTitle(title: string) {
 interface AnimalStatus {
   title: string;
   status: "imported" | "missing";
+  animalId: number | null;
   biome: Biome | null;
 }
 
@@ -49,6 +51,7 @@ type ActionState = "idle" | "loading" | "success" | "error";
 
 export default function WikiDashboard() {
   const t = useTranslations("admin");
+  const locale = useLocale();
   const [loading, setLoading] = useState(true);
   const [summary, setSummary] = useState<Summary | null>(null);
   const [animals, setAnimals] = useState<AnimalStatus[]>([]);
@@ -282,7 +285,15 @@ export default function WikiDashboard() {
 
               return (
                 <tr key={animal.title}>
-                  <td style={{ fontWeight: 600 }}>{animal.title}</td>
+                  <td style={{ fontWeight: 600 }}>
+                    {animal.animalId ? (
+                      <Link href={`/${locale}/animals/${animal.animalId}`}>
+                        {animal.title}
+                      </Link>
+                    ) : (
+                      animal.title
+                    )}
+                  </td>
                   <td>
                     {animal.status === "missing" ? (
                       <Styles.StatusBadge $status="missing">

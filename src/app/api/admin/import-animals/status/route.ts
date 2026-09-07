@@ -18,6 +18,7 @@ export async function GET() {
         animalName: true,
         animal: {
           select: {
+            id: true,
             biome: {
               select: {
                 id: true,
@@ -31,18 +32,23 @@ export async function GET() {
     });
 
     // Map für schnellen O(1) Abgleich erstellen (alles in Lowercase für fehlertoleranten Vergleich)
-    const dbNameToBiome = new Map(
-      dbAnimalTexts.map((t) => [t.animalName.toLowerCase(), t.animal?.biome ?? null]),
+    const dbNameToAnimal = new Map(
+      dbAnimalTexts.map((t) => [
+        t.animalName.toLowerCase(),
+        { id: t.animal?.id ?? null, biome: t.animal?.biome ?? null },
+      ]),
     );
 
     // 3. Status für jedes Wiki-Tier bestimmen
     const comparisonList = wikiTitles.map((title) => {
       const key = title.toLowerCase();
-      const isImported = dbNameToBiome.has(key);
+      const dbAnimal = dbNameToAnimal.get(key) ?? null;
+      const isImported = dbAnimal !== null;
       return {
         title,
         status: isImported ? "imported" : "missing",
-        biome: isImported ? (dbNameToBiome.get(key) ?? null) : null,
+        animalId: isImported ? (dbAnimal?.id ?? null) : null,
+        biome: isImported ? (dbAnimal?.biome ?? null) : null,
       };
     });
 

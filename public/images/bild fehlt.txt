@@ -1,7 +1,6 @@
 Fehlen
 ========
 Coyote
-Aardvark
 Asian Golden Cat
 Boa Constrictor
 Coral Catshark
@@ -11,7 +10,7 @@ Bilby
 Long-Tailed Chinchilla
 Masked Puffer
 Doktorfisch
-Aye-Aye
+Fingertier
 
 
 Farbvarianten fehlt
@@ -73,6 +72,7 @@ Galah
 Gila Monster
 Perentie
 Scimitar Oryx
+Aardwolf
 
 Bay Cat
 Bengal Slow Loris
@@ -134,5 +134,3 @@ Noctarium komplett
 aviary komplett
 
 savanne dänische Übersetzung prüfen
-Farbvarianten englische suche fehlt
-filter nach Biome funktioniert nicht

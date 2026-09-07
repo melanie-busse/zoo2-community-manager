@@ -30,8 +30,9 @@ When this skill is invoked, execute the following steps in order. Abort immediat
    - `git add .`
    - `git commit -m "<commit_message>"`
 
-5. **Restart Development Server**
-   Execute `npm run dev &` (or the appropriate dev command) to restart the development server in the background so the user can continue working immediately.
+[//]: # (5. **Restart Development Server**)
+
+[//]: # (   Execute `npm run dev &` &#40;or the appropriate dev command&#41; to restart the development server in the background so the user can continue working immediately.)
 
 6. **Final Instruction**
    Remind the user to execute `git push` manually due to the multi-account setup.
