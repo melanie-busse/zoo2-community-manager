@@ -1,6 +1,7 @@
 import { Image } from "@/types/image";
 import { SpecialCoat } from "@/types/specialCoat";
 import { InventoryStatusFilter } from "@/store/useSpecialCoatStore";
+import { getBiomeName } from "@/utils/BiomeUtil";
 
 interface FilterOptions {
   searchTerm: string;
@@ -42,18 +43,20 @@ export function filterSpecialCoats(
       const query = searchTerm.toLowerCase();
       const coatColor = coat.specialcoatstext?.[0]?.color?.toLowerCase() ?? "";
       const coatName = coat.specialcoatstext?.[0]?.name?.toLowerCase() ?? "";
-      const animalTextName = animal?.animaltext?.[0]?.animalName?.toLowerCase() ?? "";
+      const matchesAnimalName = animal?.animaltext?.some(
+        (t) => t.animalName?.toLowerCase().includes(query),
+      ) ?? false;
 
       if (
         !coatColor.includes(query) &&
         !coatName.includes(query) &&
-        !animalTextName.includes(query)
+        !matchesAnimalName
       ) {
         return false;
       }
     }
 
-    if (selectedBiome !== null && animal?.biome?.identifier !== selectedBiome) {
+    if (selectedBiome !== null && getBiomeName(animal?.biome, "") !== selectedBiome) {
       return false;
     }
 
