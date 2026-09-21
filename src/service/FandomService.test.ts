@@ -86,6 +86,23 @@ describe("FandomApi", () => {
       expect(result).toEqual(["Fox"]);
     });
 
+    test("filtert die Vorlagenseite 'Animal Template' heraus", async () => {
+      mockFetch.mockResolvedValue({
+        ok: true,
+        json: async () => ({
+          query: {
+            pages: {
+              "1": { pageid: 1, ns: 0, title: "Animal Template" },
+              "2": { pageid: 2, ns: 0, title: "Fox" },
+            },
+          },
+        }),
+      });
+
+      const result = await fetchPagesFromCategory("Animal");
+      expect(result).toEqual(["Fox"]);
+    });
+
     test("filtert Redirect-Seiten heraus", async () => {
       mockFetch.mockResolvedValue({
         ok: true,

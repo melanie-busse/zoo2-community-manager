@@ -35,7 +35,7 @@ export async function fetchPagesFromCategory(categoryName: string): Promise<stri
       data.query?.pages ?? {};
 
     return Object.values(pages)
-      .filter((page) => page.ns === 0 && !("redirect" in page) && page.title !== "Animals")
+      .filter((page) => page.ns === 0 && !("redirect" in page) && page.title !== "Animals" && page.title !== "Animal Template")
       .map((page) => page.title);
   } catch (error) {
     console.error(`Error loading the category "${categoryName}":`, error);
