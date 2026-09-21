@@ -171,6 +171,7 @@ export const mapAnimalToForm = (data: any, languages: Array<{ code: string }>) =
 
   return {
     ...data,
+    currencyId: data.priceTypeId ?? 1,
     releaseDate: formatInitialDate(data.releaseDate),
     actions: {
       feed: {

@@ -20,6 +20,7 @@ export interface SpecialCoat {
   inventoryGlitter?: boolean;
   inventoryRegionId?: number | null;
   isContestSpecialCoat?: boolean;
+  isLocked?: boolean;
   parentWithCoatNeeded?: boolean;
   chanceBaseWithoutParent?: number;
   chanceBaseWithOneParent?: number;
@@ -43,6 +44,7 @@ export interface CreateSpecialCoatInput {
   releaseDate: Date | string;
   identifier: string | null;
   isContestSpecialCoat?: boolean;
+  isLocked?: boolean;
   parentWithCoatNeeded?: boolean;
   chanceBaseWithoutParent?: number;
   chanceBaseWithOneParent?: number;

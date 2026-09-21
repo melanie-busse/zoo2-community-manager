@@ -225,12 +225,21 @@ The red fox is a cunning animal.
       expect(result?.currencyId).toBe(1); // keine "d.png" → Coins
     });
 
-    test("erkennt Diamond-Währung", () => {
+    test("erkennt Diamond-Währung (d.png)", () => {
       const result = parseAnimalData({
         title: "Fox",
         wikitext: { "*": "| price = 500 d.png" },
       });
       expect(result?.currencyId).toBe(2);
+    });
+
+    test("erkennt Diamond-Währung (D.webp)", () => {
+      const result = parseAnimalData({
+        title: "Ferruginous Hawk",
+        wikitext: { "*": "| price = 1,200 [[File:D.webp|20px]]" },
+      });
+      expect(result?.currencyId).toBe(2);
+      expect(result?.price).toBe(1200);
     });
 
     test("parst Zuchtdaten korrekt", () => {

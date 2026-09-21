@@ -117,6 +117,7 @@ export async function createAnimal(animalData: any) {
     animaltext,
     releaseDate,
     isContestAnimal,
+    isLocked,
     price,
     currencyId,
     sellingPrice,
@@ -150,6 +151,7 @@ export async function createAnimal(animalData: any) {
   if (breedingProbability)
     insertData.breedingProbability = parseInt(breedingProbability.toString(), 10);
   insertData.isContestAnimal = Boolean(isContestAnimal);
+  insertData.isLocked = Boolean(isLocked);
 
   return await prisma.$transaction(async (tx) => {
     const animal = await tx.animal.create({
@@ -220,6 +222,7 @@ export async function updateAnimal(id: number, animalData: any) {
     releaseDate,
     identifier,
     isContestAnimal,
+    isLocked,
     price,
     currencyId,
     sellingPrice,
@@ -244,6 +247,7 @@ export async function updateAnimal(id: number, animalData: any) {
         releaseDate: formattedReleaseDate,
         identifier: identifier ?? null,
         isContestAnimal: Boolean(isContestAnimal),
+        isLocked: Boolean(isLocked),
         price: price,
         priceTypeId: currencyId ?? 1,
         sellingPrice: sellingPrice,

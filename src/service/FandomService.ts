@@ -211,7 +211,7 @@ export function parseAnimalData(apiResult: any, originIds: number[] = []) {
   let currencyId = 1;
   const priceNumberMatch = rawPriceString.match(/^([\d,]+)/);
   if (priceNumberMatch) price = parseInt(priceNumberMatch[1].replace(/,/g, ""), 10);
-  if (rawPriceString.toLowerCase().includes("d.png")) currencyId = 2;
+  if (/d\.(png|webp)/i.test(rawPriceString)) currencyId = 2;
 
   const breedingCost = parseInt((extractValue(wikitext, "cost") || "0").replace(/,/g, ""), 10);
   const breedingDuration = durationToMinutes(extractValue(wikitext, "duration") || "0h");

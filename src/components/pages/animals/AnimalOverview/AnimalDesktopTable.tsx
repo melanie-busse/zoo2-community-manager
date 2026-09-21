@@ -104,6 +104,7 @@ export default function AnimalDesktopTable() {
                 <Styles.TableThumbnail>
                   <ThumbnailBadge
                     image={getAnimalImage(animal)}
+                    size={64}
                     biome={animal.biome}
                     name={animal.animaltext?.[0]?.animalName ?? ""}
                   />

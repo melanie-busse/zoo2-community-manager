@@ -96,6 +96,7 @@ export async function createSpecialCoat(data: CreateSpecialCoatInput) {
       identifier: data.identifier,
       // Neue Boolean- und Prozentfelder für Zuchtwahrscheinlichkeiten
       isContestSpecialCoat: Boolean(data.isContestSpecialCoat),
+      isLocked: Boolean(data.isLocked),
       parentWithCoatNeeded: Boolean(data.parentWithCoatNeeded),
       chanceBaseWithoutParent: data.chanceBaseWithoutParent ?? 0,
       chanceBaseWithOneParent: data.chanceBaseWithOneParent ?? 0,
@@ -150,6 +151,7 @@ export async function updateSpecialCoat(id: number | string, data: any) {
         identifier: data.identifier,
 
         isContestSpecialCoat: Boolean(data.isContestSpecialCoat),
+        isLocked: Boolean(data.isLocked),
         parentWithCoatNeeded: Boolean(data.parentWithCoatNeeded),
         chanceBaseWithoutParent: data.chanceBaseWithoutParent ?? 0,
         chanceBaseWithOneParent: data.chanceBaseWithOneParent ?? 0,

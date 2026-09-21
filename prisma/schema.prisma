@@ -260,6 +260,7 @@ model SpecialCoat {
   chanceEventWithOneParent Float                @default(0)
   identifier               String?              @db.VarChar(255)
   isContestSpecialCoat     Boolean              @default(false)
+  isLocked                 Boolean              @default(false)
   animal                   Animal               @relation(fields: [animalId], references: [id], onDelete: Cascade, map: "specialCoat_animalId_fkey")
   specialcoatstext         SpecialCoatsText[]
   specialcoatsorigin       SpecialCoatOrigin[]
