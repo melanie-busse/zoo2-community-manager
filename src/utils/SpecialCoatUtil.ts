@@ -41,17 +41,16 @@ export function filterSpecialCoats(
 
     if (searchTerm.trim() !== "") {
       const query = searchTerm.toLowerCase();
-      const coatColor = coat.specialcoatstext?.[0]?.color?.toLowerCase() ?? "";
-      const coatName = coat.specialcoatstext?.[0]?.name?.toLowerCase() ?? "";
+      const matchesCoat = coat.specialcoatstext?.some(
+        (t) =>
+          t.name?.toLowerCase().includes(query) ||
+          t.color?.toLowerCase().includes(query),
+      ) ?? false;
       const matchesAnimalName = animal?.animaltext?.some(
         (t) => t.animalName?.toLowerCase().includes(query),
       ) ?? false;
 
-      if (
-        !coatColor.includes(query) &&
-        !coatName.includes(query) &&
-        !matchesAnimalName
-      ) {
+      if (!matchesCoat && !matchesAnimalName) {
         return false;
       }
     }

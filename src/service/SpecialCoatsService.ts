@@ -8,13 +8,9 @@ export async function getCountSpecialCoats() {
 
 export async function getAllSpecialCoats(locale: string = "de") {
   try {
-    return await prisma.specialCoat.findMany({
+    const coats = await prisma.specialCoat.findMany({
       include: {
-        specialcoatstext: {
-          where: {
-            languageCode: locale,
-          },
-        },
+        specialcoatstext: true,
         animal: {
           include: {
             animaltext: {
@@ -39,6 +35,15 @@ export async function getAllSpecialCoats(locale: string = "de") {
         },
       },
     });
+
+    // Sort specialcoatstext so the current locale is always first (used for display)
+    return coats.map((coat) => ({
+      ...coat,
+      specialcoatstext: [
+        ...coat.specialcoatstext.filter((t) => t.languageCode === locale),
+        ...coat.specialcoatstext.filter((t) => t.languageCode !== locale),
+      ],
+    }));
   } catch (error) {
     console.error(`[SpecialCoatsService] Error loading SpecialCoats (${locale}):`, error);
     return [];

@@ -64,12 +64,15 @@ describe("SpecialCoats Service", () => {
   // ==========================================
 
   describe("getAllSpecialCoats", () => {
-    test("sollte findMany mit den korrekten Relationen und Language-Filtern aufrufen", async () => {
+    test("sollte findMany ohne Locale-Filter auf specialcoatstext aufrufen und Locale-Text vorne sortieren", async () => {
       const mockLocale = "de";
       const mockDbResult = [
         {
           id: 1,
-          specialcoatstext: [{ name: "Polarfuchs", languageCode: "de" }],
+          specialcoatstext: [
+            { name: "Snow Fox", languageCode: "en" },
+            { name: "Polarfuchs", languageCode: "de" },
+          ],
           animal: {
             id: 10,
             animaltext: [{ animalName: "Fuchs", languageCode: "de" }],
@@ -84,10 +87,13 @@ describe("SpecialCoats Service", () => {
 
       const result = await getAllSpecialCoats(mockLocale);
 
-      expect(result).toEqual(mockDbResult);
+      // Der Locale-Text (de) soll an Position [0] stehen
+      expect(result[0].specialcoatstext[0].languageCode).toBe("de");
+      // Alle Texte sollen vorhanden sein
+      expect(result[0].specialcoatstext).toHaveLength(2);
       expect(prisma.specialCoat.findMany).toHaveBeenCalledWith({
         include: {
-          specialcoatstext: { where: { languageCode: mockLocale } },
+          specialcoatstext: true,
           animal: {
             include: {
               animaltext: { where: { languageCode: mockLocale } },

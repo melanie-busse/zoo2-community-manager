@@ -16,6 +16,7 @@ const mockCoats: SpecialCoat[] = [
     chanceEventWithOneParent: 10.0,
     specialcoatstext: [
       { id: 1, specialCoatId: 1, languageCode: "de", color: "Weiß", name: "Schneefuchs" },
+      { id: 3, specialCoatId: 1, languageCode: "en", color: "White", name: "Snow Fox" },
     ],
     animal: { id: 10, shelterLevel: 3, biome: { id: 1, identifier: "arctic" } } as any,
   },
@@ -32,6 +33,7 @@ const mockCoats: SpecialCoat[] = [
     chanceEventWithOneParent: 0,
     specialcoatstext: [
       { id: 2, specialCoatId: 2, languageCode: "de", color: "Schwarz", name: "Nachtrabe" },
+      { id: 4, specialCoatId: 2, languageCode: "en", color: "Black", name: "Night Raven" },
     ],
     animal: { id: 11, shelterLevel: 5, biome: { id: 2, identifier: "jungle" } } as any,
   },
@@ -69,6 +71,39 @@ describe("filterSpecialCoats", () => {
       contestOnly: false,
     });
     expect(result).toHaveLength(2);
+  });
+
+  test("filtert nach deutschem Namen", () => {
+    const result = filterSpecialCoats(mockCoats, {
+      searchTerm: "Schneefuchs",
+      selectedBiome: null,
+      selectedShelterLevel: null,
+      inventoryStatus: "all",
+    });
+    expect(result).toHaveLength(1);
+    expect(result[0].id).toBe(1);
+  });
+
+  test("filtert nach englischem Namen", () => {
+    const result = filterSpecialCoats(mockCoats, {
+      searchTerm: "Snow Fox",
+      selectedBiome: null,
+      selectedShelterLevel: null,
+      inventoryStatus: "all",
+    });
+    expect(result).toHaveLength(1);
+    expect(result[0].id).toBe(1);
+  });
+
+  test("filtert nach Farbe in einer anderen Sprache", () => {
+    const result = filterSpecialCoats(mockCoats, {
+      searchTerm: "Black",
+      selectedBiome: null,
+      selectedShelterLevel: null,
+      inventoryStatus: "all",
+    });
+    expect(result).toHaveLength(1);
+    expect(result[0].id).toBe(2);
   });
 });
 
