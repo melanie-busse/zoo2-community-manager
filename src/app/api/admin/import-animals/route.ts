@@ -314,7 +314,8 @@ export async function PUT(request: Request) {
     const updatedAnimal = await updateAnimal(existingText.animalId, {
       ...parsedAnimal,
       biomeId: biome?.id,
-      ...(existingAnimal?.identifier ? { imageName: existingAnimal.identifier } : {}),
+      identifier: existingAnimal?.identifier ?? null,
+      isLocked: existingAnimal?.isLocked ?? false,
     });
 
     const newCoats = await syncMissingCoats(

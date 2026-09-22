@@ -433,7 +433,7 @@ describe("PUT /api/admin/import-animals", () => {
     expect(updateAnimal).toHaveBeenCalledWith(42, expect.objectContaining({ biomeId: 7 }));
   });
 
-  test("schützt vorhandenes Bild aus der DB", async () => {
+  test("schützt vorhandenen Identifier und isLocked aus der DB beim Update", async () => {
     vi.mocked(prisma.animalText.findFirst).mockResolvedValue({
       id: 1,
       animalId: 42,
@@ -444,16 +444,14 @@ describe("PUT /api/admin/import-animals", () => {
     vi.mocked(prisma.animal.findUnique).mockResolvedValue({
       id: 42,
       biomeId: 3,
-      identifier: "existing_image.png",
+      identifier: "african_buffalo",
+      isLocked: true,
     } as any);
     vi.mocked(fetchAnimalDetails).mockResolvedValue({
       title: "African Buffalo",
       wikitext: { "*": "" },
     });
-    vi.mocked(parseAnimalData).mockReturnValue({
-      ...mockParsedAnimal,
-      imageName: "wiki_image.png",
-    });
+    vi.mocked(parseAnimalData).mockReturnValue({ ...mockParsedAnimal });
     vi.mocked(prisma.animalText.findMany).mockResolvedValue([]);
     vi.mocked(prisma.biome.findFirst).mockResolvedValue({ id: 3, identifier: "Meadow" } as any);
     vi.mocked(updateAnimal).mockResolvedValue({ id: 42 } as any);
@@ -462,7 +460,7 @@ describe("PUT /api/admin/import-animals", () => {
 
     expect(updateAnimal).toHaveBeenCalledWith(
       42,
-      expect.objectContaining({ imageName: "existing_image.png" }),
+      expect.objectContaining({ identifier: "african_buffalo", isLocked: true }),
     );
   });
 
