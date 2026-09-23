@@ -5,6 +5,7 @@ import { ShelterLevelSelect } from "@/components/elements/Filter/ShelterLevelSel
 import { StatueCheckbox } from "@/components/elements/Filter/StatueCheckbox";
 import { SearchInputField } from "@/components/elements/Filter/SearchInputField";
 import { RegionSelect } from "@/components/elements/Filter/RegionSelect";
+import { OwnedCountSelect } from "@/components/elements/Filter/OwnedCountSelect";
 import { Level10Checkbox } from "@/components/elements/Filter/Level10Checkbox";
 import { Level20Checkbox } from "@/components/elements/Filter/Level20Checkbox";
 import { GlitterCheckbox } from "@/components/elements/Filter/GlitterCheckbox";
@@ -28,6 +29,8 @@ export default function AnimalInventoryFilter({ regions }: AnimalInventoryFilter
   const setHasStatueFilter = useAnimalStore((state) => state.setHasStatueFilter);
   const filterRegionId = useAnimalStore((state) => state.filterRegionId);
   const setFilterRegionId = useAnimalStore((state) => state.setFilterRegionId);
+  const filterOwnedCount = useAnimalStore((state) => state.filterOwnedCount);
+  const setFilterOwnedCount = useAnimalStore((state) => state.setFilterOwnedCount);
   const filterLevel10 = useAnimalStore((state) => state.filterLevel10);
   const filterLevel20 = useAnimalStore((state) => state.filterLevel20);
   const filterGlitter = useAnimalStore((state) => state.filterGlitter);
@@ -54,6 +57,7 @@ export default function AnimalInventoryFilter({ regions }: AnimalInventoryFilter
           selectedRegionId={filterRegionId}
           onChange={setFilterRegionId}
         />
+        <OwnedCountSelect value={filterOwnedCount} onChange={setFilterOwnedCount} />
       </FilterRow>
       <FilterRow>
         <StatueCheckbox checked={hasStatueFilter} onChange={setHasStatueFilter} />

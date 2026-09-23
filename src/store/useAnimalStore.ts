@@ -25,6 +25,7 @@ interface AnimalState {
   selectedShelterLevel: string | null;
   hasStatueFilter: boolean;
   filterRegionId: number | null;
+  filterOwnedCount: number | null;
   filterLevel10: boolean;
   filterLevel20: boolean;
   filterGlitter: boolean;
@@ -48,6 +49,7 @@ interface AnimalState {
   setSelectedShelterLevel: (level: string | null) => void;
   setHasStatueFilter: (value: boolean) => void;
   setFilterRegionId: (id: number | null) => void;
+  setFilterOwnedCount: (count: number | null) => void;
   setFilterLevel10: (value: boolean) => void;
   setFilterLevel20: (value: boolean) => void;
   setFilterGlitter: (value: boolean) => void;
@@ -67,6 +69,7 @@ export const useAnimalStore = create<AnimalState>((set) => {
       selectedShelterLevel: state.selectedShelterLevel,
       hasStatueFilter: state.hasStatueFilter,
       filterRegionId: state.filterRegionId,
+      filterOwnedCount: state.filterOwnedCount,
       filterLevel10: state.filterLevel10,
       filterLevel20: state.filterLevel20,
       filterGlitter: state.filterGlitter,
@@ -94,6 +97,7 @@ export const useAnimalStore = create<AnimalState>((set) => {
     selectedShelterLevel: null,
     hasStatueFilter: false,
     filterRegionId: null,
+    filterOwnedCount: null,
     filterLevel10: false,
     filterLevel20: false,
     filterGlitter: false,
@@ -240,6 +244,12 @@ export const useAnimalStore = create<AnimalState>((set) => {
         return { filterRegionId: id, currentPage: 1, ...runPipeline(state.allAnimals, nextState) };
       }),
 
+    setFilterOwnedCount: (count) =>
+      set((state) => {
+        const nextState = { ...state, filterOwnedCount: count, currentPage: 1 };
+        return { filterOwnedCount: count, currentPage: 1, ...runPipeline(state.allAnimals, nextState) };
+      }),
+
     setFilterLevel10: (value) =>
       set((state) => {
         const nextState = { ...state, filterLevel10: value, currentPage: 1 };
@@ -279,6 +289,7 @@ export const useAnimalStore = create<AnimalState>((set) => {
           selectedShelterLevel: null,
           hasStatueFilter: false,
           filterRegionId: null,
+          filterOwnedCount: null,
           filterLevel10: false,
           filterLevel20: false,
           filterGlitter: false,

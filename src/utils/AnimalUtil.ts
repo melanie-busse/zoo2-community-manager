@@ -12,6 +12,7 @@ interface FilterOptions {
   filterLevel10?: boolean;
   filterLevel20?: boolean;
   filterGlitter?: boolean;
+  filterOwnedCount?: number | null;
 }
 
 interface SortOptions {
@@ -30,6 +31,7 @@ export function filterAnimals(
     filterLevel10 = false,
     filterLevel20 = false,
     filterGlitter = false,
+    filterOwnedCount = null,
   }: FilterOptions,
 ): Animal[] {
   if (!animals) return [];
@@ -61,6 +63,10 @@ export function filterAnimals(
     if (filterGlitter && !(animal as any).inventoryGlitter) return false;
 
     if (filterRegionId !== null && (animal as any).inventoryRegionId !== filterRegionId) {
+      return false;
+    }
+
+    if (filterOwnedCount !== null && (animal as any).ownedAmount !== filterOwnedCount) {
       return false;
     }
 
