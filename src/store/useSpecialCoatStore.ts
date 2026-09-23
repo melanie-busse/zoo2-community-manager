@@ -28,6 +28,7 @@ interface SpecialCoatState {
   inventoryStatus: InventoryStatusFilter;
   contestOnly: boolean;
   filterRegionId: number | null;
+  filterOwnedCount: number | null;
   filterLevel10: boolean;
   filterLevel20: boolean;
   filterGlitter: boolean;
@@ -52,6 +53,7 @@ interface SpecialCoatState {
   setInventoryStatusFilter: (status: InventoryStatusFilter) => void;
   setContestOnly: (value: boolean) => void;
   setFilterRegionId: (id: number | null) => void;
+  setFilterOwnedCount: (count: number | null) => void;
   setFilterLevel10: (value: boolean) => void;
   setFilterLevel20: (value: boolean) => void;
   setFilterGlitter: (value: boolean) => void;
@@ -72,6 +74,7 @@ export const useSpecialCoatStore = create<SpecialCoatState>((set, get) => {
       inventoryStatus: state.inventoryStatus,
       contestOnly: state.contestOnly,
       filterRegionId: state.filterRegionId,
+      filterOwnedCount: state.filterOwnedCount,
       filterLevel10: state.filterLevel10,
       filterLevel20: state.filterLevel20,
       filterGlitter: state.filterGlitter,
@@ -103,6 +106,7 @@ export const useSpecialCoatStore = create<SpecialCoatState>((set, get) => {
     inventoryStatus: "all",
     contestOnly: false,
     filterRegionId: null,
+    filterOwnedCount: null,
     filterLevel10: false,
     filterLevel20: false,
     filterGlitter: false,
@@ -262,6 +266,12 @@ export const useSpecialCoatStore = create<SpecialCoatState>((set, get) => {
         return { filterRegionId: id, currentPage: 1, ...runPipeline(state.allSpecialCoats, nextState) };
       }),
 
+    setFilterOwnedCount: (count) =>
+      set((state) => {
+        const nextState = { ...state, filterOwnedCount: count, currentPage: 1 };
+        return { filterOwnedCount: count, currentPage: 1, ...runPipeline(state.allSpecialCoats, nextState) };
+      }),
+
     setFilterLevel10: (value) =>
       set((state) => {
         const nextState = { ...state, filterLevel10: value, currentPage: 1 };
@@ -290,6 +300,7 @@ export const useSpecialCoatStore = create<SpecialCoatState>((set, get) => {
           inventoryStatus: "all" as const,
           contestOnly: false,
           filterRegionId: null,
+          filterOwnedCount: null,
           filterLevel10: false,
           filterLevel20: false,
           filterGlitter: false,

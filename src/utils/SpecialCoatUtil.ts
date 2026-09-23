@@ -10,6 +10,7 @@ interface FilterOptions {
   inventoryStatus: InventoryStatusFilter;
   contestOnly?: boolean;
   filterRegionId?: number | null;
+  filterOwnedCount?: number | null;
   filterLevel10?: boolean;
   filterLevel20?: boolean;
   filterGlitter?: boolean;
@@ -29,6 +30,7 @@ export function filterSpecialCoats(
     inventoryStatus,
     contestOnly = false,
     filterRegionId = null,
+    filterOwnedCount = null,
     filterLevel10 = false,
     filterLevel20 = false,
     filterGlitter = false,
@@ -74,6 +76,7 @@ export function filterSpecialCoats(
     if (filterLevel20 && !coat.inventoryLevel20) return false;
     if (filterGlitter && !coat.inventoryGlitter) return false;
     if (filterRegionId !== null && coat.inventoryRegionId !== filterRegionId) return false;
+    if (filterOwnedCount !== null && (coat.ownedAmount ?? 0) !== filterOwnedCount) return false;
 
     return true;
   });

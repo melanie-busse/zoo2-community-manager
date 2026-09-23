@@ -87,7 +87,7 @@ export default function SpecialCoatsInventoryContent({
 
   return (
     <>
-      <PageHeader text={t("overview_title")} />
+      <PageHeader text={t("inventory_title")} />
 
       <Suspense fallback={<div>{tCommon("loading")}</div>}>
         <SpecialCoatsInventoryFilter regions={regions} />
