@@ -21,6 +21,7 @@ export default function ContestSpecialCoatInventoryClient({
   const coatsWithInventory = coats.map((coat: any) => ({
     ...coat,
     inventoryRegionId: inventoryMap.get(coat.id)?.regionId ?? null,
+    inventoryPuzzlePieces: inventoryMap.get(coat.id)?.puzzlePieces ?? null,
   }));
   setInitialCoats(coatsWithInventory);
 
