@@ -44,7 +44,7 @@ export default function ContestSpecialCoatInventoryFilter({
         selectedRegionId={filterRegionId}
         onChange={setFilterRegionId}
       />
-      <PuzzleStatusSelect value={filterPuzzleStatus} onChange={setFilterPuzzleStatus} />
+      <PuzzleStatusSelect value={filterPuzzleStatus} onChange={setFilterPuzzleStatus} variant="coat" />
     </FilterCard>
   );
 }

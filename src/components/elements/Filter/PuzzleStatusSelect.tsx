@@ -7,10 +7,15 @@ import styled from "styled-components";
 interface PuzzleStatusSelectProps {
   value: "complete" | "incomplete" | null;
   onChange: (value: "complete" | "incomplete" | null) => void;
+  variant?: "statue" | "coat";
 }
 
-export function PuzzleStatusSelect({ value, onChange }: PuzzleStatusSelectProps) {
+export function PuzzleStatusSelect({ value, onChange, variant = "statue" }: PuzzleStatusSelectProps) {
   const tCommon = useTranslations("common");
+
+  const allLabel = variant === "coat" ? tCommon("filter.all_coat_puzzle_status") : tCommon("filter.all_puzzle_status");
+  const completeLabel = variant === "coat" ? tCommon("filter.coat_puzzle_complete") : tCommon("filter.puzzle_complete");
+  const incompleteLabel = variant === "coat" ? tCommon("filter.coat_puzzle_incomplete") : tCommon("filter.puzzle_incomplete");
 
   return (
     <Select
@@ -20,9 +25,9 @@ export function PuzzleStatusSelect({ value, onChange }: PuzzleStatusSelectProps)
         onChange(val === "all" ? null : (val as "complete" | "incomplete"));
       }}
     >
-      <option value="all">{tCommon("filter.all_puzzle_status")}</option>
-      <option value="complete">{tCommon("filter.puzzle_complete")}</option>
-      <option value="incomplete">{tCommon("filter.puzzle_incomplete")}</option>
+      <option value="all">{allLabel}</option>
+      <option value="complete">{completeLabel}</option>
+      <option value="incomplete">{incompleteLabel}</option>
     </Select>
   );
 }
