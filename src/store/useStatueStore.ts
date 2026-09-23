@@ -9,6 +9,7 @@ interface StatueState {
   searchTerm: string;
   selectedBiome: string | null;
   filterRegionId: number | null;
+  filterPuzzleStatus: "complete" | "incomplete" | null;
   sortBy: string;
   sortDirection: "asc" | "desc";
   currentPage: number;
@@ -22,16 +23,23 @@ interface StatueState {
   setSearchTerm: (term: string) => void;
   setSelectedBiome: (biome: string | null) => void;
   setFilterRegionId: (id: number | null) => void;
+  setFilterPuzzleStatus: (status: "complete" | "incomplete" | null) => void;
   resetFilters: () => void;
 }
 
 export const useStatueStore = create<StatueState>((set) => {
   const runPipeline = (all: any[], state: any) => {
-    const filtered = filterAnimals(all, {
+    const preFiltered = filterAnimals(all, {
       searchTerm: state.searchTerm,
       selectedBiome: state.selectedBiome,
       selectedShelterLevel: null,
       filterRegionId: state.filterRegionId,
+    });
+
+    const filtered = preFiltered.filter((statue: any) => {
+      if (state.filterPuzzleStatus === null) return true;
+      const pieces = statue.inventoryPuzzlePieces ?? 0;
+      return state.filterPuzzleStatus === "complete" ? pieces >= 100 : pieces < 100;
     });
 
     const sorted = sortAnimals(filtered, {
@@ -54,6 +62,7 @@ export const useStatueStore = create<StatueState>((set) => {
     searchTerm: "",
     selectedBiome: null,
     filterRegionId: null,
+    filterPuzzleStatus: null,
     sortBy: "name",
     sortDirection: "asc",
     currentPage: 1,
@@ -126,6 +135,16 @@ export const useStatueStore = create<StatueState>((set) => {
         };
       }),
 
+    setFilterPuzzleStatus: (status) =>
+      set((state) => {
+        const nextState = { ...state, filterPuzzleStatus: status, currentPage: 1 };
+        return {
+          filterPuzzleStatus: status,
+          currentPage: 1,
+          ...runPipeline(state.allStatues, nextState),
+        };
+      }),
+
     resetFilters: () =>
       set((state) => {
         const clearedState = {
@@ -133,6 +152,7 @@ export const useStatueStore = create<StatueState>((set) => {
           searchTerm: "",
           selectedBiome: null,
           filterRegionId: null,
+          filterPuzzleStatus: null as "complete" | "incomplete" | null,
           sortBy: "name",
           sortDirection: "asc" as const,
           currentPage: 1,
