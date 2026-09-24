@@ -47,7 +47,7 @@ export default function ContestOverviewContent({
           </Styles.MobileOnly>
         </>
       ) : (
-        <EmptyState object="contests" onResetAction={() => router.refresh()} />
+        <EmptyState object="contests" />
       )}
     </>
   );
