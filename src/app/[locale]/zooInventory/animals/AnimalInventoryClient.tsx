@@ -24,6 +24,7 @@ export default function AnimalInventoryClient({
     inventoryLevel20: inventoryMap.get(animal.id)?.level20 ?? false,
     inventoryGlitter: inventoryMap.get(animal.id)?.glitterAnimal ?? false,
     inventoryRegionId: inventoryMap.get(animal.id)?.regionId ?? null,
+    ownedAmount: inventoryMap.get(animal.id)?.count ?? null,
   }));
   setInitialAnimals(animalsWithInventory);
 

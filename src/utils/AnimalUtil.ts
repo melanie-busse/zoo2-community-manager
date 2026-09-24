@@ -66,7 +66,7 @@ export function filterAnimals(
       return false;
     }
 
-    if (filterOwnedCount !== null && (animal as any).ownedAmount !== filterOwnedCount) {
+    if (filterOwnedCount !== null && ((animal as any).ownedAmount ?? 0) !== filterOwnedCount) {
       return false;
     }
 
