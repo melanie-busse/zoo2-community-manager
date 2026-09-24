@@ -24,7 +24,6 @@ model Biome {
   expansionsCost            Int?
   priceTypeExpansionsCostId Int?
   size                      Int?
-  image                     String?      @db.VarChar(255)
   animals                   Animal[]
   priceType                 PriceType?   @relation(fields: [priceTypeId], references: [id])
   biomestext                BiomesText[]
