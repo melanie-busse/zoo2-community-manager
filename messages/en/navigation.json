@@ -17,6 +17,8 @@
   },
   "links": {
     "home": "Home",
+    "zoo": "Zoo",
+    "statistic": "Statistics",
     "animals": "Animals",
     "animal_overview": "Animal Overview",
     "animal_create": "Add Animal",

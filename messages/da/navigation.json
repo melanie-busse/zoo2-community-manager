@@ -17,6 +17,8 @@
   },
   "links": {
     "home": "Hjem",
+    "zoo": "Zoo",
+    "statistic": "Statistik",
     "animals": "Dyr",
     "animal_overview": "Dyroversigt",
     "animal_create": "Tilføj dyr",

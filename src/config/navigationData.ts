@@ -20,6 +20,13 @@ export const navConfig: NavItem[] = [
     href: "/",
   },
   {
+    id: "zoo",
+    labelKey: "zoo",
+    basePath: "/zoo",
+    requiresAuth: false,
+    subMenu: [{ labelKey: "statistic", href: "/zoo/statistic", requiresAuth: false }],
+  },
+  {
     id: "animals",
     labelKey: "animals",
     basePath: "/animals",
