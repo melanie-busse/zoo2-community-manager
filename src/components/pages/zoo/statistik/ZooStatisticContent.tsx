@@ -1,6 +1,7 @@
 import PageHeader from "@/components/page-structure/page/PageHeader";
 import React from "react";
 import ZooStatisticCard from "@/components/pages/zoo/statistik/ZooStatisticCard";
+import ZooSummaryCard from "@/components/pages/zoo/statistik/ZooSummaryCard";
 import { BiomeStatistic } from "@/types/zooStatistic";
 import styled from "styled-components";
 
@@ -23,6 +24,7 @@ export default function ZooStatisticContent({ biomeStatistics }: ZooStatisticCon
   return (
     <>
       <PageHeader text={"Zoo Statistik"} />
+      <ZooSummaryCard biomeStatistics={biomeStatistics} />
       <Grid>
         {biomeStatistics.map((stat) => (
           <ZooStatisticCard key={stat.biomeId} stat={stat} />
