@@ -8,4 +8,6 @@ export type BiomeStatistic = {
   animalsForDiamond: number;
   totalSpecialCoats: number;
   shelterLevelCounts: Record<number, number>;
+  contestStatues: number;
+  contestSpecialCoats: number;
 };

@@ -41,6 +41,8 @@ const mockStat: BiomeStatistic = {
   animalsForDiamond: 10,
   totalSpecialCoats: 15,
   shelterLevelCounts: { 0: 2, 1: 7, 2: 14, 3: 7 },
+  contestStatues: 5,
+  contestSpecialCoats: 12,
 };
 
 describe("ZooStatisticCard", () => {
@@ -81,6 +83,12 @@ describe("ZooStatisticCard", () => {
     expect(screen.getByTestId("shelter-1")).toBeInTheDocument();
     expect(screen.getByTestId("shelter-2")).toBeInTheDocument();
     expect(screen.getByTestId("shelter-3")).toBeInTheDocument();
+  });
+
+  test("zeigt Wettbewerbstiere und Statuen an", () => {
+    render(<ZooStatisticCard stat={mockStat} />);
+    expect(screen.getByText("5")).toBeInTheDocument();
+    expect(screen.getByText("12")).toBeInTheDocument();
   });
 
   test("zeigt die Anzahl pro Stalllevel an", () => {

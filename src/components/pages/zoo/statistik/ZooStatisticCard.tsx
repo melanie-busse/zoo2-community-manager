@@ -97,6 +97,21 @@ export default function ZooStatisticCard({ stat }: ZooStatisticCardProps) {
 
       <CardDivider />
 
+      {/* Wettbewerb */}
+      <CardStatsRow>
+        <StatSection>
+          <SectionTitle>Wettbewerb</SectionTitle>
+          <StatRow>
+            <span>Wettbewerbstiere:</span>
+            <strong>{stat.contestSpecialCoats}</strong>
+          </StatRow>
+          <StatRow>
+            <span>Statuen:</span>
+            <strong>{stat.contestStatues}</strong>
+          </StatRow>
+        </StatSection>
+      </CardStatsRow>
+
       <CardDivider />
 
       {/* Stall-Level Auswertung */}

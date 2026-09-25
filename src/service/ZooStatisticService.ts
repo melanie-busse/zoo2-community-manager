@@ -16,7 +16,7 @@ export async function getZooStatistics(locale: string = "de"): Promise<BiomeStat
         },
         animals: {
           include: {
-            specialcoat: { select: { id: true } },
+            specialcoat: { select: { id: true, isContestSpecialCoat: true } },
           },
         },
       },
@@ -42,6 +42,8 @@ export async function getZooStatistics(locale: string = "de"): Promise<BiomeStat
         animalsForDiamond: animals.filter((a) => a.priceTypeId === 2).length,
         totalSpecialCoats: animals.reduce((sum, a) => sum + a.specialcoat.length, 0),
         shelterLevelCounts,
+        contestStatues: animals.filter((a) => a.isContestAnimal).length,
+        contestSpecialCoats: animals.reduce((sum, a) => sum + a.specialcoat.filter((sc) => sc.isContestSpecialCoat).length, 0),
       };
     });
   } catch (error) {
