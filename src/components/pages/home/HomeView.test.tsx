@@ -36,6 +36,7 @@ describe("HomeView", () => {
     tierCount: 142,
     specialCoatCount: 35,
     habitatCount: 12,
+    regionCount: 8,
   };
 
   const mockT = {
@@ -67,7 +68,7 @@ describe("HomeView", () => {
     expect(screen.getByText("12")).toBeInTheDocument();
     expect(screen.getByText("Gehege")).toBeInTheDocument();
 
-    expect(screen.getByText("6")).toBeInTheDocument();
+    expect(screen.getByText("8")).toBeInTheDocument();
     expect(screen.getByText("Regionen")).toBeInTheDocument();
   });
 

@@ -2,6 +2,7 @@
 
 import React from "react";
 import styled from "styled-components";
+import { useTranslations } from "next-intl";
 import { BiomeStatistic } from "@/types/zooStatistic";
 
 import CardContainer from "@/components/page-structure/Card/CardContainer";
@@ -62,6 +63,7 @@ interface ZooSummaryCardProps {
 }
 
 export default function ZooSummaryCard({ biomeStatistics }: ZooSummaryCardProps) {
+  const t = useTranslations("zooStatistic");
   const shelterLevels = [0, 1, 2, 3];
 
   const totalAnimals = biomeStatistics.reduce((s, b) => s + b.totalAnimals, 0);
@@ -73,29 +75,41 @@ export default function ZooSummaryCard({ biomeStatistics }: ZooSummaryCardProps)
   const shelterTotals = shelterLevels.map((level) =>
     biomeStatistics.reduce((s, b) => s + (b.shelterLevelCounts[level] ?? 0), 0),
   );
+  const regionCount = new Set(biomeStatistics.map((b) => b.region).filter(Boolean)).size;
 
   return (
     <CardContainer>
       <CardHeaderRow>
-        <Title>Gesamter Zoo</Title>
-        <span style={{ fontSize: "0.85rem", opacity: 0.7 }}>{biomeStatistics.length} Biome</span>
+        <Title>{t("summary.title")}</Title>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-end",
+            fontSize: "0.85rem",
+            opacity: 0.7,
+          }}
+        >
+          <span>{t("summary.biomes", { count: biomeStatistics.length })}</span>
+          <span>{t("summary.regions", { count: regionCount })}</span>
+        </div>
       </CardHeaderRow>
 
       <CardDivider />
 
       <CardStatsRow>
         <StatSection>
-          <SectionTitle>Tiere</SectionTitle>
+          <SectionTitle>{t("animals.title")}</SectionTitle>
           <StatRow>
-            <span>Gesamtzahl Tiere:</span>
+            <span>{t("animals.total")}</span>
             <strong>{totalAnimals}</strong>
           </StatRow>
           <StatRow>
-            <span>Gesamtzahl Farbvarianten:</span>
+            <span>{t("animals.specialCoats")}</span>
             <strong>{totalSpecialCoats}</strong>
           </StatRow>
           <StatRow>
-            <span>Verteilung Zahlungsform:</span>
+            <span>{t("animals.distribution")}</span>
             <BadgeGrid>
               <PriceBadge value={totalZoodollar} type="Zoodollar" />
               <PriceBadge value={totalDiamond} type="Diamond" />
@@ -108,13 +122,13 @@ export default function ZooSummaryCard({ biomeStatistics }: ZooSummaryCardProps)
 
       <CardStatsRow>
         <StatSection>
-          <SectionTitle>Wettbewerb</SectionTitle>
+          <SectionTitle>{t("contest.title")}</SectionTitle>
           <StatRow>
-            <span>Wettbewerbstiere:</span>
+            <span>{t("contest.contestAnimals")}</span>
             <strong>{totalContestSpecialCoats}</strong>
           </StatRow>
           <StatRow>
-            <span>Statuen:</span>
+            <span>{t("contest.statues")}</span>
             <strong>{totalContestStatues}</strong>
           </StatRow>
         </StatSection>
@@ -124,12 +138,12 @@ export default function ZooSummaryCard({ biomeStatistics }: ZooSummaryCardProps)
 
       <CardStatsRow>
         <StatSection>
-          <SectionTitle>Benötigte Stalllevel</SectionTitle>
+          <SectionTitle>{t("shelter.title")}</SectionTitle>
           <ShelterGrid>
             {shelterLevels.map((level, i) => (
               <ShelterItem key={level}>
                 <strong>{shelterTotals[i]}</strong>
-                <span style={{ opacity: 0.7 }}>Level {level}</span>
+                <span style={{ opacity: 0.7 }}>{t("shelter.level", { level })}</span>
               </ShelterItem>
             ))}
           </ShelterGrid>

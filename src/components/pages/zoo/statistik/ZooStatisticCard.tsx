@@ -2,6 +2,7 @@
 
 import React from "react";
 import styled from "styled-components";
+import { useTranslations } from "next-intl";
 import { BiomeStatistic } from "@/types/zooStatistic";
 
 // Wiederverwendung deiner Seiten- & Card-Strukturkomponenten
@@ -52,6 +53,7 @@ interface ZooStatisticCardProps {
 }
 
 export default function ZooStatisticCard({ stat }: ZooStatisticCardProps) {
+  const t = useTranslations("zooStatistic");
   const shelterLevels = [0, 1, 2, 3];
   const id = stat.biomeIdentifier;
   const biomeImage = { name: id, path: `/images/biomes/${id}/area.webp`, alt: stat.biomeName };
@@ -72,21 +74,20 @@ export default function ZooStatisticCard({ stat }: ZooStatisticCardProps) {
 
       <CardDivider />
 
-      {/* Tiere & Währungsauswertung */}
       <CardStatsRow>
         <StatSection>
-          <SectionTitle>Tiere</SectionTitle>
+          <SectionTitle>{t("animals.title")}</SectionTitle>
           <StatRow>
-            <span>Gesamtzahl Tiere:</span>
+            <span>{t("animals.total")}</span>
             <strong>{stat.totalAnimals}</strong>
           </StatRow>
           <StatRow>
-            <span>Gesamtzahl Farbvarianten:</span>
+            <span>{t("animals.specialCoats")}</span>
             <strong>{stat.totalSpecialCoats}</strong>
           </StatRow>
 
           <StatRow>
-            <span>Verteilung Zahlungsform:</span>
+            <span>{t("animals.distribution")}</span>
             <BadgeGrid>
               <PriceBadge value={stat.animalsForZoodollar} type="Zoodollar" />
               <PriceBadge value={stat.animalsForDiamond} type="Diamond" />
@@ -97,16 +98,15 @@ export default function ZooStatisticCard({ stat }: ZooStatisticCardProps) {
 
       <CardDivider />
 
-      {/* Wettbewerb */}
       <CardStatsRow>
         <StatSection>
-          <SectionTitle>Wettbewerb</SectionTitle>
+          <SectionTitle>{t("contest.title")}</SectionTitle>
           <StatRow>
-            <span>Wettbewerbstiere:</span>
+            <span>{t("contest.contestAnimals")}</span>
             <strong>{stat.contestSpecialCoats}</strong>
           </StatRow>
           <StatRow>
-            <span>Statuen:</span>
+            <span>{t("contest.statues")}</span>
             <strong>{stat.contestStatues}</strong>
           </StatRow>
         </StatSection>
@@ -114,10 +114,9 @@ export default function ZooStatisticCard({ stat }: ZooStatisticCardProps) {
 
       <CardDivider />
 
-      {/* Stall-Level Auswertung */}
       <CardStatsRow>
         <StatSection>
-          <SectionTitle>Benötigte Stalllevel</SectionTitle>
+          <SectionTitle>{t("shelter.title")}</SectionTitle>
           <BadgeGrid style={{ marginTop: "4px", justifyContent: "space-between", width: "100%" }}>
             {shelterLevels.map((level) => {
               const count = stat.shelterLevelCounts[level] ?? 0;

@@ -48,7 +48,18 @@ const mockStats: BiomeStatistic[] = [
 describe("ZooSummaryCard", () => {
   test("zeigt die Anzahl der Biome an", () => {
     render(<ZooSummaryCard biomeStatistics={mockStats} />);
-    expect(screen.getByText("2 Biome")).toBeInTheDocument();
+    expect(screen.getByText("summary.biomes")).toBeInTheDocument();
+  });
+
+  test("zeigt die Anzahl eindeutiger Regionen an", () => {
+    const stats = [
+      makeStat({ biomeId: 1, region: "Hauptzoo" }),
+      makeStat({ biomeId: 2, region: "Hauptzoo" }),
+      makeStat({ biomeId: 3, region: "FirGrove" }),
+      makeStat({ biomeId: 4, region: null }),
+    ];
+    render(<ZooSummaryCard biomeStatistics={stats} />);
+    expect(screen.getByText("summary.regions")).toBeInTheDocument();
   });
 
   test("summiert Gesamtzahl der Tiere korrekt", () => {
@@ -69,7 +80,7 @@ describe("ZooSummaryCard", () => {
 
   test("summiert Wettbewerbstiere korrekt", () => {
     render(<ZooSummaryCard biomeStatistics={mockStats} />);
-    const label = screen.getByText("Wettbewerbstiere:");
+    const label = screen.getByText("contest.contestAnimals");
     expect(label.nextElementSibling).toHaveTextContent("10");
   });
 
@@ -89,6 +100,6 @@ describe("ZooSummaryCard", () => {
 
   test("funktioniert mit leerem Array", () => {
     render(<ZooSummaryCard biomeStatistics={[]} />);
-    expect(screen.getByText("0 Biome")).toBeInTheDocument();
+    expect(screen.getByText("summary.biomes")).toBeInTheDocument();
   });
 });

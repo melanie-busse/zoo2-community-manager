@@ -1,0 +1,23 @@
+{
+  "title": "Zoo Statistik",
+  "summary": {
+    "title": "Gesamter Zoo",
+    "biomes": "{count} Biome",
+    "regions": "{count} Regionen"
+  },
+  "animals": {
+    "title": "Tiere",
+    "total": "Gesamtzahl Tiere:",
+    "specialCoats": "Gesamtzahl Farbvarianten:",
+    "distribution": "Verteilung Zahlungsform:"
+  },
+  "contest": {
+    "title": "Wettbewerb",
+    "contestAnimals": "Wettbewerbstiere:",
+    "statues": "Statuen:"
+  },
+  "shelter": {
+    "title": "Benötigte Stalllevel",
+    "level": "Level {level}"
+  }
+}
