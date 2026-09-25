@@ -8,6 +8,7 @@ interface HomeViewProps {
     tierCount: number;
     specialCoatCount: number;
     habitatCount: number;
+    regionCount: number;
   };
   t: any;
 }
@@ -27,7 +28,7 @@ export default function HomeView({ stats, t }: HomeViewProps) {
       label: t.stats_biomes,
     },
     {
-      number: 6,
+      number: stats.regionCount,
       label: t.stats_regions,
     },
   ];

@@ -4,6 +4,7 @@ import HomeView from "@/components/pages/home/HomeView";
 import { getCountAnimals } from "@/service/AnimalService";
 import { getHabitatCount } from "@/service/BiomeService";
 import { getCountSpecialCoats } from "@/service/SpecialCoatsService";
+import { getRegionCount } from "@/service/RegionService";
 
 export default async function IndexPage() {
   const t = await getTranslations("page");
@@ -12,6 +13,7 @@ export default async function IndexPage() {
     tierCount: await getCountAnimals(),
     specialCoatCount: await getCountSpecialCoats(),
     habitatCount: await getHabitatCount(),
+    regionCount: await getRegionCount(),
   };
 
   const trans = {

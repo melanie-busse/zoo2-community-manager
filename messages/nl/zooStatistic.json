@@ -1,0 +1,23 @@
+{
+  "title": "Zoo Statistieken",
+  "summary": {
+    "title": "Totale Zoo",
+    "biomes": "{count} Biotopen",
+    "regions": "{count} Regio's"
+  },
+  "animals": {
+    "title": "Dieren",
+    "total": "Totaal dieren:",
+    "specialCoats": "Totaal kleurvarianten:",
+    "distribution": "Betalingsverdeling:"
+  },
+  "contest": {
+    "title": "Competitie",
+    "contestAnimals": "Competitiedieren:",
+    "statues": "Standbeelden:"
+  },
+  "shelter": {
+    "title": "Vereiste stalniveaus",
+    "level": "Niveau {level}"
+  }
+}

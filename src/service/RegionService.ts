@@ -1,6 +1,10 @@
 import "server-only";
 import { prisma } from "@/lib/prisma";
 
+export async function getRegionCount() {
+  return prisma.region.count();
+}
+
 export async function getAllRegions(locale: string = "de") {
   try {
     return await prisma.region.findMany({

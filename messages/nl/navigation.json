@@ -17,6 +17,8 @@
   },
   "links": {
     "home": "Home",
+    "zoo": "Zoo",
+    "statistic": "Statistieken",
     "animals": "Dieren",
     "animal_overview": "Dierenoverzicht",
     "animal_create": "Dier toevoegen",

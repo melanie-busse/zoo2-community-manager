@@ -17,6 +17,8 @@
   },
   "links": {
     "home": "Home",
+    "zoo": "Zoo",
+    "statistic": "Statistik",
     "animals": "Tiere",
     "animal_overview": "Tierübersicht",
     "animal_create": "Tier anlegen",

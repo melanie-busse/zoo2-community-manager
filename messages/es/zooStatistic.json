@@ -1,0 +1,23 @@
+{
+  "title": "Estadísticas del Zoo",
+  "summary": {
+    "title": "Zoo Total",
+    "biomes": "{count} Biomas",
+    "regions": "{count} Regiones"
+  },
+  "animals": {
+    "title": "Animales",
+    "total": "Total de animales:",
+    "specialCoats": "Total de variantes de color:",
+    "distribution": "Distribución de pago:"
+  },
+  "contest": {
+    "title": "Competición",
+    "contestAnimals": "Animales de competición:",
+    "statues": "Estatuas:"
+  },
+  "shelter": {
+    "title": "Niveles de establo requeridos",
+    "level": "Nivel {level}"
+  }
+}

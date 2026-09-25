@@ -24,11 +24,14 @@ model Biome {
   expansionsCost            Int?
   priceTypeExpansionsCostId Int?
   size                      Int?
+  regionId                  Int?
   animals                   Animal[]
   priceType                 PriceType?   @relation(fields: [priceTypeId], references: [id])
+  region                    Region?      @relation(fields: [regionId], references: [id])
   biomestext                BiomesText[]
 
   @@index([priceTypeId], map: "biome_priceTypeId_fkey")
+  @@index([regionId], map: "biome_regionId_fkey")
   @@map("biome")
 }
 
@@ -370,6 +373,7 @@ model Region {
   releasedate DateTime
   unlocklevel Int
   identifier  String       @db.VarChar(255)
+  biomes      Biome[]
   regionTexts RegionText[]
 
   @@map("region")
