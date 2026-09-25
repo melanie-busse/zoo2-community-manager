@@ -1,0 +1,23 @@
+{
+  "title": "Inventar Statistik",
+  "summary": {
+    "title": "Gesamtes Inventar",
+    "biomes": "{count} Biome",
+    "regions": "{count} Regionen"
+  },
+  "animals": {
+    "title": "Tiere",
+    "total": "Gesamtzahl Tiere:",
+    "specialCoats": "Gesamtzahl Farbvarianten:",
+    "distribution": "Verteilung Zahlungsform:"
+  },
+  "contest": {
+    "title": "Wettbewerb",
+    "contestAnimals": "Wettbewerbstiere:",
+    "statues": "Statuen:"
+  },
+  "shelter": {
+    "title": "Benötigte Stalllevel",
+    "level": "Level {level}"
+  }
+}

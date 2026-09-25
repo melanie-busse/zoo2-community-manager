@@ -13,6 +13,7 @@ const namespaces = [
   "api",
   "user",
   "zooStatistic",
+  "inventoryStatistic",
 ] as const;
 
 export default getRequestConfig(async ({ requestLocale }) => {

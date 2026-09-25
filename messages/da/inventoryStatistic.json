@@ -1,0 +1,23 @@
+{
+  "title": "Inventar Statistik",
+  "summary": {
+    "title": "Samlet Inventar",
+    "biomes": "{count} Biomer",
+    "regions": "{count} Regioner"
+  },
+  "animals": {
+    "title": "Dyr",
+    "total": "Samlet antal dyr:",
+    "specialCoats": "Samlet antal farvevarianter:",
+    "distribution": "Betalingsfordeling:"
+  },
+  "contest": {
+    "title": "Konkurrence",
+    "contestAnimals": "Konkurrencedyr:",
+    "statues": "Statuer:"
+  },
+  "shelter": {
+    "title": "Påkrævede staldeniveauer",
+    "level": "Niveau {level}"
+  }
+}

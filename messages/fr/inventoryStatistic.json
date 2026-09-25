@@ -1,0 +1,23 @@
+{
+  "title": "Statistiques de l'inventaire",
+  "summary": {
+    "title": "Inventaire total",
+    "biomes": "{count} Biomes",
+    "regions": "{count} Régions"
+  },
+  "animals": {
+    "title": "Animaux",
+    "total": "Total des animaux:",
+    "specialCoats": "Total des variantes de couleur:",
+    "distribution": "Répartition des paiements:"
+  },
+  "contest": {
+    "title": "Compétition",
+    "contestAnimals": "Animaux de compétition:",
+    "statues": "Statues:"
+  },
+  "shelter": {
+    "title": "Niveaux d'abri requis",
+    "level": "Niveau {level}"
+  }
+}
