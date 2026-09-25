@@ -9,6 +9,8 @@ import CardContainer from "@/components/page-structure/Card/CardContainer";
 import CardHeaderRow from "@/components/page-structure/Card/CardHeaderRow";
 import CardDivider from "@/components/page-structure/Card/CardDevider";
 import CardStatsRow from "@/components/page-structure/Card/CardStatsRow";
+import { InlineStatProgress } from "@/components/page-structure/Elements/Inline-ProgressBar";
+import { PieChart, Pie, Cell, Tooltip } from "recharts";
 
 const Title = styled.span`
   font-weight: bold;
@@ -29,13 +31,6 @@ const SectionTitle = styled.div`
   margin-bottom: ${({ theme }) => theme.spacing(0.5)};
 `;
 
-const StatRow = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.9rem;
-`;
-
 const ShelterGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -50,23 +45,7 @@ const ShelterItem = styled.div`
   gap: 2px;
 `;
 
-const Fraction = styled.strong`
-  white-space: nowrap;
-`;
-
-const FractionSlash = styled.span`
-  font-weight: 400;
-  opacity: 0.5;
-  margin: 0 2px;
-`;
-
-const CurrencyRow = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  align-items: flex-end;
-  font-size: 0.85rem;
-`;
+const LEVEL_COLORS = ["#4facfe", "#b224ef", "#ff0844", "#f6d365"];
 
 interface InventorySummaryCardProps {
   biomeStatistics: InventoryBiomeStatistic[];
@@ -116,43 +95,10 @@ export default function InventorySummaryCard({ biomeStatistics }: InventorySumma
       <CardStatsRow>
         <StatSection>
           <SectionTitle>{t("animals.title")}</SectionTitle>
-          <StatRow>
-            <span>{t("animals.total")}</span>
-            <Fraction>
-              {ownedAnimals}
-              <FractionSlash>/</FractionSlash>
-              {totalAnimals}
-            </Fraction>
-          </StatRow>
-          <StatRow>
-            <span>{t("animals.specialCoats")}</span>
-            <Fraction>
-              {ownedSpecialCoats}
-              <FractionSlash>/</FractionSlash>
-              {totalSpecialCoats}
-            </Fraction>
-          </StatRow>
-          <StatRow>
-            <span>{t("animals.distribution")}</span>
-            <CurrencyRow>
-              <span>
-                Zoodollar:{" "}
-                <Fraction>
-                  {ownedZoodollar}
-                  <FractionSlash>/</FractionSlash>
-                  {totalZoodollar}
-                </Fraction>
-              </span>
-              <span>
-                Diamond:{" "}
-                <Fraction>
-                  {ownedDiamond}
-                  <FractionSlash>/</FractionSlash>
-                  {totalDiamond}
-                </Fraction>
-              </span>
-            </CurrencyRow>
-          </StatRow>
+          <InlineStatProgress label={t("animals.total")} current={ownedAnimals} total={totalAnimals} ofLabel={t("of")} />
+          <InlineStatProgress label={t("animals.specialCoats")} current={ownedSpecialCoats} total={totalSpecialCoats} ofLabel={t("of")} />
+          <InlineStatProgress label={t("animals.zoodollar")} current={ownedZoodollar} total={totalZoodollar} ofLabel={t("of")} />
+          <InlineStatProgress label={t("animals.diamond")} current={ownedDiamond} total={totalDiamond} ofLabel={t("of")} />
         </StatSection>
       </CardStatsRow>
 
@@ -161,22 +107,8 @@ export default function InventorySummaryCard({ biomeStatistics }: InventorySumma
       <CardStatsRow>
         <StatSection>
           <SectionTitle>{t("contest.title")}</SectionTitle>
-          <StatRow>
-            <span>{t("contest.contestAnimals")}</span>
-            <Fraction>
-              {ownedContestSpecialCoats}
-              <FractionSlash>/</FractionSlash>
-              {totalContestSpecialCoats}
-            </Fraction>
-          </StatRow>
-          <StatRow>
-            <span>{t("contest.statues")}</span>
-            <Fraction>
-              {ownedContestStatues}
-              <FractionSlash>/</FractionSlash>
-              {totalContestStatues}
-            </Fraction>
-          </StatRow>
+          <InlineStatProgress label={t("contest.contestAnimals")} current={ownedContestSpecialCoats} total={totalContestSpecialCoats} ofLabel={t("of")} />
+          <InlineStatProgress label={t("contest.statues")} current={ownedContestStatues} total={totalContestStatues} ofLabel={t("of")} />
         </StatSection>
       </CardStatsRow>
 
@@ -186,7 +118,7 @@ export default function InventorySummaryCard({ biomeStatistics }: InventorySumma
         <StatSection>
           <SectionTitle>{t("shelter.title")}</SectionTitle>
           <ShelterGrid>
-            {shelterLevels.map((level) => {
+            {shelterLevels.map((level, i) => {
               const owned = biomeStatistics.reduce(
                 (s, b) => s + (b.ownedShelterLevelCounts[level] ?? 0),
                 0,
@@ -195,14 +127,37 @@ export default function InventorySummaryCard({ biomeStatistics }: InventorySumma
                 (s, b) => s + (b.shelterLevelCounts[level] ?? 0),
                 0,
               );
+              const remaining = Math.max(0, total - owned);
+              const data = [
+                { name: "owned", value: owned },
+                { name: "missing", value: remaining },
+              ];
               return (
                 <ShelterItem key={level}>
-                  <Fraction>
-                    {owned}
-                    <FractionSlash>/</FractionSlash>
-                    {total}
-                  </Fraction>
+                  <PieChart width={80} height={80}>
+                    <Pie
+                      data={data}
+                      cx={35}
+                      cy={35}
+                      innerRadius={22}
+                      outerRadius={35}
+                      dataKey="value"
+                      startAngle={90}
+                      endAngle={-270}
+                    >
+                      <Cell fill={LEVEL_COLORS[i]} />
+                      <Cell fill="rgba(255,255,255,0.15)" />
+                    </Pie>
+                    <Tooltip
+                      formatter={(_value, name) =>
+                        name === "owned" ? [`${owned}/${total}`, t("shelter.level", { level })] : null
+                      }
+                    />
+                  </PieChart>
                   <span style={{ opacity: 0.7 }}>{t("shelter.level", { level })}</span>
+                  <span style={{ fontSize: "0.8rem", fontWeight: 600 }}>
+                    {owned}/{total}
+                  </span>
                 </ShelterItem>
               );
             })}

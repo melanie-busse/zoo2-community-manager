@@ -1,5 +1,6 @@
 {
   "title": "Estadísticas del Inventario",
+  "of": "de",
   "summary": {
     "title": "Inventario Total",
     "biomes": "{count} Biomas",
@@ -7,14 +8,16 @@
   },
   "animals": {
     "title": "Animales",
-    "total": "Total de animales:",
-    "specialCoats": "Total de variantes de color:",
-    "distribution": "Distribución de pago:"
+    "total": "Total de animales",
+    "specialCoats": "Total de variantes de color",
+    "distribution": "Distribución de pago",
+    "zoodollar": "Animales para Zoodollar",
+    "diamond": "Animales para Diamantes"
   },
   "contest": {
     "title": "Competición",
-    "contestAnimals": "Animales de competición:",
-    "statues": "Estatuas:"
+    "contestAnimals": "Animales de competición",
+    "statues": "Estatuas"
   },
   "shelter": {
     "title": "Niveles de establo requeridos",

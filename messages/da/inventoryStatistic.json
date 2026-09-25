@@ -1,5 +1,6 @@
 {
   "title": "Inventar Statistik",
+  "of": "af",
   "summary": {
     "title": "Samlet Inventar",
     "biomes": "{count} Biomer",
@@ -7,14 +8,16 @@
   },
   "animals": {
     "title": "Dyr",
-    "total": "Samlet antal dyr:",
-    "specialCoats": "Samlet antal farvevarianter:",
-    "distribution": "Betalingsfordeling:"
+    "total": "Samlet antal dyr",
+    "specialCoats": "Samlet antal farvevarianter",
+    "distribution": "Betalingsfordeling",
+    "zoodollar": "Dyr til Zoodollar",
+    "diamond": "Dyr til Diamanter"
   },
   "contest": {
     "title": "Konkurrence",
-    "contestAnimals": "Konkurrencedyr:",
-    "statues": "Statuer:"
+    "contestAnimals": "Konkurrencedyr",
+    "statues": "Statuer"
   },
   "shelter": {
     "title": "Påkrævede staldeniveauer",

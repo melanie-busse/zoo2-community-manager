@@ -3,6 +3,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useTranslations } from "next-intl";
+import { PieChart, Pie, Cell, Tooltip } from "recharts";
 import { InventoryBiomeStatistic } from "@/types/inventoryStatistic";
 
 import CardContainer from "@/components/page-structure/Card/CardContainer";
@@ -10,7 +11,7 @@ import CardHeaderRow from "@/components/page-structure/Card/CardHeaderRow";
 import CardDivider from "@/components/page-structure/Card/CardDevider";
 import CardStatsRow from "@/components/page-structure/Card/CardStatsRow";
 import BiomeBadge from "@/components/ui/badges/BiomeBadge";
-import ShelterLevelBadge from "@/components/ui/badges/ShelterLevelBadge";
+import { InlineStatProgress } from "@/components/page-structure/Elements/Inline-ProgressBar";
 
 const BiomeTitle = styled.span`
   font-weight: bold;
@@ -31,37 +32,21 @@ const SectionTitle = styled.div`
   margin-bottom: ${({ theme }) => theme.spacing(0.5)};
 `;
 
-const StatRow = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.9rem;
-`;
-
-const BadgeGrid = styled.div`
-  display: flex;
+const ShelterGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: ${({ theme }) => theme.spacing(1)};
-  flex-wrap: wrap;
-  align-items: center;
 `;
 
-const Fraction = styled.strong`
-  white-space: nowrap;
-`;
-
-const FractionSlash = styled.span`
-  font-weight: 400;
-  opacity: 0.5;
-  margin: 0 2px;
-`;
-
-const CurrencyRow = styled.div`
+const ShelterItem = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  align-items: flex-end;
+  align-items: center;
   font-size: 0.85rem;
+  gap: 2px;
 `;
+
+const LEVEL_COLORS = ["#4facfe", "#b224ef", "#ff0844", "#f6d365"];
 
 interface InventoryStatisticCardProps {
   stat: InventoryBiomeStatistic;
@@ -72,7 +57,6 @@ export default function InventoryStatisticCard({ stat }: InventoryStatisticCardP
   const shelterLevels = [0, 1, 2, 3];
   const id = stat.biomeIdentifier;
   const biomeImage = { name: id, path: `/images/biomes/${id}/area.webp`, alt: stat.biomeName };
-  const shelterImage = { name: id, path: `/images/biomes/${id}/shelter.png`, alt: stat.biomeName };
 
   return (
     <CardContainer>
@@ -91,43 +75,10 @@ export default function InventoryStatisticCard({ stat }: InventoryStatisticCardP
       <CardStatsRow>
         <StatSection>
           <SectionTitle>{t("animals.title")}</SectionTitle>
-          <StatRow>
-            <span>{t("animals.total")}</span>
-            <Fraction>
-              {stat.ownedAnimals}
-              <FractionSlash>/</FractionSlash>
-              {stat.totalAnimals}
-            </Fraction>
-          </StatRow>
-          <StatRow>
-            <span>{t("animals.specialCoats")}</span>
-            <Fraction>
-              {stat.ownedSpecialCoats}
-              <FractionSlash>/</FractionSlash>
-              {stat.totalSpecialCoats}
-            </Fraction>
-          </StatRow>
-          <StatRow>
-            <span>{t("animals.distribution")}</span>
-            <CurrencyRow>
-              <span>
-                Zoodollar:{" "}
-                <Fraction>
-                  {stat.ownedAnimalsForZoodollar}
-                  <FractionSlash>/</FractionSlash>
-                  {stat.animalsForZoodollar}
-                </Fraction>
-              </span>
-              <span>
-                Diamond:{" "}
-                <Fraction>
-                  {stat.ownedAnimalsForDiamond}
-                  <FractionSlash>/</FractionSlash>
-                  {stat.animalsForDiamond}
-                </Fraction>
-              </span>
-            </CurrencyRow>
-          </StatRow>
+          <InlineStatProgress label={t("animals.total")} current={stat.ownedAnimals} total={stat.totalAnimals} ofLabel={t("of")} />
+          <InlineStatProgress label={t("animals.specialCoats")} current={stat.ownedSpecialCoats} total={stat.totalSpecialCoats} ofLabel={t("of")} />
+          <InlineStatProgress label={t("animals.zoodollar")} current={stat.ownedAnimalsForZoodollar} total={stat.animalsForZoodollar} ofLabel={t("of")} />
+          <InlineStatProgress label={t("animals.diamond")} current={stat.ownedAnimalsForDiamond} total={stat.animalsForDiamond} ofLabel={t("of")} />
         </StatSection>
       </CardStatsRow>
 
@@ -136,22 +87,8 @@ export default function InventoryStatisticCard({ stat }: InventoryStatisticCardP
       <CardStatsRow>
         <StatSection>
           <SectionTitle>{t("contest.title")}</SectionTitle>
-          <StatRow>
-            <span>{t("contest.contestAnimals")}</span>
-            <Fraction>
-              {stat.ownedContestSpecialCoats}
-              <FractionSlash>/</FractionSlash>
-              {stat.contestSpecialCoats}
-            </Fraction>
-          </StatRow>
-          <StatRow>
-            <span>{t("contest.statues")}</span>
-            <Fraction>
-              {stat.ownedContestStatues}
-              <FractionSlash>/</FractionSlash>
-              {stat.contestStatues}
-            </Fraction>
-          </StatRow>
+          <InlineStatProgress label={t("contest.contestAnimals")} current={stat.ownedContestSpecialCoats} total={stat.contestSpecialCoats} ofLabel={t("of")} />
+          <InlineStatProgress label={t("contest.statues")} current={stat.ownedContestStatues} total={stat.contestStatues} ofLabel={t("of")} />
         </StatSection>
       </CardStatsRow>
 
@@ -160,22 +97,45 @@ export default function InventoryStatisticCard({ stat }: InventoryStatisticCardP
       <CardStatsRow>
         <StatSection>
           <SectionTitle>{t("shelter.title")}</SectionTitle>
-          <BadgeGrid style={{ marginTop: "4px", justifyContent: "space-between", width: "100%" }}>
-            {shelterLevels.map((level) => {
+          <ShelterGrid>
+            {shelterLevels.map((level, i) => {
               const owned = stat.ownedShelterLevelCounts[level] ?? 0;
               const total = stat.shelterLevelCounts[level] ?? 0;
+              const remaining = Math.max(0, total - owned);
+              const data = [
+                { name: "owned", value: owned },
+                { name: "missing", value: remaining },
+              ];
               return (
-                <div key={level} style={{ display: "flex", alignItems: "center", gap: "4px" }}>
-                  <ShelterLevelBadge image={shelterImage} level={level} habitat={id} />
-                  <Fraction style={{ fontSize: "0.85rem" }}>
-                    {owned}
-                    <FractionSlash>/</FractionSlash>
-                    {total}
-                  </Fraction>
-                </div>
+                <ShelterItem key={level}>
+                  <PieChart width={80} height={80}>
+                    <Pie
+                      data={data}
+                      cx={35}
+                      cy={35}
+                      innerRadius={22}
+                      outerRadius={35}
+                      dataKey="value"
+                      startAngle={90}
+                      endAngle={-270}
+                    >
+                      <Cell fill={LEVEL_COLORS[i]} />
+                      <Cell fill="rgba(255,255,255,0.15)" />
+                    </Pie>
+                    <Tooltip
+                      formatter={(_value, name) =>
+                        name === "owned" ? [`${owned}/${total}`, t("shelter.level", { level })] : null
+                      }
+                    />
+                  </PieChart>
+                  <span style={{ opacity: 0.7 }}>{t("shelter.level", { level })}</span>
+                  <span style={{ fontSize: "0.8rem", fontWeight: 600 }}>
+                    {owned}/{total}
+                  </span>
+                </ShelterItem>
               );
             })}
-          </BadgeGrid>
+          </ShelterGrid>
         </StatSection>
       </CardStatsRow>
     </CardContainer>
