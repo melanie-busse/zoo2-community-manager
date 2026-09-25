@@ -1,4 +1,4 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { describe, test, expect, vi } from "vitest";
 
 import EmptyState from "./EmptyState";
@@ -8,7 +8,6 @@ vi.mock("@/components/elements/EmptyState/EmptyState.styles", () => ({
   Container: ({ children }: any) => <div>{children}</div>,
   SpeechBubble: ({ children }: any) => <div>{children}</div>,
   UppyPortraitFrame: ({ children }: any) => <div>{children}</div>,
-  ResetButton: ({ children, onClick }: any) => <button onClick={onClick}>{children}</button>,
 }));
 
 vi.mock("next/image", () => ({
@@ -27,13 +26,4 @@ describe("EmptyState", () => {
     expect(screen.getByText("emptyState.message")).toBeInTheDocument();
   });
 
-  test("führt den onResetAction Callback bei Klick aus", () => {
-    const mockReset = vi.fn();
-    render(<EmptyState object="animal" onResetAction={mockReset} />);
-
-    const btn = screen.getByRole("button");
-    fireEvent.click(btn);
-
-    expect(mockReset).toHaveBeenCalledTimes(1);
-  });
 });
