@@ -68,8 +68,10 @@ describe("ZooStatisticCard", () => {
 
   test("zeigt Zoodollar- und Diamanten-Verteilung an", () => {
     render(<ZooStatisticCard stat={mockStat} />);
-    expect(screen.getByTestId("price-badge-Zoodollar")).toHaveTextContent("20");
-    expect(screen.getByTestId("price-badge-Diamond")).toHaveTextContent("10");
+    expect(screen.getByText("animals.zoodollar")).toBeInTheDocument();
+    expect(screen.getByText("20")).toBeInTheDocument();
+    expect(screen.getByText("animals.diamond")).toBeInTheDocument();
+    expect(screen.getByText("10")).toBeInTheDocument();
   });
 
   test("zeigt Gesamtzahl der Farbvarianten an", () => {

@@ -1,22 +1,23 @@
 {
-  "title": "Zoo Statistics",
+  "title": "Inventory Statistics",
+  "of": "of",
   "summary": {
-    "title": "Total Zoo",
+    "title": "Total Inventory",
     "biomes": "{count} Biomes",
     "regions": "{count} Regions"
   },
   "animals": {
     "title": "Animals",
-    "total": "Total Animals:",
-    "specialCoats": "Total Special Coats:",
-    "distribution": "Payment Distribution:",
+    "total": "Total Animals",
+    "specialCoats": "Total Special Coats",
+    "distribution": "Payment Distribution",
     "zoodollar": "Animals for Zoodollar",
     "diamond": "Animals for Diamonds"
   },
   "contest": {
     "title": "Competition",
-    "contestAnimals": "Competition Animals:",
-    "statues": "Statues:"
+    "contestAnimals": "Competition Animals",
+    "statues": "Statues"
   },
   "shelter": {
     "title": "Required Shelter Levels",

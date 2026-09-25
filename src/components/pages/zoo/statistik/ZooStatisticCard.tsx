@@ -11,7 +11,6 @@ import CardHeaderRow from "@/components/page-structure/Card/CardHeaderRow";
 import CardDivider from "@/components/page-structure/Card/CardDevider";
 import CardStatsRow from "@/components/page-structure/Card/CardStatsRow";
 import BiomeBadge from "@/components/ui/badges/BiomeBadge";
-import PriceBadge from "@/components/ui/badges/PriceBadge";
 import ShelterLevelBadge from "@/components/ui/badges/ShelterLevelBadge";
 
 const BiomeTitle = styled.span`
@@ -87,11 +86,12 @@ export default function ZooStatisticCard({ stat }: ZooStatisticCardProps) {
           </StatRow>
 
           <StatRow>
-            <span>{t("animals.distribution")}</span>
-            <BadgeGrid>
-              <PriceBadge value={stat.animalsForZoodollar} type="Zoodollar" />
-              <PriceBadge value={stat.animalsForDiamond} type="Diamond" />
-            </BadgeGrid>
+            <span>{t("animals.zoodollar")}</span>
+            <strong>{stat.animalsForZoodollar}</strong>
+          </StatRow>
+          <StatRow>
+            <span>{t("animals.diamond")}</span>
+            <strong>{stat.animalsForDiamond}</strong>
           </StatRow>
         </StatSection>
       </CardStatsRow>

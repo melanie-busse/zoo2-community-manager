@@ -70,6 +70,11 @@ export const navConfig: NavItem[] = [
     requiresAuth: true,
     subMenu: [
       {
+        labelKey: "inventory_statistic",
+        href: "/zooInventory/statistic",
+        requiresAuth: true,
+      },
+      {
         labelKey: "inventory_specialcoats",
         href: "/zooInventory/specialcoats",
         requiresAuth: true,

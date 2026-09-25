@@ -9,7 +9,6 @@ import CardContainer from "@/components/page-structure/Card/CardContainer";
 import CardHeaderRow from "@/components/page-structure/Card/CardHeaderRow";
 import CardDivider from "@/components/page-structure/Card/CardDevider";
 import CardStatsRow from "@/components/page-structure/Card/CardStatsRow";
-import PriceBadge from "@/components/ui/badges/PriceBadge";
 
 const Title = styled.span`
   font-weight: bold;
@@ -35,13 +34,6 @@ const StatRow = styled.div`
   justify-content: space-between;
   align-items: center;
   font-size: 0.9rem;
-`;
-
-const BadgeGrid = styled.div`
-  display: flex;
-  gap: ${({ theme }) => theme.spacing(1)};
-  flex-wrap: wrap;
-  align-items: center;
 `;
 
 const ShelterGrid = styled.div`
@@ -109,11 +101,12 @@ export default function ZooSummaryCard({ biomeStatistics }: ZooSummaryCardProps)
             <strong>{totalSpecialCoats}</strong>
           </StatRow>
           <StatRow>
-            <span>{t("animals.distribution")}</span>
-            <BadgeGrid>
-              <PriceBadge value={totalZoodollar} type="Zoodollar" />
-              <PriceBadge value={totalDiamond} type="Diamond" />
-            </BadgeGrid>
+            <span>{t("animals.zoodollar")}</span>
+            <strong>{totalZoodollar}</strong>
+          </StatRow>
+          <StatRow>
+            <span>{t("animals.diamond")}</span>
+            <strong>{totalDiamond}</strong>
           </StatRow>
         </StatSection>
       </CardStatsRow>

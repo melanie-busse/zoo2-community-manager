@@ -1,22 +1,23 @@
 {
-  "title": "Zoo Statistieken",
+  "title": "Inventaris Statistieken",
+  "of": "van",
   "summary": {
-    "title": "Totale Zoo",
+    "title": "Totaal Inventaris",
     "biomes": "{count} Biotopen",
     "regions": "{count} Regio's"
   },
   "animals": {
     "title": "Dieren",
-    "total": "Totaal dieren:",
-    "specialCoats": "Totaal kleurvarianten:",
-    "distribution": "Betalingsverdeling:",
+    "total": "Totaal dieren",
+    "specialCoats": "Totaal kleurvarianten",
+    "distribution": "Betalingsverdeling",
     "zoodollar": "Dieren voor Zoodollar",
     "diamond": "Dieren voor Diamanten"
   },
   "contest": {
     "title": "Competitie",
-    "contestAnimals": "Competitiedieren:",
-    "statues": "Standbeelden:"
+    "contestAnimals": "Competitiedieren",
+    "statues": "Standbeelden"
   },
   "shelter": {
     "title": "Vereiste stalniveaus",
