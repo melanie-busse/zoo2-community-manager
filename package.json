@@ -16,6 +16,7 @@
     "@tidbcloud/prisma-adapter": "^6.17.0",
     "@tidbcloud/serverless": "^0.3.0",
     "date-fns": "^4.4.0",
+    "deepl-node": "^1.28.0",
     "dotenv": "^17.4.2",
     "flag-icons": "^7.5.0",
     "lucide-react": "^1.11.0",

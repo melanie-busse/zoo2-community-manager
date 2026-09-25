@@ -30,9 +30,8 @@ export default function AnimalDetailContent({}) {
 
   if (!animal) {
     return <div>{tCommon("not_found")}</div>;
-
   }
-
+  console.log("animal", animal);
   const translation = animal.animaltext?.[0];
   const displayDescription = translation?.animalDescription;
 
@@ -41,16 +40,16 @@ export default function AnimalDetailContent({}) {
       {isAdmin && (
         <Styles.TopBar>
           <ActionGroupBadge
-              id={animal.id}
-              onEdit={() => {
-                setEditingAnimal(animal);
-                router.push(`/animals/${animal.id}/edit`);
-              }}
-              onDelete={async () => {
-                const success = await deleteAnimal(animal.id, tAnimal, tCommon);
-                if (success) router.push("/animals");
-              }}
-            />
+            id={animal.id}
+            onEdit={() => {
+              setEditingAnimal(animal);
+              router.push(`/animals/${animal.id}/edit`);
+            }}
+            onDelete={async () => {
+              const success = await deleteAnimal(animal.id, tAnimal, tCommon);
+              if (success) router.push("/animals");
+            }}
+          />
         </Styles.TopBar>
       )}
 

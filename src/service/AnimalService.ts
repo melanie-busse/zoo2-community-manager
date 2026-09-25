@@ -7,10 +7,11 @@ export async function getCountAnimals() {
 
 export async function getAllAnimals(locale = "de") {
   try {
-    return await prisma.animal.findMany({
+    const localesToLoad = locale === "en" ? ["en"] : [locale, "en"];
+    const animals = await prisma.animal.findMany({
       include: {
         animaltext: {
-          where: { languageCode: locale },
+          where: { languageCode: { in: localesToLoad } },
         },
         animalxp: true,
         biome: {
@@ -24,6 +25,12 @@ export async function getAllAnimals(locale = "de") {
       },
       orderBy: { id: "asc" },
     });
+    return animals.map((animal) => ({
+      ...animal,
+      animaltext: [...(animal.animaltext ?? [])].sort((a, b) =>
+        a.languageCode === locale ? -1 : b.languageCode === locale ? 1 : 0,
+      ),
+    }));
   } catch (error) {
     console.error(`[AnimalService] Error in getAllAnimals (${locale}):`, error);
     return [];
@@ -68,6 +75,7 @@ export async function getAnimalById(id: number | string, locale: string | null =
       animaltext: locale ? { where: { languageCode: locale } } : true,
       specialcoat: {
         include: {
+          specialcoatstext: locale ? { where: { languageCode: locale } } : true,
           specialcoatsorigin: {
             include: {
               origin: {
@@ -108,6 +116,8 @@ export async function createAnimal(animalData: any) {
   const {
     animaltext,
     releaseDate,
+    isContestAnimal,
+    isLocked,
     price,
     currencyId,
     sellingPrice,
@@ -140,6 +150,8 @@ export async function createAnimal(animalData: any) {
   if (breedingDuration) insertData.breedingDuration = parseInt(breedingDuration.toString(), 10);
   if (breedingProbability)
     insertData.breedingProbability = parseInt(breedingProbability.toString(), 10);
+  insertData.isContestAnimal = Boolean(isContestAnimal);
+  insertData.isLocked = Boolean(isLocked);
 
   return await prisma.$transaction(async (tx) => {
     const animal = await tx.animal.create({
@@ -208,6 +220,9 @@ export async function updateAnimal(id: number, animalData: any) {
   const {
     animaltext,
     releaseDate,
+    identifier,
+    isContestAnimal,
+    isLocked,
     price,
     currencyId,
     sellingPrice,
@@ -230,6 +245,9 @@ export async function updateAnimal(id: number, animalData: any) {
       where: { id: id },
       data: {
         releaseDate: formattedReleaseDate,
+        identifier: identifier ?? null,
+        isContestAnimal: Boolean(isContestAnimal),
+        isLocked: Boolean(isLocked),
         price: price,
         priceTypeId: currencyId ?? 1,
         sellingPrice: sellingPrice,

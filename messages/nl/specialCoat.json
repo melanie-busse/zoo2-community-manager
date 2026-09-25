@@ -29,6 +29,7 @@
   "emptyState": {
     "title": "Oh nee, geen dieren hier!"
   },
+  "inventory_title": "Mijn kleurvarianten inventaris",
   "contest_inventory_title": "Mijn wedstrijd kleurvarianten",
   "inventory": {
     "title": "Mijn zoo-inventaris",
@@ -38,5 +39,18 @@
     "level20": "Level 20",
     "glitter_animal": "Glitterdier",
     "region": "Regio"
+  },
+  "breeding": {
+    "title": "Fokkans",
+    "isContestSpecialCoat": "Wedstrijd-kleurvariant",
+    "parentWithCoatNeeded": "Ouder met variant vereist",
+    "chanceBaseTitle": "Basiskans",
+    "chanceEventTitle": "Evenementkans",
+    "withoutParent": "zonder ouder",
+    "withOneParent": "met ouder",
+    "chanceBaseWithoutParent": "Basiskans (zonder ouder)",
+    "chanceBaseWithOneParent": "Basiskans (één ouder)",
+    "chanceEventWithoutParent": "Evenementkans (zonder ouder)",
+    "chanceEventWithOneParent": "Evenementkans (één ouder)"
   }
 }

@@ -5,6 +5,7 @@ import { Level20Checkbox } from "@/components/elements/Filter/Level20Checkbox";
 import { GlitterCheckbox } from "@/components/elements/Filter/GlitterCheckbox";
 import { Level10Checkbox } from "@/components/elements/Filter/Level10Checkbox";
 import { RegionSelect } from "@/components/elements/Filter/RegionSelect";
+import { OwnedCountSelect } from "@/components/elements/Filter/OwnedCountSelect";
 import { ShelterLevelSelect } from "@/components/elements/Filter/ShelterLevelSelect";
 import { BiomeSelect } from "@/components/elements/Filter/BiomeSelect";
 import { SearchInputField } from "@/components/elements/Filter/SearchInputField";
@@ -24,6 +25,8 @@ export default function SpecialCoatsInventoryFilter({ regions }: { regions: any[
   const setContestOnly = useSpecialCoatStore((state) => state.setContestOnly);
   const filterRegionId = useSpecialCoatStore((state) => state.filterRegionId);
   const setFilterRegionId = useSpecialCoatStore((state) => state.setFilterRegionId);
+  const filterOwnedCount = useSpecialCoatStore((state) => state.filterOwnedCount);
+  const setFilterOwnedCount = useSpecialCoatStore((state) => state.setFilterOwnedCount);
   const filterLevel10 = useSpecialCoatStore((state) => state.filterLevel10);
   const filterLevel20 = useSpecialCoatStore((state) => state.filterLevel20);
   const filterGlitter = useSpecialCoatStore((state) => state.filterGlitter);
@@ -54,6 +57,7 @@ export default function SpecialCoatsInventoryFilter({ regions }: { regions: any[
           selectedRegionId={filterRegionId}
           onChange={setFilterRegionId}
         />
+        <OwnedCountSelect value={filterOwnedCount} onChange={setFilterOwnedCount} />
       </FilterRow>
 
       <FilterRow>

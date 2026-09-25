@@ -3,6 +3,7 @@ import FilterCard from "@/components/elements/Filter/FilterCard";
 import { BiomeSelect } from "@/components/elements/Filter/BiomeSelect";
 import { SearchInputField } from "@/components/elements/Filter/SearchInputField";
 import { RegionSelect } from "@/components/elements/Filter/RegionSelect";
+import { PuzzleStatusSelect } from "@/components/elements/Filter/PuzzleStatusSelect";
 import { useTranslations } from "next-intl";
 
 interface StatueInventoryFilterProps {
@@ -19,6 +20,8 @@ export default function StatueInventoryFilter({ regions }: StatueInventoryFilter
   const setSelectedBiome = useStatueStore((state) => state.setSelectedBiome);
   const filterRegionId = useStatueStore((state) => state.filterRegionId);
   const setFilterRegionId = useStatueStore((state) => state.setFilterRegionId);
+  const filterPuzzleStatus = useStatueStore((state) => state.filterPuzzleStatus);
+  const setFilterPuzzleStatus = useStatueStore((state) => state.setFilterPuzzleStatus);
 
   return (
     <FilterCard>
@@ -33,6 +36,7 @@ export default function StatueInventoryFilter({ regions }: StatueInventoryFilter
         selectedRegionId={filterRegionId}
         onChange={setFilterRegionId}
       />
+      <PuzzleStatusSelect value={filterPuzzleStatus} onChange={setFilterPuzzleStatus} />
     </FilterCard>
   );
 }

@@ -35,10 +35,10 @@ describe("FandomApi", () => {
         ok: true,
         json: async () => ({
           query: {
-            categorymembers: [
-              { pageid: 1, ns: 0, title: "Fox" },
-              { pageid: 2, ns: 0, title: "Bear" },
-            ],
+            pages: {
+              "1": { pageid: 1, ns: 0, title: "Fox" },
+              "2": { pageid: 2, ns: 0, title: "Bear" },
+            },
           },
         }),
       });
@@ -47,7 +47,7 @@ describe("FandomApi", () => {
 
       expect(result).toEqual(["Fox", "Bear"]);
       expect(mockFetch).toHaveBeenCalledOnce();
-      expect(mockFetch.mock.calls[0][0]).toContain("cmtitle=Category%3AAnimals");
+      expect(mockFetch.mock.calls[0][0]).toContain("gcmtitle=Category%3AAnimals");
     });
 
     test("filtert Unterkategorien (ns !== 0) heraus", async () => {
@@ -55,12 +55,12 @@ describe("FandomApi", () => {
         ok: true,
         json: async () => ({
           query: {
-            categorymembers: [
-              { pageid: 1, ns: 0, title: "Fox" },
-              { pageid: 2, ns: 14, title: "Category:Afrotheria" },
-              { pageid: 3, ns: 14, title: "Category:Ape" },
-              { pageid: 4, ns: 0, title: "Bear" },
-            ],
+            pages: {
+              "1": { pageid: 1, ns: 0, title: "Fox" },
+              "2": { pageid: 2, ns: 14, title: "Category:Afrotheria" },
+              "3": { pageid: 3, ns: 14, title: "Category:Ape" },
+              "4": { pageid: 4, ns: 0, title: "Bear" },
+            },
           },
         }),
       });
@@ -74,10 +74,10 @@ describe("FandomApi", () => {
         ok: true,
         json: async () => ({
           query: {
-            categorymembers: [
-              { pageid: 1, ns: 0, title: "Animals" },
-              { pageid: 2, ns: 0, title: "Fox" },
-            ],
+            pages: {
+              "1": { pageid: 1, ns: 0, title: "Animals" },
+              "2": { pageid: 2, ns: 0, title: "Fox" },
+            },
           },
         }),
       });
@@ -86,10 +86,45 @@ describe("FandomApi", () => {
       expect(result).toEqual(["Fox"]);
     });
 
+    test("filtert die Vorlagenseite 'Animal Template' heraus", async () => {
+      mockFetch.mockResolvedValue({
+        ok: true,
+        json: async () => ({
+          query: {
+            pages: {
+              "1": { pageid: 1, ns: 0, title: "Animal Template" },
+              "2": { pageid: 2, ns: 0, title: "Fox" },
+            },
+          },
+        }),
+      });
+
+      const result = await fetchPagesFromCategory("Animal");
+      expect(result).toEqual(["Fox"]);
+    });
+
+    test("filtert Redirect-Seiten heraus", async () => {
+      mockFetch.mockResolvedValue({
+        ok: true,
+        json: async () => ({
+          query: {
+            pages: {
+              "1": { pageid: 1, ns: 0, title: "Aardwolf", redirect: "" },
+              "2": { pageid: 2, ns: 0, title: "Aardvark" },
+              "3": { pageid: 3, ns: 0, title: "Bear" },
+            },
+          },
+        }),
+      });
+
+      const result = await fetchPagesFromCategory("Animal");
+      expect(result).toEqual(["Aardvark", "Bear"]);
+    });
+
     test("gibt leeres Array zurück, wenn keine Treffer vorhanden sind", async () => {
       mockFetch.mockResolvedValue({
         ok: true,
-        json: async () => ({ query: { categorymembers: [] } }),
+        json: async () => ({ query: { pages: {} } }),
       });
 
       const result = await fetchPagesFromCategory("EmptyCategory");
@@ -207,12 +242,21 @@ The red fox is a cunning animal.
       expect(result?.currencyId).toBe(1); // keine "d.png" → Coins
     });
 
-    test("erkennt Diamond-Währung", () => {
+    test("erkennt Diamond-Währung (d.png)", () => {
       const result = parseAnimalData({
         title: "Fox",
         wikitext: { "*": "| price = 500 d.png" },
       });
       expect(result?.currencyId).toBe(2);
+    });
+
+    test("erkennt Diamond-Währung (D.webp)", () => {
+      const result = parseAnimalData({
+        title: "Ferruginous Hawk",
+        wikitext: { "*": "| price = 1,200 [[File:D.webp|20px]]" },
+      });
+      expect(result?.currencyId).toBe(2);
+      expect(result?.price).toBe(1200);
     });
 
     test("parst Zuchtdaten korrekt", () => {

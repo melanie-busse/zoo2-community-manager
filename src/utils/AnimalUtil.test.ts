@@ -18,7 +18,7 @@ describe("Animal Utilities", () => {
       id: 1,
       name: "Erdmännchen",
       shelterLevel: 2,
-      image: "erdmaennchen.png",
+      identifier: "erdmaennchen",
       sellingPrice: 500,
       biome: { id: 10, identifier: "grassland", name: "Grasland" },
       animaltext: [{ animalName: "Süßes Erdmännchen" }],
@@ -28,7 +28,7 @@ describe("Animal Utilities", () => {
       id: 2,
       name: "Löwe",
       shelterLevel: 5,
-      image: "loewe.png",
+      identifier: "loewe",
       sellingPrice: 2000,
       biome: { id: 11, identifier: "savanna", name: "Savanne" },
       animaltext: [{ animalName: "Großer Löwe" }], // 💡 FIX: Name für die Suchfunktion hinterlegt
@@ -40,6 +40,20 @@ describe("Animal Utilities", () => {
     test("filtert nach Suchbegriff (Name)", () => {
       const result = filterAnimals(mockAnimals, {
         searchTerm: "Löwe",
+        selectedBiome: null,
+        selectedShelterLevel: null,
+      });
+      expect(result).toHaveLength(1);
+      expect(result[0].id).toBe(2);
+    });
+
+    test("filtert nach englischem Namen (zweiter animaltext-Eintrag)", () => {
+      const animals = [
+        { ...mockAnimals[0], animaltext: [{ animalName: "Süßes Erdmännchen" }, { animalName: "Meerkat" }] },
+        { ...mockAnimals[1], animaltext: [{ animalName: "Großer Löwe" }, { animalName: "Lion" }] },
+      ];
+      const result = filterAnimals(animals as any, {
+        searchTerm: "lion",
         selectedBiome: null,
         selectedShelterLevel: null,
       });
@@ -79,8 +93,8 @@ describe("Animal Utilities", () => {
 
     test("filtert auf Tiere mit Statue, wenn hasStatueFilter aktiv", () => {
       const animalsWithStatue = [
-        { ...mockAnimals[0], statueImage: "statue-erdmaennchen.webp" },
-        { ...mockAnimals[1], statueImage: null },
+        { ...mockAnimals[0], isContestAnimal: true },
+        { ...mockAnimals[1], isContestAnimal: false },
       ];
       const result = filterAnimals(animalsWithStatue as any, {
         searchTerm: "",
@@ -94,8 +108,8 @@ describe("Animal Utilities", () => {
 
     test("zeigt alle Tiere, wenn hasStatueFilter nicht gesetzt", () => {
       const animalsWithStatue = [
-        { ...mockAnimals[0], statueImage: "statue-erdmaennchen.webp" },
-        { ...mockAnimals[1], statueImage: null },
+        { ...mockAnimals[0], isContestAnimal: true },
+        { ...mockAnimals[1], isContestAnimal: false },
       ];
       const result = filterAnimals(animalsWithStatue as any, {
         searchTerm: "",
@@ -205,6 +219,25 @@ describe("Animal Utilities", () => {
       const result = sortAnimals(mockAnimals, { sortBy: "xp", sortDirection: "desc" });
       expect(result[0].id).toBe(2); // Löwe (300 XP) > Erdmännchen (150 XP)
     });
+
+    test("sortiert nach Name (animaltext[0].animalName) aufsteigend", () => {
+      const result = sortAnimals(mockAnimals, { sortBy: "name", sortDirection: "asc" });
+      expect(result[0].id).toBe(2); // "Großer Löwe" < "Süßes Erdmännchen"
+    });
+
+    test("sortiert nach Name (animaltext[0].animalName) absteigend", () => {
+      const result = sortAnimals(mockAnimals, { sortBy: "name", sortDirection: "desc" });
+      expect(result[0].id).toBe(1); // "Süßes Erdmännchen" > "Großer Löwe"
+    });
+
+    test("sortiert nach Name korrekt wenn animaltext fehlt", () => {
+      const animalsWithoutText = [
+        { ...mockAnimals[0], animaltext: undefined },
+        { ...mockAnimals[1] },
+      ] as any[];
+      const result = sortAnimals(animalsWithoutText, { sortBy: "name", sortDirection: "asc" });
+      expect(result[0].id).toBe(1); // leerer String sortiert vor "Großer Löwe"
+    });
   });
 
   describe("paginate", () => {
@@ -231,8 +264,8 @@ describe("Animal Utilities", () => {
     test("baut den korrekten Bild-Pfad zusammen", () => {
       const imageObj = getAnimalImage(mockAnimals[0]);
       expect(imageObj).toEqual({
-        name: "erdmaennchen.png",
-        path: "/images/animals/grassland/erdmaennchen.png",
+        name: "erdmaennchen",
+        path: "/images/animals/grassland/erdmaennchen/image.jpg",
         alt: "Süßes Erdmännchen",
       });
     });

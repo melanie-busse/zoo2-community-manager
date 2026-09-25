@@ -3,6 +3,7 @@ import FilterCard from "@/components/elements/Filter/FilterCard";
 import { BiomeSelect } from "@/components/elements/Filter/BiomeSelect";
 import { SearchInputField } from "@/components/elements/Filter/SearchInputField";
 import { RegionSelect } from "@/components/elements/Filter/RegionSelect";
+import { PuzzleStatusSelect } from "@/components/elements/Filter/PuzzleStatusSelect";
 import { useTranslations } from "next-intl";
 
 interface ContestSpecialCoatInventoryFilterProps {
@@ -21,6 +22,8 @@ export default function ContestSpecialCoatInventoryFilter({
   const setSelectedBiome = useContestSpecialCoatStore((state) => state.setSelectedBiome);
   const filterRegionId = useContestSpecialCoatStore((state) => state.filterRegionId);
   const setFilterRegionId = useContestSpecialCoatStore((state) => state.setFilterRegionId);
+  const filterPuzzleStatus = useContestSpecialCoatStore((state) => state.filterPuzzleStatus);
+  const setFilterPuzzleStatus = useContestSpecialCoatStore((state) => state.setFilterPuzzleStatus);
 
   const coatsWithBiome = allCoats.map((coat) => ({ ...coat, biome: coat.animal?.biome ?? null }));
 
@@ -41,6 +44,7 @@ export default function ContestSpecialCoatInventoryFilter({
         selectedRegionId={filterRegionId}
         onChange={setFilterRegionId}
       />
+      <PuzzleStatusSelect value={filterPuzzleStatus} onChange={setFilterPuzzleStatus} variant="coat" />
     </FilterCard>
   );
 }

@@ -2,7 +2,6 @@
   "species": "Nom",
   "release": "Relâcher",
   "colorVariants": "Variantes de couleur",
-  "statue": "Statue",
   "biomeCapacity": "Capacité de l'enclos",
   "animalCount": "Nombre d'animaux",
   "biomeSize": "Taille de l'enclos",
@@ -27,7 +26,10 @@
   "basicInfoSection": {
     "basicInfo": "Informations de base",
     "fields": {
-      "releaseDate": "Sortie"
+      "releaseDate": "Sortie",
+      "identifier": "Identifiant",
+      "isContestAnimal": "Animal de concours",
+      "isLocked": "Verrouiller noms et descriptions (pas d'importation automatique)"
     }
   },
   "translationSection": {
@@ -74,6 +76,7 @@
     "region": "Région"
   },
   "statue": {
+    "title": "Statue",
     "inventory_title": "Mon inventaire de statues",
     "puzzle_pieces": "Pièces de puzzle"
   }

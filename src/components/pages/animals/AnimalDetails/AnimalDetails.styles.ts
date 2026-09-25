@@ -407,6 +407,15 @@ export const SpecialCoatName = styled.span`
   word-wrap: break-word;
 `;
 
+export const SpecialCoatColor = styled.span`
+  margin-top: 4px;
+  font-size: 0.85rem;
+  color: #555;
+  text-align: center;
+  display: block;
+  width: 100%;
+`;
+
 export const OriginContainer = styled.div`
   display: flex;
   gap: 6px;

@@ -14,9 +14,11 @@ interface WikiCategoryMember {
 export async function fetchPagesFromCategory(categoryName: string): Promise<string[]> {
   const params = new URLSearchParams({
     action: "query",
-    list: "categorymembers",
-    cmtitle: `Category:${categoryName}`,
-    cmlimit: "max",
+    generator: "categorymembers",
+    gcmtitle: `Category:${categoryName}`,
+    gcmlimit: "max",
+    gcmnamespace: "0",
+    prop: "info",
     format: "json",
     origin: "*",
   });
@@ -29,11 +31,12 @@ export async function fetchPagesFromCategory(categoryName: string): Promise<stri
 
     const data = await response.json();
 
-    return (
-      data.query?.categorymembers
-        ?.filter((member: WikiCategoryMember) => member.ns === 0 && member.title !== "Animals")
-        .map((member: WikiCategoryMember) => member.title) || []
-    );
+    const pages: Record<string, WikiCategoryMember & { redirect?: string }> =
+      data.query?.pages ?? {};
+
+    return Object.values(pages)
+      .filter((page) => page.ns === 0 && !("redirect" in page) && page.title !== "Animals" && page.title !== "Animal Template")
+      .map((page) => page.title);
   } catch (error) {
     console.error(`Error loading the category "${categoryName}":`, error);
     return [];
@@ -208,7 +211,7 @@ export function parseAnimalData(apiResult: any, originIds: number[] = []) {
   let currencyId = 1;
   const priceNumberMatch = rawPriceString.match(/^([\d,]+)/);
   if (priceNumberMatch) price = parseInt(priceNumberMatch[1].replace(/,/g, ""), 10);
-  if (rawPriceString.toLowerCase().includes("d.png")) currencyId = 2;
+  if (/d\.(png|webp)/i.test(rawPriceString)) currencyId = 2;
 
   const breedingCost = parseInt((extractValue(wikitext, "cost") || "0").replace(/,/g, ""), 10);
   const breedingDuration = durationToMinutes(extractValue(wikitext, "duration") || "0h");

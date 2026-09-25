@@ -2,7 +2,6 @@
   "species": "Naam",
   "release": "Vrijlaten",
   "colorVariants": "Kleurvarianten",
-  "statue": "Standbeeld",
   "biomeCapacity": "Verblijfscapaciteit",
   "animalCount": "Aantal dieren",
   "biomeSize": "Verblijfsgrootte",
@@ -27,7 +26,10 @@
   "basicInfoSection": {
     "basicInfo": "Basisinformatie",
     "fields": {
-      "releaseDate": "Uitgiftedatum"
+      "releaseDate": "Uitgiftedatum",
+      "identifier": "Identifier",
+      "isContestAnimal": "Wedstrijddier",
+      "isLocked": "Namen en beschrijvingen vergrendelen (geen auto-import)"
     }
   },
   "translationSection": {
@@ -74,6 +76,7 @@
     "region": "Regio"
   },
   "statue": {
+    "title": "Standbeeld",
     "inventory_title": "Mijn standbeeldeninventaris",
     "puzzle_pieces": "Puzzelstukjes"
   }

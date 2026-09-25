@@ -64,12 +64,15 @@ describe("SpecialCoats Service", () => {
   // ==========================================
 
   describe("getAllSpecialCoats", () => {
-    test("sollte findMany mit den korrekten Relationen und Language-Filtern aufrufen", async () => {
+    test("sollte findMany ohne Locale-Filter auf specialcoatstext aufrufen und Locale-Text vorne sortieren", async () => {
       const mockLocale = "de";
       const mockDbResult = [
         {
           id: 1,
-          specialcoatstext: [{ name: "Polarfuchs", languageCode: "de" }],
+          specialcoatstext: [
+            { name: "Snow Fox", languageCode: "en" },
+            { name: "Polarfuchs", languageCode: "de" },
+          ],
           animal: {
             id: 10,
             animaltext: [{ animalName: "Fuchs", languageCode: "de" }],
@@ -84,10 +87,13 @@ describe("SpecialCoats Service", () => {
 
       const result = await getAllSpecialCoats(mockLocale);
 
-      expect(result).toEqual(mockDbResult);
+      // Der Locale-Text (de) soll an Position [0] stehen
+      expect(result[0].specialcoatstext[0].languageCode).toBe("de");
+      // Alle Texte sollen vorhanden sein
+      expect(result[0].specialcoatstext).toHaveLength(2);
       expect(prisma.specialCoat.findMany).toHaveBeenCalledWith({
         include: {
-          specialcoatstext: { where: { languageCode: mockLocale } },
+          specialcoatstext: true,
           animal: {
             include: {
               animaltext: { where: { languageCode: mockLocale } },
@@ -207,7 +213,7 @@ describe("SpecialCoats Service", () => {
     const mockInput = {
       animalId: 10,
       releaseDate: "2026-06-01",
-      image: "polarbear.png",
+      identifier: "polarbear",
       isContestSpecialCoat: true,
       parentWithCoatNeeded: false,
       chanceBaseWithoutParent: 0,
@@ -235,8 +241,9 @@ describe("SpecialCoats Service", () => {
         data: {
           animalId: 10,
           releaseDate: new Date("2026-06-01"),
-          image: "polarbear.png",
+          identifier: "polarbear",
           isContestSpecialCoat: true,
+          isLocked: false,
           parentWithCoatNeeded: false,
           chanceBaseWithoutParent: 0,
           chanceBaseWithOneParent: 5.0,
@@ -276,7 +283,7 @@ describe("SpecialCoats Service", () => {
     const mockUpdateData = {
       animalId: 10,
       releaseDate: "2026-07-01",
-      image: "updated.png",
+      identifier: "updated",
       isContestSpecialCoat: false,
       parentWithCoatNeeded: true,
       chanceBaseWithoutParent: 0.5,
@@ -305,8 +312,9 @@ describe("SpecialCoats Service", () => {
         data: {
           animalId: 10,
           releaseDate: new Date("2026-07-01"),
-          image: "updated.png",
+          identifier: "updated",
           isContestSpecialCoat: false,
+          isLocked: false,
           parentWithCoatNeeded: true,
           chanceBaseWithoutParent: 0.5,
           chanceBaseWithOneParent: 2.0,
@@ -344,7 +352,7 @@ describe("SpecialCoats Service", () => {
     test("sollte Texte und Origins nicht anfassen, wenn sie nicht im Update-Payload sind", async () => {
       txMock.specialCoat.findUnique.mockResolvedValue(mockUpdatedCoat);
 
-      await updateSpecialCoat(42, { animalId: 10, image: "neu.png" });
+      await updateSpecialCoat(42, { animalId: 10, identifier: "neu" });
 
       expect(txMock.specialCoatsText.deleteMany).not.toHaveBeenCalled();
       expect(txMock.specialCoatOrigin.deleteMany).not.toHaveBeenCalled();

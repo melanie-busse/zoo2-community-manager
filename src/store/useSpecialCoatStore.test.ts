@@ -21,7 +21,7 @@ const createMockCoat = (
       id: id * 10,
       price,
       shelterLevel,
-      biome: { id: id, identifier: biomeIdentifier },
+      biome: { id: id, identifier: biomeIdentifier, biomestext: [{ biomeName: biomeIdentifier, languageCode: "de" }] },
       animaltext: [{ animalName, languageCode: "de" }],
     },
   }) as any;

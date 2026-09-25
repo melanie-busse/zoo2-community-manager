@@ -76,14 +76,14 @@ describe("HomeView", () => {
 
     const lexiconHeading = screen.getByRole("heading", { name: "Tierlexikon" });
     const lexiconLink = lexiconHeading.closest("a");
-    expect(lexiconLink).toHaveAttribute("href", "/AnimalOverview");
+    expect(lexiconLink).toHaveAttribute("href", "/animals");
 
     const variantenHeading = screen.getByRole("heading", { name: "Farbvarianten" });
     const variantenLink = variantenHeading.closest("a");
-    expect(variantenLink).toHaveAttribute("href", "/varianten");
+    expect(variantenLink).toHaveAttribute("href", "/specialcoats");
 
     const klubHeading = screen.getByRole("heading", { name: "Klub-Manager" });
     const klubLink = klubHeading.closest("a");
-    expect(klubLink).toHaveAttribute("href", "/klub");
+    expect(klubLink).toHaveAttribute("href", "/contests");
   });
 });

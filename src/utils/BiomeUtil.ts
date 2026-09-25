@@ -66,5 +66,5 @@ export function extractUniqueBiomes<T extends { biome?: Biome | null }>(items: T
         .filter((b): b is Biome => b !== null && b !== undefined)
         .map((b) => [b.id, b]),
     ).values(),
-  );
+  ).sort((a, b) => a.id - b.id);
 }

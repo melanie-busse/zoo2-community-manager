@@ -185,7 +185,7 @@ async function syncMissingCoats(
       const newCoat = await createSpecialCoat({
         animalId,
         releaseDate: parseBackendDate(coat.releaseDate) ?? new Date(),
-        image: null,
+        identifier: null,
         originIds,
         texts: await buildCoatTexts(coat.texts[0], dbLanguages),
       });
@@ -289,13 +289,22 @@ export async function PUT(request: Request) {
     const dbTexts = await prisma.animalText.findMany({
       where: { animalId: existingText.animalId },
     });
-    const englishDescription = extractDescriptionFromWiki(wikiJson);
-    const currentDbEnglishText =
-      dbTexts.find((t) => t.languageCode === "en")?.animalDescription || "";
-    const hasEnglishTextChanged = currentDbEnglishText.trim() !== englishDescription.trim();
     const dbLanguages = await getAllLanguages();
 
-    parsedAnimal.animaltext = await buildAnimalTexts(pageTitle, englishDescription, dbLanguages, dbTexts, hasEnglishTextChanged);
+    if (existingAnimal?.isLocked) {
+      parsedAnimal.animaltext = dbTexts.map((t) => ({
+        languageCode: t.languageCode,
+        animalName: t.animalName,
+        animalDescription: t.animalDescription ?? "",
+      }));
+    } else {
+      const englishDescription = extractDescriptionFromWiki(wikiJson);
+      const currentDbEnglishText =
+        dbTexts.find((t) => t.languageCode === "en")?.animalDescription || "";
+      const hasEnglishTextChanged = currentDbEnglishText.trim() !== englishDescription.trim();
+
+      parsedAnimal.animaltext = await buildAnimalTexts(pageTitle, englishDescription, dbLanguages, dbTexts, hasEnglishTextChanged);
+    }
 
     const biome =
       existingAnimal?.biomeId && existingAnimal.biomeId !== 1
@@ -305,7 +314,8 @@ export async function PUT(request: Request) {
     const updatedAnimal = await updateAnimal(existingText.animalId, {
       ...parsedAnimal,
       biomeId: biome?.id,
-      ...(existingAnimal?.image ? { imageName: existingAnimal.image } : {}),
+      identifier: existingAnimal?.identifier ?? null,
+      isLocked: existingAnimal?.isLocked ?? false,
     });
 
     const newCoats = await syncMissingCoats(

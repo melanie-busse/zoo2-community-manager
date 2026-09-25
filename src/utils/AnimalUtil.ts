@@ -12,6 +12,7 @@ interface FilterOptions {
   filterLevel10?: boolean;
   filterLevel20?: boolean;
   filterGlitter?: boolean;
+  filterOwnedCount?: number | null;
 }
 
 interface SortOptions {
@@ -30,6 +31,7 @@ export function filterAnimals(
     filterLevel10 = false,
     filterLevel20 = false,
     filterGlitter = false,
+    filterOwnedCount = null,
   }: FilterOptions,
 ): Animal[] {
   if (!animals) return [];
@@ -37,9 +39,11 @@ export function filterAnimals(
   return animals.filter((animal) => {
     if (searchTerm.trim() !== "") {
       const query = searchTerm.toLowerCase();
-      const name = animal.animaltext?.[0]?.animalName?.toLowerCase() ?? "";
       const id = animal.id.toString();
-      if (!name.includes(query) && !id.includes(query)) return false;
+      const matchesName = animal.animaltext?.some(
+        (t) => t.animalName?.toLowerCase().includes(query),
+      ) ?? false;
+      if (!matchesName && !id.includes(query)) return false;
     }
 
     if (selectedBiome !== null && getBiomeName(animal.biome, "") !== selectedBiome) {
@@ -50,7 +54,7 @@ export function filterAnimals(
       return false;
     }
 
-    if (hasStatueFilter && !animal.statueImage) {
+    if (hasStatueFilter && !animal.isContestAnimal) {
       return false;
     }
 
@@ -59,6 +63,10 @@ export function filterAnimals(
     if (filterGlitter && !(animal as any).inventoryGlitter) return false;
 
     if (filterRegionId !== null && (animal as any).inventoryRegionId !== filterRegionId) {
+      return false;
+    }
+
+    if (filterOwnedCount !== null && ((animal as any).ownedAmount ?? 0) !== filterOwnedCount) {
       return false;
     }
 
@@ -99,6 +107,10 @@ function _getNestedValue(obj: any, path: string): string | number {
     return obj.sellingPrice || 0;
   }
 
+  if (path === "name") {
+    return obj.animaltext?.[0]?.animalName ?? "";
+  }
+
   return path.split(".").reduce((acc, part) => acc && acc[part], obj) || 0;
 }
 
@@ -117,10 +129,10 @@ export function calculateTotalXP(animal: Animal): number {
 
 export function getAnimalImage(animal: Animal): Image {
   return {
-    name: animal.image || "placeholder.png",
-
-    path: `/images/animals/${animal.biome?.identifier}/${animal.image}`,
-
+    name: animal.identifier || "placeholder",
+    path: animal.identifier
+      ? `/images/animals/${animal.biome?.identifier}/${animal.identifier}/image.jpg`
+      : "/images/placeholder.jpg",
     alt: animal.animaltext?.[0]?.animalName || "Tierbild",
   };
 }
@@ -165,6 +177,7 @@ export const mapAnimalToForm = (data: any, languages: Array<{ code: string }>) =
 
   return {
     ...data,
+    currencyId: data.priceTypeId ?? 1,
     releaseDate: formatInitialDate(data.releaseDate),
     actions: {
       feed: {
@@ -183,6 +196,7 @@ export const mapAnimalToForm = (data: any, languages: Array<{ code: string }>) =
         durationMinutes: totalMinutesClean % 60 || null,
       },
     },
+    breedingLevel: data.shelterLevel ?? 0,
     origins: data.animalorigins?.map((o: any) => ({ id: o.originId })) || [],
     enclosureSizes: data.animalperenclosure?.map((size: any) => ({
       animalCount: size.numberAnimals,

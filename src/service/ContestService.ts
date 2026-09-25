@@ -53,6 +53,7 @@ export async function getAllContests(locale: string = "de") {
                   animaltext: {
                     where: { languageCode: locale },
                   },
+                  biome: true,
                 },
               },
             },

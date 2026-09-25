@@ -18,12 +18,12 @@ export interface Animal {
   releaseExp?: number | null;
   popularity?: number | null;
   description?: string | null;
-  image?: string | null;
+  identifier?: string | null;
   breedingCost?: number | null;
   breedingDuration?: number | null;
   breedingProbability?: number | null;
   isContestAnimal?: boolean;
-  statueImage?: string | null;
+  isLocked?: boolean;
 
   // Relationen
   animalxp?: Xp[];
@@ -36,6 +36,7 @@ export interface Animal {
 
 export interface AnimalText {
   id: number;
+  languageCode: string;
   animalName: string;
   animalDescription: string;
 }

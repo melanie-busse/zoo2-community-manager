@@ -29,6 +29,7 @@
   "emptyState": {
     "title": "Åh nej, ingen dyr her!"
   },
+  "inventory_title": "Mit farvevariant inventar",
   "contest_inventory_title": "Mine konkurrence-farvevarianter",
   "inventory": {
     "title": "Mit zoo-inventar",
@@ -38,5 +39,18 @@
     "level20": "Level 20",
     "glitter_animal": "Glitterdyr",
     "region": "Region"
+  },
+  "breeding": {
+    "title": "Avlssandsynlighed",
+    "isContestSpecialCoat": "Konkurrence-farvevariant",
+    "parentWithCoatNeeded": "Forælder med variant påkrævet",
+    "chanceBaseTitle": "Basischance",
+    "chanceEventTitle": "Eventchance",
+    "withoutParent": "uden forælder",
+    "withOneParent": "med forælder",
+    "chanceBaseWithoutParent": "Basischance (uden forælder)",
+    "chanceBaseWithOneParent": "Basischance (en forælder)",
+    "chanceEventWithoutParent": "Eventchance (uden forælder)",
+    "chanceEventWithOneParent": "Eventchance (en forælder)"
   }
 }

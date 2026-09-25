@@ -64,7 +64,7 @@ export default function ContestMobileCard({
 
           return (
             <Styles.AnimalItem key={contestStatue.id}>
-              {animal.image && (
+              {animal.identifier && (
                 <ThumbnailBadge
                   image={getAnimalImage(animal)}
                   name={animal.name}

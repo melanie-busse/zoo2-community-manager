@@ -29,6 +29,7 @@
   "emptyState": {
     "title": "Oh non, aucun animal ici !"
   },
+  "inventory_title": "Mon inventaire de variantes de couleur",
   "contest_inventory_title": "Mes variantes de couleur du concours",
   "inventory": {
     "title": "Mon inventaire de zoo",
@@ -38,5 +39,18 @@
     "level20": "Niveau 20",
     "glitter_animal": "Animal scintillant",
     "region": "Région"
+  },
+  "breeding": {
+    "title": "Probabilité d'élevage",
+    "isContestSpecialCoat": "Variante de concours",
+    "parentWithCoatNeeded": "Parent avec variante requis",
+    "chanceBaseTitle": "Chance de base",
+    "chanceEventTitle": "Chance d'événement",
+    "withoutParent": "sans parent",
+    "withOneParent": "avec un parent",
+    "chanceBaseWithoutParent": "Chance de base (sans parent)",
+    "chanceBaseWithOneParent": "Chance de base (un parent)",
+    "chanceEventWithoutParent": "Chance d'événement (sans parent)",
+    "chanceEventWithOneParent": "Chance d'événement (un parent)"
   }
 }

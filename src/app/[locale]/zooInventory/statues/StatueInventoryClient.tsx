@@ -21,6 +21,7 @@ export default function StatueInventoryClient({
   const statuesWithInventory = statues.map((statue: any) => ({
     ...statue,
     inventoryRegionId: inventoryMap.get(statue.id)?.regionId ?? null,
+    inventoryPuzzlePieces: inventoryMap.get(statue.id)?.puzzlePieces ?? null,
   }));
   setInitialStatues(statuesWithInventory);
 

@@ -14,13 +14,7 @@ interface EmptyStateProps {
   onResetAction?: () => void;
 }
 
-export default function EmptyState({
-  object,
-  title = "",
-  message = "",
-  buttonText = "",
-  onResetAction = () => {},
-}: EmptyStateProps) {
+export default function EmptyState({ title = "", message = "" }: EmptyStateProps) {
   const t = useTranslations("common");
 
   return (
@@ -42,12 +36,6 @@ export default function EmptyState({
             }}
           />
         </Styles.UppyPortraitFrame>
-
-        {onResetAction && (
-          <Styles.ResetButton onClick={onResetAction}>
-            🐾 {buttonText || t("emptyState.button")}
-          </Styles.ResetButton>
-        )}
       </Styles.Container>
     </Styles.OuterContainer>
   );

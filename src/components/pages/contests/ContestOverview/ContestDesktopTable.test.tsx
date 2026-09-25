@@ -60,7 +60,7 @@ vi.mock("@/utils/ContestUtil", () => ({
 }));
 
 vi.mock("@/utils/AnimalUtil", () => ({
-  getAnimalImage: (animal: any) => ({ path: `/images/animals/${animal.image}`, name: animal.name, alt: animal.name }),
+  getAnimalImage: (animal: any) => ({ path: `/images/animals/${animal.identifier}/image.jpg`, name: animal.name, alt: animal.name }),
 }));
 
 vi.mock("@/utils/SpecialCoatUtil", () => ({

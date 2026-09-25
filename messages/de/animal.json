@@ -2,7 +2,6 @@
   "species": "Name",
   "release": "Auswildern",
   "colorVariants": "Farbvarianten",
-  "statue": "Statue",
   "biomeCapacity": "Gehegekapazität",
   "animalCount": "Anzahl Tiere",
   "biomeSize": "Gehegegröße",
@@ -27,7 +26,10 @@
   "basicInfoSection": {
     "basicInfo": "Grundinformationen",
     "fields": {
-      "releaseDate": "Release"
+      "releaseDate": "Release",
+      "identifier": "Identifier",
+      "isContestAnimal": "Wettbewerbstier",
+      "isLocked": "Namen & Beschreibungen gesperrt (kein Auto-Import)"
     }
   },
   "translationSection": {
@@ -74,6 +76,7 @@
     "region": "Region"
   },
   "statue": {
+    "title": "Statue",
     "inventory_title": "Mein Statueninventar",
     "puzzle_pieces": "Puzzleteile"
   }

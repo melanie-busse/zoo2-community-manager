@@ -2,7 +2,6 @@
   "species": "Name",
   "release": "Release",
   "colorVariants": "Color Variants",
-  "statue": "Statue",
   "biomeCapacity": "Enclosure Capacity",
   "animalCount": "Number of Animals",
   "biomeSize": "Enclosure Size",
@@ -27,7 +26,10 @@
   "basicInfoSection": {
     "basicInfo": "Basic Information",
     "fields": {
-      "releaseDate": "Release"
+      "releaseDate": "Release",
+      "identifier": "Identifier",
+      "isContestAnimal": "Contest Animal",
+      "isLocked": "Lock names & descriptions (no auto-import)"
     }
   },
   "translationSection": {
@@ -74,6 +76,7 @@
     "region": "Region"
   },
   "statue": {
+    "title": "Statue",
     "inventory_title": "My Statue Inventory",
     "puzzle_pieces": "Puzzle Pieces"
   }

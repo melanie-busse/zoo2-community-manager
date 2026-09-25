@@ -27,9 +27,16 @@ export default function SpecialCoatArea() {
       </Styles.SectionHeadline>
 
       <Styles.SpecialCoatGrid>
-        {coats.map((coat: SpecialCoat) => (
-          <SpecialCoatCard key={coat.id} specialCoat={coat} />
-        ))}
+        {coats.map((coat: SpecialCoat) => {
+          const biome = animal?.biome?.identifier;
+          const animalId = animal?.identifier;
+          const coatFolder = coat.identifier && animalId ? coat.identifier.slice(animalId.length + 1) : "";
+          const imagePath =
+            biome && animalId && coatFolder
+              ? `/images/animals/${biome}/${animalId}/specialcoats/${coatFolder}/image.jpg`
+              : "/images/placeholder.jpg";
+          return <SpecialCoatCard key={coat.id} specialCoat={coat} imagePath={imagePath} />;
+        })}
       </Styles.SpecialCoatGrid>
     </>
   );

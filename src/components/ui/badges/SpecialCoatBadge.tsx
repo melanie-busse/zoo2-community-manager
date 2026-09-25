@@ -5,15 +5,15 @@ import styled from "styled-components";
 import NextImage from "next/image";
 
 interface SpecialCoatBadgeProps {
-  image: string | null | undefined;
+  path: string;
   displayName: string;
 }
 
-export default function SpecialCoatBadge({ image, displayName }: SpecialCoatBadgeProps) {
+export default function SpecialCoatBadge({ path, displayName }: SpecialCoatBadgeProps) {
   return (
     <ImageWrapper>
       <SpecialCoatIcon
-        src={`/images/specialCoat/${image || "placeholder.png"}`}
+        src={path}
         alt={displayName || "Special Coat"}
         width={200}
         height={200}

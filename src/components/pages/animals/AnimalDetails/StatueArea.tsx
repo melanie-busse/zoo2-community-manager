@@ -11,19 +11,24 @@ export default function StatueArea() {
   const tAnimal = useTranslations("animal");
   const animal = useAnimalStore((state) => state.selectedAnimal);
 
-  if (!animal?.isContestAnimal || !animal.statueImage) {
+  const biome = animal?.biome?.identifier;
+  const animalId = animal?.identifier;
+
+  if (!animal?.isContestAnimal || !biome || !animalId) {
     return null;
   }
+
+  const imagePath = `/images/animals/${biome}/${animalId}/statue/image.webp`;
 
   return (
     <>
       <Styles.SectionHeadline>
         <span style={{ fontSize: "1.2rem" }}>🗿</span>
-        {tAnimal("statue")}
+        {tAnimal("statue.title")}
       </Styles.SectionHeadline>
 
       <Styles.SpecialCoatGrid>
-        <StatueCard statueImage={animal.statueImage} />
+        <StatueCard imagePath={imagePath} />
       </Styles.SpecialCoatGrid>
     </>
   );

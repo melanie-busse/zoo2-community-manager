@@ -24,9 +24,13 @@ export default function SpecialCoatHeaderCard() {
   const displayColor = text?.color || "";
   const origins = specialCoat.specialcoatsorigin || [];
 
-  const imagePath = specialCoat.image
-    ? `/images/specialCoat/${specialCoat.image}`
-    : "/images/placeholder.jpg";
+  const biome = specialCoat.animal?.biome?.identifier;
+  const animalId = specialCoat.animal?.identifier;
+  const coatFolder = specialCoat.identifier && animalId ? specialCoat.identifier.slice(animalId.length + 1) : "";
+  const imagePath =
+    biome && animalId && coatFolder
+      ? `/images/animals/${biome}/${animalId}/specialcoats/${coatFolder}/image.jpg`
+      : "/images/placeholder.jpg";
 
   return (
     <Styles.DesktopCardContainer>

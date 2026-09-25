@@ -29,6 +29,7 @@
   "emptyState": {
     "title": "¡Vaya, no hay animales aquí!"
   },
+  "inventory_title": "Mi inventario de variantes de color",
   "contest_inventory_title": "Mis variantes de color del concurso",
   "inventory": {
     "title": "Mi inventario del zoo",
@@ -38,5 +39,18 @@
     "level20": "Nivel 20",
     "glitter_animal": "Animal brillante",
     "region": "Región"
+  },
+  "breeding": {
+    "title": "Probabilidad de cría",
+    "isContestSpecialCoat": "Variante de concurso",
+    "parentWithCoatNeeded": "Se requiere progenitor con variante",
+    "chanceBaseTitle": "Probabilidad base",
+    "chanceEventTitle": "Probabilidad de evento",
+    "withoutParent": "sin progenitor",
+    "withOneParent": "con progenitor",
+    "chanceBaseWithoutParent": "Probabilidad base (sin progenitor)",
+    "chanceBaseWithOneParent": "Probabilidad base (un progenitor)",
+    "chanceEventWithoutParent": "Probabilidad de evento (sin progenitor)",
+    "chanceEventWithOneParent": "Probabilidad de evento (un progenitor)"
   }
 }

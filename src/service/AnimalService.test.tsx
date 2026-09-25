@@ -63,10 +63,11 @@ describe("Animal Service", () => {
   });
 
   test("getAllAnimals should fetch animals with the correct relational includes and locales", async () => {
-    const mockAnimalsFromDb = [{ id: 1 }];
+    const mockAnimalsFromDb = [{ id: 1, animaltext: [{ languageCode: "en", animalName: "Lion" }, { languageCode: "de", animalName: "Löwe" }] }];
     vi.mocked(prisma.animal.findMany).mockResolvedValue(mockAnimalsFromDb as any);
     const result = await getAllAnimals("en");
-    expect(result).toEqual(mockAnimalsFromDb);
+    // Locale "en" should be sorted first in the result
+    expect(result).toEqual([{ id: 1, animaltext: [{ languageCode: "en", animalName: "Lion" }, { languageCode: "de", animalName: "Löwe" }] }]);
   });
 
   test("getAllAnimals should return empty array on database error", async () => {

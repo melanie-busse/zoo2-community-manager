@@ -1,6 +1,6 @@
 import React from "react";
 import { describe, test, expect, vi, beforeEach } from "vitest";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 
 import SelectBoxWithImage from "./SelectBoxWithImage";
 
@@ -13,11 +13,13 @@ vi.mock("@/hooks/useClickOutside", () => ({
 }));
 
 vi.mock("@/components/elements/Filter/Filter.styles", () => ({
-  SelectWrapper: ({ children }: any) => <div>{children}</div>,
+  // eslint-disable-next-line react/display-name
+  SelectWrapper: React.forwardRef(({ children }: any, ref: any) => <div ref={ref}>{children}</div>),
   SelectHeader: ({ children, onClick }: any) => <div onClick={onClick}>{children}</div>,
   SelectedValue: ({ children }: any) => <div>{children}</div>,
   Label: ({ children }: any) => <span>{children}</span>,
   OptionsList: ({ children }: any) => <div>{children}</div>,
+  OptionsListPortal: ({ children, style }: any) => <div style={style}>{children}</div>,
   Option: ({ children, onClick }: any) => <div onClick={onClick}>{children}</div>,
 }));
 
@@ -42,6 +44,18 @@ const defaultProps = {
 describe("SelectBoxWithImage", () => {
   beforeEach(() => {
     vi.clearAllMocks();
+    Element.prototype.getBoundingClientRect = vi.fn(() => ({
+      top: 100,
+      bottom: 148,
+      left: 0,
+      right: 200,
+      width: 200,
+      height: 48,
+      x: 0,
+      y: 100,
+      toJSON: () => {},
+    }));
+    Object.defineProperty(window, "innerHeight", { value: 800, configurable: true });
   });
 
   test("zeigt allLabelKey-Text wenn showLabel=true und kein Element ausgewählt", () => {
@@ -54,25 +68,29 @@ describe("SelectBoxWithImage", () => {
     expect(screen.getByText("–")).toBeInTheDocument();
   });
 
-  test("öffnet Dropdown beim Klick und zeigt Optionen", () => {
+  test("öffnet Dropdown beim Klick und zeigt Optionen", async () => {
     render(<SelectBoxWithImage {...defaultProps} />);
     fireEvent.click(screen.getByText("filter.no_region"));
-    expect(screen.getByText("Hauptzoo")).toBeInTheDocument();
-    expect(screen.getByText("Tannenhain")).toBeInTheDocument();
+    await waitFor(() => {
+      expect(screen.getByText("Hauptzoo")).toBeInTheDocument();
+      expect(screen.getByText("Tannenhain")).toBeInTheDocument();
+    });
   });
 
-  test("ruft onSelectAction mit 'all' auf beim Klick auf die erste Option", () => {
+  test("ruft onSelectAction mit 'all' auf beim Klick auf die erste Option", async () => {
     const onSelectAction = vi.fn();
     render(<SelectBoxWithImage {...defaultProps} onSelectAction={onSelectAction} />);
     fireEvent.click(screen.getByText("filter.no_region"));
+    await waitFor(() => expect(screen.getAllByText("filter.no_region")).toHaveLength(2));
     fireEvent.click(screen.getAllByText("filter.no_region")[1]);
     expect(onSelectAction).toHaveBeenCalledWith("all");
   });
 
-  test("ruft onSelectAction mit Identifier auf beim Klick auf ein Element", () => {
+  test("ruft onSelectAction mit Identifier auf beim Klick auf ein Element", async () => {
     const onSelectAction = vi.fn();
     render(<SelectBoxWithImage {...defaultProps} onSelectAction={onSelectAction} />);
     fireEvent.click(screen.getByText("filter.no_region"));
+    await waitFor(() => expect(screen.getByText("Hauptzoo")).toBeInTheDocument());
     fireEvent.click(screen.getByText("Hauptzoo"));
     expect(onSelectAction).toHaveBeenCalledWith("1");
   });

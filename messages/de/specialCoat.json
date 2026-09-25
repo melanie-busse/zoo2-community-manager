@@ -29,6 +29,7 @@
   "emptyState": {
     "title": "Oje, kein Tier da!"
   },
+  "inventory_title": "Mein Farbvarianteninventar",
   "contest_inventory_title": "Meine Wettbewerbs-Farbvarianten",
   "inventory": {
     "title": "Mein Zoo-Inventar",
@@ -43,6 +44,10 @@
     "title": "Zuchtwahrscheinlichkeit",
     "isContestSpecialCoat": "Wettbewerbs-Farbvariante",
     "parentWithCoatNeeded": "Elternteil mit Variante benötigt",
+    "chanceBaseTitle": "Basischance",
+    "chanceEventTitle": "Eventchance",
+    "withoutParent": "ohne Elternteil",
+    "withOneParent": "mit Elternteil",
     "chanceBaseWithoutParent": "Basischance (ohne Elternteil)",
     "chanceBaseWithOneParent": "Basischance (ein Elternteil)",
     "chanceEventWithoutParent": "Eventchance (ohne Elternteil)",

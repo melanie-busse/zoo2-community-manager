@@ -2,7 +2,6 @@
   "species": "Navn",
   "release": "Udsætning",
   "colorVariants": "Fargevarianter",
-  "statue": "Statue",
   "biomeCapacity": "Indhegningskapacitet",
   "animalCount": "Antal dyr",
   "biomeSize": "Indhegningsstørrelse",
@@ -27,7 +26,10 @@
   "basicInfoSection": {
     "basicInfo": "Grundoplysninger",
     "fields": {
-      "releaseDate": "Udgivelse"
+      "releaseDate": "Udgivelse",
+      "identifier": "Identifier",
+      "isContestAnimal": "Konkurrencedyr",
+      "isLocked": "Lås navne og beskrivelser (ingen auto-import)"
     }
   },
   "translationSection": {
@@ -74,6 +76,7 @@
     "region": "Region"
   },
   "statue": {
+    "title": "Statue",
     "inventory_title": "Mit statueinventar",
     "puzzle_pieces": "Puslespilsbrikker"
   }

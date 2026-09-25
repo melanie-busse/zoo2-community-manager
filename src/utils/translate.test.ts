@@ -4,13 +4,14 @@ import { translateText } from "./translate";
 const mockFetch = vi.fn();
 vi.stubGlobal("fetch", mockFetch);
 
-const myMemorySuccess = (translatedText: string) => ({
+const deeplSuccess = (translatedText: string) => ({
   ok: true,
-  json: async () => ({ responseData: { translatedText }, responseStatus: 200 }),
+  json: async () => ({ translations: [{ text: translatedText }] }),
 });
 
 beforeEach(() => {
   vi.clearAllMocks();
+  vi.stubEnv("DEEPL_API_KEY", "test-key:fx");
 });
 
 describe("translateText", () => {
@@ -27,44 +28,42 @@ describe("translateText", () => {
   });
 
   test("gibt übersetzten Text zurück bei Erfolg", async () => {
-    mockFetch.mockResolvedValue(myMemorySuccess("Löwe"));
+    mockFetch.mockResolvedValue(deeplSuccess("Löwe"));
 
     const result = await translateText("Lion", "de");
     expect(result).toBe("Löwe");
   });
 
-  test("ruft die MyMemory-API mit korrekter URL auf", async () => {
-    mockFetch.mockResolvedValue(myMemorySuccess("Löwe"));
+  test("ruft die DeepL-API mit korrekter URL auf", async () => {
+    mockFetch.mockResolvedValue(deeplSuccess("Löwe"));
 
     await translateText("Lion", "de");
 
     const calledUrl = mockFetch.mock.calls[0][0] as string;
-    expect(calledUrl).toContain("mymemory.translated.net");
-    expect(calledUrl).toContain("q=Lion");
-    expect(calledUrl).toContain("langpair=en|de");
+    expect(calledUrl).toContain("api-free.deepl.com");
+    expect(calledUrl).toContain("translate");
   });
 
-  test("encoded Sonderzeichen in der URL", async () => {
-    mockFetch.mockResolvedValue(myMemorySuccess("Komodo-Waran"));
+  test("sendet korrekte Zielsprache im Request-Body", async () => {
+    mockFetch.mockResolvedValue(deeplSuccess("Komodo-Waran"));
 
     await translateText("Komodo Dragon", "de");
 
-    const calledUrl = mockFetch.mock.calls[0][0] as string;
-    expect(calledUrl).toContain("Komodo%20Dragon");
+    const body = JSON.parse(mockFetch.mock.calls[0][1].body);
+    expect(body.target_lang).toBe("DE");
+    expect(body.text).toEqual(["Komodo Dragon"]);
   });
 
-  test("gibt Originaltext zurück wenn responseStatus nicht 200", async () => {
-    mockFetch.mockResolvedValue({
-      ok: true,
-      json: async () => ({ responseData: { translatedText: "QUERY LENGTH LIMIT EXCEEDED" }, responseStatus: 403 }),
-    });
+  test("gibt Originaltext zurück wenn API-Key fehlt", async () => {
+    vi.stubEnv("DEEPL_API_KEY", "");
 
     const result = await translateText("Lion", "de");
     expect(result).toBe("Lion");
+    expect(mockFetch).not.toHaveBeenCalled();
   });
 
   test("gibt Originaltext zurück bei HTTP-Fehler (Fallback)", async () => {
-    mockFetch.mockResolvedValue({ ok: false, status: 503 });
+    mockFetch.mockResolvedValue({ ok: false, status: 503, text: async () => "Service Unavailable" });
 
     const result = await translateText("Lion", "de");
     expect(result).toBe("Lion");
@@ -78,12 +77,12 @@ describe("translateText", () => {
   });
 
   test("funktioniert mit verschiedenen Zielsprachen", async () => {
-    mockFetch.mockResolvedValue(myMemorySuccess("Leeuw"));
+    mockFetch.mockResolvedValue(deeplSuccess("Leeuw"));
 
     const result = await translateText("Lion", "nl");
     expect(result).toBe("Leeuw");
 
-    const calledUrl = mockFetch.mock.calls[0][0] as string;
-    expect(calledUrl).toContain("langpair=en|nl");
+    const body = JSON.parse(mockFetch.mock.calls[0][1].body);
+    expect(body.target_lang).toBe("NL");
   });
 });

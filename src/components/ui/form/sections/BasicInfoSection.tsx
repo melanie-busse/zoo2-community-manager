@@ -32,6 +32,25 @@ export default function BasicInfoSection({ formData, setFormData }: BasicInfoSec
     >
       <SectionColumn>
         <FormGroup>
+          <Label htmlFor="identifier">{tAnimals("basicInfoSection.fields.identifier")}</Label>
+          <input
+            id="identifier"
+            type="text"
+            value={formData.identifier ?? ""}
+            onChange={(e) =>
+              setFormData((prev: any) => ({ ...prev, identifier: e.target.value || null }))
+            }
+            style={{
+              padding: "10px 14px",
+              borderRadius: "8px",
+              border: "1px solid #ccc",
+              fontSize: "1rem",
+              width: "100%",
+            }}
+          />
+        </FormGroup>
+
+        <FormGroup>
           <Label htmlFor="releaseDate">{tAnimals("basicInfoSection.fields.releaseDate")}</Label>
           <DatePickerField
             id="releaseDate"
@@ -39,6 +58,36 @@ export default function BasicInfoSection({ formData, setFormData }: BasicInfoSec
             onChange={handleDateChange}
             $width="200px"
           />
+        </FormGroup>
+
+        <FormGroup>
+          <label style={{ display: "flex", alignItems: "center", gap: "10px", cursor: "pointer" }}>
+            <input
+              id="isContestAnimal"
+              type="checkbox"
+              checked={Boolean(formData.isContestAnimal)}
+              onChange={(e) =>
+                setFormData((prev: any) => ({ ...prev, isContestAnimal: e.target.checked }))
+              }
+              style={{ width: "18px", height: "18px", cursor: "pointer" }}
+            />
+            {tAnimals("basicInfoSection.fields.isContestAnimal")}
+          </label>
+        </FormGroup>
+
+        <FormGroup>
+          <label style={{ display: "flex", alignItems: "center", gap: "10px", cursor: "pointer" }}>
+            <input
+              id="isLocked"
+              type="checkbox"
+              checked={Boolean(formData.isLocked)}
+              onChange={(e) =>
+                setFormData((prev: any) => ({ ...prev, isLocked: e.target.checked }))
+              }
+              style={{ width: "18px", height: "18px", cursor: "pointer" }}
+            />
+            {tAnimals("basicInfoSection.fields.isLocked")}
+          </label>
         </FormGroup>
       </SectionColumn>
     </InfoAccordion>

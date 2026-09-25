@@ -1,6 +1,7 @@
 import { Image } from "@/types/image";
 import { SpecialCoat } from "@/types/specialCoat";
 import { InventoryStatusFilter } from "@/store/useSpecialCoatStore";
+import { getBiomeName } from "@/utils/BiomeUtil";
 
 interface FilterOptions {
   searchTerm: string;
@@ -9,6 +10,7 @@ interface FilterOptions {
   inventoryStatus: InventoryStatusFilter;
   contestOnly?: boolean;
   filterRegionId?: number | null;
+  filterOwnedCount?: number | null;
   filterLevel10?: boolean;
   filterLevel20?: boolean;
   filterGlitter?: boolean;
@@ -28,6 +30,7 @@ export function filterSpecialCoats(
     inventoryStatus,
     contestOnly = false,
     filterRegionId = null,
+    filterOwnedCount = null,
     filterLevel10 = false,
     filterLevel20 = false,
     filterGlitter = false,
@@ -40,20 +43,21 @@ export function filterSpecialCoats(
 
     if (searchTerm.trim() !== "") {
       const query = searchTerm.toLowerCase();
-      const coatColor = coat.specialcoatstext?.[0]?.color?.toLowerCase() ?? "";
-      const coatName = coat.specialcoatstext?.[0]?.name?.toLowerCase() ?? "";
-      const animalTextName = animal?.animaltext?.[0]?.animalName?.toLowerCase() ?? "";
+      const matchesCoat = coat.specialcoatstext?.some(
+        (t) =>
+          t.name?.toLowerCase().includes(query) ||
+          t.color?.toLowerCase().includes(query),
+      ) ?? false;
+      const matchesAnimalName = animal?.animaltext?.some(
+        (t) => t.animalName?.toLowerCase().includes(query),
+      ) ?? false;
 
-      if (
-        !coatColor.includes(query) &&
-        !coatName.includes(query) &&
-        !animalTextName.includes(query)
-      ) {
+      if (!matchesCoat && !matchesAnimalName) {
         return false;
       }
     }
 
-    if (selectedBiome !== null && animal?.biome?.identifier !== selectedBiome) {
+    if (selectedBiome !== null && getBiomeName(animal?.biome, "") !== selectedBiome) {
       return false;
     }
 
@@ -72,6 +76,7 @@ export function filterSpecialCoats(
     if (filterLevel20 && !coat.inventoryLevel20) return false;
     if (filterGlitter && !coat.inventoryGlitter) return false;
     if (filterRegionId !== null && coat.inventoryRegionId !== filterRegionId) return false;
+    if (filterOwnedCount !== null && (coat.ownedAmount ?? 0) !== filterOwnedCount) return false;
 
     return true;
   });
@@ -123,11 +128,16 @@ function _getNestedValue(coat: SpecialCoat, sortBy: string): string | number {
 }
 
 export function getSpecialCoatImage(specialCoat: SpecialCoat): Image {
+  const biome = specialCoat.animal?.biome?.identifier;
+  const animalId = specialCoat.animal?.identifier;
+  const coatFolder = specialCoat.identifier && animalId ? specialCoat.identifier.slice(animalId.length + 1) : "";
+  const path =
+    biome && animalId && coatFolder
+      ? `/images/animals/${biome}/${animalId}/specialcoats/${coatFolder}/image.jpg`
+      : "/images/placeholder.jpg";
   return {
-    name: specialCoat.image || "placeholder.png",
-
-    path: `/images/specialCoat/${specialCoat.image}`,
-
+    name: specialCoat.identifier || "placeholder",
+    path,
     alt: specialCoat.specialcoatstext?.[0]?.name || "Tierbild",
   };
 }
@@ -139,8 +149,9 @@ export function getSpecialCoatName(specialCoat: SpecialCoat, fallback: string): 
 export const createEmptyForm = (languages: Array<{ code: string }>) => ({
   animalId: "",
   releaseDate: "",
-  image: "",
+  identifier: "",
   isContestSpecialCoat: false,
+  isLocked: false,
   parentWithCoatNeeded: false,
   chanceBaseWithoutParent: "",
   chanceBaseWithOneParent: "",
@@ -171,8 +182,9 @@ export const mapSpecialCoatToForm = (coat: any, languages: any[]) => {
     id: coat.id,
     animalId: coat.animalId || "",
     releaseDate: coat.releaseDate ? new Date(coat.releaseDate).toISOString().split("T")[0] : "",
-    image: coat.image || "",
+    identifier: coat.identifier || "",
     isContestSpecialCoat: coat?.isContestSpecialCoat ?? false,
+    isLocked: coat?.isLocked ?? false,
     parentWithCoatNeeded: coat?.parentWithCoatNeeded ?? false,
     chanceBaseWithoutParent: coat?.chanceBaseWithoutParent ?? "",
     chanceBaseWithOneParent: coat?.chanceBaseWithOneParent ?? "",

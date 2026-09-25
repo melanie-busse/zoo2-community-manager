@@ -78,11 +78,9 @@ export default function ContestEntryForm({
       {contest.conteststatue.map(({ animal }) => {
         const animalName = animal.animaltext?.[0]?.animalName ?? "";
         const biomeIdentifier = animal.biome?.identifier ?? "standard";
-        const animalImage = animal.image ?? "placeholder.png";
-        const imagePath =
-          animalImage === "placeholder.png"
-            ? "/images/placeholder.jpg"
-            : `/images/animals/${biomeIdentifier}/${animalImage}`;
+        const imagePath = animal.identifier
+          ? `/images/animals/${biomeIdentifier}/${animal.identifier}/image.jpg`
+          : "/images/placeholder.jpg";
 
         return (
           <Styles.AnimalSection key={animal.id}>
@@ -113,7 +111,7 @@ export default function ContestEntryForm({
         const animal = specialcoat.animal;
         const animalName = animal.animaltext?.[0]?.animalName ?? "";
         const coatName = specialcoat.specialcoatstext?.[0]?.name ?? "";
-        const coatImage = specialcoat.image ?? "placeholder.png";
+        const coatImage = specialcoat.identifier ?? "placeholder.png";
         const imagePath =
           coatImage === "placeholder.png"
             ? "/images/placeholder.jpg"
