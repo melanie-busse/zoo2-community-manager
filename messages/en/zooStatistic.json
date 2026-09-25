@@ -9,7 +9,9 @@
     "title": "Animals",
     "total": "Total Animals:",
     "specialCoats": "Total Special Coats:",
-    "distribution": "Payment Distribution:"
+    "distribution": "Payment Distribution:",
+    "zoodollar": "Animals for Zoodollar",
+    "diamond": "Animals for Diamonds"
   },
   "contest": {
     "title": "Competition",

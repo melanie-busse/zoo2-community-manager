@@ -74,8 +74,10 @@ describe("ZooSummaryCard", () => {
 
   test("summiert Zoodollar- und Diamanten-Tiere korrekt", () => {
     render(<ZooSummaryCard biomeStatistics={mockStats} />);
-    expect(screen.getByTestId("price-badge-Zoodollar")).toHaveTextContent("20");
-    expect(screen.getByTestId("price-badge-Diamond")).toHaveTextContent("10");
+    const zoodollarLabel = screen.getByText("animals.zoodollar");
+    expect(zoodollarLabel.nextElementSibling).toHaveTextContent("20");
+    const diamondLabel = screen.getByText("animals.diamond");
+    expect(diamondLabel.nextElementSibling).toHaveTextContent("10");
   });
 
   test("summiert Wettbewerbstiere korrekt", () => {

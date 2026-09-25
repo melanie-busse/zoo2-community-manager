@@ -9,7 +9,9 @@
     "title": "Dyr",
     "total": "Samlet antal dyr:",
     "specialCoats": "Samlet antal farvevarianter:",
-    "distribution": "Betalingsfordeling:"
+    "distribution": "Betalingsfordeling:",
+    "zoodollar": "Dyr til Zoodollar",
+    "diamond": "Dyr til Diamanter"
   },
   "contest": {
     "title": "Konkurrence",

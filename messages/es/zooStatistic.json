@@ -9,7 +9,9 @@
     "title": "Animales",
     "total": "Total de animales:",
     "specialCoats": "Total de variantes de color:",
-    "distribution": "Distribución de pago:"
+    "distribution": "Distribución de pago:",
+    "zoodollar": "Animales para Zoodollar",
+    "diamond": "Animales para Diamantes"
   },
   "contest": {
     "title": "Competición",

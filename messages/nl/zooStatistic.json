@@ -9,7 +9,9 @@
     "title": "Dieren",
     "total": "Totaal dieren:",
     "specialCoats": "Totaal kleurvarianten:",
-    "distribution": "Betalingsverdeling:"
+    "distribution": "Betalingsverdeling:",
+    "zoodollar": "Dieren voor Zoodollar",
+    "diamond": "Dieren voor Diamanten"
   },
   "contest": {
     "title": "Competitie",
