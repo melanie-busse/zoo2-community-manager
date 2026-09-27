@@ -4,6 +4,7 @@ import { getTranslations } from "next-intl/server";
 
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { deleteContest, updateContest } from "@/service/ContestService";
+import { hasMinimumRole, isMayor } from "@/utils/roleUtils";
 
 export async function PUT(request: Request, { params }: { params: Promise<{ id: string }> }) {
   const { searchParams } = new URL(request.url);
@@ -13,7 +14,15 @@ export async function PUT(request: Request, { params }: { params: Promise<{ id: 
   try {
     const session = await getServerSession(authOptions);
 
-    if (!session || session.user?.role !== "Director") {
+    if (isMayor(session)) {
+      const tUser = await getTranslations({ locale, namespace: "user" });
+      return NextResponse.json(
+        { message: tUser("mayor_readonly_notice"), error: "MayorReadonly" },
+        { status: 403 },
+      );
+    }
+
+    if (!hasMinimumRole(session, "Employee")) {
       return NextResponse.json({ message: t("errors.unauthorized") }, { status: 403 });
     }
 
@@ -36,7 +45,15 @@ export async function DELETE(request: Request, { params }: { params: Promise<{ i
   try {
     const session = await getServerSession(authOptions);
 
-    if (!session || session.user?.role !== "Director") {
+    if (isMayor(session)) {
+      const tUser = await getTranslations({ locale, namespace: "user" });
+      return NextResponse.json(
+        { message: tUser("mayor_readonly_notice"), error: "MayorReadonly" },
+        { status: 403 },
+      );
+    }
+
+    if (!hasMinimumRole(session, "Employee")) {
       return NextResponse.json({ message: t("errors.unauthorized") }, { status: 403 });
     }
 

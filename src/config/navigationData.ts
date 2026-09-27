@@ -49,12 +49,12 @@ export const navConfig: NavItem[] = [
     id: "contests",
     labelKey: "club",
     basePath: "/contests",
-    requiresAuth: true,
+    requiresAuth: false,
     subMenu: [
       {
         labelKey: "club_contests",
         href: "/contests",
-        requiresAuth: true,
+        requiresAuth: false,
       },
       {
         labelKey: "club_create_contest",

@@ -4,6 +4,7 @@ import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 
 import { createSpecialCoat, getAllSpecialCoats } from "@/service/SpecialCoatsService";
+import { hasMinimumRole, isMayor } from "@/utils/roleUtils";
 
 export const dynamic = "force-dynamic";
 
@@ -35,14 +36,15 @@ export async function POST(request: Request) {
   try {
     const session = await getServerSession(authOptions);
 
-    if (session?.user?.roleId === 0 || session?.user?.role === "Mayor") {
+    if (isMayor(session)) {
       return NextResponse.json(
-        {
-          message: t("mayor_readonly_notice"),
-          error: "MayorReadonly",
-        },
+        { message: tUser("mayor_readonly_notice"), error: "MayorReadonly" },
         { status: 403 },
       );
+    }
+
+    if (!hasMinimumRole(session, "Employee")) {
+      return NextResponse.json({ message: t("errors.unauthorized") }, { status: 403 });
     }
 
     const body = await request.json();
