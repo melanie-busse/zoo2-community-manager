@@ -1,0 +1,31 @@
+{
+  "title": "Album de collection",
+  "area": {
+    "MAIN_ZOO": "Zoo Principal",
+    "TERRARIUM": "Terrarium",
+    "AQUARIUM": "Aquarium",
+    "NOCTARIUM": "Noctarium",
+    "AVIARY": "Volière"
+  },
+  "stars": {
+    "1": "1 Étoile",
+    "2": "2 Étoiles",
+    "3": "3 Étoiles"
+  },
+  "filter": {
+    "all_areas": "Toutes les Zones",
+    "all_stars": "Toutes les Difficultés"
+  },
+  "card": {
+    "requirements": "{count} Exigences",
+    "animals": "Animaux",
+    "decorations": "Décorations",
+    "level": "Niv.{level}",
+    "more": "+ {count} de plus",
+    "empty": "Aucune collection trouvée."
+  },
+  "type": {
+    "ANIMAL": "Animal",
+    "DECORATION": "Décoration"
+  }
+}

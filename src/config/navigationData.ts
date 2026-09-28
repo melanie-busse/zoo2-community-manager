@@ -46,6 +46,12 @@ export const navConfig: NavItem[] = [
     ],
   },
   {
+    id: "collections",
+    labelKey: "collections",
+    href: "/collections",
+    requiresAuth: false,
+  },
+  {
     id: "contests",
     labelKey: "club",
     basePath: "/contests",

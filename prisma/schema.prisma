@@ -401,3 +401,52 @@ model SpecialCoatOrigin {
   @@index([originId], map: "specialCoatOrigin_originId_idx")
   @@map("specialcoatorigin")
 }
+
+enum SectorArea {
+  MAIN_ZOO
+  TERRARIUM
+  AQUARIUM
+  NOCTARIUM
+  AVIARY
+}
+
+enum RequirementType {
+  ANIMAL
+  DECORATION
+}
+
+model Collection {
+  id           Int                     @id @default(autoincrement())
+  identifier   String                  @unique @db.VarChar(255)
+  stars        Int
+  area         SectorArea
+
+  texts        CollectionText[]
+  requirements CollectionRequirement[]
+
+  @@map("collection")
+}
+
+model CollectionText {
+  id           Int        @id @default(autoincrement())
+  collectionId Int
+  collection   Collection @relation(fields: [collectionId], references: [id], onDelete: Cascade, map: "collectionText_collectionId_fkey")
+  languageCode String     @db.VarChar(5)
+  name         String     @db.VarChar(255)
+
+  @@unique([collectionId, languageCode], map: "collectionText_collectionId_languageCode_key")
+  @@map("collectiontext")
+}
+
+model CollectionRequirement {
+  id            Int             @id @default(autoincrement())
+  collectionId  Int
+  collection    Collection      @relation(fields: [collectionId], references: [id], onDelete: Cascade, map: "collectionRequirement_collectionId_fkey")
+  sortOrder     Int             @default(0)
+  type          RequirementType
+  requiredLevel Int?
+  itemName      String          @db.VarChar(255)
+
+  @@index([collectionId], map: "collectionRequirement_collectionId_idx")
+  @@map("collectionrequirement")
+}
