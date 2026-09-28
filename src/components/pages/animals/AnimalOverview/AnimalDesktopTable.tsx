@@ -3,6 +3,7 @@
 import React from "react";
 import { useTranslations } from "next-intl";
 import { useSession } from "next-auth/react";
+import { hasMinimumRole, isMayor } from "@/utils/roleUtils";
 
 import * as Styles from "@/components/page-structure/Table/Table.styles";
 
@@ -37,7 +38,7 @@ export default function AnimalDesktopTable() {
   const toggleSort = useAnimalStore((state) => state.toggleSort);
   const setSelectedAnimal = useAnimalStore((state) => state.setSelectedAnimal);
 
-  const isAdmin = session?.user?.role === "Director";
+  const isAdmin = hasMinimumRole(session, "Director") || isMayor(session);
 
   return (
     <Table>

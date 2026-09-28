@@ -3,6 +3,7 @@
 import React from "react";
 import { useTranslations } from "next-intl";
 import { useSession } from "next-auth/react";
+import { hasMinimumRole, isMayor } from "@/utils/roleUtils";
 
 import * as Styles from "@/components/pages/animals/AnimalDetails/AnimalDetails.styles";
 
@@ -22,7 +23,7 @@ export default function SpecialCoatDetailContent() {
   const router = useRouter();
 
   const { data: session } = useSession();
-  const isAdmin = session?.user?.role === "Director";
+  const isAdmin = hasMinimumRole(session, "Director") || isMayor(session);
 
   if (!specialCoat) {
     return <div>{tCommon("not_found")}</div>;

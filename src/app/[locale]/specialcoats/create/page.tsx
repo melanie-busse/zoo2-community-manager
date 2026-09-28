@@ -29,7 +29,7 @@ export default async function CreateSpecialCoatPage({ params }: CreateSpecialCoa
   const tSpecialCoat = await getTranslations({ locale, namespace: "specialCoat" });
 
   const session = await getServerSession(authOptions);
-  if (!hasMinimumRole(session, "Employee") && !isMayor(session)) {
+  if (!hasMinimumRole(session, "Director") && !isMayor(session)) {
     redirect(`/${locale}/animals`);
   }
 

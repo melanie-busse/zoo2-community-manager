@@ -12,9 +12,16 @@ describe("hasMinimumRole", () => {
     expect(hasMinimumRole(null, "Visitor")).toBe(false);
   });
 
-  test("gibt false zurück wenn roleId fehlt", () => {
+  test("gibt false zurück wenn roleId und role fehlen", () => {
     const session = { user: {}, expires: "9999-12-31" } as Session;
     expect(hasMinimumRole(session, "Visitor")).toBe(false);
+  });
+
+  test("nutzt role-String als Fallback wenn roleId fehlt", () => {
+    const session = { user: { role: "Employee" }, expires: "9999-12-31" } as Session;
+    expect(hasMinimumRole(session, "Employee")).toBe(true);
+    expect(hasMinimumRole(session, "Director")).toBe(false);
+    expect(hasMinimumRole(session, "Member")).toBe(true);
   });
 
   test("gibt false für den Mayor zurück (read-only Spezialrolle)", () => {

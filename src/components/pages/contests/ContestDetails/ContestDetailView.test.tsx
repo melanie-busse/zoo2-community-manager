@@ -111,6 +111,7 @@ describe("ContestDetailView", () => {
         contest={mockContest as any}
         onEdit={onEdit}
         onDelete={onDelete}
+        canEdit={true}
       />,
     );
     expect(screen.getByRole("heading", { level: 1 })).toBeInTheDocument();
@@ -122,6 +123,7 @@ describe("ContestDetailView", () => {
         contest={mockContest as any}
         onEdit={onEdit}
         onDelete={onDelete}
+        canEdit={true}
       />,
     );
     expect(screen.getByTestId("action-group")).toBeInTheDocument();
@@ -133,6 +135,7 @@ describe("ContestDetailView", () => {
         contest={mockContest as any}
         onEdit={onEdit}
         onDelete={onDelete}
+        canEdit={true}
       />,
     );
     fireEvent.click(screen.getByText("Edit"));
@@ -145,6 +148,7 @@ describe("ContestDetailView", () => {
         contest={mockContest as any}
         onEdit={onEdit}
         onDelete={onDelete}
+        canEdit={true}
       />,
     );
     expect(screen.getByTestId("action-row")).toBeInTheDocument();
@@ -157,6 +161,7 @@ describe("ContestDetailView", () => {
         contest={expiredContest as any}
         onEdit={onEdit}
         onDelete={onDelete}
+        canEdit={true}
       />,
     );
     expect(screen.queryByTestId("action-row")).not.toBeInTheDocument();
@@ -169,6 +174,7 @@ describe("ContestDetailView", () => {
         animals={mockAnalysis as any}
         onEdit={onEdit}
         onDelete={onDelete}
+        canEdit={true}
       />,
     );
     expect(screen.getByText("Alice")).toBeInTheDocument();
@@ -189,6 +195,7 @@ describe("ContestDetailView", () => {
         animals={emptyAnalysis as any}
         onEdit={onEdit}
         onDelete={onDelete}
+        canEdit={true}
       />,
     );
     expect(screen.getByTestId("no-posts")).toBeInTheDocument();
@@ -201,6 +208,7 @@ describe("ContestDetailView", () => {
         animals={mockAnalysis as any}
         onEdit={onEdit}
         onDelete={onDelete}
+        canEdit={true}
       />,
     );
     expect(screen.getByTestId("grand-total")).toHaveTextContent("5");

@@ -58,7 +58,9 @@ export async function submitContestEntries(
 
   if (!response.ok) {
     const result = await response.json().catch(() => ({}));
-    throw new Error(result.message);
+    const error: any = new Error(result.message);
+    error.data = result;
+    throw error;
   }
 }
 
@@ -69,6 +71,8 @@ export async function deleteContestOnClient(id: number): Promise<void> {
 
   if (!response.ok) {
     const result = await response.json().catch(() => ({}));
-    throw new Error(result.message);
+    const error: any = new Error(result.message);
+    error.data = result;
+    throw error;
   }
 }

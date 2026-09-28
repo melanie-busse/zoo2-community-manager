@@ -4,6 +4,7 @@ import React from "react";
 import styled from "styled-components";
 import { useTranslations } from "next-intl";
 import { useSession } from "next-auth/react";
+import { hasMinimumRole, isMayor } from "@/utils/roleUtils";
 
 import * as Styles from "./AnimalDetails.styles";
 
@@ -26,7 +27,7 @@ export default function AnimalDetailContent({}) {
   const router = useRouter();
 
   const { data: session } = useSession();
-  const isAdmin = session?.user?.role === "Director";
+  const isAdmin = hasMinimumRole(session, "Director") || isMayor(session);
 
   if (!animal) {
     return <div>{tCommon("not_found")}</div>;

@@ -30,7 +30,7 @@ export default async function EditAnimalPage({ params }: EditAnimalPageProps) {
   }
 
   const session = await getServerSession(authOptions);
-  if (!hasMinimumRole(session, "Employee") && !isMayor(session)) {
+  if (!hasMinimumRole(session, "Director") && !isMayor(session)) {
     redirect(`/${locale}/animals`);
   }
 

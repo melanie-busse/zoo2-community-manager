@@ -12,7 +12,7 @@ vi.mock("next-intl/server", () => ({
 }));
 
 vi.mock("next-auth/next", () => ({
-  getServerSession: vi.fn().mockResolvedValue({ user: { role: "Member" } }),
+  getServerSession: vi.fn().mockResolvedValue({ user: { role: "Member", roleId: 4 } }),
 }));
 
 vi.mock("@/app/api/auth/[...nextauth]/route", () => ({
@@ -109,7 +109,7 @@ describe("Contest Entries API Route Handler", () => {
       expect(data.success).toBe(true);
     });
 
-    test("gibt Status 401 zurück wenn keine Session vorhanden", async () => {
+    test("gibt Status 403 zurück wenn keine Session vorhanden", async () => {
       const { getServerSession } = await import("next-auth/next");
       vi.mocked(getServerSession).mockResolvedValueOnce(null);
 
@@ -119,7 +119,7 @@ describe("Contest Entries API Route Handler", () => {
       });
       const response = await POST(request, makeParams("42"));
 
-      expect(response.status).toBe(401);
+      expect(response.status).toBe(403);
     });
 
     test("gibt Status 400 zurück wenn userId fehlt", async () => {

@@ -1,6 +1,7 @@
 import { create } from "zustand";
 import { Contest } from "@/types/contest";
 import { confirmDeleteDialog, showErrorToast, showSuccessToast } from "@/utils/alerts";
+import { toast } from "react-toastify";
 import {
   createContestOnClient,
   deleteContestOnClient,
@@ -58,7 +59,11 @@ export const useContestStore = create<ContestState>((set) => ({
       showSuccessToast(t("contestOverview.messages.deleteSuccess"));
       return true;
     } catch (error: any) {
-      showErrorToast(error.message);
+      if (error?.data?.error === "MayorReadonly") {
+        toast.info(error.message);
+      } else {
+        showErrorToast(error.message);
+      }
       return false;
     }
   },

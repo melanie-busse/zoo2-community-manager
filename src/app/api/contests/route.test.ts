@@ -11,7 +11,7 @@ vi.mock("next-intl/server", () => ({
 }));
 
 vi.mock("next-auth/next", () => ({
-  getServerSession: vi.fn().mockResolvedValue({ user: { role: "Member", roleId: 4 } }),
+  getServerSession: vi.fn().mockResolvedValue({ user: { role: "Employee", roleId: 3 } }),
 }));
 
 vi.mock("@/app/api/auth/[...nextauth]/route", () => ({

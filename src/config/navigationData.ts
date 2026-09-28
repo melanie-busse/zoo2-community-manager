@@ -2,6 +2,7 @@ interface SubMenuItem {
   labelKey: string;
   href: string;
   requiresAuth?: boolean;
+  minimumRole?: "Visitor" | "Member" | "Employee" | "Director" | "Admin";
 }
 
 interface NavItem {
@@ -10,6 +11,7 @@ interface NavItem {
   href?: string; // Für einfache Links wie "Home"
   basePath?: string; // Für Dropdowns, um den "Aktiv"-Status zu prüfen
   requiresAuth?: boolean;
+  minimumRole?: "Visitor" | "Member" | "Employee" | "Director" | "Admin";
   subMenu?: SubMenuItem[];
 }
 
@@ -36,12 +38,14 @@ export const navConfig: NavItem[] = [
         labelKey: "animal_create",
         href: "/animals/create",
         requiresAuth: true,
+        minimumRole: "Director",
       },
       { labelKey: "specialcoats_overview", href: "/specialcoats" },
       {
         labelKey: "specialcoats_create",
         href: "/specialcoats/create",
         requiresAuth: true,
+        minimumRole: "Director",
       },
     ],
   },
@@ -60,6 +64,7 @@ export const navConfig: NavItem[] = [
         labelKey: "club_create_contest",
         href: "/contests/create",
         requiresAuth: true,
+        minimumRole: "Employee",
       },
     ],
   },
@@ -102,6 +107,7 @@ export const navConfig: NavItem[] = [
     labelKey: "admin",
     basePath: "/admin",
     requiresAuth: true,
+    minimumRole: "Director",
     subMenu: [{ labelKey: "import-animals", href: "/admin/import-animals", requiresAuth: true }],
   },
 ];
