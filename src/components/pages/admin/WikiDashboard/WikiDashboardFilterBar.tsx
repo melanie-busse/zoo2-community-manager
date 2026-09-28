@@ -86,9 +86,10 @@ const FilterWrapper = styled.div`
 const ButtonRow = styled.div`
   width: 100%;
   display: flex;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: ${({ theme }) => theme.spacing(1)};
 
   & > button {
-    flex: 1;
+    flex: 1 1 120px;
   }
 `;

@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const BulkActionBar = styled.div`
   display: flex;
+  flex-wrap: wrap;
   gap: ${({ theme }) => theme.spacing(1)};
   margin-bottom: ${({ theme }) => theme.spacing(2)};
 `;
@@ -42,6 +43,35 @@ export const BulkButton = styled.button<{ $variant: "import" | "update" | "sync"
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;
+  }
+`;
+
+export const TableWrapper = styled.div`
+  width: 100%;
+  overflow-x: auto;
+  margin-top: ${({ theme }) => theme.spacing(1)};
+  background: ${({ theme }) => theme.colors.ui.white};
+  border: 2px solid ${({ theme }) => theme.colors.primary["600"]};
+  border-radius: ${({ theme }) => theme.borderRadius.main};
+
+  table {
+    width: 100%;
+    min-width: 400px;
+    border-collapse: collapse;
+
+    th, td {
+      padding: 12px 15px;
+      border-bottom: 1px solid ${({ theme }) => theme.colors.primary["100"]};
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    th {
+      text-align: left;
+      color: ${({ theme }) => theme.colors.system.success};
+    }
   }
 `;
 

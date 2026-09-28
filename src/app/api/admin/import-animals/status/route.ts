@@ -3,12 +3,12 @@ import { prisma } from "@/lib/prisma";
 import { fetchPagesFromCategory } from "@/service/FandomService";
 import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
-import { hasMinimumRole } from "@/utils/roleUtils";
+import { hasMinimumRole, isMayor } from "@/utils/roleUtils";
 
 export async function GET() {
   try {
     const session = await getServerSession(authOptions);
-    if (!hasMinimumRole(session, "Director")) {
+    if (!hasMinimumRole(session, "Director") && !isMayor(session)) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 403 });
     }
 
