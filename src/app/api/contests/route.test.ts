@@ -11,7 +11,7 @@ vi.mock("next-intl/server", () => ({
 }));
 
 vi.mock("next-auth/next", () => ({
-  getServerSession: vi.fn().mockResolvedValue({ user: { role: "Member" } }),
+  getServerSession: vi.fn().mockResolvedValue({ user: { role: "Employee", roleId: 3 } }),
 }));
 
 vi.mock("@/app/api/auth/[...nextauth]/route", () => ({
@@ -41,7 +41,7 @@ describe("POST /api/contests", () => {
     expect(createContest).toHaveBeenCalledTimes(1);
   });
 
-  test("gibt 401 zurück wenn keine Session vorhanden ist", async () => {
+  test("gibt 403 zurück wenn keine Session vorhanden ist", async () => {
     const { getServerSession } = await import("next-auth/next");
     vi.mocked(getServerSession).mockResolvedValueOnce(null);
 
@@ -52,7 +52,7 @@ describe("POST /api/contests", () => {
 
     const response = await POST(request);
 
-    expect(response.status).toBe(401);
+    expect(response.status).toBe(403);
     expect(createContest).not.toHaveBeenCalled();
   });
 

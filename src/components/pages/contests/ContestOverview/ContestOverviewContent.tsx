@@ -1,6 +1,7 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import { useSession } from "next-auth/react";
 import PageHeader from "@/components/page-structure/page/PageHeader";
 import ContestDesktopTable from "@/components/pages/contests/ContestOverview/ContestDesktopTable";
 import { Contest } from "@/types/contest";
@@ -9,6 +10,7 @@ import EmptyState from "@/components/elements/EmptyState/EmptyState";
 import * as Styles from "@/components/pages/contests/ContestOverview/ContestOverview.styles";
 import React from "react";
 import { useRouter } from "@/i18n/routing";
+import { hasMinimumRole, isMayor } from "@/utils/roleUtils";
 
 interface ContestOverviewContentProps {
   contests: Contest[];
@@ -22,6 +24,8 @@ export default function ContestOverviewContent({
   handleDelete,
 }: ContestOverviewContentProps) {
   const router = useRouter();
+  const { data: session } = useSession();
+  const canViewDetail = hasMinimumRole(session, "Member") || isMayor(session);
   const tContest = useTranslations("contest");
 
   return (
@@ -31,7 +35,7 @@ export default function ContestOverviewContent({
       {contests.length > 0 ? (
         <>
           <Styles.DesktopOnly>
-            <ContestDesktopTable contests={contests} onEdit={handleEdit} onDelete={handleDelete} />
+            <ContestDesktopTable contests={contests} onEdit={handleEdit} onDelete={handleDelete} canViewDetail={canViewDetail} />
           </Styles.DesktopOnly>
 
           <Styles.MobileOnly>
@@ -39,7 +43,7 @@ export default function ContestOverviewContent({
               <ContestMobileCard
                 key={contest.id}
                 contest={contest}
-                onClick={() => router.push(`/contests/${contest.id}`)}
+                onClick={canViewDetail ? () => router.push(`/contests/${contest.id}`) : undefined}
                 onEdit={() => handleEdit(String(contest.id))}
                 onDelete={() => handleDelete(String(contest.id))}
               />

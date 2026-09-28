@@ -1,6 +1,14 @@
 import { describe, test, expect, vi, beforeEach } from "vitest";
 import { GET } from "./route";
 
+vi.mock("next-auth/next", () => ({
+  getServerSession: vi.fn().mockResolvedValue({ user: { role: "Director", roleId: 2 } }),
+}));
+
+vi.mock("@/app/api/auth/[...nextauth]/route", () => ({
+  authOptions: {},
+}));
+
 vi.mock("@/service/FandomService", () => ({
   fetchPagesFromCategory: vi.fn(),
 }));

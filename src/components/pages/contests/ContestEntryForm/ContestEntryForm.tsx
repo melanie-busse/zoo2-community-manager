@@ -110,13 +110,17 @@ export default function ContestEntryForm({
       {contest.contestspecialcoat.map(({ specialcoat }) => {
         const animal = specialcoat.animal;
         const animalName = animal.animaltext?.[0]?.animalName ?? "";
-        const coatName = specialcoat.specialcoatstext?.[0]?.name ?? "";
-        const coatImage = specialcoat.identifier ?? "placeholder.png";
+        const biomeId = animal.biome?.identifier;
+        const animalId = animal.identifier;
+        const coatFolder =
+          specialcoat.identifier && animalId
+            ? specialcoat.identifier.slice(animalId.length + 1)
+            : "";
         const imagePath =
-          coatImage === "placeholder.png"
-            ? "/images/placeholder.jpg"
-            : `/images/specialcoats/${coatImage}`;
-        const displayName = coatName ? `${animalName} – ${coatName}` : animalName;
+          biomeId && animalId && coatFolder
+            ? `/images/animals/${biomeId}/${animalId}/specialcoats/${coatFolder}/image.jpg`
+            : "/images/placeholder.jpg";
+        const displayName = animalName;
 
         return (
           <Styles.SpecialCoatSection key={specialcoat.id}>

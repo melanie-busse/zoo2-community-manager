@@ -4,6 +4,7 @@ import { getTranslations } from "next-intl/server";
 import { redirect, notFound } from "next/navigation";
 
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { hasMinimumRole, isMayor } from "@/utils/roleUtils";
 import PageWrapper from "@/components/page-structure/page/PageWrapper";
 import ContentWrapper from "@/components/page-structure/page/ContentWrapper";
 import PageHeader from "@/components/page-structure/page/PageHeader";
@@ -27,8 +28,7 @@ export default async function EditSpecialCoatPage({ params }: EditSpecialCoatPag
   }
 
   const session = await getServerSession(authOptions);
-  const allowedRoles = ["Director", "Mayor"];
-  if (!session || !allowedRoles.includes(session.user?.role ?? "")) {
+  if (!hasMinimumRole(session, "Director") && !isMayor(session)) {
     redirect(`/${locale}/specialcoats`);
   }
 

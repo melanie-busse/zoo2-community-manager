@@ -4,6 +4,7 @@ import { getTranslations } from "next-intl/server";
 
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { createContestEntries, getEntriesByContestAndUser } from "@/service/ContestService";
+import { hasMinimumRole, isMayor } from "@/utils/roleUtils";
 
 export async function GET(request: Request, { params }: { params: Promise<{ id: string }> }) {
   const { searchParams } = new URL(request.url);
@@ -29,11 +30,18 @@ export async function POST(request: Request, { params }: { params: Promise<{ id:
   const { searchParams } = new URL(request.url);
   const locale = searchParams.get("locale") || "de";
   const t = await getTranslations({ locale, namespace: "api" });
+  const tUser = await getTranslations({ locale, namespace: "user" });
 
   try {
     const session = await getServerSession(authOptions);
-    if (!session) {
-      return NextResponse.json({ message: t("errors.unauthorized") }, { status: 401 });
+    if (isMayor(session)) {
+      return NextResponse.json(
+        { message: tUser("mayor_readonly_notice"), error: "MayorReadonly" },
+        { status: 403 },
+      );
+    }
+    if (!hasMinimumRole(session, "Member")) {
+      return NextResponse.json({ message: t("errors.unauthorized") }, { status: 403 });
     }
 
     const { id } = await params;

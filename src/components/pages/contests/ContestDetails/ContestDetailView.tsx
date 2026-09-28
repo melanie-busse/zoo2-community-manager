@@ -30,6 +30,7 @@ interface ContestDetailViewProps {
   specialCoat?: Analysis[];
   onEdit: () => void;
   onDelete: () => void;
+  canEdit: boolean;
 }
 
 export default function ContestDetailView({
@@ -38,6 +39,7 @@ export default function ContestDetailView({
   specialCoat,
   onEdit,
   onDelete,
+  canEdit,
 }: ContestDetailViewProps) {
   const t = useTranslations("contest");
   const isExpired = new Date() > new Date(contest.endDate);
@@ -46,9 +48,11 @@ export default function ContestDetailView({
   return (
     <Styles.RelativeWrapper>
       <ContentWrapper>
-        <Styles.AdminActions>
-          <ActionGroupBadge id={contest.id} onEdit={onEdit} onDelete={onDelete} />
-        </Styles.AdminActions>
+        {canEdit && (
+          <Styles.AdminActions>
+            <ActionGroupBadge id={contest.id} onEdit={onEdit} onDelete={onDelete} />
+          </Styles.AdminActions>
+        )}
 
         <PageHeader text={t("contestOverview.details.headline")} />
 

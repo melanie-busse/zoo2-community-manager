@@ -1,9 +1,17 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import { fetchPagesFromCategory } from "@/service/FandomService";
+import { getServerSession } from "next-auth/next";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { hasMinimumRole, isMayor } from "@/utils/roleUtils";
 
 export async function GET() {
   try {
+    const session = await getServerSession(authOptions);
+    if (!hasMinimumRole(session, "Director") && !isMayor(session)) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 403 });
+    }
+
     // 1. Alle englischen Seitentitel aus der Wiki-Kategorie holen
     const wikiTitles = await fetchPagesFromCategory("Animal");
 

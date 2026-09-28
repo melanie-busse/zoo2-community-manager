@@ -32,10 +32,10 @@ export async function getInventoryStatistics(
       inventorySpecialCoats.filter((i) => (i.count ?? 0) >= 1).map((i) => i.specialCoatId),
     );
     const ownedStatueAnimalIds = new Set(
-      inventoryStatues.filter((i) => (i.puzzlePieces ?? 0) >= 1).map((i) => i.animalId),
+      inventoryStatues.filter((i) => (i.puzzlePieces ?? 0) >= 100).map((i) => i.animalId),
     );
     const ownedContestCoatIds = new Set(
-      inventoryContestCoats.filter((i) => (i.puzzlePieces ?? 0) >= 1).map((i) => i.specialCoatId),
+      inventoryContestCoats.filter((i) => (i.puzzlePieces ?? 0) >= 100).map((i) => i.specialCoatId),
     );
 
     return biomes.map((biome) => {

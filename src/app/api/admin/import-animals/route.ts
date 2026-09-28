@@ -10,6 +10,9 @@ import { createSpecialCoat } from "@/service/SpecialCoatsService";
 import { translateText } from "@/utils/translate";
 import { getAllLanguages } from "@/service/LanguageService";
 import { parseBackendDate } from "@/utils/DateUtil";
+import { getServerSession } from "next-auth/next";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { hasMinimumRole, isMayor } from "@/utils/roleUtils";
 
 const delay = () => new Promise((r) => setTimeout(r, 400));
 
@@ -200,6 +203,14 @@ async function syncMissingCoats(
 
 export async function POST(request: Request) {
   try {
+    const session = await getServerSession(authOptions);
+    if (isMayor(session)) {
+      return NextResponse.json({ error: "MayorReadonly" }, { status: 403 });
+    }
+    if (!hasMinimumRole(session, "Director")) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 403 });
+    }
+
     const { pageTitle } = await request.json();
 
     if (!pageTitle) {
@@ -249,6 +260,14 @@ export async function POST(request: Request) {
 
 export async function PUT(request: Request) {
   try {
+    const session = await getServerSession(authOptions);
+    if (isMayor(session)) {
+      return NextResponse.json({ error: "MayorReadonly" }, { status: 403 });
+    }
+    if (!hasMinimumRole(session, "Director")) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 403 });
+    }
+
     const { pageTitle } = await request.json();
 
     if (!pageTitle) {

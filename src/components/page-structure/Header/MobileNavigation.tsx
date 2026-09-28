@@ -8,6 +8,7 @@ import * as Styles from "./Navigation.styles";
 import { navConfig } from "@/config/navigationData";
 import Chevron from "@/components/ui/icons/Chevron";
 import Login from "@/components/page-structure/Header/Login";
+import { hasMinimumRole, isMayor } from "@/utils/roleUtils";
 
 // @ts-expect-error -- Props werden ohne Typ-Definition übergeben
 export default function MobileNavigation({ isOpen, onClose }) {
@@ -24,6 +25,7 @@ export default function MobileNavigation({ isOpen, onClose }) {
       <Styles.MenuContent>
         {navConfig.map((item) => {
           if (item.requiresAuth && !session) return null;
+          if (item.minimumRole && !hasMinimumRole(session, item.minimumRole) && !isMayor(session)) return null;
 
           if (item.href && !item.subMenu) {
             return (
@@ -43,6 +45,7 @@ export default function MobileNavigation({ isOpen, onClose }) {
               <Styles.SubMenu $isOpen={openSubMenu === item.id}>
                 {item.subMenu?.map((sub) => {
                   if (sub.requiresAuth && !session) return null;
+                  if (sub.minimumRole && !hasMinimumRole(session, sub.minimumRole) && !isMayor(session)) return null;
 
                   return (
                     <Styles.SubNavLink key={sub.href} href={sub.href} onClick={onClose}>

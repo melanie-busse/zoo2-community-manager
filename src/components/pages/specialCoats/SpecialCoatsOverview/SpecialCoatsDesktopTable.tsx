@@ -3,6 +3,7 @@
 import React from "react";
 import { useTranslations } from "next-intl";
 import { useSession } from "next-auth/react";
+import { hasMinimumRole, isMayor } from "@/utils/roleUtils";
 
 import * as Styles from "@/components/page-structure/Table/Table.styles";
 
@@ -34,7 +35,7 @@ export default function SpecialCoatsDesktopTable() {
   const toggleSort = useSpecialCoatStore((state) => state.toggleSort);
   const setSelectedSpecialCoat = useSpecialCoatStore((state) => state.setSelectedSpecialCoat);
 
-  const isAdmin = session?.user?.role === "Director";
+  const isAdmin = hasMinimumRole(session, "Director") || isMayor(session);
 
   return (
     <Table>

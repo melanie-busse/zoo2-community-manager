@@ -3,6 +3,7 @@ import { getServerSession } from "next-auth/next";
 import { getTranslations } from "next-intl/server";
 import { authOptions } from "../auth/[...nextauth]/route";
 import { createContest } from "@/service/ContestService";
+import { hasMinimumRole, isMayor } from "@/utils/roleUtils";
 
 export async function POST(req: Request) {
   const { searchParams } = new URL(req.url);
@@ -11,9 +12,17 @@ export async function POST(req: Request) {
 
   try {
     const session = await getServerSession(authOptions);
+    const tUser = await getTranslations({ locale, namespace: "user" });
 
-    if (!session) {
-      return NextResponse.json({ message: t("errors.unauthorized") }, { status: 401 });
+    if (isMayor(session)) {
+      return NextResponse.json(
+        { message: tUser("mayor_readonly_notice"), error: "MayorReadonly" },
+        { status: 403 },
+      );
+    }
+
+    if (!hasMinimumRole(session, "Employee")) {
+      return NextResponse.json({ message: t("errors.unauthorized") }, { status: 403 });
     }
 
     const body = await req.json();

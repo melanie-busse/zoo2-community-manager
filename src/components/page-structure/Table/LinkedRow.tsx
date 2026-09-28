@@ -7,30 +7,30 @@ import { useRouter } from "next/navigation";
 interface LinkedRowProps {
   children: React.ReactNode;
   path: string;
-  onClick?: () => void; // 💡 Optionales onClick-Prop hinzufügen
+  onClick?: () => void;
+  disabled?: boolean;
 }
 
-export default function LinkedRow({ children, path, onClick }: LinkedRowProps) {
+export default function LinkedRow({ children, path, onClick, disabled }: LinkedRowProps) {
   const router = useRouter();
 
   const handleRowClick = () => {
-    // 1. Falls eine zusätzliche Aktion übergeben wurde (z.B. Store setzen), führ sie aus
+    if (disabled) return;
     if (onClick) {
       onClick();
     }
-    // 2. Danach ganz normal navigieren
     router.push(path);
   };
 
-  return <StyledLinkedRow onClick={handleRowClick}>{children}</StyledLinkedRow>;
+  return <StyledLinkedRow onClick={handleRowClick} $disabled={disabled}>{children}</StyledLinkedRow>;
 }
 
-const StyledLinkedRow = styled.tr`
+const StyledLinkedRow = styled.tr<{ $disabled?: boolean }>`
   border-bottom: 1px solid #eee;
-  cursor: pointer;
+  cursor: ${({ $disabled }) => ($disabled ? "default" : "pointer")};
 
   &:hover {
-    background: #f0fff0;
+    background: ${({ $disabled }) => ($disabled ? "transparent" : "#f0fff0")};
   }
 
   td {

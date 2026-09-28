@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
+import { toast } from "react-toastify";
 import Link from "next/link";
 
 import * as Styles from "./WikiDashboard.styles";
@@ -9,10 +10,8 @@ import PageWrapper from "@/components/page-structure/page/PageWrapper";
 import { getBiomeName } from "@/utils/BiomeUtil";
 import { Biome } from "@/types/biome";
 import PageHeader from "@/components/page-structure/page/PageHeader";
-import Table from "@/components/page-structure/Table/Table";
 import StatsBar from "@/components/page-structure/Elements/StatsBar";
 import ActionBadge from "@/components/ui/badges/ActionBadge";
-import { TableCellRight, TableHeaderRight } from "@/components/page-structure/Table/Table.styles";
 import WikiDashboardFilterBar from "@/components/pages/admin/WikiDashboard/WikiDashboardFilterBar";
 
 const LS_KEY = "wiki_synced_animals";
@@ -51,6 +50,7 @@ type ActionState = "idle" | "loading" | "success" | "error";
 
 export default function WikiDashboard() {
   const t = useTranslations("admin");
+  const tUser = useTranslations("user");
   const locale = useLocale();
   const [loading, setLoading] = useState(true);
   const [summary, setSummary] = useState<Summary | null>(null);
@@ -109,7 +109,14 @@ export default function WikiDashboard() {
         );
       } else {
         setImportingMap((prev) => ({ ...prev, [title]: "error" }));
-        if (!silent) alert(t("error_import", { title }));
+        if (!silent) {
+          const data = await res.json().catch(() => ({}));
+          if (data?.error === "MayorReadonly") {
+            toast.info(tUser("mayor_readonly_notice"));
+          } else {
+            alert(t("error_import", { title }));
+          }
+        }
       }
     } catch (err) {
       console.error(err);
@@ -132,7 +139,14 @@ export default function WikiDashboard() {
         setSyncedTitles((prev) => new Set([...prev, title]));
       } else {
         setUpdatingMap((prev) => ({ ...prev, [title]: "error" }));
-        if (!silent) alert(t("error_update", { title }));
+        if (!silent) {
+          const data = await res.json().catch(() => ({}));
+          if (data?.error === "MayorReadonly") {
+            toast.info(tUser("mayor_readonly_notice"));
+          } else {
+            alert(t("error_update", { title }));
+          }
+        }
       }
     } catch (err) {
       console.error(err);
@@ -269,12 +283,13 @@ export default function WikiDashboard() {
       {filteredAnimals.length === 0 ? (
         <Styles.EmptyHint>{t("no_missing_animals")}</Styles.EmptyHint>
       ) : (
-        <Table>
+        <Styles.TableWrapper>
+          <table>
           <thead>
             <tr>
               <th>{t("table_animal_name")}</th>
               <th>{t("table_status")}</th>
-              <TableHeaderRight>{t("table_action")}</TableHeaderRight>
+              <th style={{ textAlign: "right" }}>{t("table_action")}</th>
             </tr>
           </thead>
           <tbody>
@@ -309,7 +324,7 @@ export default function WikiDashboard() {
                       </Styles.StatusBadge>
                     )}
                   </td>
-                  <TableCellRight>
+                  <td style={{ textAlign: "right", padding: "12px 15px" }}>
                     {animal.status === "missing" ? (
                       <ActionBadge
                         type="import"
@@ -331,12 +346,13 @@ export default function WikiDashboard() {
                         disabled={updateState === "loading" || updateState === "success"}
                       />
                     )}
-                  </TableCellRight>
+                  </td>
                 </tr>
               );
             })}
           </tbody>
-        </Table>
+          </table>
+        </Styles.TableWrapper>
       )}
     </PageWrapper>
   );

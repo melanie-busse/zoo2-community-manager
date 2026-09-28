@@ -10,6 +10,7 @@ import { getAllBiomes } from "@/service/BiomeService";
 import { getAllOrigins } from "@/service/OriginService";
 import { getAllLanguages } from "@/service/LanguageService";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { hasMinimumRole, isMayor } from "@/utils/roleUtils";
 import AnimalForm from "@/components/pages/animals/AnimalForms/AnimalForm";
 import PageHeader from "@/components/page-structure/page/PageHeader";
 
@@ -29,8 +30,7 @@ export default async function EditAnimalPage({ params }: EditAnimalPageProps) {
   }
 
   const session = await getServerSession(authOptions);
-  const allowedRoles = ["Director", "Mayor"];
-  if (!session || !allowedRoles.includes(session.user?.role ?? "")) {
+  if (!hasMinimumRole(session, "Director") && !isMayor(session)) {
     redirect(`/${locale}/animals`);
   }
 
