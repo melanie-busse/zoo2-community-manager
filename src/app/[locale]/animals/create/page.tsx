@@ -29,7 +29,7 @@ export default async function CreateAnimalPage({ params }: CreateAnimalPageProps
   const tAnimals = await getTranslations({ locale, namespace: "animal" });
 
   const session = await getServerSession(authOptions);
-  if (!hasMinimumRole(session, "Employee") && !isMayor(session)) {
+  if (!hasMinimumRole(session, "Director") && !isMayor(session)) {
     redirect(`/${locale}/animals`);
   }
 

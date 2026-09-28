@@ -15,23 +15,26 @@ import { StatusBadge } from "@/components/ui/badges/StatusBadge";
 import { getStatueName } from "@/utils/ContestUtil";
 import { getAnimalImage } from "@/utils/AnimalUtil";
 import { getSpecialCoatImage } from "@/utils/SpecialCoatUtil";
+import { hasMinimumRole, isMayor } from "@/utils/roleUtils";
 
 interface ContestDesktopTableProps {
   contests: Contest[];
   onEdit: (id: string) => void;
   onDelete: (id: string) => void;
+  canViewDetail: boolean;
 }
 
 export default function ContestDesktopTable({
   contests,
   onEdit,
   onDelete,
+  canViewDetail,
 }: ContestDesktopTableProps) {
   const tContest = useTranslations("contest");
   const tCommon = useTranslations("common");
   const locale = useLocale();
   const { data: session } = useSession();
-  const isAdmin = session?.user?.role === "Director";
+  const isAdmin = hasMinimumRole(session, "Employee") || isMayor(session);
 
   const options: Intl.DateTimeFormatOptions = { day: "2-digit", month: "2-digit", year: "numeric" };
 
@@ -45,7 +48,7 @@ export default function ContestDesktopTable({
             {tContest("contestOverview.table.colorVariant")}
           </Styles.ThColorVariant>
           <Styles.ThStatus>{tContest("contestOverview.table.status")}</Styles.ThStatus>
-          <ActionsHeadline text={tCommon("actions")} />
+          {isAdmin && <ActionsHeadline text={tCommon("actions")} />}
         </tr>
       </thead>
       <tbody>
@@ -60,7 +63,7 @@ export default function ContestDesktopTable({
           const isActive = now >= start && now <= end;
 
           return (
-            <LinkedRow key={contest.id} path={`/contests/${contest.id}`}>
+            <LinkedRow key={contest.id} path={`/contests/${contest.id}`} disabled={!canViewDetail}>
               <td>
                 <Styles.DateWrapper>
                   <span>{startDateStr}</span>

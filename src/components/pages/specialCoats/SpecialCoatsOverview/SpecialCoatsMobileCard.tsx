@@ -2,6 +2,7 @@
 
 import React from "react";
 import { useSession } from "next-auth/react";
+import { hasMinimumRole, isMayor } from "@/utils/roleUtils";
 import { useRouter } from "@/i18n/routing";
 
 import BiomeBadge from "@/components/ui/badges/BiomeBadge";
@@ -39,7 +40,7 @@ export default function SpecialCoatsMobileCard({ specialCoat }: SpecialCoatMobil
 
   if (!specialCoat) return null;
 
-  const isAdmin = session?.user?.role === "Director";
+  const isAdmin = hasMinimumRole(session, "Director") || isMayor(session);
   const displayName = specialCoat.animal?.animaltext?.[0]?.animalName ?? tSpecialCoat("noName");
 
   return (

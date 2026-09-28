@@ -14,7 +14,7 @@ export default async function CreateContestPage({ params }: CreateContestPagePro
   const { locale } = await params;
 
   const session = await getServerSession(authOptions);
-  if (!hasMinimumRole(session, "Member") && !isMayor(session)) {
+  if (!hasMinimumRole(session, "Employee") && !isMayor(session)) {
     redirect(`/${locale}/contests`);
   }
 

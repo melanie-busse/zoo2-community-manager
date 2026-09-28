@@ -7,6 +7,7 @@ import { usePathname, Link } from "@/i18n/routing";
 
 import * as Styles from "./Navigation.styles";
 import { navConfig } from "@/config/navigationData";
+import { hasMinimumRole, isMayor } from "@/utils/roleUtils";
 
 export default function Navigation() {
   const t = useTranslations("navigation");
@@ -25,6 +26,7 @@ export default function Navigation() {
       <Styles.NavList>
         {navConfig.map((item) => {
           if (item.requiresAuth && !session) return null;
+          if (item.minimumRole && !hasMinimumRole(session, item.minimumRole) && !isMayor(session)) return null;
 
           return (
             <Styles.NavItem key={item.id} data-testid={`nav-item-${item.id}`}>
@@ -40,6 +42,7 @@ export default function Navigation() {
                   <Styles.Dropdown>
                     {item.subMenu?.map((sub) => {
                       if (sub.requiresAuth && !session) return null;
+                      if (sub.minimumRole && !hasMinimumRole(session, sub.minimumRole) && !isMayor(session)) return null;
 
                       return (
                         <li key={sub.href}>

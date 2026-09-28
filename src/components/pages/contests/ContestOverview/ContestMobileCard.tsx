@@ -8,6 +8,7 @@ import ThumbnailBadge from "@/components/ui/badges/ThumbnailBadge";
 import * as Styles from "./ContestOverview.styles";
 import { StatusBadge } from "@/components/ui/badges/StatusBadge";
 import { useSession } from "next-auth/react";
+import { hasMinimumRole, isMayor } from "@/utils/roleUtils";
 import ActionGroupBadge from "@/components/ui/badges/ActionGroupBadge";
 import { getAnimalImage } from "@/utils/AnimalUtil";
 import { getSpecialCoatImage } from "@/utils/SpecialCoatUtil";
@@ -29,7 +30,7 @@ export default function ContestMobileCard({
 }: ContestMobileCardProps) {
   const locale = useLocale();
   const { data: session } = useSession();
-  const isAdmin = session?.user?.role === "Director";
+  const isAdmin = hasMinimumRole(session, "Employee") || isMayor(session);
 
   const options: Intl.DateTimeFormatOptions = { day: "2-digit", month: "2-digit", year: "numeric" };
 

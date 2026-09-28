@@ -46,7 +46,7 @@ export async function PUT(request: Request, { params }: RouteParams) {
       );
     }
 
-    if (!hasMinimumRole(session, "Employee")) {
+    if (!hasMinimumRole(session, "Director")) {
       return NextResponse.json({ message: t("errors.unauthorized") }, { status: 403 });
     }
 
@@ -84,7 +84,7 @@ export async function DELETE(request: Request, { params }: RouteParams) {
       );
     }
 
-    if (!hasMinimumRole(session, "Employee")) {
+    if (!hasMinimumRole(session, "Director")) {
       return NextResponse.json({ message: t("errors.unauthorized") }, { status: 403 });
     }
 

@@ -21,7 +21,7 @@ export async function POST(req: Request) {
       );
     }
 
-    if (!hasMinimumRole(session, "Member")) {
+    if (!hasMinimumRole(session, "Employee")) {
       return NextResponse.json({ message: t("errors.unauthorized") }, { status: 403 });
     }
 

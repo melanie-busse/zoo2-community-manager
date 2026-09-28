@@ -2,6 +2,7 @@
 
 import React from "react";
 import { useSession } from "next-auth/react";
+import { hasMinimumRole, isMayor } from "@/utils/roleUtils";
 import { useRouter } from "next/navigation";
 
 import { Animal } from "@/types/animal";
@@ -39,7 +40,7 @@ export default function AnimalMobileCard({ animal }: AnimalMobileCardProps) {
 
   if (!animal) return null;
 
-  const isAdmin = session?.user?.role === "Director";
+  const isAdmin = hasMinimumRole(session, "Director") || isMayor(session);
   const displayName = animal.animaltext?.[0]?.animalName ?? tAnimal("noName");
 
   return (

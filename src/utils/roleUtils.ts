@@ -26,15 +26,18 @@ export function hasMinimumRole(
   session: Session | null,
   minimumRole: "Visitor" | "Member" | "Employee" | "Director" | "Admin",
 ): boolean {
-  if (!session?.user?.roleId) return false;
+  // Prefer numeric roleId, fall back to role string (e.g. if JWT didn't carry roleId yet)
+  let userRoleId = session?.user?.roleId;
+  if (!userRoleId && session?.user?.role) {
+    userRoleId = ROLE_IDS[session.user.role];
+  }
 
-  const userRoleId = session.user.roleId;
-  const requiredRoleId = ROLE_IDS[minimumRole];
+  if (!userRoleId) return false;
 
   // Mayor (0) is a special read-only role — never counts as having write permissions
   if (userRoleId === 0) return false;
 
-  return userRoleId <= requiredRoleId;
+  return userRoleId <= ROLE_IDS[minimumRole];
 }
 
 /**

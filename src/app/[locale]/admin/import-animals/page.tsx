@@ -2,7 +2,7 @@ import { redirect } from "next/navigation";
 import { getServerSession } from "next-auth";
 
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
-import { hasMinimumRole } from "@/utils/roleUtils";
+import { hasMinimumRole, isMayor } from "@/utils/roleUtils";
 import WikiDashboard from "@/components/pages/admin/WikiDashboard/WikiDashboard";
 import PageWrapper from "@/components/page-structure/page/PageWrapper";
 
@@ -14,7 +14,7 @@ export default async function AdminImportPage({ params }: AdminImportPageProps) 
   const { locale } = await params;
 
   const session = await getServerSession(authOptions);
-  if (!hasMinimumRole(session, "Director")) {
+  if (!hasMinimumRole(session, "Director") && !isMayor(session)) {
     redirect(`/${locale}`);
   }
 

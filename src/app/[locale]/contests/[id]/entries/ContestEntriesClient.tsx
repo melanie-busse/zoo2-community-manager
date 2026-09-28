@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
-import { useSession } from "next-auth/react";
+import { toast } from "react-toastify";
 
 import PageWrapper from "@/components/page-structure/page/PageWrapper";
 import ContestEntryForm from "@/components/pages/contests/ContestEntryForm/ContestEntryForm";
@@ -11,6 +11,7 @@ import { submitContestEntries, getContestEntriesForUser } from "@/service/fronte
 import type { getContestById, getMembers } from "@/service/ContestService";
 import type { ColumnDefinition } from "@/components/ui/form/DynamicRowInput";
 import type { User } from "@/types/user";
+import type { Session } from "next-auth";
 
 type ContestDetail = NonNullable<Awaited<ReturnType<typeof getContestById>>>;
 type MemberRow = Awaited<ReturnType<typeof getMembers>>[number];
@@ -19,14 +20,14 @@ type EntryRow = Record<string, string | number> & { id: number | string };
 interface ContestEntriesClientProps {
   contest: ContestDetail;
   members: MemberRow[];
+  session: Session | null;
 }
 
 let rowCounter = 0;
 
-export default function ContestEntriesClient({ contest, members }: ContestEntriesClientProps) {
+export default function ContestEntriesClient({ contest, members, session }: ContestEntriesClientProps) {
   const router = useRouter();
   const t = useTranslations("contest");
-  const { data: session } = useSession();
 
   const sessionUserId = session?.user?.id ? String(session.user.id) : "";
   const [selectedMemberId, setSelectedMemberId] = useState("");
@@ -118,8 +119,12 @@ export default function ContestEntriesClient({ contest, members }: ContestEntrie
     try {
       await submitContestEntries(contest.id, parseInt(effectiveMemberId), flatEntries);
       router.push(`/contests/${contest.id}`);
-    } catch {
-      // error is shown implicitly; could add toast here
+    } catch (err: any) {
+      if (err?.data?.error === "MayorReadonly") {
+        toast.info(err.message);
+      } else {
+        toast.error(err.message);
+      }
     } finally {
       setIsSubmitting(false);
     }
