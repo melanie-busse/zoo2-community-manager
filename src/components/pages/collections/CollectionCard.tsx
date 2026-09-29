@@ -1,134 +1,126 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import styled from "styled-components";
-import { useTranslations } from "next-intl";
+
 import { Collection } from "@/types/collection";
 import CardContainer from "@/components/page-structure/Card/CardContainer";
 import CardHeaderRow from "@/components/page-structure/Card/CardHeaderRow";
 import CardDivider from "@/components/page-structure/Card/CardDevider";
-
-const CollectionName = styled.h3`
-  font-size: 1.1rem;
-  font-weight: bold;
-  margin: 0;
-`;
+import PolaroidBadge from "@/components/ui/badges/PolaroidBadge";
 
 const StarsRow = styled.div`
   display: flex;
   gap: 2px;
-  font-size: 1.1rem;
+  font-size: 1rem;
 `;
 
 const Star = styled.span<{ $filled: boolean }>`
   color: ${({ $filled }) => ($filled ? "#f6c90e" : "rgba(0,0,0,0.15)")};
 `;
 
-const AreaBadge = styled.span<{ $area: string }>`
-  display: inline-block;
-  padding: 2px 8px;
-  border-radius: 12px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  background: ${({ $area }) => {
-    switch ($area) {
-      case "MAIN_ZOO":
-        return "rgba(76, 175, 80, 0.15)";
-      case "TERRARIUM":
-        return "rgba(121, 85, 72, 0.15)";
-      case "AQUARIUM":
-        return "rgba(33, 150, 243, 0.15)";
-      case "NOCTARIUM":
-        return "rgba(103, 58, 183, 0.15)";
-      case "AVIARY":
-        return "rgba(255, 152, 0, 0.15)";
-      default:
-        return "rgba(0,0,0,0.08)";
-    }
-  }};
-  color: ${({ $area }) => {
-    switch ($area) {
-      case "MAIN_ZOO":
-        return "#2e7d32";
-      case "TERRARIUM":
-        return "#5d4037";
-      case "AQUARIUM":
-        return "#1565c0";
-      case "NOCTARIUM":
-        return "#4527a0";
-      case "AVIARY":
-        return "#e65100";
-      default:
-        return "#333";
-    }
-  }};
-`;
-
-const RequirementList = styled.ul`
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-`;
-
-const RequirementItem = styled.li`
-  font-size: 0.82rem;
-  opacity: 0.85;
+const RegionRow = styled.div`
   display: flex;
   align-items: center;
   gap: 6px;
 `;
 
-const LevelBadge = styled.strong`
-  font-size: 0.75rem;
-  font-weight: 700;
-  opacity: 0.7;
-  white-space: nowrap;
+const RegionName = styled.span`
+  font-size: 0.85rem;
+  font-weight: 600;
 `;
 
-const MoreLabel = styled.span`
-  font-size: 0.8rem;
-  opacity: 0.5;
-  font-style: italic;
-`;
-
-const MetaRow = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: ${({ theme }) => theme.spacing(1)};
-  margin-bottom: ${({ theme }) => theme.spacing(1)};
-`;
-
-const ReqCount = styled.span`
-  font-size: 0.8rem;
-  opacity: 0.55;
-`;
-
-const ReqSection = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: ${({ theme }) => theme.spacing(0.5)};
-  width: 100%;
+const RequirementsGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 32px;
+  justify-content: center;
+  margin-top: 40px;
 `;
 
 interface CollectionCardProps {
   collection: Collection;
 }
 
-const PREVIEW_COUNT = 5;
+function getRequirementImageSrc(req: Collection["requirements"][number]): string | null {
+  if (
+    req.specialCoat?.identifier &&
+    req.specialCoat.animal?.identifier &&
+    req.specialCoat.animal.biome?.identifier
+  ) {
+    const animalId = req.specialCoat.animal.identifier;
+    const coatFolder = req.specialCoat.identifier!.slice(animalId.length + 1);
+    return `/images/animals/${req.specialCoat.animal.biome.identifier}/${animalId}/specialcoats/${coatFolder}/image.jpg`;
+  }
+  if (req.animal?.identifier && req.animal.biome?.identifier) {
+    if (req.type === "DECORATION") {
+      return `/images/animals/${req.animal.biome.identifier}/${req.animal.identifier}/statue/image.webp`;
+    }
+    return `/images/animals/${req.animal.biome.identifier}/${req.animal.identifier}/image.jpg`;
+  }
+  return null;
+}
+
+function getRequirementLabel(req: Collection["requirements"][number]): {
+  name: string;
+  color?: string;
+} {
+  if (req.specialCoat) {
+    const text = req.specialCoat.specialcoatstext?.[0];
+    return { name: text?.name ?? req.itemName, color: text?.color };
+  }
+  if (req.animal) {
+    return { name: req.animal.name ?? req.itemName };
+  }
+  return { name: req.itemName };
+}
+
+function getRewardLabel(collection: Collection): { name: string; color?: string } {
+  const coat = collection.rewardSpecialCoat;
+  if (coat?.identifier && coat.animal?.identifier && coat.animal.biome?.identifier) {
+    const text = coat.specialcoatstext?.[0];
+    return { name: text?.name ?? coat.identifier ?? collection.name, color: text?.color };
+  }
+  if (collection.rewardAnimal?.identifier) {
+    return {
+      name: collection.rewardAnimal.name ?? collection.rewardAnimal.identifier ?? collection.name,
+    };
+  }
+  return { name: collection.name };
+}
+
+function getAnimalImageSrc(collection: Collection): string {
+  // Special Coat als Belohnung hat Priorität
+  const coat = collection.rewardSpecialCoat;
+  if (coat?.identifier && coat.animal?.identifier && coat.animal.biome?.identifier) {
+    const animalId = coat.animal.identifier;
+    const coatFolder = coat.identifier!.slice(animalId.length + 1);
+    return `/images/animals/${coat.animal.biome.identifier}/${animalId}/specialcoats/${coatFolder}/image.jpg`;
+  }
+  if (collection.rewardAnimal?.identifier && collection.rewardAnimal.biome?.identifier) {
+    return `/images/animals/${collection.rewardAnimal.biome.identifier}/${collection.rewardAnimal.identifier}/image.jpg`;
+  }
+  return getRequirementImageSrc(collection.requirements[0]) ?? "/placeholder.png";
+}
 
 export default function CollectionCard({ collection }: CollectionCardProps) {
-  const t = useTranslations("collections");
-  const previewItems = collection.requirements.slice(0, PREVIEW_COUNT);
-  const remaining = collection.requirements.length - PREVIEW_COUNT;
+  const animalImageSrc = getAnimalImageSrc(collection);
+  const { name: rewardName, color: rewardColor } = getRewardLabel(collection);
 
   return (
     <CardContainer>
       <CardHeaderRow>
-        <CollectionName>{collection.name}</CollectionName>
+        <RegionRow>
+          <Image
+            src={`/images/regions/${collection.region.identifier.toLowerCase()}/icon.jpg`}
+            alt={collection.region.name}
+            width={24}
+            height={24}
+            style={{ borderRadius: 4, objectFit: "cover" }}
+          />
+          <RegionName>{collection.region.name}</RegionName>
+        </RegionRow>
         <StarsRow>
           {[1, 2, 3].map((s) => (
             <Star key={s} $filled={s <= collection.stars}>
@@ -138,27 +130,32 @@ export default function CollectionCard({ collection }: CollectionCardProps) {
         </StarsRow>
       </CardHeaderRow>
 
-      <MetaRow>
-        <AreaBadge $area={collection.area}>{t(`area.${collection.area}`)}</AreaBadge>
-        <ReqCount>{t("card.requirements", { count: collection.requirements.length })}</ReqCount>
-      </MetaRow>
-
       <CardDivider />
+      <PolaroidBadge
+        animalImageSrc={animalImageSrc}
+        animalName={collection.name}
+        rewardName={rewardName}
+        rewardColor={rewardColor}
+      />
 
-      <ReqSection>
-        <RequirementList>
-          {previewItems.map((req) => (
-            <RequirementItem key={req.id}>
-              {req.type === "ANIMAL" ? "🐾" : "🏺"}
-              {req.type === "ANIMAL" && req.requiredLevel != null && (
-                <LevelBadge>{t("card.level", { level: req.requiredLevel })}</LevelBadge>
-              )}
-              {req.itemName}
-            </RequirementItem>
-          ))}
-          {remaining > 0 && <MoreLabel>{t("card.more", { count: remaining })}</MoreLabel>}
-        </RequirementList>
-      </ReqSection>
+      <RequirementsGrid>
+        {collection.requirements.map((req) => {
+          const src = getRequirementImageSrc(req);
+          if (!src) return null;
+          const { name, color } = getRequirementLabel(req);
+          return (
+            <PolaroidBadge
+              key={req.id}
+              animalImageSrc={src}
+              animalName={name}
+              rewardName={name}
+              rewardColor={color}
+              level={req.requiredLevel ?? undefined}
+              cardWidth={110}
+            />
+          );
+        })}
+      </RequirementsGrid>
     </CardContainer>
   );
 }
