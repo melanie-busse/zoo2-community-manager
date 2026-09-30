@@ -70,6 +70,8 @@
     "level_label": "Niveau",
     "has_decoration": "Met decoratie",
     "has_statue": "Alleen met standbeeld",
+    "only_completed_collections": "Voltooide",
+    "only_open_collections": "Openstaande",
     "contest_only": "Alleen wedstrijdvarianten",
     "results": {
       "show": "Weergeven",

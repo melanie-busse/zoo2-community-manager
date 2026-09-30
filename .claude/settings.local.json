@@ -17,7 +17,11 @@
       "Bash(python3:*)",
       "Read(//mnt/c/Users/micro/**)",
       "Read(//mnt/c/Users/**)",
-      "Bash(echo $ANTHROPIC_API_KEY)"
+      "Bash(echo $ANTHROPIC_API_KEY)",
+      "Bash(cat D:/Entwicklung/zoo2-community-manager/src/app/api/auth/[...nextauth]/route.ts)",
+      "Bash(for locale:*)",
+      "Bash(do cat:*)",
+      "Bash(done)"
     ]
   }
 }

@@ -37,6 +37,7 @@
     "inventory_statues": "Statuer",
     "inventory_contest_special_coats": "Konkurrence-farvevarianter",
     "import-animals": "Importér dyr",
-    "collections": "Samlealbum"
+    "collections": "Samlealbum",
+    "inventory_collections": "Mit Samlealbum"
   }
 }

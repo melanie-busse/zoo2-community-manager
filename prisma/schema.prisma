@@ -507,3 +507,12 @@ model CategoryText {
   @@map("categorytext")
 }
 
+model ZooInventoryCollection {
+  id                    Int     @id @default(autoincrement())
+  userId                Int
+  collectionRequirementId Int
+  completed             Boolean @default(false)
+
+  @@unique([userId, collectionRequirementId], map: "userid_collectionRequirementId")
+  @@map("zooinventorycollection")
+}

@@ -9,6 +9,7 @@ import { SearchInputField } from "@/components/elements/Filter/SearchInputField"
 import { StatueCheckbox } from "@/components/elements/Filter/StatueCheckbox";
 import { DecorationCheckbox } from "@/components/elements/Filter/DecorationCheckbox";
 import { useTranslations } from "next-intl";
+import * as FilterStyles from "@/components/elements/Filter/Filter.styles";
 
 const STARS = [1, 2, 3];
 
@@ -34,6 +35,10 @@ interface CollectionsOverviewFilterProps {
   onOnlyWithStatueChange: (checked: boolean) => void;
   onlyWithDecoration: boolean;
   onOnlyWithDecorationChange: (checked: boolean) => void;
+  onlyCompleted?: boolean;
+  onOnlyCompletedChange?: (checked: boolean) => void;
+  onlyOpen?: boolean;
+  onOnlyOpenChange?: (checked: boolean) => void;
 }
 
 export default function CollectionsOverviewFilter({
@@ -48,6 +53,10 @@ export default function CollectionsOverviewFilter({
   onOnlyWithStatueChange,
   onlyWithDecoration,
   onOnlyWithDecorationChange,
+  onlyCompleted,
+  onOnlyCompletedChange,
+  onlyOpen,
+  onOnlyOpenChange,
 }: CollectionsOverviewFilterProps) {
   const starsItems: StarsItem[] = STARS.map((stars) => ({ stars }));
 
@@ -58,6 +67,7 @@ export default function CollectionsOverviewFilter({
   }));
 
   const t = useTranslations("collections");
+  const tCommon = useTranslations("common");
 
   return (
     <FilterCard>
@@ -85,6 +95,18 @@ export default function CollectionsOverviewFilter({
       <FilterRow>
         <StatueCheckbox checked={onlyWithStatue} onChange={onOnlyWithStatueChange} />
         <DecorationCheckbox checked={onlyWithDecoration} onChange={onOnlyWithDecorationChange} />
+        {onOnlyCompletedChange !== undefined && (
+          <FilterStyles.CheckboxLabel>
+            <input type="checkbox" checked={!!onlyCompleted} onChange={(e) => onOnlyCompletedChange(e.target.checked)} />
+            {tCommon("filter.only_completed_collections")}
+          </FilterStyles.CheckboxLabel>
+        )}
+        {onOnlyOpenChange !== undefined && (
+          <FilterStyles.CheckboxLabel>
+            <input type="checkbox" checked={!!onlyOpen} onChange={(e) => onOnlyOpenChange(e.target.checked)} />
+            {tCommon("filter.only_open_collections")}
+          </FilterStyles.CheckboxLabel>
+        )}
       </FilterRow>
     </FilterCard>
   );
