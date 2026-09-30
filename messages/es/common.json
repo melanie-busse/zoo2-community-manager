@@ -70,6 +70,8 @@
     "level_label": "Nivel",
     "has_decoration": "Con decoración",
     "has_statue": "Solo con estatua",
+    "only_completed_collections": "Completadas",
+    "only_open_collections": "Abiertas",
     "contest_only": "Solo variantes de concurso",
     "results": {
       "show": "Mostrando",

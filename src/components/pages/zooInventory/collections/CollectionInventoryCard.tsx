@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import styled from "styled-components";
 
@@ -80,15 +80,15 @@ const CompletedStamp = styled.div`
 
 interface CollectionInventoryCardProps {
   collection: Collection;
-  initialCompletedIds: Set<number>;
+  completedIds: Set<number>;
+  onToggle: (reqId: number, completed: boolean) => void;
 }
 
 export default function CollectionInventoryCard({
   collection,
-  initialCompletedIds,
+  completedIds,
+  onToggle,
 }: CollectionInventoryCardProps) {
-  const [completedIds, setCompletedIds] = useState<Set<number>>(initialCompletedIds);
-
   const animalImageSrc = getAnimalImageSrc(collection);
   const { name: rewardName, color: rewardColor } = getRewardLabel(collection);
   const rewardHref = collection.rewardSpecialCoat
@@ -106,12 +106,7 @@ export default function CollectionInventoryCard({
 
   async function handleToggle(reqId: number) {
     const newCompleted = !completedIds.has(reqId);
-    setCompletedIds((prev) => {
-      const next = new Set(prev);
-      if (newCompleted) next.add(reqId);
-      else next.delete(reqId);
-      return next;
-    });
+    onToggle(reqId, newCompleted);
     await toggleCollectionRequirement(reqId, newCompleted);
   }
 

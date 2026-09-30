@@ -70,6 +70,8 @@
     "level_label": "Niveau",
     "has_decoration": "Med dekoration",
     "has_statue": "Kun med statue",
+    "only_completed_collections": "Afsluttede",
+    "only_open_collections": "Åbne",
     "contest_only": "Kun konkurrencevarianter",
     "results": {
       "show": "Viser",
