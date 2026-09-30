@@ -1,5 +1,6 @@
 {
   "title": "Album de collection",
+  "inventory_title": "Mon Album de Collection",
   "area": {
     "MAIN_ZOO": "Zoo Principal",
     "TERRARIUM": "Terrarium",

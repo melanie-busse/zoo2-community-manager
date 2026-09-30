@@ -1,5 +1,6 @@
 {
   "title": "Verzamelalbum",
+  "inventory_title": "Mijn Verzamelalbum",
   "area": {
     "MAIN_ZOO": "Hoofddierentuin",
     "TERRARIUM": "Terrarium",

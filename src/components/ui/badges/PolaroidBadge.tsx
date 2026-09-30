@@ -11,6 +11,8 @@ interface PolaroidBadgeProps {
   level?: number;
   cardWidth?: number;
   href?: string;
+  completed?: boolean;
+  onClick?: () => void;
 }
 
 export default function PolaroidBadge({
@@ -21,6 +23,8 @@ export default function PolaroidBadge({
   level,
   cardWidth = 160,
   href,
+  completed,
+  onClick,
 }: PolaroidBadgeProps) {
   const inner = (
     <>
@@ -33,6 +37,11 @@ export default function PolaroidBadge({
           style={{ objectFit: "cover" }}
         />
         {level != null && <LevelBadge>Lv.{level}</LevelBadge>}
+        {completed && (
+          <CompletedOverlay>
+            <CheckMark>✓</CheckMark>
+          </CompletedOverlay>
+        )}
       </AnimalImageWrapper>
       {rewardName && <PolaroidTitle title={rewardName}>{rewardName}</PolaroidTitle>}
       {rewardColor && <PolaroidColor title={rewardColor}>{rewardColor}</PolaroidColor>}
@@ -43,6 +52,10 @@ export default function PolaroidBadge({
     <PolaroidWrapper>
       {href ? (
         <PolaroidCard $width={cardWidth} $clickable as={Link} href={href}>
+          {inner}
+        </PolaroidCard>
+      ) : onClick ? (
+        <PolaroidCard $width={cardWidth} $clickable as="button" onClick={onClick} style={{ border: "none", cursor: "pointer", textAlign: "left" }}>
           {inner}
         </PolaroidCard>
       ) : (
@@ -120,6 +133,24 @@ const LevelBadge = styled.span`
   text-shadow: 0 0 3px rgba(0, 0, 0, 0.9);
   line-height: 1;
   z-index: 1;
+`;
+
+const CompletedOverlay = styled.div`
+  position: absolute;
+  inset: 0;
+  background-color: rgba(34, 197, 94, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+`;
+
+const CheckMark = styled.span`
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #fff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  line-height: 1;
 `;
 
 const PolaroidTitle = styled.h3`
