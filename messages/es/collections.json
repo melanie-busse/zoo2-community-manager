@@ -1,0 +1,33 @@
+{
+  "title": "Álbum de colección",
+  "area": {
+    "MAIN_ZOO": "Zoo Principal",
+    "TERRARIUM": "Terrario",
+    "AQUARIUM": "Acuario",
+    "NOCTARIUM": "Noctario",
+    "AVIARY": "Aviario"
+  },
+  "stars": {
+    "1": "1 Estrella",
+    "2": "2 Estrellas",
+    "3": "3 Estrellas"
+  },
+  "filter": {
+    "all_areas": "Todas las Áreas",
+    "all_stars": "Todas las Dificultades",
+    "animal_search": "Buscar animal..."
+  },
+  "card": {
+    "requirements": "{count} Requisitos",
+    "animals": "Animales",
+    "decorations": "Decoraciones",
+    "level": "Niv.{level}",
+    "more": "+ {count} más",
+    "empty": "No se encontraron colecciones.",
+    "reward": "Recompensa:"
+  },
+  "type": {
+    "ANIMAL": "Animal",
+    "DECORATION": "Decoración"
+  }
+}

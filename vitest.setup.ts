@@ -11,6 +11,9 @@ vi.mock("next/font/google", () => ({
   Playfair_Display: () => ({
     style: { fontFamily: "Playfair" },
   }),
+  Caveat: () => ({
+    style: { fontFamily: "Caveat" },
+  }),
 }));
 
 vi.mock("@/i18n/routing", async (importOriginal) => {

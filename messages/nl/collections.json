@@ -1,0 +1,33 @@
+{
+  "title": "Verzamelalbum",
+  "area": {
+    "MAIN_ZOO": "Hoofddierentuin",
+    "TERRARIUM": "Terrarium",
+    "AQUARIUM": "Aquarium",
+    "NOCTARIUM": "Noctarium",
+    "AVIARY": "Volière"
+  },
+  "stars": {
+    "1": "1 Ster",
+    "2": "2 Sterren",
+    "3": "3 Sterren"
+  },
+  "filter": {
+    "all_areas": "Alle Gebieden",
+    "all_stars": "Alle Moeilijkheden",
+    "animal_search": "Dier zoeken..."
+  },
+  "card": {
+    "requirements": "{count} Vereisten",
+    "animals": "Dieren",
+    "decorations": "Decoraties",
+    "level": "Lv.{level}",
+    "more": "+ {count} meer",
+    "empty": "Geen verzamelingen gevonden.",
+    "reward": "Beloning:"
+  },
+  "type": {
+    "ANIMAL": "Dier",
+    "DECORATION": "Decoratie"
+  }
+}

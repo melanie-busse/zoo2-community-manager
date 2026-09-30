@@ -50,6 +50,8 @@
     "all_levels": "Alle stalniveaus",
     "all_status": "Alle statussen",
     "all_regions": "Alle regio's",
+    "all_areas": "Alle gebieden",
+    "all_stars": "Alle moeilijkheden",
     "all_owned_counts": "Beschikbare dieren",
     "all_puzzle_status": "Alle standbeelden",
     "puzzle_complete": "Standbeeld compleet",
@@ -66,6 +68,7 @@
     "missing_partner": "Partner ontbreekt",
     "not_owned": "Ontbreekt",
     "level_label": "Niveau",
+    "has_decoration": "Met decoratie",
     "has_statue": "Alleen met standbeeld",
     "contest_only": "Alleen wedstrijdvarianten",
     "results": {

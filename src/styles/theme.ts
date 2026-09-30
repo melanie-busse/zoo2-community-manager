@@ -1,4 +1,4 @@
-import { Sedgwick_Ave_Display, DM_Sans, Playfair_Display } from "next/font/google";
+import { Caveat, Sedgwick_Ave_Display, DM_Sans, Playfair_Display } from "next/font/google";
 
 const sedgwick = Sedgwick_Ave_Display({
   weight: "400",
@@ -14,6 +14,11 @@ const dmSans = DM_Sans({
 
 const playfair = Playfair_Display({
   weight: ["400", "700"],
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const caveat = Caveat({
   subsets: ["latin"],
   display: "swap",
 });
@@ -111,6 +116,7 @@ export const theme = {
   },
   fonts: {
     club: sedgwick.style.fontFamily,
+    polaroid: caveat.style.fontFamily,
     text: dmSans.style.fontFamily,
     heading: playfair.style.fontFamily,
     comic: '"Comic Sans MS", "Chalkboard SE", cursive',

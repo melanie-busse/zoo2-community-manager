@@ -71,32 +71,34 @@ model OriginText {
 }
 
 model Animal {
-  id                  Int                  @id @default(autoincrement())
-  releaseDate         DateTime?
-  price               Int?
-  priceTypeId         Int?
-  sellingPrice        Int?
-  popularity          Int?
-  releaseExp          Int?
-  identifier          String?              @db.VarChar(255)
-  biomeId             Int
-  size                Int?
-  gameId              Int?
-  shelterLevel        Int?
-  breedingCost        Int?
-  breedingDuration    Int?
-  breedingProbability Int?
-  isContestAnimal     Boolean              @default(false)
-  isLocked            Boolean              @default(false)
-  biome               Biome                @relation(fields: [biomeId], references: [id])
-  priceType           PriceType?           @relation(fields: [priceTypeId], references: [id])
-  animalorigins       AnimalOrigin[]
-  animalperenclosure  AnimalPerEnclosure[]
-  animaltext          AnimalText[]
-  animalxp            AnimalXP[]
-  contestdonation     ContestDonation[]
-  contestStatues      ContestStatue[]
-  specialcoat         SpecialCoat[]
+  id                     Int                     @id @default(autoincrement())
+  releaseDate            DateTime?
+  price                  Int?
+  priceTypeId            Int?
+  sellingPrice           Int?
+  popularity             Int?
+  releaseExp             Int?
+  identifier             String?                 @db.VarChar(255)
+  biomeId                Int
+  size                   Int?
+  gameId                 Int?
+  shelterLevel           Int?
+  breedingCost           Int?
+  breedingDuration       Int?
+  breedingProbability    Int?
+  isContestAnimal        Boolean                 @default(false)
+  isLocked               Boolean                 @default(false)
+  biome                  Biome                   @relation(fields: [biomeId], references: [id])
+  priceType              PriceType?              @relation(fields: [priceTypeId], references: [id])
+  animalorigins          AnimalOrigin[]
+  animalperenclosure     AnimalPerEnclosure[]
+  animaltext             AnimalText[]
+  animalxp               AnimalXP[]
+  contestdonation        ContestDonation[]
+  contestStatues         ContestStatue[]
+  specialcoat            SpecialCoat[]
+  collections            Collection[]
+  collectionRequirements CollectionRequirement[]
 
   @@index([biomeId], map: "animal_biomeId_fkey")
   @@index([priceTypeId], map: "animal_priceTypeId_fkey")
@@ -252,21 +254,23 @@ model PriceTypeText {
 }
 
 model SpecialCoat {
-  id                       Int                  @id @unique(map: "specialCoatesindex") @default(autoincrement())
+  id                       Int                     @id @unique(map: "specialCoatesindex") @default(autoincrement())
   animalId                 Int
   releaseDate              DateTime
-  parentWithCoatNeeded     Boolean              @default(false)
-  chanceBaseWithoutParent  Float                @default(0)
-  chanceBaseWithOneParent  Float                @default(0)
-  chanceEventWithoutParent Float                @default(0)
-  chanceEventWithOneParent Float                @default(0)
-  identifier               String?              @db.VarChar(255)
-  isContestSpecialCoat     Boolean              @default(false)
-  isLocked                 Boolean              @default(false)
-  animal                   Animal               @relation(fields: [animalId], references: [id], onDelete: Cascade, map: "specialCoat_animalId_fkey")
+  parentWithCoatNeeded     Boolean                 @default(false)
+  chanceBaseWithoutParent  Float                   @default(0)
+  chanceBaseWithOneParent  Float                   @default(0)
+  chanceEventWithoutParent Float                   @default(0)
+  chanceEventWithOneParent Float                   @default(0)
+  identifier               String?                 @db.VarChar(255)
+  isContestSpecialCoat     Boolean                 @default(false)
+  isLocked                 Boolean                 @default(false)
+  animal                   Animal                  @relation(fields: [animalId], references: [id], onDelete: Cascade, map: "specialCoat_animalId_fkey")
   specialcoatstext         SpecialCoatsText[]
   specialcoatsorigin       SpecialCoatOrigin[]
   contestspecialcoat       ContestSpecialCoat[]
+  collections              Collection[]
+  collectionRequirements   CollectionRequirement[]
 
   @@index([animalId], map: "specialCoat_animalId_idx")
   @@map("specialcoat")
@@ -375,6 +379,7 @@ model Region {
   identifier  String       @db.VarChar(255)
   biomes      Biome[]
   regionTexts RegionText[]
+  collections Collection[]
 
   @@map("region")
 }
@@ -401,3 +406,104 @@ model SpecialCoatOrigin {
   @@index([originId], map: "specialCoatOrigin_originId_idx")
   @@map("specialcoatorigin")
 }
+
+enum RequirementType {
+  ANIMAL
+  DECORATION
+}
+
+model Collection {
+  id                  Int    @id @default(autoincrement())
+  identifier          String @unique @db.VarChar(255)
+  stars               Int
+  regionId            Int
+  rewardAnimalId      Int?
+  rewardSpecialCoatId Int?
+
+  texts             CollectionText[]
+  region            Region                  @relation(fields: [regionId], references: [id])
+  rewardAnimal      Animal?                 @relation(fields: [rewardAnimalId], references: [id])
+  rewardSpecialCoat SpecialCoat?            @relation(fields: [rewardSpecialCoatId], references: [id])
+  requirements      CollectionRequirement[]
+
+  @@map("collection")
+}
+
+model CollectionText {
+  id           Int        @id @default(autoincrement())
+  collectionId Int
+  collection   Collection @relation(fields: [collectionId], references: [id], onDelete: Cascade, map: "collectionText_collectionId_fkey")
+  languageCode String     @db.VarChar(5)
+  name         String     @db.VarChar(255)
+
+  @@unique([collectionId, languageCode], map: "collectionText_collectionId_languageCode_key")
+  @@map("collectiontext")
+}
+
+model CollectionRequirement {
+  id            Int             @id @default(autoincrement())
+  collectionId  Int
+  collection    Collection      @relation(fields: [collectionId], references: [id], onDelete: Cascade, map: "collectionRequirement_collectionId_fkey")
+  sortOrder     Int             @default(0)
+  type          RequirementType
+  requiredLevel Int?
+  itemName      String          @db.VarChar(255)
+  animalId      Int?
+  specialCoatId Int?
+  decorationId  Int?
+
+  animal      Animal?      @relation(fields: [animalId], references: [id])
+  specialCoat SpecialCoat? @relation(fields: [specialCoatId], references: [id])
+  decoration  Decoration?  @relation(fields: [decorationId], references: [id])
+
+  @@index([collectionId], map: "collectionRequirement_collectionId_idx")
+  @@map("collectionrequirement")
+}
+
+model Decoration {
+  id         Int    @id @default(autoincrement())
+  categoryId Int
+  price      Int
+  pricetype  Int
+  popularity Int
+  identifier String @db.VarChar(255)
+
+  texts                  DecorationText[]
+  category               Category                @relation(fields: [categoryId], references: [id])
+  collectionRequirements CollectionRequirement[]
+
+  @@map("decoration")
+}
+
+model DecorationText {
+  id           Int        @id @default(autoincrement())
+  decorationId Int
+  decoration   Decoration @relation(fields: [decorationId], references: [id], onDelete: Cascade, map: "decorationText_decorationId_fkey")
+  languageCode String     @db.VarChar(5)
+  name         String     @db.VarChar(255)
+
+  @@unique([decorationId, languageCode], map: "decorationText_decorationId_languageCode_key")
+  @@map("decorationtext")
+}
+
+model Category {
+  id         Int    @id @default(autoincrement())
+  identifier String @db.VarChar(255)
+
+  decorations   Decoration[]
+  categoryTexts CategoryText[]
+
+  @@map("category")
+}
+
+model CategoryText {
+  id           Int      @id @default(autoincrement())
+  categoryId   Int
+  category     Category @relation(fields: [categoryId], references: [id], onDelete: Cascade, map: "categoryText_categoryId_fkey")
+  languageCode String   @db.VarChar(5)
+  name         String   @db.VarChar(255)
+
+  @@unique([categoryId, languageCode], map: "categoryText_categoryId_languageCode_key")
+  @@map("categorytext")
+}
+

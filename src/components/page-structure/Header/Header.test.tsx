@@ -31,6 +31,9 @@ vi.mock("next/font/google", () => ({
   Playfair_Display: () => ({
     style: { fontFamily: "var(--font-playfair)" },
   }),
+  Caveat: () => ({
+    style: { fontFamily: "Caveat" },
+  }),
 }));
 
 vi.mock("./Header.styles", () => ({

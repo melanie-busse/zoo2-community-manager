@@ -1,0 +1,33 @@
+{
+  "title": "Collections",
+  "area": {
+    "MAIN_ZOO": "Main Zoo",
+    "TERRARIUM": "Terrarium",
+    "AQUARIUM": "Aquarium",
+    "NOCTARIUM": "Noctarium",
+    "AVIARY": "Aviary"
+  },
+  "stars": {
+    "1": "1 Star",
+    "2": "2 Stars",
+    "3": "3 Stars"
+  },
+  "filter": {
+    "all_areas": "All Areas",
+    "all_stars": "All Difficulties",
+    "animal_search": "Search animal..."
+  },
+  "card": {
+    "requirements": "{count} Requirements",
+    "animals": "Animals",
+    "decorations": "Decorations",
+    "level": "Lv.{level}",
+    "more": "+ {count} more",
+    "empty": "No collections found.",
+    "reward": "Reward:"
+  },
+  "type": {
+    "ANIMAL": "Animal",
+    "DECORATION": "Decoration"
+  }
+}

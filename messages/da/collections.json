@@ -1,0 +1,33 @@
+{
+  "title": "Samlealbum",
+  "area": {
+    "MAIN_ZOO": "Hoved Zoo",
+    "TERRARIUM": "Terrarium",
+    "AQUARIUM": "Akvarium",
+    "NOCTARIUM": "Noctarium",
+    "AVIARY": "Fuglehus"
+  },
+  "stars": {
+    "1": "1 Stjerne",
+    "2": "2 Stjerner",
+    "3": "3 Stjerner"
+  },
+  "filter": {
+    "all_areas": "Alle Områder",
+    "all_stars": "Alle Sværhedsgrader",
+    "animal_search": "Søg dyr..."
+  },
+  "card": {
+    "requirements": "{count} Krav",
+    "animals": "Dyr",
+    "decorations": "Dekorationer",
+    "level": "Lv.{level}",
+    "more": "+ {count} flere",
+    "empty": "Ingen samlinger fundet.",
+    "reward": "Belønning:"
+  },
+  "type": {
+    "ANIMAL": "Dyr",
+    "DECORATION": "Dekoration"
+  }
+}

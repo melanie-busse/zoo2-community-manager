@@ -1,0 +1,33 @@
+{
+  "title": "Sammelalbum",
+  "area": {
+    "MAIN_ZOO": "Hauptzoo",
+    "TERRARIUM": "Terrarienhaus",
+    "AQUARIUM": "Aquarienhaus",
+    "NOCTARIUM": "Noctarium",
+    "AVIARY": "Voliere"
+  },
+  "stars": {
+    "1": "1 Stern",
+    "2": "2 Sterne",
+    "3": "3 Sterne"
+  },
+  "filter": {
+    "animal_search": "Tier suchen...",
+    "all_areas": "Alle Bereiche",
+    "all_stars": "Alle Schwierigkeiten"
+  },
+  "card": {
+    "requirements": "{count} Anforderungen",
+    "animals": "Tiere",
+    "decorations": "Dekorationen",
+    "level": "Lv.{level}",
+    "more": "+ {count} weitere",
+    "empty": "Keine Collections gefunden.",
+    "reward": "Belohnung:"
+  },
+  "type": {
+    "ANIMAL": "Tier",
+    "DECORATION": "Dekoration"
+  }
+}
