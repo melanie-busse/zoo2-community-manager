@@ -4,7 +4,7 @@ import PageWrapper from "@/components/page-structure/page/PageWrapper";
 import ContentWrapper from "@/components/page-structure/page/ContentWrapper";
 import PageHeader from "@/components/page-structure/page/PageHeader";
 import { getAllCollections } from "@/service/CollectionService";
-import CollectionsOverviewContent from "@/components/pages/collections/CollectionsOverviewContent";
+import CollectionsOverviewContent from "@/components/pages/animals/collections/CollectionsOverviewContent";
 
 interface CollectionsPageProps {
   params: Promise<{ locale: string }>;

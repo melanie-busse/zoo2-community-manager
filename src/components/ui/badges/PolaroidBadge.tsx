@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
 
@@ -9,6 +10,7 @@ interface PolaroidBadgeProps {
   rewardColor?: string;
   level?: number;
   cardWidth?: number;
+  href?: string;
 }
 
 export default function PolaroidBadge({
@@ -18,25 +20,36 @@ export default function PolaroidBadge({
   rewardColor,
   level,
   cardWidth = 160,
+  href,
 }: PolaroidBadgeProps) {
+  const inner = (
+    <>
+      <AnimalImageWrapper>
+        <Image
+          src={animalImageSrc}
+          alt={animalName}
+          fill
+          sizes={`${cardWidth}px`}
+          style={{ objectFit: "cover" }}
+        />
+        {level != null && <LevelBadge>Lv.{level}</LevelBadge>}
+      </AnimalImageWrapper>
+      {rewardName && <PolaroidTitle title={rewardName}>{rewardName}</PolaroidTitle>}
+      {rewardColor && <PolaroidColor title={rewardColor}>{rewardColor}</PolaroidColor>}
+    </>
+  );
+
   return (
     <PolaroidWrapper>
-      <PolaroidCard $width={cardWidth}>
-        <AnimalImageWrapper>
-          <Image
-            src={animalImageSrc}
-            alt={animalName}
-            fill
-            sizes={`${cardWidth}px`}
-            style={{ objectFit: "cover" }}
-          />
-          {level != null && <LevelBadge>Lv.{level}</LevelBadge>}
-        </AnimalImageWrapper>
-        {rewardName && (
-          <PolaroidTitle title={rewardName}>{rewardName}</PolaroidTitle>
-        )}
-        {rewardColor && <PolaroidColor title={rewardColor}>{rewardColor}</PolaroidColor>}
-      </PolaroidCard>
+      {href ? (
+        <PolaroidCard $width={cardWidth} $clickable as={Link} href={href}>
+          {inner}
+        </PolaroidCard>
+      ) : (
+        <PolaroidCard $width={cardWidth}>
+          {inner}
+        </PolaroidCard>
+      )}
     </PolaroidWrapper>
   );
 }
@@ -75,7 +88,7 @@ const PolaroidWrapper = styled.div`
   }
 `;
 
-const PolaroidCard = styled.div<{ $width: number }>`
+const PolaroidCard = styled.div<{ $width: number; $clickable?: boolean }>`
   background-color: #ffffff;
   padding: 8px 8px 12px 8px;
   width: ${({ $width }) => $width}px;
@@ -84,6 +97,9 @@ const PolaroidCard = styled.div<{ $width: number }>`
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-decoration: none;
+  color: inherit;
+  ${({ $clickable }) => $clickable && `cursor: pointer; &:hover { box-shadow: 0 6px 16px rgba(0,0,0,0.25); }`}
 `;
 
 const AnimalImageWrapper = styled.div`
@@ -107,20 +123,22 @@ const LevelBadge = styled.span`
 `;
 
 const PolaroidTitle = styled.h3`
-  font-size: 0.85rem;
-  font-weight: 700;
+  font-family: ${({ theme }) => theme.fonts.polaroid};
+  font-size: 1.1rem; /* Caveat fällt leicht kleiner aus, daher gerne etwas größer */
+  font-weight: 600; /* Statt 700 – wirkt flüssiger und nicht zu fett */
+  letter-spacing: 0.01em; /* Sehr geringer Abstand, damit die Schreibschrift verbindet */
   color: #2c2c2c;
-  margin: 8px 0 0 0;
+  margin: 6px 0 0 0;
   width: 100%;
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  font-family: inherit;
 `;
 
 const PolaroidColor = styled.p`
-  font-size: 0.75rem;
+  font-family: ${({ theme }) => theme.fonts.polaroid};
+  font-size: 0.95rem;
   font-weight: 500;
   color: #666;
   margin: 2px 0 0 0;

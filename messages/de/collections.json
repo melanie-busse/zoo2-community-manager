@@ -13,6 +13,7 @@
     "3": "3 Sterne"
   },
   "filter": {
+    "animal_search": "Tier suchen...",
     "all_areas": "Alle Bereiche",
     "all_stars": "Alle Schwierigkeiten"
   },
@@ -22,7 +23,8 @@
     "decorations": "Dekorationen",
     "level": "Lv.{level}",
     "more": "+ {count} weitere",
-    "empty": "Keine Collections gefunden."
+    "empty": "Keine Collections gefunden.",
+    "reward": "Belohnung:"
   },
   "type": {
     "ANIMAL": "Tier",

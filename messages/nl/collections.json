@@ -14,7 +14,8 @@
   },
   "filter": {
     "all_areas": "Alle Gebieden",
-    "all_stars": "Alle Moeilijkheden"
+    "all_stars": "Alle Moeilijkheden",
+    "animal_search": "Dier zoeken..."
   },
   "card": {
     "requirements": "{count} Vereisten",
@@ -22,7 +23,8 @@
     "decorations": "Decoraties",
     "level": "Lv.{level}",
     "more": "+ {count} meer",
-    "empty": "Geen verzamelingen gevonden."
+    "empty": "Geen verzamelingen gevonden.",
+    "reward": "Beloning:"
   },
   "type": {
     "ANIMAL": "Dier",

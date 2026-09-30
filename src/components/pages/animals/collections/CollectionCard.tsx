@@ -37,12 +37,25 @@ const RegionName = styled.span`
   font-weight: 600;
 `;
 
+const SpacedDividerTop = styled.div`
+  height: 1px;
+  background-color: #eee;
+  margin-top: 50px;
+`;
+
+const SpacedDividerBottom = styled.div`
+  height: 1px;
+  background-color: #eee;
+  margin-bottom: 50px;
+`;
+
 const RequirementsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, auto);
   gap: 32px;
   justify-content: center;
   margin-top: 40px;
+  margin-bottom: 40px;
 `;
 
 interface CollectionCardProps {
@@ -52,6 +65,11 @@ interface CollectionCardProps {
 export default function CollectionCard({ collection }: CollectionCardProps) {
   const animalImageSrc = getAnimalImageSrc(collection);
   const { name: rewardName, color: rewardColor } = getRewardLabel(collection);
+  const rewardHref = collection.rewardSpecialCoat
+    ? `/specialcoats/${collection.rewardSpecialCoat.id}`
+    : collection.rewardAnimal
+    ? `/animals/${collection.rewardAnimal.id}`
+    : undefined;
 
   return (
     <CardContainer>
@@ -75,19 +93,27 @@ export default function CollectionCard({ collection }: CollectionCardProps) {
         </StarsRow>
       </CardHeaderRow>
 
-      <CardDivider />
+      <SpacedDividerBottom />
       <PolaroidBadge
         animalImageSrc={animalImageSrc}
         animalName={collection.name}
         rewardName={rewardName}
         rewardColor={rewardColor}
+        href={rewardHref}
       />
+
+      <SpacedDividerTop />
 
       <RequirementsGrid>
         {collection.requirements.map((req) => {
           const src = getRequirementImageSrc(req);
           if (!src) return null;
           const { name, color } = getRequirementLabel(req);
+          const href = req.specialCoat
+            ? `/specialcoats/${req.specialCoat.id}`
+            : req.animal
+            ? `/animals/${req.animal.id}`
+            : undefined;
           return (
             <PolaroidBadge
               key={req.id}
@@ -97,6 +123,7 @@ export default function CollectionCard({ collection }: CollectionCardProps) {
               rewardColor={color}
               level={req.requiredLevel ?? undefined}
               cardWidth={110}
+              href={href}
             />
           );
         })}

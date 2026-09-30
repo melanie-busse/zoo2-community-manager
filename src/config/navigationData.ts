@@ -47,14 +47,14 @@ export const navConfig: NavItem[] = [
         requiresAuth: true,
         minimumRole: "Director",
       },
+      {
+        labelKey: "collections",
+        href: "/animals/collections",
+        requiresAuth: false,
+      },
     ],
   },
-  {
-    id: "collections",
-    labelKey: "collections",
-    href: "/collections",
-    requiresAuth: false,
-  },
+
   {
     id: "contests",
     labelKey: "club",

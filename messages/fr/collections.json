@@ -14,7 +14,8 @@
   },
   "filter": {
     "all_areas": "Toutes les Zones",
-    "all_stars": "Toutes les Difficultés"
+    "all_stars": "Toutes les Difficultés",
+    "animal_search": "Chercher animal..."
   },
   "card": {
     "requirements": "{count} Exigences",
@@ -22,7 +23,8 @@
     "decorations": "Décorations",
     "level": "Niv.{level}",
     "more": "+ {count} de plus",
-    "empty": "Aucune collection trouvée."
+    "empty": "Aucune collection trouvée.",
+    "reward": "Récompense :"
   },
   "type": {
     "ANIMAL": "Animal",

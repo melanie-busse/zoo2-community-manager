@@ -50,6 +50,8 @@
     "all_levels": "Todos los niveles del establo",
     "all_status": "Todos los estados",
     "all_regions": "Todas las regiones",
+    "all_areas": "Todas las áreas",
+    "all_stars": "Todas las dificultades",
     "all_owned_counts": "Animales disponibles",
     "all_puzzle_status": "Todas las estatuas",
     "puzzle_complete": "Estatua completa",
@@ -66,6 +68,7 @@
     "missing_partner": "Falta pareja",
     "not_owned": "Falta",
     "level_label": "Nivel",
+    "has_decoration": "Con decoración",
     "has_statue": "Solo con estatua",
     "contest_only": "Solo variantes de concurso",
     "results": {

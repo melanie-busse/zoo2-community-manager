@@ -14,7 +14,8 @@
   },
   "filter": {
     "all_areas": "Alle Områder",
-    "all_stars": "Alle Sværhedsgrader"
+    "all_stars": "Alle Sværhedsgrader",
+    "animal_search": "Søg dyr..."
   },
   "card": {
     "requirements": "{count} Krav",
@@ -22,7 +23,8 @@
     "decorations": "Dekorationer",
     "level": "Lv.{level}",
     "more": "+ {count} flere",
-    "empty": "Ingen samlinger fundet."
+    "empty": "Ingen samlinger fundet.",
+    "reward": "Belønning:"
   },
   "type": {
     "ANIMAL": "Dyr",

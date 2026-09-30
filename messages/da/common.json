@@ -50,6 +50,8 @@
     "all_levels": "Alle stalsniveauer",
     "all_status": "Alle statusser",
     "all_regions": "Alle regioner",
+    "all_areas": "Alle områder",
+    "all_stars": "Alle sværhedsgrader",
     "all_owned_counts": "Tilgængelige dyr",
     "all_puzzle_status": "Alle statuer",
     "puzzle_complete": "Statue komplet",
@@ -66,6 +68,7 @@
     "missing_partner": "Partner mangler",
     "not_owned": "Mangler",
     "level_label": "Niveau",
+    "has_decoration": "Med dekoration",
     "has_statue": "Kun med statue",
     "contest_only": "Kun konkurrencevarianter",
     "results": {

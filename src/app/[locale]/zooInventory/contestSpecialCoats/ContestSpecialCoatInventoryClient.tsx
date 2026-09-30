@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import { useContestSpecialCoatStore } from "@/store/useContestSpecialCoatStore";
 import ContestSpecialCoatInventoryContent from "@/components/pages/zooInventory/ContestSpecialCoats/ContestSpecialCoatInventoryContent";
 
@@ -23,7 +23,10 @@ export default function ContestSpecialCoatInventoryClient({
     inventoryRegionId: inventoryMap.get(coat.id)?.regionId ?? null,
     inventoryPuzzlePieces: inventoryMap.get(coat.id)?.puzzlePieces ?? null,
   }));
-  setInitialCoats(coatsWithInventory);
+
+  useEffect(() => {
+    setInitialCoats(coatsWithInventory);
+  }, []);
 
   return <ContestSpecialCoatInventoryContent userInventory={userInventory} regions={regions} />;
 }

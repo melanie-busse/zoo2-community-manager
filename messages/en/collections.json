@@ -14,7 +14,8 @@
   },
   "filter": {
     "all_areas": "All Areas",
-    "all_stars": "All Difficulties"
+    "all_stars": "All Difficulties",
+    "animal_search": "Search animal..."
   },
   "card": {
     "requirements": "{count} Requirements",
@@ -22,7 +23,8 @@
     "decorations": "Decorations",
     "level": "Lv.{level}",
     "more": "+ {count} more",
-    "empty": "No collections found."
+    "empty": "No collections found.",
+    "reward": "Reward:"
   },
   "type": {
     "ANIMAL": "Animal",
