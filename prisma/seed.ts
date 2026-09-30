@@ -1,4 +1,4 @@
-import { PrismaClient, SectorArea, RequirementType } from "@prisma/client";
+import { PrismaClient, RequirementType } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
@@ -12,7 +12,6 @@ type RequirementInput = {
 type CollectionInput = {
   identifier: string;
   stars: number;
-  area: SectorArea;
   name: string; // English name (used for all locales for now)
   requirements: RequirementInput[];
 };
@@ -30,7 +29,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "silver_fox",
     stars: 1,
-    area: "MAIN_ZOO",
     name: "Silver Fox",
     requirements: [
       animal(2, "Chimpanzee", 0),
@@ -44,7 +42,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "piebald_peafowl",
     stars: 1,
-    area: "MAIN_ZOO",
     name: "Piebald Peafowl",
     requirements: [
       animal(2, "Giant Tortoise", 0),
@@ -58,7 +55,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "black_white_rabbit",
     stars: 1,
-    area: "MAIN_ZOO",
     name: "Black & White Rabbit",
     requirements: [
       animal(2, "Rabbit", 0),
@@ -72,7 +68,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "blonde_kodiak_bear",
     stars: 1,
-    area: "MAIN_ZOO",
     name: "Blonde Kodiak Bear",
     requirements: [
       animal(3, "Kodiak Bear", 0),
@@ -86,7 +81,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "brown_panda",
     stars: 1,
-    area: "MAIN_ZOO",
     name: "Brown Panda",
     requirements: [
       animal(3, "Domestic Pig (Brown and White)", 0),
@@ -100,7 +94,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "white_crocodile",
     stars: 1,
-    area: "MAIN_ZOO",
     name: "White Crocodile",
     requirements: [
       animal(3, "Giant Tortoise", 0),
@@ -113,7 +106,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "pink_hippo",
     stars: 1,
-    area: "MAIN_ZOO",
     name: "Pink Hippo",
     requirements: [
       animal(3, "Lion", 0),
@@ -127,7 +119,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "jaguar_panther",
     stars: 1,
-    area: "MAIN_ZOO",
     name: "Jaguar (Panther)",
     requirements: [
       animal(3, "Scarlet Macaw", 0),
@@ -141,7 +132,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "red_sable",
     stars: 1,
-    area: "MAIN_ZOO",
     name: "Red Sable",
     requirements: [
       animal(2, "Mountain Gorilla", 0),
@@ -158,7 +148,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "common_genet_brown",
     stars: 1,
-    area: "MAIN_ZOO",
     name: "Common Genet (Brown)",
     requirements: [
       animal(2, "Meerkat", 0),
@@ -173,7 +162,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "black_capybara",
     stars: 1,
-    area: "MAIN_ZOO",
     name: "Black Capybara",
     requirements: [
       animal(2, "Capybara", 0),
@@ -188,7 +176,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "red_wolf",
     stars: 1,
-    area: "MAIN_ZOO",
     name: "Red Wolf",
     requirements: [
       animal(3, "Wolf", 0),
@@ -206,7 +193,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "white_moose",
     stars: 2,
-    area: "MAIN_ZOO",
     name: "White Moose",
     requirements: [
       animal(4, "Wild Boar", 0),
@@ -223,7 +209,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "white_zebra",
     stars: 2,
-    area: "MAIN_ZOO",
     name: "White Zebra",
     requirements: [
       animal(5, "Red Kangaroo", 0),
@@ -239,7 +224,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "spotted_alpaca",
     stars: 2,
-    area: "MAIN_ZOO",
     name: "Spotted Alpaca",
     requirements: [
       animal(4, "Kodiak Bear", 0),
@@ -256,7 +240,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "white_wild_dog",
     stars: 2,
-    area: "MAIN_ZOO",
     name: "White Wild Dog",
     requirements: [
       animal(5, "Wolf", 0),
@@ -271,7 +254,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "white_nosed_coati",
     stars: 2,
-    area: "MAIN_ZOO",
     name: "White-Nosed Coati",
     requirements: [
       animal(5, "Giant Panda", 0),
@@ -288,7 +270,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "white_sulphur_crested_cockatoo",
     stars: 2,
-    area: "MAIN_ZOO",
     name: "White Sulphur-Crested Cockatoo",
     requirements: [
       animal(5, "Bald Eagle", 0),
@@ -304,7 +285,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "summer_arctic_fox",
     stars: 2,
-    area: "MAIN_ZOO",
     name: "Summer Arctic Fox",
     requirements: [
       animal(4, "Snow Hare", 0),
@@ -318,7 +298,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "black_swan",
     stars: 2,
-    area: "MAIN_ZOO",
     name: "Black Swan",
     requirements: [
       animal(5, "Domestic Pig", 0),
@@ -335,7 +314,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "mandarin_duck_white",
     stars: 2,
-    area: "MAIN_ZOO",
     name: "Mandarin Duck (White)",
     requirements: [
       animal(2, "Mandarin Duck", 0),
@@ -350,7 +328,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "brown_brushtail_possum",
     stars: 2,
-    area: "MAIN_ZOO",
     name: "Brown Brushtail Possum",
     requirements: [
       animal(2, "Red Kangaroo", 0),
@@ -365,7 +342,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "green_indian_star_tortoise",
     stars: 2,
-    area: "MAIN_ZOO",
     name: "Green Indian Star Tortoise",
     requirements: [
       animal(5, "Giant Tortoise", 0),
@@ -378,7 +354,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "ruffed_lemur",
     stars: 2,
-    area: "MAIN_ZOO",
     name: "Ruffed Lemur (Black-and-White)",
     requirements: [
       animal(4, "Red-Ruffed Lemur", 0),
@@ -394,7 +369,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "leucistic_emu",
     stars: 2,
-    area: "MAIN_ZOO",
     name: "Leucistic Emu",
     requirements: [
       animal(4, "Emu", 0),
@@ -410,7 +384,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "cougar_white",
     stars: 2,
-    area: "MAIN_ZOO",
     name: "Cougar (White)",
     requirements: [
       animal(5, "Cougar", 0),
@@ -426,7 +399,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "ethiopian_wolf_black",
     stars: 2,
-    area: "MAIN_ZOO",
     name: "Ethiopian Wolf (Black)",
     requirements: [
       animal(4, "Wolf", 0),
@@ -445,7 +417,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "white_reindeer",
     stars: 3,
-    area: "MAIN_ZOO",
     name: "White Reindeer",
     requirements: [
       animal(2, "Reindeer", 0),
@@ -462,7 +433,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "harlequin_rabbit",
     stars: 3,
-    area: "MAIN_ZOO",
     name: "Harlequin Rabbit",
     requirements: [
       decoration("Rabbit Statue", 0),
@@ -475,7 +445,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "maned_wolf",
     stars: 3,
-    area: "MAIN_ZOO",
     name: "Maned Wolf",
     requirements: [
       animal(10, "Domestic Pig (Brown and White)", 0),
@@ -492,7 +461,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "white_gorilla",
     stars: 3,
-    area: "MAIN_ZOO",
     name: "White Gorilla",
     requirements: [
       animal(8, "Lar Gibbon", 0),
@@ -508,7 +476,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "black_gibbon",
     stars: 3,
-    area: "MAIN_ZOO",
     name: "Black Gibbon",
     requirements: [
       animal(6, "Scarlet Macaw", 0),
@@ -524,7 +491,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "white_lion",
     stars: 3,
-    area: "MAIN_ZOO",
     name: "White Lion",
     requirements: [
       animal(7, "Lion", 0),
@@ -540,7 +506,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "white_tiger",
     stars: 3,
-    area: "MAIN_ZOO",
     name: "White Tiger",
     requirements: [
       animal(8, "Owston's Palm Civet", 0),
@@ -557,7 +522,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "ermine",
     stars: 3,
-    area: "MAIN_ZOO",
     name: "Ermine",
     requirements: [
       animal(7, "Raccoon", 0),
@@ -573,7 +537,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "maned_wolf_2",
     stars: 3,
-    area: "MAIN_ZOO",
     name: "Maned Wolf 2",
     requirements: [
       animal(10, "Hippopotamus (Pink)", 0),
@@ -590,7 +553,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "american_badger",
     stars: 3,
-    area: "MAIN_ZOO",
     name: "American Badger",
     requirements: [
       animal(10, "Kinkajou", 0),
@@ -606,7 +568,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "american_badger_2",
     stars: 3,
-    area: "MAIN_ZOO",
     name: "American Badger 2",
     requirements: [
       animal(10, "Plains Zebra (Black)", 0),
@@ -622,7 +583,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "douc",
     stars: 3,
-    area: "MAIN_ZOO",
     name: "Douc",
     requirements: [
       animal(10, "Chimpanzee", 0),
@@ -639,7 +599,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "great_spotted_kiwi",
     stars: 3,
-    area: "MAIN_ZOO",
     name: "Great Spotted Kiwi",
     requirements: [
       animal(7, "Reticulated Giraffe", 0),
@@ -656,7 +615,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "douc_2",
     stars: 3,
-    area: "MAIN_ZOO",
     name: "2. Douc",
     requirements: [
       animal(10, "Lion Tamarin (Golden-Headed)", 0),
@@ -673,7 +631,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "amazonian_manatee",
     stars: 3,
-    area: "MAIN_ZOO",
     name: "Amazonian Manatee",
     requirements: [
       animal(5, "Manatee", 0),
@@ -690,7 +647,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "nilgai",
     stars: 3,
-    area: "MAIN_ZOO",
     name: "Nilgai",
     requirements: [
       animal(5, "Black Wildebeest", 0),
@@ -707,7 +663,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "bearded_vulture_red",
     stars: 3,
-    area: "MAIN_ZOO",
     name: "Bearded Vulture (Red)",
     requirements: [
       animal(8, "Bearded Vulture", 0),
@@ -724,7 +679,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "white_crested_porcupine",
     stars: 3,
-    area: "MAIN_ZOO",
     name: "White Crested Porcupine",
     requirements: [
       animal(5, "Crested Porcupine", 0),
@@ -737,7 +691,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "nilgai_2",
     stars: 3,
-    area: "MAIN_ZOO",
     name: "Nilgai 2",
     requirements: [
       animal(5, "Alpine Ibex", 0),
@@ -754,7 +707,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "white_wild_boar",
     stars: 3,
-    area: "MAIN_ZOO",
     name: "White Wild Boar",
     requirements: [
       decoration("Giant Tortoise Statue", 0),
@@ -771,7 +723,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "white_flamingo",
     stars: 3,
-    area: "MAIN_ZOO",
     name: "White Flamingo",
     requirements: [
       decoration("Domestic Pig Statue", 0),
@@ -788,7 +739,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "white_mandrill",
     stars: 3,
-    area: "MAIN_ZOO",
     name: "White Mandrill",
     requirements: [
       decoration("Moon Bear Statue", 0),
@@ -805,7 +755,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "amazon_river_dolphin_1",
     stars: 3,
-    area: "MAIN_ZOO",
     name: "Amazon River Dolphin I",
     requirements: [
       animal(5, "American Badger", 0),
@@ -821,7 +770,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "amazon_river_dolphin_2",
     stars: 3,
-    area: "MAIN_ZOO",
     name: "Amazon River Dolphin II",
     requirements: [
       animal(5, "Ferret Badger (Brown)", 0),
@@ -838,7 +786,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "leucistic_elephant",
     stars: 3,
-    area: "MAIN_ZOO",
     name: "Leucistic Elephant",
     requirements: [
       decoration("Okapi Statue", 0),
@@ -853,7 +800,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "leucistic_peafowl",
     stars: 3,
-    area: "MAIN_ZOO",
     name: "Leucistic Peafowl",
     requirements: [
       decoration("Peafowl Statue", 0),
@@ -868,7 +814,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "albino_humpback_whale",
     stars: 3,
-    area: "MAIN_ZOO",
     name: "Albino Humpback Whale",
     requirements: [
       animal(10, "Rabbit (Spotted)", 0),
@@ -885,7 +830,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "gray_arctic_wolf",
     stars: 3,
-    area: "MAIN_ZOO",
     name: "Gray Arctic Wolf",
     requirements: [
       decoration("Secretarybird Statue", 0),
@@ -899,7 +843,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "giant_freshwater_stingray",
     stars: 3,
-    area: "MAIN_ZOO",
     name: "Giant Freshwater Stingray",
     requirements: [
       animal(10, "Amazon River Dolphin", 0),
@@ -916,7 +859,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "giant_freshwater_stingray_2",
     stars: 3,
-    area: "MAIN_ZOO",
     name: "Giant Freshwater Stingray 2",
     requirements: [
       animal(10, "Amazon River Dolphin", 0),
@@ -933,7 +875,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "ornate_wobbegong",
     stars: 3,
-    area: "MAIN_ZOO",
     name: "Ornate Wobbegong",
     requirements: [
       animal(10, "Tiger Shark", 0),
@@ -950,7 +891,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "ornate_wobbegong_2",
     stars: 3,
-    area: "MAIN_ZOO",
     name: "Ornate Wobbegong 2",
     requirements: [
       animal(10, "Hammerhead Shark", 0),
@@ -967,7 +907,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "african_wolf_1",
     stars: 3,
-    area: "MAIN_ZOO",
     name: "African Wolf 1",
     requirements: [
       animal(10, "Wolf", 0),
@@ -984,7 +923,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "african_wolf_2",
     stars: 3,
-    area: "MAIN_ZOO",
     name: "African Wolf 2",
     requirements: [
       animal(10, "Tundra Wolf", 0),
@@ -1001,7 +939,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "white_reticulated_giraffe",
     stars: 3,
-    area: "MAIN_ZOO",
     name: "White Reticulated Giraffe",
     requirements: [
       animal(10, "Reticulated Giraffe", 0),
@@ -1018,7 +955,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "white_sumatran_tiger",
     stars: 3,
-    area: "MAIN_ZOO",
     name: "White Sumatran Tiger",
     requirements: [
       decoration("Northern Pudu Statue", 0),
@@ -1037,7 +973,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "light_savannah_monitor",
     stars: 2,
-    area: "TERRARIUM",
     name: "Light Savannah Monitor",
     requirements: [
       animal(3, "Savannah Monitor", 0),
@@ -1053,7 +988,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "brown_ferret_badger",
     stars: 3,
-    area: "TERRARIUM",
     name: "Brown Ferret Badger",
     requirements: [
       animal(7, "Ferret Badger", 0),
@@ -1070,7 +1004,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "brown_pacman_frog",
     stars: 3,
-    area: "TERRARIUM",
     name: "Brown Pacman Frog",
     requirements: [
       animal(10, "Pacman Frog", 0),
@@ -1089,7 +1022,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "discus_fish_light_blue",
     stars: 1,
-    area: "AQUARIUM",
     name: "Discus Fish (Light-Blue)",
     requirements: [
       animal(2, "Discus", 0),
@@ -1107,7 +1039,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "axolotl_yellow",
     stars: 2,
-    area: "AQUARIUM",
     name: "Axolotl (Yellow)",
     requirements: [
       animal(2, "Axolotl", 0),
@@ -1125,7 +1056,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "axolotl_white",
     stars: 3,
-    area: "AQUARIUM",
     name: "Axolotl (White)",
     requirements: [
       animal(2, "Discus", 0),
@@ -1140,7 +1070,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "leafy_seadragon_burgundy",
     stars: 3,
-    area: "AQUARIUM",
     name: "Leafy Seadragon (Burgundy)",
     requirements: [
       animal(3, "Leafy Seadragon", 0),
@@ -1159,7 +1088,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "common_vampire_bat_beige",
     stars: 3,
-    area: "NOCTARIUM",
     name: "Common Vampire Bat (Beige)",
     requirements: [
       animal(5, "Common Vampire Bat", 0),
@@ -1178,7 +1106,6 @@ const collections: CollectionInput[] = [
   {
     identifier: "kingfisher_turquoise",
     stars: 3,
-    area: "AVIARY",
     name: "Kingfisher (Turquoise)",
     requirements: [
       animal(5, "Kingfisher", 0),
@@ -1202,7 +1129,7 @@ async function main() {
       create: {
         identifier: col.identifier,
         stars: col.stars,
-        area: col.area,
+        regionId: 1,
         texts: {
           create: [
             { languageCode: "de", name: col.name },
