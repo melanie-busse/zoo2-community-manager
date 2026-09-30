@@ -21,6 +21,12 @@ export async function getAllCollections(locale: string): Promise<Collection[]> {
               animal: { include: { biome: true } },
             },
           },
+          decoration: {
+            include: {
+              texts: { where: { languageCode: locale } },
+              category: true,
+            },
+          },
         },
       },
       rewardAnimal: {
@@ -65,6 +71,14 @@ export async function getAllCollections(locale: string): Promise<Collection[]> {
             biome: r.animal.biome
               ? { id: r.animal.biome.id, identifier: r.animal.biome.identifier, name: "" }
               : undefined,
+          }
+        : null,
+      decoration: r.decoration
+        ? {
+            id: r.decoration.id,
+            identifier: r.decoration.identifier,
+            name: r.decoration.texts[0]?.name ?? r.decoration.identifier,
+            category: { identifier: r.decoration.category.identifier },
           }
         : null,
       specialCoat: r.specialCoat

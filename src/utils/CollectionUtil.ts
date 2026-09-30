@@ -10,6 +10,9 @@ export function getRequirementImageSrc(req: CollectionRequirement): string | nul
     const coatFolder = req.specialCoat.identifier!.slice(animalId.length + 1);
     return `/images/animals/${req.specialCoat.animal.biome.identifier}/${animalId}/specialcoats/${coatFolder}/image.jpg`;
   }
+  if (req.decoration?.identifier && req.decoration.category?.identifier) {
+    return `/images/decorations/${req.decoration.category.identifier}/${req.decoration.identifier}/image.jpg`;
+  }
   if (req.animal?.identifier && req.animal.biome?.identifier) {
     if (req.type === "DECORATION") {
       return `/images/animals/${req.animal.biome.identifier}/${req.animal.identifier}/statue/image.webp`;
@@ -23,6 +26,9 @@ export function getRequirementLabel(req: CollectionRequirement): { name: string;
   if (req.specialCoat) {
     const text = req.specialCoat.specialcoatstext?.[0];
     return { name: text?.name ?? req.itemName, color: text?.color };
+  }
+  if (req.decoration) {
+    return { name: req.decoration.name };
   }
   if (req.animal) {
     return { name: req.animal.name ?? req.itemName };

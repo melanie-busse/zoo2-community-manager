@@ -9,6 +9,17 @@ import { Collection, CollectionRequirement } from "@/types/collection";
 
 const biome = { id: 1, identifier: "grassland", name: "" };
 
+const decoReq: CollectionRequirement = {
+  id: 10,
+  type: "DECORATION",
+  requiredLevel: null,
+  itemName: "Snowman",
+  sortOrder: 0,
+  animal: null,
+  specialCoat: null,
+  decoration: { id: 1, identifier: "snowman", name: "Snowman", category: { identifier: "winter" } },
+};
+
 const animalReq: CollectionRequirement = {
   id: 1,
   type: "ANIMAL",
@@ -17,6 +28,7 @@ const animalReq: CollectionRequirement = {
   sortOrder: 0,
   animal: { id: 108, identifier: "rabbit", name: "Rabbit", biome },
   specialCoat: null,
+  decoration: null,
 };
 
 const statueReq: CollectionRequirement = {
@@ -27,6 +39,7 @@ const statueReq: CollectionRequirement = {
   sortOrder: 1,
   animal: { id: 108, identifier: "rabbit", name: "Rabbit", biome },
   specialCoat: null,
+  decoration: null,
 };
 
 const specialCoatReq: CollectionRequirement = {
@@ -36,6 +49,7 @@ const specialCoatReq: CollectionRequirement = {
   itemName: "rabbit_golden",
   sortOrder: 2,
   animal: null,
+  decoration: null,
   specialCoat: {
     id: 10,
     animalId: 108,
@@ -54,6 +68,7 @@ const decoNoAnimalReq: CollectionRequirement = {
   sortOrder: 3,
   animal: null,
   specialCoat: null,
+  decoration: null,
 };
 
 const baseCollection: Collection = {
@@ -86,7 +101,13 @@ describe("getRequirementImageSrc", () => {
     );
   });
 
-  test("Deko ohne Tier → null", () => {
+  test("Decoration → decoration image path", () => {
+    expect(getRequirementImageSrc(decoReq)).toBe(
+      "/images/decorations/winter/snowman/image.jpg"
+    );
+  });
+
+  test("Deko ohne Tier und ohne Decoration → null", () => {
     expect(getRequirementImageSrc(decoNoAnimalReq)).toBeNull();
   });
 });
@@ -108,7 +129,11 @@ describe("getRequirementLabel", () => {
     expect(getRequirementLabel(req)).toEqual({ name: "rabbit_golden" });
   });
 
-  test("Deko ohne Tier → itemName", () => {
+  test("Decoration → name aus DecorationText", () => {
+    expect(getRequirementLabel(decoReq)).toEqual({ name: "Snowman" });
+  });
+
+  test("Deko ohne Tier und ohne Decoration → itemName", () => {
     expect(getRequirementLabel(decoNoAnimalReq)).toEqual({ name: "Christmas Tree" });
   });
 
