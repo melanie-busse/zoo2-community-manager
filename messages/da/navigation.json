@@ -39,5 +39,6 @@
     "import-animals": "Importér dyr",
     "collections": "Samlealbum",
     "inventory_collections": "Mit Samlealbum"
-  }
+  },
+  "inventory_collections": "Samlealbum"
 }

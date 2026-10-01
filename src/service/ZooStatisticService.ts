@@ -4,6 +4,10 @@ import { BiomeStatistic } from "@/types/zooStatistic";
 
 export type { BiomeStatistic };
 
+export async function getTotalCollectionCount(): Promise<number> {
+  return prisma.collection.count();
+}
+
 export async function getZooStatistics(locale: string = "de"): Promise<BiomeStatistic[]> {
   try {
     const biomes = await prisma.biome.findMany({

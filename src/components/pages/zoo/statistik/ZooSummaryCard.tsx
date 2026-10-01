@@ -52,9 +52,10 @@ const ShelterItem = styled.div`
 
 interface ZooSummaryCardProps {
   biomeStatistics: BiomeStatistic[];
+  totalCollections: number;
 }
 
-export default function ZooSummaryCard({ biomeStatistics }: ZooSummaryCardProps) {
+export default function ZooSummaryCard({ biomeStatistics, totalCollections }: ZooSummaryCardProps) {
   const t = useTranslations("zooStatistic");
   const shelterLevels = [0, 1, 2, 3];
 
@@ -107,6 +108,10 @@ export default function ZooSummaryCard({ biomeStatistics }: ZooSummaryCardProps)
           <StatRow>
             <span>{t("animals.diamond")}</span>
             <strong>{totalDiamond}</strong>
+          </StatRow>
+          <StatRow>
+            <span>{t("animals.collections")}</span>
+            <strong>{totalCollections}</strong>
           </StatRow>
         </StatSection>
       </CardStatsRow>

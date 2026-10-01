@@ -3,6 +3,7 @@ import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { redirect } from "next/navigation";
 import PageWrapper from "@/components/page-structure/page/PageWrapper";
 import { getInventoryStatistics } from "@/service/InventoryStatisticService";
+import { getCollectionCompletionStats } from "@/service/CollectionInventoryService";
 import InventoryStatisticClient from "./InventoryStatisticClient";
 
 export default async function InventoryStatisticPage({
@@ -21,11 +22,14 @@ export default async function InventoryStatisticPage({
     ? parseInt(session.user.id, 10)
     : session.user.id;
 
-  const biomeStatistics = await getInventoryStatistics(userId, locale);
+  const [biomeStatistics, collectionStats] = await Promise.all([
+    getInventoryStatistics(userId, locale),
+    getCollectionCompletionStats(userId, locale),
+  ]);
 
   return (
     <PageWrapper>
-      <InventoryStatisticClient biomeStatistics={biomeStatistics} />
+      <InventoryStatisticClient biomeStatistics={biomeStatistics} collectionStats={collectionStats} />
     </PageWrapper>
   );
 }
