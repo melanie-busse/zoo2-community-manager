@@ -1,6 +1,6 @@
 import PageWrapper from "@/components/page-structure/page/PageWrapper";
 import ZooStatisticClient from "@/app/[locale]/zoo/statistic/ZooStatisticClient";
-import { getZooStatistics } from "@/service/ZooStatisticService";
+import { getZooStatistics, getTotalCollectionCount } from "@/service/ZooStatisticService";
 
 export default async function ZooStatisticPage({
   params,
@@ -8,11 +8,14 @@ export default async function ZooStatisticPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const biomeStatistics = await getZooStatistics(locale);
+  const [biomeStatistics, totalCollections] = await Promise.all([
+    getZooStatistics(locale),
+    getTotalCollectionCount(),
+  ]);
 
   return (
     <PageWrapper>
-      <ZooStatisticClient biomeStatistics={biomeStatistics} />
+      <ZooStatisticClient biomeStatistics={biomeStatistics} totalCollections={totalCollections} />
     </PageWrapper>
   );
 }

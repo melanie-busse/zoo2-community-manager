@@ -28,10 +28,12 @@ const Grid = styled.div`
 
 interface InventoryStatisticContentProps {
   biomeStatistics: InventoryBiomeStatistic[];
+  collectionStats: { total: number; completed: number };
 }
 
 export default function InventoryStatisticContent({
   biomeStatistics,
+  collectionStats,
 }: InventoryStatisticContentProps) {
   const t = useTranslations("inventoryStatistic");
 
@@ -39,7 +41,7 @@ export default function InventoryStatisticContent({
     <>
       <PageHeader text={t("title")} />
       <Wrapper>
-        <InventorySummaryCard biomeStatistics={biomeStatistics} />
+        <InventorySummaryCard biomeStatistics={biomeStatistics} collectionStats={collectionStats} />
         <Grid>
           {biomeStatistics.map((stat) => (
             <InventoryStatisticCard key={stat.biomeId} stat={stat} />

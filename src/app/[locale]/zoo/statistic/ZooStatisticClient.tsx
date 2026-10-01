@@ -6,8 +6,9 @@ import { BiomeStatistic } from "@/types/zooStatistic";
 
 interface ZooStatisticClientProps {
   biomeStatistics: BiomeStatistic[];
+  totalCollections: number;
 }
 
-export default function ZooStatisticClient({ biomeStatistics }: ZooStatisticClientProps) {
-  return <ZooStatisticContent biomeStatistics={biomeStatistics} />;
+export default function ZooStatisticClient({ biomeStatistics, totalCollections }: ZooStatisticClientProps) {
+  return <ZooStatisticContent biomeStatistics={biomeStatistics} totalCollections={totalCollections} />;
 }

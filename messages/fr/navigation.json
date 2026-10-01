@@ -39,5 +39,6 @@
     "import-animals": "Importer des animaux",
     "collections": "Album de collection",
     "inventory_collections": "Mon Album de Collection"
-  }
+  },
+  "inventory_collections": "Album de Collection"
 }

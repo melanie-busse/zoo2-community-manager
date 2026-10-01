@@ -49,9 +49,10 @@ const LEVEL_COLORS = ["#4facfe", "#b224ef", "#ff0844", "#f6d365"];
 
 interface InventorySummaryCardProps {
   biomeStatistics: InventoryBiomeStatistic[];
+  collectionStats: { total: number; completed: number };
 }
 
-export default function InventorySummaryCard({ biomeStatistics }: InventorySummaryCardProps) {
+export default function InventorySummaryCard({ biomeStatistics, collectionStats }: InventorySummaryCardProps) {
   const t = useTranslations("inventoryStatistic");
   const shelterLevels = [0, 1, 2, 3];
 
@@ -99,6 +100,7 @@ export default function InventorySummaryCard({ biomeStatistics }: InventorySumma
           <InlineStatProgress label={t("animals.specialCoats")} current={ownedSpecialCoats} total={totalSpecialCoats} ofLabel={t("of")} />
           <InlineStatProgress label={t("animals.zoodollar")} current={ownedZoodollar} total={totalZoodollar} ofLabel={t("of")} />
           <InlineStatProgress label={t("animals.diamond")} current={ownedDiamond} total={totalDiamond} ofLabel={t("of")} />
+          <InlineStatProgress label={t("animals.collections")} current={collectionStats.completed} total={collectionStats.total} ofLabel={t("of")} />
         </StatSection>
       </CardStatsRow>
 

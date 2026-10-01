@@ -28,16 +28,17 @@ const Grid = styled.div`
 
 interface ZooStatisticContentProps {
   biomeStatistics: BiomeStatistic[];
+  totalCollections: number;
 }
 
-export default function ZooStatisticContent({ biomeStatistics }: ZooStatisticContentProps) {
+export default function ZooStatisticContent({ biomeStatistics, totalCollections }: ZooStatisticContentProps) {
   const t = useTranslations("zooStatistic");
 
   return (
     <>
       <PageHeader text={t("title")} />
       <Wrapper>
-        <ZooSummaryCard biomeStatistics={biomeStatistics} />
+        <ZooSummaryCard biomeStatistics={biomeStatistics} totalCollections={totalCollections} />
         <Grid>
           {biomeStatistics.map((stat) => (
             <ZooStatisticCard key={stat.biomeId} stat={stat} />

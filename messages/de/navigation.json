@@ -39,5 +39,6 @@
     "inventory_collections": "Mein Sammelalbum",
     "admin": "Admin",
     "import-animals": "Tiere importieren"
-  }
+  },
+  "inventory_collections": "Sammelalbum"
 }

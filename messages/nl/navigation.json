@@ -39,5 +39,6 @@
     "import-animals": "Dieren importeren",
     "collections": "Verzamelalbum",
     "inventory_collections": "Mijn Verzamelalbum"
-  }
+  },
+  "inventory_collections": "Verzamelalbum"
 }
