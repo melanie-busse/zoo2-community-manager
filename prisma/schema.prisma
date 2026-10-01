@@ -377,9 +377,15 @@ model Region {
   releasedate DateTime
   unlocklevel Int
   identifier  String       @db.VarChar(255)
-  biomes      Biome[]
-  regionTexts RegionText[]
-  collections Collection[]
+  biomes               Biome[]
+  regionTexts          RegionText[]
+  collections          Collection[]
+  admissionsBooths     AdmissionsBooth[]
+  breedingCenterSlots  BreedingCenterSlot[]
+  adminBuildings       AdminBuilding[]
+  breedingCenters      BreedingCenter[]
+  guestLounges         GuestLounge[]
+  visitorCenters       VisitorCenter[]
 
   @@map("region")
 }
@@ -515,4 +521,67 @@ model ZooInventoryCollection {
 
   @@unique([userId, collectionRequirementId], map: "userid_collectionRequirementId")
   @@map("zooinventorycollection")
+}
+
+model AdmissionsBooth {
+  id           Int    @id @default(autoincrement())
+  booth_level  Int
+  max_capacity Int
+  upgrade      Int
+  pricetype    Int
+  regionId     Int
+  region       Region @relation(fields: [regionId], references: [id])
+
+  @@map("admissionsbooths")
+}
+
+model BreedingCenterSlot {
+  id        Int    @id @default(autoincrement())
+  slot      Int
+  price     Int
+  pricetype Int
+  regionid  Int
+  region    Region @relation(fields: [regionid], references: [id])
+
+  @@map("breedingcenterslots")
+}
+
+model AdminBuilding {
+  id        Int    @id @default(autoincrement())
+  price     Int
+  pricetype Int
+  regionid  Int
+  region    Region @relation(fields: [regionid], references: [id])
+
+  @@map("adminbuilding")
+}
+
+model BreedingCenter {
+  id        Int    @id @default(autoincrement())
+  price     Int
+  pricetype Int
+  regionid  Int
+  region    Region @relation(fields: [regionid], references: [id])
+
+  @@map("breedingcenter")
+}
+
+model GuestLounge {
+  id        Int    @id @default(autoincrement())
+  price     Int
+  pricetype Int
+  regionid  Int
+  region    Region @relation(fields: [regionid], references: [id])
+
+  @@map("guestlounge")
+}
+
+model VisitorCenter {
+  id        Int    @id @default(autoincrement())
+  price     Int
+  pricetype Int
+  regionid  Int
+  region    Region @relation(fields: [regionid], references: [id])
+
+  @@map("visitorcenter")
 }
