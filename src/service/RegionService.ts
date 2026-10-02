@@ -10,6 +10,7 @@ export async function getAllRegions(locale: string = "de") {
     return await prisma.region.findMany({
       include: {
         regionTexts: { where: { languageCode: locale } },
+        _count: { select: { breedingCenterSlots: true } },
       },
       orderBy: { id: "asc" },
     });

@@ -371,21 +371,21 @@ model ZooInventoryStatue {
 }
 
 model Region {
-  id          Int          @id @default(autoincrement())
-  price       Int
-  terrainid   Int
-  releasedate DateTime
-  unlocklevel Int
-  identifier  String       @db.VarChar(255)
-  biomes               Biome[]
-  regionTexts          RegionText[]
-  collections          Collection[]
-  admissionsBooths     AdmissionsBooth[]
-  breedingCenterSlots  BreedingCenterSlot[]
-  adminBuildings       AdminBuilding[]
-  breedingCenters      BreedingCenter[]
-  guestLounges         GuestLounge[]
-  visitorCenters       VisitorCenter[]
+  id                  Int                  @id @default(autoincrement())
+  price               Int
+  terrainid           Int
+  releasedate         DateTime
+  unlocklevel         Int
+  identifier          String               @db.VarChar(255)
+  biomes              Biome[]
+  regionTexts         RegionText[]
+  collections         Collection[]
+  admissionsBooths    AdmissionsBooth[]
+  breedingCenterSlots BreedingCenterSlot[]
+  adminBuildings      AdminBuilding[]
+  breedingCenters     BreedingCenter[]
+  guestLounges        GuestLounge[]
+  visitorCenters      VisitorCenter[]
 
   @@map("region")
 }
@@ -514,10 +514,10 @@ model CategoryText {
 }
 
 model ZooInventoryCollection {
-  id                    Int     @id @default(autoincrement())
-  userId                Int
+  id                      Int     @id @default(autoincrement())
+  userId                  Int
   collectionRequirementId Int
-  completed             Boolean @default(false)
+  completed               Boolean @default(false)
 
   @@unique([userId, collectionRequirementId], map: "userid_collectionRequirementId")
   @@map("zooinventorycollection")
@@ -540,8 +540,8 @@ model BreedingCenterSlot {
   slot      Int
   price     Int
   pricetype Int
-  regionid  Int
-  region    Region @relation(fields: [regionid], references: [id])
+  regionId  Int
+  region    Region @relation(fields: [regionId], references: [id])
 
   @@map("breedingcenterslots")
 }
@@ -550,8 +550,8 @@ model AdminBuilding {
   id        Int    @id @default(autoincrement())
   price     Int
   pricetype Int
-  regionid  Int
-  region    Region @relation(fields: [regionid], references: [id])
+  regionId  Int
+  region    Region @relation(fields: [regionId], references: [id])
 
   @@map("adminbuilding")
 }
@@ -560,8 +560,8 @@ model BreedingCenter {
   id        Int    @id @default(autoincrement())
   price     Int
   pricetype Int
-  regionid  Int
-  region    Region @relation(fields: [regionid], references: [id])
+  regionId  Int
+  region    Region @relation(fields: [regionId], references: [id])
 
   @@map("breedingcenter")
 }
@@ -570,8 +570,8 @@ model GuestLounge {
   id        Int    @id @default(autoincrement())
   price     Int
   pricetype Int
-  regionid  Int
-  region    Region @relation(fields: [regionid], references: [id])
+  regionId  Int
+  region    Region @relation(fields: [regionId], references: [id])
 
   @@map("guestlounge")
 }
@@ -580,8 +580,8 @@ model VisitorCenter {
   id        Int    @id @default(autoincrement())
   price     Int
   pricetype Int
-  regionid  Int
-  region    Region @relation(fields: [regionid], references: [id])
+  regionId  Int
+  region    Region @relation(fields: [regionId], references: [id])
 
   @@map("visitorcenter")
 }

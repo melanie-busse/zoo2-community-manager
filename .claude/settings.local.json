@@ -21,7 +21,9 @@
       "Bash(cat D:/Entwicklung/zoo2-community-manager/src/app/api/auth/[...nextauth]/route.ts)",
       "Bash(for locale:*)",
       "Bash(do cat:*)",
-      "Bash(done)"
+      "Bash(done)",
+      "Bash(find D:Entwicklungzoo2-community-managersrcapp[locale] -name *zoo* -type f)",
+      "Bash(ls:*)"
     ]
   }
 }

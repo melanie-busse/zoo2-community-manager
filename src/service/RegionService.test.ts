@@ -29,7 +29,10 @@ describe("RegionService", () => {
     const result = await getAllRegions("de");
 
     expect(prisma.region.findMany).toHaveBeenCalledWith({
-      include: { regionTexts: { where: { languageCode: "de" } } },
+      include: {
+        regionTexts: { where: { languageCode: "de" } },
+        _count: { select: { breedingCenterSlots: true } },
+      },
       orderBy: { id: "asc" },
     });
     expect(result).toHaveLength(2);
@@ -42,7 +45,10 @@ describe("RegionService", () => {
     await getAllRegions();
 
     expect(prisma.region.findMany).toHaveBeenCalledWith({
-      include: { regionTexts: { where: { languageCode: "de" } } },
+      include: {
+        regionTexts: { where: { languageCode: "de" } },
+        _count: { select: { breedingCenterSlots: true } },
+      },
       orderBy: { id: "asc" },
     });
   });
