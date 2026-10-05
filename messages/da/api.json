@@ -22,6 +22,14 @@
     "update_error": "Fejl ved opdatering af farvevariant",
     "delete_error": "Fejl ved sletning af farvevariant"
   },
+  "region": {
+    "required_fields": "Identifier og mindst ét navn er obligatoriske felter.",
+    "create_error": "Fejl ved oprettelse af region",
+    "update_success": "Region opdateret",
+    "update_error": "Fejl ved opdatering af region",
+    "delete_error": "Fejl ved sletning af region",
+    "invalid_id": "Ugyldigt region-ID"
+  },
   "contest": {
     "not_found": "Konkurrence ikke fundet",
     "create_error": "Fejl ved oprettelse af konkurrence",
