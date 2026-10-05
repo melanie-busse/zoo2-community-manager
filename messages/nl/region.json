@@ -5,5 +5,16 @@
   "unlock_level": "Ontgrendelniveau",
   "level_value": "Niveau {level}",
   "breeding_slots": "Fokplaatsen",
-  "price_type": "Valutatype"
+  "price_type": "Valutatype",
+  "breeding_center": "Fokcentrum",
+  "slot": "Slot",
+  "admissions_booth": "Entreeloket",
+  "booth_level": "Niveau",
+  "max_capacity": "Max. capaciteit",
+  "upgrade": "Upgrade",
+  "admin_building": "Personeelsvilla",
+  "admin_building_room": "Personeelsruimte",
+  "visitor_center": "Bezoekerscentrum",
+  "transport_station": "Transportstation",
+  "guest_lounge": "Gastenlounge"
 }

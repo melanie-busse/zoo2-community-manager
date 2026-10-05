@@ -5,5 +5,16 @@
   "unlock_level": "Freischalt-Level",
   "level_value": "Level {level}",
   "breeding_slots": "Zuchtplätze",
-  "price_type": "Währungstyp"
+  "price_type": "Währungstyp",
+  "breeding_center": "Zuchtzentrum",
+  "slot": "Slot",
+  "admissions_booth": "Eingangskasse",
+  "booth_level": "Level",
+  "max_capacity": "Max. Kapazität",
+  "upgrade": "Upgrade",
+  "admin_building": "Mitarbeitervilla",
+  "admin_building_room": "Mitarbeiterraum",
+  "visitor_center": "Besucherzentrum",
+  "transport_station": "Transportstation",
+  "guest_lounge": "Gästelounge"
 }

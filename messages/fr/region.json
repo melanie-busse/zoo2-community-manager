@@ -5,5 +5,16 @@
   "unlock_level": "Niveau de déverrouillage",
   "level_value": "Niveau {level}",
   "breeding_slots": "Emplacements d'élevage",
-  "price_type": "Type de monnaie"
+  "price_type": "Type de monnaie",
+  "breeding_center": "Centre d'élevage",
+  "slot": "Emplacement",
+  "admissions_booth": "Caisse d'entrée",
+  "booth_level": "Niveau",
+  "max_capacity": "Cap. max.",
+  "upgrade": "Amélioration",
+  "admin_building": "Villa du personnel",
+  "admin_building_room": "Salle du personnel",
+  "visitor_center": "Centre des visiteurs",
+  "transport_station": "Station de transport",
+  "guest_lounge": "Salon des invités"
 }

@@ -5,5 +5,16 @@
   "unlock_level": "Unlock Level",
   "level_value": "Level {level}",
   "breeding_slots": "Breeding Slots",
-  "price_type": "Currency Type"
+  "price_type": "Currency Type",
+  "breeding_center": "Breeding Center",
+  "slot": "Slot",
+  "admissions_booth": "Admissions Booth",
+  "booth_level": "Level",
+  "max_capacity": "Max. Capacity",
+  "upgrade": "Upgrade",
+  "admin_building": "Staff Villa",
+  "admin_building_room": "Staff Room",
+  "visitor_center": "Visitor Center",
+  "transport_station": "Transport Station",
+  "guest_lounge": "Guest Lounge"
 }

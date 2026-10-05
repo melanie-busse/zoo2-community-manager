@@ -12,6 +12,13 @@ export async function getRegionById(id: number, locale: string = "de") {
       include: {
         regionTexts: { where: { languageCode: locale } },
         priceType: true,
+        breedingCenters: true,
+        breedingCenterSlots: { orderBy: { slot: "asc" } },
+        admissionsBooths: { orderBy: { booth_level: "asc" } },
+        adminBuildings: true,
+        visitorCenters: true,
+        transportStation: true,
+        guestLounges: true,
       },
     });
   } catch (error) {

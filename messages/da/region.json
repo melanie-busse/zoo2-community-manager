@@ -5,5 +5,16 @@
   "unlock_level": "Oplåsningsniveau",
   "level_value": "Niveau {level}",
   "breeding_slots": "Avlspladser",
-  "price_type": "Valutatype"
+  "price_type": "Valutatype",
+  "breeding_center": "Avlscenter",
+  "slot": "Slot",
+  "admissions_booth": "Indgangskasse",
+  "booth_level": "Niveau",
+  "max_capacity": "Maks. kapacitet",
+  "upgrade": "Opgradering",
+  "admin_building": "Medarbejdervilla",
+  "admin_building_room": "Medarbejderrum",
+  "visitor_center": "Besøgscenter",
+  "transport_station": "Transportstation",
+  "guest_lounge": "Gæstelounge"
 }
