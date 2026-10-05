@@ -27,6 +27,28 @@ export async function getRegionById(id: number, locale: string = "de") {
   }
 }
 
+export async function getRegionByIdForEdit(id: number) {
+  try {
+    return await prisma.region.findUnique({
+      where: { id },
+      include: {
+        regionTexts: true,
+        priceType: true,
+        breedingCenters: true,
+        breedingCenterSlots: { orderBy: { slot: "asc" } },
+        admissionsBooths: { orderBy: { booth_level: "asc" } },
+        adminBuildings: true,
+        visitorCenters: true,
+        transportStation: true,
+        guestLounges: true,
+      },
+    });
+  } catch (error) {
+    console.error(`[RegionService] Error in getRegionByIdForEdit (${id}):`, error);
+    return null;
+  }
+}
+
 export async function createRegion(data: any): Promise<{ id: number }> {
   return prisma.$transaction(async (tx) => {
     const region = await tx.region.create({
@@ -230,7 +252,17 @@ export async function updateRegion(id: number, data: any): Promise<{ id: number 
 }
 
 export async function deleteRegion(id: number): Promise<void> {
-  await prisma.region.delete({ where: { id } });
+  await prisma.$transaction([
+    prisma.regionText.deleteMany({ where: { regionid: id } }),
+    prisma.admissionsBooth.deleteMany({ where: { regionId: id } }),
+    prisma.breedingCenterSlot.deleteMany({ where: { regionId: id } }),
+    prisma.breedingCenter.deleteMany({ where: { regionId: id } }),
+    prisma.adminBuilding.deleteMany({ where: { regionId: id } }),
+    prisma.visitorCenter.deleteMany({ where: { regionId: id } }),
+    prisma.transportStation.deleteMany({ where: { regionId: id } }),
+    prisma.guestLounge.deleteMany({ where: { regionId: id } }),
+    prisma.region.delete({ where: { id } }),
+  ]);
 }
 
 export async function getAllRegions(locale: string = "de") {

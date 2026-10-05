@@ -10,11 +10,13 @@ import SectionColumn from "@/components/ui/form/styling/SectionColumn";
 interface RegionAdmissionsBoothSectionProps {
   formData: any;
   setFormData: React.Dispatch<React.SetStateAction<any>>;
+  defaultOpen?: boolean;
 }
 
 export default function RegionAdmissionsBoothSection({
   formData,
   setFormData,
+  defaultOpen = true,
 }: RegionAdmissionsBoothSectionProps) {
   const tRegion = useTranslations("region");
   const tCommon = useTranslations("common");
@@ -56,7 +58,7 @@ export default function RegionAdmissionsBoothSection({
     <InfoAccordion
       title={tRegion("admissions_booth")}
       icon="/images/icons/visitors.jpg"
-      defaultOpen={true}
+      defaultOpen={defaultOpen}
     >
       <SectionColumn>
         <DynamicRowInput

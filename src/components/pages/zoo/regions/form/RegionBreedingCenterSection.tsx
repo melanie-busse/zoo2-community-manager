@@ -15,11 +15,13 @@ import FormRow from "@/components/ui/form/styling/FormRow";
 interface RegionBreedingCenterSectionProps {
   formData: any;
   setFormData: React.Dispatch<React.SetStateAction<any>>;
+  defaultOpen?: boolean;
 }
 
 export default function RegionBreedingCenterSection({
   formData,
   setFormData,
+  defaultOpen = true,
 }: RegionBreedingCenterSectionProps) {
   const tRegion = useTranslations("region");
   const tCommon = useTranslations("common");
@@ -61,7 +63,7 @@ export default function RegionBreedingCenterSection({
     <InfoAccordion
       title={tRegion("breeding_center")}
       icon="/images/icons/breeding.png"
-      defaultOpen={true}
+      defaultOpen={defaultOpen}
     >
       <SectionColumn>
         <FormGroup>

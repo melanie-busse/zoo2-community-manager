@@ -23,7 +23,17 @@
       "Bash(do cat:*)",
       "Bash(done)",
       "Bash(find D:Entwicklungzoo2-community-managersrcapp[locale] -name *zoo* -type f)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(find D:/Entwicklung/zoo2-community-manager/src -path */api/animals* -type f)",
+      "Bash(xargs cat:*)",
+      "Bash(bash .superpowers/scripts/sdd-workspace docs/superpowers/plans/2026-10-05-region-crud.md)",
+      "Bash(mkdir -p \"D:/Entwicklung/zoo2-community-manager/src/app/[locale]/zoo/regions/create\")",
+      "Bash(mkdir -p \"D:/Entwicklung/zoo2-community-manager/src/app/[locale]/zoo/regions/[id]/edit\")",
+      "Bash(tasklist)",
+      "Bash(taskkill //F //IM node.exe)",
+      "Bash(for f:*)",
+      "Bash(do echo:*)",
+      "Read(//d/Entwicklung/zoo2-community-manager/messages$f/**)"
     ]
   }
 }

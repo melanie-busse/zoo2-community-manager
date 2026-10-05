@@ -86,8 +86,8 @@ export default function RegionForm({ region, languages }: RegionFormProps) {
           />
         </Column>
         <Column>
-          <RegionBreedingCenterSection formData={formData} setFormData={setFormData} />
-          <RegionAdmissionsBoothSection formData={formData} setFormData={setFormData} />
+          <RegionBreedingCenterSection formData={formData} setFormData={setFormData} defaultOpen={!formData.id} />
+          <RegionAdmissionsBoothSection formData={formData} setFormData={setFormData} defaultOpen={!formData.id} />
           <RegionBuildingField
             formKey="adminBuilding"
             title={adminBuildingTitle}
