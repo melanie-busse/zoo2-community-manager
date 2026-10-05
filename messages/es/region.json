@@ -16,5 +16,23 @@
   "admin_building_room": "Sala del personal",
   "visitor_center": "Centro de visitantes",
   "transport_station": "Estación de transporte",
-  "guest_lounge": "Salón de invitados"
+  "guest_lounge": "Salón de invitados",
+  "form": {
+    "create_region": "Crear región",
+    "edit_region": "Editar región",
+    "save_region": "Guardar región",
+    "basic_info": "Información básica",
+    "identifier": "Identificador",
+    "releasedate": "Fecha de lanzamiento",
+    "unlocklevel": "Nivel de desbloqueo",
+    "translations": "Traducciones",
+    "messages": {
+      "createSuccess": "Región creada correctamente",
+      "editSuccess": "Región actualizada correctamente",
+      "confirmDelete": "¿Realmente deseas eliminar esta región?",
+      "deleteErrorTitle": "Eliminar región",
+      "deleteSuccess": "Región eliminada correctamente",
+      "requiredIdentifier": "El identificador es un campo obligatorio."
+    }
+  }
 }

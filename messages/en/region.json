@@ -16,5 +16,23 @@
   "admin_building_room": "Staff Room",
   "visitor_center": "Visitor Center",
   "transport_station": "Transport Station",
-  "guest_lounge": "Guest Lounge"
+  "guest_lounge": "Guest Lounge",
+  "form": {
+    "create_region": "Create Region",
+    "edit_region": "Edit Region",
+    "save_region": "Save Region",
+    "basic_info": "Basic Info",
+    "identifier": "Identifier",
+    "releasedate": "Release Date",
+    "unlocklevel": "Unlock Level",
+    "translations": "Translations",
+    "messages": {
+      "createSuccess": "Region successfully created",
+      "editSuccess": "Region successfully updated",
+      "confirmDelete": "Do you really want to delete this region?",
+      "deleteErrorTitle": "Delete Region",
+      "deleteSuccess": "Region successfully deleted",
+      "requiredIdentifier": "Identifier is a required field."
+    }
+  }
 }

@@ -16,5 +16,23 @@
   "admin_building_room": "Personeelsruimte",
   "visitor_center": "Bezoekerscentrum",
   "transport_station": "Transportstation",
-  "guest_lounge": "Gastenlounge"
+  "guest_lounge": "Gastenlounge",
+  "form": {
+    "create_region": "Regio aanmaken",
+    "edit_region": "Regio bewerken",
+    "save_region": "Regio opslaan",
+    "basic_info": "Basisgegevens",
+    "identifier": "Identifier",
+    "releasedate": "Releasedatum",
+    "unlocklevel": "Vrijschakel-niveau",
+    "translations": "Vertalingen",
+    "messages": {
+      "createSuccess": "Regio succesvol aangemaakt",
+      "editSuccess": "Regio succesvol bijgewerkt",
+      "confirmDelete": "Wil je deze regio echt verwijderen?",
+      "deleteErrorTitle": "Regio verwijderen",
+      "deleteSuccess": "Regio succesvol verwijderd",
+      "requiredIdentifier": "Identifier is een verplicht veld."
+    }
+  }
 }

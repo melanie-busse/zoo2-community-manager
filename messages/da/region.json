@@ -16,5 +16,23 @@
   "admin_building_room": "Medarbejderrum",
   "visitor_center": "Besøgscenter",
   "transport_station": "Transportstation",
-  "guest_lounge": "Gæstelounge"
+  "guest_lounge": "Gæstelounge",
+  "form": {
+    "create_region": "Opret region",
+    "edit_region": "Rediger region",
+    "save_region": "Gem region",
+    "basic_info": "Stamdata",
+    "identifier": "Identifier",
+    "releasedate": "Udgivelsesdato",
+    "unlocklevel": "Oplåsningsniveau",
+    "translations": "Oversættelser",
+    "messages": {
+      "createSuccess": "Region oprettet",
+      "editSuccess": "Region opdateret",
+      "confirmDelete": "Vil du virkelig slette denne region?",
+      "deleteErrorTitle": "Slet region",
+      "deleteSuccess": "Region slettet",
+      "requiredIdentifier": "Identifier er et obligatorisk felt."
+    }
+  }
 }
