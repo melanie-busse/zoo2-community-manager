@@ -5,6 +5,21 @@ export async function getRegionCount() {
   return prisma.region.count();
 }
 
+export async function getRegionById(id: number, locale: string = "de") {
+  try {
+    return await prisma.region.findUnique({
+      where: { id },
+      include: {
+        regionTexts: { where: { languageCode: locale } },
+        priceType: true,
+      },
+    });
+  } catch (error) {
+    console.error(`[RegionService] Error in getRegionById (${id}, ${locale}):`, error);
+    return null;
+  }
+}
+
 export async function getAllRegions(locale: string = "de") {
   try {
     return await prisma.region.findMany({

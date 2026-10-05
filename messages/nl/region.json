@@ -1,7 +1,9 @@
 {
   "overview_title": "Regio's",
+  "detail_title": "Regio",
   "name": "Naam",
   "unlock_level": "Ontgrendelniveau",
   "level_value": "Niveau {level}",
-  "breeding_slots": "Fokplaatsen"
+  "breeding_slots": "Fokplaatsen",
+  "price_type": "Valutatype"
 }

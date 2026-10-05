@@ -1,7 +1,9 @@
 {
   "overview_title": "Regioner",
+  "detail_title": "Region",
   "name": "Navn",
   "unlock_level": "Oplåsningsniveau",
   "level_value": "Niveau {level}",
-  "breeding_slots": "Avlspladser"
+  "breeding_slots": "Avlspladser",
+  "price_type": "Valutatype"
 }

@@ -237,6 +237,7 @@ model PriceType {
   image         String?         @db.VarChar(50)
   animals       Animal[]
   biome         Biome[]
+  regions       Region[]
   pricetypetext PriceTypeText[]
 
   @@map("pricetype")
@@ -373,10 +374,12 @@ model ZooInventoryStatue {
 model Region {
   id                  Int                  @id @default(autoincrement())
   price               Int
+  priceTypeId         Int?
   terrainid           Int
   releasedate         DateTime
   unlocklevel         Int
   identifier          String               @db.VarChar(255)
+  priceType           PriceType?           @relation(fields: [priceTypeId], references: [id])
   biomes              Biome[]
   regionTexts         RegionText[]
   collections         Collection[]
@@ -386,7 +389,9 @@ model Region {
   breedingCenters     BreedingCenter[]
   guestLounges        GuestLounge[]
   visitorCenters      VisitorCenter[]
+  transportStation    TransportStation[]
 
+  @@index([priceTypeId], map: "region_priceTypeId_fkey")
   @@map("region")
 }
 
@@ -584,4 +589,14 @@ model VisitorCenter {
   region    Region @relation(fields: [regionId], references: [id])
 
   @@map("visitorcenter")
+}
+
+model TransportStation {
+  id        Int    @id @default(autoincrement())
+  price     Int
+  pricetype Int
+  regionId  Int
+  region    Region @relation(fields: [regionId], references: [id])
+
+  @@map("transportstation")
 }

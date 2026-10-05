@@ -3,6 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { useRouter } from "@/i18n/routing";
 import CardContainer from "@/components/page-structure/Card/CardContainer";
 import CardHeaderRow from "@/components/page-structure/Card/CardHeaderRow";
 import CardDivider from "@/components/page-structure/Card/CardDevider";
@@ -31,11 +32,12 @@ interface Region {
 export default function RegionMobileCard({ region }: { region: Region }) {
   const t = useTranslations("region");
   const tCommon = useTranslations("common");
+  const router = useRouter();
   const name = region.regionTexts[0]?.name ?? region.identifier;
   const imgSrc = `/images/regions/${region.identifier}/icon.jpg`;
 
   return (
-    <CardContainer>
+    <CardContainer onClick={() => router.push(`/zoo/regions/${region.id}`)}>
       <CardHeaderRow>
         <Name>{name}</Name>
         <Image src={imgSrc} alt={name} width={48} height={48} style={{ objectFit: "cover", borderRadius: 4 }} />

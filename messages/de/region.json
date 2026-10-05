@@ -1,7 +1,9 @@
 {
   "overview_title": "Regionen",
+  "detail_title": "Region",
   "name": "Name",
   "unlock_level": "Freischalt-Level",
   "level_value": "Level {level}",
-  "breeding_slots": "Zuchtplätze"
+  "breeding_slots": "Zuchtplätze",
+  "price_type": "Währungstyp"
 }

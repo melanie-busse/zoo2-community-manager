@@ -6,6 +6,7 @@ import Image from "next/image";
 import Table from "@/components/page-structure/Table/Table";
 import * as Styles from "@/components/page-structure/Table/Table.styles";
 import CurrencyBadge from "@/components/ui/badges/CurrencyBadge";
+import LinkedRow from "@/components/page-structure/Table/LinkedRow";
 
 interface Region {
   id: number;
@@ -40,7 +41,7 @@ export default function RegionDesktopTable({ regions }: RegionDesktopTableProps)
           const name = region.regionTexts[0]?.name ?? region.identifier;
           const imgSrc = `/images/regions/${region.identifier}/icon.jpg`;
           return (
-            <tr key={region.id}>
+            <LinkedRow key={region.id} path={`/zoo/regions/${region.id}`}>
               <td>
                 <Styles.TableThumbnail>
                   <Image
@@ -58,7 +59,7 @@ export default function RegionDesktopTable({ regions }: RegionDesktopTableProps)
               </Styles.TableCellRight>
               <td>{t("level_value", { level: region.unlocklevel })}</td>
               <td>{region._count.breedingCenterSlots}</td>
-            </tr>
+            </LinkedRow>
           );
         })}
       </tbody>

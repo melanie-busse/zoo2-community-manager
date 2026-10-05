@@ -1,7 +1,9 @@
 {
   "overview_title": "Regions",
+  "detail_title": "Region",
   "name": "Name",
   "unlock_level": "Unlock Level",
   "level_value": "Level {level}",
-  "breeding_slots": "Breeding Slots"
+  "breeding_slots": "Breeding Slots",
+  "price_type": "Currency Type"
 }

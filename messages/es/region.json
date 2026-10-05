@@ -1,7 +1,9 @@
 {
   "overview_title": "Regiones",
+  "detail_title": "Región",
   "name": "Nombre",
   "unlock_level": "Nivel de desbloqueo",
   "level_value": "Nivel {level}",
-  "breeding_slots": "Espacios de cría"
+  "breeding_slots": "Espacios de cría",
+  "price_type": "Tipo de moneda"
 }
