@@ -600,3 +600,19 @@ model TransportStation {
 
   @@map("transportstation")
 }
+
+model ZooInventoryRegion {
+  id                   Int     @id @default(autoincrement())
+  userid               Int
+  regionId             Int
+  owned                Boolean @default(false)
+  breedingCenterSlots  Int?
+  admissionsBoothLevel Int?
+  adminBuilding        Boolean @default(false)
+  visitorCenter        Boolean @default(false)
+  transportStation     Boolean @default(false)
+  guestLounge          Boolean @default(false)
+
+  @@unique([userid, regionId])
+  @@map("zooinventoryregion")
+}
