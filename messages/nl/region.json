@@ -17,6 +17,16 @@
   "visitor_center": "Bezoekerscentrum",
   "transport_station": "Transportstation",
   "guest_lounge": "Gastenlounge",
+  "inventory": {
+    "title": "Mijn regio's",
+    "owned": "Ik heb het",
+    "breeding_slots_unlocked": "Fokplekken ontgrendeld",
+    "admissions_booth_level": "Kassa niveau",
+    "admin_building": "Personeelsvilla/-kamer",
+    "visitor_center": "Bezoekerscentrum",
+    "transport_station": "Transportstation",
+    "guest_lounge": "Gastenlounge"
+  },
   "form": {
     "create_region": "Regio aanmaken",
     "edit_region": "Regio bewerken",

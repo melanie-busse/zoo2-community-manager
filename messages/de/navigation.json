@@ -39,6 +39,7 @@
     "region_create": "Region anlegen",
     "collections": "Sammelalbum",
     "inventory_collections": "Sammelalbum",
+    "inventory_regions": "Regionen",
     "admin": "Admin",
     "import-animals": "Tiere importieren"
   },

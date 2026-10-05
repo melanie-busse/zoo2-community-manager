@@ -17,6 +17,16 @@
   "visitor_center": "Centre des visiteurs",
   "transport_station": "Station de transport",
   "guest_lounge": "Salon des invités",
+  "inventory": {
+    "title": "Mes régions",
+    "owned": "Je l'ai",
+    "breeding_slots_unlocked": "Places d'élevage débloquées",
+    "admissions_booth_level": "Niveau de caisse d'entrée",
+    "admin_building": "Villa/chambre du personnel",
+    "visitor_center": "Centre des visiteurs",
+    "transport_station": "Station de transport",
+    "guest_lounge": "Salon des invités"
+  },
   "form": {
     "create_region": "Créer une région",
     "edit_region": "Modifier la région",

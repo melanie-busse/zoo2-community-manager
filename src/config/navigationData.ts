@@ -119,6 +119,11 @@ export const navConfig: NavItem[] = [
         href: "/zooInventory/collections",
         requiresAuth: true,
       },
+      {
+        labelKey: "inventory_regions",
+        href: "/zooInventory/regions",
+        requiresAuth: true,
+      },
     ],
   },
 

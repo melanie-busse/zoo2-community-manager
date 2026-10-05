@@ -40,7 +40,8 @@
     "regions": "Régions",
     "region_create": "Ajouter une région",
     "collections": "Album de collection",
-    "inventory_collections": "Mon Album de Collection"
+    "inventory_collections": "Mon Album de Collection",
+    "inventory_regions": "Régions"
   },
   "inventory_collections": "Album de Collection"
 }

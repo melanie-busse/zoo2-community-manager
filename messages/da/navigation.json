@@ -40,7 +40,8 @@
     "regions": "Regioner",
     "region_create": "Tilføj region",
     "collections": "Samlealbum",
-    "inventory_collections": "Mit Samlealbum"
+    "inventory_collections": "Mit Samlealbum",
+    "inventory_regions": "Regioner"
   },
   "inventory_collections": "Samlealbum"
 }

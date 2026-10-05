@@ -17,6 +17,16 @@
   "visitor_center": "Visitor Center",
   "transport_station": "Transport Station",
   "guest_lounge": "Guest Lounge",
+  "inventory": {
+    "title": "My Regions",
+    "owned": "I have it",
+    "breeding_slots_unlocked": "Breeding slots unlocked",
+    "admissions_booth_level": "Admissions booth level",
+    "admin_building": "Staff villa/room",
+    "visitor_center": "Visitor center",
+    "transport_station": "Transport station",
+    "guest_lounge": "Guest lounge"
+  },
   "form": {
     "create_region": "Create Region",
     "edit_region": "Edit Region",

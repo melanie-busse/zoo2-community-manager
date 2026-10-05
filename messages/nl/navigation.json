@@ -40,7 +40,8 @@
     "regions": "Regio's",
     "region_create": "Regio toevoegen",
     "collections": "Verzamelalbum",
-    "inventory_collections": "Mijn Verzamelalbum"
+    "inventory_collections": "Mijn Verzamelalbum",
+    "inventory_regions": "Regio's"
   },
   "inventory_collections": "Verzamelalbum"
 }

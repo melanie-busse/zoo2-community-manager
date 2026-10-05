@@ -17,6 +17,16 @@
   "visitor_center": "Besøgscenter",
   "transport_station": "Transportstation",
   "guest_lounge": "Gæstelounge",
+  "inventory": {
+    "title": "Mine regioner",
+    "owned": "Jeg har",
+    "breeding_slots_unlocked": "Avlspladser låst op",
+    "admissions_booth_level": "Indgangskasse niveau",
+    "admin_building": "Personalevilla/-rum",
+    "visitor_center": "Besøgscenter",
+    "transport_station": "Transportstation",
+    "guest_lounge": "Gæstelounge"
+  },
   "form": {
     "create_region": "Opret region",
     "edit_region": "Rediger region",

@@ -17,6 +17,16 @@
   "visitor_center": "Besucherzentrum",
   "transport_station": "Transportstation",
   "guest_lounge": "Gästelounge",
+  "inventory": {
+    "title": "Meine Regionen",
+    "owned": "Habe ich",
+    "breeding_slots_unlocked": "Zuchtplätze freigeschaltet",
+    "admissions_booth_level": "Eingangskasse Level",
+    "admin_building": "Mitarbeitervilla/-zimmer",
+    "visitor_center": "Besucherzentrum",
+    "transport_station": "Transportstation",
+    "guest_lounge": "Gästelounge"
+  },
   "form": {
     "create_region": "Region anlegen",
     "edit_region": "Region bearbeiten",
