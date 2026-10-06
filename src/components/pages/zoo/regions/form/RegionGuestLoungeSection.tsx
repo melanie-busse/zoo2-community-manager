@@ -31,7 +31,7 @@ export default function RegionGuestLoungeSection({
   return (
     <InfoAccordion
       title={tRegion("guest_lounge")}
-      icon="/images/icons/visitors.jpg"
+      icon="/images/icons/buildings.png"
       defaultOpen={true}
     >
       <SectionColumn>

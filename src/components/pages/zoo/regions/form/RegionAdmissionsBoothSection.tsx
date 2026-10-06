@@ -57,7 +57,7 @@ export default function RegionAdmissionsBoothSection({
   return (
     <InfoAccordion
       title={tRegion("admissions_booth")}
-      icon="/images/icons/visitors.jpg"
+      icon="/images/currency/zoodollar.webp"
       defaultOpen={defaultOpen}
     >
       <SectionColumn>

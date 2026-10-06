@@ -9,7 +9,6 @@ import { mapRegionToForm } from "@/utils/RegionUtil";
 import { createRegionOnClient, updateRegionOnClient } from "@/service/frontend/Region";
 
 import RegionBasicSection from "./form/RegionBasicSection";
-import RegionPriceSection from "./form/RegionPriceSection";
 import RegionTranslationSection from "./form/RegionTranslationSection";
 import RegionBreedingCenterSection from "./form/RegionBreedingCenterSection";
 import RegionAdmissionsBoothSection from "./form/RegionAdmissionsBoothSection";
@@ -31,9 +30,7 @@ export default function RegionForm({ region, languages }: RegionFormProps) {
   const tCommon = useTranslations("common");
   const router = useRouter();
 
-  const [formData, setFormData] = useState<any>(() =>
-    mapRegionToForm(region ?? null, languages),
-  );
+  const [formData, setFormData] = useState<any>(() => mapRegionToForm(region ?? null, languages));
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const adminBuildingTitle = STAFF_ROOM_REGIONS.has(formData.identifier)
@@ -78,7 +75,6 @@ export default function RegionForm({ region, languages }: RegionFormProps) {
       <FormGrid>
         <Column>
           <RegionBasicSection formData={formData} setFormData={setFormData} />
-          <RegionPriceSection formData={formData} setFormData={setFormData} />
           <RegionTranslationSection
             formData={formData}
             setFormData={setFormData}
@@ -86,26 +82,34 @@ export default function RegionForm({ region, languages }: RegionFormProps) {
           />
         </Column>
         <Column>
-          <RegionBreedingCenterSection formData={formData} setFormData={setFormData} defaultOpen={!formData.id} />
-          <RegionAdmissionsBoothSection formData={formData} setFormData={setFormData} defaultOpen={!formData.id} />
+          <RegionBreedingCenterSection
+            formData={formData}
+            setFormData={setFormData}
+            defaultOpen={!formData.id}
+          />
+          <RegionAdmissionsBoothSection
+            formData={formData}
+            setFormData={setFormData}
+            defaultOpen={!formData.id}
+          />
           <RegionBuildingField
             formKey="adminBuilding"
             title={adminBuildingTitle}
-            icon="/images/icons/directional_sign.png"
+            icon="/images/icons/buildings.png"
             formData={formData}
             setFormData={setFormData}
           />
           <RegionBuildingField
             formKey="visitorCenter"
             title={tRegion("visitor_center")}
-            icon="/images/icons/visitors.jpg"
+            icon="/images/icons/buildings.png"
             formData={formData}
             setFormData={setFormData}
           />
           <RegionBuildingField
             formKey="transportStation"
             title={tRegion("transport_station")}
-            icon="/images/icons/directional_sign.png"
+            icon="/images/icons/buildings.png"
             formData={formData}
             setFormData={setFormData}
           />

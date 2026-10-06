@@ -32,7 +32,7 @@ export default function AdmissionsBoothCard({ booths, identifier }: AdmissionsBo
   return (
     <InfoAccordion
       title={tRegion("admissions_booth")}
-      icon="/images/icons/star.png"
+      icon="/images/currency/zoodollar.webp"
       defaultOpen={false}
     >
       <TopRow>

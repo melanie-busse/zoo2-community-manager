@@ -121,13 +121,13 @@ export default function RegionDetailContent({ region }: RegionDetailContentProps
       <CardsGrid>
         <BuildingCard
           title={adminBuildingTitle}
-          icon="/images/icons/directional_sign.png"
+          icon="/images/icons/buildings.png"
           imagePath={`/images/regions/${id}/adminbuilding/image.webp`}
           building={region.adminBuildings[0]}
         />
         <BuildingCard
           title={tRegion("visitor_center")}
-          icon="/images/icons/visitors.jpg"
+          icon="/images/icons/buildings.png"
           imagePath={`/images/regions/${id}/visitorcenter/image.webp`}
           building={region.visitorCenters[0]}
         />
@@ -136,14 +136,14 @@ export default function RegionDetailContent({ region }: RegionDetailContentProps
       <CardsGrid>
         <BuildingCard
           title={tRegion("transport_station")}
-          icon="/images/icons/directional_sign.png"
+          icon="/images/icons/buildings.png"
           imagePath={`/images/regions/${id}/transportstation/image.webp`}
           building={region.transportStation[0]}
         />
         {hasGuestLounge && (
           <BuildingCard
             title={tRegion("guest_lounge")}
-            icon="/images/icons/visitors.jpg"
+            icon="/images/icons/buildings.png"
             imagePath={`/images/regions/${id}/guestlounge/image.webp`}
             building={region.guestLounges[0]}
           />
