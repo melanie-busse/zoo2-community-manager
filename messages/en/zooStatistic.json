@@ -7,13 +7,13 @@
   },
   "regions": {
     "title": "Regions",
-    "total": "Number of Regions:",
-    "breedingSlots": "Total Breeding Slots:"
+    "total": "Count:",
+    "breedingSlots": "Breeding Slots:"
   },
   "animals": {
     "title": "Animals",
-    "total": "Total Animals:",
-    "specialCoats": "Total Special Coats:",
+    "total": "Animals:",
+    "specialCoats": "Special Coats:",
     "distribution": "Payment Distribution:",
     "zoodollar": "Animals for Zoodollar",
     "diamond": "Animals for Diamonds",

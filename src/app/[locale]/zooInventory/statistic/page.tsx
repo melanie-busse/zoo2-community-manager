@@ -2,7 +2,8 @@ import { getServerSession } from "next-auth/next";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { redirect } from "next/navigation";
 import PageWrapper from "@/components/page-structure/page/PageWrapper";
-import { getInventoryStatistics } from "@/service/InventoryStatisticService";
+import { getInventoryStatistics, getInventoryRegionStatistics } from "@/service/InventoryStatisticService";
+import { getRegionStatistics } from "@/service/ZooStatisticService";
 import { getCollectionCompletionStats } from "@/service/CollectionInventoryService";
 import InventoryStatisticClient from "./InventoryStatisticClient";
 
@@ -22,14 +23,23 @@ export default async function InventoryStatisticPage({
     ? parseInt(session.user.id, 10)
     : session.user.id;
 
-  const [biomeStatistics, collectionStats] = await Promise.all([
+  const [biomeStatistics, collectionStats, inventoryRegionStats, totalRegionStats] = await Promise.all([
     getInventoryStatistics(userId, locale),
     getCollectionCompletionStats(userId, locale),
+    getInventoryRegionStatistics(userId),
+    getRegionStatistics(),
   ]);
+
+  const regionStatistics = {
+    ownedRegions: inventoryRegionStats.ownedRegions,
+    ownedBreedingSlots: inventoryRegionStats.ownedBreedingSlots,
+    totalRegions: totalRegionStats.totalRegions,
+    totalBreedingSlots: totalRegionStats.totalBreedingSlots,
+  };
 
   return (
     <PageWrapper>
-      <InventoryStatisticClient biomeStatistics={biomeStatistics} collectionStats={collectionStats} />
+      <InventoryStatisticClient biomeStatistics={biomeStatistics} collectionStats={collectionStats} regionStatistics={regionStatistics} />
     </PageWrapper>
   );
 }

@@ -7,13 +7,13 @@
   },
   "regions": {
     "title": "Regio's",
-    "total": "Aantal regio's:",
-    "breedingSlots": "Totale fokplaatsen:"
+    "total": "Aantal:",
+    "breedingSlots": "Fokplaatsen:"
   },
   "animals": {
     "title": "Dieren",
-    "total": "Totaal dieren:",
-    "specialCoats": "Totaal kleurvarianten:",
+    "total": "Dieren:",
+    "specialCoats": "Kleurvarianten:",
     "distribution": "Betalingsverdeling:",
     "zoodollar": "Dieren voor Zoodollar",
     "diamond": "Dieren voor Diamanten",

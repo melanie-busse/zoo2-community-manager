@@ -7,13 +7,13 @@
   },
   "regions": {
     "title": "Regiones",
-    "total": "Número de regiones:",
-    "breedingSlots": "Plazas de cría totales:"
+    "total": "Cantidad:",
+    "breedingSlots": "Plazas de cría:"
   },
   "animals": {
     "title": "Animales",
-    "total": "Total de animales:",
-    "specialCoats": "Total de variantes de color:",
+    "total": "Animales:",
+    "specialCoats": "Variantes:",
     "distribution": "Distribución de pago:",
     "zoodollar": "Animales para Zoodollar",
     "diamond": "Animales para Diamantes",

@@ -2,6 +2,22 @@ import "server-only";
 import { prisma } from "@/lib/prisma";
 import { InventoryBiomeStatistic } from "@/types/inventoryStatistic";
 
+export async function getInventoryRegionStatistics(
+  userId: number,
+): Promise<{ ownedRegions: number; ownedBreedingSlots: number }> {
+  const [ownedRegions, slotAggregate] = await Promise.all([
+    prisma.zooInventoryRegion.count({ where: { userid: userId, owned: true } }),
+    prisma.zooInventoryRegion.aggregate({
+      where: { userid: userId, owned: true },
+      _sum: { breedingCenterSlots: true },
+    }),
+  ]);
+  return {
+    ownedRegions,
+    ownedBreedingSlots: slotAggregate._sum.breedingCenterSlots ?? 0,
+  };
+}
+
 export async function getInventoryStatistics(
   userId: number,
   locale: string = "de",
