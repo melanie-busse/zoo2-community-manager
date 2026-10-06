@@ -36,11 +36,11 @@ export default function RegionHeaderCard({ region }: RegionHeaderCardProps) {
     <Styles.DesktopCardContainer>
       <Styles.ImageWrapper>
         <RegionImageContainer>
-          <StyledRegionImage src={imagePath} alt={displayName} width={240} height={240} priority />
+          <StyledRegionImage src={imagePath} alt={displayName} width={50} height={50} priority />
         </RegionImageContainer>
       </Styles.ImageWrapper>
 
-      <Styles.InfoSection>
+      <InfoSection>
         <Styles.TitleRow>
           <Styles.TextContent>
             <Styles.TitleHeadlineRow>
@@ -74,7 +74,7 @@ export default function RegionHeaderCard({ region }: RegionHeaderCardProps) {
             </StatBox>
           </Styles.StatsGroup>
         </Styles.StatsGrid>
-      </Styles.InfoSection>
+      </InfoSection>
     </Styles.DesktopCardContainer>
   );
 }
@@ -96,8 +96,8 @@ const RegionImageContainer = styled.div`
   overflow: hidden;
 
   @media (min-width: 768px) {
-    width: 240px;
-    height: 240px;
+    width: 110px;
+    height: 110px;
   }
 `;
 
@@ -106,4 +106,13 @@ const StyledRegionImage = styled(NextImage)`
   height: 100%;
   object-fit: cover;
   object-position: center;
+`;
+
+const InfoSection = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  margin-left: 20px;
 `;

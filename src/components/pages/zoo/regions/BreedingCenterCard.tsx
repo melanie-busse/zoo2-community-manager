@@ -43,7 +43,7 @@ export default function BreedingCenterCard({
   const imagePath = `/images/regions/${identifier.toLowerCase()}/breedingcenter/image.webp`;
 
   return (
-    <InfoAccordion title={tRegion("breeding_center")} icon="/images/icons/breeding.png" defaultOpen={true}>
+    <InfoAccordion title={tRegion("breeding_center")} icon="/images/icons/breeding.png" defaultOpen={false}>
       <TopRow>
         <ImageWrapper>
           <StyledImage
@@ -55,15 +55,13 @@ export default function BreedingCenterCard({
         </ImageWrapper>
 
         {breedingCenter && (
-          <StatBox>
+          <PriceRow>
             <label>{tCommon("price")}</label>
-            <div className="value">
-              <CurrencyBadge
-                value={breedingCenter.price}
-                type={toCurrencyType(breedingCenter.pricetype)}
-              />
-            </div>
-          </StatBox>
+            <CurrencyBadge
+              value={breedingCenter.price}
+              type={toCurrencyType(breedingCenter.pricetype)}
+            />
+          </PriceRow>
         )}
       </TopRow>
 
@@ -96,8 +94,21 @@ export default function BreedingCenterCard({
 const TopRow = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: stretch;
   gap: 16px;
+`;
+
+const PriceRow = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+
+  label {
+    font-size: 0.8rem;
+    color: #666;
+  }
 `;
 
 const ImageWrapper = styled.div`

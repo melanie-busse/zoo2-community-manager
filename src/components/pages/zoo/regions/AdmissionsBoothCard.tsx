@@ -23,22 +23,29 @@ interface AdmissionsBooth {
 
 interface AdmissionsBoothCardProps {
   booths: AdmissionsBooth[];
+  identifier: string;
 }
 
-export default function AdmissionsBoothCard({ booths }: AdmissionsBoothCardProps) {
+export default function AdmissionsBoothCard({ booths, identifier }: AdmissionsBoothCardProps) {
   const tRegion = useTranslations("region");
-  const tCommon = useTranslations("common");
 
   return (
-    <InfoAccordion title={tRegion("admissions_booth")} icon="/images/icons/star.png" defaultOpen={true}>
+    <InfoAccordion
+      title={tRegion("admissions_booth")}
+      icon="/images/icons/star.png"
+      defaultOpen={false}
+    >
       <TopRow>
         <ImageWrapper>
           <NextImage
-            src="/images/placeholder.jpg"
+            src={`/images/regions/${identifier.toLowerCase()}/admissionbooth/image.jpg`}
             alt={tRegion("admissions_booth")}
             width={240}
             height={160}
             style={{ objectFit: "cover", display: "block" }}
+            onError={(e) => {
+              (e.target as HTMLImageElement).src = "/images/placeholder.jpg";
+            }}
           />
         </ImageWrapper>
       </TopRow>
@@ -55,7 +62,9 @@ export default function AdmissionsBoothCard({ booths }: AdmissionsBoothCardProps
           <tbody>
             {booths.map((b) => (
               <tr key={b.id}>
-                <Styles.TableCell style={{ textAlign: "left", fontWeight: "normal", color: "#333" }}>
+                <Styles.TableCell
+                  style={{ textAlign: "left", fontWeight: "normal", color: "#333" }}
+                >
                   {b.booth_level}
                 </Styles.TableCell>
                 <Styles.TableCell>{b.max_capacity.toLocaleString()}</Styles.TableCell>

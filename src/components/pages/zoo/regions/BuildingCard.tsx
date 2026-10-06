@@ -30,7 +30,7 @@ export default function BuildingCard({ title, icon, imagePath, building }: Build
 
   return (
     <InfoAccordion title={title} icon={icon} defaultOpen={true}>
-      <TopRow>
+      <CardBody>
         <ImageWrapper>
           <NextImage
             src={imagePath}
@@ -42,23 +42,34 @@ export default function BuildingCard({ title, icon, imagePath, building }: Build
         </ImageWrapper>
 
         {building && (
-          <StatBox>
+          <PriceRow>
             <label>{tCommon("price")}</label>
-            <div className="value">
-              <CurrencyBadge value={building.price} type={toCurrencyType(building.pricetype)} />
-            </div>
-          </StatBox>
+            <CurrencyBadge value={building.price} type={toCurrencyType(building.pricetype)} />
+          </PriceRow>
         )}
-      </TopRow>
+      </CardBody>
     </InfoAccordion>
   );
 }
 
-const TopRow = styled.div`
+const CardBody = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: stretch;
   gap: 16px;
+`;
+
+const PriceRow = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+
+  label {
+    font-size: 0.8rem;
+    color: #666;
+  }
 `;
 
 const ImageWrapper = styled.div`

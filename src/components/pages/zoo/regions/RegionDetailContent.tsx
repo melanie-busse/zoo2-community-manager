@@ -65,7 +65,7 @@ export default function RegionDetailContent({ region }: RegionDetailContentProps
 
   const id = region.identifier.toLowerCase();
   const hasGuestLounge = region.guestLounges.length > 0;
-  const hasBreedingCenter = region.breedingCenters.length > 0;
+  const hasBreedingCenter = region.breedingCenterSlots.length > 0;
   const hasAdmissionsBooth = region.admissionsBooths.length > 0;
 
   const STAFF_ROOM_REGIONS = new Set(["Aviary", "Aquarium", "Terrarium", "NocturnalHouse"]);
@@ -113,7 +113,7 @@ export default function RegionDetailContent({ region }: RegionDetailContentProps
             />
           )}
           {hasAdmissionsBooth && (
-            <AdmissionsBoothCard booths={region.admissionsBooths} />
+            <AdmissionsBoothCard booths={region.admissionsBooths} identifier={region.identifier} />
           )}
         </CardsGrid>
       )}
