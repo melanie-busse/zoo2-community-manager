@@ -5,6 +5,11 @@
     "biomes": "{count} Biomes",
     "regions": "{count} Régions"
   },
+  "regions": {
+    "title": "Régions",
+    "total": "Nombre de régions:",
+    "breedingSlots": "Places d'élevage totales:"
+  },
   "animals": {
     "title": "Animaux",
     "total": "Total des animaux:",

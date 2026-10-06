@@ -8,6 +8,14 @@ export async function getTotalCollectionCount(): Promise<number> {
   return prisma.collection.count();
 }
 
+export async function getRegionStatistics(): Promise<{ totalRegions: number; totalBreedingSlots: number }> {
+  const [totalRegions, totalBreedingSlots] = await Promise.all([
+    prisma.region.count(),
+    prisma.breedingCenterSlot.count(),
+  ]);
+  return { totalRegions, totalBreedingSlots };
+}
+
 export async function getZooStatistics(locale: string = "de"): Promise<BiomeStatistic[]> {
   try {
     const biomes = await prisma.biome.findMany({

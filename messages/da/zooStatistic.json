@@ -5,6 +5,11 @@
     "biomes": "{count} Biomer",
     "regions": "{count} Regioner"
   },
+  "regions": {
+    "title": "Regioner",
+    "total": "Antal regioner:",
+    "breedingSlots": "Samlede avlspladser:"
+  },
   "animals": {
     "title": "Dyr",
     "total": "Samlet antal dyr:",
