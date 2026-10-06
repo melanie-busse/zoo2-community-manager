@@ -33,7 +33,11 @@
       "Bash(taskkill //F //IM node.exe)",
       "Bash(for f:*)",
       "Bash(do echo:*)",
-      "Read(//d/Entwicklung/zoo2-community-manager/messages$f/**)"
+      "Read(//d/Entwicklung/zoo2-community-manager/messages$f/**)",
+      "Bash(awk '/^model AdmissionsBooth \\\\{/,/^\\\\}/' prisma/schema.prisma)",
+      "Bash(awk '/^model BreedingCenterSlot \\\\{/,/^\\\\}/' prisma/schema.prisma)",
+      "Bash(awk '/^model AdminBuilding \\\\{/,/^\\\\}/' prisma/schema.prisma)",
+      "Bash(python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\(list\\(d.get\\(''''links'''',{}\\).keys\\(\\)\\)[-3:]\\)\")"
     ]
   }
 }

@@ -64,30 +64,34 @@ export default function RegionInventoryCard({ region, inventory, onFieldChange }
         </CheckboxLabel>
       </CardHeaderRow>
 
-      <FieldRow onClick={(e) => e.stopPropagation()}>
-        <FieldLabel>{t("inventory.breeding_slots_unlocked")}</FieldLabel>
-        <StyledSelect
-          value={inv.breedingCenterSlots ?? 0}
-          onChange={(e) => onFieldChange(region.id, "breedingCenterSlots", Number(e.target.value))}
-        >
-          {Array.from({ length: slotCount + 1 }, (_, i) => (
-            <option key={i} value={i}>{i}</option>
-          ))}
-        </StyledSelect>
-      </FieldRow>
+      {slotCount > 0 && (
+        <FieldRow onClick={(e) => e.stopPropagation()}>
+          <FieldLabel>{t("inventory.breeding_slots_unlocked")}</FieldLabel>
+          <StyledSelect
+            value={inv.breedingCenterSlots ?? 0}
+            onChange={(e) => onFieldChange(region.id, "breedingCenterSlots", Number(e.target.value))}
+          >
+            {Array.from({ length: slotCount + 1 }, (_, i) => (
+              <option key={i} value={i}>{i}</option>
+            ))}
+          </StyledSelect>
+        </FieldRow>
+      )}
 
-      <FieldRow onClick={(e) => e.stopPropagation()}>
-        <FieldLabel>{t("inventory.admissions_booth_level")}</FieldLabel>
-        <StyledSelect
-          value={inv.admissionsBoothLevel ?? 0}
-          onChange={(e) => onFieldChange(region.id, "admissionsBoothLevel", Number(e.target.value))}
-        >
-          <option value={0}>0</option>
-          {boothLevels.map((level) => (
-            <option key={level} value={level}>{level}</option>
-          ))}
-        </StyledSelect>
-      </FieldRow>
+      {boothLevels.length > 0 && (
+        <FieldRow onClick={(e) => e.stopPropagation()}>
+          <FieldLabel>{t("inventory.admissions_booth_level")}</FieldLabel>
+          <StyledSelect
+            value={inv.admissionsBoothLevel ?? 0}
+            onChange={(e) => onFieldChange(region.id, "admissionsBoothLevel", Number(e.target.value))}
+          >
+            <option value={0}>0</option>
+            {boothLevels.map((level) => (
+              <option key={level} value={level}>{level}</option>
+            ))}
+          </StyledSelect>
+        </FieldRow>
+      )}
 
       <Divider />
 

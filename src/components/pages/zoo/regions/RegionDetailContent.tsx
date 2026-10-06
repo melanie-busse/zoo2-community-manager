@@ -65,6 +65,8 @@ export default function RegionDetailContent({ region }: RegionDetailContentProps
 
   const id = region.identifier.toLowerCase();
   const hasGuestLounge = region.guestLounges.length > 0;
+  const hasBreedingCenter = region.breedingCenters.length > 0;
+  const hasAdmissionsBooth = region.admissionsBooths.length > 0;
 
   const STAFF_ROOM_REGIONS = new Set(["Aviary", "Aquarium", "Terrarium", "NocturnalHouse"]);
   const adminBuildingTitle = STAFF_ROOM_REGIONS.has(region.identifier)
@@ -101,14 +103,20 @@ export default function RegionDetailContent({ region }: RegionDetailContentProps
       )}
       <RegionHeaderCard region={region} />
 
-      <CardsGrid>
-        <BreedingCenterCard
-          identifier={region.identifier}
-          breedingCenter={region.breedingCenters[0]}
-          slots={region.breedingCenterSlots}
-        />
-        <AdmissionsBoothCard booths={region.admissionsBooths} />
-      </CardsGrid>
+      {(hasBreedingCenter || hasAdmissionsBooth) && (
+        <CardsGrid>
+          {hasBreedingCenter && (
+            <BreedingCenterCard
+              identifier={region.identifier}
+              breedingCenter={region.breedingCenters[0]}
+              slots={region.breedingCenterSlots}
+            />
+          )}
+          {hasAdmissionsBooth && (
+            <AdmissionsBoothCard booths={region.admissionsBooths} />
+          )}
+        </CardsGrid>
+      )}
 
       <CardsGrid>
         <BuildingCard
