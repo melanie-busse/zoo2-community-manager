@@ -72,7 +72,13 @@ export default function RegionMobileCard({ region }: { region: Region }) {
             onDelete={handleDelete}
           />
         ) : (
-          <Image src={imgSrc} alt={name} width={48} height={48} style={{ objectFit: "cover", borderRadius: 4 }} />
+          <Image
+            src={imgSrc}
+            alt={name}
+            width={48}
+            height={48}
+            style={{ objectFit: "cover", borderRadius: 4 }}
+          />
         )}
       </CardHeaderRow>
       <CardDivider />
@@ -83,7 +89,7 @@ export default function RegionMobileCard({ region }: { region: Region }) {
         </InfoRow>
         <InfoRow>
           <span>{t("unlock_level")}</span>
-          <span>{t("level_value", { level: region.unlocklevel })}</span>
+          <span>{region.unlocklevel}</span>
         </InfoRow>
         <InfoRow>
           <span>{t("breeding_slots")}</span>

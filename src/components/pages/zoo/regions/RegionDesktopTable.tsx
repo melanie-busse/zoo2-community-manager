@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import styled from "styled-components";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useSession } from "next-auth/react";
@@ -59,8 +60,8 @@ export default function RegionDesktopTable({ regions }: RegionDesktopTableProps)
           <th></th>
           <th>{t("name")}</th>
           <Styles.TableHeaderRight>{tCommon("price")}</Styles.TableHeaderRight>
-          <th>{t("unlock_level")}</th>
-          <th>{t("breeding_slots")}</th>
+          <Styles.TableHeaderRight>{t("unlock_level")}</Styles.TableHeaderRight>
+          <Styles.TableHeaderRight>{t("breeding_slots")}</Styles.TableHeaderRight>
           {isAdmin && <Styles.TableHeaderRight>{tCommon("actions")}</Styles.TableHeaderRight>}
         </tr>
       </thead>
@@ -81,12 +82,14 @@ export default function RegionDesktopTable({ regions }: RegionDesktopTableProps)
                   />
                 </Styles.TableThumbnail>
               </td>
-              <td><strong>{name}</strong></td>
-              <Styles.TableCellRight>
+              <td>
+                <strong>{name}</strong>
+              </td>
+              <PriceCellRight>
                 <CurrencyBadge value={region.price} type="Diamond" />
-              </Styles.TableCellRight>
-              <td>{t("level_value", { level: region.unlocklevel })}</td>
-              <td>{region._count.breedingCenterSlots}</td>
+              </PriceCellRight>
+              <CellRight>{region.unlocklevel}</CellRight>
+              <CellRight>{region._count.breedingCenterSlots}</CellRight>
               {isAdmin && (
                 <Styles.TableCellRight>
                   <ActionGroupBadge
@@ -103,3 +106,10 @@ export default function RegionDesktopTable({ regions }: RegionDesktopTableProps)
     </Table>
   );
 }
+
+const CellRight = styled.td`
+  text-align: right;
+  padding-right: 20px !important;
+`;
+
+const PriceCellRight = CellRight;

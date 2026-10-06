@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
+import styled from "styled-components";
 import RegionDesktopTable from "./RegionDesktopTable";
 import RegionMobileCard from "./RegionMobileCard";
-import MobileView from "@/components/page-structure/MobileView";
 
 interface Region {
   id: number;
@@ -21,12 +21,32 @@ interface RegionOverviewContentProps {
 export default function RegionOverviewContent({ regions }: RegionOverviewContentProps) {
   return (
     <>
-      <RegionDesktopTable regions={regions} />
-      <MobileView>
+      <DesktopView>
+        <RegionDesktopTable regions={regions} />
+      </DesktopView>
+      <MobileCardList>
         {regions.map((region) => (
           <RegionMobileCard key={region.id} region={region} />
         ))}
-      </MobileView>
+      </MobileCardList>
     </>
   );
 }
+
+const DesktopView = styled.div`
+  @media (max-width: 768px) {
+    display: none;
+  }
+`;
+
+const MobileCardList = styled.div`
+  display: none;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0 2px;
+    width: 100%;
+  }
+`;
