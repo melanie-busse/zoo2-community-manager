@@ -42,23 +42,18 @@ export default function RegionHeaderCard({ region }: RegionHeaderCardProps) {
       </Styles.ImageWrapper>
 
       <InfoSection>
-        <Styles.TitleRow>
-          <Styles.TextContent>
-            <Styles.TitleHeadlineRow>
-              <h1>{displayName}</h1>
-            </Styles.TitleHeadlineRow>
-
-            <Styles.ReleaseDate>
-              <span className="label">📅 {tCommon("release")}:</span>{" "}
-              <span className="date">
-                <FormattedDate
-                  date={region.releasedate}
-                  options={{ year: "numeric", month: "long", day: "numeric" }}
-                />
-              </span>
-            </Styles.ReleaseDate>
-          </Styles.TextContent>
-        </Styles.TitleRow>
+        <TitleBlock>
+          <h1>{displayName}</h1>
+          <Styles.ReleaseDate>
+            <span className="label">📅 {tCommon("release")}:</span>{" "}
+            <span className="date">
+              <FormattedDate
+                date={region.releasedate}
+                options={{ year: "numeric", month: "long", day: "numeric" }}
+              />
+            </span>
+          </Styles.ReleaseDate>
+        </TitleBlock>
 
         <Styles.StatsGrid>
           <Styles.StatsGroup>
@@ -90,25 +85,17 @@ export default function RegionHeaderCard({ region }: RegionHeaderCardProps) {
 }
 
 const RegionImageContainer = styled.div`
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  max-width: 400px;
-  margin: 0 auto;
-
+  flex-shrink: 0;
+  width: 110px;
+  height: 110px;
   border-radius: 20px;
   border: 2px solid #004d4d;
   background: white;
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.06);
-
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
-
-  @media (min-width: 768px) {
-    width: 110px;
-    height: 110px;
-  }
 `;
 
 const StyledRegionImage = styled(NextImage)`
@@ -122,7 +109,18 @@ const InfoSection = styled.div`
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: ${({ theme }) => theme.spacing(2)};
+  min-width: 0;
+`;
+
+const TitleBlock = styled.div`
   width: 100%;
-  margin-left: 20px;
+
+  h1 {
+    color: #2d5a27;
+    margin: 0 0 4px 0;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.2;
+  }
 `;

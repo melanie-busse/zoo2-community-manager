@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.3
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Erstellungszeit: 05. Okt 2026 um 10:55
--- Server-Version: 10.4.32-MariaDB
--- PHP-Version: 8.2.12
+-- Host: db:3306
+-- Erstellungszeit: 07. Okt 2026 um 10:28
+-- Server-Version: 10.11.18-MariaDB-ubu2204
+-- PHP-Version: 8.3.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Datenbank: `zoo2-community-manager`
+-- Datenbank: `zoo2_prod`
 --
 
 -- --------------------------------------------------------
@@ -49,7 +49,7 @@ INSERT INTO `adminbuilding` (`id`, `price`, `pricetype`, `regionId`) VALUES
 (8, 10000, 1, 8),
 (9, 20000, 1, 9),
 (10, 30000, 1, 10),
-(11, 50, 2, 11);
+(14, 50, 2, 11);
 
 -- --------------------------------------------------------
 
@@ -10240,7 +10240,8 @@ INSERT INTO `breedingcenter` (`id`, `price`, `pricetype`, `regionId`) VALUES
 (7, 25000, 1, 7),
 (8, 25000, 1, 8),
 (9, 100000, 1, 9),
-(10, 150000, 1, 10);
+(10, 150000, 1, 10),
+(13, 0, 1, 11);
 
 -- --------------------------------------------------------
 
@@ -10399,7 +10400,7 @@ INSERT INTO `breedingcenterslots` (`id`, `slot`, `price`, `pricetype`, `regionId
 CREATE TABLE `category` (
   `id` int(11) NOT NULL,
   `identifier` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Daten für Tabelle `category`
@@ -10419,7 +10420,7 @@ CREATE TABLE `categorytext` (
   `categoryId` int(11) NOT NULL,
   `languageCode` varchar(5) NOT NULL,
   `name` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Daten für Tabelle `categorytext`
@@ -10428,10 +10429,33 @@ CREATE TABLE `categorytext` (
 INSERT INTO `categorytext` (`id`, `categoryId`, `languageCode`, `name`) VALUES
 (1, 1, 'de', 'Winter'),
 (2, 1, 'en', 'Winter'),
-(3, 1, 'da', 'Vinter'),
-(4, 1, 'es', 'invierno'),
-(5, 1, 'fr', 'hiver'),
-(6, 1, 'nl', 'winter');
+(3, 1, 'de', 'Winter'),
+(4, 1, 'en', 'Winter'),
+(5, 1, 'da', 'Vinter'),
+(6, 1, 'es', 'invierno'),
+(7, 1, 'fr', 'hiver'),
+(8, 1, 'nl', 'winter');
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `clubhouse`
+--
+
+CREATE TABLE `clubhouse` (
+  `id` int(11) NOT NULL,
+  `price` int(11) NOT NULL,
+  `pricetype` int(11) NOT NULL,
+  `regionId` int(11) NOT NULL,
+  `unlocklevel` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Daten für Tabelle `clubhouse`
+--
+
+INSERT INTO `clubhouse` (`id`, `price`, `pricetype`, `regionId`, `unlocklevel`) VALUES
+(1, 20000, 1, 1, 16);
 
 -- --------------------------------------------------------
 
@@ -10444,8 +10468,8 @@ CREATE TABLE `collection` (
   `identifier` varchar(255) NOT NULL,
   `stars` int(11) NOT NULL,
   `regionId` int(11) NOT NULL,
-  `rewardAnimalId` int(11) DEFAULT NULL,
-  `rewardSpecialCoatId` int(11) DEFAULT NULL
+  `rewardAnimalId` int(11) NOT NULL,
+  `rewardSpecialCoatId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -10539,9 +10563,9 @@ CREATE TABLE `collectionrequirement` (
   `type` enum('ANIMAL','DECORATION') NOT NULL,
   `requiredLevel` int(11) DEFAULT NULL,
   `itemName` varchar(255) NOT NULL,
-  `animalId` int(11) DEFAULT NULL,
-  `specialCoatId` int(11) DEFAULT NULL,
-  `decorationId` int(11) DEFAULT NULL
+  `animalId` int(11) NOT NULL,
+  `specialCoatId` int(11) NOT NULL,
+  `decorationId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
@@ -11579,7 +11603,7 @@ CREATE TABLE `contest` (
   `id` int(11) NOT NULL,
   `startDate` datetime(3) NOT NULL,
   `endDate` datetime(3) NOT NULL,
-  `active` tinyint(4) NOT NULL
+  `active` tinyint(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -11608,7 +11632,7 @@ CREATE TABLE `contestspecialcoat` (
   `id` int(11) NOT NULL,
   `contestId` int(11) NOT NULL,
   `specialCoatId` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -11635,7 +11659,7 @@ CREATE TABLE `decoration` (
   `pricetype` int(11) NOT NULL,
   `popularity` int(11) NOT NULL,
   `identifier` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Daten für Tabelle `decoration`
@@ -11661,7 +11685,7 @@ CREATE TABLE `decorationtext` (
   `decorationId` int(11) NOT NULL,
   `languageCode` varchar(5) NOT NULL,
   `name` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Daten für Tabelle `decorationtext`
@@ -11710,6 +11734,27 @@ INSERT INTO `decorationtext` (`id`, `decorationId`, `languageCode`, `name`) VALU
 (40, 7, 'fr', 'Magnifique sapin de Noël'),
 (41, 7, 'es', 'Hermoso árbol de Navidad'),
 (42, 7, 'nl', 'Mooie kerstboom');
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `designboutique`
+--
+
+CREATE TABLE `designboutique` (
+  `id` int(11) NOT NULL,
+  `price` int(11) NOT NULL,
+  `pricetype` int(11) NOT NULL,
+  `regionId` int(11) NOT NULL,
+  `unlocklevel` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Daten für Tabelle `designboutique`
+--
+
+INSERT INTO `designboutique` (`id`, `price`, `pricetype`, `regionId`, `unlocklevel`) VALUES
+(1, 50000, 1, 1, 10);
 
 -- --------------------------------------------------------
 
@@ -12043,25 +12088,26 @@ CREATE TABLE `region` (
   `terrainid` int(11) NOT NULL,
   `releasedate` datetime(3) NOT NULL,
   `unlocklevel` int(11) NOT NULL,
-  `identifier` varchar(255) NOT NULL
+  `identifier` varchar(255) NOT NULL,
+  `priceTypeId` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Daten für Tabelle `region`
 --
 
-INSERT INTO `region` (`id`, `price`, `terrainid`, `releasedate`, `unlocklevel`, `identifier`) VALUES
-(1, 0, 100, '2018-03-27 00:00:00.000', 0, 'MainZoo'),
-(2, 50, 300, '2021-03-03 00:00:00.000', 30, 'FirGrove'),
-(3, 100, 500, '2022-03-22 00:00:00.000', 40, 'KujaliPark'),
-(4, 100, 600, '2025-11-25 00:00:00.000', 45, 'RainforestPark'),
-(5, 100, 700, '2024-11-26 00:00:00.000', 55, 'PolarPark'),
-(6, 150, 800, '2023-11-21 00:00:00.000', 70, 'OceansideZoo'),
-(7, 75, 0, '2021-10-12 00:00:00.000', 30, 'Terrarium'),
-(8, 75, 0, '2023-02-21 00:00:00.000', 50, 'Aquarium'),
-(9, 125, 0, '2024-03-07 00:00:00.000', 80, 'NocturnalHouse'),
-(10, 150, 0, '2026-04-21 00:00:00.000', 90, 'Aviary'),
-(11, 190, 0, '2025-05-20 00:00:00.000', 100, 'RescueCenter');
+INSERT INTO `region` (`id`, `price`, `terrainid`, `releasedate`, `unlocklevel`, `identifier`, `priceTypeId`) VALUES
+(1, 0, 1, '2018-03-27 00:00:00.000', 0, 'mainzoo', 2),
+(2, 50, 2, '2021-03-03 00:00:00.000', 30, 'firgrove', 2),
+(3, 100, 3, '2022-03-22 00:00:00.000', 40, 'kujalipark', 2),
+(4, 100, 6, '2025-11-25 00:00:00.000', 45, 'rainforestpark', 2),
+(5, 100, 5, '2024-11-26 00:00:00.000', 55, 'polarpark', 2),
+(6, 150, 4, '2023-11-21 00:00:00.000', 70, 'oceansidezoo', 2),
+(7, 75, 0, '2021-10-12 00:00:00.000', 30, 'terrarium', 2),
+(8, 75, 0, '2023-02-21 00:00:00.000', 50, 'aquarium', 2),
+(9, 125, 0, '2024-03-07 00:00:00.000', 80, 'nocturnalhouse', 2),
+(10, 150, 0, '2026-04-21 00:00:00.000', 90, 'aviary', 2),
+(11, 190, 0, '2025-05-20 00:00:00.000', 100, 'rescuecenter', 2);
 
 -- --------------------------------------------------------
 
@@ -12131,22 +12177,22 @@ INSERT INTO `regiontext` (`id`, `regionid`, `languageCode`, `name`) VALUES
 (48, 10, 'fr', 'Volière'),
 (49, 10, 'es', 'Pajarera'),
 (50, 10, 'nl', 'Volière'),
-(51, 11, 'da', 'Redningscenter'),
-(52, 11, 'en', 'Rescue Center'),
-(53, 11, 'fr', 'Centre de sauvetage'),
-(54, 11, 'es', 'Centro de rescate'),
-(55, 11, 'nl', 'Reddingscentrum'),
 (56, 1, 'de', 'Hauptzoo'),
 (57, 2, 'de', 'Tannenhain'),
 (58, 3, 'de', 'Kujali Park'),
-(59, 4, 'de', 'Regenwaldpark'),
-(60, 5, 'de', 'Polarpark'),
-(61, 6, 'de', 'Küstenzoo'),
+(59, 4, 'de', 'Regenwald-Park'),
+(60, 5, 'de', 'Polar Park'),
+(61, 6, 'de', 'Freiwasser-Zoo'),
 (62, 7, 'de', 'Terrarium'),
 (63, 8, 'de', 'Aquarium'),
-(64, 9, 'de', 'Nachttierhaus'),
+(64, 9, 'de', 'Noctarium'),
 (65, 10, 'de', 'Aviarium'),
-(66, 11, 'de', 'Auffangstation');
+(79, 11, 'da', 'Redningscenter'),
+(80, 11, 'de', 'Auffangstation'),
+(81, 11, 'en', 'Rescue Center'),
+(82, 11, 'es', 'Centro de rescate'),
+(83, 11, 'fr', 'Centre de sauvetage'),
+(84, 11, 'nl', 'Reddingscentrum');
 
 -- --------------------------------------------------------
 
@@ -12421,7 +12467,7 @@ CREATE TABLE `specialcoatorigin` (
   `id` int(11) NOT NULL,
   `specialCoatId` int(11) NOT NULL,
   `originId` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Daten für Tabelle `specialcoatorigin`
@@ -13572,6 +13618,85 @@ INSERT INTO `specialcoatstext` (`id`, `specialCoatId`, `languageCode`, `name`, `
 -- --------------------------------------------------------
 
 --
+-- Tabellenstruktur für Tabelle `terrain`
+--
+
+CREATE TABLE `terrain` (
+  `id` int(11) NOT NULL,
+  `regionId` int(11) NOT NULL,
+  `identifier` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Daten für Tabelle `terrain`
+--
+
+INSERT INTO `terrain` (`id`, `regionId`, `identifier`) VALUES
+(1, 1, 'grassland'),
+(2, 2, 'forest'),
+(3, 3, 'savanna'),
+(4, 6, 'water'),
+(5, 5, 'ice'),
+(6, 4, 'jungle');
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `terraintext`
+--
+
+CREATE TABLE `terraintext` (
+  `id` int(11) NOT NULL,
+  `terrainid` int(11) NOT NULL,
+  `languageCode` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Daten für Tabelle `terraintext`
+--
+
+INSERT INTO `terraintext` (`id`, `terrainid`, `languageCode`, `name`) VALUES
+(1, 1, 'de', 'Gras'),
+(2, 1, 'en', 'Grassland'),
+(3, 1, 'da', 'Græs'),
+(4, 1, 'nl', 'Gras'),
+(5, 1, 'es', 'Hierba'),
+(6, 1, 'fr', 'Herbe'),
+(7, 2, 'de', 'Wald'),
+(8, 2, 'en', 'Forest'),
+(9, 2, 'da', 'Skov'),
+(10, 2, 'nl', 'Bos'),
+(11, 2, 'es', 'Bosque'),
+(12, 2, 'fr', 'Forêt'),
+(13, 3, 'de', 'Savanne'),
+(14, 3, 'en', 'Savanna'),
+(15, 3, 'da', 'Savanne'),
+(16, 3, 'nl', 'Savanne'),
+(17, 3, 'es', 'Sabana'),
+(18, 3, 'fr', 'Savane'),
+(19, 4, 'de', 'Wasser'),
+(20, 4, 'en', 'Water'),
+(21, 4, 'da', 'Vand'),
+(22, 4, 'nl', 'Water'),
+(23, 4, 'es', 'Agua'),
+(24, 4, 'fr', 'Eau'),
+(25, 5, 'de', 'Eis'),
+(26, 5, 'en', 'Ice'),
+(27, 5, 'da', 'Is'),
+(28, 5, 'nl', 'Ijs'),
+(29, 5, 'es', 'Hielo'),
+(30, 5, 'fr', 'Glace'),
+(31, 6, 'de', 'Dschungel'),
+(32, 6, 'en', 'Jungle'),
+(33, 6, 'da', 'Jungle'),
+(34, 6, 'nl', 'Jungle'),
+(35, 6, 'es', 'Selva'),
+(36, 6, 'fr', 'Jungle');
+
+-- --------------------------------------------------------
+
+--
 -- Tabellenstruktur für Tabelle `transportstation`
 --
 
@@ -13579,7 +13704,6 @@ CREATE TABLE `transportstation` (
   `id` int(11) NOT NULL,
   `price` int(11) NOT NULL,
   `pricetype` int(11) NOT NULL,
-  `unlocklevel` int(11) NOT NULL,
   `regionId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -13587,18 +13711,18 @@ CREATE TABLE `transportstation` (
 -- Daten für Tabelle `transportstation`
 --
 
-INSERT INTO `transportstation` (`id`, `price`, `pricetype`, `unlocklevel`, `regionId`) VALUES
-(1, 0, 0, 0, 1),
-(2, 100, 2, 40, 3),
-(3, 100, 2, 45, 4),
-(4, 100, 2, 55, 5),
-(5, 50, 2, 62, 2),
-(6, 150, 2, 70, 6),
-(7, 75, 2, 30, 7),
-(8, 75, 2, 50, 8),
-(9, 125, 2, 80, 9),
-(10, 150, 2, 90, 10),
-(11, 190, 2, 100, 11);
+INSERT INTO `transportstation` (`id`, `price`, `pricetype`, `regionId`) VALUES
+(1, 0, 0, 1),
+(2, 100, 2, 3),
+(3, 100, 2, 4),
+(4, 100, 2, 5),
+(5, 50, 2, 2),
+(6, 150, 2, 6),
+(7, 75, 2, 7),
+(8, 75, 2, 8),
+(9, 125, 2, 9),
+(10, 150, 2, 10),
+(14, 190, 2, 11);
 
 -- --------------------------------------------------------
 
@@ -13652,7 +13776,8 @@ INSERT INTO `visitorcenter` (`id`, `price`, `pricetype`, `regionId`) VALUES
 (7, 30, 2, 7),
 (8, 30, 2, 8),
 (9, 30, 2, 9),
-(10, 30, 2, 10);
+(10, 30, 2, 10),
+(13, 30, 2, 11);
 
 -- --------------------------------------------------------
 
@@ -14766,6 +14891,44 @@ INSERT INTO `zooinventorycontestspecialcoat` (`id`, `specialcoatid`, `userid`, `
 -- --------------------------------------------------------
 
 --
+-- Tabellenstruktur für Tabelle `zooinventoryregion`
+--
+
+CREATE TABLE `zooinventoryregion` (
+  `id` int(11) NOT NULL,
+  `userid` int(11) NOT NULL,
+  `regionId` int(11) NOT NULL,
+  `owned` tinyint(1) NOT NULL DEFAULT 0,
+  `breedingCenterSlots` int(11) DEFAULT NULL,
+  `admissionsBoothLevel` int(11) DEFAULT NULL,
+  `adminBuilding` tinyint(1) NOT NULL DEFAULT 0,
+  `visitorCenter` tinyint(1) NOT NULL DEFAULT 0,
+  `transportStation` tinyint(1) NOT NULL DEFAULT 0,
+  `guestLounge` tinyint(1) NOT NULL DEFAULT 0,
+  `desingBoutique` tinyint(1) NOT NULL DEFAULT 0,
+  `clubHouse` tinyint(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Daten für Tabelle `zooinventoryregion`
+--
+
+INSERT INTO `zooinventoryregion` (`id`, `userid`, `regionId`, `owned`, `breedingCenterSlots`, `admissionsBoothLevel`, `adminBuilding`, `visitorCenter`, `transportStation`, `guestLounge`, `desingBoutique`, `clubHouse`) VALUES
+(1, 1, 2, 1, 8, 7, 1, 1, 1, 1, 0, 0),
+(2, 1, 1, 1, 17, 10, 1, 1, 1, 1, 1, 1),
+(3, 1, 3, 1, 12, 10, 1, 1, 1, 1, 0, 0),
+(4, 1, 4, 1, 9, 10, 1, 1, 1, 1, 0, 0),
+(5, 1, 5, 1, 12, 10, 1, 1, 1, 1, 0, 0),
+(6, 1, 6, 1, 12, 10, 1, 1, 1, 1, 0, 0),
+(7, 1, 7, 1, 11, 10, 1, 1, 1, 0, 0, 0),
+(8, 1, 8, 1, 10, 10, 1, 1, 1, 0, 0, 0),
+(9, 1, 9, 1, 7, 10, 1, 1, 1, 0, 0, 0),
+(10, 1, 10, 1, 4, 10, 1, 1, 1, 0, 0, 0),
+(11, 1, 11, 1, NULL, NULL, 1, 1, 1, 0, 0, 0);
+
+-- --------------------------------------------------------
+
+--
 -- Tabellenstruktur für Tabelle `zooinventoryspecialcoat`
 --
 
@@ -14776,9 +14939,9 @@ CREATE TABLE `zooinventoryspecialcoat` (
   `count` int(11) DEFAULT NULL,
   `level10` tinyint(1) DEFAULT NULL,
   `level20` tinyint(1) DEFAULT NULL,
-  `glitteranimal` tinyint(1) DEFAULT NULL,
+  `glitteranimal` tinyint(4) DEFAULT NULL,
   `regionId` int(11) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Daten für Tabelle `zooinventoryspecialcoat`
@@ -15111,28 +15274,28 @@ ALTER TABLE `category`
 -- Indizes für die Tabelle `categorytext`
 --
 ALTER TABLE `categorytext`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indizes für die Tabelle `clubhouse`
+--
+ALTER TABLE `clubhouse`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `categoryText_categoryId_languageCode_key` (`categoryId`,`languageCode`);
+  ADD KEY `clubhouse_regionId_fkey` (`regionId`);
 
 --
 -- Indizes für die Tabelle `collection`
 --
 ALTER TABLE `collection`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `collection_identifier_key` (`identifier`),
-  ADD KEY `collection_regionId_fkey` (`regionId`),
-  ADD KEY `collection_rewardAnimalId_fkey` (`rewardAnimalId`),
-  ADD KEY `collection_rewardSpecialCoatId_fkey` (`rewardSpecialCoatId`);
+  ADD UNIQUE KEY `collection_identifier_key` (`identifier`);
 
 --
 -- Indizes für die Tabelle `collectionrequirement`
 --
 ALTER TABLE `collectionrequirement`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `collectionRequirement_collectionId_idx` (`collectionId`),
-  ADD KEY `collectionrequirement_animalId_fkey` (`animalId`),
-  ADD KEY `collectionrequirement_specialCoatId_fkey` (`specialCoatId`),
-  ADD KEY `collectionrequirement_decorationId_fkey` (`decorationId`);
+  ADD KEY `collectionRequirement_collectionId_idx` (`collectionId`);
 
 --
 -- Indizes für die Tabelle `collectiontext`
@@ -15170,22 +15333,27 @@ ALTER TABLE `contestspecialcoat`
 --
 ALTER TABLE `conteststatue`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `conteststatue_animalId_fkey` (`animalId`),
-  ADD KEY `conteststatue_contestId_fkey` (`contestId`);
+  ADD KEY `conteststatue_animalId_fkey` (`animalId`) USING BTREE,
+  ADD KEY `conteststatue_contestId_fkey` (`contestId`) USING BTREE;
 
 --
 -- Indizes für die Tabelle `decoration`
 --
 ALTER TABLE `decoration`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `decoration_categoryId_fkey` (`categoryId`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indizes für die Tabelle `decorationtext`
 --
 ALTER TABLE `decorationtext`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indizes für die Tabelle `designboutique`
+--
+ALTER TABLE `designboutique`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `decorationText_decorationId_languageCode_key` (`decorationId`,`languageCode`);
+  ADD KEY `designboutique_regionId_fkey` (`regionId`);
 
 --
 -- Indizes für die Tabelle `guestlounge`
@@ -15232,7 +15400,8 @@ ALTER TABLE `pricetypetext`
 -- Indizes für die Tabelle `region`
 --
 ALTER TABLE `region`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `region_priceTypeId_fkey` (`priceTypeId`);
 
 --
 -- Indizes für die Tabelle `regiontext`
@@ -15276,6 +15445,19 @@ ALTER TABLE `specialcoatorigin`
 ALTER TABLE `specialcoatstext`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `specialCoatsText_specialCoatId_languageCode_key` (`specialCoatId`,`languageCode`);
+
+--
+-- Indizes für die Tabelle `terrain`
+--
+ALTER TABLE `terrain`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indizes für die Tabelle `terraintext`
+--
+ALTER TABLE `terraintext`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `terrainText_terrainId_idx` (`terrainid`);
 
 --
 -- Indizes für die Tabelle `transportstation`
@@ -15335,6 +15517,13 @@ ALTER TABLE `zooinventorycontestspecialcoat`
   ADD UNIQUE KEY `userid_specialCoatId_contest` (`userid`,`specialcoatid`);
 
 --
+-- Indizes für die Tabelle `zooinventoryregion`
+--
+ALTER TABLE `zooinventoryregion`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `zooinventoryregion_userid_regionId_key` (`userid`,`regionId`);
+
+--
 -- Indizes für die Tabelle `zooinventoryspecialcoat`
 --
 ALTER TABLE `zooinventoryspecialcoat`
@@ -15356,13 +15545,13 @@ ALTER TABLE `zooinventorystatue`
 -- AUTO_INCREMENT für Tabelle `adminbuilding`
 --
 ALTER TABLE `adminbuilding`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT für Tabelle `admissionsbooths`
 --
 ALTER TABLE `admissionsbooths`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
 
 --
 -- AUTO_INCREMENT für Tabelle `animal`
@@ -15392,7 +15581,7 @@ ALTER TABLE `animalxp`
 -- AUTO_INCREMENT für Tabelle `biome`
 --
 ALTER TABLE `biome`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4101;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4102;
 
 --
 -- AUTO_INCREMENT für Tabelle `biometext`
@@ -15404,13 +15593,13 @@ ALTER TABLE `biometext`
 -- AUTO_INCREMENT für Tabelle `breedingcenter`
 --
 ALTER TABLE `breedingcenter`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT für Tabelle `breedingcenterslots`
 --
 ALTER TABLE `breedingcenterslots`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=130;
 
 --
 -- AUTO_INCREMENT für Tabelle `category`
@@ -15422,7 +15611,13 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT für Tabelle `categorytext`
 --
 ALTER TABLE `categorytext`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT für Tabelle `clubhouse`
+--
+ALTER TABLE `clubhouse`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT für Tabelle `collection`
@@ -15446,31 +15641,31 @@ ALTER TABLE `collectiontext`
 -- AUTO_INCREMENT für Tabelle `contest`
 --
 ALTER TABLE `contest`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=150054;
 
 --
 -- AUTO_INCREMENT für Tabelle `contestdonation`
 --
 ALTER TABLE `contestdonation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT für Tabelle `contestspecialcoat`
 --
 ALTER TABLE `contestspecialcoat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT für Tabelle `conteststatue`
 --
 ALTER TABLE `conteststatue`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
 -- AUTO_INCREMENT für Tabelle `decoration`
 --
 ALTER TABLE `decoration`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT für Tabelle `decorationtext`
@@ -15479,10 +15674,16 @@ ALTER TABLE `decorationtext`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
+-- AUTO_INCREMENT für Tabelle `designboutique`
+--
+ALTER TABLE `designboutique`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT für Tabelle `guestlounge`
 --
 ALTER TABLE `guestlounge`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT für Tabelle `origin`
@@ -15512,13 +15713,13 @@ ALTER TABLE `pricetypetext`
 -- AUTO_INCREMENT für Tabelle `region`
 --
 ALTER TABLE `region`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT für Tabelle `regiontext`
 --
 ALTER TABLE `regiontext`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
 
 --
 -- AUTO_INCREMENT für Tabelle `rolestext`
@@ -15545,10 +15746,22 @@ ALTER TABLE `specialcoatstext`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3028;
 
 --
+-- AUTO_INCREMENT für Tabelle `terrain`
+--
+ALTER TABLE `terrain`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT für Tabelle `terraintext`
+--
+ALTER TABLE `terraintext`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+
+--
 -- AUTO_INCREMENT für Tabelle `transportstation`
 --
 ALTER TABLE `transportstation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT für Tabelle `user`
@@ -15560,7 +15773,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT für Tabelle `visitorcenter`
 --
 ALTER TABLE `visitorcenter`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT für Tabelle `xptype`
@@ -15591,6 +15804,12 @@ ALTER TABLE `zooinventorycollection`
 --
 ALTER TABLE `zooinventorycontestspecialcoat`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- AUTO_INCREMENT für Tabelle `zooinventoryregion`
+--
+ALTER TABLE `zooinventoryregion`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT für Tabelle `zooinventoryspecialcoat`
@@ -15679,27 +15898,16 @@ ALTER TABLE `breedingcenterslots`
   ADD CONSTRAINT `breedingcenterslots_regionId_fkey` FOREIGN KEY (`regionId`) REFERENCES `region` (`id`) ON UPDATE CASCADE;
 
 --
--- Constraints der Tabelle `categorytext`
+-- Constraints der Tabelle `clubhouse`
 --
-ALTER TABLE `categorytext`
-  ADD CONSTRAINT `categoryText_categoryId_fkey` FOREIGN KEY (`categoryId`) REFERENCES `category` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints der Tabelle `collection`
---
-ALTER TABLE `collection`
-  ADD CONSTRAINT `collection_regionId_fkey` FOREIGN KEY (`regionId`) REFERENCES `region` (`id`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `collection_rewardAnimalId_fkey` FOREIGN KEY (`rewardAnimalId`) REFERENCES `animal` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
-  ADD CONSTRAINT `collection_rewardSpecialCoatId_fkey` FOREIGN KEY (`rewardSpecialCoatId`) REFERENCES `specialcoat` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE `clubhouse`
+  ADD CONSTRAINT `clubhouse_regionId_fkey` FOREIGN KEY (`regionId`) REFERENCES `region` (`id`) ON UPDATE CASCADE;
 
 --
 -- Constraints der Tabelle `collectionrequirement`
 --
 ALTER TABLE `collectionrequirement`
-  ADD CONSTRAINT `collectionRequirement_collectionId_fkey` FOREIGN KEY (`collectionId`) REFERENCES `collection` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `collectionrequirement_animalId_fkey` FOREIGN KEY (`animalId`) REFERENCES `animal` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
-  ADD CONSTRAINT `collectionrequirement_decorationId_fkey` FOREIGN KEY (`decorationId`) REFERENCES `decoration` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
-  ADD CONSTRAINT `collectionrequirement_specialCoatId_fkey` FOREIGN KEY (`specialCoatId`) REFERENCES `specialcoat` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
+  ADD CONSTRAINT `collectionRequirement_collectionId_fkey` FOREIGN KEY (`collectionId`) REFERENCES `collection` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints der Tabelle `collectiontext`
@@ -15730,16 +15938,10 @@ ALTER TABLE `conteststatue`
   ADD CONSTRAINT `contestStatue_contestId_fkey` FOREIGN KEY (`contestId`) REFERENCES `contest` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints der Tabelle `decoration`
+-- Constraints der Tabelle `designboutique`
 --
-ALTER TABLE `decoration`
-  ADD CONSTRAINT `decoration_categoryId_fkey` FOREIGN KEY (`categoryId`) REFERENCES `category` (`id`) ON UPDATE CASCADE;
-
---
--- Constraints der Tabelle `decorationtext`
---
-ALTER TABLE `decorationtext`
-  ADD CONSTRAINT `decorationText_decorationId_fkey` FOREIGN KEY (`decorationId`) REFERENCES `decoration` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `designboutique`
+  ADD CONSTRAINT `designboutique_regionId_fkey` FOREIGN KEY (`regionId`) REFERENCES `region` (`id`) ON UPDATE CASCADE;
 
 --
 -- Constraints der Tabelle `guestlounge`
@@ -15758,6 +15960,12 @@ ALTER TABLE `origintext`
 --
 ALTER TABLE `pricetypetext`
   ADD CONSTRAINT `priceTypeText_priceTypeId_fkey` FOREIGN KEY (`priceTypeId`) REFERENCES `pricetype` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints der Tabelle `region`
+--
+ALTER TABLE `region`
+  ADD CONSTRAINT `region_priceTypeId_fkey` FOREIGN KEY (`priceTypeId`) REFERENCES `pricetype` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 --
 -- Constraints der Tabelle `regiontext`
@@ -15789,6 +15997,12 @@ ALTER TABLE `specialcoatorigin`
 --
 ALTER TABLE `specialcoatstext`
   ADD CONSTRAINT `specialCoatsText_specialCoatId_fkey` FOREIGN KEY (`specialCoatId`) REFERENCES `specialcoat` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints der Tabelle `terraintext`
+--
+ALTER TABLE `terraintext`
+  ADD CONSTRAINT `terrainText_regionId_fkey` FOREIGN KEY (`terrainid`) REFERENCES `terrain` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints der Tabelle `transportstation`
