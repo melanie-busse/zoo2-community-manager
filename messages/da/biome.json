@@ -27,5 +27,13 @@
       "deleteSuccess": "Biom slettet",
       "requiredIdentifier": "Identifikator er et påkrævet felt."
     }
-  }
+  },
+  "shelter_levels": "Staldt niveauer",
+  "level": "Niveau",
+  "build_cost": "Byggeomkostninger",
+  "upgrade_cost": "Opgraderingsomkostninger",
+  "upgrade_time": "Opgraderingstid",
+  "unlock_level": "Låseniveau",
+  "level_value": "Niveau {level}",
+  "minutes": "{n} min"
 }

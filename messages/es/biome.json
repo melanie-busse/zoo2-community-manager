@@ -27,5 +27,13 @@
       "deleteSuccess": "Bioma eliminado correctamente",
       "requiredIdentifier": "El identificador es un campo obligatorio."
     }
-  }
+  },
+  "shelter_levels": "Niveles de establo",
+  "level": "Nivel",
+  "build_cost": "Coste de construcción",
+  "upgrade_cost": "Coste de mejora",
+  "upgrade_time": "Tiempo de mejora",
+  "unlock_level": "Nivel de desbloqueo",
+  "level_value": "Nivel {level}",
+  "minutes": "{n} min"
 }

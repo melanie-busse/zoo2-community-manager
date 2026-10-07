@@ -27,5 +27,13 @@
       "deleteSuccess": "Bioom succesvol verwijderd",
       "requiredIdentifier": "Identifier is een verplicht veld."
     }
-  }
+  },
+  "shelter_levels": "Stalniveaus",
+  "level": "Niveau",
+  "build_cost": "Bouwkosten",
+  "upgrade_cost": "Upgradekosten",
+  "upgrade_time": "Upgradetijd",
+  "unlock_level": "Ontgrendelniveau",
+  "level_value": "Niveau {level}",
+  "minutes": "{n} min"
 }

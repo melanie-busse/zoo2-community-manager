@@ -17,8 +17,8 @@ model Language {
 }
 
 model Biome {
-  id                        Int          @id @unique(map: "biomeindex") @default(autoincrement())
-  identifier                String       @unique
+  id                        Int                @id @unique(map: "biomeindex") @default(autoincrement())
+  identifier                String             @unique
   price                     Int?
   priceTypeId               Int?
   expansionsCost            Int?
@@ -26,13 +26,31 @@ model Biome {
   size                      Int?
   regionId                  Int?
   animals                   Animal[]
-  priceType                 PriceType?   @relation(fields: [priceTypeId], references: [id])
-  region                    Region?      @relation(fields: [regionId], references: [id])
+  priceType                 PriceType?         @relation(fields: [priceTypeId], references: [id])
+  region                    Region?            @relation(fields: [regionId], references: [id])
   biomestext                BiomesText[]
+  shelterLevels             BiomeShelterLevel[]
 
   @@index([priceTypeId], map: "biome_priceTypeId_fkey")
   @@index([regionId], map: "biome_regionId_fkey")
   @@map("biome")
+}
+
+model BiomeShelterLevel {
+  id          Int    @id @default(autoincrement())
+  biomeId     Int
+  level       Int
+  price       Int?
+  priceTypeId Int?
+  buildCost   Int?
+  buildCostPriceTypeId Int?
+  upgradeTime Int?
+  unlockLevel Int?
+  biome       Biome  @relation(fields: [biomeId], references: [id], onDelete: Cascade)
+
+  @@unique([biomeId, level])
+  @@index([biomeId])
+  @@map("biomeshelterlevel")
 }
 
 model BiomesText {

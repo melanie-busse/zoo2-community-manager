@@ -57,8 +57,8 @@ export default function BiomeOverviewContent({ biomes }: BiomeOverviewContentPro
         <tr>
           <th></th>
           <th>{t("name")}</th>
-          <th>{t("price")}</th>
-          <th>{t("expansion_cost")}</th>
+          <Styles.TableHeaderRight>{t("price")}</Styles.TableHeaderRight>
+          <Styles.TableHeaderRight>{t("expansion_cost")}</Styles.TableHeaderRight>
           {isAdmin && <Styles.TableHeaderRight>{tCommon("actions")}</Styles.TableHeaderRight>}
         </tr>
       </thead>
@@ -83,22 +83,27 @@ export default function BiomeOverviewContent({ biomes }: BiomeOverviewContentPro
                 </Styles.TableThumbnail>
               </td>
               <td>
-                <strong>{name}</strong>
+                <strong
+                  style={{ cursor: "pointer", color: "#2d5a27" }}
+                  onClick={() => router.push(`/zoo/biomes/${biome.id}`)}
+                >
+                  {name}
+                </strong>
               </td>
-              <td>
+              <Styles.TableCellRight>
                 {biome.price != null ? (
                   <PriceBadge value={biome.price} type={badgeType} />
                 ) : (
                   "—"
                 )}
-              </td>
-              <td>
+              </Styles.TableCellRight>
+              <Styles.TableCellRight>
                 {biome.expansionsCost != null ? (
                   <PriceBadge value={biome.expansionsCost} type={badgeType} />
                 ) : (
                   "—"
                 )}
-              </td>
+              </Styles.TableCellRight>
               {isAdmin && (
                 <Styles.TableCellRight>
                   <ActionGroupBadge

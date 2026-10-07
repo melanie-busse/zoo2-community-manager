@@ -27,5 +27,13 @@
       "deleteSuccess": "Biome deleted successfully",
       "requiredIdentifier": "Identifier is a required field."
     }
-  }
+  },
+  "shelter_levels": "Shelter Levels",
+  "level": "Level",
+  "build_cost": "Build Cost",
+  "upgrade_cost": "Upgrade Cost",
+  "upgrade_time": "Upgrade Time",
+  "unlock_level": "Unlock Level",
+  "level_value": "Level {level}",
+  "minutes": "{n} min"
 }

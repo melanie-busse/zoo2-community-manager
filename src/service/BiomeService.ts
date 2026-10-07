@@ -21,6 +21,17 @@ export async function getAllBiomes(locale: string = "de") {
   }
 }
 
+export async function getBiomeById(id: number, locale: string = "de") {
+  return prisma.biome.findUnique({
+    where: { id },
+    include: {
+      biomestext: { where: { languageCode: locale } },
+      priceType: true,
+      shelterLevels: { orderBy: { level: "asc" } },
+    },
+  });
+}
+
 export async function getAllBiomesForOverview(locale: string = "de") {
   return prisma.biome.findMany({
     include: {

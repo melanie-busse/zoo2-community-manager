@@ -27,5 +27,13 @@
       "deleteSuccess": "Biome supprimé avec succès",
       "requiredIdentifier": "L'identifiant est un champ obligatoire."
     }
-  }
+  },
+  "shelter_levels": "Niveaux d'étable",
+  "level": "Niveau",
+  "build_cost": "Coût de construction",
+  "upgrade_cost": "Coût de mise à niveau",
+  "upgrade_time": "Temps de mise à niveau",
+  "unlock_level": "Niveau de déverrouillage",
+  "level_value": "Niveau {level}",
+  "minutes": "{n} min"
 }

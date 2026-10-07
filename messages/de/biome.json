@@ -27,5 +27,13 @@
       "deleteSuccess": "Biom erfolgreich gelöscht",
       "requiredIdentifier": "Identifier ist ein Pflichtfeld."
     }
-  }
+  },
+  "shelter_levels": "Stalllevel",
+  "level": "Level",
+  "build_cost": "Baukosten",
+  "upgrade_cost": "Upgradekosten",
+  "upgrade_time": "Upgradezeit",
+  "unlock_level": "Freischalt-Level",
+  "level_value": "Level {level}",
+  "minutes": "{n} min"
 }
