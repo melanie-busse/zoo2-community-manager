@@ -2,6 +2,7 @@
   "overview_title": "Terræntyper",
   "name": "Navn",
   "identifier": "Identifier",
+  "region": "Region",
   "form": {
     "create_terrain": "Opret terræntype",
     "edit_terrain": "Rediger terræntype",

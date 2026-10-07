@@ -2,10 +2,24 @@ import "server-only";
 import { prisma } from "@/lib/prisma";
 
 export async function getAllTerrains(locale: string = "de") {
-  return prisma.terrain.findMany({
-    include: { terrainTexts: { where: { languageCode: locale } } },
-    orderBy: { id: "asc" },
-  });
+  const [terrains, regions] = await Promise.all([
+    prisma.terrain.findMany({
+      include: { terrainTexts: { where: { languageCode: locale } } },
+      orderBy: { id: "asc" },
+    }),
+    prisma.region.findMany({
+      select: { terrainid: true, identifier: true, regionTexts: { where: { languageCode: locale } } },
+    }),
+  ]);
+
+  const regionMap = new Map(
+    regions.map((r) => [
+      r.terrainid,
+      r.regionTexts[0]?.name ?? r.identifier,
+    ]),
+  );
+
+  return terrains.map((t) => ({ ...t, regionName: regionMap.get(t.id) ?? null }));
 }
 
 export async function getTerrainByIdForEdit(id: number) {

@@ -2,6 +2,7 @@
   "overview_title": "Geländetypen",
   "name": "Name",
   "identifier": "Identifier",
+  "region": "Region",
   "form": {
     "create_terrain": "Geländetyp anlegen",
     "edit_terrain": "Geländetyp bearbeiten",

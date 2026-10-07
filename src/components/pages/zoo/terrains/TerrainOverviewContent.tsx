@@ -2,7 +2,6 @@
 
 import React from "react";
 import Image from "next/image";
-import styled from "styled-components";
 import { useTranslations } from "next-intl";
 import { useSession } from "next-auth/react";
 import { useRouter } from "@/i18n/routing";
@@ -18,6 +17,7 @@ interface Terrain {
   id: number;
   identifier: string;
   terrainTexts: { name: string }[];
+  regionName?: string | null;
 }
 
 interface TerrainOverviewContentProps {
@@ -54,7 +54,7 @@ export default function TerrainOverviewContent({ terrains }: TerrainOverviewCont
         <tr>
           <th></th>
           <th>{t("name")}</th>
-          <th>{t("identifier")}</th>
+          <th>{t("region")}</th>
           {isAdmin && <Styles.TableHeaderRight>{tCommon("actions")}</Styles.TableHeaderRight>}
         </tr>
       </thead>
@@ -78,9 +78,7 @@ export default function TerrainOverviewContent({ terrains }: TerrainOverviewCont
               <td>
                 <strong>{name}</strong>
               </td>
-              <td>
-                <IdentifierBadge>{terrain.identifier}</IdentifierBadge>
-              </td>
+              <td>{terrain.regionName ?? "—"}</td>
               {isAdmin && (
                 <Styles.TableCellRight>
                   <ActionGroupBadge
@@ -97,11 +95,3 @@ export default function TerrainOverviewContent({ terrains }: TerrainOverviewCont
     </Table>
   );
 }
-
-const IdentifierBadge = styled.span`
-  font-family: monospace;
-  font-size: 0.85rem;
-  background: ${({ theme }) => theme.colors.white[400]};
-  padding: 2px 8px;
-  border-radius: 4px;
-`;

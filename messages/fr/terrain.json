@@ -2,6 +2,7 @@
   "overview_title": "Types de terrain",
   "name": "Nom",
   "identifier": "Identifiant",
+  "region": "Région",
   "form": {
     "create_terrain": "Créer un type de terrain",
     "edit_terrain": "Modifier le type de terrain",

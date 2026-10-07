@@ -2,6 +2,7 @@
   "overview_title": "Terreintypen",
   "name": "Naam",
   "identifier": "Identifier",
+  "region": "Regio",
   "form": {
     "create_terrain": "Terreintype aanmaken",
     "edit_terrain": "Terreintype bewerken",

@@ -2,6 +2,7 @@
   "overview_title": "Terrain Types",
   "name": "Name",
   "identifier": "Identifier",
+  "region": "Region",
   "form": {
     "create_terrain": "Create Terrain Type",
     "edit_terrain": "Edit Terrain Type",
