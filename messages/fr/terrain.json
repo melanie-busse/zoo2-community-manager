@@ -1,0 +1,20 @@
+{
+  "overview_title": "Types de terrain",
+  "name": "Nom",
+  "identifier": "Identifiant",
+  "form": {
+    "create_terrain": "Créer un type de terrain",
+    "edit_terrain": "Modifier le type de terrain",
+    "save_terrain": "Enregistrer le type de terrain",
+    "basic_info": "Informations de base",
+    "translations": "Traductions",
+    "messages": {
+      "createSuccess": "Type de terrain créé avec succès",
+      "editSuccess": "Type de terrain mis à jour avec succès",
+      "confirmDelete": "Voulez-vous vraiment supprimer ce type de terrain ?",
+      "deleteErrorTitle": "Supprimer le type de terrain",
+      "deleteSuccess": "Type de terrain supprimé avec succès",
+      "requiredIdentifier": "L'identifiant est un champ obligatoire."
+    }
+  }
+}

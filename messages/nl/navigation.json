@@ -39,6 +39,8 @@
     "import-animals": "Dieren importeren",
     "regions": "Regio's",
     "region_create": "Regio toevoegen",
+    "terrains": "Terreintypen",
+    "terrain_create": "Terreintype toevoegen",
     "collections": "Verzamelalbum",
     "inventory_collections": "Mijn Verzamelalbum",
     "inventory_regions": "Regio's"

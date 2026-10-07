@@ -1,0 +1,20 @@
+{
+  "overview_title": "Terræntyper",
+  "name": "Navn",
+  "identifier": "Identifier",
+  "form": {
+    "create_terrain": "Opret terræntype",
+    "edit_terrain": "Rediger terræntype",
+    "save_terrain": "Gem terræntype",
+    "basic_info": "Stamdata",
+    "translations": "Oversættelser",
+    "messages": {
+      "createSuccess": "Terræntype oprettet",
+      "editSuccess": "Terræntype opdateret",
+      "confirmDelete": "Vil du virkelig slette denne terræntype?",
+      "deleteErrorTitle": "Slet terræntype",
+      "deleteSuccess": "Terræntype slettet",
+      "requiredIdentifier": "Identifier er et obligatorisk felt."
+    }
+  }
+}

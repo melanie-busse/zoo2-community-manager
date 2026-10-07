@@ -39,6 +39,8 @@
     "import-animals": "Import animals",
     "regions": "Regions",
     "region_create": "Add Region",
+    "terrains": "Terrain Types",
+    "terrain_create": "Add Terrain Type",
     "collections": "Collections",
     "inventory_collections": "My Collection Album",
     "inventory_regions": "Regions"

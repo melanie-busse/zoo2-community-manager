@@ -35,6 +35,13 @@ export const navConfig: NavItem[] = [
         requiresAuth: true,
         minimumRole: "Director",
       },
+      { labelKey: "terrains", href: "/zoo/terrains", requiresAuth: false },
+      {
+        labelKey: "terrain_create",
+        href: "/zoo/terrains/create",
+        requiresAuth: true,
+        minimumRole: "Director",
+      },
     ],
   },
   {

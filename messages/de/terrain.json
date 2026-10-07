@@ -1,0 +1,20 @@
+{
+  "overview_title": "Geländetypen",
+  "name": "Name",
+  "identifier": "Identifier",
+  "form": {
+    "create_terrain": "Geländetyp anlegen",
+    "edit_terrain": "Geländetyp bearbeiten",
+    "save_terrain": "Geländetyp speichern",
+    "basic_info": "Stammdaten",
+    "translations": "Übersetzungen",
+    "messages": {
+      "createSuccess": "Geländetyp erfolgreich angelegt",
+      "editSuccess": "Geländetyp erfolgreich aktualisiert",
+      "confirmDelete": "Möchtest du diesen Geländetyp wirklich löschen?",
+      "deleteErrorTitle": "Geländetyp löschen",
+      "deleteSuccess": "Geländetyp erfolgreich gelöscht",
+      "requiredIdentifier": "Identifier ist ein Pflichtfeld."
+    }
+  }
+}

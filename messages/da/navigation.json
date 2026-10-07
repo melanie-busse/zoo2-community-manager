@@ -39,6 +39,8 @@
     "import-animals": "Importér dyr",
     "regions": "Regioner",
     "region_create": "Tilføj region",
+    "terrains": "Terræntyper",
+    "terrain_create": "Tilføj terræntype",
     "collections": "Samlealbum",
     "inventory_collections": "Mit Samlealbum",
     "inventory_regions": "Regioner"

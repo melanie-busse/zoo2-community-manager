@@ -1,0 +1,20 @@
+{
+  "overview_title": "Terreintypen",
+  "name": "Naam",
+  "identifier": "Identifier",
+  "form": {
+    "create_terrain": "Terreintype aanmaken",
+    "edit_terrain": "Terreintype bewerken",
+    "save_terrain": "Terreintype opslaan",
+    "basic_info": "Basisgegevens",
+    "translations": "Vertalingen",
+    "messages": {
+      "createSuccess": "Terreintype succesvol aangemaakt",
+      "editSuccess": "Terreintype succesvol bijgewerkt",
+      "confirmDelete": "Wil je dit terreintype echt verwijderen?",
+      "deleteErrorTitle": "Terreintype verwijderen",
+      "deleteSuccess": "Terreintype succesvol verwijderd",
+      "requiredIdentifier": "Identifier is een verplicht veld."
+    }
+  }
+}
