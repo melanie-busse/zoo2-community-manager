@@ -41,7 +41,8 @@
       "Bash(python -c \"import sys; print\\(sys.stdin.read\\(\\)[:50]\\)\")",
       "Bash(npx ts-node:*)",
       "Bash(mkdir -p \"D:/Entwicklung/zoo2-community-manager/src/app/[locale]/zoo/terrains/create\")",
-      "Bash(mkdir -p \"D:/Entwicklung/zoo2-community-manager/src/app/[locale]/zoo/terrains/[id]/edit\")"
+      "Bash(mkdir -p \"D:/Entwicklung/zoo2-community-manager/src/app/[locale]/zoo/terrains/[id]/edit\")",
+      "Bash(git log:*)"
     ]
   }
 }

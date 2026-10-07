@@ -34,31 +34,24 @@ export default function RegionHeaderCard({ region }: RegionHeaderCardProps) {
     region.priceType?.name === "Diamond" ? "Diamond" : "Zoodollar";
 
   return (
-    <Styles.DesktopCardContainer>
-      <Styles.ImageWrapper>
+    <Styles.DesktopCardContainer style={{ flexDirection: "column" }}>
+      <TitleBlock>
+        <h1>{displayName}</h1>
+        <Styles.ReleaseDate>
+          <span className="label">📅 {tCommon("release")}:</span>{" "}
+          <span className="date">
+            <FormattedDate
+              date={region.releasedate}
+              options={{ year: "numeric", month: "long", day: "numeric" }}
+            />
+          </span>
+        </Styles.ReleaseDate>
+      </TitleBlock>
+
+      <BottomRow>
         <RegionImageContainer>
           <StyledRegionImage src={imagePath} alt={displayName} width={50} height={50} priority />
         </RegionImageContainer>
-      </Styles.ImageWrapper>
-
-      <InfoSection>
-        <Styles.TitleRow>
-          <Styles.TextContent>
-            <Styles.TitleHeadlineRow>
-              <h1>{displayName}</h1>
-            </Styles.TitleHeadlineRow>
-
-            <Styles.ReleaseDate>
-              <span className="label">📅 {tCommon("release")}:</span>{" "}
-              <span className="date">
-                <FormattedDate
-                  date={region.releasedate}
-                  options={{ year: "numeric", month: "long", day: "numeric" }}
-                />
-              </span>
-            </Styles.ReleaseDate>
-          </Styles.TextContent>
-        </Styles.TitleRow>
 
         <Styles.StatsGrid>
           <Styles.StatsGroup>
@@ -84,31 +77,39 @@ export default function RegionHeaderCard({ region }: RegionHeaderCardProps) {
             </Styles.StatsGroup>
           )}
         </Styles.StatsGrid>
-      </InfoSection>
+      </BottomRow>
     </Styles.DesktopCardContainer>
   );
 }
 
-const RegionImageContainer = styled.div`
+const TitleBlock = styled.div`
   width: 100%;
-  aspect-ratio: 1 / 1;
-  max-width: 400px;
-  margin: 0 auto;
+  margin-bottom: ${({ theme }) => theme.spacing(2)};
 
+  h1 {
+    margin: 0 0 4px 0;
+  }
+`;
+
+const BottomRow = styled.div`
+  display: flex;
+  align-items: center;
+  gap: ${({ theme }) => theme.spacing(2)};
+  width: 100%;
+`;
+
+const RegionImageContainer = styled.div`
+  flex-shrink: 0;
+  width: 110px;
+  height: 110px;
   border-radius: 20px;
   border: 2px solid #004d4d;
   background: white;
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.06);
-
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
-
-  @media (min-width: 768px) {
-    width: 110px;
-    height: 110px;
-  }
 `;
 
 const StyledRegionImage = styled(NextImage)`
@@ -116,13 +117,4 @@ const StyledRegionImage = styled(NextImage)`
   height: 100%;
   object-fit: cover;
   object-position: center;
-`;
-
-const InfoSection = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 100%;
-  margin-left: 20px;
 `;
