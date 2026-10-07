@@ -22,6 +22,14 @@
     "update_error": "Error al actualizar la variante de color",
     "delete_error": "Error al eliminar la variante de color"
   },
+  "region": {
+    "required_fields": "El identificador y al menos un nombre son campos obligatorios.",
+    "create_error": "Error al crear la región",
+    "update_success": "Región actualizada correctamente",
+    "update_error": "Error al actualizar la región",
+    "delete_error": "Error al eliminar la región",
+    "invalid_id": "ID de región no válido"
+  },
   "contest": {
     "not_found": "Concurso no encontrado",
     "create_error": "Error al crear el concurso",

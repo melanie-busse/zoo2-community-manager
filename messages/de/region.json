@@ -1,0 +1,52 @@
+{
+  "overview_title": "Regionen",
+  "detail_title": "Region",
+  "name": "Name",
+  "unlock_level": "Freischalt-Level",
+  "level_value": "Level {level}",
+  "breeding_slots": "Zuchtplätze",
+  "price_type": "Währungstyp",
+  "breeding_center": "Zuchtzentrum",
+  "slot": "Slot",
+  "admissions_booth": "Eingangskasse",
+  "booth_level": "Level",
+  "max_capacity": "Max. Kapazität",
+  "upgrade": "Upgrade",
+  "admin_building": "Mitarbeitervilla",
+  "admin_building_room": "Mitarbeiterraum",
+  "visitor_center": "Besucherzentrum",
+  "transport_station": "Transportstation",
+  "guest_lounge": "Gästelounge",
+  "design_boutique": "Designer Boutique",
+  "clubhouse": "Clubhaus",
+  "terrain": "Gelände",
+  "inventory": {
+    "title": "Meine Regionen",
+    "owned": "Habe ich",
+    "breeding_slots_unlocked": "Zuchtplätze freigeschaltet",
+    "admissions_booth_level": "Eingangskasse Level",
+    "admin_building": "Mitarbeitervilla/-zimmer",
+    "visitor_center": "Besucherzentrum",
+    "transport_station": "Transportstation",
+    "guest_lounge": "Gästelounge"
+  },
+  "form": {
+    "create_region": "Region anlegen",
+    "edit_region": "Region bearbeiten",
+    "save_region": "Region speichern",
+    "basic_info": "Stammdaten",
+    "identifier": "Identifier",
+    "releasedate": "Release-Datum",
+    "unlocklevel": "Freischalt-Level",
+    "terrain": "Gelände",
+    "translations": "Übersetzungen",
+    "messages": {
+      "createSuccess": "Region erfolgreich angelegt",
+      "editSuccess": "Region erfolgreich aktualisiert",
+      "confirmDelete": "Möchtest du diese Region wirklich löschen?",
+      "deleteErrorTitle": "Region löschen",
+      "deleteSuccess": "Region erfolgreich gelöscht",
+      "requiredIdentifier": "Identifier ist ein Pflichtfeld."
+    }
+  }
+}

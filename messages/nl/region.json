@@ -1,0 +1,52 @@
+{
+  "overview_title": "Regio's",
+  "detail_title": "Regio",
+  "name": "Naam",
+  "unlock_level": "Ontgrendelniveau",
+  "level_value": "Niveau {level}",
+  "breeding_slots": "Fokplaatsen",
+  "price_type": "Valutatype",
+  "breeding_center": "Fokcentrum",
+  "slot": "Slot",
+  "admissions_booth": "Entreeloket",
+  "booth_level": "Niveau",
+  "max_capacity": "Max. capaciteit",
+  "upgrade": "Upgrade",
+  "admin_building": "Personeelsvilla",
+  "admin_building_room": "Personeelsruimte",
+  "visitor_center": "Bezoekerscentrum",
+  "transport_station": "Transportstation",
+  "guest_lounge": "Gastenlounge",
+  "design_boutique": "Designer Boetiek",
+  "clubhouse": "Clubhuis",
+  "terrain": "Terrein",
+  "inventory": {
+    "title": "Mijn regio's",
+    "owned": "Ik heb het",
+    "breeding_slots_unlocked": "Fokplekken ontgrendeld",
+    "admissions_booth_level": "Kassa niveau",
+    "admin_building": "Personeelsvilla/-kamer",
+    "visitor_center": "Bezoekerscentrum",
+    "transport_station": "Transportstation",
+    "guest_lounge": "Gastenlounge"
+  },
+  "form": {
+    "create_region": "Regio aanmaken",
+    "edit_region": "Regio bewerken",
+    "save_region": "Regio opslaan",
+    "basic_info": "Basisgegevens",
+    "identifier": "Identifier",
+    "releasedate": "Releasedatum",
+    "unlocklevel": "Vrijschakel-niveau",
+    "terrain": "Terrein",
+    "translations": "Vertalingen",
+    "messages": {
+      "createSuccess": "Regio succesvol aangemaakt",
+      "editSuccess": "Regio succesvol bijgewerkt",
+      "confirmDelete": "Wil je deze regio echt verwijderen?",
+      "deleteErrorTitle": "Regio verwijderen",
+      "deleteSuccess": "Regio succesvol verwijderd",
+      "requiredIdentifier": "Identifier is een verplicht veld."
+    }
+  }
+}

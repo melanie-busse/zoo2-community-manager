@@ -37,8 +37,13 @@
     "inventory_statues": "Statuer",
     "inventory_contest_special_coats": "Konkurrence-farvevarianter",
     "import-animals": "Importér dyr",
+    "regions": "Regioner",
+    "region_create": "Tilføj region",
+    "terrains": "Terræntyper",
+    "terrain_create": "Tilføj terræntype",
     "collections": "Samlealbum",
-    "inventory_collections": "Mit Samlealbum"
+    "inventory_collections": "Mit Samlealbum",
+    "inventory_regions": "Regioner"
   },
   "inventory_collections": "Samlealbum"
 }

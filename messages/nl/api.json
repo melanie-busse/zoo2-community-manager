@@ -22,6 +22,14 @@
     "update_error": "Fout bij het bijwerken van kleurvariant",
     "delete_error": "Fout bij het verwijderen van kleurvariant"
   },
+  "region": {
+    "required_fields": "Identifier en minimaal één naam zijn verplichte velden.",
+    "create_error": "Fout bij het aanmaken van regio",
+    "update_success": "Regio succesvol bijgewerkt",
+    "update_error": "Fout bij het bijwerken van regio",
+    "delete_error": "Fout bij het verwijderen van regio",
+    "invalid_id": "Ongeldig regio-ID"
+  },
   "contest": {
     "not_found": "Wedstrijd niet gevonden",
     "create_error": "Fout bij het aanmaken van wedstrijd",

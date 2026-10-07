@@ -50,9 +50,19 @@ const LEVEL_COLORS = ["#4facfe", "#b224ef", "#ff0844", "#f6d365"];
 interface InventorySummaryCardProps {
   biomeStatistics: InventoryBiomeStatistic[];
   collectionStats: { total: number; completed: number };
+  regionStatistics: {
+    ownedRegions: number;
+    ownedBreedingSlots: number;
+    totalRegions: number;
+    totalBreedingSlots: number;
+  };
 }
 
-export default function InventorySummaryCard({ biomeStatistics, collectionStats }: InventorySummaryCardProps) {
+export default function InventorySummaryCard({
+  biomeStatistics,
+  collectionStats,
+  regionStatistics,
+}: InventorySummaryCardProps) {
   const t = useTranslations("inventoryStatistic");
   const shelterLevels = [0, 1, 2, 3];
 
@@ -87,7 +97,6 @@ export default function InventorySummaryCard({ biomeStatistics, collectionStats 
           }}
         >
           <span>{t("summary.biomes", { count: biomeStatistics.length })}</span>
-          <span>{t("summary.regions", { count: regionCount })}</span>
         </div>
       </CardHeaderRow>
 
@@ -95,12 +104,57 @@ export default function InventorySummaryCard({ biomeStatistics, collectionStats 
 
       <CardStatsRow>
         <StatSection>
+          <SectionTitle>{t("regions.title")}</SectionTitle>
+          <InlineStatProgress
+            label={t("regions.total")}
+            current={regionStatistics.ownedRegions}
+            total={regionStatistics.totalRegions}
+            ofLabel={t("of")}
+          />
+          <InlineStatProgress
+            label={t("regions.breedingSlots")}
+            current={regionStatistics.ownedBreedingSlots}
+            total={regionStatistics.totalBreedingSlots}
+            ofLabel={t("of")}
+          />
+        </StatSection>
+      </CardStatsRow>
+
+      <CardDivider />
+
+      <CardStatsRow>
+        <StatSection>
           <SectionTitle>{t("animals.title")}</SectionTitle>
-          <InlineStatProgress label={t("animals.total")} current={ownedAnimals} total={totalAnimals} ofLabel={t("of")} />
-          <InlineStatProgress label={t("animals.specialCoats")} current={ownedSpecialCoats} total={totalSpecialCoats} ofLabel={t("of")} />
-          <InlineStatProgress label={t("animals.zoodollar")} current={ownedZoodollar} total={totalZoodollar} ofLabel={t("of")} />
-          <InlineStatProgress label={t("animals.diamond")} current={ownedDiamond} total={totalDiamond} ofLabel={t("of")} />
-          <InlineStatProgress label={t("animals.collections")} current={collectionStats.completed} total={collectionStats.total} ofLabel={t("of")} />
+          <InlineStatProgress
+            label={t("animals.total")}
+            current={ownedAnimals}
+            total={totalAnimals}
+            ofLabel={t("of")}
+          />
+          <InlineStatProgress
+            label={t("animals.specialCoats")}
+            current={ownedSpecialCoats}
+            total={totalSpecialCoats}
+            ofLabel={t("of")}
+          />
+          <InlineStatProgress
+            label={t("animals.zoodollar")}
+            current={ownedZoodollar}
+            total={totalZoodollar}
+            ofLabel={t("of")}
+          />
+          <InlineStatProgress
+            label={t("animals.diamond")}
+            current={ownedDiamond}
+            total={totalDiamond}
+            ofLabel={t("of")}
+          />
+          <InlineStatProgress
+            label={t("animals.collections")}
+            current={collectionStats.completed}
+            total={collectionStats.total}
+            ofLabel={t("of")}
+          />
         </StatSection>
       </CardStatsRow>
 
@@ -109,8 +163,18 @@ export default function InventorySummaryCard({ biomeStatistics, collectionStats 
       <CardStatsRow>
         <StatSection>
           <SectionTitle>{t("contest.title")}</SectionTitle>
-          <InlineStatProgress label={t("contest.contestAnimals")} current={ownedContestSpecialCoats} total={totalContestSpecialCoats} ofLabel={t("of")} />
-          <InlineStatProgress label={t("contest.statues")} current={ownedContestStatues} total={totalContestStatues} ofLabel={t("of")} />
+          <InlineStatProgress
+            label={t("contest.contestAnimals")}
+            current={ownedContestSpecialCoats}
+            total={totalContestSpecialCoats}
+            ofLabel={t("of")}
+          />
+          <InlineStatProgress
+            label={t("contest.statues")}
+            current={ownedContestStatues}
+            total={totalContestStatues}
+            ofLabel={t("of")}
+          />
         </StatSection>
       </CardStatsRow>
 
@@ -152,7 +216,9 @@ export default function InventorySummaryCard({ biomeStatistics, collectionStats 
                     </Pie>
                     <Tooltip
                       formatter={(_value, name) =>
-                        name === "owned" ? [`${owned}/${total}`, t("shelter.level", { level })] : null
+                        name === "owned"
+                          ? [`${owned}/${total}`, t("shelter.level", { level })]
+                          : null
                       }
                     />
                   </PieChart>

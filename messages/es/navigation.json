@@ -37,8 +37,13 @@
     "inventory_statues": "Estatuas",
     "inventory_contest_special_coats": "Variantes de color del concurso",
     "import-animals": "Importar animales",
+    "regions": "Regiones",
+    "region_create": "Añadir región",
+    "terrains": "Tipos de terreno",
+    "terrain_create": "Añadir tipo de terreno",
     "collections": "Álbum de colección",
-    "inventory_collections": "Mi Álbum de Colección"
+    "inventory_collections": "Mi Álbum de Colección",
+    "inventory_regions": "Regiones"
   },
   "inventory_collections": "Álbum de Colección"
 }

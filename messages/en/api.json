@@ -22,6 +22,14 @@
     "update_error": "Error updating color variant",
     "delete_error": "Error deleting color variant"
   },
+  "region": {
+    "required_fields": "Identifier and at least one name are required fields.",
+    "create_error": "Error creating region",
+    "update_success": "Region successfully updated",
+    "update_error": "Error updating region",
+    "delete_error": "Error deleting region",
+    "invalid_id": "Invalid region ID"
+  },
   "contest": {
     "not_found": "Contest not found",
     "create_error": "Error creating contest",

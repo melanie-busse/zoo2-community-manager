@@ -5,10 +5,15 @@
     "biomes": "{count} Biomes",
     "regions": "{count} Regions"
   },
+  "regions": {
+    "title": "Regions",
+    "total": "Count:",
+    "breedingSlots": "Breeding Slots:"
+  },
   "animals": {
     "title": "Animals",
-    "total": "Total Animals:",
-    "specialCoats": "Total Special Coats:",
+    "total": "Animals:",
+    "specialCoats": "Special Coats:",
     "distribution": "Payment Distribution:",
     "zoodollar": "Animals for Zoodollar",
     "diamond": "Animals for Diamonds",

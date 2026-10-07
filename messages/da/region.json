@@ -1,0 +1,52 @@
+{
+  "overview_title": "Regioner",
+  "detail_title": "Region",
+  "name": "Navn",
+  "unlock_level": "Oplåsningsniveau",
+  "level_value": "Niveau {level}",
+  "breeding_slots": "Avlspladser",
+  "price_type": "Valutatype",
+  "breeding_center": "Avlscenter",
+  "slot": "Slot",
+  "admissions_booth": "Indgangskasse",
+  "booth_level": "Niveau",
+  "max_capacity": "Maks. kapacitet",
+  "upgrade": "Opgradering",
+  "admin_building": "Medarbejdervilla",
+  "admin_building_room": "Medarbejderrum",
+  "visitor_center": "Besøgscenter",
+  "transport_station": "Transportstation",
+  "guest_lounge": "Gæstelounge",
+  "design_boutique": "Designer Boutique",
+  "clubhouse": "Klubhus",
+  "terrain": "Terræn",
+  "inventory": {
+    "title": "Mine regioner",
+    "owned": "Jeg har",
+    "breeding_slots_unlocked": "Avlspladser låst op",
+    "admissions_booth_level": "Indgangskasse niveau",
+    "admin_building": "Personalevilla/-rum",
+    "visitor_center": "Besøgscenter",
+    "transport_station": "Transportstation",
+    "guest_lounge": "Gæstelounge"
+  },
+  "form": {
+    "create_region": "Opret region",
+    "edit_region": "Rediger region",
+    "save_region": "Gem region",
+    "basic_info": "Stamdata",
+    "identifier": "Identifier",
+    "releasedate": "Udgivelsesdato",
+    "unlocklevel": "Oplåsningsniveau",
+    "terrain": "Terræn",
+    "translations": "Oversættelser",
+    "messages": {
+      "createSuccess": "Region oprettet",
+      "editSuccess": "Region opdateret",
+      "confirmDelete": "Vil du virkelig slette denne region?",
+      "deleteErrorTitle": "Slet region",
+      "deleteSuccess": "Region slettet",
+      "requiredIdentifier": "Identifier er et obligatorisk felt."
+    }
+  }
+}

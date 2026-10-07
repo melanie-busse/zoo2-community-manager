@@ -24,6 +24,14 @@
     "update_error": "Fehler beim Aktualisieren",
     "delete_error": "Fehler beim Löschen"
   },
+  "region": {
+    "required_fields": "Identifier und mindestens ein Name sind Pflichtfelder.",
+    "create_error": "Fehler beim Erstellen der Region",
+    "update_success": "Region erfolgreich aktualisiert",
+    "update_error": "Fehler beim Aktualisieren der Region",
+    "delete_error": "Fehler beim Löschen der Region",
+    "invalid_id": "Ungültige Region-ID"
+  },
   "contest": {
     "not_found": "Contest nicht gefunden",
     "create_error": "Fehler beim Erstellen des Contests",

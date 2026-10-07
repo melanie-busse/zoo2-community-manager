@@ -37,8 +37,13 @@
     "inventory_statues": "Standbeelden",
     "inventory_contest_special_coats": "Wedstrijd kleurvarianten",
     "import-animals": "Dieren importeren",
+    "regions": "Regio's",
+    "region_create": "Regio toevoegen",
+    "terrains": "Terreintypen",
+    "terrain_create": "Terreintype toevoegen",
     "collections": "Verzamelalbum",
-    "inventory_collections": "Mijn Verzamelalbum"
+    "inventory_collections": "Mijn Verzamelalbum",
+    "inventory_regions": "Regio's"
   },
   "inventory_collections": "Verzamelalbum"
 }

@@ -45,35 +45,37 @@ const mockStats: BiomeStatistic[] = [
   makeStat({ biomeId: 2, totalAnimals: 20, animalsForZoodollar: 14, animalsForDiamond: 6, totalSpecialCoats: 8, shelterLevelCounts: { 0: 2, 1: 4, 2: 6, 3: 8 }, contestStatues: 5, contestSpecialCoats: 7 }),
 ];
 
+const defaultRegionStatistics = { totalRegions: 5, totalBreedingSlots: 20 };
+
 describe("ZooSummaryCard", () => {
   test("zeigt die Anzahl der Biome an", () => {
-    render(<ZooSummaryCard biomeStatistics={mockStats} />);
+    render(<ZooSummaryCard biomeStatistics={mockStats} totalCollections={0} regionStatistics={defaultRegionStatistics} />);
     expect(screen.getByText("summary.biomes")).toBeInTheDocument();
   });
 
-  test("zeigt die Anzahl eindeutiger Regionen an", () => {
+  test("zeigt die Biome-Anzahl im Header an", () => {
     const stats = [
       makeStat({ biomeId: 1, region: "Hauptzoo" }),
       makeStat({ biomeId: 2, region: "Hauptzoo" }),
       makeStat({ biomeId: 3, region: "FirGrove" }),
       makeStat({ biomeId: 4, region: null }),
     ];
-    render(<ZooSummaryCard biomeStatistics={stats} />);
-    expect(screen.getByText("summary.regions")).toBeInTheDocument();
+    render(<ZooSummaryCard biomeStatistics={stats} totalCollections={0} regionStatistics={defaultRegionStatistics} />);
+    expect(screen.getByText("summary.biomes")).toBeInTheDocument();
   });
 
   test("summiert Gesamtzahl der Tiere korrekt", () => {
-    render(<ZooSummaryCard biomeStatistics={mockStats} />);
+    render(<ZooSummaryCard biomeStatistics={mockStats} totalCollections={0} regionStatistics={defaultRegionStatistics} />);
     expect(screen.getByText("30")).toBeInTheDocument();
   });
 
   test("summiert Gesamtzahl der Farbvarianten korrekt", () => {
-    render(<ZooSummaryCard biomeStatistics={mockStats} />);
+    render(<ZooSummaryCard biomeStatistics={mockStats} totalCollections={0} regionStatistics={defaultRegionStatistics} />);
     expect(screen.getByText("13")).toBeInTheDocument();
   });
 
   test("summiert Zoodollar- und Diamanten-Tiere korrekt", () => {
-    render(<ZooSummaryCard biomeStatistics={mockStats} />);
+    render(<ZooSummaryCard biomeStatistics={mockStats} totalCollections={0} regionStatistics={defaultRegionStatistics} />);
     const zoodollarLabel = screen.getByText("animals.zoodollar");
     expect(zoodollarLabel.nextElementSibling).toHaveTextContent("20");
     const diamondLabel = screen.getByText("animals.diamond");
@@ -81,18 +83,18 @@ describe("ZooSummaryCard", () => {
   });
 
   test("summiert Wettbewerbstiere korrekt", () => {
-    render(<ZooSummaryCard biomeStatistics={mockStats} />);
+    render(<ZooSummaryCard biomeStatistics={mockStats} totalCollections={0} regionStatistics={defaultRegionStatistics} />);
     const label = screen.getByText("contest.contestAnimals");
     expect(label.nextElementSibling).toHaveTextContent("10");
   });
 
   test("summiert Statuen korrekt", () => {
-    render(<ZooSummaryCard biomeStatistics={mockStats} />);
+    render(<ZooSummaryCard biomeStatistics={mockStats} totalCollections={0} regionStatistics={defaultRegionStatistics} />);
     expect(screen.getByText("7")).toBeInTheDocument();
   });
 
   test("summiert Stalllevel-Counts korrekt", () => {
-    render(<ZooSummaryCard biomeStatistics={mockStats} />);
+    render(<ZooSummaryCard biomeStatistics={mockStats} totalCollections={0} regionStatistics={defaultRegionStatistics} />);
     // Level 0: 1+2=3, Level 1: 2+4=6, Level 2: 3+6=9, Level 3: 4+8=12
     expect(screen.getByText("3")).toBeInTheDocument();
     expect(screen.getByText("6")).toBeInTheDocument();
@@ -101,7 +103,15 @@ describe("ZooSummaryCard", () => {
   });
 
   test("funktioniert mit leerem Array", () => {
-    render(<ZooSummaryCard biomeStatistics={[]} />);
+    render(<ZooSummaryCard biomeStatistics={[]} totalCollections={0} regionStatistics={{ totalRegions: 0, totalBreedingSlots: 0 }} />);
     expect(screen.getByText("summary.biomes")).toBeInTheDocument();
+  });
+
+  test("zeigt Regionsstatistiken an", () => {
+    render(<ZooSummaryCard biomeStatistics={mockStats} totalCollections={0} regionStatistics={{ totalRegions: 8, totalBreedingSlots: 42 }} />);
+    const totalLabel = screen.getByText("regions.total");
+    expect(totalLabel.nextElementSibling).toHaveTextContent("8");
+    const slotsLabel = screen.getByText("regions.breedingSlots");
+    expect(slotsLabel.nextElementSibling).toHaveTextContent("42");
   });
 });

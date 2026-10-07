@@ -5,10 +5,15 @@
     "biomes": "{count} Biomer",
     "regions": "{count} Regioner"
   },
+  "regions": {
+    "title": "Regioner",
+    "total": "Antal:",
+    "breedingSlots": "Avlspladser:"
+  },
   "animals": {
     "title": "Dyr",
-    "total": "Samlet antal dyr:",
-    "specialCoats": "Samlet antal farvevarianter:",
+    "total": "Dyr:",
+    "specialCoats": "Farvevarianter:",
     "distribution": "Betalingsfordeling:",
     "zoodollar": "Dyr til Zoodollar",
     "diamond": "Dyr til Diamanter",

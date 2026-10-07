@@ -26,7 +26,23 @@ export const navConfig: NavItem[] = [
     labelKey: "zoo",
     basePath: "/zoo",
     requiresAuth: false,
-    subMenu: [{ labelKey: "statistic", href: "/zoo/statistic", requiresAuth: false }],
+    subMenu: [
+      { labelKey: "statistic", href: "/zoo/statistic", requiresAuth: false },
+      { labelKey: "regions", href: "/zoo/regions", requiresAuth: false },
+      {
+        labelKey: "region_create",
+        href: "/zoo/regions/create",
+        requiresAuth: true,
+        minimumRole: "Director",
+      },
+      { labelKey: "terrains", href: "/zoo/terrains", requiresAuth: false },
+      {
+        labelKey: "terrain_create",
+        href: "/zoo/terrains/create",
+        requiresAuth: true,
+        minimumRole: "Director",
+      },
+    ],
   },
   {
     id: "animals",
@@ -108,6 +124,11 @@ export const navConfig: NavItem[] = [
       {
         labelKey: "inventory_collections",
         href: "/zooInventory/collections",
+        requiresAuth: true,
+      },
+      {
+        labelKey: "inventory_regions",
+        href: "/zooInventory/regions",
         requiresAuth: true,
       },
     ],

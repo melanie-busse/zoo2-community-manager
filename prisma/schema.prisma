@@ -237,6 +237,7 @@ model PriceType {
   image         String?         @db.VarChar(50)
   animals       Animal[]
   biome         Biome[]
+  regions       Region[]
   pricetypetext PriceTypeText[]
 
   @@map("pricetype")
@@ -371,16 +372,28 @@ model ZooInventoryStatue {
 }
 
 model Region {
-  id          Int          @id @default(autoincrement())
-  price       Int
-  terrainid   Int
-  releasedate DateTime
-  unlocklevel Int
-  identifier  String       @db.VarChar(255)
-  biomes      Biome[]
-  regionTexts RegionText[]
-  collections Collection[]
+  id                  Int                  @id @default(autoincrement())
+  price               Int
+  priceTypeId         Int?
+  terrainid           Int
+  releasedate         DateTime
+  unlocklevel         Int
+  identifier          String               @db.VarChar(255)
+  priceType           PriceType?           @relation(fields: [priceTypeId], references: [id])
+  biomes              Biome[]
+  regionTexts         RegionText[]
+  collections         Collection[]
+  admissionsBooths    AdmissionsBooth[]
+  breedingCenterSlots BreedingCenterSlot[]
+  adminBuildings      AdminBuilding[]
+  breedingCenters     BreedingCenter[]
+  guestLounges        GuestLounge[]
+  visitorCenters      VisitorCenter[]
+  transportStation    TransportStation[]
+  desingBoutique      DesignBoutique[]
+  clubHouse           ClubHouse[]
 
+  @@index([priceTypeId], map: "region_priceTypeId_fkey")
   @@map("region")
 }
 
@@ -393,6 +406,26 @@ model RegionText {
 
   @@index([regionid], map: "regionText_regionId_idx")
   @@map("regiontext")
+}
+
+model Terrain {
+  id           Int           @id @default(autoincrement())
+  regionId     Int
+  identifier   String        @db.VarChar(255)
+  terrainTexts TerrainText[]
+
+  @@map("terrain")
+}
+
+model TerrainText {
+  id           Int     @id @default(autoincrement())
+  terrainid    Int
+  languageCode String  @db.VarChar(255)
+  name         String  @db.VarChar(255)
+  terrain      Terrain @relation(fields: [terrainid], references: [id], onDelete: Cascade, map: "terrainText_regionId_fkey")
+
+  @@index([terrainid], map: "terrainText_terrainId_idx")
+  @@map("terraintext")
 }
 
 model SpecialCoatOrigin {
@@ -508,11 +541,124 @@ model CategoryText {
 }
 
 model ZooInventoryCollection {
-  id                    Int     @id @default(autoincrement())
-  userId                Int
+  id                      Int     @id @default(autoincrement())
+  userId                  Int
   collectionRequirementId Int
-  completed             Boolean @default(false)
+  completed               Boolean @default(false)
 
   @@unique([userId, collectionRequirementId], map: "userid_collectionRequirementId")
   @@map("zooinventorycollection")
+}
+
+model AdmissionsBooth {
+  id           Int    @id @default(autoincrement())
+  booth_level  Int
+  max_capacity Int
+  upgrade      Int
+  pricetype    Int
+  regionId     Int
+  region       Region @relation(fields: [regionId], references: [id])
+
+  @@map("admissionsbooths")
+}
+
+model BreedingCenterSlot {
+  id        Int    @id @default(autoincrement())
+  slot      Int
+  price     Int
+  pricetype Int
+  regionId  Int
+  region    Region @relation(fields: [regionId], references: [id])
+
+  @@map("breedingcenterslots")
+}
+
+model AdminBuilding {
+  id        Int    @id @default(autoincrement())
+  price     Int
+  pricetype Int
+  regionId  Int
+  region    Region @relation(fields: [regionId], references: [id])
+
+  @@map("adminbuilding")
+}
+
+model BreedingCenter {
+  id        Int    @id @default(autoincrement())
+  price     Int
+  pricetype Int
+  regionId  Int
+  region    Region @relation(fields: [regionId], references: [id])
+
+  @@map("breedingcenter")
+}
+
+model GuestLounge {
+  id        Int    @id @default(autoincrement())
+  price     Int
+  pricetype Int
+  regionId  Int
+  region    Region @relation(fields: [regionId], references: [id])
+
+  @@map("guestlounge")
+}
+
+model VisitorCenter {
+  id        Int    @id @default(autoincrement())
+  price     Int
+  pricetype Int
+  regionId  Int
+  region    Region @relation(fields: [regionId], references: [id])
+
+  @@map("visitorcenter")
+}
+
+model TransportStation {
+  id        Int    @id @default(autoincrement())
+  price     Int
+  pricetype Int
+  regionId  Int
+  region    Region @relation(fields: [regionId], references: [id])
+
+  @@map("transportstation")
+}
+
+model ZooInventoryRegion {
+  id                   Int     @id @default(autoincrement())
+  userid               Int
+  regionId             Int
+  owned                Boolean @default(false)
+  breedingCenterSlots  Int?
+  admissionsBoothLevel Int?
+  adminBuilding        Boolean @default(false)
+  visitorCenter        Boolean @default(false)
+  transportStation     Boolean @default(false)
+  guestLounge          Boolean @default(false)
+  desingBoutique       Boolean @default(false)
+  clubHouse            Boolean @default(false)
+
+  @@unique([userid, regionId])
+  @@map("zooinventoryregion")
+}
+
+model DesignBoutique {
+  id          Int    @id @default(autoincrement())
+  price       Int
+  pricetype   Int
+  regionId    Int
+  unlocklevel Int
+  region      Region @relation(fields: [regionId], references: [id])
+
+  @@map("designboutique")
+}
+
+model ClubHouse {
+  id          Int    @id @default(autoincrement())
+  price       Int
+  pricetype   Int
+  regionId    Int
+  unlocklevel Int
+  region      Region @relation(fields: [regionId], references: [id])
+
+  @@map("clubhouse")
 }

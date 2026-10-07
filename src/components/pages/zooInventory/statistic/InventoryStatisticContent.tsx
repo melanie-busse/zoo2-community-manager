@@ -29,11 +29,13 @@ const Grid = styled.div`
 interface InventoryStatisticContentProps {
   biomeStatistics: InventoryBiomeStatistic[];
   collectionStats: { total: number; completed: number };
+  regionStatistics: { ownedRegions: number; ownedBreedingSlots: number; totalRegions: number; totalBreedingSlots: number };
 }
 
 export default function InventoryStatisticContent({
   biomeStatistics,
   collectionStats,
+  regionStatistics,
 }: InventoryStatisticContentProps) {
   const t = useTranslations("inventoryStatistic");
 
@@ -41,7 +43,7 @@ export default function InventoryStatisticContent({
     <>
       <PageHeader text={t("title")} />
       <Wrapper>
-        <InventorySummaryCard biomeStatistics={biomeStatistics} collectionStats={collectionStats} />
+        <InventorySummaryCard biomeStatistics={biomeStatistics} collectionStats={collectionStats} regionStatistics={regionStatistics} />
         <Grid>
           {biomeStatistics.map((stat) => (
             <InventoryStatisticCard key={stat.biomeId} stat={stat} />

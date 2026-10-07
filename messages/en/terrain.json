@@ -1,0 +1,21 @@
+{
+  "overview_title": "Terrain Types",
+  "name": "Name",
+  "identifier": "Identifier",
+  "region": "Region",
+  "form": {
+    "create_terrain": "Create Terrain Type",
+    "edit_terrain": "Edit Terrain Type",
+    "save_terrain": "Save Terrain Type",
+    "basic_info": "Basic Info",
+    "translations": "Translations",
+    "messages": {
+      "createSuccess": "Terrain type successfully created",
+      "editSuccess": "Terrain type successfully updated",
+      "confirmDelete": "Do you really want to delete this terrain type?",
+      "deleteErrorTitle": "Delete Terrain Type",
+      "deleteSuccess": "Terrain type successfully deleted",
+      "requiredIdentifier": "Identifier is a required field."
+    }
+  }
+}
