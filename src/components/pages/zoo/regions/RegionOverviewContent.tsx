@@ -12,6 +12,7 @@ interface Region {
   unlocklevel: number;
   regionTexts: { name: string }[];
   _count: { breedingCenterSlots: number };
+  terrainName?: string | null;
 }
 
 interface RegionOverviewContentProps {

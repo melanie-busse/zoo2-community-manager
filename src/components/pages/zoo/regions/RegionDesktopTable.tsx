@@ -23,6 +23,7 @@ interface Region {
   unlocklevel: number;
   regionTexts: { name: string }[];
   _count: { breedingCenterSlots: number };
+  terrainName?: string | null;
 }
 
 interface RegionDesktopTableProps {
@@ -59,6 +60,7 @@ export default function RegionDesktopTable({ regions }: RegionDesktopTableProps)
         <tr>
           <th></th>
           <th>{t("name")}</th>
+          <th>{t("terrain")}</th>
           <Styles.TableHeaderRight>{tCommon("price")}</Styles.TableHeaderRight>
           <Styles.TableHeaderRight>{t("unlock_level")}</Styles.TableHeaderRight>
           <Styles.TableHeaderRight>{t("breeding_slots")}</Styles.TableHeaderRight>
@@ -85,6 +87,7 @@ export default function RegionDesktopTable({ regions }: RegionDesktopTableProps)
               <td>
                 <strong>{name}</strong>
               </td>
+              <td>{region.terrainName ?? "—"}</td>
               <PriceCellRight>
                 <CurrencyBadge value={region.price} type="Diamond" />
               </PriceCellRight>

@@ -287,13 +287,25 @@ export async function deleteRegion(id: number): Promise<void> {
 
 export async function getAllRegions(locale: string = "de") {
   try {
-    return await prisma.region.findMany({
-      include: {
-        regionTexts: { where: { languageCode: locale } },
-        _count: { select: { breedingCenterSlots: true } },
-      },
-      orderBy: { id: "asc" },
-    });
+    const [regions, terrains] = await Promise.all([
+      prisma.region.findMany({
+        include: {
+          regionTexts: { where: { languageCode: locale } },
+          _count: { select: { breedingCenterSlots: true } },
+        },
+        orderBy: { id: "asc" },
+      }),
+      prisma.terrain.findMany({
+        include: { terrainTexts: { where: { languageCode: locale } } },
+      }),
+    ]);
+
+    const terrainMap = new Map(terrains.map((t) => [t.id, t.terrainTexts[0]?.name ?? null]));
+
+    return regions.map((r) => ({
+      ...r,
+      terrainName: r.terrainid ? (terrainMap.get(r.terrainid) ?? null) : null,
+    }));
   } catch (error) {
     console.error(`[RegionService] Error in getAllRegions (${locale}):`, error);
     return [];

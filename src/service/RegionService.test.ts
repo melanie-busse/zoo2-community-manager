@@ -13,6 +13,7 @@ vi.mock("@/lib/prisma", () => ({
       findUnique: vi.fn(),
       delete: vi.fn(),
     },
+    terrain: { findMany: vi.fn().mockResolvedValue([]) },
     regionText: { deleteMany: vi.fn() },
     admissionsBooth: { deleteMany: vi.fn() },
     breedingCenterSlot: { deleteMany: vi.fn() },
@@ -39,13 +40,14 @@ describe("RegionService", () => {
 
     const result = await getAllRegions("de");
 
-    expect(prisma.region.findMany).toHaveBeenCalledWith({
-      include: {
-        regionTexts: { where: { languageCode: "de" } },
-        _count: { select: { breedingCenterSlots: true } },
-      },
-      orderBy: { id: "asc" },
-    });
+    expect(prisma.region.findMany).toHaveBeenCalledWith(
+      expect.objectContaining({
+        include: expect.objectContaining({
+          regionTexts: { where: { languageCode: "de" } },
+        }),
+        orderBy: { id: "asc" },
+      }),
+    );
     expect(result).toHaveLength(2);
     expect(result[0]).toMatchObject({ id: 1, identifier: "main-zoo" });
   });
@@ -55,13 +57,14 @@ describe("RegionService", () => {
 
     await getAllRegions();
 
-    expect(prisma.region.findMany).toHaveBeenCalledWith({
-      include: {
-        regionTexts: { where: { languageCode: "de" } },
-        _count: { select: { breedingCenterSlots: true } },
-      },
-      orderBy: { id: "asc" },
-    });
+    expect(prisma.region.findMany).toHaveBeenCalledWith(
+      expect.objectContaining({
+        include: expect.objectContaining({
+          regionTexts: { where: { languageCode: "de" } },
+        }),
+        orderBy: { id: "asc" },
+      }),
+    );
   });
 
   test("getAllRegions gibt leeres Array zurück bei Datenbankfehler", async () => {

@@ -33,6 +33,7 @@ interface Region {
   unlocklevel: number;
   regionTexts: { name: string }[];
   _count: { breedingCenterSlots: number };
+  terrainName?: string | null;
 }
 
 export default function RegionMobileCard({ region }: { region: Region }) {
@@ -83,6 +84,12 @@ export default function RegionMobileCard({ region }: { region: Region }) {
       </CardHeaderRow>
       <CardDivider />
       <CardStatsRow>
+        {region.terrainName && (
+          <InfoRow>
+            <span>{t("terrain")}</span>
+            <span>{region.terrainName}</span>
+          </InfoRow>
+        )}
         <InfoRow>
           <span>{tCommon("price")}</span>
           <CurrencyBadge value={region.price} type="Diamond" />
