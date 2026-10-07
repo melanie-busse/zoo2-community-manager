@@ -17,6 +17,9 @@
   "visitor_center": "Visitor Center",
   "transport_station": "Transport Station",
   "guest_lounge": "Guest Lounge",
+  "design_boutique": "Designer Boutique",
+  "clubhouse": "Clubhouse",
+  "terrain": "Terrain",
   "inventory": {
     "title": "My Regions",
     "owned": "I have it",
@@ -35,6 +38,7 @@
     "identifier": "Identifier",
     "releasedate": "Release Date",
     "unlocklevel": "Unlock Level",
+    "terrain": "Terrain",
     "translations": "Translations",
     "messages": {
       "createSuccess": "Region successfully created",

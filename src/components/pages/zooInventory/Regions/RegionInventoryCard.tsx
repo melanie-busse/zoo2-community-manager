@@ -16,6 +16,8 @@ interface Region {
   breedingCenterSlots: { slot: number }[];
   admissionsBooths: { booth_level: number }[];
   guestLounges: { id: number }[];
+  desingBoutique: { id: number }[];
+  clubHouse: { id: number }[];
 }
 
 interface RegionInventoryCardProps {
@@ -45,11 +47,15 @@ export default function RegionInventoryCard({
     visitorCenter: false,
     transportStation: false,
     guestLounge: false,
+    desingBoutique: false,
+    clubHouse: false,
   };
 
   const slotCount = region.breedingCenterSlots.length;
   const boothLevels = region.admissionsBooths.map((b) => b.booth_level);
   const isOwned = inv.owned;
+  const hasDesignBoutique = region.desingBoutique.length > 0;
+  const hasClubHouse = region.clubHouse.length > 0;
 
   return (
     <CardContainer>
@@ -151,6 +157,30 @@ export default function RegionInventoryCard({
             checked={inv.guestLounge}
             disabled={!isOwned}
             onChange={(e) => onFieldChange(region.id, "guestLounge", e.target.checked)}
+          />
+        </BuildingRow>
+      )}
+
+      {hasDesignBoutique && (
+        <BuildingRow onClick={(e) => e.stopPropagation()}>
+          <span>{t("design_boutique")}</span>
+          <input
+            type="checkbox"
+            checked={inv.desingBoutique}
+            disabled={!isOwned}
+            onChange={(e) => onFieldChange(region.id, "desingBoutique", e.target.checked)}
+          />
+        </BuildingRow>
+      )}
+
+      {hasClubHouse && (
+        <BuildingRow onClick={(e) => e.stopPropagation()}>
+          <span>{t("clubhouse")}</span>
+          <input
+            type="checkbox"
+            checked={inv.clubHouse}
+            disabled={!isOwned}
+            onChange={(e) => onFieldChange(region.id, "clubHouse", e.target.checked)}
           />
         </BuildingRow>
       )}

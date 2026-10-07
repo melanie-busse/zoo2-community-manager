@@ -14,6 +14,8 @@ interface Region {
   breedingCenterSlots: { slot: number }[];
   admissionsBooths: { booth_level: number }[];
   guestLounges: { id: number }[];
+  desingBoutique: { id: number }[];
+  clubHouse: { id: number }[];
 }
 
 interface RegionInventoryContentProps {
@@ -42,6 +44,8 @@ export default function RegionInventoryContent({ data }: RegionInventoryContentP
         visitorCenter: false,
         transportStation: false,
         guestLounge: false,
+        desingBoutique: false,
+        clubHouse: false,
       };
       next.set(regionId, { ...existing, [field]: value });
       return next;

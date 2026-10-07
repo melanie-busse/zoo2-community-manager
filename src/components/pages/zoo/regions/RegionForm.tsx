@@ -18,14 +18,21 @@ import SubmitButton from "@/components/ui/form/SubmitButton";
 import FormGrid from "@/components/ui/form/styling/FormGrid";
 import Column from "@/components/ui/form/styling/Column";
 
+interface Terrain {
+  id: number;
+  identifier: string;
+  terrainTexts: { name: string }[];
+}
+
 interface RegionFormProps {
   region?: any;
   languages: Array<{ code: string; name: string }>;
+  terrains: Terrain[];
 }
 
 const STAFF_ROOM_REGIONS = new Set(["Aviary", "Aquarium", "Terrarium", "NocturnalHouse"]);
 
-export default function RegionForm({ region, languages }: RegionFormProps) {
+export default function RegionForm({ region, languages, terrains }: RegionFormProps) {
   const tRegion = useTranslations("region");
   const tCommon = useTranslations("common");
   const router = useRouter();
@@ -74,7 +81,7 @@ export default function RegionForm({ region, languages }: RegionFormProps) {
     <form onSubmit={handleSubmit}>
       <FormGrid>
         <Column>
-          <RegionBasicSection formData={formData} setFormData={setFormData} />
+          <RegionBasicSection formData={formData} setFormData={setFormData} terrains={terrains} />
           <RegionTranslationSection
             formData={formData}
             setFormData={setFormData}

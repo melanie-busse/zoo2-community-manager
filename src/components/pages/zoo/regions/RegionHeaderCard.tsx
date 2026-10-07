@@ -17,6 +17,7 @@ interface Region {
   releasedate: Date;
   regionTexts: { name: string }[];
   priceType: { name: string } | null;
+  terrainName?: string | null;
 }
 
 interface RegionHeaderCardProps {
@@ -73,6 +74,15 @@ export default function RegionHeaderCard({ region }: RegionHeaderCardProps) {
               <div className="value">{tRegion("level_value", { level: region.unlocklevel })}</div>
             </StatBox>
           </Styles.StatsGroup>
+
+          {region.terrainName && (
+            <Styles.StatsGroup>
+              <StatBox>
+                <label>{tRegion("terrain")}</label>
+                <div className="value">{region.terrainName}</div>
+              </StatBox>
+            </Styles.StatsGroup>
+          )}
         </Styles.StatsGrid>
       </InfoSection>
     </Styles.DesktopCardContainer>

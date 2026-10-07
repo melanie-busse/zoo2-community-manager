@@ -114,6 +114,8 @@ describe("upsertRegionInventory", () => {
       visitorCenter: false,
       transportStation: false,
       guestLounge: false,
+      desingBoutique: false,
+      clubHouse: false,
     });
   });
 

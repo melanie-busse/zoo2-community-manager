@@ -17,6 +17,9 @@
   "visitor_center": "Bezoekerscentrum",
   "transport_station": "Transportstation",
   "guest_lounge": "Gastenlounge",
+  "design_boutique": "Designer Boetiek",
+  "clubhouse": "Clubhuis",
+  "terrain": "Terrein",
   "inventory": {
     "title": "Mijn regio's",
     "owned": "Ik heb het",
@@ -35,6 +38,7 @@
     "identifier": "Identifier",
     "releasedate": "Releasedatum",
     "unlocklevel": "Vrijschakel-niveau",
+    "terrain": "Terrein",
     "translations": "Vertalingen",
     "messages": {
       "createSuccess": "Regio succesvol aangemaakt",

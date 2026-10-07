@@ -6,7 +6,7 @@ import { getServerSession } from "next-auth";
 import PageWrapper from "@/components/page-structure/page/PageWrapper";
 import ContentWrapper from "@/components/page-structure/page/ContentWrapper";
 import PageHeader from "@/components/page-structure/page/PageHeader";
-import { getRegionByIdForEdit } from "@/service/RegionService";
+import { getRegionByIdForEdit, getTerrains } from "@/service/RegionService";
 import { getAllLanguages } from "@/service/LanguageService";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { hasMinimumRole, isMayor } from "@/utils/roleUtils";
@@ -29,9 +29,10 @@ export default async function EditRegionPage({ params }: EditRegionPageProps) {
     redirect(`/${locale}/zoo/regions`);
   }
 
-  const [regionRaw, languages] = await Promise.all([
+  const [regionRaw, languages, terrains] = await Promise.all([
     getRegionByIdForEdit(regionId),
     getAllLanguages(),
+    getTerrains(locale),
   ]);
 
   if (!regionRaw) {
@@ -46,7 +47,7 @@ export default async function EditRegionPage({ params }: EditRegionPageProps) {
     <PageWrapper>
       <ContentWrapper>
         <PageHeader text={tRegion("form.edit_region")} />
-        <RegionForm region={serialized} languages={languages} />
+        <RegionForm region={serialized} languages={languages} terrains={terrains} />
       </ContentWrapper>
     </PageWrapper>
   );

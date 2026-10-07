@@ -21,6 +21,8 @@ const baseRegion = {
   breedingCenterSlots: [{ slot: 1 }, { slot: 2 }],
   admissionsBooths: [{ booth_level: 1 }, { booth_level: 2 }],
   guestLounges: [{ id: 10 }],
+  desingBoutique: [{ id: 20 }],
+  clubHouse: [{ id: 30 }],
 };
 
 const noOp = () => {};
@@ -82,5 +84,27 @@ describe("RegionInventoryCard", () => {
     const checkbox = screen.getAllByRole("checkbox")[0];
     checkbox.click();
     expect(onFieldChange).toHaveBeenCalledWith(1, "owned", true);
+  });
+
+  test("zeigt Designer Boutique-Checkbox an wenn Region eine Designer Boutique hat", () => {
+    render(<RegionInventoryCard region={baseRegion} inventory={null} onFieldChange={noOp} />);
+    expect(screen.getByText("region.design_boutique")).toBeInTheDocument();
+  });
+
+  test("zeigt Designer Boutique-Checkbox nicht an wenn Region keine Designer Boutique hat", () => {
+    const region = { ...baseRegion, desingBoutique: [] };
+    render(<RegionInventoryCard region={region} inventory={null} onFieldChange={noOp} />);
+    expect(screen.queryByText("region.design_boutique")).not.toBeInTheDocument();
+  });
+
+  test("zeigt Clubhaus-Checkbox an wenn Region ein Clubhaus hat", () => {
+    render(<RegionInventoryCard region={baseRegion} inventory={null} onFieldChange={noOp} />);
+    expect(screen.getByText("region.clubhouse")).toBeInTheDocument();
+  });
+
+  test("zeigt Clubhaus-Checkbox nicht an wenn Region kein Clubhaus hat", () => {
+    const region = { ...baseRegion, clubHouse: [] };
+    render(<RegionInventoryCard region={region} inventory={null} onFieldChange={noOp} />);
+    expect(screen.queryByText("region.clubhouse")).not.toBeInTheDocument();
   });
 });

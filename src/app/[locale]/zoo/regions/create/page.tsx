@@ -9,6 +9,7 @@ import PageWrapper from "@/components/page-structure/page/PageWrapper";
 import ContentWrapper from "@/components/page-structure/page/ContentWrapper";
 import PageHeader from "@/components/page-structure/page/PageHeader";
 import { getAllLanguages } from "@/service/LanguageService";
+import { getTerrains } from "@/service/RegionService";
 import RegionForm from "@/components/pages/zoo/regions/RegionForm";
 
 interface CreateRegionPageProps {
@@ -23,7 +24,7 @@ export default async function CreateRegionPage({ params }: CreateRegionPageProps
     redirect(`/${locale}/zoo/regions`);
   }
 
-  const [languages] = await Promise.all([getAllLanguages()]);
+  const [languages, terrains] = await Promise.all([getAllLanguages(), getTerrains(locale)]);
 
   const tRegion = await getTranslations({ locale, namespace: "region" });
 
@@ -31,7 +32,7 @@ export default async function CreateRegionPage({ params }: CreateRegionPageProps
     <PageWrapper>
       <ContentWrapper>
         <PageHeader text={tRegion("form.create_region")} />
-        <RegionForm languages={languages} />
+        <RegionForm languages={languages} terrains={terrains} />
       </ContentWrapper>
     </PageWrapper>
   );

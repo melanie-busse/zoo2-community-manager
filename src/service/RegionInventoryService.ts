@@ -8,7 +8,9 @@ export type RegionInventoryField =
   | "adminBuilding"
   | "visitorCenter"
   | "transportStation"
-  | "guestLounge";
+  | "guestLounge"
+  | "desingBoutique"
+  | "clubHouse";
 
 export interface RegionInventoryData {
   owned: boolean;
@@ -18,6 +20,8 @@ export interface RegionInventoryData {
   visitorCenter: boolean;
   transportStation: boolean;
   guestLounge: boolean;
+  desingBoutique: boolean;
+  clubHouse: boolean;
 }
 
 export async function getRegionsWithInventory(userId: number, locale: string) {
@@ -28,6 +32,8 @@ export async function getRegionsWithInventory(userId: number, locale: string) {
         breedingCenterSlots: true,
         admissionsBooths: { orderBy: { booth_level: "asc" } },
         guestLounges: true,
+        desingBoutique: true,
+        clubHouse: true,
       },
       orderBy: { id: "asc" },
     }),
@@ -49,6 +55,8 @@ export async function getRegionsWithInventory(userId: number, locale: string) {
             visitorCenter: row.visitorCenter,
             transportStation: row.transportStation,
             guestLounge: row.guestLounge,
+            desingBoutique: row.desingBoutique,
+            clubHouse: row.clubHouse,
           }
         : null,
     };
@@ -61,7 +69,7 @@ export async function upsertRegionInventory(
   field: RegionInventoryField,
   value: boolean | number | null,
 ): Promise<void> {
-  const boolFields = ["owned", "adminBuilding", "visitorCenter", "transportStation", "guestLounge"];
+  const boolFields = ["owned", "adminBuilding", "visitorCenter", "transportStation", "guestLounge", "desingBoutique", "clubHouse"];
   const intFields = ["breedingCenterSlots", "admissionsBoothLevel"];
 
   const parsedValue = intFields.includes(field)
@@ -81,6 +89,8 @@ export async function upsertRegionInventory(
       visitorCenter: field === "visitorCenter" ? Boolean(value) : false,
       transportStation: field === "transportStation" ? Boolean(value) : false,
       guestLounge: field === "guestLounge" ? Boolean(value) : false,
+      desingBoutique: field === "desingBoutique" ? Boolean(value) : false,
+      clubHouse: field === "clubHouse" ? Boolean(value) : false,
     },
   });
 }

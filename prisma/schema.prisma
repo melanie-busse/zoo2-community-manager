@@ -390,6 +390,8 @@ model Region {
   guestLounges        GuestLounge[]
   visitorCenters      VisitorCenter[]
   transportStation    TransportStation[]
+  desingBoutique      DesignBoutique[]
+  clubHouse           ClubHouse[]
 
   @@index([priceTypeId], map: "region_priceTypeId_fkey")
   @@map("region")
@@ -404,6 +406,26 @@ model RegionText {
 
   @@index([regionid], map: "regionText_regionId_idx")
   @@map("regiontext")
+}
+
+model Terrain {
+  id           Int           @id @default(autoincrement())
+  regionId     Int
+  identifier   String        @db.VarChar(255)
+  terrainTexts TerrainText[]
+
+  @@map("terrain")
+}
+
+model TerrainText {
+  id           Int     @id @default(autoincrement())
+  terrainid    Int
+  languageCode String  @db.VarChar(255)
+  name         String  @db.VarChar(255)
+  terrain      Terrain @relation(fields: [terrainid], references: [id], onDelete: Cascade, map: "terrainText_regionId_fkey")
+
+  @@index([terrainid], map: "terrainText_terrainId_idx")
+  @@map("terraintext")
 }
 
 model SpecialCoatOrigin {
@@ -612,7 +634,31 @@ model ZooInventoryRegion {
   visitorCenter        Boolean @default(false)
   transportStation     Boolean @default(false)
   guestLounge          Boolean @default(false)
+  desingBoutique       Boolean @default(false)
+  clubHouse            Boolean @default(false)
 
   @@unique([userid, regionId])
   @@map("zooinventoryregion")
+}
+
+model DesignBoutique {
+  id          Int    @id @default(autoincrement())
+  price       Int
+  pricetype   Int
+  regionId    Int
+  unlocklevel Int
+  region      Region @relation(fields: [regionId], references: [id])
+
+  @@map("designboutique")
+}
+
+model ClubHouse {
+  id          Int    @id @default(autoincrement())
+  price       Int
+  pricetype   Int
+  regionId    Int
+  unlocklevel Int
+  region      Region @relation(fields: [regionId], references: [id])
+
+  @@map("clubhouse")
 }

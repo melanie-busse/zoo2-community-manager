@@ -7,13 +7,13 @@ const sedgwick = Sedgwick_Ave_Display({
 });
 
 const dmSans = DM_Sans({
-  weight: ["400", "500", "700"],
+  weight: "variable",
   subsets: ["latin"],
   display: "swap",
 });
 
 const playfair = Playfair_Display({
-  weight: ["400", "700"],
+  weight: "variable",
   subsets: ["latin"],
   display: "swap",
 });

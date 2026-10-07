@@ -5,9 +5,16 @@ export async function getRegionCount() {
   return prisma.region.count();
 }
 
+export async function getTerrains(locale: string) {
+  return prisma.terrain.findMany({
+    include: { terrainTexts: { where: { languageCode: locale } } },
+    orderBy: { id: "asc" },
+  });
+}
+
 export async function getRegionById(id: number, locale: string = "de") {
   try {
-    return await prisma.region.findUnique({
+    const region = await prisma.region.findUnique({
       where: { id },
       include: {
         regionTexts: { where: { languageCode: locale } },
@@ -19,8 +26,20 @@ export async function getRegionById(id: number, locale: string = "de") {
         visitorCenters: true,
         transportStation: true,
         guestLounges: true,
+        desingBoutique: true,
+        clubHouse: true,
       },
     });
+    if (!region) return null;
+
+    const terrain = region.terrainid
+      ? await prisma.terrain.findUnique({
+          where: { id: region.terrainid },
+          include: { terrainTexts: { where: { languageCode: locale } } },
+        })
+      : null;
+
+    return { ...region, terrainName: terrain?.terrainTexts[0]?.name ?? null };
   } catch (error) {
     console.error(`[RegionService] Error in getRegionById (${id}, ${locale}):`, error);
     return null;
@@ -55,7 +74,7 @@ export async function createRegion(data: any): Promise<{ id: number }> {
       data: {
         price: parseInt(data.price || "0"),
         priceTypeId: parseInt(data.priceTypeId || "1"),
-        terrainid: 0,
+        terrainid: parseInt(data.terrainid || "0"),
         releasedate: new Date(data.releasedate),
         unlocklevel: parseInt(data.unlocklevel || "0"),
         identifier: data.identifier,
@@ -149,6 +168,7 @@ export async function updateRegion(id: number, data: any): Promise<{ id: number 
       data: {
         price: parseInt(data.price || "0"),
         priceTypeId: parseInt(data.priceTypeId || "1"),
+        terrainid: parseInt(data.terrainid || "0"),
         releasedate: new Date(data.releasedate),
         unlocklevel: parseInt(data.unlocklevel || "0"),
         identifier: data.identifier,

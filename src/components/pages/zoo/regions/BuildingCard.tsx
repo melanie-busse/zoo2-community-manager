@@ -23,10 +23,12 @@ interface BuildingCardProps {
   icon: string;
   imagePath: string;
   building: Building | undefined;
+  unlocklevel?: number;
 }
 
-export default function BuildingCard({ title, icon, imagePath, building }: BuildingCardProps) {
+export default function BuildingCard({ title, icon, imagePath, building, unlocklevel }: BuildingCardProps) {
   const tCommon = useTranslations("common");
+  const tRegion = useTranslations("region");
 
   return (
     <InfoAccordion title={title} icon={icon} defaultOpen={true}>
@@ -43,6 +45,12 @@ export default function BuildingCard({ title, icon, imagePath, building }: Build
 
         {building && (
           <PriceRow>
+            {unlocklevel !== undefined && (
+              <>
+                <label>{tRegion("unlock_level")}</label>
+                <strong style={{ fontSize: "0.9rem", marginBottom: "8px" }}>{tRegion("level_value", { level: unlocklevel })}</strong>
+              </>
+            )}
             <label>{tCommon("price")}</label>
             <CurrencyBadge value={building.price} type={toCurrencyType(building.pricetype)} />
           </PriceRow>

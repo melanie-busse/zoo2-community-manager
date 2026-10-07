@@ -1,6 +1,7 @@
 export interface RegionFormData {
   id?: number;
   identifier: string;
+  terrainid: string;
   releasedate: string;
   unlocklevel: string;
   price: string;
@@ -40,6 +41,7 @@ export function mapRegionToForm(
   if (!region) {
     return {
       identifier: "",
+      terrainid: "0",
       releasedate: "",
       unlocklevel: "0",
       price: "0",
@@ -71,6 +73,7 @@ export function mapRegionToForm(
   return {
     id: region.id,
     identifier: region.identifier ?? "",
+    terrainid: toStr(region.terrainid),
     releasedate: toDateStr(region.releasedate),
     unlocklevel: toStr(region.unlocklevel),
     price: toStr(region.price),

@@ -12,18 +12,33 @@ import FormGroup from "@/components/ui/form/styling/FormGroup";
 import FormRow from "@/components/ui/form/styling/FormRow";
 import Label from "@/components/ui/form/Label";
 
+interface Terrain {
+  id: number;
+  identifier: string;
+  terrainTexts: { name: string }[];
+}
+
 interface RegionBasicSectionProps {
   formData: any;
   setFormData: React.Dispatch<React.SetStateAction<any>>;
+  terrains: Terrain[];
 }
 
-export default function RegionBasicSection({ formData, setFormData }: RegionBasicSectionProps) {
+export default function RegionBasicSection({ formData, setFormData, terrains }: RegionBasicSectionProps) {
   const tRegion = useTranslations("region");
   const tCommon = useTranslations("common");
 
   const currencyOptions = [
     { value: "1", label: tCommon("currencies.zoodollar") },
     { value: "2", label: tCommon("currencies.diamonds") },
+  ];
+
+  const terrainOptions = [
+    { value: "0", label: "-" },
+    ...terrains.map((t) => ({
+      value: String(t.id),
+      label: t.terrainTexts[0]?.name ?? t.identifier,
+    })),
   ];
 
   return (
@@ -49,6 +64,19 @@ export default function RegionBasicSection({ formData, setFormData }: RegionBasi
               fontSize: "1rem",
               width: "100%",
             }}
+          />
+        </FormGroup>
+
+        <FormGroup>
+          <Label htmlFor="terrainid">{tRegion("form.terrain")}</Label>
+          <Selectbox
+            id="terrainid"
+            name="terrainid"
+            value={formData.terrainid?.toString() ?? "0"}
+            onChange={(e) =>
+              setFormData((prev: any) => ({ ...prev, terrainid: e.target.value }))
+            }
+            options={terrainOptions}
           />
         </FormGroup>
 

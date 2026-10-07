@@ -20,6 +20,10 @@ interface Building {
   pricetype: number;
 }
 
+interface BuildingWithLevel extends Building {
+  unlocklevel: number;
+}
+
 interface BreedingCenterSlot {
   id: number;
   slot: number;
@@ -50,6 +54,9 @@ interface Region {
   visitorCenters: Building[];
   transportStation: Building[];
   guestLounges: Building[];
+  desingBoutique: BuildingWithLevel[];
+  clubHouse: BuildingWithLevel[];
+  terrainName?: string | null;
 }
 
 interface RegionDetailContentProps {
@@ -67,6 +74,8 @@ export default function RegionDetailContent({ region }: RegionDetailContentProps
   const hasGuestLounge = region.guestLounges.length > 0;
   const hasBreedingCenter = region.breedingCenterSlots.length > 0;
   const hasAdmissionsBooth = region.admissionsBooths.length > 0;
+  const hasDesignBoutique = region.desingBoutique.length > 0;
+  const hasClubHouse = region.clubHouse.length > 0;
 
   const STAFF_ROOM_REGIONS = new Set(["Aviary", "Aquarium", "Terrarium", "NocturnalHouse"]);
   const adminBuildingTitle = STAFF_ROOM_REGIONS.has(region.identifier)
@@ -149,6 +158,29 @@ export default function RegionDetailContent({ region }: RegionDetailContentProps
           />
         )}
       </CardsGrid>
+
+      {(hasDesignBoutique || hasClubHouse) && (
+        <CardsGrid>
+          {hasDesignBoutique && (
+            <BuildingCard
+              title={tRegion("design_boutique")}
+              icon="/images/icons/buildings.png"
+              imagePath={`/images/regions/${id}/design_boutique/image.webp`}
+              building={region.desingBoutique[0]}
+              unlocklevel={region.desingBoutique[0].unlocklevel}
+            />
+          )}
+          {hasClubHouse && (
+            <BuildingCard
+              title={tRegion("clubhouse")}
+              icon="/images/icons/buildings.png"
+              imagePath={`/images/regions/${id}/clubhouse/image.webp`}
+              building={region.clubHouse[0]}
+              unlocklevel={region.clubHouse[0].unlocklevel}
+            />
+          )}
+        </CardsGrid>
+      )}
     </Wrapper>
   );
 }

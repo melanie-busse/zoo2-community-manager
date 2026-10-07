@@ -17,6 +17,9 @@
   "visitor_center": "Besøgscenter",
   "transport_station": "Transportstation",
   "guest_lounge": "Gæstelounge",
+  "design_boutique": "Designer Boutique",
+  "clubhouse": "Klubhus",
+  "terrain": "Terræn",
   "inventory": {
     "title": "Mine regioner",
     "owned": "Jeg har",
@@ -35,6 +38,7 @@
     "identifier": "Identifier",
     "releasedate": "Udgivelsesdato",
     "unlocklevel": "Oplåsningsniveau",
+    "terrain": "Terræn",
     "translations": "Oversættelser",
     "messages": {
       "createSuccess": "Region oprettet",
