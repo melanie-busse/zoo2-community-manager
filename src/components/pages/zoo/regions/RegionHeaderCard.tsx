@@ -34,24 +34,26 @@ export default function RegionHeaderCard({ region }: RegionHeaderCardProps) {
     region.priceType?.name === "Diamond" ? "Diamond" : "Zoodollar";
 
   return (
-    <Styles.DesktopCardContainer style={{ flexDirection: "column" }}>
-      <TitleBlock>
-        <h1>{displayName}</h1>
-        <Styles.ReleaseDate>
-          <span className="label">📅 {tCommon("release")}:</span>{" "}
-          <span className="date">
-            <FormattedDate
-              date={region.releasedate}
-              options={{ year: "numeric", month: "long", day: "numeric" }}
-            />
-          </span>
-        </Styles.ReleaseDate>
-      </TitleBlock>
-
-      <BottomRow>
+    <Styles.DesktopCardContainer>
+      <Styles.ImageWrapper>
         <RegionImageContainer>
           <StyledRegionImage src={imagePath} alt={displayName} width={50} height={50} priority />
         </RegionImageContainer>
+      </Styles.ImageWrapper>
+
+      <InfoSection>
+        <TitleBlock>
+          <h1>{displayName}</h1>
+          <Styles.ReleaseDate>
+            <span className="label">📅 {tCommon("release")}:</span>{" "}
+            <span className="date">
+              <FormattedDate
+                date={region.releasedate}
+                options={{ year: "numeric", month: "long", day: "numeric" }}
+              />
+            </span>
+          </Styles.ReleaseDate>
+        </TitleBlock>
 
         <Styles.StatsGrid>
           <Styles.StatsGroup>
@@ -77,26 +79,10 @@ export default function RegionHeaderCard({ region }: RegionHeaderCardProps) {
             </Styles.StatsGroup>
           )}
         </Styles.StatsGrid>
-      </BottomRow>
+      </InfoSection>
     </Styles.DesktopCardContainer>
   );
 }
-
-const TitleBlock = styled.div`
-  width: 100%;
-  margin-bottom: ${({ theme }) => theme.spacing(2)};
-
-  h1 {
-    margin: 0 0 4px 0;
-  }
-`;
-
-const BottomRow = styled.div`
-  display: flex;
-  align-items: center;
-  gap: ${({ theme }) => theme.spacing(2)};
-  width: 100%;
-`;
 
 const RegionImageContainer = styled.div`
   flex-shrink: 0;
@@ -117,4 +103,24 @@ const StyledRegionImage = styled(NextImage)`
   height: 100%;
   object-fit: cover;
   object-position: center;
+`;
+
+const InfoSection = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(2)};
+  min-width: 0;
+`;
+
+const TitleBlock = styled.div`
+  width: 100%;
+
+  h1 {
+    color: #2d5a27;
+    margin: 0 0 4px 0;
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.2;
+  }
 `;
