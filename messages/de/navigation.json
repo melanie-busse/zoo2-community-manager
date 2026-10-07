@@ -35,6 +35,8 @@
     "inventory_animals": "Tiere",
     "inventory_statues": "Statuen",
     "inventory_contest_special_coats": "Wettbewerbs-Farbvarianten",
+    "biomes": "Biome",
+    "biome_create": "Biom anlegen",
     "regions": "Regionen",
     "region_create": "Region anlegen",
     "terrains": "Geländetypen",

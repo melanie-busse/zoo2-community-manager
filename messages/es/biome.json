@@ -1,6 +1,31 @@
 {
   "enclosure": "Recinto",
   "enclosureType": "Tipo de recinto",
-  "shelterLevel": "Nivel del establo",
-  "noBiome": "Sin recinto"
+  "shelterLevel": "Nivel de refugio",
+  "noBiome": "Sin recinto",
+  "overview_title": "Biomas",
+  "name": "Nombre",
+  "identifier": "Identificador",
+  "price": "Precio",
+  "price_type": "Tipo de precio",
+  "expansion_cost": "Coste de expansión",
+  "size": "Tamaño",
+  "region": "Región",
+  "form": {
+    "create_biome": "Añadir bioma",
+    "edit_biome": "Editar bioma",
+    "save_biome": "Guardar bioma",
+    "basic_info": "Información básica",
+    "translations": "Traducciones",
+    "biome_name": "Nombre",
+    "biome_description": "Descripción",
+    "messages": {
+      "createSuccess": "Bioma creado correctamente",
+      "editSuccess": "Bioma actualizado correctamente",
+      "confirmDelete": "¿Realmente deseas eliminar este bioma?",
+      "deleteErrorTitle": "Eliminar bioma",
+      "deleteSuccess": "Bioma eliminado correctamente",
+      "requiredIdentifier": "El identificador es un campo obligatorio."
+    }
+  }
 }

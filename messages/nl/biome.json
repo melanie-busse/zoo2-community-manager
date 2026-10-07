@@ -1,6 +1,31 @@
 {
   "enclosure": "Verblijf",
-  "enclosureType": "Verblijfstype",
+  "enclosureType": "Verblijftype",
   "shelterLevel": "Stalniveau",
-  "noBiome": "Geen verblijf"
+  "noBiome": "Geen verblijf",
+  "overview_title": "Biomen",
+  "name": "Naam",
+  "identifier": "Identifier",
+  "price": "Prijs",
+  "price_type": "Prijstype",
+  "expansion_cost": "Uitbreidingskosten",
+  "size": "Grootte",
+  "region": "Regio",
+  "form": {
+    "create_biome": "Bioom aanmaken",
+    "edit_biome": "Bioom bewerken",
+    "save_biome": "Bioom opslaan",
+    "basic_info": "Basisgegevens",
+    "translations": "Vertalingen",
+    "biome_name": "Naam",
+    "biome_description": "Beschrijving",
+    "messages": {
+      "createSuccess": "Bioom succesvol aangemaakt",
+      "editSuccess": "Bioom succesvol bijgewerkt",
+      "confirmDelete": "Wil je dit bioom echt verwijderen?",
+      "deleteErrorTitle": "Bioom verwijderen",
+      "deleteSuccess": "Bioom succesvol verwijderd",
+      "requiredIdentifier": "Identifier is een verplicht veld."
+    }
+  }
 }

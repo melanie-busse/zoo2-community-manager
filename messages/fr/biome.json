@@ -1,6 +1,31 @@
 {
   "enclosure": "Enclos",
   "enclosureType": "Type d'enclos",
-  "shelterLevel": "Niveau de l'abri",
-  "noBiome": "Aucun enclos"
+  "shelterLevel": "Niveau d'abri",
+  "noBiome": "Pas d'enclos",
+  "overview_title": "Biomes",
+  "name": "Nom",
+  "identifier": "Identifiant",
+  "price": "Prix",
+  "price_type": "Type de prix",
+  "expansion_cost": "Coût d'expansion",
+  "size": "Taille",
+  "region": "Région",
+  "form": {
+    "create_biome": "Ajouter un biome",
+    "edit_biome": "Modifier le biome",
+    "save_biome": "Enregistrer le biome",
+    "basic_info": "Informations de base",
+    "translations": "Traductions",
+    "biome_name": "Nom",
+    "biome_description": "Description",
+    "messages": {
+      "createSuccess": "Biome créé avec succès",
+      "editSuccess": "Biome mis à jour avec succès",
+      "confirmDelete": "Voulez-vous vraiment supprimer ce biome?",
+      "deleteErrorTitle": "Supprimer le biome",
+      "deleteSuccess": "Biome supprimé avec succès",
+      "requiredIdentifier": "L'identifiant est un champ obligatoire."
+    }
+  }
 }

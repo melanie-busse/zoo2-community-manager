@@ -2,5 +2,30 @@
   "enclosure": "Gehege",
   "enclosureType": "Gehegetyp",
   "shelterLevel": "Stall Level",
-  "noBiome": "Kein Gehege"
+  "noBiome": "Kein Gehege",
+  "overview_title": "Biome",
+  "name": "Name",
+  "identifier": "Identifier",
+  "price": "Preis",
+  "price_type": "Preistyp",
+  "expansion_cost": "Erweiterungskosten",
+  "size": "Größe",
+  "region": "Region",
+  "form": {
+    "create_biome": "Biom anlegen",
+    "edit_biome": "Biom bearbeiten",
+    "save_biome": "Biom speichern",
+    "basic_info": "Stammdaten",
+    "translations": "Übersetzungen",
+    "biome_name": "Name",
+    "biome_description": "Beschreibung",
+    "messages": {
+      "createSuccess": "Biom erfolgreich angelegt",
+      "editSuccess": "Biom erfolgreich aktualisiert",
+      "confirmDelete": "Möchtest du dieses Biom wirklich löschen?",
+      "deleteErrorTitle": "Biom löschen",
+      "deleteSuccess": "Biom erfolgreich gelöscht",
+      "requiredIdentifier": "Identifier ist ein Pflichtfeld."
+    }
+  }
 }

@@ -42,7 +42,15 @@
       "Bash(npx ts-node:*)",
       "Bash(mkdir -p \"D:/Entwicklung/zoo2-community-manager/src/app/[locale]/zoo/terrains/create\")",
       "Bash(mkdir -p \"D:/Entwicklung/zoo2-community-manager/src/app/[locale]/zoo/terrains/[id]/edit\")",
-      "Bash(git log:*)"
+      "Bash(git log:*)",
+      "Bash(find D:/Entwicklung/zoo2-community-manager/src -name PriceBadge*)",
+      "Bash(D:/Entwicklung/zoo2-community-manager/messages/de/biome.json:*)",
+      "Bash(__NEW_LINE_d23eee6084eade00__ cat:*)",
+      "Bash(D:/Entwicklung/zoo2-community-manager/messages/en/biome.json:*)",
+      "Bash(D:/Entwicklung/zoo2-community-manager/messages/da/biome.json:*)",
+      "Bash(D:/Entwicklung/zoo2-community-manager/messages/nl/biome.json:*)",
+      "Bash(mkdir -p \"D:/Entwicklung/zoo2-community-manager/src/app/[locale]/zoo/biomes/create\")",
+      "Bash(mkdir -p \"D:/Entwicklung/zoo2-community-manager/src/app/[locale]/zoo/biomes/[id]/edit\")"
     ]
   }
 }

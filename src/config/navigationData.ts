@@ -28,6 +28,13 @@ export const navConfig: NavItem[] = [
     requiresAuth: false,
     subMenu: [
       { labelKey: "statistic", href: "/zoo/statistic", requiresAuth: false },
+      { labelKey: "biomes", href: "/zoo/biomes", requiresAuth: false },
+      {
+        labelKey: "biome_create",
+        href: "/zoo/biomes/create",
+        requiresAuth: true,
+        minimumRole: "Director",
+      },
       { labelKey: "regions", href: "/zoo/regions", requiresAuth: false },
       {
         labelKey: "region_create",
