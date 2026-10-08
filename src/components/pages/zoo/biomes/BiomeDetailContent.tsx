@@ -29,7 +29,7 @@ interface TroughOrWater {
   id: number;
   price: number;
   pricetype: number;
-  repair: number;
+  repair?: number;
 }
 
 interface BiomeGame {
@@ -109,6 +109,7 @@ export default function BiomeDetailContent({ biome }: BiomeDetailContentProps) {
               title={t("form.troughs")}
               imagePath={`/images/biomes/${biome.identifier}/trough.webp`}
               items={biome.troughs}
+              showRepair={false}
             />
           </CardWrapper>
           <CardWrapper>

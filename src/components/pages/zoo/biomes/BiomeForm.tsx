@@ -30,8 +30,8 @@ interface Region {
 }
 
 type BiomeText    = { languageCode: string; biomeName: string; biomeDescription: string };
-type TroughRow    = { id: number | string; price: string; pricetype: string; repair: string };
-type WaterRow     = TroughRow;
+type TroughRow    = { id: number | string; price: string; pricetype: string };
+type WaterRow     = { id: number | string; price: string; pricetype: string; repair: string };
 type ShelterRow   = { id: number | string; level: string; cost: string; pricetype: string; buildTime: string; unlockLevel: string };
 type GameRow      = { id: number | string; identifier: string; price: string; pricetype: string; repair: string; repairpricetype: string; [key: string]: string | number };
 
@@ -46,7 +46,7 @@ interface BiomeFormProps {
     size: number | null;
     regionId: number | null;
     biomestext: { languageCode: string; biomeName: string; biomeDescription: string | null }[];
-    troughs: { id: number; price: number; pricetype: number; repair: number }[];
+    troughs: { id: number; price: number; pricetype: number }[];
     waterHoles: { id: number; price: number; pricetype: number; repair: number }[];
     shelters: { id: number; level: number; cost: number; pricetype: number; buildTime: number | null; unlockLevel: number | null }[];
     games: { id: number; identifier: string; price: number; pricetype: number; repair: number; repairpricetype: number; texts: { languageCode: string; name: string }[] }[];
@@ -92,7 +92,7 @@ export default function BiomeForm({ biome, languages, regions }: BiomeFormProps)
   });
 
   const [troughs, setTroughs] = useState<TroughRow[]>(() =>
-    (biome?.troughs ?? []).map((r) => ({ id: r.id, price: String(r.price), pricetype: String(r.pricetype), repair: String(r.repair) }))
+    (biome?.troughs ?? []).map((r) => ({ id: r.id, price: String(r.price), pricetype: String(r.pricetype) }))
   );
   const [waterHoles, setWaterHoles] = useState<WaterRow[]>(() =>
     (biome?.waterHoles ?? []).map((r) => ({ id: r.id, price: String(r.price), pricetype: String(r.pricetype), repair: String(r.repair) }))
@@ -141,7 +141,7 @@ export default function BiomeForm({ biome, languages, regions }: BiomeFormProps)
         size: size !== "" ? parseInt(size, 10) : null,
         regionId: regionId !== "0" ? parseInt(regionId, 10) : null,
         biomestext,
-        troughs: troughs.map((r) => ({ price: parseInt(r.price) || 0, pricetype: parseInt(r.pricetype) || 1, repair: parseInt(r.repair) || 0 })),
+        troughs: troughs.map((r) => ({ price: parseInt(r.price) || 0, pricetype: parseInt(r.pricetype) || 1 })),
         waterHoles: waterHoles.map((r) => ({ price: parseInt(r.price) || 0, pricetype: parseInt(r.pricetype) || 1, repair: parseInt(r.repair) || 0 })),
         shelters: shelters.map((r) => ({ level: parseInt(r.level) || 0, cost: parseInt(r.cost) || 0, pricetype: parseInt(r.pricetype) || 1, buildTime: r.buildTime !== "" ? parseInt(r.buildTime) || null : null, unlockLevel: r.unlockLevel !== "" ? parseInt(r.unlockLevel) || null : null })),
         games: games.map((r) => ({ identifier: r.identifier, price: parseInt(r.price) || 0, pricetype: parseInt(r.pricetype) || 1, repair: parseInt(r.repair) || 0, repairpricetype: parseInt(r.repairpricetype) || 1, texts: languages.map((l) => ({ languageCode: l.code, name: r[`text_${l.code}`] ?? "" })) })),
@@ -164,7 +164,6 @@ export default function BiomeForm({ biome, languages, regions }: BiomeFormProps)
   const troughColumns = [
     { key: "price",     label: t("price"),      type: "number" as const, $flex: 2 },
     { key: "pricetype", label: t("price_type"), type: "select" as const, options: currencyOptions },
-    { key: "repair",    label: t("repair"),     type: "number" as const, $flex: 2 },
   ];
   const shelterColumns = [
     { key: "level",       label: t("level"),        type: "number" as const },
@@ -240,7 +239,7 @@ export default function BiomeForm({ biome, languages, regions }: BiomeFormProps)
             <DynamicRowInput
               rows={troughs}
               columns={troughColumns}
-              {...makeHandlers(setTroughs, { price: "", pricetype: "1", repair: "" })}
+              {...makeHandlers(setTroughs, { price: "", pricetype: "1" })}
             />
           </InfoAccordion>
         </Column>

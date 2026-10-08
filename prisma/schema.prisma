@@ -676,7 +676,6 @@ model BiomeTrough {
   id        Int   @id @default(autoincrement())
   price     Int
   pricetype Int
-  repair    Int
   biomeId   Int
   biome     Biome @relation(fields: [biomeId], references: [id], onDelete: Cascade)
 

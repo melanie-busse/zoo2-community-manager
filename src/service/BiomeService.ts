@@ -1,7 +1,7 @@
 import "server-only";
 import prisma from "@/lib/prisma";
 
-type TroughData    = { price: number; pricetype: number; repair: number };
+type TroughData    = { price: number; pricetype: number };
 type WaterHoleData = { price: number; pricetype: number; repair: number };
 type ShelterData   = { level: number; cost: number; pricetype: number; buildTime: number | null; unlockLevel: number | null };
 type GameTextData  = { languageCode: string; name: string };

@@ -15,16 +15,17 @@ interface TroughOrWater {
   id: number;
   price: number;
   pricetype: number;
-  repair: number;
+  repair?: number;
 }
 
 interface BiomeTroughWaterCardProps {
   title: string;
   imagePath: string;
   items: TroughOrWater[];
+  showRepair?: boolean;
 }
 
-export default function BiomeTroughWaterCard({ title, imagePath, items }: BiomeTroughWaterCardProps) {
+export default function BiomeTroughWaterCard({ title, imagePath, items, showRepair = true }: BiomeTroughWaterCardProps) {
   const t = useTranslations("biome");
 
   return (
@@ -42,7 +43,7 @@ export default function BiomeTroughWaterCard({ title, imagePath, items }: BiomeT
           <thead>
             <tr>
               <Th>{t("price")}</Th>
-              <Th>{t("repair")}</Th>
+              {showRepair && <Th>{t("repair")}</Th>}
             </tr>
           </thead>
           <tbody>
@@ -51,9 +52,11 @@ export default function BiomeTroughWaterCard({ title, imagePath, items }: BiomeT
                 <Td>
                   <CurrencyBadge value={item.price} type={toCurrencyType(item.pricetype)} />
                 </Td>
-                <Td>
-                  <CurrencyBadge value={item.repair} type={toCurrencyType(item.pricetype)} />
-                </Td>
+                {showRepair && item.repair != null && (
+                  <Td>
+                    <CurrencyBadge value={item.repair} type={toCurrencyType(item.pricetype)} />
+                  </Td>
+                )}
               </tr>
             ))}
           </tbody>
