@@ -31,7 +31,7 @@ export default function BiomeGameCard({ biomeIdentifier, games }: BiomeGameCardP
   const t = useTranslations("biome");
 
   return (
-    <InfoAccordion title={t("games")} icon="/images/icons/info.png" defaultOpen={true}>
+    <InfoAccordion title={t("games")} icon="/images/icons/play.png" defaultOpen={true}>
       <GamesGrid>
         {games.map((game) => {
           const name = game.texts[0]?.name ?? game.identifier;
@@ -68,7 +68,7 @@ export default function BiomeGameCard({ biomeIdentifier, games }: BiomeGameCardP
 
 const GamesGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: ${({ theme }) => theme.spacing(2)};
 `;
 

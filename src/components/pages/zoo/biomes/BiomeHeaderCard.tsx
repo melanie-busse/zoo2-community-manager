@@ -43,30 +43,26 @@ export default function BiomeHeaderCard({ biome }: BiomeHeaderCardProps) {
           <h1>{displayName}</h1>
         </TitleBlock>
 
-        <Styles.StatsGrid>
-          <Styles.StatsGroup>
-            {biome.price != null && (
-              <StatBox>
-                <label>{t("price")}</label>
-                <PriceBadge value={biome.price} type={badgeType} />
-              </StatBox>
-            )}
-
-            {biome.expansionsCost != null && (
-              <StatBox>
-                <label>{t("expansion_cost")}</label>
-                <PriceBadge value={biome.expansionsCost} type={badgeType} />
-              </StatBox>
-            )}
-
-            {biome.size != null && (
-              <StatBox>
-                <label>{t("size")}</label>
-                <div className="value">{biome.size}</div>
-              </StatBox>
-            )}
-          </Styles.StatsGroup>
-        </Styles.StatsGrid>
+        <TopRow>
+          {biome.price != null && (
+            <StatBox>
+              <label>{t("price")}</label>
+              <PriceBadge value={biome.price} type={badgeType} />
+            </StatBox>
+          )}
+          {biome.size != null && (
+            <StatBox>
+              <label>{t("size")}</label>
+              <div className="value">{biome.size}</div>
+            </StatBox>
+          )}
+          {biome.expansionsCost != null && (
+            <StatBox>
+              <label>{t("expansion_cost")}</label>
+              <PriceBadge value={biome.expansionsCost} type={badgeType} />
+            </StatBox>
+          )}
+        </TopRow>
       </InfoSection>
     </Styles.DesktopCardContainer>
   );
@@ -110,5 +106,15 @@ const TitleBlock = styled.div`
     font-size: 2rem;
     font-weight: bold;
     line-height: 1.2;
+  }
+`;
+
+const TopRow = styled.div`
+  display: flex;
+  gap: ${({ theme }) => theme.spacing(2)};
+  align-items: flex-start;
+
+  & > * {
+    flex: 1;
   }
 `;

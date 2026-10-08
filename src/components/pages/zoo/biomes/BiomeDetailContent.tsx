@@ -18,11 +18,9 @@ import { deleteBiomeOnClient } from "@/service/frontend/Biome";
 interface ShelterLevel {
   id: number;
   level: number;
-  price: number | null;
-  priceTypeId: number | null;
-  buildCost: number | null;
-  buildCostPriceTypeId: number | null;
-  upgradeTime: number | null;
+  cost: number;
+  pricetype: number;
+  buildTime: number | null;
   unlockLevel: number | null;
 }
 
@@ -91,7 +89,7 @@ export default function BiomeDetailContent({ biome }: BiomeDetailContentProps) {
       <BiomeHeaderCard biome={biome} />
 
       {biome.shelters.length > 0 && (
-        <ShelterLevelCard levels={biome.shelters} />
+        <ShelterLevelCard levels={biome.shelters} biomeIdentifier={biome.identifier} />
       )}
 
       {biome.games.length > 0 && (
@@ -105,6 +103,7 @@ const DetailWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${({ theme }) => theme.spacing(3)};
+  width: 100%;
 `;
 
 const ActionsRow = styled.div`

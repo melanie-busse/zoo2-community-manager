@@ -7,39 +7,40 @@ import InfoAccordion from "@/components/page-structure/Elements/InfoAccordion";
 import CurrencyBadge, { CurrencyType } from "@/components/ui/badges/CurrencyBadge";
 import * as Styles from "@/components/pages/animals/AnimalDetails/AnimalDetails.styles";
 
-function toCurrencyType(priceTypeId: number | null): CurrencyType {
-  return priceTypeId === 2 ? "Diamond" : "Zoodollar";
+function toCurrencyType(pricetype: number | null): CurrencyType {
+  return pricetype === 2 ? "Diamond" : "Zoodollar";
 }
 
 interface ShelterLevel {
   id: number;
   level: number;
-  price: number | null;
-  priceTypeId: number | null;
-  buildCost: number | null;
-  buildCostPriceTypeId: number | null;
-  upgradeTime: number | null;
+  cost: number;
+  pricetype: number;
+  buildTime: number | null;
   unlockLevel: number | null;
 }
 
 interface ShelterLevelCardProps {
   levels: ShelterLevel[];
+  biomeIdentifier: string;
 }
 
-export default function ShelterLevelCard({ levels }: ShelterLevelCardProps) {
+export default function ShelterLevelCard({ levels, biomeIdentifier }: ShelterLevelCardProps) {
   const t = useTranslations("biome");
+
+  const shelterIcon = `/images/biomes/${biomeIdentifier}/shelter.png`;
 
   return (
     <InfoAccordion
       title={t("shelter_levels")}
-      icon="/images/icons/info.png"
+      icon={shelterIcon}
+      iconSize={45}
       defaultOpen={true}
     >
       <Styles.XpTable>
         <thead>
           <tr>
             <th style={{ textAlign: "left" }}>{t("level")}</th>
-            <th style={{ textAlign: "right" }}>{t("price")}</th>
             <th style={{ textAlign: "right" }}>{t("build_cost")}</th>
             <th style={{ textAlign: "right" }}>{t("upgrade_time")}</th>
             <th style={{ textAlign: "right" }}>{t("unlock_level")}</th>
@@ -52,21 +53,10 @@ export default function ShelterLevelCard({ levels }: ShelterLevelCardProps) {
                 {t("level_value", { level: lvl.level })}
               </Styles.TableCell>
               <Styles.TableCell>
-                {lvl.price != null ? (
-                  <CurrencyBadge value={lvl.price} type={toCurrencyType(lvl.priceTypeId)} />
-                ) : (
-                  "—"
-                )}
+                <CurrencyBadge value={lvl.cost} type={toCurrencyType(lvl.pricetype)} />
               </Styles.TableCell>
               <Styles.TableCell>
-                {lvl.buildCost != null ? (
-                  <CurrencyBadge value={lvl.buildCost} type={toCurrencyType(lvl.buildCostPriceTypeId)} />
-                ) : (
-                  "—"
-                )}
-              </Styles.TableCell>
-              <Styles.TableCell>
-                {lvl.upgradeTime != null ? t("minutes", { n: lvl.upgradeTime }) : "—"}
+                {lvl.buildTime != null ? t("minutes", { n: lvl.buildTime }) : "—"}
               </Styles.TableCell>
               <Styles.TableCell>
                 {lvl.unlockLevel != null ? lvl.unlockLevel : "—"}

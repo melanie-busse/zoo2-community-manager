@@ -60,7 +60,8 @@
       "Bash(cd:*)",
       "Bash(for lang:*)",
       "Read(//d/Entwicklung/zoo2-community-manager/messages/$lang/**)",
-      "Bash(2)"
+      "Bash(2)",
+      "Bash(find D:/Entwicklung/zoo2-community-manager/src/components/page-structure -name *.tsx)"
     ]
   }
 }
