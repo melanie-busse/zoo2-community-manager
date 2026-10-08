@@ -29,8 +29,9 @@ interface Region {
   regionTexts: { name: string }[];
 }
 
-type BiomeText = { languageCode: string; biomeName: string; biomeDescription: string };
-type GameRow   = { id: number | string; identifier: string; price: string; pricetype: string; repair: string; repairpricetype: string; [key: string]: string | number };
+type BiomeText  = { languageCode: string; biomeName: string; biomeDescription: string };
+type ShelterRow = { id: number | string; level: string; cost: string; pricetype: string; buildTime: string; unlockLevel: string };
+type GameRow    = { id: number | string; identifier: string; price: string; pricetype: string; repair: string; repairpricetype: string; [key: string]: string | number };
 
 interface BiomeFormProps {
   biome?: {
@@ -99,13 +100,9 @@ export default function BiomeForm({ biome, languages, regions }: BiomeFormProps)
   const [waterPricetype, setWaterPricetype] = useState(firstWater?.pricetype?.toString() ?? "1");
   const [waterRepair, setWaterRepair] = useState(firstWater?.repair?.toString() ?? "");
 
-  // Stalllevel — single entry
-  const firstShelter = biome?.shelters?.[0];
-  const [shelterLevel, setShelterLevel] = useState(firstShelter?.level?.toString() ?? "");
-  const [shelterCost, setShelterCost] = useState(firstShelter?.cost?.toString() ?? "");
-  const [shelterPricetype, setShelterPricetype] = useState(firstShelter?.pricetype?.toString() ?? "1");
-  const [shelterBuildTime, setShelterBuildTime] = useState(firstShelter?.buildTime?.toString() ?? "");
-  const [shelterUnlockLevel, setShelterUnlockLevel] = useState(firstShelter?.unlockLevel?.toString() ?? "");
+  const [shelters, setShelters] = useState<ShelterRow[]>(() =>
+    (biome?.shelters ?? []).map((r) => ({ id: r.id, level: String(r.level), cost: String(r.cost), pricetype: String(r.pricetype), buildTime: String(r.buildTime ?? ""), unlockLevel: String(r.unlockLevel ?? "") }))
+  );
 
   const [games, setGames] = useState<GameRow[]>(() =>
     (biome?.games ?? []).map((r) => {
@@ -145,9 +142,7 @@ export default function BiomeForm({ biome, languages, regions }: BiomeFormProps)
       const waterHoles = waterPrice !== ""
         ? [{ price: parseInt(waterPrice) || 0, pricetype: parseInt(waterPricetype) || 1, repair: parseInt(waterRepair) || 0 }]
         : [];
-      const shelters = shelterCost !== ""
-        ? [{ level: parseInt(shelterLevel) || 0, cost: parseInt(shelterCost) || 0, pricetype: parseInt(shelterPricetype) || 1, buildTime: shelterBuildTime !== "" ? parseInt(shelterBuildTime) || null : null, unlockLevel: shelterUnlockLevel !== "" ? parseInt(shelterUnlockLevel) || null : null }]
-        : [];
+      const shelterData = shelters.map((r) => ({ level: parseInt(r.level) || 0, cost: parseInt(r.cost) || 0, pricetype: parseInt(r.pricetype) || 1, buildTime: r.buildTime !== "" ? parseInt(r.buildTime) || null : null, unlockLevel: r.unlockLevel !== "" ? parseInt(r.unlockLevel) || null : null }));
 
       const data = {
         identifier,
@@ -160,7 +155,7 @@ export default function BiomeForm({ biome, languages, regions }: BiomeFormProps)
         biomestext,
         troughs,
         waterHoles,
-        shelters,
+        shelters: shelterData,
         games: games.map((r) => ({ identifier: r.identifier, price: parseInt(r.price) || 0, pricetype: parseInt(r.pricetype) || 1, repair: parseInt(r.repair) || 0, repairpricetype: parseInt(r.repairpricetype) || 1, texts: languages.map((l) => ({ languageCode: l.code, name: r[`text_${l.code}`] ?? "" })) })),
       };
 
@@ -274,27 +269,17 @@ export default function BiomeForm({ biome, languages, regions }: BiomeFormProps)
 
         <Column>
           <InfoAccordion title={t("shelter_levels")} icon="/images/icons/info.png" defaultOpen>
-            <SectionColumn>
-              <FormGroup>
-                <Label htmlFor="shelterLevel">{t("level")}</Label>
-                <InputField id="shelterLevel" type="number" value={shelterLevel} onChange={(e) => setShelterLevel(e.target.value)} />
-              </FormGroup>
-              <FormGroup>
-                <Label htmlFor="shelterCost">{t("build_cost")}</Label>
-                <FormRow>
-                  <InputField id="shelterCost" type="number" value={shelterCost} onChange={(e) => setShelterCost(e.target.value)} />
-                  <Selectbox id="shelterPricetype" name="shelterPricetype" value={shelterPricetype} onChange={(e) => setShelterPricetype(e.target.value)} options={currencyOptions} />
-                </FormRow>
-              </FormGroup>
-              <FormGroup>
-                <Label htmlFor="shelterBuildTime">{t("upgrade_time")}</Label>
-                <InputField id="shelterBuildTime" type="number" value={shelterBuildTime} onChange={(e) => setShelterBuildTime(e.target.value)} />
-              </FormGroup>
-              <FormGroup>
-                <Label htmlFor="shelterUnlockLevel">{t("unlock_level")}</Label>
-                <InputField id="shelterUnlockLevel" type="number" value={shelterUnlockLevel} onChange={(e) => setShelterUnlockLevel(e.target.value)} />
-              </FormGroup>
-            </SectionColumn>
+            <DynamicRowInput
+              rows={shelters}
+              columns={[
+                { key: "level",       label: t("level"),        type: "number" as const },
+                { key: "cost",        label: t("build_cost"),   type: "number" as const, $flex: 2 },
+                { key: "pricetype",   label: t("price_type"),   type: "select" as const, options: currencyOptions },
+                { key: "buildTime",   label: t("upgrade_time"), type: "number" as const },
+                { key: "unlockLevel", label: t("unlock_level"), type: "number" as const },
+              ]}
+              {...makeHandlers(setShelters, { level: "", cost: "", pricetype: "1", buildTime: "", unlockLevel: "" })}
+            />
           </InfoAccordion>
         </Column>
 
