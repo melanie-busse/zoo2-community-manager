@@ -76,18 +76,19 @@ model OriginText {
 }
 
 model Animal {
-  id                     Int                     @id @default(autoincrement())
-  releaseDate            DateTime?
-  price                  Int?
-  priceTypeId            Int?
-  sellingPrice           Int?
-  popularity             Int?
-  releaseExp             Int?
-  identifier             String?                 @db.VarChar(255)
-  biomeId                Int
-  size                   Int?
-  biomeGameId            Int?
-  shelterId              Int?
+  id           Int       @id @default(autoincrement())
+  releaseDate  DateTime?
+  price        Int?
+  priceTypeId  Int?
+  sellingPrice Int?
+  popularity   Int?
+  releaseExp   Int?
+  identifier   String?   @db.VarChar(255)
+  biomeId      Int
+  size         Int?
+  biomeGameId  Int?
+  shelterId    Int?
+
   breedingCost           Int?
   breedingDuration       Int?
   breedingProbability    Int?
@@ -696,7 +697,7 @@ model BiomeWaterHole {
 }
 
 model BiomeShelter {
-  id          Int   @id @default(autoincrement())
+  id          Int      @id @default(autoincrement())
   level       Int
   cost        Int
   pricetype   Int
@@ -718,9 +719,9 @@ model BiomeGame {
   repair          Int
   repairpricetype Int             @default(1)
   biomeId         Int
-  biome      Biome           @relation(fields: [biomeId], references: [id], onDelete: Cascade)
-  texts      BiomeGameText[]
-  animals    Animal[]
+  biome           Biome           @relation(fields: [biomeId], references: [id], onDelete: Cascade)
+  texts           BiomeGameText[]
+  animals         Animal[]
 
   @@index([biomeId])
   @@map("biomegame")
