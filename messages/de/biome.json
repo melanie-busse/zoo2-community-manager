@@ -28,6 +28,8 @@
       "requiredIdentifier": "Identifier ist ein Pflichtfeld."
     }
   },
+  "games": "Spielzeuge",
+  "repair": "Reparatur",
   "shelter_levels": "Stalllevel",
   "level": "Level",
   "build_cost": "Baukosten",

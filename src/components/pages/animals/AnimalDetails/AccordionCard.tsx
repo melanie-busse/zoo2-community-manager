@@ -47,7 +47,7 @@ export default function AccordionCard() {
         </DataRow>
 
         <DataRow label={tCommon("time")}>
-          <strong>{animal.breedingDuration || 0} h</strong>
+          <strong>{formatMinutes(animal.breedingDuration)}</strong>
         </DataRow>
 
         <DataRow label={tAnimals("breeding.breedingChance")}>

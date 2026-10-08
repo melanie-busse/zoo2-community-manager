@@ -96,6 +96,7 @@ model Animal {
   biome                  Biome                   @relation(fields: [biomeId], references: [id])
   priceType              PriceType?              @relation(fields: [priceTypeId], references: [id])
   shelter                BiomeShelter?           @relation(fields: [shelterId], references: [id])
+  biomeGame              BiomeGame?              @relation(fields: [biomeGameId], references: [id])
   animalorigins          AnimalOrigin[]
   animalperenclosure     AnimalPerEnclosure[]
   animaltext             AnimalText[]
@@ -109,6 +110,7 @@ model Animal {
   @@index([biomeId], map: "animal_biomeId_fkey")
   @@index([priceTypeId], map: "animal_priceTypeId_fkey")
   @@index([shelterId], map: "animal_shelterId_fkey")
+  @@index([biomeGameId], map: "animal_biomeGameId_fkey")
   @@map("animal")
 }
 
@@ -718,6 +720,7 @@ model BiomeGame {
   biomeId    Int
   biome      Biome           @relation(fields: [biomeId], references: [id], onDelete: Cascade)
   texts      BiomeGameText[]
+  animals    Animal[]
 
   @@index([biomeId])
   @@map("biomegame")

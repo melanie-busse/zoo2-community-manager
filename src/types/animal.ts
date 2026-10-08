@@ -9,6 +9,7 @@ export interface Animal {
   name?: string;
   biome?: Biome;
   shelter?: { level?: number | null } | null;
+  biomeGame?: { identifier: string } | null;
 
   // Optionale Felder
   releaseDate?: Date | string | null;

@@ -36,6 +36,24 @@ export function getShelterImage(biome: Biome | null | undefined): Image {
   };
 }
 
+export function getGameImage(
+  biomeIdentifier: string | null | undefined,
+  gameIdentifier: string | null | undefined,
+): Image {
+  if (!biomeIdentifier || !gameIdentifier) {
+    return {
+      name: "placeholder.png",
+      path: "/images/placeholder.jpg",
+      alt: "Spielzeug",
+    };
+  }
+  return {
+    name: gameIdentifier,
+    path: `/images/biomes/${biomeIdentifier}/game/${gameIdentifier}/image.webp`,
+    alt: gameIdentifier,
+  };
+}
+
 export function getBiomeName(biome: Biome | null | undefined, fallback: string): string {
   if (!biome) return fallback;
   return biome.biomestext?.[0]?.biomeName || fallback;

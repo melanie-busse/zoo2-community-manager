@@ -28,6 +28,8 @@
       "requiredIdentifier": "Identifier is een verplicht veld."
     }
   },
+  "games": "Spielzeuge",
+  "repair": "Reparatur",
   "shelter_levels": "Stalniveaus",
   "level": "Niveau",
   "build_cost": "Bouwkosten",

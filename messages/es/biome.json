@@ -28,6 +28,8 @@
       "requiredIdentifier": "El identificador es un campo obligatorio."
     }
   },
+  "games": "Spielzeuge",
+  "repair": "Reparatur",
   "shelter_levels": "Niveles de establo",
   "level": "Nivel",
   "build_cost": "Coste de construcción",

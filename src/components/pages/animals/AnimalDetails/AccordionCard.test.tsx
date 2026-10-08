@@ -108,7 +108,7 @@ describe("AccordionCard", () => {
 
     render(<AccordionCard />);
 
-    expect(screen.getByText("12 h")).toBeInTheDocument();
+    expect(screen.getByText("12 min")).toBeInTheDocument();
     expect(screen.getByText("65 %")).toBeInTheDocument();
   });
 

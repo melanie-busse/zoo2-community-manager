@@ -9,6 +9,7 @@ import { toast } from "react-toastify";
 
 import BiomeHeaderCard from "./BiomeHeaderCard";
 import ShelterLevelCard from "./ShelterLevelCard";
+import BiomeGameCard from "./BiomeGameCard";
 import ActionGroupBadge from "@/components/ui/badges/ActionGroupBadge";
 import { hasMinimumRole } from "@/utils/roleUtils";
 import { confirmDeleteDialog } from "@/utils/alerts";
@@ -25,6 +26,15 @@ interface ShelterLevel {
   unlockLevel: number | null;
 }
 
+interface BiomeGame {
+  id: number;
+  identifier: string;
+  price: number;
+  pricetype: number;
+  repair: number;
+  texts: { name: string }[];
+}
+
 interface Biome {
   id: number;
   identifier: string;
@@ -34,6 +44,7 @@ interface Biome {
   biomestext: { biomeName: string }[];
   priceType: { name: string } | null;
   shelters: ShelterLevel[];
+  games: BiomeGame[];
 }
 
 interface BiomeDetailContentProps {
@@ -80,6 +91,10 @@ export default function BiomeDetailContent({ biome }: BiomeDetailContentProps) {
 
       {biome.shelters.length > 0 && (
         <ShelterLevelCard levels={biome.shelters} />
+      )}
+
+      {biome.games.length > 0 && (
+        <BiomeGameCard biomeIdentifier={biome.identifier} games={biome.games} />
       )}
     </DetailWrapper>
   );

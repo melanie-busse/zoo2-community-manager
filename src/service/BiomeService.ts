@@ -28,6 +28,12 @@ export async function getBiomeById(id: number, locale: string = "de") {
       biomestext: { where: { languageCode: locale } },
       priceType: true,
       shelters: { orderBy: { level: "asc" } },
+      troughs: true,
+      waterHoles: true,
+      games: {
+        include: { texts: { where: { languageCode: locale } } },
+        orderBy: { identifier: "asc" },
+      },
     },
   });
 }

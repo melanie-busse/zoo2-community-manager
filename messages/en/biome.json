@@ -28,6 +28,8 @@
       "requiredIdentifier": "Identifier is a required field."
     }
   },
+  "games": "Enrichment Games",
+  "repair": "Repair",
   "shelter_levels": "Shelter Levels",
   "level": "Level",
   "build_cost": "Build Cost",

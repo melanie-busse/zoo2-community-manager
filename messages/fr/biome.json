@@ -28,6 +28,8 @@
       "requiredIdentifier": "L'identifiant est un champ obligatoire."
     }
   },
+  "games": "Spielzeuge",
+  "repair": "Reparatur",
   "shelter_levels": "Niveaux d'étable",
   "level": "Niveau",
   "build_cost": "Coût de construction",

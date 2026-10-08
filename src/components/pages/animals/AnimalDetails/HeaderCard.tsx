@@ -11,7 +11,7 @@ import OriginBadgeList from "@/components/page-structure/Elements/OriginBadgeLis
 import GameBadge from "@/components/ui/badges/GameBadge";
 import { Image } from "@/types/image";
 import ShelterLevelBadge from "@/components/ui/badges/ShelterLevelBadge";
-import { getShelterImage } from "@/utils/BiomeUtil";
+import { getShelterImage, getGameImage } from "@/utils/BiomeUtil";
 import PopularityBadge from "@/components/ui/badges/PopularityBadge";
 import StatBox from "@/components/page-structure/Elements/StatBox";
 import ImageBadge from "@/components/ui/badges/ImageBadge";
@@ -96,6 +96,12 @@ export default function HeaderCard() {
               size={45}
               showTooltip={true}
             />
+            {animal.biomeGame && (
+              <GameBadge
+                image={getGameImage(animal.biome?.identifier, animal.biomeGame.identifier)}
+                size={45}
+              />
+            )}
           </Styles.EnclosureBox>
         </Styles.StatsGrid>
       </Styles.InfoSection>

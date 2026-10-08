@@ -28,6 +28,8 @@
       "requiredIdentifier": "Identifikator er et påkrævet felt."
     }
   },
+  "games": "Spielzeuge",
+  "repair": "Reparatur",
   "shelter_levels": "Staldt niveauer",
   "level": "Niveau",
   "build_cost": "Byggeomkostninger",
