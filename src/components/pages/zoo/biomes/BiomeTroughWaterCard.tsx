@@ -4,7 +4,6 @@ import React from "react";
 import styled from "styled-components";
 import { useTranslations } from "next-intl";
 
-import InfoAccordion from "@/components/page-structure/Elements/InfoAccordion";
 import CurrencyBadge, { CurrencyType } from "@/components/ui/badges/CurrencyBadge";
 
 function toCurrencyType(pricetype: number): CurrencyType {
@@ -19,73 +18,59 @@ interface TroughOrWater {
 }
 
 interface BiomeTroughWaterCardProps {
-  troughs: TroughOrWater[];
-  waterHoles: TroughOrWater[];
+  title: string;
+  items: TroughOrWater[];
 }
 
-function ItemTable({ items }: { items: TroughOrWater[] }) {
-  const t = useTranslations("biome");
-
-  if (items.length === 0) {
-    return <EmptyNote>—</EmptyNote>;
-  }
-
-  return (
-    <Table>
-      <thead>
-        <tr>
-          <Th>{t("price")}</Th>
-          <Th>{t("repair")}</Th>
-        </tr>
-      </thead>
-      <tbody>
-        {items.map((item) => (
-          <tr key={item.id}>
-            <Td>
-              <CurrencyBadge value={item.price} type={toCurrencyType(item.pricetype)} />
-            </Td>
-            <Td>
-              <CurrencyBadge value={item.repair} type={toCurrencyType(item.pricetype)} />
-            </Td>
-          </tr>
-        ))}
-      </tbody>
-    </Table>
-  );
-}
-
-export default function BiomeTroughWaterCard({ troughs, waterHoles }: BiomeTroughWaterCardProps) {
+export default function BiomeTroughWaterCard({ title, items }: BiomeTroughWaterCardProps) {
   const t = useTranslations("biome");
 
   return (
-    <InfoAccordion title={t("trough_and_water")} icon="/images/icons/info.png" defaultOpen={true}>
-      <Section>
-        <SectionTitle>{t("form.troughs")}</SectionTitle>
-        <ItemTable items={troughs} />
-      </Section>
-      <Section>
-        <SectionTitle>{t("form.water_holes")}</SectionTitle>
-        <ItemTable items={waterHoles} />
-      </Section>
-    </InfoAccordion>
+    <Card>
+      <CardTitle>{title}</CardTitle>
+      {items.length === 0 ? (
+        <EmptyNote>—</EmptyNote>
+      ) : (
+        <Table>
+          <thead>
+            <tr>
+              <Th>{t("price")}</Th>
+              <Th>{t("repair")}</Th>
+            </tr>
+          </thead>
+          <tbody>
+            {items.map((item) => (
+              <tr key={item.id}>
+                <Td>
+                  <CurrencyBadge value={item.price} type={toCurrencyType(item.pricetype)} />
+                </Td>
+                <Td>
+                  <CurrencyBadge value={item.repair} type={toCurrencyType(item.pricetype)} />
+                </Td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+      )}
+    </Card>
   );
 }
 
-const Section = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: ${({ theme }) => theme.spacing(1)};
-  margin-bottom: ${({ theme }) => theme.spacing(2)};
-
-  &:last-child {
-    margin-bottom: 0;
-  }
+const Card = styled.div`
+  width: 100%;
+  background: white;
+  padding: ${({ theme }) => theme.spacing(3)};
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e0e0e0;
+  box-sizing: border-box;
 `;
 
-const SectionTitle = styled.div`
-  font-weight: 600;
-  font-size: 0.85rem;
+const CardTitle = styled.div`
+  font-weight: 700;
+  font-size: 1rem;
   color: #2d5a27;
+  margin-bottom: ${({ theme }) => theme.spacing(2)};
 `;
 
 const Table = styled.table`
@@ -111,5 +96,4 @@ const Td = styled.td`
 const EmptyNote = styled.div`
   color: #999;
   font-size: 0.85rem;
-  padding: ${({ theme }) => theme.spacing(0.5)} 0;
 `;

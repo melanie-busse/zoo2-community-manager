@@ -102,19 +102,19 @@ export default function BiomeDetailContent({ biome }: BiomeDetailContentProps) {
         <ShelterLevelCard levels={biome.shelters} biomeIdentifier={biome.identifier} />
       )}
 
-      {(biome.troughs.length > 0 || biome.waterHoles.length > 0 || biome.games.length > 0) && (
+      {(biome.troughs.length > 0 || biome.waterHoles.length > 0) && (
         <SideBySideRow>
-          {(biome.troughs.length > 0 || biome.waterHoles.length > 0) && (
-            <CardWrapper>
-              <BiomeTroughWaterCard troughs={biome.troughs} waterHoles={biome.waterHoles} />
-            </CardWrapper>
-          )}
-          {biome.games.length > 0 && (
-            <CardWrapper>
-              <BiomeGameCard biomeIdentifier={biome.identifier} games={biome.games} />
-            </CardWrapper>
-          )}
+          <CardWrapper>
+            <BiomeTroughWaterCard title={t("form.troughs")} items={biome.troughs} />
+          </CardWrapper>
+          <CardWrapper>
+            <BiomeTroughWaterCard title={t("form.water_holes")} items={biome.waterHoles} />
+          </CardWrapper>
         </SideBySideRow>
+      )}
+
+      {biome.games.length > 0 && (
+        <BiomeGameCard biomeIdentifier={biome.identifier} games={biome.games} />
       )}
     </DetailWrapper>
   );
