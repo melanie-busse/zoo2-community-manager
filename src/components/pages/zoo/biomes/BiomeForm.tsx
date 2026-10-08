@@ -16,6 +16,7 @@ import Column from "@/components/ui/form/styling/Column";
 import SectionColumn from "@/components/ui/form/styling/SectionColumn";
 import FormGroup from "@/components/ui/form/styling/FormGroup";
 import FormRow from "@/components/ui/form/styling/FormRow";
+import DynamicRowInput from "@/components/ui/form/DynamicRowInput";
 
 interface Language {
   code: string;
@@ -28,6 +29,12 @@ interface Region {
   regionTexts: { name: string }[];
 }
 
+type BiomeText    = { languageCode: string; biomeName: string; biomeDescription: string };
+type TroughRow    = { id: number | string; price: string; pricetype: string; repair: string };
+type WaterRow     = TroughRow;
+type ShelterRow   = { id: number | string; level: string; cost: string; pricetype: string; buildTime: string; unlockLevel: string };
+type GameRow      = { id: number | string; identifier: string; price: string; pricetype: string; repair: string; repairpricetype: string; [key: string]: string | number };
+
 interface BiomeFormProps {
   biome?: {
     id: number;
@@ -39,12 +46,26 @@ interface BiomeFormProps {
     size: number | null;
     regionId: number | null;
     biomestext: { languageCode: string; biomeName: string; biomeDescription: string | null }[];
+    troughs: { id: number; price: number; pricetype: number; repair: number }[];
+    waterHoles: { id: number; price: number; pricetype: number; repair: number }[];
+    shelters: { id: number; level: number; cost: number; pricetype: number; buildTime: number | null; unlockLevel: number | null }[];
+    games: { id: number; identifier: string; price: number; pricetype: number; repair: number; repairpricetype: number; texts: { languageCode: string; name: string }[] }[];
   };
   languages: Language[];
   regions: Region[];
 }
 
-type BiomeText = { languageCode: string; biomeName: string; biomeDescription: string };
+function makeHandlers<T extends { id: number | string }>(
+  setter: React.Dispatch<React.SetStateAction<T[]>>,
+  emptyRow: Omit<T, "id">,
+) {
+  return {
+    onAdd: () => setter((p) => [...p, { id: Date.now(), ...emptyRow } as T]),
+    onRemove: (id: number | string) => setter((p) => p.filter((r) => r.id !== id)),
+    onChange: (id: number | string, key: string, val: string) =>
+      setter((p) => p.map((r) => (r.id === id ? { ...r, [key]: val } : r))),
+  };
+}
 
 export default function BiomeForm({ biome, languages, regions }: BiomeFormProps) {
   const t = useTranslations("biome");
@@ -60,46 +81,55 @@ export default function BiomeForm({ biome, languages, regions }: BiomeFormProps)
   );
   const [size, setSize] = useState(biome?.size?.toString() ?? "");
   const [regionId, setRegionId] = useState(biome?.regionId?.toString() ?? "0");
+
   const [biomestext, setBiomestext] = useState<BiomeText[]>(() => {
-    const textMap = new Map(
-      biome?.biomestext.map((bt) => [bt.languageCode, bt]) ?? [],
-    );
+    const textMap = new Map(biome?.biomestext.map((bt) => [bt.languageCode, bt]) ?? []);
     return languages.map((l) => ({
       languageCode: l.code,
       biomeName: textMap.get(l.code)?.biomeName ?? "",
       biomeDescription: textMap.get(l.code)?.biomeDescription ?? "",
     }));
   });
+
+  const [troughs, setTroughs] = useState<TroughRow[]>(() =>
+    (biome?.troughs ?? []).map((r) => ({ id: r.id, price: String(r.price), pricetype: String(r.pricetype), repair: String(r.repair) }))
+  );
+  const [waterHoles, setWaterHoles] = useState<WaterRow[]>(() =>
+    (biome?.waterHoles ?? []).map((r) => ({ id: r.id, price: String(r.price), pricetype: String(r.pricetype), repair: String(r.repair) }))
+  );
+  const [shelters, setShelters] = useState<ShelterRow[]>(() =>
+    (biome?.shelters ?? []).map((r) => ({ id: r.id, level: String(r.level), cost: String(r.cost), pricetype: String(r.pricetype), buildTime: String(r.buildTime ?? ""), unlockLevel: String(r.unlockLevel ?? "") }))
+  );
+  const [games, setGames] = useState<GameRow[]>(() =>
+    (biome?.games ?? []).map((r) => {
+      const textMap = new Map(r.texts.map((t) => [t.languageCode, t.name]));
+      const textCols = Object.fromEntries(languages.map((l) => [`text_${l.code}`, textMap.get(l.code) ?? ""]));
+      return { id: r.id, identifier: r.identifier, price: String(r.price), pricetype: String(r.pricetype), repair: String(r.repair), repairpricetype: String(r.repairpricetype), ...textCols };
+    })
+  );
+
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const currencyOptions = [
     { value: "1", label: tCommon("currencies.zoodollar") },
     { value: "2", label: tCommon("currencies.diamonds") },
   ];
-
   const regionOptions = [
     { value: "0", label: "-" },
-    ...regions.map((r) => ({
-      value: String(r.id),
-      label: r.regionTexts[0]?.name ?? r.identifier,
-    })),
+    ...regions.map((r) => ({ value: String(r.id), label: r.regionTexts[0]?.name ?? r.identifier })),
   ];
 
   const updateText = (code: string, field: keyof Omit<BiomeText, "languageCode">, value: string) => {
-    setBiomestext((prev) =>
-      prev.map((bt) => (bt.languageCode === code ? { ...bt, [field]: value } : bt)),
-    );
+    setBiomestext((prev) => prev.map((bt) => (bt.languageCode === code ? { ...bt, [field]: value } : bt)));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (isSubmitting) return;
-
     if (!identifier.trim()) {
       toast.warn(t("form.messages.requiredIdentifier"));
       return;
     }
-
     setIsSubmitting(true);
     try {
       const data = {
@@ -111,6 +141,10 @@ export default function BiomeForm({ biome, languages, regions }: BiomeFormProps)
         size: size !== "" ? parseInt(size, 10) : null,
         regionId: regionId !== "0" ? parseInt(regionId, 10) : null,
         biomestext,
+        troughs: troughs.map((r) => ({ price: parseInt(r.price) || 0, pricetype: parseInt(r.pricetype) || 1, repair: parseInt(r.repair) || 0 })),
+        waterHoles: waterHoles.map((r) => ({ price: parseInt(r.price) || 0, pricetype: parseInt(r.pricetype) || 1, repair: parseInt(r.repair) || 0 })),
+        shelters: shelters.map((r) => ({ level: parseInt(r.level) || 0, cost: parseInt(r.cost) || 0, pricetype: parseInt(r.pricetype) || 1, buildTime: r.buildTime !== "" ? parseInt(r.buildTime) || null : null, unlockLevel: r.unlockLevel !== "" ? parseInt(r.unlockLevel) || null : null })),
+        games: games.map((r) => ({ identifier: r.identifier, price: parseInt(r.price) || 0, pricetype: parseInt(r.pricetype) || 1, repair: parseInt(r.repair) || 0, repairpricetype: parseInt(r.repairpricetype) || 1, texts: languages.map((l) => ({ languageCode: l.code, name: r[`text_${l.code}`] ?? "" })) })),
       };
 
       if (biome?.id) {
@@ -127,6 +161,27 @@ export default function BiomeForm({ biome, languages, regions }: BiomeFormProps)
     }
   };
 
+  const troughColumns = [
+    { key: "price",     label: t("price"),      type: "number" as const, $flex: 2 },
+    { key: "pricetype", label: t("price_type"), type: "select" as const, options: currencyOptions },
+    { key: "repair",    label: t("repair"),     type: "number" as const, $flex: 2 },
+  ];
+  const shelterColumns = [
+    { key: "level",       label: t("level"),        type: "number" as const },
+    { key: "cost",        label: t("build_cost"),   type: "number" as const, $flex: 2 },
+    { key: "pricetype",   label: t("price_type"),   type: "select" as const, options: currencyOptions },
+    { key: "buildTime",   label: t("upgrade_time"), type: "number" as const },
+    { key: "unlockLevel", label: t("unlock_level"), type: "number" as const },
+  ];
+  const gameColumns = [
+    { key: "identifier",      label: t("identifier"),        type: "text" as const, $flex: 2 },
+    { key: "price",           label: t("price"),             type: "number" as const },
+    { key: "pricetype",       label: t("price_type"),        type: "select" as const, options: currencyOptions },
+    { key: "repair",          label: t("repair"),            type: "number" as const },
+    { key: "repairpricetype", label: t("repair_price_type"), type: "select" as const, options: currencyOptions },
+    ...languages.map((l) => ({ key: `text_${l.code}`, label: l.name, type: "text" as const })),
+  ];
+
   return (
     <form onSubmit={handleSubmit}>
       <FormGrid>
@@ -135,71 +190,29 @@ export default function BiomeForm({ biome, languages, regions }: BiomeFormProps)
             <SectionColumn>
               <FormGroup>
                 <Label htmlFor="identifier">{t("identifier")}</Label>
-                <InputField
-                  id="identifier"
-                  type="text"
-                  value={identifier}
-                  onChange={(e) => setIdentifier(e.target.value)}
-                />
+                <InputField id="identifier" type="text" value={identifier} onChange={(e) => setIdentifier(e.target.value)} />
               </FormGroup>
-
               <FormGroup>
                 <Label htmlFor="price">{t("price")}</Label>
                 <FormRow>
-                  <InputField
-                    id="price"
-                    type="number"
-                    value={price}
-                    onChange={(e) => setPrice(e.target.value)}
-                  />
-                  <Selectbox
-                    id="priceTypeId"
-                    name="priceTypeId"
-                    value={priceTypeId}
-                    onChange={(e) => setPriceTypeId(e.target.value)}
-                    options={currencyOptions}
-                  />
+                  <InputField id="price" type="number" value={price} onChange={(e) => setPrice(e.target.value)} />
+                  <Selectbox id="priceTypeId" name="priceTypeId" value={priceTypeId} onChange={(e) => setPriceTypeId(e.target.value)} options={currencyOptions} />
                 </FormRow>
               </FormGroup>
-
               <FormGroup>
                 <Label htmlFor="expansionsCost">{t("expansion_cost")}</Label>
                 <FormRow>
-                  <InputField
-                    id="expansionsCost"
-                    type="number"
-                    value={expansionsCost}
-                    onChange={(e) => setExpansionsCost(e.target.value)}
-                  />
-                  <Selectbox
-                    id="priceTypeExpansionsCostId"
-                    name="priceTypeExpansionsCostId"
-                    value={priceTypeExpansionsCostId}
-                    onChange={(e) => setPriceTypeExpansionsCostId(e.target.value)}
-                    options={currencyOptions}
-                  />
+                  <InputField id="expansionsCost" type="number" value={expansionsCost} onChange={(e) => setExpansionsCost(e.target.value)} />
+                  <Selectbox id="priceTypeExpansionsCostId" name="priceTypeExpansionsCostId" value={priceTypeExpansionsCostId} onChange={(e) => setPriceTypeExpansionsCostId(e.target.value)} options={currencyOptions} />
                 </FormRow>
               </FormGroup>
-
               <FormGroup>
                 <Label htmlFor="size">{t("size")}</Label>
-                <InputField
-                  id="size"
-                  type="number"
-                  value={size}
-                  onChange={(e) => setSize(e.target.value)}
-                />
+                <InputField id="size" type="number" value={size} onChange={(e) => setSize(e.target.value)} />
               </FormGroup>
-
               <FormGroup>
                 <Label htmlFor="regionId">{t("region")}</Label>
-                <Selectbox
-                  id="regionId"
-                  name="regionId"
-                  value={regionId}
-                  onChange={(e) => setRegionId(e.target.value)}
-                  options={regionOptions}
-                />
+                <Selectbox id="regionId" name="regionId" value={regionId} onChange={(e) => setRegionId(e.target.value)} options={regionOptions} />
               </FormGroup>
             </SectionColumn>
           </InfoAccordion>
@@ -213,24 +226,52 @@ export default function BiomeForm({ biome, languages, regions }: BiomeFormProps)
                 return (
                   <FormGroup key={bt.languageCode}>
                     <Label>{lang?.name ?? bt.languageCode}</Label>
-                    <InputField
-                      id={`biomeName-${bt.languageCode}`}
-                      type="text"
-                      placeholder={t("form.biome_name")}
-                      value={bt.biomeName}
-                      onChange={(e) => updateText(bt.languageCode, "biomeName", e.target.value)}
-                    />
-                    <InputField
-                      id={`biomeDescription-${bt.languageCode}`}
-                      type="text"
-                      placeholder={t("form.biome_description")}
-                      value={bt.biomeDescription}
-                      onChange={(e) => updateText(bt.languageCode, "biomeDescription", e.target.value)}
-                    />
+                    <InputField id={`biomeName-${bt.languageCode}`} type="text" placeholder={t("form.biome_name")} value={bt.biomeName} onChange={(e) => updateText(bt.languageCode, "biomeName", e.target.value)} />
+                    <InputField id={`biomeDescription-${bt.languageCode}`} type="text" placeholder={t("form.biome_description")} value={bt.biomeDescription} onChange={(e) => updateText(bt.languageCode, "biomeDescription", e.target.value)} />
                   </FormGroup>
                 );
               })}
             </SectionColumn>
+          </InfoAccordion>
+        </Column>
+
+        <Column>
+          <InfoAccordion title={t("form.troughs")} icon="/images/icons/info.png" defaultOpen>
+            <DynamicRowInput
+              rows={troughs}
+              columns={troughColumns}
+              {...makeHandlers(setTroughs, { price: "", pricetype: "1", repair: "" })}
+            />
+          </InfoAccordion>
+        </Column>
+
+        <Column>
+          <InfoAccordion title={t("form.water_holes")} icon="/images/icons/info.png" defaultOpen>
+            <DynamicRowInput
+              rows={waterHoles}
+              columns={troughColumns}
+              {...makeHandlers(setWaterHoles, { price: "", pricetype: "1", repair: "" })}
+            />
+          </InfoAccordion>
+        </Column>
+
+        <Column>
+          <InfoAccordion title={t("shelter_levels")} icon="/images/icons/info.png" defaultOpen>
+            <DynamicRowInput
+              rows={shelters}
+              columns={shelterColumns}
+              {...makeHandlers(setShelters, { level: "", cost: "", pricetype: "1", buildTime: "", unlockLevel: "" })}
+            />
+          </InfoAccordion>
+        </Column>
+
+        <Column>
+          <InfoAccordion title={t("games")} icon="/images/icons/play.png" defaultOpen>
+            <DynamicRowInput
+              rows={games}
+              columns={gameColumns}
+              {...makeHandlers(setGames, { identifier: "", price: "", pricetype: "1", repair: "", repairpricetype: "1", ...Object.fromEntries(languages.map((l) => [`text_${l.code}`, ""])) })}
+            />
           </InfoAccordion>
         </Column>
       </FormGrid>

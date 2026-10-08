@@ -11,6 +11,18 @@
   "expansion_cost": "Erweiterungskosten",
   "size": "Größe",
   "region": "Region",
+  "games": "Spielzeuge",
+  "repair": "Reparatur",
+  "repair_price_type": "Rep. Währung",
+  "shelter_levels": "Stalllevel",
+  "level": "Level",
+  "build_cost": "Baukosten",
+  "upgrade_cost": "Upgradekosten",
+  "upgrade_time": "Upgradezeit",
+  "unlock_level": "Freischalt-Level",
+  "level_value": "Level {level}",
+  "minutes": "{n} min",
+  "trough_and_water": "Trog & Wasserstelle",
   "form": {
     "create_biome": "Biom anlegen",
     "edit_biome": "Biom bearbeiten",
@@ -19,6 +31,8 @@
     "translations": "Übersetzungen",
     "biome_name": "Name",
     "biome_description": "Beschreibung",
+    "troughs": "Tröge",
+    "water_holes": "Wasserstellen",
     "messages": {
       "createSuccess": "Biom erfolgreich angelegt",
       "editSuccess": "Biom erfolgreich aktualisiert",
@@ -27,15 +41,5 @@
       "deleteSuccess": "Biom erfolgreich gelöscht",
       "requiredIdentifier": "Identifier ist ein Pflichtfeld."
     }
-  },
-  "games": "Spielzeuge",
-  "repair": "Reparatur",
-  "shelter_levels": "Stalllevel",
-  "level": "Level",
-  "build_cost": "Baukosten",
-  "upgrade_cost": "Upgradekosten",
-  "upgrade_time": "Upgradezeit",
-  "unlock_level": "Freischalt-Level",
-  "level_value": "Level {level}",
-  "minutes": "{n} min"
+  }
 }

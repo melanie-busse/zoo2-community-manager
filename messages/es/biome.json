@@ -11,6 +11,18 @@
   "expansion_cost": "Coste de expansión",
   "size": "Tamaño",
   "region": "Región",
+  "games": "Juguetes",
+  "repair": "Reparación",
+  "repair_price_type": "Moneda rep.",
+  "shelter_levels": "Niveles de establo",
+  "level": "Nivel",
+  "build_cost": "Coste de construcción",
+  "upgrade_cost": "Coste de mejora",
+  "upgrade_time": "Tiempo de mejora",
+  "unlock_level": "Nivel de desbloqueo",
+  "level_value": "Nivel {level}",
+  "minutes": "{n} min",
+  "trough_and_water": "Comedero y bebedero",
   "form": {
     "create_biome": "Añadir bioma",
     "edit_biome": "Editar bioma",
@@ -19,6 +31,8 @@
     "translations": "Traducciones",
     "biome_name": "Nombre",
     "biome_description": "Descripción",
+    "troughs": "Comederos",
+    "water_holes": "Bebederos",
     "messages": {
       "createSuccess": "Bioma creado correctamente",
       "editSuccess": "Bioma actualizado correctamente",
@@ -27,15 +41,5 @@
       "deleteSuccess": "Bioma eliminado correctamente",
       "requiredIdentifier": "El identificador es un campo obligatorio."
     }
-  },
-  "games": "Spielzeuge",
-  "repair": "Reparatur",
-  "shelter_levels": "Niveles de establo",
-  "level": "Nivel",
-  "build_cost": "Coste de construcción",
-  "upgrade_cost": "Coste de mejora",
-  "upgrade_time": "Tiempo de mejora",
-  "unlock_level": "Nivel de desbloqueo",
-  "level_value": "Nivel {level}",
-  "minutes": "{n} min"
+  }
 }
