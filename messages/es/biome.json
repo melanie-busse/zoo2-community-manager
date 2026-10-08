@@ -31,8 +31,8 @@
     "translations": "Traducciones",
     "biome_name": "Nombre",
     "biome_description": "Descripción",
-    "troughs": "Comederos",
-    "water_holes": "Bebederos",
+    "troughs": "Comedero",
+    "water_holes": "Bebedero",
     "messages": {
       "createSuccess": "Bioma creado correctamente",
       "editSuccess": "Bioma actualizado correctamente",

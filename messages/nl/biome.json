@@ -31,8 +31,8 @@
     "translations": "Vertalingen",
     "biome_name": "Naam",
     "biome_description": "Beschrijving",
-    "troughs": "Troggen",
-    "water_holes": "Drinkplaatsen",
+    "troughs": "Trog",
+    "water_holes": "Drinkplaats",
     "messages": {
       "createSuccess": "Bioom succesvol aangemaakt",
       "editSuccess": "Bioom succesvol bijgewerkt",

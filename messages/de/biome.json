@@ -31,8 +31,8 @@
     "translations": "Übersetzungen",
     "biome_name": "Name",
     "biome_description": "Beschreibung",
-    "troughs": "Tröge",
-    "water_holes": "Wasserstellen",
+    "troughs": "Trog",
+    "water_holes": "Wasserstelle",
     "messages": {
       "createSuccess": "Biom erfolgreich angelegt",
       "editSuccess": "Biom erfolgreich aktualisiert",

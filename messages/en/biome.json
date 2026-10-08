@@ -31,8 +31,8 @@
     "translations": "Translations",
     "biome_name": "Name",
     "biome_description": "Description",
-    "troughs": "Troughs",
-    "water_holes": "Water Holes",
+    "troughs": "Trough",
+    "water_holes": "Water Hole",
     "messages": {
       "createSuccess": "Biome created successfully",
       "editSuccess": "Biome updated successfully",

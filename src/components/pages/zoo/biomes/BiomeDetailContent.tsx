@@ -105,10 +105,18 @@ export default function BiomeDetailContent({ biome }: BiomeDetailContentProps) {
       {(biome.troughs.length > 0 || biome.waterHoles.length > 0) && (
         <SideBySideRow>
           <CardWrapper>
-            <BiomeTroughWaterCard title={t("form.troughs")} items={biome.troughs} />
+            <BiomeTroughWaterCard
+              title={t("form.troughs")}
+              imagePath={`/images/biomes/${biome.identifier}/trough.webp`}
+              items={biome.troughs}
+            />
           </CardWrapper>
           <CardWrapper>
-            <BiomeTroughWaterCard title={t("form.water_holes")} items={biome.waterHoles} />
+            <BiomeTroughWaterCard
+              title={t("form.water_holes")}
+              imagePath={`/images/biomes/${biome.identifier}/water_hole.webp`}
+              items={biome.waterHoles}
+            />
           </CardWrapper>
         </SideBySideRow>
       )}

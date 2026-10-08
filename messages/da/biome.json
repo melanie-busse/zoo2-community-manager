@@ -32,7 +32,7 @@
     "biome_name": "Navn",
     "biome_description": "Beskrivelse",
     "troughs": "Trug",
-    "water_holes": "Vandhuller",
+    "water_holes": "Vandhul",
     "messages": {
       "createSuccess": "Biom oprettet",
       "editSuccess": "Biom opdateret",

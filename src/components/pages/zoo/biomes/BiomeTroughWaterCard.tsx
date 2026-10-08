@@ -2,6 +2,7 @@
 
 import React from "react";
 import styled from "styled-components";
+import NextImage from "next/image";
 import { useTranslations } from "next-intl";
 
 import CurrencyBadge, { CurrencyType } from "@/components/ui/badges/CurrencyBadge";
@@ -19,15 +20,21 @@ interface TroughOrWater {
 
 interface BiomeTroughWaterCardProps {
   title: string;
+  imagePath: string;
   items: TroughOrWater[];
 }
 
-export default function BiomeTroughWaterCard({ title, items }: BiomeTroughWaterCardProps) {
+export default function BiomeTroughWaterCard({ title, imagePath, items }: BiomeTroughWaterCardProps) {
   const t = useTranslations("biome");
 
   return (
     <Card>
-      <CardTitle>{title}</CardTitle>
+      <CardHeader>
+        <ImageWrapper>
+          <NextImage src={imagePath} alt={title} width={48} height={48} style={{ objectFit: "contain" }} />
+        </ImageWrapper>
+        <CardTitle>{title}</CardTitle>
+      </CardHeader>
       {items.length === 0 ? (
         <EmptyNote>—</EmptyNote>
       ) : (
@@ -66,11 +73,26 @@ const Card = styled.div`
   box-sizing: border-box;
 `;
 
+const CardHeader = styled.div`
+  display: flex;
+  align-items: center;
+  gap: ${({ theme }) => theme.spacing(1.5)};
+  margin-bottom: ${({ theme }) => theme.spacing(2)};
+`;
+
+const ImageWrapper = styled.div`
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 const CardTitle = styled.div`
   font-weight: 700;
   font-size: 1rem;
   color: #2d5a27;
-  margin-bottom: ${({ theme }) => theme.spacing(2)};
 `;
 
 const Table = styled.table`

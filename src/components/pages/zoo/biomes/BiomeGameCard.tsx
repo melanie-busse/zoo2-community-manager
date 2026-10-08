@@ -5,7 +5,6 @@ import styled from "styled-components";
 import NextImage from "next/image";
 import { useTranslations } from "next-intl";
 
-import InfoAccordion from "@/components/page-structure/Elements/InfoAccordion";
 import CurrencyBadge, { CurrencyType } from "@/components/ui/badges/CurrencyBadge";
 
 function toCurrencyType(pricetype: number): CurrencyType {
@@ -31,14 +30,20 @@ export default function BiomeGameCard({ biomeIdentifier, games }: BiomeGameCardP
   const t = useTranslations("biome");
 
   return (
-    <InfoAccordion title={t("games")} icon="/images/icons/play.png" defaultOpen={true}>
+    <Card>
+      <CardHeader>
+        <ImageWrapper>
+          <NextImage src="/images/icons/play.png" alt={t("games")} width={36} height={36} style={{ objectFit: "contain" }} />
+        </ImageWrapper>
+        <CardTitle>{t("games")}</CardTitle>
+      </CardHeader>
       <GamesGrid>
         {games.map((game) => {
           const name = game.texts[0]?.name ?? game.identifier;
           const imagePath = `/images/biomes/${biomeIdentifier}/game/${game.identifier}/image.webp`;
           return (
             <GameItem key={game.id}>
-              <ImageWrapper>
+              <GameImageWrapper>
                 <NextImage
                   src={imagePath}
                   alt={name}
@@ -46,7 +51,7 @@ export default function BiomeGameCard({ biomeIdentifier, games }: BiomeGameCardP
                   height={80}
                   style={{ objectFit: "contain" }}
                 />
-              </ImageWrapper>
+              </GameImageWrapper>
               <GameInfo>
                 <GameName>{name}</GameName>
                 <StatRow>
@@ -62,9 +67,41 @@ export default function BiomeGameCard({ biomeIdentifier, games }: BiomeGameCardP
           );
         })}
       </GamesGrid>
-    </InfoAccordion>
+    </Card>
   );
 }
+
+const Card = styled.div`
+  width: 100%;
+  background: white;
+  padding: ${({ theme }) => theme.spacing(3)};
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e0e0e0;
+  box-sizing: border-box;
+`;
+
+const CardHeader = styled.div`
+  display: flex;
+  align-items: center;
+  gap: ${({ theme }) => theme.spacing(1.5)};
+  margin-bottom: ${({ theme }) => theme.spacing(2)};
+`;
+
+const ImageWrapper = styled.div`
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const CardTitle = styled.div`
+  font-weight: 700;
+  font-size: 1rem;
+  color: #2d5a27;
+`;
 
 const GamesGrid = styled.div`
   display: grid;
@@ -82,7 +119,7 @@ const GameItem = styled.div`
   border: 1px solid rgba(0, 0, 0, 0.06);
 `;
 
-const ImageWrapper = styled.div`
+const GameImageWrapper = styled.div`
   flex-shrink: 0;
   width: 80px;
   height: 80px;
