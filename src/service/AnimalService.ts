@@ -94,6 +94,7 @@ export async function getAnimalById(id: number | string, locale: string | null =
         },
       },
       animalxp: { include: { xptype: true } },
+      shelter: { select: { level: true } },
       priceType: true,
       animalorigins: {
         include: {

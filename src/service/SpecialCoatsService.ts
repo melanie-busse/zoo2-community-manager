@@ -70,6 +70,7 @@ export async function getSpecialCoatById(
         include: {
           animaltext: locale ? { where: { languageCode: locale } } : true,
           priceType: true,
+          shelter: { select: { level: true } },
           biome: {
             include: {
               biomestext: locale ? { where: { languageCode: locale } } : true,
