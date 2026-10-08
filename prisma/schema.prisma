@@ -712,12 +712,13 @@ model BiomeShelter {
 }
 
 model BiomeGame {
-  id         Int             @id @default(autoincrement())
-  identifier String          @db.VarChar(255)
-  price      Int
-  pricetype  Int
-  repair     Int
-  biomeId    Int
+  id              Int             @id @default(autoincrement())
+  identifier      String          @db.VarChar(255)
+  price           Int
+  pricetype       Int
+  repair          Int
+  repairpricetype Int             @default(1)
+  biomeId         Int
   biome      Biome           @relation(fields: [biomeId], references: [id], onDelete: Cascade)
   texts      BiomeGameText[]
   animals    Animal[]

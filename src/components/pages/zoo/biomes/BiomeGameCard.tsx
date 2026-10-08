@@ -18,6 +18,7 @@ interface BiomeGame {
   price: number;
   pricetype: number;
   repair: number;
+  repairpricetype: number;
   texts: { name: string }[];
 }
 
@@ -54,7 +55,7 @@ export default function BiomeGameCard({ biomeIdentifier, games }: BiomeGameCardP
                 </StatRow>
                 <StatRow>
                   <StatLabel>{t("repair")}</StatLabel>
-                  <CurrencyBadge value={game.repair} type={toCurrencyType(game.pricetype)} />
+                  <CurrencyBadge value={game.repair} type={toCurrencyType(game.repairpricetype)} />
                 </StatRow>
               </GameInfo>
             </GameItem>

@@ -32,6 +32,7 @@ interface BiomeGame {
   price: number;
   pricetype: number;
   repair: number;
+  repairpricetype: number;
   texts: { name: string }[];
 }
 

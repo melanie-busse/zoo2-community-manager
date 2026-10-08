@@ -59,7 +59,8 @@
       "Bash(mysql:*)",
       "Bash(cd:*)",
       "Bash(for lang:*)",
-      "Read(//d/Entwicklung/zoo2-community-manager/messages/$lang/**)"
+      "Read(//d/Entwicklung/zoo2-community-manager/messages/$lang/**)",
+      "Bash(2)"
     ]
   }
 }
