@@ -123,7 +123,7 @@ const mockSelectedAnimal = {
   sellingPrice: 1000,
   popularity: 150,
   releaseExp: 250,
-  shelterLevel: 3,
+  shelter: { level: 3 },
   breedingCost: 400,
   breedingDuration: 12,
   breedingProbability: 65,

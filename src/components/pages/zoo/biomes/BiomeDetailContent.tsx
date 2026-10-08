@@ -33,7 +33,7 @@ interface Biome {
   size: number | null;
   biomestext: { biomeName: string }[];
   priceType: { name: string } | null;
-  shelterLevels: ShelterLevel[];
+  shelters: ShelterLevel[];
 }
 
 interface BiomeDetailContentProps {
@@ -78,8 +78,8 @@ export default function BiomeDetailContent({ biome }: BiomeDetailContentProps) {
 
       <BiomeHeaderCard biome={biome} />
 
-      {biome.shelterLevels.length > 0 && (
-        <ShelterLevelCard levels={biome.shelterLevels} />
+      {biome.shelters.length > 0 && (
+        <ShelterLevelCard levels={biome.shelters} />
       )}
     </DetailWrapper>
   );

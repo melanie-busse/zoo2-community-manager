@@ -8,7 +8,7 @@ export interface Animal {
   id: number;
   name?: string;
   biome?: Biome;
-  shelterLevel?: number | null;
+  shelter?: { level?: number | null } | null;
 
   // Optionale Felder
   releaseDate?: Date | string | null;

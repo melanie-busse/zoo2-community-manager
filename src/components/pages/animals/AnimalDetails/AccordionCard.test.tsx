@@ -74,7 +74,7 @@ vi.mock("./AnimalDetails.styles", () => ({
 
 const mockAnimal = {
   id: 1,
-  shelterLevel: 3,
+  shelter: { level: 3 },
   breedingCost: 400,
   breedingDuration: 12,
   breedingProbability: 65,

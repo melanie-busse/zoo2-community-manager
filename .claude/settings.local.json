@@ -52,7 +52,12 @@
       "Bash(mkdir -p \"D:/Entwicklung/zoo2-community-manager/src/app/[locale]/zoo/biomes/create\")",
       "Bash(mkdir -p \"D:/Entwicklung/zoo2-community-manager/src/app/[locale]/zoo/biomes/[id]/edit\")",
       "Bash(mysql -u root zoo2-community-manager -e \"SHOW TABLES LIKE ''''%shelter%'''';\")",
-      "Bash(mysql -u root zoo2-community-manager -e \"SHOW TABLES;\")"
+      "Bash(mysql -u root zoo2-community-manager -e \"SHOW TABLES;\")",
+      "Bash(npx tsx:*)",
+      "Bash(python:*)",
+      "Bash(1 echo:*)",
+      "Bash(mysql:*)",
+      "Bash(cd:*)"
     ]
   }
 }

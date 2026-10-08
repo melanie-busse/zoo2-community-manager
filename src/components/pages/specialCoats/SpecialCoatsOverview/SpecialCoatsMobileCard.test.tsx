@@ -71,7 +71,7 @@ const mockSpecialCoat = {
     animaltext: [{ animalName: "Pfau" }],
     price: 1500,
     priceType: { name: "Zoodollar" },
-    shelterLevel: 2,
+    shelter: { level: 2 },
     biome: { identifier: "grassland" },
   },
 } as any;

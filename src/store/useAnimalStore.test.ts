@@ -23,14 +23,14 @@ const mockAnimalsList = [
   {
     id: 1,
     name: "Erdmännchen",
-    shelterLevel: 2,
+    shelter: { level: 2 },
     biome: { name: "Grasland" },
     animaltext: [{ animalName: "Erdmännchen" }],
   },
   {
     id: 2,
     name: "Löwe",
-    shelterLevel: 5,
+    shelter: { level: 5 },
     biome: { name: "Savanne" },
     animaltext: [{ animalName: "Löwe" }],
   },

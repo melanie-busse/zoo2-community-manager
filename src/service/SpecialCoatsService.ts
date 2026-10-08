@@ -19,6 +19,7 @@ export async function getAllSpecialCoats(locale: string = "de") {
               },
             },
             priceType: true,
+            shelter: { select: { level: true } },
             biome: {
               include: {
                 biomestext: {

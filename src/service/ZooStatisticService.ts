@@ -29,6 +29,7 @@ export async function getZooStatistics(locale: string = "de"): Promise<BiomeStat
         animals: {
           include: {
             specialcoat: { select: { id: true, isContestSpecialCoat: true } },
+            shelter: { select: { level: true } },
           },
         },
       },
@@ -40,7 +41,7 @@ export async function getZooStatistics(locale: string = "de"): Promise<BiomeStat
       const shelterLevelCounts: Record<number, number> = {};
 
       for (const animal of animals) {
-        const level = animal.shelterLevel ?? 0;
+        const level = animal.shelter?.level ?? 0;
         shelterLevelCounts[level] = (shelterLevelCounts[level] ?? 0) + 1;
       }
 

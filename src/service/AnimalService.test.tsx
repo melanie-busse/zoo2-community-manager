@@ -15,6 +15,9 @@ const txMock = {
     create: vi.fn(),
     update: vi.fn(),
   },
+  biomeShelter: {
+    findFirst: vi.fn().mockResolvedValue(null),
+  },
   animalText: {
     createMany: vi.fn(),
     deleteMany: vi.fn(),

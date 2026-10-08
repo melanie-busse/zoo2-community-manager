@@ -30,7 +30,10 @@ export async function getInventoryStatistics(
             biomestext: { where: { languageCode: locale } },
             region: { include: { regionTexts: { where: { languageCode: locale } } } },
             animals: {
-              include: { specialcoat: { select: { id: true, isContestSpecialCoat: true } } },
+              include: {
+                specialcoat: { select: { id: true, isContestSpecialCoat: true } },
+                shelter: { select: { level: true } },
+              },
             },
           },
           orderBy: { id: "asc" },
@@ -60,7 +63,7 @@ export async function getInventoryStatistics(
       const ownedShelterLevelCounts: Record<number, number> = {};
 
       for (const animal of animals) {
-        const level = animal.shelterLevel ?? 0;
+        const level = animal.shelter?.level ?? 0;
         shelterLevelCounts[level] = (shelterLevelCounts[level] ?? 0) + 1;
         if (ownedAnimalIds.has(animal.id)) {
           ownedShelterLevelCounts[level] = (ownedShelterLevelCounts[level] ?? 0) + 1;

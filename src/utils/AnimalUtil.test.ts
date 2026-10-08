@@ -17,7 +17,7 @@ describe("Animal Utilities", () => {
     {
       id: 1,
       name: "Erdmännchen",
-      shelterLevel: 2,
+      shelter: { level: 2 },
       identifier: "erdmaennchen",
       sellingPrice: 500,
       biome: { id: 10, identifier: "grassland", name: "Grasland" },
@@ -27,7 +27,7 @@ describe("Animal Utilities", () => {
     {
       id: 2,
       name: "Löwe",
-      shelterLevel: 5,
+      shelter: { level: 5 },
       identifier: "loewe",
       sellingPrice: 2000,
       biome: { id: 11, identifier: "savanna", name: "Savanne" },

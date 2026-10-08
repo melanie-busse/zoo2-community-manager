@@ -172,7 +172,7 @@ export default function BreedingSection() {
         <DataRow label={tBiomes("shelterLevel")}>
           <ShelterLevelBadge
             image={getShelterImage(animal.biome)}
-            level={animal.shelterLevel ?? 0}
+            level={animal.shelter?.level ?? 0}
             habitat={animal.biome?.name}
             size={35}
             showTooltip={false}

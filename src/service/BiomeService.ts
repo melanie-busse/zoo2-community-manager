@@ -27,7 +27,7 @@ export async function getBiomeById(id: number, locale: string = "de") {
     include: {
       biomestext: { where: { languageCode: locale } },
       priceType: true,
-      shelterLevels: { orderBy: { level: "asc" } },
+      shelters: { orderBy: { level: "asc" } },
     },
   });
 }

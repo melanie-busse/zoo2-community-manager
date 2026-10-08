@@ -16,7 +16,7 @@ const mockSpecialCoats = [
     id: 1,
     specialcoatstext: [{ name: "Polarfuchs", color: "Weiß" }],
     animal: {
-      shelterLevel: 3,
+      shelter: { level: 3 },
       biome: { id: 100, identifier: "ice" },
     },
   },

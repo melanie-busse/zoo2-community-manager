@@ -46,16 +46,16 @@ export function getBiomeDescription(biome: Biome | null | undefined, fallback: s
   return biome.biomestext?.[0]?.biomeDescription || fallback;
 }
 
-export function extractUniqueShelterLevels<T extends { shelterLevel?: number | null }>(
+export function extractUniqueShelterLevels<T extends { shelter?: { level?: number | null } | null }>(
   items: T[],
 ): T[] {
   return Array.from(
     new Map(
       items
-        .filter((item) => item.shelterLevel !== null && item.shelterLevel !== undefined)
-        .map((item) => [item.shelterLevel, item]),
+        .filter((item) => item.shelter?.level !== null && item.shelter?.level !== undefined)
+        .map((item) => [item.shelter?.level, item]),
     ).values(),
-  ).sort((a, b) => (a.shelterLevel ?? 0) - (b.shelterLevel ?? 0));
+  ).sort((a, b) => (a.shelter?.level ?? 0) - (b.shelter?.level ?? 0));
 }
 
 export function extractUniqueBiomes<T extends { biome?: Biome | null }>(items: T[]): Biome[] {

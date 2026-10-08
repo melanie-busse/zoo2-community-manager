@@ -98,6 +98,7 @@ describe("SpecialCoats Service", () => {
             include: {
               animaltext: { where: { languageCode: mockLocale } },
               priceType: true,
+              shelter: { select: { level: true } },
               biome: {
                 include: {
                   biomestext: { where: { languageCode: mockLocale } },
