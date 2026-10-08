@@ -10,6 +10,7 @@ import { toast } from "react-toastify";
 import BiomeHeaderCard from "./BiomeHeaderCard";
 import ShelterLevelCard from "./ShelterLevelCard";
 import BiomeGameCard from "./BiomeGameCard";
+import BiomeTroughWaterCard from "./BiomeTroughWaterCard";
 import ActionGroupBadge from "@/components/ui/badges/ActionGroupBadge";
 import { hasMinimumRole } from "@/utils/roleUtils";
 import { confirmDeleteDialog } from "@/utils/alerts";
@@ -22,6 +23,13 @@ interface ShelterLevel {
   pricetype: number;
   buildTime: number | null;
   unlockLevel: number | null;
+}
+
+interface TroughOrWater {
+  id: number;
+  price: number;
+  pricetype: number;
+  repair: number;
 }
 
 interface BiomeGame {
@@ -43,6 +51,8 @@ interface Biome {
   biomestext: { biomeName: string }[];
   priceType: { name: string } | null;
   shelters: ShelterLevel[];
+  troughs: TroughOrWater[];
+  waterHoles: TroughOrWater[];
   games: BiomeGame[];
 }
 
@@ -92,8 +102,19 @@ export default function BiomeDetailContent({ biome }: BiomeDetailContentProps) {
         <ShelterLevelCard levels={biome.shelters} biomeIdentifier={biome.identifier} />
       )}
 
-      {biome.games.length > 0 && (
-        <BiomeGameCard biomeIdentifier={biome.identifier} games={biome.games} />
+      {(biome.troughs.length > 0 || biome.waterHoles.length > 0 || biome.games.length > 0) && (
+        <SideBySideRow>
+          {(biome.troughs.length > 0 || biome.waterHoles.length > 0) && (
+            <CardWrapper>
+              <BiomeTroughWaterCard troughs={biome.troughs} waterHoles={biome.waterHoles} />
+            </CardWrapper>
+          )}
+          {biome.games.length > 0 && (
+            <CardWrapper>
+              <BiomeGameCard biomeIdentifier={biome.identifier} games={biome.games} />
+            </CardWrapper>
+          )}
+        </SideBySideRow>
       )}
     </DetailWrapper>
   );
@@ -109,4 +130,19 @@ const DetailWrapper = styled.div`
 const ActionsRow = styled.div`
   display: flex;
   justify-content: flex-end;
+`;
+
+const SideBySideRow = styled.div`
+  display: flex;
+  gap: ${({ theme }) => theme.spacing(3)};
+  align-items: flex-start;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}) {
+    flex-direction: column;
+  }
+`;
+
+const CardWrapper = styled.div`
+  flex: 1;
+  min-width: 0;
 `;
