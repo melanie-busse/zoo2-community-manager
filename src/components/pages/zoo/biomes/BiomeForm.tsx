@@ -267,7 +267,7 @@ export default function BiomeForm({ biome, languages, regions }: BiomeFormProps)
           </InfoAccordion>
         </Column>
 
-        <Column>
+        <Column $fullWidth>
           <InfoAccordion title={t("shelter_levels")} icon="/images/icons/info.png" defaultOpen>
             <DynamicRowInput
               rows={shelters}
@@ -278,6 +278,7 @@ export default function BiomeForm({ biome, languages, regions }: BiomeFormProps)
                 { key: "buildTime",   label: t("upgrade_time"), type: "number" as const },
                 { key: "unlockLevel", label: t("unlock_level"), type: "number" as const },
               ]}
+              hideAdd
               {...makeHandlers(setShelters, { level: "", cost: "", pricetype: "1", buildTime: "", unlockLevel: "" })}
             />
           </InfoAccordion>

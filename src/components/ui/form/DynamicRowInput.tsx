@@ -23,6 +23,7 @@ interface DynamicRowInputProps {
   rows: Array<Record<string, any> & { id: number | string }>;
   onAdd: () => void;
   disabledAdd?: boolean;
+  hideAdd?: boolean;
   onRemove: (id: number | string) => void;
   onChange: (id: number | string, key: string, value: string) => void;
   columns: ColumnDefinition[];
@@ -33,6 +34,7 @@ export default function DynamicRowInput({
   rows,
   onAdd,
   disabledAdd,
+  hideAdd,
   onRemove,
   onChange,
   columns,
@@ -114,9 +116,11 @@ export default function DynamicRowInput({
         </Row>
       ))}
 
-      <AddBtn onClick={onAdd} type="button" disabled={disabledAdd}>
-        {disabledAdd ? tCommon("allLanguages") : tCommon("addRow")}
-      </AddBtn>
+      {!hideAdd && (
+        <AddBtn onClick={onAdd} type="button" disabled={disabledAdd}>
+          {disabledAdd ? tCommon("allLanguages") : tCommon("addRow")}
+        </AddBtn>
+      )}
     </Container>
   );
 }
