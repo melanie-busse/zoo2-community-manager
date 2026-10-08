@@ -6,6 +6,7 @@ import { useRouter } from "@/i18n/routing";
 import { toast } from "react-toastify";
 
 import { createBiomeOnClient, updateBiomeOnClient } from "@/service/frontend/Biome";
+import { FLAG_MAP } from "@/constants/languages";
 import InfoAccordion from "@/components/page-structure/Elements/InfoAccordion";
 import InputField from "@/components/ui/form/InputField";
 import Selectbox from "@/components/ui/form/Selectbox";
@@ -80,14 +81,13 @@ export default function BiomeForm({ biome, languages, regions }: BiomeFormProps)
   const [size, setSize] = useState(biome?.size?.toString() ?? "");
   const [regionId, setRegionId] = useState(biome?.regionId?.toString() ?? "0");
 
-  const [biomestext, setBiomestext] = useState<BiomeText[]>(() => {
-    const textMap = new Map(biome?.biomestext.map((bt) => [bt.languageCode, bt]) ?? []);
-    return languages.map((l) => ({
-      languageCode: l.code,
-      biomeName: textMap.get(l.code)?.biomeName ?? "",
-      biomeDescription: textMap.get(l.code)?.biomeDescription ?? "",
-    }));
-  });
+  const [biomestext, setBiomestext] = useState<BiomeText[]>(
+    () => (biome?.biomestext ?? []).map((bt) => ({
+      languageCode: bt.languageCode,
+      biomeName: bt.biomeName ?? "",
+      biomeDescription: bt.biomeDescription ?? "",
+    }))
+  );
 
   // Trog — single entry
   const firstTrough = biome?.troughs?.[0];
@@ -123,9 +123,24 @@ export default function BiomeForm({ biome, languages, regions }: BiomeFormProps)
     ...regions.map((r) => ({ value: String(r.id), label: r.regionTexts[0]?.name ?? r.identifier })),
   ];
 
-  const updateText = (code: string, field: keyof Omit<BiomeText, "languageCode">, value: string) => {
-    setBiomestext((prev) => prev.map((bt) => (bt.languageCode === code ? { ...bt, [field]: value } : bt)));
+  const languageOptions = languages.map((l) => ({
+    value: l.code,
+    label: l.name,
+    icon: FLAG_MAP[l.code] || "fi-un",
+  }));
+  const allLanguagesUsed = languageOptions.length > 0 && biomestext.length >= languageOptions.length;
+
+  const onAddText = () => {
+    const usedCodes = biomestext.map((bt) => bt.languageCode);
+    const next = languageOptions.find((opt) => !usedCodes.includes(opt.value));
+    if (next) {
+      setBiomestext((prev) => [...prev, { languageCode: next.value, biomeName: "", biomeDescription: "" }]);
+    }
   };
+  const onRemoveText = (id: number | string) =>
+    setBiomestext((prev) => prev.filter((bt) => bt.languageCode !== id));
+  const onChangeText = (id: number | string, field: string, val: string) =>
+    setBiomestext((prev) => prev.map((bt) => (bt.languageCode === id ? { ...bt, [field]: val } : bt)));
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -249,15 +264,17 @@ export default function BiomeForm({ biome, languages, regions }: BiomeFormProps)
         <Column>
           <InfoAccordion title={t("form.translations")} icon="/images/icons/info.png" defaultOpen>
             <SectionColumn>
-              {biomestext.map((bt) => {
-                const lang = languages.find((l) => l.code === bt.languageCode);
-                return (
-                  <FormGroup key={bt.languageCode}>
-                    <Label>{lang?.name ?? bt.languageCode}</Label>
-                    <InputField id={`biomeName-${bt.languageCode}`} type="text" placeholder={t("form.biome_name")} value={bt.biomeName} onChange={(e) => updateText(bt.languageCode, "biomeName", e.target.value)} />
-                  </FormGroup>
-                );
-              })}
+              <DynamicRowInput
+                rows={biomestext.map((bt) => ({ id: bt.languageCode, languageCode: bt.languageCode, biomeName: bt.biomeName }))}
+                columns={[
+                  { key: "languageCode", label: t("form.language"), type: "select", $flex: 0.5, options: languageOptions },
+                  { key: "biomeName",    label: t("form.biome_name"), type: "text", $flex: 1, placeholder: t("form.biome_name") },
+                ]}
+                onAdd={onAddText}
+                onRemove={onRemoveText}
+                onChange={onChangeText}
+                disabledAdd={allLanguagesUsed}
+              />
             </SectionColumn>
           </InfoAccordion>
         </Column>
