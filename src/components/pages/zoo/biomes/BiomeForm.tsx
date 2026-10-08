@@ -216,23 +216,6 @@ export default function BiomeForm({ biome, languages, regions }: BiomeFormProps)
               </FormGroup>
             </SectionColumn>
           </InfoAccordion>
-        </Column>
-
-        <Column>
-          <InfoAccordion title={t("form.translations")} icon="/images/icons/info.png" defaultOpen>
-            <SectionColumn>
-              {biomestext.map((bt) => {
-                const lang = languages.find((l) => l.code === bt.languageCode);
-                return (
-                  <FormGroup key={bt.languageCode}>
-                    <Label>{lang?.name ?? bt.languageCode}</Label>
-                    <InputField id={`biomeName-${bt.languageCode}`} type="text" placeholder={t("form.biome_name")} value={bt.biomeName} onChange={(e) => updateText(bt.languageCode, "biomeName", e.target.value)} />
-                    <InputField id={`biomeDescription-${bt.languageCode}`} type="text" placeholder={t("form.biome_description")} value={bt.biomeDescription} onChange={(e) => updateText(bt.languageCode, "biomeDescription", e.target.value)} />
-                  </FormGroup>
-                );
-              })}
-            </SectionColumn>
-          </InfoAccordion>
 
           <InfoAccordion title={t("form.troughs")} icon="/images/icons/info.png" defaultOpen>
             <SectionColumn>
@@ -259,6 +242,22 @@ export default function BiomeForm({ biome, languages, regions }: BiomeFormProps)
                 <Label htmlFor="waterRepair">{t("repair")}</Label>
                 <InputField id="waterRepair" type="number" value={waterRepair} onChange={(e) => setWaterRepair(e.target.value)} />
               </FormGroup>
+            </SectionColumn>
+          </InfoAccordion>
+        </Column>
+
+        <Column>
+          <InfoAccordion title={t("form.translations")} icon="/images/icons/info.png" defaultOpen>
+            <SectionColumn>
+              {biomestext.map((bt) => {
+                const lang = languages.find((l) => l.code === bt.languageCode);
+                return (
+                  <FormGroup key={bt.languageCode}>
+                    <Label>{lang?.name ?? bt.languageCode}</Label>
+                    <InputField id={`biomeName-${bt.languageCode}`} type="text" placeholder={t("form.biome_name")} value={bt.biomeName} onChange={(e) => updateText(bt.languageCode, "biomeName", e.target.value)} />
+                  </FormGroup>
+                );
+              })}
             </SectionColumn>
           </InfoAccordion>
         </Column>
