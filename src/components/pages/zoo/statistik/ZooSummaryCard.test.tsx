@@ -45,23 +45,12 @@ const mockStats: BiomeStatistic[] = [
   makeStat({ biomeId: 2, totalAnimals: 20, animalsForZoodollar: 14, animalsForDiamond: 6, totalSpecialCoats: 8, shelterLevelCounts: { 0: 2, 1: 4, 2: 6, 3: 8 }, contestStatues: 5, contestSpecialCoats: 7 }),
 ];
 
-const defaultRegionStatistics = { totalRegions: 5, totalBreedingSlots: 20 };
+const defaultRegionStatistics = { totalRegions: 5, totalBreedingSlots: 20, totalBiomes: 14, totalTerrains: 4 };
 
 describe("ZooSummaryCard", () => {
-  test("zeigt die Anzahl der Biome an", () => {
+  test("zeigt den Titel an", () => {
     render(<ZooSummaryCard biomeStatistics={mockStats} totalCollections={0} regionStatistics={defaultRegionStatistics} />);
-    expect(screen.getByText("summary.biomes")).toBeInTheDocument();
-  });
-
-  test("zeigt die Biome-Anzahl im Header an", () => {
-    const stats = [
-      makeStat({ biomeId: 1, region: "Hauptzoo" }),
-      makeStat({ biomeId: 2, region: "Hauptzoo" }),
-      makeStat({ biomeId: 3, region: "FirGrove" }),
-      makeStat({ biomeId: 4, region: null }),
-    ];
-    render(<ZooSummaryCard biomeStatistics={stats} totalCollections={0} regionStatistics={defaultRegionStatistics} />);
-    expect(screen.getByText("summary.biomes")).toBeInTheDocument();
+    expect(screen.getByText("summary.title")).toBeInTheDocument();
   });
 
   test("summiert Gesamtzahl der Tiere korrekt", () => {
@@ -103,15 +92,19 @@ describe("ZooSummaryCard", () => {
   });
 
   test("funktioniert mit leerem Array", () => {
-    render(<ZooSummaryCard biomeStatistics={[]} totalCollections={0} regionStatistics={{ totalRegions: 0, totalBreedingSlots: 0 }} />);
-    expect(screen.getByText("summary.biomes")).toBeInTheDocument();
+    render(<ZooSummaryCard biomeStatistics={[]} totalCollections={0} regionStatistics={{ totalRegions: 0, totalBreedingSlots: 0, totalBiomes: 0, totalTerrains: 0 }} />);
+    expect(screen.getByText("summary.title")).toBeInTheDocument();
   });
 
   test("zeigt Regionsstatistiken an", () => {
-    render(<ZooSummaryCard biomeStatistics={mockStats} totalCollections={0} regionStatistics={{ totalRegions: 8, totalBreedingSlots: 42 }} />);
+    render(<ZooSummaryCard biomeStatistics={mockStats} totalCollections={0} regionStatistics={{ totalRegions: 8, totalBreedingSlots: 42, totalBiomes: 14, totalTerrains: 4 }} />);
     const totalLabel = screen.getByText("regions.total");
     expect(totalLabel.nextElementSibling).toHaveTextContent("8");
     const slotsLabel = screen.getByText("regions.breedingSlots");
     expect(slotsLabel.nextElementSibling).toHaveTextContent("42");
+    const biomesLabel = screen.getByText("regions.biomes");
+    expect(biomesLabel.nextElementSibling).toHaveTextContent("14");
+    const terrainsLabel = screen.getByText("regions.terrains");
+    expect(terrainsLabel.nextElementSibling).toHaveTextContent("4");
   });
 });

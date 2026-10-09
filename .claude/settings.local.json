@@ -62,7 +62,8 @@
       "Read(//d/Entwicklung/zoo2-community-manager/messages/$lang/**)",
       "Bash(2)",
       "Bash(find D:/Entwicklung/zoo2-community-manager/src/components/page-structure -name *.tsx)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(find /d/Entwicklung/zoo2-community-manager/src/types -name *.ts -type f)"
     ]
   }
 }

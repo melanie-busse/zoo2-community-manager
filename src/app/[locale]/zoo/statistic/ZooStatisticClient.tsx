@@ -7,7 +7,7 @@ import { BiomeStatistic } from "@/types/zooStatistic";
 interface ZooStatisticClientProps {
   biomeStatistics: BiomeStatistic[];
   totalCollections: number;
-  regionStatistics: { totalRegions: number; totalBreedingSlots: number };
+  regionStatistics: { totalRegions: number; totalBreedingSlots: number; totalBiomes: number; totalTerrains: number };
 }
 
 export default function ZooStatisticClient({ biomeStatistics, totalCollections, regionStatistics }: ZooStatisticClientProps) {

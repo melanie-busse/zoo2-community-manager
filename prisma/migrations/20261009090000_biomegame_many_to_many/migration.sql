@@ -8,11 +8,11 @@ CREATE TABLE IF NOT EXISTS `_BiomeToGame` (
   CONSTRAINT `_BiomeToGame_B_fkey` FOREIGN KEY (`B`) REFERENCES `biomegame`(`id`) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
--- Migrate existing biomeId data to join table (if column still exists)
--- INSERT IGNORE INTO `_BiomeToGame` (`A`, `B`)
--- SELECT `biomeId`, `id` FROM `biomegame` WHERE `biomeId` IS NOT NULL;
+-- Migrate existing biomeId associations into the join table
+INSERT IGNORE INTO `_BiomeToGame` (`A`, `B`)
+SELECT `biomeId`, `id` FROM `biomegame` WHERE `biomeId` IS NOT NULL;
 
--- Drop biomeId from biomegame (already done if error occurs, safe to skip)
--- ALTER TABLE `biomegame` DROP FOREIGN KEY `biomegame_biomeId_fkey`;
--- ALTER TABLE `biomegame` DROP INDEX `biomegame_biomeId_idx`;
--- ALTER TABLE `biomegame` DROP COLUMN `biomeId`;
+-- Drop biomeId foreign key, index and column from biomegame
+ALTER TABLE `biomegame` DROP FOREIGN KEY `biomegame_biomeId_fkey`;
+ALTER TABLE `biomegame` DROP INDEX `biomegame_biomeId_idx`;
+ALTER TABLE `biomegame` DROP COLUMN `biomeId`;

@@ -8,7 +8,9 @@
   "regions": {
     "title": "Regioner",
     "total": "Antal:",
-    "breedingSlots": "Avlspladser:"
+    "breedingSlots": "Avlspladser:",
+    "biomes": "Biomer:",
+    "terrains": "Terræntyper:"
   },
   "animals": {
     "title": "Dyr",
