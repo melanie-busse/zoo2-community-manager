@@ -1,0 +1,1 @@
+ALTER TABLE `biomegame` ADD COLUMN `biomeIdentifier` VARCHAR(255) NOT NULL DEFAULT '';

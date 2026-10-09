@@ -713,15 +713,16 @@ model BiomeShelter {
 }
 
 model BiomeGame {
-  id              Int             @id @default(autoincrement())
-  identifier      String          @db.VarChar(255)
-  price           Int
-  pricetype       Int
-  repair          Int
-  repairpricetype Int             @default(1)
-  biomes          Biome[]         @relation("BiomeToGame")
-  texts           BiomeGameText[]
-  animals         Animal[]
+  id               Int             @id @default(autoincrement())
+  identifier       String          @db.VarChar(255)
+  biomeIdentifier  String          @db.VarChar(255) @default("")
+  price            Int
+  pricetype        Int
+  repair           Int
+  repairpricetype  Int             @default(1)
+  biomes           Biome[]         @relation("BiomeToGame")
+  texts            BiomeGameText[]
+  animals          Animal[]
 
   @@map("biomegame")
 }

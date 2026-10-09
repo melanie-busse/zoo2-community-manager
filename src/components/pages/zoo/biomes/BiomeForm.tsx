@@ -53,7 +53,7 @@ interface BiomeFormProps {
   };
   languages: Language[];
   regions: Region[];
-  allGames: { id: number; identifier: string; texts: { name: string }[] }[];
+  allGames: { id: number; identifier: string; biomeIdentifier: string; texts: { name: string }[] }[];
 }
 
 
@@ -188,6 +188,7 @@ export default function BiomeForm({ biome, languages, regions, allGames }: Biome
   const gameItems = allGames.map((g) => ({
     id: g.id,
     name: g.texts[0]?.name ?? g.identifier,
+    imagePath: g.biomeIdentifier ? `/images/biomes/${g.biomeIdentifier}/game/${g.identifier}/image.webp` : undefined,
   }));
 
   return (

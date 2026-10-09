@@ -36,6 +36,7 @@ interface TroughOrWater {
 interface BiomeGame {
   id: number;
   identifier: string;
+  biomeIdentifier: string;
   price: number;
   pricetype: number;
   repair: number;
@@ -124,7 +125,7 @@ export default function BiomeDetailContent({ biome }: BiomeDetailContentProps) {
       )}
 
       {biome.games.length > 0 && (
-        <BiomeGameCard biomeIdentifier={biome.identifier} games={biome.games} />
+        <BiomeGameCard games={biome.games} />
       )}
     </DetailWrapper>
   );

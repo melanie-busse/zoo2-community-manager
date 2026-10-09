@@ -14,6 +14,7 @@ function toCurrencyType(pricetype: number): CurrencyType {
 interface BiomeGame {
   id: number;
   identifier: string;
+  biomeIdentifier: string;
   price: number;
   pricetype: number;
   repair: number;
@@ -22,11 +23,10 @@ interface BiomeGame {
 }
 
 interface BiomeGameCardProps {
-  biomeIdentifier: string;
   games: BiomeGame[];
 }
 
-export default function BiomeGameCard({ biomeIdentifier, games }: BiomeGameCardProps) {
+export default function BiomeGameCard({ games }: BiomeGameCardProps) {
   const t = useTranslations("biome");
 
   return (
@@ -40,7 +40,7 @@ export default function BiomeGameCard({ biomeIdentifier, games }: BiomeGameCardP
       <GamesGrid>
         {games.map((game) => {
           const name = game.texts[0]?.name ?? game.identifier;
-          const imagePath = `/images/biomes/${biomeIdentifier}/game/${game.identifier}/image.webp`;
+          const imagePath = `/images/biomes/${game.biomeIdentifier}/game/${game.identifier}/image.webp`;
           return (
             <GameItem key={game.id}>
               <GameImageWrapper>

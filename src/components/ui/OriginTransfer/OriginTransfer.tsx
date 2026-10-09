@@ -8,6 +8,7 @@ import { useTranslations } from "next-intl";
 interface TransferItem {
   id: number;
   name: string;
+  imagePath?: string;
 }
 
 interface OriginTransferProps {
@@ -55,6 +56,9 @@ export default function OriginTransfer({
           ) : (
             available.map((item) => (
               <Styles.Item key={item.id} onClick={() => handleMoveRight(item)} $disabled={isFull}>
+                {item.imagePath && (
+                  <img src={item.imagePath} alt={item.name} width={28} height={28} style={{ objectFit: "contain", flexShrink: 0 }} onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
+                )}
                 <span>{item.name}</span>
                 <ChevronRight size={16} />
               </Styles.Item>
@@ -73,6 +77,9 @@ export default function OriginTransfer({
             selected.map((item) => (
               <Styles.Item key={item.id} onClick={() => handleMoveLeft(item)} $selected>
                 <ChevronLeft size={16} />
+                {item.imagePath && (
+                  <img src={item.imagePath} alt={item.name} width={28} height={28} style={{ objectFit: "contain", flexShrink: 0 }} onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }} />
+                )}
                 <span>{item.name}</span>
               </Styles.Item>
             ))
