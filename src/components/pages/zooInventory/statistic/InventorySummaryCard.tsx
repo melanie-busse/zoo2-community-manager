@@ -87,21 +87,8 @@ export default function InventorySummaryCard({
     <CardContainer>
       <CardHeaderRow>
         <Title>{t("summary.title")}</Title>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "flex-end",
-            fontSize: "0.85rem",
-            opacity: 0.7,
-          }}
-        >
-          <span>{t("summary.biomes", { count: biomeStatistics.length })}</span>
-        </div>
       </CardHeaderRow>
-
       <CardDivider />
-
       <CardStatsRow>
         <StatSection>
           <SectionTitle>{t("regions.title")}</SectionTitle>
@@ -119,9 +106,7 @@ export default function InventorySummaryCard({
           />
         </StatSection>
       </CardStatsRow>
-
       <CardDivider />
-
       <CardStatsRow>
         <StatSection>
           <SectionTitle>{t("animals.title")}</SectionTitle>
@@ -157,9 +142,7 @@ export default function InventorySummaryCard({
           />
         </StatSection>
       </CardStatsRow>
-
       <CardDivider />
-
       <CardStatsRow>
         <StatSection>
           <SectionTitle>{t("contest.title")}</SectionTitle>
@@ -177,9 +160,7 @@ export default function InventorySummaryCard({
           />
         </StatSection>
       </CardStatsRow>
-
       <CardDivider />
-
       <CardStatsRow>
         <StatSection>
           <SectionTitle>{t("shelter.title")}</SectionTitle>

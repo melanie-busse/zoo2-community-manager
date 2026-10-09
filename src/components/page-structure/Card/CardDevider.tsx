@@ -7,5 +7,7 @@ export default function CardDivider() {
 export const Divider = styled.div`
   height: 1px;
   background-color: #eee;
-  margin-bottom: 12px;
+  margin-top: 12px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
 `;

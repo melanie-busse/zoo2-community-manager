@@ -53,7 +53,12 @@ const ShelterItem = styled.div`
 interface ZooSummaryCardProps {
   biomeStatistics: BiomeStatistic[];
   totalCollections: number;
-  regionStatistics: { totalRegions: number; totalBreedingSlots: number; totalBiomes: number; totalTerrains: number };
+  regionStatistics: {
+    totalRegions: number;
+    totalBreedingSlots: number;
+    totalBiomes: number;
+    totalTerrains: number;
+  };
 }
 
 export default function ZooSummaryCard({
@@ -79,17 +84,6 @@ export default function ZooSummaryCard({
     <CardContainer>
       <CardHeaderRow>
         <Title>{t("summary.title")}</Title>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "flex-end",
-            fontSize: "0.85rem",
-            opacity: 0.7,
-          }}
-        >
-          <span>{t("summary.biomes", { count: biomeStatistics.length })}</span>
-        </div>
       </CardHeaderRow>
 
       <CardDivider />
