@@ -8,7 +8,9 @@
   "regions": {
     "title": "Regions",
     "total": "Count:",
-    "breedingSlots": "Breeding Slots:"
+    "breedingSlots": "Breeding Slots:",
+    "biomes": "Biomes:",
+    "terrains": "Terrain Types:"
   },
   "animals": {
     "title": "Animals",

@@ -8,7 +8,9 @@
   "regions": {
     "title": "Regio's",
     "total": "Aantal:",
-    "breedingSlots": "Fokplaatsen:"
+    "breedingSlots": "Fokplaatsen:",
+    "biomes": "Biotopen:",
+    "terrains": "Terreintypen:"
   },
   "animals": {
     "title": "Dieren",

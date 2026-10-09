@@ -29,7 +29,7 @@ const Grid = styled.div`
 interface ZooStatisticContentProps {
   biomeStatistics: BiomeStatistic[];
   totalCollections: number;
-  regionStatistics: { totalRegions: number; totalBreedingSlots: number };
+  regionStatistics: { totalRegions: number; totalBreedingSlots: number; totalBiomes: number; totalTerrains: number };
 }
 
 export default function ZooStatisticContent({ biomeStatistics, totalCollections, regionStatistics }: ZooStatisticContentProps) {
