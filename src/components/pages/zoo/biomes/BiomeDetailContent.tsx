@@ -30,6 +30,7 @@ interface TroughOrWater {
   price: number;
   pricetype: number;
   repair?: number;
+  repairpricetype?: number;
 }
 
 interface BiomeGame {

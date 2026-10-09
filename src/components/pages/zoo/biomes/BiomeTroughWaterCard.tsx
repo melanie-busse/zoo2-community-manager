@@ -16,6 +16,7 @@ interface TroughOrWater {
   price: number;
   pricetype: number;
   repair?: number;
+  repairpricetype?: number;
 }
 
 interface BiomeTroughWaterCardProps {
@@ -54,7 +55,7 @@ export default function BiomeTroughWaterCard({ title, imagePath, items, showRepa
                 </Td>
                 {showRepair && item.repair != null && (
                   <Td>
-                    <CurrencyBadge value={item.repair} type={toCurrencyType(item.pricetype)} />
+                    <CurrencyBadge value={item.repair} type={toCurrencyType(item.repairpricetype ?? item.pricetype)} />
                   </Td>
                 )}
               </tr>

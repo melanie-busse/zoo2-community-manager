@@ -685,12 +685,13 @@ model BiomeTrough {
 }
 
 model BiomeWaterHole {
-  id        Int   @id @default(autoincrement())
-  price     Int
-  pricetype Int
-  repair    Int
-  biomeId   Int
-  biome     Biome @relation(fields: [biomeId], references: [id], onDelete: Cascade)
+  id              Int   @id @default(autoincrement())
+  price           Int
+  pricetype       Int
+  repair          Int
+  repairpricetype Int   @default(1)
+  biomeId         Int
+  biome           Biome @relation(fields: [biomeId], references: [id], onDelete: Cascade)
 
   @@index([biomeId])
   @@map("biomewaterhole")

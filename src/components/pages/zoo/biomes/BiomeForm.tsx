@@ -47,7 +47,7 @@ interface BiomeFormProps {
     regionId: number | null;
     biomestext: { languageCode: string; biomeName: string; biomeDescription: string | null }[];
     troughs: { id: number; price: number; pricetype: number }[];
-    waterHoles: { id: number; price: number; pricetype: number; repair: number }[];
+    waterHoles: { id: number; price: number; pricetype: number; repair: number; repairpricetype: number }[];
     shelters: { id: number; level: number; cost: number; pricetype: number; buildTime: number | null; unlockLevel: number | null }[];
     games: { id: number }[];
   };
@@ -90,6 +90,7 @@ export default function BiomeForm({ biome, languages, regions, allGames }: Biome
   const [waterPrice, setWaterPrice] = useState(firstWater?.price?.toString() ?? "");
   const [waterPricetype, setWaterPricetype] = useState(firstWater?.pricetype?.toString() ?? "1");
   const [waterRepair, setWaterRepair] = useState(firstWater?.repair?.toString() ?? "");
+  const [waterRepairpricetype, setWaterRepairpricetype] = useState(firstWater?.repairpricetype?.toString() ?? "1");
 
   const [shelters, setShelters] = useState<ShelterLevel[]>(() => {
     const map = new Map((biome?.shelters ?? []).map((r) => [r.level, r]));
@@ -149,7 +150,7 @@ export default function BiomeForm({ biome, languages, regions, allGames }: Biome
         ? [{ price: parseInt(troughPrice) || 0, pricetype: parseInt(troughPricetype) || 1 }]
         : [];
       const waterHoles = waterPrice !== ""
-        ? [{ price: parseInt(waterPrice) || 0, pricetype: parseInt(waterPricetype) || 1, repair: parseInt(waterRepair) || 0 }]
+        ? [{ price: parseInt(waterPrice) || 0, pricetype: parseInt(waterPricetype) || 1, repair: parseInt(waterRepair) || 0, repairpricetype: parseInt(waterRepairpricetype) || 1 }]
         : [];
       const shelterData = shelters
         .map((r, lvl) => ({ level: lvl, cost: parseInt(r.cost) || 0, pricetype: parseInt(r.pricetype) || 1, buildTime: r.buildTime !== "" ? parseInt(r.buildTime) || null : null, unlockLevel: r.unlockLevel !== "" ? parseInt(r.unlockLevel) || null : null }))
@@ -256,7 +257,10 @@ export default function BiomeForm({ biome, languages, regions, allGames }: Biome
               </FormGroup>
               <FormGroup>
                 <Label htmlFor="waterRepair">{t("repair")}</Label>
-                <InputField id="waterRepair" type="number" value={waterRepair} onChange={(e) => setWaterRepair(e.target.value)} />
+                <FormRow>
+                  <InputField id="waterRepair" type="number" value={waterRepair} onChange={(e) => setWaterRepair(e.target.value)} />
+                  <Selectbox id="waterRepairpricetype" name="waterRepairpricetype" value={waterRepairpricetype} onChange={(e) => setWaterRepairpricetype(e.target.value)} options={currencyOptions} />
+                </FormRow>
               </FormGroup>
             </SectionColumn>
           </InfoAccordion>
