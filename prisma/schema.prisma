@@ -32,7 +32,7 @@ model Biome {
   troughs                   BiomeTrough[]
   waterHoles                BiomeWaterHole[]
   shelters                  BiomeShelter[]
-  games                     BiomeGame[]  @relation("BiomeToGame")
+  games                     BiomeGame[]       @relation("biometogame")
   biomeDecorations          BiomeDecoration[]
 
   @@index([priceTypeId], map: "biome_priceTypeId_fkey")
@@ -713,16 +713,16 @@ model BiomeShelter {
 }
 
 model BiomeGame {
-  id               Int             @id @default(autoincrement())
-  identifier       String          @db.VarChar(255)
-  biomeIdentifier  String          @db.VarChar(255) @default("")
-  price            Int
-  pricetype        Int
-  repair           Int
-  repairpricetype  Int             @default(1)
-  biomes           Biome[]         @relation("BiomeToGame")
-  texts            BiomeGameText[]
-  animals          Animal[]
+  id              Int             @id @default(autoincrement())
+  identifier      String          @db.VarChar(255)
+  biomeIdentifier String          @db.VarChar(255) @default("")
+  price           Int
+  pricetype       Int
+  repair          Int
+  repairpricetype Int             @default(1)
+  biomes          Biome[]         @relation("biometogame")
+  texts           BiomeGameText[]
+  animals         Animal[]
 
   @@map("biomegame")
 }
