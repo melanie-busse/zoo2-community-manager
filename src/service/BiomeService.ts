@@ -4,8 +4,6 @@ import prisma from "@/lib/prisma";
 type TroughData    = { price: number; pricetype: number };
 type WaterHoleData = { price: number; pricetype: number; repair: number };
 type ShelterData   = { level: number; cost: number; pricetype: number; buildTime: number | null; unlockLevel: number | null };
-type GameTextData  = { languageCode: string; name: string };
-type GameData      = { identifier: string; price: number; pricetype: number; repair: number; repairpricetype: number; texts: GameTextData[] };
 
 type NestedBiomeData = {
   identifier: string;
@@ -19,8 +17,15 @@ type NestedBiomeData = {
   troughs?: TroughData[];
   waterHoles?: WaterHoleData[];
   shelters?: ShelterData[];
-  games?: GameData[];
+  gameIds?: number[];
 };
+
+export async function getAllBiomeGames(locale: string = "de") {
+  return prisma.biomeGame.findMany({
+    include: { texts: { where: { languageCode: locale } } },
+    orderBy: { identifier: "asc" },
+  });
+}
 
 export async function getHabitatCount() {
   return prisma.biome.count();
@@ -77,7 +82,7 @@ export async function getBiomeByIdForEdit(id: number) {
       troughs: true,
       waterHoles: true,
       shelters: { orderBy: { level: "asc" } },
-      games: { include: { texts: true }, orderBy: { identifier: "asc" } },
+      games: { select: { id: true } },
     },
   });
 }
@@ -110,17 +115,10 @@ export async function createBiome(data: NestedBiomeData): Promise<{ id: number }
     if (data.shelters?.length) {
       await tx.biomeShelter.createMany({ data: data.shelters.map((r) => ({ ...r, biomeId: biome.id })) });
     }
-    for (const game of data.games ?? []) {
-      await tx.biomeGame.create({
-        data: {
-          identifier: game.identifier,
-          price: game.price,
-          pricetype: game.pricetype,
-          repair: game.repair,
-          repairpricetype: game.repairpricetype,
-          biomeId: biome.id,
-          texts: { createMany: { data: game.texts.filter((t) => t.name !== "") } },
-        },
+    if (data.gameIds?.length) {
+      await tx.biome.update({
+        where: { id: biome.id },
+        data: { games: { connect: data.gameIds.map((id) => ({ id })) } },
       });
     }
 
@@ -168,21 +166,15 @@ export async function updateBiome(id: number, data: NestedBiomeData): Promise<vo
       await tx.biomeShelter.createMany({ data: data.shelters.map((r) => ({ ...r, biomeId: id })) });
     }
 
-    // games (texts cascade-delete with biomeGame)
-    await tx.biomeGame.deleteMany({ where: { biomeId: id } });
-    for (const game of data.games ?? []) {
-      await tx.biomeGame.create({
-        data: {
-          identifier: game.identifier,
-          price: game.price,
-          pricetype: game.pricetype,
-          repair: game.repair,
-          repairpricetype: game.repairpricetype,
-          biomeId: id,
-          texts: { createMany: { data: game.texts.filter((t) => t.name !== "") } },
+    // games — set replaces all connections
+    await tx.biome.update({
+      where: { id },
+      data: {
+        games: {
+          set: (data.gameIds ?? []).map((gid) => ({ id: gid })),
         },
-      });
-    }
+      },
+    });
   });
 }
 

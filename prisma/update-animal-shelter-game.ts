@@ -35,14 +35,9 @@ async function main() {
     shelterMap.get(s.biomeId)!.set(s.level, s.id);
   }
 
-  // Build lookup: biomeId → games in insertion order (id ascending)
-  const allGames = await p.biomeGame.findMany({ orderBy: [{ biomeId: "asc" }, { id: "asc" }] });
-  // Map: biomeId → game id[]  (index 0 = first game)
+  // Build lookup via join table: biomeId → games
+  // NOTE: biomeId was removed from BiomeGame (now M2M via _BiomeToGame join table)
   const gameMap = new Map<number, number[]>();
-  for (const g of allGames) {
-    if (!gameMap.has(g.biomeId)) gameMap.set(g.biomeId, []);
-    gameMap.get(g.biomeId)!.push(g.id);
-  }
 
   const rows = parseRows("C:/Users/micro/Downloads/tierdaten.txt");
   console.log(`Parsed ${rows.length} animals from tierdaten.txt`);

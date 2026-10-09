@@ -465,9 +465,9 @@ async function main() {
     const biomeId = resolve(identifier);
     if (!biomeId) continue;
     for (const g of games) {
-      await prisma.biomeGame.create({
+      // NOTE: biomeId removed from BiomeGame (now M2M). Use biome.games connect instead.
+      const game = await prisma.biomeGame.create({
         data: {
-          biomeId,
           identifier: g.identifier,
           price: g.price,
           pricetype: g.pricetype,
@@ -475,6 +475,7 @@ async function main() {
           texts: { createMany: { data: textEntries(g.texts) } },
         },
       });
+      await prisma.biome.update({ where: { id: biomeId }, data: { games: { connect: { id: game.id } } } });
     }
     console.log(`  ${identifier}: ${games.length} games`);
   }
