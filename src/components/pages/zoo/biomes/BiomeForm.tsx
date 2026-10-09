@@ -235,6 +235,24 @@ export default function BiomeForm({ biome, languages, regions }: BiomeFormProps)
         </Column>
 
         <Column>
+          <InfoAccordion title={t("form.translations")} icon="/images/icons/info.png" defaultOpen>
+            <SectionColumn>
+              <DynamicRowInput
+                rows={biomestext.map((bt) => ({ id: bt.languageCode, languageCode: bt.languageCode, biomeName: bt.biomeName }))}
+                columns={[
+                  { key: "languageCode", label: t("form.language"), type: "select", $flex: 0.5, options: languageOptions },
+                  { key: "biomeName",    label: t("form.biome_name"), type: "text", $flex: 1, placeholder: t("form.biome_name") },
+                ]}
+                onAdd={onAddText}
+                onRemove={onRemoveText}
+                onChange={onChangeText}
+                disabledAdd={allLanguagesUsed}
+              />
+            </SectionColumn>
+          </InfoAccordion>
+        </Column>
+
+        <Column>
           <InfoAccordion title={t("form.water_holes")} icon="/images/icons/info.png" defaultOpen>
             <SectionColumn>
               <FormGroup>
@@ -262,24 +280,6 @@ export default function BiomeForm({ biome, languages, regions }: BiomeFormProps)
                   <Selectbox id="troughPricetype" name="troughPricetype" value={troughPricetype} onChange={(e) => setTroughPricetype(e.target.value)} options={currencyOptions} />
                 </FormRow>
               </FormGroup>
-            </SectionColumn>
-          </InfoAccordion>
-        </Column>
-
-        <Column>
-          <InfoAccordion title={t("form.translations")} icon="/images/icons/info.png" defaultOpen>
-            <SectionColumn>
-              <DynamicRowInput
-                rows={biomestext.map((bt) => ({ id: bt.languageCode, languageCode: bt.languageCode, biomeName: bt.biomeName }))}
-                columns={[
-                  { key: "languageCode", label: t("form.language"), type: "select", $flex: 0.5, options: languageOptions },
-                  { key: "biomeName",    label: t("form.biome_name"), type: "text", $flex: 1, placeholder: t("form.biome_name") },
-                ]}
-                onAdd={onAddText}
-                onRemove={onRemoveText}
-                onChange={onChangeText}
-                disabledAdd={allLanguagesUsed}
-              />
             </SectionColumn>
           </InfoAccordion>
         </Column>
