@@ -235,20 +235,6 @@ export default function BiomeForm({ biome, languages, regions }: BiomeFormProps)
         </Column>
 
         <Column>
-          <InfoAccordion title={t("form.troughs")} icon="/images/icons/info.png" defaultOpen>
-            <SectionColumn>
-              <FormGroup>
-                <Label htmlFor="troughPrice">{t("price")}</Label>
-                <FormRow>
-                  <InputField id="troughPrice" type="number" value={troughPrice} onChange={(e) => setTroughPrice(e.target.value)} />
-                  <Selectbox id="troughPricetype" name="troughPricetype" value={troughPricetype} onChange={(e) => setTroughPricetype(e.target.value)} options={currencyOptions} />
-                </FormRow>
-              </FormGroup>
-            </SectionColumn>
-          </InfoAccordion>
-        </Column>
-
-        <Column>
           <InfoAccordion title={t("form.water_holes")} icon="/images/icons/info.png" defaultOpen>
             <SectionColumn>
               <FormGroup>
@@ -261,6 +247,20 @@ export default function BiomeForm({ biome, languages, regions }: BiomeFormProps)
               <FormGroup>
                 <Label htmlFor="waterRepair">{t("repair")}</Label>
                 <InputField id="waterRepair" type="number" value={waterRepair} onChange={(e) => setWaterRepair(e.target.value)} />
+              </FormGroup>
+            </SectionColumn>
+          </InfoAccordion>
+        </Column>
+
+        <Column>
+          <InfoAccordion title={t("form.troughs")} icon="/images/icons/info.png" defaultOpen>
+            <SectionColumn>
+              <FormGroup>
+                <Label htmlFor="troughPrice">{t("price")}</Label>
+                <FormRow>
+                  <InputField id="troughPrice" type="number" value={troughPrice} onChange={(e) => setTroughPrice(e.target.value)} />
+                  <Selectbox id="troughPricetype" name="troughPricetype" value={troughPricetype} onChange={(e) => setTroughPricetype(e.target.value)} options={currencyOptions} />
+                </FormRow>
               </FormGroup>
             </SectionColumn>
           </InfoAccordion>
