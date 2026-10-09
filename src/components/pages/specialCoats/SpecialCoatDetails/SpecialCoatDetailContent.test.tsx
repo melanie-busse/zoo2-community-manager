@@ -122,7 +122,7 @@ const mockSpecialCoat = {
 
 const mockAnimal = {
   id: 1,
-  shelterLevel: 2,
+  shelter: { level: 2 },
   breedingCost: 300,
   breedingDuration: 8,
   breedingProbability: 50,

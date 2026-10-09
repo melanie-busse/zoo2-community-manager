@@ -1,6 +1,46 @@
 {
   "enclosure": "Indhegning",
   "enclosureType": "Indhegningstype",
-  "shelterLevel": "Stalsniveau",
-  "noBiome": "Ingen indhegning"
+  "shelterLevel": "Staldt niveau",
+  "noBiome": "Ingen indhegning",
+  "overview_title": "Biomer",
+  "name": "Navn",
+  "identifier": "Identifikator",
+  "price": "Pris",
+  "price_type": "Pristype",
+  "expansion_cost": "Udvidelsesomkostninger",
+  "size": "Størrelse",
+  "region": "Region",
+  "games": "Legetøj",
+  "repair": "Reparation",
+  "repair_price_type": "Rep. valuta",
+  "shelter_levels": "Staldt niveauer",
+  "level": "Niveau",
+  "build_cost": "Byggeomkostninger",
+  "upgrade_cost": "Opgraderingsomkostninger",
+  "upgrade_time": "Opgraderingstid",
+  "unlock_level": "Låseniveau",
+  "level_value": "Niveau {level}",
+  "minutes": "{n} min",
+  "trough_and_water": "Trug & Vandhul",
+  "form": {
+    "create_biome": "Tilføj biom",
+    "edit_biome": "Rediger biom",
+    "save_biome": "Gem biom",
+    "basic_info": "Basisoplysninger",
+    "translations": "Oversættelser",
+    "language": "Sprog",
+    "biome_name": "Navn",
+    "biome_description": "Beskrivelse",
+    "troughs": "Trug",
+    "water_holes": "Vandhul",
+    "messages": {
+      "createSuccess": "Biom oprettet",
+      "editSuccess": "Biom opdateret",
+      "confirmDelete": "Vil du virkelig slette dette biom?",
+      "deleteErrorTitle": "Slet biom",
+      "deleteSuccess": "Biom slettet",
+      "requiredIdentifier": "Identifikator er et påkrævet felt."
+    }
+  }
 }

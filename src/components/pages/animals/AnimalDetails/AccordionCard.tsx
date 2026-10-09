@@ -35,7 +35,7 @@ export default function AccordionCard() {
         <DataRow label={tBiomes("shelterLevel")}>
           <ShelterLevelBadge
             image={getShelterImage(animal.biome)}
-            level={animal.shelterLevel ?? 0}
+            level={animal.shelter?.level ?? 0}
             habitat={animal.biome?.name}
             size={35}
             showTooltip={false}
@@ -47,7 +47,7 @@ export default function AccordionCard() {
         </DataRow>
 
         <DataRow label={tCommon("time")}>
-          <strong>{animal.breedingDuration || 0} h</strong>
+          <strong>{formatMinutes(animal.breedingDuration)}</strong>
         </DataRow>
 
         <DataRow label={tAnimals("breeding.breedingChance")}>

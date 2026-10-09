@@ -1,6 +1,46 @@
 {
   "enclosure": "Verblijf",
-  "enclosureType": "Verblijfstype",
+  "enclosureType": "Verblijftype",
   "shelterLevel": "Stalniveau",
-  "noBiome": "Geen verblijf"
+  "noBiome": "Geen verblijf",
+  "overview_title": "Biomen",
+  "name": "Naam",
+  "identifier": "Identifier",
+  "price": "Prijs",
+  "price_type": "Prijstype",
+  "expansion_cost": "Uitbreidingskosten",
+  "size": "Grootte",
+  "region": "Regio",
+  "games": "Speelgoed",
+  "repair": "Reparatie",
+  "repair_price_type": "Rep. valuta",
+  "shelter_levels": "Stalniveaus",
+  "level": "Niveau",
+  "build_cost": "Bouwkosten",
+  "upgrade_cost": "Upgradekosten",
+  "upgrade_time": "Upgradetijd",
+  "unlock_level": "Ontgrendelniveau",
+  "level_value": "Niveau {level}",
+  "minutes": "{n} min",
+  "trough_and_water": "Trog & Drinkplaats",
+  "form": {
+    "create_biome": "Bioom aanmaken",
+    "edit_biome": "Bioom bewerken",
+    "save_biome": "Bioom opslaan",
+    "basic_info": "Basisgegevens",
+    "translations": "Vertalingen",
+    "language": "Taal",
+    "biome_name": "Naam",
+    "biome_description": "Beschrijving",
+    "troughs": "Trog",
+    "water_holes": "Drinkplaats",
+    "messages": {
+      "createSuccess": "Bioom succesvol aangemaakt",
+      "editSuccess": "Bioom succesvol bijgewerkt",
+      "confirmDelete": "Wil je dit bioom echt verwijderen?",
+      "deleteErrorTitle": "Bioom verwijderen",
+      "deleteSuccess": "Bioom succesvol verwijderd",
+      "requiredIdentifier": "Identifier is een verplicht veld."
+    }
+  }
 }

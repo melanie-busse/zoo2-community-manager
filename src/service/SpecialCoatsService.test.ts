@@ -98,6 +98,7 @@ describe("SpecialCoats Service", () => {
             include: {
               animaltext: { where: { languageCode: mockLocale } },
               priceType: true,
+              shelter: { select: { level: true } },
               biome: {
                 include: {
                   biomestext: { where: { languageCode: mockLocale } },
@@ -148,6 +149,7 @@ describe("SpecialCoats Service", () => {
             include: {
               animaltext: { where: { languageCode: "de" } },
               priceType: true,
+              shelter: { select: { level: true } },
               biome: {
                 include: {
                   biomestext: { where: { languageCode: "de" } },

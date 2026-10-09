@@ -61,7 +61,7 @@ export function filterSpecialCoats(
       return false;
     }
 
-    if (selectedShelterLevel !== null && animal?.shelterLevel !== selectedShelterLevel) {
+    if (selectedShelterLevel !== null && animal?.shelter?.level !== selectedShelterLevel) {
       return false;
     }
 
@@ -117,7 +117,7 @@ function _getNestedValue(coat: SpecialCoat, sortBy: string): string | number {
     case "biomeName":
       return coat.animal?.biome?.identifier ?? "";
     case "shelterLevel":
-      return coat.animal?.shelterLevel ?? 0;
+      return coat.animal?.shelter?.level ?? 0;
     case "animalName":
       return coat.animal?.animaltext?.[0]?.animalName ?? "";
     case "price":

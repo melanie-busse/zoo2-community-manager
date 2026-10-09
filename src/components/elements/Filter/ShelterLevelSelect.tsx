@@ -8,7 +8,7 @@ import ShelterLevelBadge from "@/components/ui/badges/ShelterLevelBadge";
 import { getShelterImage, extractUniqueShelterLevels } from "@/utils/BiomeUtil";
 
 interface WithShelterLevel {
-  shelterLevel?: number | null;
+  shelter?: { level?: number | null } | null;
 }
 
 interface ShelterLevelSelectProps {
@@ -36,12 +36,12 @@ export function ShelterLevelSelect({
       onSelectAction={(val) => onChange(val === "all" ? null : val)}
       allLabelKey="all_levels"
       labelPrefixKey="level_label"
-      getIdentifier={(item) => String(item.shelterLevel)}
+      getIdentifier={(item) => String(item.shelter?.level ?? 0)}
       renderBadge={(item) => (
         <Styles.ScaledBadge>
           <ShelterLevelBadge
             image={getShelterImage(grasslandBiome)}
-            level={Number(item.shelterLevel)}
+            level={Number(item.shelter?.level ?? 0)}
             habitat="grassland"
             showTooltip={false}
             size={60}

@@ -123,7 +123,7 @@ const mockSelectedAnimal = {
   sellingPrice: 1000,
   popularity: 150,
   releaseExp: 250,
-  shelterLevel: 3,
+  shelter: { level: 3 },
   breedingCost: 400,
   breedingDuration: 12,
   breedingProbability: 65,
@@ -175,7 +175,7 @@ describe("AnimalDetailContent Integration Test", () => {
 
     expect(screen.getByText("Wuselt flink im Sand herum.")).toBeInTheDocument();
 
-    expect(screen.getByText("12 h")).toBeInTheDocument();
+    expect(screen.getByText("00 h 12 min")).toBeInTheDocument();
     expect(screen.getByText("65 %")).toBeInTheDocument();
 
      expect(screen.getByText("2")).toBeInTheDocument();

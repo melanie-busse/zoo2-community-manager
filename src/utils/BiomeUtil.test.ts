@@ -121,31 +121,31 @@ describe("Biome Utilities", () => {
 
     test("filtert Items ohne shelterLevel heraus", () => {
       expect(
-        extractUniqueShelterLevels([{ shelterLevel: null }, { shelterLevel: undefined }]),
+        extractUniqueShelterLevels([{ shelter: null }, { shelter: undefined }]),
       ).toHaveLength(0);
     });
 
-    test("dedupliziert nach shelterLevel", () => {
-      const items = [{ shelterLevel: 5 }, { shelterLevel: 5 }, { shelterLevel: 10 }];
+    test("dedupliziert nach shelter.level", () => {
+      const items = [{ shelter: { level: 5 } }, { shelter: { level: 5 } }, { shelter: { level: 10 } }];
       expect(extractUniqueShelterLevels(items)).toHaveLength(2);
     });
 
-    test("sortiert aufsteigend nach shelterLevel", () => {
-      const items = [{ shelterLevel: 10 }, { shelterLevel: 3 }, { shelterLevel: 7 }, { shelterLevel: 1 }];
+    test("sortiert aufsteigend nach shelter.level", () => {
+      const items = [{ shelter: { level: 10 } }, { shelter: { level: 3 } }, { shelter: { level: 7 } }, { shelter: { level: 1 } }];
       const result = extractUniqueShelterLevels(items);
-      expect(result.map((i) => i.shelterLevel)).toEqual([1, 3, 7, 10]);
+      expect(result.map((i) => i.shelter?.level)).toEqual([1, 3, 7, 10]);
     });
 
-    test("verarbeitet gemischte Items mit und ohne shelterLevel", () => {
+    test("verarbeitet gemischte Items mit und ohne shelter", () => {
       const items = [
-        { shelterLevel: 5 },
-        { shelterLevel: null },
-        { shelterLevel: 10 },
-        { shelterLevel: undefined },
+        { shelter: { level: 5 } },
+        { shelter: null },
+        { shelter: { level: 10 } },
+        { shelter: undefined },
       ];
       const result = extractUniqueShelterLevels(items);
       expect(result).toHaveLength(2);
-      expect(result.map((i) => i.shelterLevel)).toEqual([5, 10]);
+      expect(result.map((i) => i.shelter?.level)).toEqual([5, 10]);
     });
   });
 

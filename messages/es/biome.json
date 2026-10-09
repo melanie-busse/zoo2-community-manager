@@ -1,6 +1,46 @@
 {
   "enclosure": "Recinto",
   "enclosureType": "Tipo de recinto",
-  "shelterLevel": "Nivel del establo",
-  "noBiome": "Sin recinto"
+  "shelterLevel": "Nivel de refugio",
+  "noBiome": "Sin recinto",
+  "overview_title": "Biomas",
+  "name": "Nombre",
+  "identifier": "Identificador",
+  "price": "Precio",
+  "price_type": "Tipo de precio",
+  "expansion_cost": "Coste de expansión",
+  "size": "Tamaño",
+  "region": "Región",
+  "games": "Juguetes",
+  "repair": "Reparación",
+  "repair_price_type": "Moneda rep.",
+  "shelter_levels": "Niveles de establo",
+  "level": "Nivel",
+  "build_cost": "Coste de construcción",
+  "upgrade_cost": "Coste de mejora",
+  "upgrade_time": "Tiempo de mejora",
+  "unlock_level": "Nivel de desbloqueo",
+  "level_value": "Nivel {level}",
+  "minutes": "{n} min",
+  "trough_and_water": "Comedero y bebedero",
+  "form": {
+    "create_biome": "Añadir bioma",
+    "edit_biome": "Editar bioma",
+    "save_biome": "Guardar bioma",
+    "basic_info": "Información básica",
+    "translations": "Traducciones",
+    "language": "Idioma",
+    "biome_name": "Nombre",
+    "biome_description": "Descripción",
+    "troughs": "Comedero",
+    "water_holes": "Bebedero",
+    "messages": {
+      "createSuccess": "Bioma creado correctamente",
+      "editSuccess": "Bioma actualizado correctamente",
+      "confirmDelete": "¿Realmente deseas eliminar este bioma?",
+      "deleteErrorTitle": "Eliminar bioma",
+      "deleteSuccess": "Bioma eliminado correctamente",
+      "requiredIdentifier": "El identificador es un campo obligatorio."
+    }
+  }
 }

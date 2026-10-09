@@ -109,7 +109,7 @@ export default function SpecialCoatsDesktopTable() {
               <td>
                 <ShelterLevelBadge
                   image={getShelterImage(specialCoat.animal?.biome)}
-                  level={specialCoat.animal?.shelterLevel || 0}
+                  level={specialCoat.animal?.shelter?.level ?? 0}
                   habitat={specialCoat.animal?.biome?.identifier}
                 />
               </td>

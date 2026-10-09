@@ -21,9 +21,9 @@ const makeBiome = (overrides: object = {}) => ({
     regionTexts: [{ name: "Hauptzoo" }],
   },
   animals: [
-    { priceTypeId: 1, shelterLevel: 0, isContestAnimal: false, specialcoat: [{ id: 1, isContestSpecialCoat: true }, { id: 2, isContestSpecialCoat: false }] },
-    { priceTypeId: 1, shelterLevel: 1, isContestAnimal: true,  specialcoat: [] },
-    { priceTypeId: 2, shelterLevel: 0, isContestAnimal: true,  specialcoat: [{ id: 3, isContestSpecialCoat: true }] },
+    { priceTypeId: 1, shelter: { level: 0 }, isContestAnimal: false, specialcoat: [{ id: 1, isContestSpecialCoat: true }, { id: 2, isContestSpecialCoat: false }] },
+    { priceTypeId: 1, shelter: { level: 1 }, isContestAnimal: true,  specialcoat: [] },
+    { priceTypeId: 2, shelter: { level: 0 }, isContestAnimal: true,  specialcoat: [{ id: 3, isContestSpecialCoat: true }] },
   ],
   ...overrides,
 });
@@ -84,8 +84,8 @@ describe("ZooStatisticService", () => {
     vi.mocked(prisma.biome.findMany).mockResolvedValue([
       makeBiome({
         animals: [
-          { priceTypeId: 1, shelterLevel: 0, isContestAnimal: false, specialcoat: [{ id: 1, isContestSpecialCoat: false }, { id: 2, isContestSpecialCoat: false }, { id: 3, isContestSpecialCoat: false }] },
-          { priceTypeId: 1, shelterLevel: 0, isContestAnimal: false, specialcoat: [] },
+          { priceTypeId: 1, shelter: { level: 0 }, isContestAnimal: false, specialcoat: [{ id: 1, isContestSpecialCoat: false }, { id: 2, isContestSpecialCoat: false }, { id: 3, isContestSpecialCoat: false }] },
+          { priceTypeId: 1, shelter: { level: 0 }, isContestAnimal: false, specialcoat: [] },
         ],
       }),
     ] as any);
@@ -99,10 +99,10 @@ describe("ZooStatisticService", () => {
     vi.mocked(prisma.biome.findMany).mockResolvedValue([
       makeBiome({
         animals: [
-          { priceTypeId: 1, shelterLevel: 0, isContestAnimal: false, specialcoat: [] },
-          { priceTypeId: 1, shelterLevel: 0, isContestAnimal: false, specialcoat: [] },
-          { priceTypeId: 1, shelterLevel: 2, isContestAnimal: false, specialcoat: [] },
-          { priceTypeId: 2, shelterLevel: 3, isContestAnimal: false, specialcoat: [] },
+          { priceTypeId: 1, shelter: { level: 0 }, isContestAnimal: false, specialcoat: [] },
+          { priceTypeId: 1, shelter: { level: 0 }, isContestAnimal: false, specialcoat: [] },
+          { priceTypeId: 1, shelter: { level: 2 }, isContestAnimal: false, specialcoat: [] },
+          { priceTypeId: 2, shelter: { level: 3 }, isContestAnimal: false, specialcoat: [] },
         ],
       }),
     ] as any);
@@ -112,10 +112,10 @@ describe("ZooStatisticService", () => {
     expect(result[0].shelterLevelCounts).toEqual({ 0: 2, 2: 1, 3: 1 });
   });
 
-  test("behandelt null-shelterLevel als Level 0", async () => {
+  test("behandelt fehlendes shelter als Level 0", async () => {
     vi.mocked(prisma.biome.findMany).mockResolvedValue([
       makeBiome({
-        animals: [{ priceTypeId: 1, shelterLevel: null, isContestAnimal: false, specialcoat: [] }],
+        animals: [{ priceTypeId: 1, shelter: null, isContestAnimal: false, specialcoat: [] }],
       }),
     ] as any);
 

@@ -82,7 +82,7 @@ const mockAnimal = {
   sellingPrice: 1000,
   popularity: 150,
   releaseExp: 250,
-  shelterLevel: 3,
+  shelter: { level: 3 },
   priceType: { name: "Diamond" },
   biome: { identifier: "grassland", name: "Grasland" },
   animaltext: [{ animalName: "Erdmännchen" }],

@@ -18,7 +18,7 @@ const mockCoats: SpecialCoat[] = [
       { id: 1, specialCoatId: 1, languageCode: "de", color: "Weiß", name: "Schneefuchs" },
       { id: 3, specialCoatId: 1, languageCode: "en", color: "White", name: "Snow Fox" },
     ],
-    animal: { id: 10, shelterLevel: 3, biome: { id: 1, identifier: "arctic" } } as any,
+    animal: { id: 10, shelter: { level: 3 }, biome: { id: 1, identifier: "arctic" } } as any,
   },
   {
     id: 2,
@@ -35,7 +35,7 @@ const mockCoats: SpecialCoat[] = [
       { id: 2, specialCoatId: 2, languageCode: "de", color: "Schwarz", name: "Nachtrabe" },
       { id: 4, specialCoatId: 2, languageCode: "en", color: "Black", name: "Night Raven" },
     ],
-    animal: { id: 11, shelterLevel: 5, biome: { id: 2, identifier: "jungle" } } as any,
+    animal: { id: 11, shelter: { level: 5 }, biome: { id: 2, identifier: "jungle" } } as any,
   },
 ];
 

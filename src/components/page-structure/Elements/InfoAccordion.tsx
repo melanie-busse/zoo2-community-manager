@@ -7,6 +7,7 @@ import NextImage from "next/image";
 interface InfoAccordionProps {
   title: string;
   icon: string;
+  iconSize?: number;
   children: ReactNode;
   defaultOpen?: boolean;
 }
@@ -14,6 +15,7 @@ interface InfoAccordionProps {
 export default function InfoAccordion({
   title,
   icon,
+  iconSize = 30,
   children,
   defaultOpen = false,
 }: InfoAccordionProps) {
@@ -23,7 +25,7 @@ export default function InfoAccordion({
     <AccordionWrapper>
       <AccordionHeader type="button" onClick={() => setIsOpen(!isOpen)}>
         <HeaderIcon>
-          <NextImage src={icon} alt={title} width={30} height={30} />
+          <NextImage src={icon} alt={title} width={iconSize} height={iconSize} />
         </HeaderIcon>
         {title}
         <Chevron $isOpen={isOpen}>▼</Chevron>

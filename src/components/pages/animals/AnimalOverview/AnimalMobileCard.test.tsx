@@ -85,7 +85,7 @@ describe("AnimalMobileCard", () => {
     id: 1,
     name: "Löwe",
     price: 1500,
-    shelterLevel: 4,
+    shelter: { level: 4 },
     priceType: { name: "Zoodollar" },
     biome: { identifier: "savanna", biomestext: [{ biomeName: "Savanne" }] },
     animaltext: [{ animalName: "Löwe" }],

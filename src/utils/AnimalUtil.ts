@@ -50,7 +50,7 @@ export function filterAnimals(
       return false;
     }
 
-    if (selectedShelterLevel !== null && String(animal.shelterLevel) !== selectedShelterLevel) {
+    if (selectedShelterLevel !== null && String(animal.shelter?.level ?? 0) !== selectedShelterLevel) {
       return false;
     }
 
@@ -148,7 +148,7 @@ export const createEmptyForm = (languages: Array<{ code: string }>) => ({
   popularity: null,
   releaseExp: null,
   biomeId: null,
-  shelterLevel: 0,
+  shelterId: null,
   breedingCost: null,
   breedingDuration: null,
   breedingProbability: null,
@@ -196,7 +196,7 @@ export const mapAnimalToForm = (data: any, languages: Array<{ code: string }>) =
         durationMinutes: totalMinutesClean % 60 || null,
       },
     },
-    breedingLevel: data.shelterLevel ?? 0,
+    breedingLevel: data.shelter?.level ?? 0,
     origins: data.animalorigins?.map((o: any) => ({ id: o.originId })) || [],
     enclosureSizes: data.animalperenclosure?.map((size: any) => ({
       animalCount: size.numberAnimals,

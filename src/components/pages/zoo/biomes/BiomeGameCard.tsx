@@ -1,0 +1,161 @@
+"use client";
+
+import React from "react";
+import styled from "styled-components";
+import NextImage from "next/image";
+import { useTranslations } from "next-intl";
+
+import CurrencyBadge, { CurrencyType } from "@/components/ui/badges/CurrencyBadge";
+
+function toCurrencyType(pricetype: number): CurrencyType {
+  return pricetype === 2 ? "Diamond" : "Zoodollar";
+}
+
+interface BiomeGame {
+  id: number;
+  identifier: string;
+  biomeIdentifier: string;
+  price: number;
+  pricetype: number;
+  repair: number;
+  repairpricetype: number;
+  texts: { name: string }[];
+}
+
+interface BiomeGameCardProps {
+  games: BiomeGame[];
+}
+
+export default function BiomeGameCard({ games }: BiomeGameCardProps) {
+  const t = useTranslations("biome");
+
+  return (
+    <Card>
+      <CardHeader>
+        <ImageWrapper>
+          <NextImage src="/images/icons/play.png" alt={t("games")} width={36} height={36} style={{ objectFit: "contain" }} />
+        </ImageWrapper>
+        <CardTitle>{t("games")}</CardTitle>
+      </CardHeader>
+      <GamesGrid>
+        {games.map((game) => {
+          const name = game.texts[0]?.name ?? game.identifier;
+          const imagePath = `/images/biomes/${game.biomeIdentifier}/game/${game.identifier}/image.webp`;
+          return (
+            <GameItem key={game.id}>
+              <GameImageWrapper>
+                <NextImage
+                  src={imagePath}
+                  alt={name}
+                  width={80}
+                  height={80}
+                  style={{ objectFit: "contain" }}
+                />
+              </GameImageWrapper>
+              <GameInfo>
+                <GameName>{name}</GameName>
+                <StatRow>
+                  <StatLabel>{t("price")}</StatLabel>
+                  <CurrencyBadge value={game.price} type={toCurrencyType(game.pricetype)} />
+                </StatRow>
+                <StatRow>
+                  <StatLabel>{t("repair")}</StatLabel>
+                  <CurrencyBadge value={game.repair} type={toCurrencyType(game.repairpricetype)} />
+                </StatRow>
+              </GameInfo>
+            </GameItem>
+          );
+        })}
+      </GamesGrid>
+    </Card>
+  );
+}
+
+const Card = styled.div`
+  width: 100%;
+  background: white;
+  padding: ${({ theme }) => theme.spacing(3)};
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e0e0e0;
+  box-sizing: border-box;
+`;
+
+const CardHeader = styled.div`
+  display: flex;
+  align-items: center;
+  gap: ${({ theme }) => theme.spacing(1.5)};
+  margin-bottom: ${({ theme }) => theme.spacing(2)};
+`;
+
+const ImageWrapper = styled.div`
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const CardTitle = styled.div`
+  font-weight: 700;
+  font-size: 1rem;
+  color: #2d5a27;
+`;
+
+const GamesGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: ${({ theme }) => theme.spacing(2)};
+`;
+
+const GameItem = styled.div`
+  display: flex;
+  gap: ${({ theme }) => theme.spacing(1.5)};
+  align-items: flex-start;
+  padding: ${({ theme }) => theme.spacing(1.5)};
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+`;
+
+const GameImageWrapper = styled.div`
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+`;
+
+const GameInfo = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacing(0.5)};
+  min-width: 0;
+`;
+
+const GameName = styled.div`
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #2d5a27;
+  margin-bottom: ${({ theme }) => theme.spacing(0.5)};
+  word-break: break-word;
+`;
+
+const StatRow = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: ${({ theme }) => theme.spacing(1)};
+`;
+
+const StatLabel = styled.span`
+  font-size: 0.75rem;
+  color: #666;
+`;

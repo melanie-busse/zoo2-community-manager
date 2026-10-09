@@ -48,7 +48,7 @@ export default function SpecialCoatsInventoryFilter({ regions }: { regions: any[
           onChange={setSelectedBiome}
         />
         <ShelterLevelSelect
-          items={allSpecialCoats.map((c) => ({ shelterLevel: c.animal?.shelterLevel }))}
+          items={allSpecialCoats.map((c) => ({ shelter: c.animal?.shelter }))}
           selectedShelterLevel={selectedShelterLevel}
           onChange={(val) => setSelectedShelterLevel(val !== null ? Number(val) : null)}
         />

@@ -42,7 +42,27 @@
       "Bash(npx ts-node:*)",
       "Bash(mkdir -p \"D:/Entwicklung/zoo2-community-manager/src/app/[locale]/zoo/terrains/create\")",
       "Bash(mkdir -p \"D:/Entwicklung/zoo2-community-manager/src/app/[locale]/zoo/terrains/[id]/edit\")",
-      "Bash(git log:*)"
+      "Bash(git log:*)",
+      "Bash(find D:/Entwicklung/zoo2-community-manager/src -name PriceBadge*)",
+      "Bash(D:/Entwicklung/zoo2-community-manager/messages/de/biome.json:*)",
+      "Bash(__NEW_LINE_d23eee6084eade00__ cat:*)",
+      "Bash(D:/Entwicklung/zoo2-community-manager/messages/en/biome.json:*)",
+      "Bash(D:/Entwicklung/zoo2-community-manager/messages/da/biome.json:*)",
+      "Bash(D:/Entwicklung/zoo2-community-manager/messages/nl/biome.json:*)",
+      "Bash(mkdir -p \"D:/Entwicklung/zoo2-community-manager/src/app/[locale]/zoo/biomes/create\")",
+      "Bash(mkdir -p \"D:/Entwicklung/zoo2-community-manager/src/app/[locale]/zoo/biomes/[id]/edit\")",
+      "Bash(mysql -u root zoo2-community-manager -e \"SHOW TABLES LIKE ''''%shelter%'''';\")",
+      "Bash(mysql -u root zoo2-community-manager -e \"SHOW TABLES;\")",
+      "Bash(npx tsx:*)",
+      "Bash(python:*)",
+      "Bash(1 echo:*)",
+      "Bash(mysql:*)",
+      "Bash(cd:*)",
+      "Bash(for lang:*)",
+      "Read(//d/Entwicklung/zoo2-community-manager/messages/$lang/**)",
+      "Bash(2)",
+      "Bash(find D:/Entwicklung/zoo2-community-manager/src/components/page-structure -name *.tsx)",
+      "Bash(cat:*)"
     ]
   }
 }

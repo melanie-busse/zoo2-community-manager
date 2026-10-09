@@ -74,7 +74,7 @@ vi.mock("./AnimalDetails.styles", () => ({
 
 const mockAnimal = {
   id: 1,
-  shelterLevel: 3,
+  shelter: { level: 3 },
   breedingCost: 400,
   breedingDuration: 12,
   breedingProbability: 65,
@@ -108,7 +108,7 @@ describe("AccordionCard", () => {
 
     render(<AccordionCard />);
 
-    expect(screen.getByText("12 h")).toBeInTheDocument();
+    expect(screen.getByText("12 min")).toBeInTheDocument();
     expect(screen.getByText("65 %")).toBeInTheDocument();
   });
 

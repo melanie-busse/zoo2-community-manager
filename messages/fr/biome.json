@@ -1,6 +1,46 @@
 {
   "enclosure": "Enclos",
   "enclosureType": "Type d'enclos",
-  "shelterLevel": "Niveau de l'abri",
-  "noBiome": "Aucun enclos"
+  "shelterLevel": "Niveau d'abri",
+  "noBiome": "Pas d'enclos",
+  "overview_title": "Biomes",
+  "name": "Nom",
+  "identifier": "Identifiant",
+  "price": "Prix",
+  "price_type": "Type de prix",
+  "expansion_cost": "Coût d'expansion",
+  "size": "Taille",
+  "region": "Région",
+  "games": "Jouets",
+  "repair": "Réparation",
+  "repair_price_type": "Devise rép.",
+  "shelter_levels": "Niveaux d'étable",
+  "level": "Niveau",
+  "build_cost": "Coût de construction",
+  "upgrade_cost": "Coût de mise à niveau",
+  "upgrade_time": "Temps de mise à niveau",
+  "unlock_level": "Niveau de déverrouillage",
+  "level_value": "Niveau {level}",
+  "minutes": "{n} min",
+  "trough_and_water": "Auge & Point d'eau",
+  "form": {
+    "create_biome": "Ajouter un biome",
+    "edit_biome": "Modifier le biome",
+    "save_biome": "Enregistrer le biome",
+    "basic_info": "Informations de base",
+    "translations": "Traductions",
+    "language": "Langue",
+    "biome_name": "Nom",
+    "biome_description": "Description",
+    "troughs": "Auge",
+    "water_holes": "Point d'eau",
+    "messages": {
+      "createSuccess": "Biome créé avec succès",
+      "editSuccess": "Biome mis à jour avec succès",
+      "confirmDelete": "Voulez-vous vraiment supprimer ce biome?",
+      "deleteErrorTitle": "Supprimer le biome",
+      "deleteSuccess": "Biome supprimé avec succès",
+      "requiredIdentifier": "L'identifiant est un champ obligatoire."
+    }
+  }
 }

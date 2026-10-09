@@ -14,6 +14,7 @@ export async function getAllAnimals(locale = "de") {
           where: { languageCode: { in: localesToLoad } },
         },
         animalxp: true,
+        shelter: { select: { level: true } },
         biome: {
           include: {
             biomestext: {
@@ -93,6 +94,8 @@ export async function getAnimalById(id: number | string, locale: string | null =
         },
       },
       animalxp: { include: { xptype: true } },
+      shelter: { select: { level: true } },
+      biomeGame: { select: { identifier: true } },
       priceType: true,
       animalorigins: {
         include: {
@@ -145,7 +148,7 @@ export async function createAnimal(animalData: any) {
   if (popularity) insertData.popularity = parseInt(popularity.toString(), 10);
   if (releaseExp) insertData.releaseExp = parseInt(releaseExp.toString(), 10);
   if (biomeId) insertData.biomeId = parseInt(biomeId.toString(), 10);
-  if (breedingLevel) insertData.shelterLevel = parseInt(breedingLevel.toString(), 10);
+  // shelterId is resolved from (biomeId, breedingLevel) in the transaction below
   if (breedingCost) insertData.breedingCost = parseInt(breedingCost.toString(), 10);
   if (breedingDuration) insertData.breedingDuration = parseInt(breedingDuration.toString(), 10);
   if (breedingProbability)
@@ -154,6 +157,13 @@ export async function createAnimal(animalData: any) {
   insertData.isLocked = Boolean(isLocked);
 
   return await prisma.$transaction(async (tx) => {
+    if (breedingLevel != null && biomeId != null) {
+      const shelter = await tx.biomeShelter.findFirst({
+        where: { biomeId: parseInt(biomeId.toString(), 10), level: parseInt(breedingLevel.toString(), 10) },
+      });
+      insertData.shelterId = shelter?.id ?? null;
+    }
+
     const animal = await tx.animal.create({
       data: insertData,
     });
@@ -254,7 +264,9 @@ export async function updateAnimal(id: number, animalData: any) {
         popularity: popularity,
         releaseExp: releaseExp,
         biomeId: biomeId,
-        shelterLevel: breedingLevel,
+        shelterId: breedingLevel != null && biomeId != null
+          ? (await tx.biomeShelter.findFirst({ where: { biomeId, level: Number(breedingLevel) } }))?.id ?? null
+          : null,
         breedingCost: breedingCost,
         breedingDuration: breedingDuration,
         breedingProbability: breedingProbability,

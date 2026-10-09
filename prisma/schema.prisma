@@ -17,8 +17,8 @@ model Language {
 }
 
 model Biome {
-  id                        Int          @id @unique(map: "biomeindex") @default(autoincrement())
-  identifier                String       @unique
+  id                        Int               @id @unique(map: "biomeindex") @default(autoincrement())
+  identifier                String            @unique
   price                     Int?
   priceTypeId               Int?
   expansionsCost            Int?
@@ -26,9 +26,14 @@ model Biome {
   size                      Int?
   regionId                  Int?
   animals                   Animal[]
-  priceType                 PriceType?   @relation(fields: [priceTypeId], references: [id])
-  region                    Region?      @relation(fields: [regionId], references: [id])
+  priceType                 PriceType?        @relation(fields: [priceTypeId], references: [id])
+  region                    Region?           @relation(fields: [regionId], references: [id])
   biomestext                BiomesText[]
+  troughs                   BiomeTrough[]
+  waterHoles                BiomeWaterHole[]
+  shelters                  BiomeShelter[]
+  games                     BiomeGame[]  @relation("BiomeToGame")
+  biomeDecorations          BiomeDecoration[]
 
   @@index([priceTypeId], map: "biome_priceTypeId_fkey")
   @@index([regionId], map: "biome_regionId_fkey")
@@ -71,18 +76,19 @@ model OriginText {
 }
 
 model Animal {
-  id                     Int                     @id @default(autoincrement())
-  releaseDate            DateTime?
-  price                  Int?
-  priceTypeId            Int?
-  sellingPrice           Int?
-  popularity             Int?
-  releaseExp             Int?
-  identifier             String?                 @db.VarChar(255)
-  biomeId                Int
-  size                   Int?
-  gameId                 Int?
-  shelterLevel           Int?
+  id           Int       @id @default(autoincrement())
+  releaseDate  DateTime?
+  price        Int?
+  priceTypeId  Int?
+  sellingPrice Int?
+  popularity   Int?
+  releaseExp   Int?
+  identifier   String?   @db.VarChar(255)
+  biomeId      Int
+  size         Int?
+  biomeGameId  Int?
+  shelterId    Int?
+
   breedingCost           Int?
   breedingDuration       Int?
   breedingProbability    Int?
@@ -90,6 +96,8 @@ model Animal {
   isLocked               Boolean                 @default(false)
   biome                  Biome                   @relation(fields: [biomeId], references: [id])
   priceType              PriceType?              @relation(fields: [priceTypeId], references: [id])
+  shelter                BiomeShelter?           @relation(fields: [shelterId], references: [id])
+  biomeGame              BiomeGame?              @relation(fields: [biomeGameId], references: [id])
   animalorigins          AnimalOrigin[]
   animalperenclosure     AnimalPerEnclosure[]
   animaltext             AnimalText[]
@@ -102,6 +110,8 @@ model Animal {
 
   @@index([biomeId], map: "animal_biomeId_fkey")
   @@index([priceTypeId], map: "animal_priceTypeId_fkey")
+  @@index([shelterId], map: "animal_shelterId_fkey")
+  @@index([biomeGameId], map: "animal_biomeGameId_fkey")
   @@map("animal")
 }
 
@@ -661,4 +671,94 @@ model ClubHouse {
   region      Region @relation(fields: [regionId], references: [id])
 
   @@map("clubhouse")
+}
+
+model BiomeTrough {
+  id        Int   @id @default(autoincrement())
+  price     Int
+  pricetype Int
+  biomeId   Int
+  biome     Biome @relation(fields: [biomeId], references: [id], onDelete: Cascade)
+
+  @@index([biomeId])
+  @@map("biometrough")
+}
+
+model BiomeWaterHole {
+  id              Int   @id @default(autoincrement())
+  price           Int
+  pricetype       Int
+  repair          Int
+  repairpricetype Int   @default(1)
+  biomeId         Int
+  biome           Biome @relation(fields: [biomeId], references: [id], onDelete: Cascade)
+
+  @@index([biomeId])
+  @@map("biomewaterhole")
+}
+
+model BiomeShelter {
+  id          Int      @id @default(autoincrement())
+  level       Int
+  cost        Int
+  pricetype   Int
+  buildTime   Int?
+  unlockLevel Int?
+  biomeId     Int
+  biome       Biome    @relation(fields: [biomeId], references: [id], onDelete: Cascade)
+  animals     Animal[]
+
+  @@index([biomeId])
+  @@map("biomeshelter")
+}
+
+model BiomeGame {
+  id               Int             @id @default(autoincrement())
+  identifier       String          @db.VarChar(255)
+  biomeIdentifier  String          @db.VarChar(255) @default("")
+  price            Int
+  pricetype        Int
+  repair           Int
+  repairpricetype  Int             @default(1)
+  biomes           Biome[]         @relation("BiomeToGame")
+  texts            BiomeGameText[]
+  animals          Animal[]
+
+  @@map("biomegame")
+}
+
+model BiomeGameText {
+  id           Int       @id @default(autoincrement())
+  gameId       Int
+  game         BiomeGame @relation(fields: [gameId], references: [id], onDelete: Cascade, map: "gameText_gameId_fkey")
+  languageCode String    @db.VarChar(5)
+  name         String    @db.VarChar(255)
+
+  @@index([gameId])
+  @@map("biomegametext")
+}
+
+model BiomeDecoration {
+  id         Int                   @id @default(autoincrement())
+  identifier String                @db.VarChar(255)
+  price      Int
+  pricetype  Int
+  popularity Int
+  biomeId    Int
+  biome      Biome                 @relation(fields: [biomeId], references: [id], onDelete: Cascade)
+  texts      BiomeDecorationText[]
+
+  @@index([biomeId])
+  @@map("biomedecoration")
+}
+
+model BiomeDecorationText {
+  id           Int             @id @default(autoincrement())
+  decorationId Int
+  decoration   BiomeDecoration @relation(fields: [decorationId], references: [id], onDelete: Cascade)
+  languageCode String          @db.VarChar(5)
+  name         String          @db.VarChar(255)
+
+  @@index([decorationId])
+  @@map("biomedecorationtext")
 }
