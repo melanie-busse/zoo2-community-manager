@@ -232,6 +232,9 @@ export default function BiomeForm({ biome, languages, regions }: BiomeFormProps)
             </SectionColumn>
           </InfoAccordion>
 
+        </Column>
+
+        <Column>
           <InfoAccordion title={t("form.troughs")} icon="/images/icons/info.png" defaultOpen>
             <SectionColumn>
               <FormGroup>
@@ -243,7 +246,9 @@ export default function BiomeForm({ biome, languages, regions }: BiomeFormProps)
               </FormGroup>
             </SectionColumn>
           </InfoAccordion>
+        </Column>
 
+        <Column>
           <InfoAccordion title={t("form.water_holes")} icon="/images/icons/info.png" defaultOpen>
             <SectionColumn>
               <FormGroup>
