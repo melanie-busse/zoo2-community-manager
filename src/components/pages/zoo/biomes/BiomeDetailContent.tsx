@@ -10,6 +10,7 @@ import { toast } from "react-toastify";
 import BiomeHeaderCard from "./BiomeHeaderCard";
 import ShelterLevelCard from "./ShelterLevelCard";
 import BiomeGameCard from "./BiomeGameCard";
+import BiomeDecorationCard from "./BiomeDecorationCard";
 import BiomeTroughWaterCard from "./BiomeTroughWaterCard";
 import ActionGroupBadge from "@/components/ui/badges/ActionGroupBadge";
 import { hasMinimumRole } from "@/utils/roleUtils";
@@ -44,6 +45,15 @@ interface BiomeGame {
   texts: { name: string }[];
 }
 
+interface BiomeDecoration {
+  id: number;
+  identifier: string;
+  price: number;
+  pricetype: number;
+  popularity: number;
+  texts: { name: string }[];
+}
+
 interface Biome {
   id: number;
   identifier: string;
@@ -56,6 +66,7 @@ interface Biome {
   troughs: TroughOrWater[];
   waterHoles: TroughOrWater[];
   games: BiomeGame[];
+  biomeDecorations: BiomeDecoration[];
 }
 
 interface BiomeDetailContentProps {
@@ -125,6 +136,10 @@ export default function BiomeDetailContent({ biome }: BiomeDetailContentProps) {
       )}
 
       {biome.games.length > 0 && <BiomeGameCard games={biome.games} />}
+
+      {biome.biomeDecorations.length > 0 && (
+        <BiomeDecorationCard decorations={biome.biomeDecorations} biomeIdentifier={biome.identifier} />
+      )}
     </DetailWrapper>
   );
 }

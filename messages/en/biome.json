@@ -12,6 +12,8 @@
   "size": "Size",
   "region": "Region",
   "games": "Enrichment Games",
+  "decorations": "Decorations",
+  "popularity": "Popularity",
   "repair": "Repair",
   "repair_price_type": "Repair Currency",
   "shelter_levels": "Shelter Levels",

@@ -60,6 +60,10 @@ export async function getBiomeById(id: number, locale: string = "de") {
         include: { texts: { where: { languageCode: locale } } },
         orderBy: { identifier: "asc" },
       },
+      biomeDecorations: {
+        include: { texts: { where: { languageCode: locale } } },
+        orderBy: { identifier: "asc" },
+      },
     },
   });
 }
