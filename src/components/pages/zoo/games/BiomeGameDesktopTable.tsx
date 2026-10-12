@@ -46,7 +46,7 @@ export default function BiomeGameDesktopTable({ games }: BiomeGameDesktopTablePr
       <tbody>
         {games.map((game) => {
           const name = game.texts[0]?.name ?? game.identifier;
-          const imgSrc = `/images/biomes/${game.biomeIdentifier}/game/${game.identifier}/image.webp`;
+          const imgSrc = `/images/biomes/${game.biomeIdentifier}/game/${game.identifier}/image.jpg`;
 
           return (
             <tr key={game.id}>
