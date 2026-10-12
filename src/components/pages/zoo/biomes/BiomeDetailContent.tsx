@@ -109,7 +109,7 @@ export default function BiomeDetailContent({ biome }: BiomeDetailContentProps) {
           <CardWrapper>
             <BiomeTroughWaterCard
               title={t("form.troughs")}
-              imagePath={`/images/biomes/${biome.identifier}/trough.webp`}
+              imagePath={`/images/biomes/${biome.identifier}/trough.jpg`}
               items={biome.troughs}
               showRepair={false}
             />
@@ -117,16 +117,14 @@ export default function BiomeDetailContent({ biome }: BiomeDetailContentProps) {
           <CardWrapper>
             <BiomeTroughWaterCard
               title={t("form.water_holes")}
-              imagePath={`/images/biomes/${biome.identifier}/water_hole.webp`}
+              imagePath={`/images/biomes/${biome.identifier}/water_hole.jpg`}
               items={biome.waterHoles}
             />
           </CardWrapper>
         </SideBySideRow>
       )}
 
-      {biome.games.length > 0 && (
-        <BiomeGameCard games={biome.games} />
-      )}
+      {biome.games.length > 0 && <BiomeGameCard games={biome.games} />}
     </DetailWrapper>
   );
 }

@@ -1,0 +1,20 @@
+{
+  "overview_title": "Enrichment Items",
+  "name": "Name",
+  "price": "Price",
+  "repair": "Repair Costs",
+  "identifier": "Identifier",
+  "form": {
+    "edit_game": "Edit Enrichment Item",
+    "save_game": "Save Enrichment Item",
+    "basic_info": "Basic Info",
+    "translations": "Translations",
+    "currency": "Currency",
+    "messages": {
+      "editSuccess": "Enrichment item updated successfully.",
+      "deleteNotImplemented": "Deleting enrichment items is not yet available.",
+      "deleteErrorTitle": "Delete Enrichment Item",
+      "confirmDelete": "Do you really want to delete this enrichment item?"
+    }
+  }
+}

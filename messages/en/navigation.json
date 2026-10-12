@@ -45,7 +45,8 @@
     "terrain_create": "Add Terrain Type",
     "collections": "Collections",
     "inventory_collections": "My Collection Album",
-    "inventory_regions": "Regions"
+    "inventory_regions": "Regions",
+    "games": "Enrichment Items"
   },
   "inventory_collections": "Collection Album"
 }

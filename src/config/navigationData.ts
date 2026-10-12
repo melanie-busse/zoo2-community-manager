@@ -49,6 +49,7 @@ export const navConfig: NavItem[] = [
         requiresAuth: true,
         minimumRole: "Director",
       },
+      { labelKey: "games", href: "/zoo/games", requiresAuth: false },
     ],
   },
   {

@@ -33,14 +33,20 @@ export default function BiomeGameCard({ games }: BiomeGameCardProps) {
     <Card>
       <CardHeader>
         <ImageWrapper>
-          <NextImage src="/images/icons/play.png" alt={t("games")} width={36} height={36} style={{ objectFit: "contain" }} />
+          <NextImage
+            src="/images/icons/play.png"
+            alt={t("games")}
+            width={36}
+            height={36}
+            style={{ objectFit: "contain" }}
+          />
         </ImageWrapper>
         <CardTitle>{t("games")}</CardTitle>
       </CardHeader>
       <GamesGrid>
         {games.map((game) => {
           const name = game.texts[0]?.name ?? game.identifier;
-          const imagePath = `/images/biomes/${game.biomeIdentifier}/game/${game.identifier}/image.webp`;
+          const imagePath = `/images/biomes/${game.biomeIdentifier}/game/${game.identifier}/image.jpg`;
           return (
             <GameItem key={game.id}>
               <GameImageWrapper>

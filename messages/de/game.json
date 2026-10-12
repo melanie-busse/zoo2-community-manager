@@ -1,0 +1,20 @@
+{
+  "overview_title": "Spielgeräte",
+  "name": "Name",
+  "price": "Preis",
+  "repair": "Reparaturkosten",
+  "identifier": "Identifier",
+  "form": {
+    "edit_game": "Spielgerät bearbeiten",
+    "save_game": "Spielgerät speichern",
+    "basic_info": "Stammdaten",
+    "translations": "Übersetzungen",
+    "currency": "Währung",
+    "messages": {
+      "editSuccess": "Spielgerät erfolgreich aktualisiert",
+      "deleteNotImplemented": "Das Löschen von Spielgeräten ist noch nicht verfügbar.",
+      "deleteErrorTitle": "Spielgerät löschen",
+      "confirmDelete": "Möchtest du dieses Spielgerät wirklich löschen?"
+    }
+  }
+}

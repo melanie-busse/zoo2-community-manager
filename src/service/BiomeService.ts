@@ -184,3 +184,39 @@ export async function deleteBiome(id: number): Promise<void> {
     prisma.biome.delete({ where: { id } }),
   ]);
 }
+
+type BiomeGameUpdateData = {
+  price: number;
+  pricetype: number;
+  repair: number;
+  repairpricetype: number;
+  texts: { languageCode: string; name: string }[];
+};
+
+export async function getBiomeGameById(id: number) {
+  return prisma.biomeGame.findUnique({
+    where: { id },
+    include: { texts: true },
+  });
+}
+
+export async function updateBiomeGame(id: number, data: BiomeGameUpdateData): Promise<void> {
+  await prisma.$transaction(async (tx) => {
+    await tx.biomeGame.update({
+      where: { id },
+      data: {
+        price: data.price,
+        pricetype: data.pricetype,
+        repair: data.repair,
+        repairpricetype: data.repairpricetype,
+      },
+    });
+    await tx.biomeGameText.deleteMany({ where: { gameId: id } });
+    const validTexts = data.texts.filter((t) => t.name !== "");
+    if (validTexts.length > 0) {
+      await tx.biomeGameText.createMany({
+        data: validTexts.map((t) => ({ gameId: id, ...t })),
+      });
+    }
+  });
+}
