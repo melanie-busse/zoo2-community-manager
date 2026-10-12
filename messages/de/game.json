@@ -3,6 +3,10 @@
   "name": "Name",
   "price": "Preis",
   "repair": "Reparaturkosten",
+  "search_placeholder": "Spielgeräte suchen...",
+  "emptyState": {
+    "title": "Oje, kein Spielgerät gefunden!"
+  },
   "identifier": "Identifier",
   "biome_identifier": "Biom-Identifier",
   "form": {

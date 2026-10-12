@@ -1,0 +1,28 @@
+{
+  "overview_title": "Verrijkingsitems",
+  "name": "Naam",
+  "price": "Prijs",
+  "repair": "Reparatiekosten",
+  "search_placeholder": "Verrijkingsitems zoeken...",
+  "emptyState": {
+    "title": "Geen verrijkingsitems gevonden!"
+  },
+  "identifier": "Identifier",
+  "biome_identifier": "Bioom-Identifier",
+  "form": {
+    "create_game": "Verrijkingsitem toevoegen",
+    "edit_game": "Verrijkingsitem bewerken",
+    "save_game": "Verrijkingsitem opslaan",
+    "basic_info": "Basisinformatie",
+    "translations": "Vertalingen",
+    "currency": "Valuta",
+    "messages": {
+      "createSuccess": "Verrijkingsitem aangemaakt.",
+      "editSuccess": "Verrijkingsitem bijgewerkt.",
+      "requiredIdentifier": "Identifier is verplicht.",
+      "deleteNotImplemented": "Verwijderen van verrijkingsitems is nog niet beschikbaar.",
+      "deleteErrorTitle": "Verrijkingsitem verwijderen",
+      "confirmDelete": "Wil je dit verrijkingsitem echt verwijderen?"
+    }
+  }
+}

@@ -45,7 +45,9 @@
     "terrain_create": "Terreintype toevoegen",
     "collections": "Verzamelalbum",
     "inventory_collections": "Mijn Verzamelalbum",
-    "inventory_regions": "Regio's"
+    "inventory_regions": "Regio's",
+    "games": "Verrijkingsitems",
+    "game_create": "Verrijkingsitem toevoegen"
   },
   "inventory_collections": "Verzamelalbum"
 }

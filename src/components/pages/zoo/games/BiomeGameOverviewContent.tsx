@@ -2,11 +2,13 @@
 
 import React, { useEffect } from "react";
 import styled from "styled-components";
+import { useTranslations } from "next-intl";
 import BiomeGameDesktopTable from "./BiomeGameDesktopTable";
 import BiomeGameMobileCard from "./BiomeGameMobileCard";
 import BiomeGamePagination from "./BiomeGamePagination";
 import BiomeGameFilter from "./BiomeGameFilter";
 import ResultsInfo from "@/components/elements/Filter/ResultInfo";
+import EmptyState from "@/components/elements/EmptyState/EmptyState";
 import { useGameStore } from "@/store/useGameStore";
 
 export interface BiomeGame {
@@ -20,11 +22,20 @@ export interface BiomeGame {
   texts: { name: string }[];
 }
 
-interface BiomeGameOverviewContentProps {
-  games: BiomeGame[];
+export interface BiomeSummary {
+  identifier: string;
+  biomestext: { biomeName: string }[];
 }
 
-export default function BiomeGameOverviewContent({ games }: BiomeGameOverviewContentProps) {
+interface BiomeGameOverviewContentProps {
+  games: BiomeGame[];
+  biomes: BiomeSummary[];
+}
+
+export default function BiomeGameOverviewContent({ games, biomes }: BiomeGameOverviewContentProps) {
+  const t = useTranslations("game");
+  const tCommon = useTranslations("common");
+
   const setInitialGames = useGameStore((state) => state.setInitialGames);
   const currentItems = useGameStore((state) => state.currentItems);
   const filteredCount = useGameStore((state) => state.filteredCount);
@@ -33,18 +44,30 @@ export default function BiomeGameOverviewContent({ games }: BiomeGameOverviewCon
     setInitialGames(games);
   }, [games, setInitialGames]);
 
+  const hasItems = currentItems.length > 0;
+
   return (
     <>
-      <BiomeGameFilter />
+      <BiomeGameFilter biomes={biomes} />
       <ResultsInfo currentCount={currentItems.length} totalCount={filteredCount} />
-      <DesktopView>
-        <BiomeGameDesktopTable games={currentItems} />
-      </DesktopView>
-      <MobileCardList>
-        {currentItems.map((game) => (
-          <BiomeGameMobileCard key={game.id} game={game} />
-        ))}
-      </MobileCardList>
+      {hasItems ? (
+        <>
+          <DesktopView>
+            <BiomeGameDesktopTable games={currentItems} />
+          </DesktopView>
+          <MobileCardList>
+            {currentItems.map((game) => (
+              <BiomeGameMobileCard key={game.id} game={game} />
+            ))}
+          </MobileCardList>
+        </>
+      ) : (
+        <EmptyState
+          object="games"
+          title={t("emptyState.title")}
+          message={tCommon("emptyState.message")}
+        />
+      )}
       <BiomeGamePagination />
     </>
   );

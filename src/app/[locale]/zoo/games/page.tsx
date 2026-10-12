@@ -1,7 +1,7 @@
 import PageWrapper from "@/components/page-structure/page/PageWrapper";
 import ContentWrapper from "@/components/page-structure/page/ContentWrapper";
 import PageHeader from "@/components/page-structure/page/PageHeader";
-import { getAllBiomeGames } from "@/service/BiomeService";
+import { getAllBiomeGames, getAllBiomes } from "@/service/BiomeService";
 import { getTranslations } from "next-intl/server";
 import BiomeGameOverviewContent from "@/components/pages/zoo/games/BiomeGameOverviewContent";
 
@@ -11,8 +11,9 @@ export default async function BiomeGameOverviewPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const [games, t] = await Promise.all([
+  const [games, biomes, t] = await Promise.all([
     getAllBiomeGames(locale),
+    getAllBiomes(locale),
     getTranslations({ locale, namespace: "game" }),
   ]);
 
@@ -20,7 +21,7 @@ export default async function BiomeGameOverviewPage({
     <PageWrapper>
       <ContentWrapper>
         <PageHeader text={t("overview_title")} />
-        <BiomeGameOverviewContent games={games} />
+        <BiomeGameOverviewContent games={games} biomes={JSON.parse(JSON.stringify(biomes))} />
       </ContentWrapper>
     </PageWrapper>
   );

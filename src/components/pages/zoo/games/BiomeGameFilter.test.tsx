@@ -6,28 +6,6 @@ vi.mock("next-intl", () => ({
   useTranslations: (ns: string) => (key: string) => `${ns}.${key}`,
 }));
 
-function makeElement(tag: string) {
-  return () =>
-    function StyledEl({ children, ...rest }: any) {
-      return React.createElement(tag, rest, children);
-    };
-}
-
-vi.mock("styled-components", () => ({
-  default: Object.assign(
-    (tag: any) =>
-      function StyledEl({ children, ...rest }: any) {
-        return React.createElement(tag, rest, children);
-      },
-    {
-      select: makeElement("select"),
-      div: makeElement("div"),
-      input: makeElement("input"),
-      span: makeElement("span"),
-    },
-  ),
-}));
-
 vi.mock("@/components/elements/Filter/FilterCard", () => ({
   default: ({ children }: any) => <div data-testid="filter-card">{children}</div>,
 }));
@@ -41,6 +19,36 @@ vi.mock("@/components/elements/Filter/SearchInputField", () => ({
       onChange={(e) => onChange(e.target.value)}
     />
   ),
+}));
+
+const mockOnSelectAction = vi.fn();
+vi.mock("@/components/ui/form/SelectBoxWithImage", () => ({
+  default: ({ items, selectedValue, onSelectAction, allLabelKey, getLabel, getIdentifier }: any) => (
+    <div data-testid="biome-select">
+      <button data-testid="select-all" onClick={() => onSelectAction("all")}>
+        {allLabelKey}
+      </button>
+      {items.map((item: any) => (
+        <button
+          key={getIdentifier(item)}
+          data-testid={`select-${getIdentifier(item)}`}
+          onClick={() => onSelectAction(getIdentifier(item))}
+        >
+          {getLabel(item)}
+        </button>
+      ))}
+      <span data-testid="selected-value">{selectedValue}</span>
+    </div>
+  ),
+}));
+
+vi.mock("@/components/ui/badges/BiomeBadge", () => ({
+  default: () => <span data-testid="biome-badge" />,
+}));
+
+vi.mock("@/utils/BiomeUtil", () => ({
+  getBiomeImage: (b: any) => ({ path: `/images/biomes/${b.identifier}/area.webp`, alt: b.identifier, name: b.identifier }),
+  getBiomeName: (b: any, fallback: string) => b.biomestext?.[0]?.biomeName ?? fallback,
 }));
 
 const mockSetSearchTerm = vi.fn();
@@ -64,6 +72,11 @@ vi.mock("@/store/useGameStore", () => ({
 
 import BiomeGameFilter from "./BiomeGameFilter";
 
+const mockBiomes = [
+  { identifier: "grassland", biomestext: [{ biomeName: "Grasland" }] },
+  { identifier: "forest", biomestext: [{ biomeName: "Wald" }] },
+];
+
 describe("BiomeGameFilter", () => {
   beforeEach(() => {
     vi.clearAllMocks();
@@ -79,52 +92,49 @@ describe("BiomeGameFilter", () => {
     };
   });
 
-  test("rendert das Suchfeld", () => {
-    render(<BiomeGameFilter />);
-    expect(screen.getByTestId("search-input")).toBeInTheDocument();
-  });
-
-  test("Suchfeld hat den korrekten Placeholder", () => {
-    render(<BiomeGameFilter />);
+  test("rendert das Suchfeld mit game-spezifischem Placeholder", () => {
+    render(<BiomeGameFilter biomes={mockBiomes} />);
     expect(screen.getByTestId("search-input")).toHaveAttribute(
       "placeholder",
-      "common.filter.search_placeholder",
+      "game.search_placeholder",
     );
   });
 
   test("Eingabe im Suchfeld ruft setSearchTerm auf", () => {
-    render(<BiomeGameFilter />);
+    render(<BiomeGameFilter biomes={mockBiomes} />);
     fireEvent.change(screen.getByTestId("search-input"), { target: { value: "Teich" } });
     expect(mockSetSearchTerm).toHaveBeenCalledWith("Teich");
   });
 
-  test("zeigt Biom-Dropdown wenn mehr als ein Biom vorhanden", () => {
-    render(<BiomeGameFilter />);
-    expect(screen.getByRole("combobox")).toBeInTheDocument();
+  test("zeigt SelectBoxWithImage wenn mehr als ein Biom vorhanden", () => {
+    render(<BiomeGameFilter biomes={mockBiomes} />);
+    expect(screen.getByTestId("biome-select")).toBeInTheDocument();
   });
 
-  test("Biom-Dropdown enthält alle einzigartigen Biome sowie 'Alle Biome'", () => {
-    render(<BiomeGameFilter />);
-    const options = screen.getAllByRole("option");
-    const values = options.map((o) => o.getAttribute("value"));
-    expect(values).toContain("all");
-    expect(values).toContain("grassland");
-    expect(values).toContain("forest");
+  test("zeigt nur Biome die tatsächlich in den Spielen vorkommen", () => {
+    const biomesWithExtra = [
+      ...mockBiomes,
+      { identifier: "savanna", biomestext: [{ biomeName: "Savanne" }] },
+    ];
+    render(<BiomeGameFilter biomes={biomesWithExtra} />);
+    expect(screen.queryByTestId("select-savanna")).not.toBeInTheDocument();
+    expect(screen.getByTestId("select-grassland")).toBeInTheDocument();
+    expect(screen.getByTestId("select-forest")).toBeInTheDocument();
   });
 
   test("Auswahl eines Bioms ruft setSelectedBiomeIdentifier auf", () => {
-    render(<BiomeGameFilter />);
-    fireEvent.change(screen.getByRole("combobox"), { target: { value: "forest" } });
+    render(<BiomeGameFilter biomes={mockBiomes} />);
+    fireEvent.click(screen.getByTestId("select-forest"));
     expect(mockSetSelectedBiomeIdentifier).toHaveBeenCalledWith("forest");
   });
 
   test("Auswahl von 'all' übergibt null", () => {
-    render(<BiomeGameFilter />);
-    fireEvent.change(screen.getByRole("combobox"), { target: { value: "all" } });
+    render(<BiomeGameFilter biomes={mockBiomes} />);
+    fireEvent.click(screen.getByTestId("select-all"));
     expect(mockSetSelectedBiomeIdentifier).toHaveBeenCalledWith(null);
   });
 
-  test("kein Biom-Dropdown wenn alle Spiele dasselbe Biom haben", () => {
+  test("kein Biom-Select wenn alle Spiele dasselbe Biom haben", () => {
     currentStoreState = {
       ...currentStoreState,
       allGames: [
@@ -132,8 +142,13 @@ describe("BiomeGameFilter", () => {
         { id: 2, identifier: "play_tree", biomeIdentifier: "grassland", texts: [{ name: "Baum" }] },
       ],
     };
+    render(<BiomeGameFilter biomes={mockBiomes} />);
+    expect(screen.queryByTestId("biome-select")).not.toBeInTheDocument();
+  });
 
-    render(<BiomeGameFilter />);
-    expect(screen.queryByRole("combobox")).not.toBeInTheDocument();
+  test("zeigt den lokalisierten Biom-Namen via getLabel", () => {
+    render(<BiomeGameFilter biomes={mockBiomes} />);
+    expect(screen.getByText("Grasland")).toBeInTheDocument();
+    expect(screen.getByText("Wald")).toBeInTheDocument();
   });
 });

@@ -3,6 +3,10 @@
   "name": "Name",
   "price": "Price",
   "repair": "Repair Costs",
+  "search_placeholder": "Search enrichment items...",
+  "emptyState": {
+    "title": "Oh no, no enrichment items found!"
+  },
   "identifier": "Identifier",
   "biome_identifier": "Biome Identifier",
   "form": {

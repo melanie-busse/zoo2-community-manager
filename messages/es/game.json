@@ -1,0 +1,28 @@
+{
+  "overview_title": "Elementos de enriquecimiento",
+  "name": "Nombre",
+  "price": "Precio",
+  "repair": "Costes de reparación",
+  "search_placeholder": "Buscar elementos de enriquecimiento...",
+  "emptyState": {
+    "title": "¡No se encontraron elementos de enriquecimiento!"
+  },
+  "identifier": "Identificador",
+  "biome_identifier": "Identificador de bioma",
+  "form": {
+    "create_game": "Añadir elemento de enriquecimiento",
+    "edit_game": "Editar elemento de enriquecimiento",
+    "save_game": "Guardar elemento de enriquecimiento",
+    "basic_info": "Información básica",
+    "translations": "Traducciones",
+    "currency": "Moneda",
+    "messages": {
+      "createSuccess": "Elemento de enriquecimiento creado.",
+      "editSuccess": "Elemento de enriquecimiento actualizado.",
+      "requiredIdentifier": "El identificador es obligatorio.",
+      "deleteNotImplemented": "La eliminación de elementos de enriquecimiento no está disponible todavía.",
+      "deleteErrorTitle": "Eliminar elemento de enriquecimiento",
+      "confirmDelete": "¿Realmente deseas eliminar este elemento de enriquecimiento?"
+    }
+  }
+}
