@@ -247,7 +247,7 @@ export default function BiomeForm({ biome, languages, regions, allGames }: Biome
         </Column>
 
         <Column>
-          <InfoAccordion title={t("form.water_holes")} icon={biome?.identifier ? `/images/biomes/${biome.identifier}/water_hole.webp` : "/images/icons/info.png"} iconSize={48} defaultOpen>
+          <InfoAccordion title={t("form.water_holes")} icon={biome?.identifier ? `/images/biomes/${biome.identifier}/water_hole.jpg` : "/images/icons/info.png"} iconSize={48} defaultOpen>
             <SectionColumn>
               <FormGroup>
                 <Label htmlFor="waterPrice">{t("price")}</Label>
@@ -268,7 +268,7 @@ export default function BiomeForm({ biome, languages, regions, allGames }: Biome
         </Column>
 
         <Column>
-          <InfoAccordion title={t("form.troughs")} icon={biome?.identifier ? `/images/biomes/${biome.identifier}/trough.webp` : "/images/icons/info.png"} iconSize={48} defaultOpen>
+          <InfoAccordion title={t("form.troughs")} icon={biome?.identifier ? `/images/biomes/${biome.identifier}/trough.jpg` : "/images/icons/info.png"} iconSize={48} defaultOpen>
             <SectionColumn>
               <FormGroup>
                 <Label htmlFor="troughPrice">{t("price")}</Label>

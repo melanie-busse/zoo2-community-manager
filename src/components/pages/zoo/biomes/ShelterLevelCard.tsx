@@ -94,6 +94,10 @@ const ImageWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 8px;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  overflow: hidden;
 `;
 
 const CardTitle = styled.div`

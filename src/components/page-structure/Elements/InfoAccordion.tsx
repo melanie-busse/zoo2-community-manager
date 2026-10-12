@@ -68,6 +68,10 @@ const HeaderIcon = styled.span`
   font-size: 1.2rem;
   display: flex;
   align-items: center;
+  border-radius: 8px;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  overflow: hidden;
 `;
 
 interface TransientOpenProps {
