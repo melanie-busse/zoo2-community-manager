@@ -42,5 +42,9 @@
       "deleteSuccess": "Biome supprimé avec succès",
       "requiredIdentifier": "L'identifiant est un champ obligatoire."
     }
+  },
+  "search_placeholder": "Rechercher des biomes...",
+  "emptyState": {
+    "title": "Aucun biome trouvé !"
   }
 }

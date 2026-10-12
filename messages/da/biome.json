@@ -42,5 +42,9 @@
       "deleteSuccess": "Biom slettet",
       "requiredIdentifier": "Identifikator er et påkrævet felt."
     }
+  },
+  "search_placeholder": "Søg biomer...",
+  "emptyState": {
+    "title": "Ingen biomer fundet!"
   }
 }

@@ -42,5 +42,9 @@
       "deleteSuccess": "Biom erfolgreich gelöscht",
       "requiredIdentifier": "Identifier ist ein Pflichtfeld."
     }
+  },
+  "search_placeholder": "Biome suchen...",
+  "emptyState": {
+    "title": "Kein Biom gefunden!"
   }
 }

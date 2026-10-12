@@ -42,5 +42,9 @@
       "deleteSuccess": "Bioom succesvol verwijderd",
       "requiredIdentifier": "Identifier is een verplicht veld."
     }
+  },
+  "search_placeholder": "Biomen zoeken...",
+  "emptyState": {
+    "title": "Geen bioom gevonden!"
   }
 }

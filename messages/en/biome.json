@@ -42,5 +42,9 @@
       "deleteSuccess": "Biome deleted successfully",
       "requiredIdentifier": "Identifier is a required field."
     }
+  },
+  "search_placeholder": "Search biomes...",
+  "emptyState": {
+    "title": "No biome found!"
   }
 }
