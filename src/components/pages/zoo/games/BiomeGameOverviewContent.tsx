@@ -1,9 +1,11 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import BiomeGameDesktopTable from "./BiomeGameDesktopTable";
 import BiomeGameMobileCard from "./BiomeGameMobileCard";
+import BiomeGamePagination from "./BiomeGamePagination";
+import { useGameStore } from "@/store/useGameStore";
 
 export interface BiomeGame {
   id: number;
@@ -21,16 +23,24 @@ interface BiomeGameOverviewContentProps {
 }
 
 export default function BiomeGameOverviewContent({ games }: BiomeGameOverviewContentProps) {
+  const setInitialGames = useGameStore((state) => state.setInitialGames);
+  const currentItems = useGameStore((state) => state.currentItems);
+
+  useEffect(() => {
+    setInitialGames(games);
+  }, [games, setInitialGames]);
+
   return (
     <>
       <DesktopView>
-        <BiomeGameDesktopTable games={games} />
+        <BiomeGameDesktopTable games={currentItems} />
       </DesktopView>
       <MobileCardList>
-        {games.map((game) => (
+        {currentItems.map((game) => (
           <BiomeGameMobileCard key={game.id} game={game} />
         ))}
       </MobileCardList>
+      <BiomeGamePagination />
     </>
   );
 }
