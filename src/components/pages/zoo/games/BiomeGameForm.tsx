@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/routing";
 import { toast } from "react-toastify";
 
-import { updateBiomeGameOnClient } from "@/service/frontend/BiomeGame";
+import { createBiomeGameOnClient, updateBiomeGameOnClient } from "@/service/frontend/BiomeGame";
 import InfoAccordion from "@/components/page-structure/Elements/InfoAccordion";
 import InputField from "@/components/ui/form/InputField";
 import Selectbox from "@/components/ui/form/Selectbox";
@@ -23,7 +23,7 @@ interface Language {
 }
 
 interface BiomeGameFormProps {
-  game: {
+  game?: {
     id: number;
     identifier: string;
     biomeIdentifier: string;
@@ -41,12 +41,14 @@ export default function BiomeGameForm({ game, languages }: BiomeGameFormProps) {
   const tCommon = useTranslations("common");
   const router = useRouter();
 
-  const [price, setPrice] = useState(game.price.toString());
-  const [pricetype, setPricetype] = useState(game.pricetype.toString());
-  const [repair, setRepair] = useState(game.repair.toString());
-  const [repairpricetype, setRepairpricetype] = useState(game.repairpricetype.toString());
+  const [identifier, setIdentifier] = useState(game?.identifier ?? "");
+  const [biomeIdentifier, setBiomeIdentifier] = useState(game?.biomeIdentifier ?? "");
+  const [price, setPrice] = useState(game?.price.toString() ?? "");
+  const [pricetype, setPricetype] = useState(game?.pricetype.toString() ?? "1");
+  const [repair, setRepair] = useState(game?.repair.toString() ?? "");
+  const [repairpricetype, setRepairpricetype] = useState(game?.repairpricetype.toString() ?? "1");
   const [texts, setTexts] = useState<{ languageCode: string; name: string }[]>(() => {
-    const textMap = new Map(game.texts.map((tx) => [tx.languageCode, tx.name]));
+    const textMap = new Map(game?.texts.map((tx) => [tx.languageCode, tx.name]) ?? []);
     return languages.map((l) => ({ languageCode: l.code, name: textMap.get(l.code) ?? "" }));
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -63,16 +65,30 @@ export default function BiomeGameForm({ game, languages }: BiomeGameFormProps) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (isSubmitting) return;
+
+    if (!identifier.trim()) {
+      toast.warn(t("form.messages.requiredIdentifier"));
+      return;
+    }
+
     setIsSubmitting(true);
     try {
-      await updateBiomeGameOnClient(game.id, {
+      const data = {
+        identifier,
+        biomeIdentifier,
         price: parseInt(price) || 0,
         pricetype: parseInt(pricetype) || 1,
         repair: parseInt(repair) || 0,
         repairpricetype: parseInt(repairpricetype) || 1,
         texts,
-      });
-      toast.success(t("form.messages.editSuccess"));
+      };
+      if (game?.id) {
+        await updateBiomeGameOnClient(game.id, data);
+        toast.success(t("form.messages.editSuccess"));
+      } else {
+        await createBiomeGameOnClient(data);
+        toast.success(t("form.messages.createSuccess"));
+      }
       router.push("/zoo/games");
     } catch (e: any) {
       toast.error(e.message);
@@ -89,7 +105,23 @@ export default function BiomeGameForm({ game, languages }: BiomeGameFormProps) {
             <SectionColumn>
               <FormGroup>
                 <Label htmlFor="identifier">{t("identifier")}</Label>
-                <InputField id="identifier" type="text" value={game.identifier} disabled />
+                <InputField
+                  id="identifier"
+                  type="text"
+                  value={identifier}
+                  onChange={(e) => setIdentifier(e.target.value)}
+                  disabled={!!game}
+                />
+              </FormGroup>
+              <FormGroup>
+                <Label htmlFor="biomeIdentifier">{t("biome_identifier")}</Label>
+                <InputField
+                  id="biomeIdentifier"
+                  type="text"
+                  value={biomeIdentifier}
+                  onChange={(e) => setBiomeIdentifier(e.target.value)}
+                  disabled={!!game}
+                />
               </FormGroup>
               <FormRow>
                 <FormGroup>
@@ -158,7 +190,7 @@ export default function BiomeGameForm({ game, languages }: BiomeGameFormProps) {
         </Column>
       </FormGrid>
       <SubmitButton
-        label={isSubmitting ? tCommon("saving") : t("form.save_game")}
+        label={isSubmitting ? tCommon("saving") : game ? t("form.save_game") : t("form.create_game")}
         isSubmitting={isSubmitting}
       />
     </form>

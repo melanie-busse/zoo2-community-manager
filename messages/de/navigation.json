@@ -46,7 +46,8 @@
     "inventory_regions": "Regionen",
     "admin": "Admin",
     "import-animals": "Tiere importieren",
-    "games": "Spielgeräte"
+    "games": "Spielgeräte",
+    "game_create": "Spielgerät anlegen"
   },
   "inventory_collections": "Sammelalbum"
 }

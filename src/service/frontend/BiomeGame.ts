@@ -6,6 +6,16 @@ async function handleResponse(res: Response) {
   return res.json();
 }
 
+export async function createBiomeGameOnClient(data: object) {
+  return handleResponse(
+    await fetch("/api/games", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    }),
+  );
+}
+
 export async function updateBiomeGameOnClient(id: number, data: object) {
   return handleResponse(
     await fetch(`/api/games/${id}`, {

@@ -7,7 +7,7 @@ vi.mock("next-intl", () => ({
 }));
 
 vi.mock("react-toastify", () => ({
-  toast: { success: vi.fn(), error: vi.fn() },
+  toast: { success: vi.fn(), error: vi.fn(), warn: vi.fn() },
 }));
 
 const mockPush = vi.fn();
@@ -16,8 +16,10 @@ vi.mock("@/i18n/routing", () => ({
 }));
 
 const mockUpdateBiomeGameOnClient = vi.fn();
+const mockCreateBiomeGameOnClient = vi.fn();
 vi.mock("@/service/frontend/BiomeGame", () => ({
   updateBiomeGameOnClient: (...args: any[]) => mockUpdateBiomeGameOnClient(...args),
+  createBiomeGameOnClient: (...args: any[]) => mockCreateBiomeGameOnClient(...args),
 }));
 
 vi.mock("@/components/page-structure/Elements/InfoAccordion", () => ({
@@ -111,6 +113,8 @@ describe("BiomeGameForm", () => {
 
     await waitFor(() => {
       expect(mockUpdateBiomeGameOnClient).toHaveBeenCalledWith(3, {
+        identifier: "play_pond",
+        biomeIdentifier: "grassland",
         price: 200,
         pricetype: 1,
         repair: 50,
@@ -156,5 +160,54 @@ describe("BiomeGameForm", () => {
 
     await waitFor(() => expect(button).toBeDisabled());
     resolve!({ id: 3 });
+  });
+});
+
+describe("BiomeGameForm — Create-Modus (kein game prop)", () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
+
+  test("rendert leere Felder ohne game prop", () => {
+    render(<BiomeGameForm languages={mockLanguages} />);
+    const textInputs = screen.getAllByRole("textbox");
+    const emptyInputs = textInputs.filter((el) => (el as HTMLInputElement).value === "");
+    expect(emptyInputs.length).toBeGreaterThan(0);
+  });
+
+  test("zeigt Warn-Toast wenn Identifier leer ist", async () => {
+    render(<BiomeGameForm languages={mockLanguages} />);
+    fireEvent.submit(screen.getByRole("button").closest("form")!);
+    await waitFor(() => {
+      expect(toast.warn).toHaveBeenCalledWith("game.form.messages.requiredIdentifier");
+    });
+    expect(mockCreateBiomeGameOnClient).not.toHaveBeenCalled();
+  });
+
+  test("ruft createBiomeGameOnClient beim Submit auf", async () => {
+    mockCreateBiomeGameOnClient.mockResolvedValue({ id: 99 });
+    render(<BiomeGameForm languages={mockLanguages} />);
+
+    fireEvent.change(screen.getByLabelText("game.identifier"), { target: { value: "play_new" } });
+    fireEvent.submit(screen.getByRole("button").closest("form")!);
+
+    await waitFor(() => {
+      expect(mockCreateBiomeGameOnClient).toHaveBeenCalledWith(
+        expect.objectContaining({ identifier: "play_new" }),
+      );
+    });
+  });
+
+  test("zeigt Success-Toast und navigiert nach /zoo/games bei Erfolg", async () => {
+    mockCreateBiomeGameOnClient.mockResolvedValue({ id: 99 });
+    render(<BiomeGameForm languages={mockLanguages} />);
+
+    fireEvent.change(screen.getByLabelText("game.identifier"), { target: { value: "play_new" } });
+    fireEvent.submit(screen.getByRole("button").closest("form")!);
+
+    await waitFor(() => {
+      expect(toast.success).toHaveBeenCalledWith("game.form.messages.createSuccess");
+      expect(mockPush).toHaveBeenCalledWith("/zoo/games");
+    });
   });
 });

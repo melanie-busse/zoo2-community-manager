@@ -185,13 +185,39 @@ export async function deleteBiome(id: number): Promise<void> {
   ]);
 }
 
-type BiomeGameUpdateData = {
+type BiomeGameData = {
+  identifier?: string;
+  biomeIdentifier?: string;
   price: number;
   pricetype: number;
   repair: number;
   repairpricetype: number;
   texts: { languageCode: string; name: string }[];
 };
+
+type BiomeGameUpdateData = BiomeGameData;
+
+export async function createBiomeGame(data: BiomeGameData): Promise<{ id: number }> {
+  return prisma.$transaction(async (tx) => {
+    const game = await tx.biomeGame.create({
+      data: {
+        identifier: data.identifier ?? "",
+        biomeIdentifier: data.biomeIdentifier ?? "",
+        price: data.price,
+        pricetype: data.pricetype,
+        repair: data.repair,
+        repairpricetype: data.repairpricetype,
+      },
+    });
+    const validTexts = data.texts.filter((t) => t.name !== "");
+    if (validTexts.length > 0) {
+      await tx.biomeGameText.createMany({
+        data: validTexts.map((t) => ({ gameId: game.id, ...t })),
+      });
+    }
+    return { id: game.id };
+  });
+}
 
 export async function getBiomeGameById(id: number) {
   return prisma.biomeGame.findUnique({

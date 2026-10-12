@@ -4,14 +4,18 @@
   "price": "Preis",
   "repair": "Reparaturkosten",
   "identifier": "Identifier",
+  "biome_identifier": "Biom-Identifier",
   "form": {
+    "create_game": "Spielgerät anlegen",
     "edit_game": "Spielgerät bearbeiten",
     "save_game": "Spielgerät speichern",
     "basic_info": "Stammdaten",
     "translations": "Übersetzungen",
     "currency": "Währung",
     "messages": {
+      "createSuccess": "Spielgerät erfolgreich angelegt",
       "editSuccess": "Spielgerät erfolgreich aktualisiert",
+      "requiredIdentifier": "Identifier ist ein Pflichtfeld.",
       "deleteNotImplemented": "Das Löschen von Spielgeräten ist noch nicht verfügbar.",
       "deleteErrorTitle": "Spielgerät löschen",
       "confirmDelete": "Möchtest du dieses Spielgerät wirklich löschen?"

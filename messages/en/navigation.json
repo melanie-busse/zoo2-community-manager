@@ -46,7 +46,8 @@
     "collections": "Collections",
     "inventory_collections": "My Collection Album",
     "inventory_regions": "Regions",
-    "games": "Enrichment Items"
+    "games": "Enrichment Items",
+    "game_create": "Add Enrichment Item"
   },
   "inventory_collections": "Collection Album"
 }

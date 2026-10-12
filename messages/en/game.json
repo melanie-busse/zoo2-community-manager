@@ -4,14 +4,18 @@
   "price": "Price",
   "repair": "Repair Costs",
   "identifier": "Identifier",
+  "biome_identifier": "Biome Identifier",
   "form": {
+    "create_game": "Add Enrichment Item",
     "edit_game": "Edit Enrichment Item",
     "save_game": "Save Enrichment Item",
     "basic_info": "Basic Info",
     "translations": "Translations",
     "currency": "Currency",
     "messages": {
+      "createSuccess": "Enrichment item created successfully.",
       "editSuccess": "Enrichment item updated successfully.",
+      "requiredIdentifier": "Identifier is required.",
       "deleteNotImplemented": "Deleting enrichment items is not yet available.",
       "deleteErrorTitle": "Delete Enrichment Item",
       "confirmDelete": "Do you really want to delete this enrichment item?"
