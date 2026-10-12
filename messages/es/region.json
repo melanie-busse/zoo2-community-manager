@@ -48,5 +48,9 @@
       "deleteSuccess": "Región eliminada correctamente",
       "requiredIdentifier": "El identificador es un campo obligatorio."
     }
+  },
+  "search_placeholder": "Buscar regiones...",
+  "emptyState": {
+    "title": "¡No se encontró ninguna región!"
   }
 }

@@ -48,5 +48,9 @@
       "deleteSuccess": "Region erfolgreich gelöscht",
       "requiredIdentifier": "Identifier ist ein Pflichtfeld."
     }
+  },
+  "search_placeholder": "Regionen suchen...",
+  "emptyState": {
+    "title": "Keine Region gefunden!"
   }
 }

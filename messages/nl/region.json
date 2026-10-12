@@ -48,5 +48,9 @@
       "deleteSuccess": "Regio succesvol verwijderd",
       "requiredIdentifier": "Identifier is een verplicht veld."
     }
+  },
+  "search_placeholder": "Regio's zoeken...",
+  "emptyState": {
+    "title": "Geen regio gevonden!"
   }
 }

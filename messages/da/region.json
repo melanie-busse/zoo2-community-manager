@@ -48,5 +48,9 @@
       "deleteSuccess": "Region slettet",
       "requiredIdentifier": "Identifier er et obligatorisk felt."
     }
+  },
+  "search_placeholder": "Søg regioner...",
+  "emptyState": {
+    "title": "Ingen region fundet!"
   }
 }
