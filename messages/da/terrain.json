@@ -17,5 +17,9 @@
       "deleteSuccess": "Terræntype slettet",
       "requiredIdentifier": "Identifier er et obligatorisk felt."
     }
+  },
+  "search_placeholder": "Søg terræntyper...",
+  "emptyState": {
+    "title": "Ingen terræntype fundet!"
   }
 }

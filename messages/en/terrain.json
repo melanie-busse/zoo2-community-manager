@@ -17,5 +17,9 @@
       "deleteSuccess": "Terrain type successfully deleted",
       "requiredIdentifier": "Identifier is a required field."
     }
+  },
+  "search_placeholder": "Search terrain types...",
+  "emptyState": {
+    "title": "No terrain type found!"
   }
 }

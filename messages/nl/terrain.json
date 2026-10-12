@@ -17,5 +17,9 @@
       "deleteSuccess": "Terreintype succesvol verwijderd",
       "requiredIdentifier": "Identifier is een verplicht veld."
     }
+  },
+  "search_placeholder": "Terreintypen zoeken...",
+  "emptyState": {
+    "title": "Geen terreintype gevonden!"
   }
 }

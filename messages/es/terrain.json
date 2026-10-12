@@ -17,5 +17,9 @@
       "deleteSuccess": "Tipo de terreno eliminado correctamente",
       "requiredIdentifier": "El identificador es un campo obligatorio."
     }
+  },
+  "search_placeholder": "Buscar tipos de terreno...",
+  "emptyState": {
+    "title": "¡No se encontró ningún tipo de terreno!"
   }
 }
