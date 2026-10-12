@@ -7,11 +7,11 @@ vi.mock("@/utils/AnimalUtil", () => ({
     items.slice((page - 1) * itemsPerPage, page * itemsPerPage),
 }));
 
-const makeGames = (count: number): BiomeGame[] =>
+const makeGames = (count: number, biomeIdentifier = "grassland"): BiomeGame[] =>
   Array.from({ length: count }, (_, i) => ({
     id: i + 1,
     identifier: `game_${i + 1}`,
-    biomeIdentifier: "grassland",
+    biomeIdentifier,
     price: 100,
     pricetype: 1,
     repair: 20,
@@ -27,6 +27,8 @@ describe("useGameStore", () => {
       filteredCount: 0,
       currentPage: 1,
       itemsPerPage: 20,
+      searchTerm: "",
+      selectedBiomeIdentifier: null,
     });
   });
 
@@ -91,5 +93,66 @@ describe("useGameStore", () => {
     useGameStore.getState().prevPage();
 
     expect(useGameStore.getState().currentPage).toBe(1);
+  });
+
+  // ── setSearchTerm ─────────────────────────────────────────────────────────
+  test("setSearchTerm filtert nach Namen und setzt Seite zurück", () => {
+    const games = [
+      ...makeGames(3, "grassland"),
+      { id: 4, identifier: "play_pond", biomeIdentifier: "forest", price: 100, pricetype: 1, repair: 20, repairpricetype: 1, texts: [{ name: "Teich" }] },
+    ];
+    useGameStore.getState().setInitialGames(games);
+    useGameStore.getState().setSearchTerm("Teich");
+
+    const state = useGameStore.getState();
+    expect(state.filteredCount).toBe(1);
+    expect(state.currentItems[0].texts[0].name).toBe("Teich");
+    expect(state.currentPage).toBe(1);
+  });
+
+  test("setSearchTerm mit leerem String zeigt alle Spiele", () => {
+    useGameStore.getState().setInitialGames(makeGames(5));
+    useGameStore.getState().setSearchTerm("Spielgerät 1");
+    useGameStore.getState().setSearchTerm("");
+
+    expect(useGameStore.getState().filteredCount).toBe(5);
+  });
+
+  // ── setSelectedBiomeIdentifier ────────────────────────────────────────────
+  test("setSelectedBiomeIdentifier filtert nach Biom", () => {
+    const games = [
+      ...makeGames(3, "grassland"),
+      { id: 4, identifier: "play_pond", biomeIdentifier: "forest", price: 100, pricetype: 1, repair: 20, repairpricetype: 1, texts: [{ name: "Teich" }] },
+    ];
+    useGameStore.getState().setInitialGames(games);
+    useGameStore.getState().setSelectedBiomeIdentifier("forest");
+
+    const state = useGameStore.getState();
+    expect(state.filteredCount).toBe(1);
+    expect(state.currentItems[0].biomeIdentifier).toBe("forest");
+  });
+
+  test("setSelectedBiomeIdentifier mit null zeigt alle Spiele", () => {
+    const games = [...makeGames(3, "grassland"), ...makeGames(2, "forest").map((g) => ({ ...g, id: g.id + 10 }))];
+    useGameStore.getState().setInitialGames(games);
+    useGameStore.getState().setSelectedBiomeIdentifier("forest");
+    useGameStore.getState().setSelectedBiomeIdentifier(null);
+
+    expect(useGameStore.getState().filteredCount).toBe(5);
+  });
+
+  test("Name- und Biom-Filter kombinieren sich", () => {
+    const games = [
+      ...makeGames(2, "grassland"),
+      { id: 10, identifier: "play_pond", biomeIdentifier: "forest", price: 100, pricetype: 1, repair: 20, repairpricetype: 1, texts: [{ name: "Teich" }] },
+      { id: 11, identifier: "play_tree", biomeIdentifier: "forest", price: 100, pricetype: 1, repair: 20, repairpricetype: 1, texts: [{ name: "Baum" }] },
+    ];
+    useGameStore.getState().setInitialGames(games);
+    useGameStore.getState().setSelectedBiomeIdentifier("forest");
+    useGameStore.getState().setSearchTerm("Teich");
+
+    const state = useGameStore.getState();
+    expect(state.filteredCount).toBe(1);
+    expect(state.currentItems[0].identifier).toBe("play_pond");
   });
 });
