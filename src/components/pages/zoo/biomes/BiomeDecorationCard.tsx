@@ -52,14 +52,11 @@ export default function BiomeDecorationCard({ decorations, biomeIdentifier }: Bi
       <CardHeader>
         <ImageWrapper>
           <NextImage
-            src="/images/icons/decoration.png"
+            src="/images/icons/star.png"
             alt={t("decorations")}
             width={36}
             height={36}
             style={{ objectFit: "contain" }}
-            onError={(e) => {
-              (e.target as HTMLImageElement).style.display = "none";
-            }}
           />
         </ImageWrapper>
         <CardTitle>{t("decorations")}</CardTitle>

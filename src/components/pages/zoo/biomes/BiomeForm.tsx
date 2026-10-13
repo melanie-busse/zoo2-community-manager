@@ -50,14 +50,16 @@ interface BiomeFormProps {
     waterHoles: { id: number; price: number; pricetype: number; repair: number; repairpricetype: number }[];
     shelters: { id: number; level: number; cost: number; pricetype: number; buildTime: number | null; unlockLevel: number | null }[];
     games: { id: number }[];
+    biomeDecorations: { id: number }[];
   };
   languages: Language[];
   regions: Region[];
   allGames: { id: number; identifier: string; biomeIdentifier: string; texts: { name: string }[] }[];
+  allDecorations: { id: number; identifier: string; biome: { identifier: string }; texts: { name: string }[] }[];
 }
 
 
-export default function BiomeForm({ biome, languages, regions, allGames }: BiomeFormProps) {
+export default function BiomeForm({ biome, languages, regions, allGames, allDecorations }: BiomeFormProps) {
   const t = useTranslations("biome");
   const tCommon = useTranslations("common");
   const router = useRouter();
@@ -105,6 +107,10 @@ export default function BiomeForm({ biome, languages, regions, allGames }: Biome
 
   const [gameIds, setGameIds] = useState<number[]>(
     () => (biome?.games ?? []).map((g) => g.id)
+  );
+
+  const [decorationIds, setDecorationIds] = useState<number[]>(
+    () => (biome?.biomeDecorations ?? []).map((d) => d.id)
   );
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -169,6 +175,7 @@ export default function BiomeForm({ biome, languages, regions, allGames }: Biome
         waterHoles,
         shelters: shelterData,
         gameIds,
+        decorationIds,
       };
 
       if (biome?.id) {
@@ -189,6 +196,12 @@ export default function BiomeForm({ biome, languages, regions, allGames }: Biome
     id: g.id,
     name: g.texts[0]?.name ?? g.identifier,
     imagePath: g.biomeIdentifier ? `/images/biomes/${g.biomeIdentifier}/game/${g.identifier}/image.jpg` : undefined,
+  }));
+
+  const decorationItems = allDecorations.map((d) => ({
+    id: d.id,
+    name: d.texts[0]?.name ?? d.identifier,
+    imagePath: `/images/biomes/${d.biome.identifier}/decoration/${d.identifier}/image.webp`,
   }));
 
   return (
@@ -322,6 +335,16 @@ export default function BiomeForm({ biome, languages, regions, allGames }: Biome
               allOrigins={gameItems}
               selectedIds={gameIds}
               onChange={setGameIds}
+            />
+          </InfoAccordion>
+        </Column>
+
+        <Column $fullWidth>
+          <InfoAccordion title={t("decorations")} icon="/images/icons/star.png" defaultOpen>
+            <OriginTransfer
+              allOrigins={decorationItems}
+              selectedIds={decorationIds}
+              onChange={setDecorationIds}
             />
           </InfoAccordion>
         </Column>

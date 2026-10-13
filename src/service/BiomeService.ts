@@ -18,11 +18,22 @@ type NestedBiomeData = {
   waterHoles?: WaterHoleData[];
   shelters?: ShelterData[];
   gameIds?: number[];
+  decorationIds?: number[];
 };
 
 export async function getAllBiomeGames(locale: string = "de") {
   return prisma.biomeGame.findMany({
     include: { texts: { where: { languageCode: locale } } },
+    orderBy: { identifier: "asc" },
+  });
+}
+
+export async function getAllBiomeDecorations(locale: string = "de") {
+  return prisma.biomeDecoration.findMany({
+    include: {
+      texts: { where: { languageCode: locale } },
+      biome: { select: { identifier: true } },
+    },
     orderBy: { identifier: "asc" },
   });
 }
@@ -87,6 +98,7 @@ export async function getBiomeByIdForEdit(id: number) {
       waterHoles: true,
       shelters: { orderBy: { level: "asc" } },
       games: { select: { id: true } },
+      biomeDecorations: { select: { id: true } },
     },
   });
 }
@@ -123,6 +135,12 @@ export async function createBiome(data: NestedBiomeData): Promise<{ id: number }
       await tx.biome.update({
         where: { id: biome.id },
         data: { games: { connect: data.gameIds.map((id) => ({ id })) } },
+      });
+    }
+    if (data.decorationIds?.length) {
+      await tx.biomeDecoration.updateMany({
+        where: { id: { in: data.decorationIds } },
+        data: { biomeId: biome.id },
       });
     }
 
@@ -179,6 +197,14 @@ export async function updateBiome(id: number, data: NestedBiomeData): Promise<vo
         },
       },
     });
+
+    // decorations — reassign selected ones to this biome
+    if (data.decorationIds?.length) {
+      await tx.biomeDecoration.updateMany({
+        where: { id: { in: data.decorationIds } },
+        data: { biomeId: id },
+      });
+    }
   });
 }
 
