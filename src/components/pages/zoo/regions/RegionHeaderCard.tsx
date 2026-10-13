@@ -70,6 +70,25 @@ export default function RegionHeaderCard({ region }: RegionHeaderCardProps) {
             </StatBox>
           </Styles.StatsGroup>
 
+          <Styles.StatsGroup>
+            <StatBox>
+              <label>{tRegion("map")}</label>
+              <MapLink
+                href={`/images/regions/${region.identifier.toLowerCase()}/map.webp`}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={tRegion("map")}
+              >
+                <MapThumbnail
+                  src={`/images/regions/${region.identifier.toLowerCase()}/map.webp`}
+                  alt={tRegion("map")}
+                  width={60}
+                  height={60}
+                />
+              </MapLink>
+            </StatBox>
+          </Styles.StatsGroup>
+
           {region.terrainName && (
             <Styles.StatsGroup>
               <StatBox>
@@ -123,4 +142,21 @@ const TitleBlock = styled.div`
     font-weight: bold;
     line-height: 1.2;
   }
+`;
+
+const MapLink = styled.a`
+  display: inline-block;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: opacity 0.15s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+`;
+
+const MapThumbnail = styled(NextImage)`
+  display: block;
+  object-fit: cover;
+  border-radius: 6px;
 `;
