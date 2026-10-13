@@ -47,6 +47,7 @@
   "filter": {
     "search_placeholder": "Suche nach Tieren...",
     "all_enclosures": "Alle Gehege",
+    "all_games": "Alle Spielgeräte",
     "all_biomes": "Alle Biome",
     "all_levels": "Alle Stall-Levels",
     "all_status": "Alle Status",

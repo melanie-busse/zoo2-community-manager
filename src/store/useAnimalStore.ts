@@ -23,6 +23,7 @@ interface AnimalState {
   searchTerm: string;
   selectedBiome: string | null;
   selectedShelterLevel: string | null;
+  selectedBiomeGame: string | null;
   hasStatueFilter: boolean;
   filterRegionId: number | null;
   filterOwnedCount: number | null;
@@ -47,6 +48,7 @@ interface AnimalState {
   setSearchTerm: (term: string) => void;
   setSelectedBiome: (biome: string | null) => void;
   setSelectedShelterLevel: (level: string | null) => void;
+  setSelectedBiomeGame: (game: string | null) => void;
   setHasStatueFilter: (value: boolean) => void;
   setFilterRegionId: (id: number | null) => void;
   setFilterOwnedCount: (count: number | null) => void;
@@ -67,6 +69,7 @@ export const useAnimalStore = create<AnimalState>((set) => {
       searchTerm: state.searchTerm,
       selectedBiome: state.selectedBiome,
       selectedShelterLevel: state.selectedShelterLevel,
+      selectedBiomeGame: state.selectedBiomeGame,
       hasStatueFilter: state.hasStatueFilter,
       filterRegionId: state.filterRegionId,
       filterOwnedCount: state.filterOwnedCount,
@@ -95,6 +98,7 @@ export const useAnimalStore = create<AnimalState>((set) => {
     searchTerm: "",
     selectedBiome: null,
     selectedShelterLevel: null,
+    selectedBiomeGame: null,
     hasStatueFilter: false,
     filterRegionId: null,
     filterOwnedCount: null,
@@ -172,9 +176,10 @@ export const useAnimalStore = create<AnimalState>((set) => {
 
     setSelectedBiome: (biome) =>
       set((state) => {
-        const nextState = { ...state, selectedBiome: biome, currentPage: 1 };
+        const nextState = { ...state, selectedBiome: biome, selectedBiomeGame: null, currentPage: 1 };
         return {
           selectedBiome: biome,
+          selectedBiomeGame: null,
           currentPage: 1,
           ...runPipeline(state.allAnimals, nextState),
         };
@@ -224,6 +229,16 @@ export const useAnimalStore = create<AnimalState>((set) => {
         const nextState = { ...state, currentPage: Math.max(1, state.currentPage - 1) };
         return {
           currentPage: Math.max(1, state.currentPage - 1),
+          ...runPipeline(state.allAnimals, nextState),
+        };
+      }),
+
+    setSelectedBiomeGame: (game) =>
+      set((state) => {
+        const nextState = { ...state, selectedBiomeGame: game, currentPage: 1 };
+        return {
+          selectedBiomeGame: game,
+          currentPage: 1,
           ...runPipeline(state.allAnimals, nextState),
         };
       }),
@@ -287,6 +302,7 @@ export const useAnimalStore = create<AnimalState>((set) => {
           searchTerm: "",
           selectedBiome: null,
           selectedShelterLevel: null,
+          selectedBiomeGame: null,
           hasStatueFilter: false,
           filterRegionId: null,
           filterOwnedCount: null,
