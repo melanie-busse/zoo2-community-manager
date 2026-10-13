@@ -9,8 +9,13 @@
     "title": "Régions",
     "total": "Nombre:",
     "breedingSlots": "Places d'élevage:",
-    "biomes": "Biomes:",
     "terrains": "Types de terrain:"
+  },
+  "biome": {
+    "title": "Biomes",
+    "total": "Nombre:",
+    "games": "Jouets:",
+    "decorations": "Décorations:"
   },
   "animals": {
     "title": "Animaux",

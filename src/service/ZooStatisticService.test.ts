@@ -25,6 +25,7 @@ const makeBiome = (overrides: object = {}) => ({
     { priceTypeId: 1, shelter: { level: 1 }, isContestAnimal: true,  specialcoat: [] },
     { priceTypeId: 2, shelter: { level: 0 }, isContestAnimal: true,  specialcoat: [{ id: 3, isContestSpecialCoat: true }] },
   ],
+  _count: { games: 3, biomeDecorations: 7 },
   ...overrides,
 });
 
@@ -51,6 +52,8 @@ describe("ZooStatisticService", () => {
       shelterLevelCounts: { 0: 2, 1: 1 },
       contestStatues: 2,
       contestSpecialCoats: 2,
+      totalGames: 3,
+      totalDecorations: 7,
     });
   });
 

@@ -35,6 +35,7 @@ export async function getInventoryStatistics(
                 shelter: { select: { level: true } },
               },
             },
+            _count: { select: { games: true, biomeDecorations: true } },
           },
           orderBy: { id: "asc" },
         }),
@@ -99,6 +100,8 @@ export async function getInventoryStatistics(
           (sc) => sc.isContestSpecialCoat && ownedContestCoatIds.has(sc.id),
         ).length,
         ownedShelterLevelCounts,
+        totalGames: biome._count.games,
+        totalDecorations: biome._count.biomeDecorations,
       };
     });
   } catch (error) {

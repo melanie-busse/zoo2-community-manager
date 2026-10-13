@@ -43,6 +43,8 @@ const mockStat: BiomeStatistic = {
   shelterLevelCounts: { 0: 2, 1: 7, 2: 14, 3: 7 },
   contestStatues: 5,
   contestSpecialCoats: 12,
+  totalGames: 4,
+  totalDecorations: 9,
 };
 
 describe("ZooStatisticCard", () => {

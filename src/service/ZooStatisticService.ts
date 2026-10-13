@@ -34,6 +34,9 @@ export async function getZooStatistics(locale: string = "de"): Promise<BiomeStat
             shelter: { select: { level: true } },
           },
         },
+        _count: {
+          select: { games: true, biomeDecorations: true },
+        },
       },
       orderBy: { id: "asc" },
     });
@@ -59,6 +62,8 @@ export async function getZooStatistics(locale: string = "de"): Promise<BiomeStat
         shelterLevelCounts,
         contestStatues: animals.filter((a) => a.isContestAnimal).length,
         contestSpecialCoats: animals.reduce((sum, a) => sum + a.specialcoat.filter((sc) => sc.isContestSpecialCoat).length, 0),
+        totalGames: biome._count.games,
+        totalDecorations: biome._count.biomeDecorations,
       };
     });
   } catch (error) {

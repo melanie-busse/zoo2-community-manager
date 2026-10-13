@@ -37,6 +37,8 @@ const makeStat = (overrides: Partial<BiomeStatistic> = {}): BiomeStatistic => ({
   shelterLevelCounts: { 0: 1, 1: 2, 2: 3, 3: 4 },
   contestStatues: 2,
   contestSpecialCoats: 3,
+  totalGames: 3,
+  totalDecorations: 5,
   ...overrides,
 });
 
@@ -86,7 +88,7 @@ describe("ZooSummaryCard", () => {
     render(<ZooSummaryCard biomeStatistics={mockStats} totalCollections={0} regionStatistics={defaultRegionStatistics} />);
     // Level 0: 1+2=3, Level 1: 2+4=6, Level 2: 3+6=9, Level 3: 4+8=12
     expect(screen.getByText("3")).toBeInTheDocument();
-    expect(screen.getByText("6")).toBeInTheDocument();
+    expect(screen.getAllByText("6").length).toBeGreaterThanOrEqual(1);
     expect(screen.getByText("9")).toBeInTheDocument();
     expect(screen.getByText("12")).toBeInTheDocument();
   });
@@ -102,9 +104,18 @@ describe("ZooSummaryCard", () => {
     expect(totalLabel.nextElementSibling).toHaveTextContent("8");
     const slotsLabel = screen.getByText("regions.breedingSlots");
     expect(slotsLabel.nextElementSibling).toHaveTextContent("42");
-    const biomesLabel = screen.getByText("regions.biomes");
-    expect(biomesLabel.nextElementSibling).toHaveTextContent("14");
     const terrainsLabel = screen.getByText("regions.terrains");
     expect(terrainsLabel.nextElementSibling).toHaveTextContent("4");
+  });
+
+  test("zeigt Biom-Statistiken an", () => {
+    render(<ZooSummaryCard biomeStatistics={mockStats} totalCollections={0} regionStatistics={{ totalRegions: 8, totalBreedingSlots: 42, totalBiomes: 14, totalTerrains: 4 }} />);
+    const biomesTotalLabel = screen.getByText("biome.total");
+    expect(biomesTotalLabel.nextElementSibling).toHaveTextContent("14");
+    // totalGames: 3+3=6, totalDecorations: 5+5=10
+    const gamesLabel = screen.getByText("biome.games");
+    expect(gamesLabel.nextElementSibling).toHaveTextContent("6");
+    const decoLabel = screen.getByText("biome.decorations");
+    expect(decoLabel.nextElementSibling).toHaveTextContent("10");
   });
 });

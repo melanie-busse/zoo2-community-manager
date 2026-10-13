@@ -100,6 +100,22 @@ export default function ZooStatisticCard({ stat }: ZooStatisticCardProps) {
 
       <CardStatsRow>
         <StatSection>
+          <SectionTitle>{t("biome.title")}</SectionTitle>
+          <StatRow>
+            <span>{t("biome.decorations")}</span>
+            <strong>{stat.totalDecorations}</strong>
+          </StatRow>
+          <StatRow>
+            <span>{t("biome.games")}</span>
+            <strong>{stat.totalGames}</strong>
+          </StatRow>
+        </StatSection>
+      </CardStatsRow>
+
+      <CardDivider />
+
+      <CardStatsRow>
+        <StatSection>
           <SectionTitle>{t("contest.title")}</SectionTitle>
           <StatRow>
             <span>{t("contest.contestAnimals")}</span>

@@ -9,8 +9,13 @@
     "title": "Regio's",
     "total": "Aantal:",
     "breedingSlots": "Fokplaatsen:",
-    "biomes": "Biotopen:",
     "terrains": "Terreintypen:"
+  },
+  "biome": {
+    "title": "Biotopen",
+    "total": "Aantal:",
+    "games": "Speelgoed:",
+    "decorations": "Decoraties:"
   },
   "animals": {
     "title": "Dieren",
