@@ -35,6 +35,7 @@ export async function getBiomesWithInventory(userId: number, locale: string) {
     prisma.biome.findMany({
       include: {
         biomestext: { where: { languageCode: locale } },
+        shelters: { select: { level: true } },
         games: {
           include: {
             texts: { where: { languageCode: locale } },
@@ -53,8 +54,10 @@ export async function getBiomesWithInventory(userId: number, locale: string) {
 
   return biomes.map((biome) => {
     const row = inventoryMap.get(biome.id) ?? null;
+    const shelterLevels = [...new Set(biome.shelters.map((s) => s.level))].sort((a, b) => a - b);
     return {
       biome,
+      shelterLevels,
       inventory: row
         ? {
             enclosure: row.enclosure,

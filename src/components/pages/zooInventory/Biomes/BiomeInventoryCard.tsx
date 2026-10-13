@@ -24,16 +24,16 @@ interface Biome {
 
 interface BiomeInventoryCardProps {
   biome: Biome;
+  shelterLevels: number[];
   inventory: BiomeInventoryData | null;
   gameInventory: Map<number, number>;
   onFieldChange: (biomeId: number, field: BiomeInventoryField, value: boolean | number) => void;
   onGameChange: (biomeGameId: number, count: number) => void;
 }
 
-const SHELTER_LEVELS = [0, 1, 2, 3] as const;
-
 export default function BiomeInventoryCard({
   biome,
+  shelterLevels,
   inventory,
   gameInventory,
   onFieldChange,
@@ -59,7 +59,7 @@ export default function BiomeInventoryCard({
       <CardHeaderRow>
         <HeaderLeft>
           <BiomeImage
-            src={`/images/biomes/${biome.identifier.toLowerCase()}/icon.jpg`}
+            src={`/images/biomes/${biome.identifier.toLowerCase()}/area.webp`}
             alt={name}
             width={32}
             height={32}
@@ -95,28 +95,31 @@ export default function BiomeInventoryCard({
         />
       </BuildingRow>
 
-      <Divider />
-
-      {SHELTER_LEVELS.map((level) => {
-        const field = `shelterLevel${level}` as BiomeInventoryField;
-        const currentValue = inv[field] as number;
-        return (
-          <FieldRow key={level} onClick={(e) => e.stopPropagation()}>
-            <FieldLabel>{t("inventory.shelter_level", { level })}</FieldLabel>
-            <StyledSelect
-              value={currentValue}
-              disabled={!isOwned}
-              onChange={(e) => onFieldChange(biome.id, field, Number(e.target.value))}
-            >
-              {Array.from({ length: 11 }, (_, i) => (
-                <option key={i} value={i}>
-                  {i}
-                </option>
-              ))}
-            </StyledSelect>
-          </FieldRow>
-        );
-      })}
+      {shelterLevels.length > 0 && (
+        <>
+          <Divider />
+          {shelterLevels.map((level) => {
+            const field = `shelterLevel${level}` as BiomeInventoryField;
+            const currentValue = inv[field] as number;
+            return (
+              <FieldRow key={level} onClick={(e) => e.stopPropagation()}>
+                <FieldLabel>{t("inventory.shelter_level", { level })}</FieldLabel>
+                <StyledSelect
+                  value={currentValue}
+                  disabled={!isOwned}
+                  onChange={(e) => onFieldChange(biome.id, field, Number(e.target.value))}
+                >
+                  {Array.from({ length: 11 }, (_, i) => (
+                    <option key={i} value={i}>
+                      {i}
+                    </option>
+                  ))}
+                </StyledSelect>
+              </FieldRow>
+            );
+          })}
+        </>
+      )}
 
       {biome.games.length > 0 && (
         <>

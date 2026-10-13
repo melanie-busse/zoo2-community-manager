@@ -24,7 +24,7 @@ interface Biome {
 }
 
 interface BiomeInventoryContentProps {
-  data: { biome: Biome; inventory: BiomeInventoryData | null; gameInventory: Map<number, number> }[];
+  data: { biome: Biome; shelterLevels: number[]; inventory: BiomeInventoryData | null; gameInventory: Map<number, number> }[];
 }
 
 export default function BiomeInventoryContent({ data }: BiomeInventoryContentProps) {
@@ -83,10 +83,11 @@ export default function BiomeInventoryContent({ data }: BiomeInventoryContentPro
 
   return (
     <Grid>
-      {data.map(({ biome }) => (
+      {data.map(({ biome, shelterLevels }) => (
         <BiomeInventoryCard
           key={biome.id}
           biome={biome}
+          shelterLevels={shelterLevels}
           inventory={inventoryMap.get(biome.id) ?? null}
           gameInventory={gameInventoryMap}
           onFieldChange={handleFieldChange}
