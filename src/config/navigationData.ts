@@ -152,6 +152,11 @@ export const navConfig: NavItem[] = [
         href: "/zooInventory/regions",
         requiresAuth: true,
       },
+      {
+        labelKey: "inventory_biomes",
+        href: "/zooInventory/biomes",
+        requiresAuth: true,
+      },
     ],
   },
 

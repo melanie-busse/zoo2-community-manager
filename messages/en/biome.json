@@ -48,5 +48,13 @@
   "search_placeholder": "Search biomes...",
   "emptyState": {
     "title": "No biome found!"
+  },
+  "inventory": {
+    "title": "Biome Inventory",
+    "enclosure": "Enclosure",
+    "trough": "Trough",
+    "water_hole": "Water Hole",
+    "shelter_level": "Shelter Level {level}",
+    "games": "Enrichment Items"
   }
 }

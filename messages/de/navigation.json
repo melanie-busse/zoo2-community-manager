@@ -49,7 +49,8 @@
     "games": "Spielgeräte",
     "game_create": "Spielgerät anlegen",
     "decorations": "Dekorationen",
-    "decoration_create": "Dekoration anlegen"
+    "decoration_create": "Dekoration anlegen",
+    "inventory_biomes": "Biome"
   },
   "inventory_collections": "Sammelalbum"
 }

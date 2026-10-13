@@ -49,7 +49,8 @@
     "games": "Verrijkingsitems",
     "game_create": "Verrijkingsitem toevoegen",
     "decorations": "Decoraties",
-    "decoration_create": "Decoratie toevoegen"
+    "decoration_create": "Decoratie toevoegen",
+    "inventory_biomes": "Biomen"
   },
   "inventory_collections": "Verzamelalbum"
 }

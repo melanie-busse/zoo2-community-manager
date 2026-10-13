@@ -48,5 +48,13 @@
   "search_placeholder": "Rechercher des biomes...",
   "emptyState": {
     "title": "Aucun biome trouvé !"
+  },
+  "inventory": {
+    "title": "Inventaire des Biomes",
+    "enclosure": "Enclos",
+    "trough": "Auge",
+    "water_hole": "Point d'eau",
+    "shelter_level": "Niveau d'abri {level}",
+    "games": "Éléments d'enrichissement"
   }
 }

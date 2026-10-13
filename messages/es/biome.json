@@ -48,5 +48,13 @@
   "search_placeholder": "Buscar biomas...",
   "emptyState": {
     "title": "¡No se encontró ningún bioma!"
+  },
+  "inventory": {
+    "title": "Inventario de Biomas",
+    "enclosure": "Recinto",
+    "trough": "Comedero",
+    "water_hole": "Charca",
+    "shelter_level": "Nivel de refugio {level}",
+    "games": "Elementos de enriquecimiento"
   }
 }

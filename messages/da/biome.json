@@ -48,5 +48,13 @@
   "search_placeholder": "Søg biomer...",
   "emptyState": {
     "title": "Ingen biomer fundet!"
+  },
+  "inventory": {
+    "title": "Biom Inventar",
+    "enclosure": "Indhegning",
+    "trough": "Trug",
+    "water_hole": "Vandhul",
+    "shelter_level": "Stalds niveau {level}",
+    "games": "Legeudstyr"
   }
 }

@@ -48,5 +48,13 @@
   "search_placeholder": "Biomen zoeken...",
   "emptyState": {
     "title": "Geen bioom gevonden!"
+  },
+  "inventory": {
+    "title": "Bioom Inventaris",
+    "enclosure": "Verblijf",
+    "trough": "Drinkbak",
+    "water_hole": "Waterpoel",
+    "shelter_level": "Stalsniveau {level}",
+    "games": "Verrijkingsitems"
   }
 }

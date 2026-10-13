@@ -48,5 +48,13 @@
   "search_placeholder": "Biome suchen...",
   "emptyState": {
     "title": "Kein Biom gefunden!"
+  },
+  "inventory": {
+    "title": "Biome Inventar",
+    "enclosure": "Gehege",
+    "trough": "Trog",
+    "water_hole": "Wasserstelle",
+    "shelter_level": "Stalllevel {level}",
+    "games": "Spielgeräte"
   }
 }
