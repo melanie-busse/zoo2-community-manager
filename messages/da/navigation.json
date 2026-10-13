@@ -47,7 +47,9 @@
     "inventory_collections": "Mit Samlealbum",
     "inventory_regions": "Regioner",
     "games": "Legeudstyr",
-    "game_create": "Tilføj legeudstyr"
+    "game_create": "Tilføj legeudstyr",
+    "decorations": "Dekorationer",
+    "decoration_create": "Tilføj dekoration"
   },
   "inventory_collections": "Samlealbum"
 }

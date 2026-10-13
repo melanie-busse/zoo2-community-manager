@@ -1,0 +1,30 @@
+{
+  "overview_title": "Decoraciones",
+  "name": "Nombre",
+  "price": "Precio",
+  "popularity": "Popularidad",
+  "biome": "Bioma",
+  "search_placeholder": "Buscar decoraciones...",
+  "emptyState": {
+    "title": "¡No se encontró ninguna decoración!"
+  },
+  "identifier": "Identificador",
+  "form": {
+    "create_decoration": "Añadir decoración",
+    "edit_decoration": "Editar decoración",
+    "save_decoration": "Guardar decoración",
+    "basic_info": "Información básica",
+    "translations": "Traducciones",
+    "currency": "Moneda",
+    "biome": "Bioma",
+    "messages": {
+      "createSuccess": "Decoración creada correctamente",
+      "editSuccess": "Decoración actualizada correctamente",
+      "requiredIdentifier": "El identificador es un campo obligatorio.",
+      "requiredBiome": "Por favor, selecciona un bioma.",
+      "deleteSuccess": "Decoración eliminada correctamente",
+      "deleteErrorTitle": "Eliminar decoración",
+      "confirmDelete": "¿Realmente deseas eliminar esta decoración?"
+    }
+  }
+}

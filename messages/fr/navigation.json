@@ -47,7 +47,9 @@
     "inventory_collections": "Mon Album de Collection",
     "inventory_regions": "Régions",
     "games": "Éléments d'enrichissement",
-    "game_create": "Ajouter un élément d'enrichissement"
+    "game_create": "Ajouter un élément d'enrichissement",
+    "decorations": "Décorations",
+    "decoration_create": "Ajouter une décoration"
   },
   "inventory_collections": "Album de Collection"
 }

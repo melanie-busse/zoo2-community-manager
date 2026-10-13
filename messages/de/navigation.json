@@ -47,7 +47,9 @@
     "admin": "Admin",
     "import-animals": "Tiere importieren",
     "games": "Spielgeräte",
-    "game_create": "Spielgerät anlegen"
+    "game_create": "Spielgerät anlegen",
+    "decorations": "Dekorationen",
+    "decoration_create": "Dekoration anlegen"
   },
   "inventory_collections": "Sammelalbum"
 }

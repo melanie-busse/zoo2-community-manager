@@ -56,6 +56,13 @@ export const navConfig: NavItem[] = [
         requiresAuth: true,
         minimumRole: "Director",
       },
+      { labelKey: "decorations", href: "/zoo/decorations", requiresAuth: false },
+      {
+        labelKey: "decoration_create",
+        href: "/zoo/decorations/create",
+        requiresAuth: true,
+        minimumRole: "Director",
+      },
     ],
   },
   {

@@ -215,6 +215,68 @@ export async function deleteBiome(id: number): Promise<void> {
   ]);
 }
 
+type BiomeDecorationData = {
+  identifier?: string;
+  biomeId: number;
+  price: number;
+  pricetype: number;
+  popularity: number;
+  texts: { languageCode: string; name: string }[];
+};
+
+export async function createBiomeDecoration(data: BiomeDecorationData): Promise<{ id: number }> {
+  return prisma.$transaction(async (tx) => {
+    const decoration = await tx.biomeDecoration.create({
+      data: {
+        identifier: data.identifier ?? "",
+        biomeId: data.biomeId,
+        price: data.price,
+        pricetype: data.pricetype,
+        popularity: data.popularity,
+      },
+    });
+    const validTexts = data.texts.filter((t) => t.name !== "");
+    if (validTexts.length > 0) {
+      await tx.biomeDecorationText.createMany({
+        data: validTexts.map((t) => ({ decorationId: decoration.id, ...t })),
+      });
+    }
+    return { id: decoration.id };
+  });
+}
+
+export async function getBiomeDecorationById(id: number) {
+  return prisma.biomeDecoration.findUnique({
+    where: { id },
+    include: { texts: true, biome: { select: { id: true, identifier: true } } },
+  });
+}
+
+export async function updateBiomeDecoration(id: number, data: BiomeDecorationData): Promise<void> {
+  await prisma.$transaction(async (tx) => {
+    await tx.biomeDecoration.update({
+      where: { id },
+      data: {
+        biomeId: data.biomeId,
+        price: data.price,
+        pricetype: data.pricetype,
+        popularity: data.popularity,
+      },
+    });
+    await tx.biomeDecorationText.deleteMany({ where: { decorationId: id } });
+    const validTexts = data.texts.filter((t) => t.name !== "");
+    if (validTexts.length > 0) {
+      await tx.biomeDecorationText.createMany({
+        data: validTexts.map((t) => ({ decorationId: id, ...t })),
+      });
+    }
+  });
+}
+
+export async function deleteBiomeDecoration(id: number): Promise<void> {
+  await prisma.biomeDecoration.delete({ where: { id } });
+}
+
 type BiomeGameData = {
   identifier?: string;
   biomeIdentifier?: string;

@@ -1,0 +1,30 @@
+{
+  "overview_title": "Decoraties",
+  "name": "Naam",
+  "price": "Prijs",
+  "popularity": "Populariteit",
+  "biome": "Bioom",
+  "search_placeholder": "Decoraties zoeken...",
+  "emptyState": {
+    "title": "Geen decoratie gevonden!"
+  },
+  "identifier": "Identifier",
+  "form": {
+    "create_decoration": "Decoratie toevoegen",
+    "edit_decoration": "Decoratie bewerken",
+    "save_decoration": "Decoratie opslaan",
+    "basic_info": "Basisgegevens",
+    "translations": "Vertalingen",
+    "currency": "Valuta",
+    "biome": "Bioom",
+    "messages": {
+      "createSuccess": "Decoratie succesvol aangemaakt",
+      "editSuccess": "Decoratie succesvol bijgewerkt",
+      "requiredIdentifier": "Identifier is een verplicht veld.",
+      "requiredBiome": "Selecteer een bioom.",
+      "deleteSuccess": "Decoratie succesvol verwijderd",
+      "deleteErrorTitle": "Decoratie verwijderen",
+      "confirmDelete": "Wil je deze decoratie echt verwijderen?"
+    }
+  }
+}

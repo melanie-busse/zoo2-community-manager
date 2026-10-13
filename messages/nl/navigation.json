@@ -47,7 +47,9 @@
     "inventory_collections": "Mijn Verzamelalbum",
     "inventory_regions": "Regio's",
     "games": "Verrijkingsitems",
-    "game_create": "Verrijkingsitem toevoegen"
+    "game_create": "Verrijkingsitem toevoegen",
+    "decorations": "Decoraties",
+    "decoration_create": "Decoratie toevoegen"
   },
   "inventory_collections": "Verzamelalbum"
 }
