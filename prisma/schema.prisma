@@ -24,6 +24,7 @@ model Biome {
   expansionsCost            Int?
   priceTypeExpansionsCostId Int?
   size                      Int?
+  buildTime                 Int?
   regionId                  Int?
   animals                   Animal[]
   priceType                 PriceType?        @relation(fields: [priceTypeId], references: [id])

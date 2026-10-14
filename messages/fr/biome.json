@@ -10,6 +10,7 @@
   "price_type": "Type de prix",
   "expansion_cost": "Coût d'expansion",
   "size": "Taille",
+  "build_time": "Temps de construction",
   "region": "Région",
   "games": "Jouets",
   "decorations": "Décorations",
@@ -34,6 +35,7 @@
     "language": "Langue",
     "biome_name": "Nom",
     "biome_description": "Description",
+    "build_time_hint": "en secondes",
     "troughs": "Auge",
     "water_holes": "Point d'eau",
     "messages": {

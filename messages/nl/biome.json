@@ -10,6 +10,7 @@
   "price_type": "Prijstype",
   "expansion_cost": "Uitbreidingskosten",
   "size": "Grootte",
+  "build_time": "Bouwtijd",
   "region": "Regio",
   "games": "Speelgoed",
   "decorations": "Decoraties",
@@ -34,6 +35,7 @@
     "language": "Taal",
     "biome_name": "Naam",
     "biome_description": "Beschrijving",
+    "build_time_hint": "in seconden",
     "troughs": "Trog",
     "water_holes": "Drinkplaats",
     "messages": {

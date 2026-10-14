@@ -60,6 +60,7 @@ interface Biome {
   price: number | null;
   expansionsCost: number | null;
   size: number | null;
+  buildTime: number | null;
   biomestext: { biomeName: string }[];
   priceType: { name: string } | null;
   shelters: ShelterLevel[];

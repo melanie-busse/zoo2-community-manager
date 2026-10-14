@@ -10,6 +10,7 @@
   "price_type": "Pristype",
   "expansion_cost": "Udvidelsesomkostninger",
   "size": "Størrelse",
+  "build_time": "Byggetid",
   "region": "Region",
   "games": "Legetøj",
   "decorations": "Dekorationer",
@@ -34,6 +35,7 @@
     "language": "Sprog",
     "biome_name": "Navn",
     "biome_description": "Beskrivelse",
+    "build_time_hint": "i sekunder",
     "troughs": "Trug",
     "water_holes": "Vandhul",
     "messages": {

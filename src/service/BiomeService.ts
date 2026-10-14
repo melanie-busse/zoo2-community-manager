@@ -12,6 +12,7 @@ type NestedBiomeData = {
   expansionsCost: number | null;
   priceTypeExpansionsCostId: number | null;
   size: number | null;
+  buildTime: number | null;
   regionId: number | null;
   biomestext: { languageCode: string; biomeName: string; biomeDescription: string }[];
   troughs?: TroughData[];
@@ -113,6 +114,7 @@ export async function createBiome(data: NestedBiomeData): Promise<{ id: number }
         expansionsCost: data.expansionsCost,
         priceTypeExpansionsCostId: data.priceTypeExpansionsCostId,
         size: data.size,
+        buildTime: data.buildTime,
         regionId: data.regionId,
         biomestext: {
           createMany: {
@@ -159,6 +161,7 @@ export async function updateBiome(id: number, data: NestedBiomeData): Promise<vo
         expansionsCost: data.expansionsCost,
         priceTypeExpansionsCostId: data.priceTypeExpansionsCostId,
         size: data.size,
+        buildTime: data.buildTime,
         regionId: data.regionId,
       },
     });

@@ -44,6 +44,7 @@ interface BiomeFormProps {
     expansionsCost: number | null;
     priceTypeExpansionsCostId: number | null;
     size: number | null;
+    buildTime: number | null;
     regionId: number | null;
     biomestext: { languageCode: string; biomeName: string; biomeDescription: string | null }[];
     troughs: { id: number; price: number; pricetype: number }[];
@@ -72,6 +73,7 @@ export default function BiomeForm({ biome, languages, regions, allGames, allDeco
     biome?.priceTypeExpansionsCostId?.toString() ?? "1",
   );
   const [size, setSize] = useState(biome?.size?.toString() ?? "");
+  const [buildTime, setBuildTime] = useState(biome?.buildTime?.toString() ?? "");
   const [regionId, setRegionId] = useState(biome?.regionId?.toString() ?? "0");
 
   const [biomestext, setBiomestext] = useState<BiomeText[]>(
@@ -169,6 +171,7 @@ export default function BiomeForm({ biome, languages, regions, allGames, allDeco
         expansionsCost: expansionsCost !== "" ? parseInt(expansionsCost, 10) : null,
         priceTypeExpansionsCostId: expansionsCost !== "" ? parseInt(priceTypeExpansionsCostId, 10) : null,
         size: size !== "" ? parseInt(size, 10) : null,
+        buildTime: buildTime !== "" ? parseInt(buildTime, 10) : null,
         regionId: regionId !== "0" ? parseInt(regionId, 10) : null,
         biomestext,
         troughs,
@@ -231,6 +234,10 @@ export default function BiomeForm({ biome, languages, regions, allGames, allDeco
               <FormGroup>
                 <Label htmlFor="size">{t("size")}</Label>
                 <InputField id="size" type="number" value={size} onChange={(e) => setSize(e.target.value)} />
+              </FormGroup>
+              <FormGroup>
+                <Label htmlFor="buildTime">{t("build_time")}</Label>
+                <InputField id="buildTime" type="number" value={buildTime} onChange={(e) => setBuildTime(e.target.value)} placeholder={t("form.build_time_hint")} />
               </FormGroup>
               <FormGroup>
                 <Label htmlFor="regionId">{t("region")}</Label>
