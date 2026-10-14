@@ -42,32 +42,34 @@ export default function RegionHeaderCard({ region }: RegionHeaderCardProps) {
       </Styles.ImageWrapper>
 
       <InfoSection>
-        <TitleBlock>
-          <h1>{displayName}</h1>
-          <Styles.ReleaseDate>
-            <span className="label">📅 {tCommon("release")}:</span>{" "}
-            <span className="date">
-              <FormattedDate
-                date={region.releasedate}
-                options={{ year: "numeric", month: "long", day: "numeric" }}
-              />
-            </span>
-          </Styles.ReleaseDate>
-        </TitleBlock>
+        <TopRow>
+          <TitleBlock>
+            <h1>{displayName}</h1>
+            <Styles.ReleaseDate>
+              <span className="label">📅 {tCommon("release")}:</span>{" "}
+              <span className="date">
+                <FormattedDate
+                  date={region.releasedate}
+                  options={{ year: "numeric", month: "long", day: "numeric" }}
+                />
+              </span>
+            </Styles.ReleaseDate>
+          </TitleBlock>
 
-        <MapLink
-          href={`/images/regions/${region.identifier.toLowerCase()}/map.webp`}
-          target="_blank"
-          rel="noopener noreferrer"
-          title={tRegion("map")}
-        >
-          <MapThumbnail
-            src={`/images/regions/${region.identifier.toLowerCase()}/map.webp`}
-            alt={tRegion("map")}
-            width={110}
-            height={110}
-          />
-        </MapLink>
+          <MapLink
+            href={`/images/regions/${region.identifier.toLowerCase()}/map.webp`}
+            target="_blank"
+            rel="noopener noreferrer"
+            title={tRegion("map")}
+          >
+            <MapThumbnail
+              src={`/images/regions/${region.identifier.toLowerCase()}/map.webp`}
+              alt={tRegion("map")}
+              width={110}
+              height={110}
+            />
+          </MapLink>
+        </TopRow>
 
         <StatsRow>
           <StatBox>
@@ -122,7 +124,8 @@ const InfoSection = styled.div`
 `;
 
 const TitleBlock = styled.div`
-  width: 100%;
+  flex: 1;
+  min-width: 0;
 
   h1 {
     color: #2d5a27;
@@ -131,6 +134,13 @@ const TitleBlock = styled.div`
     font-weight: bold;
     line-height: 1.2;
   }
+`;
+
+const TopRow = styled.div`
+  display: flex;
+  align-items: flex-start;
+  gap: ${({ theme }) => theme.spacing(2)};
+  width: 100%;
 `;
 
 const StatsRow = styled.div`
@@ -147,7 +157,7 @@ const StatsRow = styled.div`
 
 const MapLink = styled.a`
   display: inline-block;
-  align-self: flex-end;
+  flex-shrink: 0;
   border-radius: 6px;
   overflow: hidden;
   transition: opacity 0.15s;
