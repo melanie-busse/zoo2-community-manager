@@ -55,49 +55,38 @@ export default function RegionHeaderCard({ region }: RegionHeaderCardProps) {
           </Styles.ReleaseDate>
         </TitleBlock>
 
-        <Styles.StatsGrid>
-          <Styles.StatsGroup>
-            <StatBox>
-              <label>{tCommon("price")}</label>
-              <PriceBadge value={region.price} type={badgeType} />
-            </StatBox>
-          </Styles.StatsGroup>
+        <MapLink
+          href={`/images/regions/${region.identifier.toLowerCase()}/map.webp`}
+          target="_blank"
+          rel="noopener noreferrer"
+          title={tRegion("map")}
+        >
+          <MapThumbnail
+            src={`/images/regions/${region.identifier.toLowerCase()}/map.webp`}
+            alt={tRegion("map")}
+            width={320}
+            height={160}
+          />
+        </MapLink>
 
-          <Styles.StatsGroup>
-            <StatBox>
-              <label>{tRegion("unlock_level")}</label>
-              <div className="value">{tRegion("level_value", { level: region.unlocklevel })}</div>
-            </StatBox>
-          </Styles.StatsGroup>
+        <StatsRow>
+          <StatBox>
+            <label>{tCommon("price")}</label>
+            <PriceBadge value={region.price} type={badgeType} />
+          </StatBox>
 
-          <Styles.StatsGroup>
-            <StatBox>
-              <label>{tRegion("map")}</label>
-              <MapLink
-                href={`/images/regions/${region.identifier.toLowerCase()}/map.webp`}
-                target="_blank"
-                rel="noopener noreferrer"
-                title={tRegion("map")}
-              >
-                <MapThumbnail
-                  src={`/images/regions/${region.identifier.toLowerCase()}/map.webp`}
-                  alt={tRegion("map")}
-                  width={60}
-                  height={60}
-                />
-              </MapLink>
-            </StatBox>
-          </Styles.StatsGroup>
+          <StatBox>
+            <label>{tRegion("unlock_level")}</label>
+            <div className="value">{tRegion("level_value", { level: region.unlocklevel })}</div>
+          </StatBox>
 
           {region.terrainName && (
-            <Styles.StatsGroup>
-              <StatBox>
-                <label>{tRegion("terrain")}</label>
-                <div className="value">{region.terrainName}</div>
-              </StatBox>
-            </Styles.StatsGroup>
+            <StatBox>
+              <label>{tRegion("terrain")}</label>
+              <div className="value">{region.terrainName}</div>
+            </StatBox>
           )}
-        </Styles.StatsGrid>
+        </StatsRow>
       </InfoSection>
     </Styles.DesktopCardContainer>
   );
@@ -144,6 +133,13 @@ const TitleBlock = styled.div`
   }
 `;
 
+const StatsRow = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: ${({ theme }) => theme.spacing(2)};
+  align-items: flex-start;
+`;
+
 const MapLink = styled.a`
   display: inline-block;
   border-radius: 6px;
@@ -159,4 +155,6 @@ const MapThumbnail = styled(NextImage)`
   display: block;
   object-fit: cover;
   border-radius: 6px;
+  width: 100%;
+  height: auto;
 `;
