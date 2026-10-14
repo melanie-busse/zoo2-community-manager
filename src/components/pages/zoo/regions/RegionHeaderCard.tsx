@@ -64,8 +64,8 @@ export default function RegionHeaderCard({ region }: RegionHeaderCardProps) {
           <MapThumbnail
             src={`/images/regions/${region.identifier.toLowerCase()}/map.webp`}
             alt={tRegion("map")}
-            width={320}
-            height={160}
+            width={110}
+            height={110}
           />
         </MapLink>
 
@@ -155,6 +155,6 @@ const MapThumbnail = styled(NextImage)`
   display: block;
   object-fit: cover;
   border-radius: 6px;
-  width: 100%;
-  height: auto;
+  width: 110px;
+  height: 110px;
 `;
