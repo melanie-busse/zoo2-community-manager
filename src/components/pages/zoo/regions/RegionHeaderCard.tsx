@@ -138,10 +138,16 @@ const StatsRow = styled.div`
   flex-wrap: wrap;
   gap: ${({ theme }) => theme.spacing(2)};
   align-items: flex-start;
+  width: 100%;
+
+  > * {
+    flex: 1;
+  }
 `;
 
 const MapLink = styled.a`
   display: inline-block;
+  align-self: flex-end;
   border-radius: 6px;
   overflow: hidden;
   transition: opacity 0.15s;
