@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import NextImage from "next/image";
 import { useTranslations } from "next-intl";
@@ -26,25 +26,23 @@ interface BiomeDecorationCardProps {
 }
 
 function DecorationImage({ src, alt }: { src: string; alt: string }) {
-  const [imgSrc, setImgSrc] = useState(src);
-
   return (
     <DecoImageWrapper>
       <NextImage
-        src={imgSrc}
+        src={src}
         alt={alt}
         width={80}
         height={80}
         style={{ objectFit: "contain" }}
-        onError={() => {
-          if (imgSrc.endsWith(".webp")) setImgSrc(src.replace(".webp", ".jpg"));
-        }}
       />
     </DecoImageWrapper>
   );
 }
 
-export default function BiomeDecorationCard({ decorations, biomeIdentifier }: BiomeDecorationCardProps) {
+export default function BiomeDecorationCard({
+  decorations,
+  biomeIdentifier,
+}: BiomeDecorationCardProps) {
   const t = useTranslations("biome");
 
   return (
@@ -64,7 +62,7 @@ export default function BiomeDecorationCard({ decorations, biomeIdentifier }: Bi
       <DecoGrid>
         {decorations.map((deco) => {
           const name = deco.texts[0]?.name ?? deco.identifier;
-          const imagePath = `/images/biomes/${biomeIdentifier}/decoration/${deco.identifier}/image.webp`;
+          const imagePath = `/images/biomes/${biomeIdentifier}/decoration/${deco.identifier}/image.jpg`;
           return (
             <DecoItem key={deco.id}>
               <DecorationImage src={imagePath} alt={name} />

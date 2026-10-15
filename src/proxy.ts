@@ -1,9 +1,27 @@
 import createMiddleware from "next-intl/middleware";
 import { routing } from "./i18n/routing";
+import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
 
-export default createMiddleware(routing);
+const intlMiddleware = createMiddleware(routing);
+
+export default function middleware(request: NextRequest) {
+  // Handle Discord OAuth callback — strip `iss` param and skip intl middleware
+  if (request.nextUrl.pathname === "/api/auth/callback/discord") {
+    const url = request.nextUrl.clone();
+    if (url.searchParams.has("iss")) {
+      url.searchParams.delete("iss");
+      return NextResponse.redirect(url);
+    }
+    return NextResponse.next();
+  }
+
+  return intlMiddleware(request);
+}
 
 export const config = {
-  // Matcht alle Pfade, außer API-Routen, statische Dateien etc.
-  matcher: ["/((?!api|_next|_vercel|.*\\..*).*)"],
+  matcher: [
+    "/api/auth/callback/discord",
+    "/((?!api|_next|_vercel|.*\\..*).*)",
+  ],
 };

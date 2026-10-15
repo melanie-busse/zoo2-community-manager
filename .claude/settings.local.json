@@ -68,7 +68,9 @@
       "Bash(sed -n '67,70p' /d/Entwicklung/zoo2-community-manager/messages/de/animal.json)",
       "Bash(sed -n '67,70p' /d/Entwicklung/zoo2-community-manager/messages/en/animal.json)",
       "Bash(find D:/Entwicklung/zoo2-community-manager -name *.d.ts -path */prisma/client*)",
-      "Bash(cmd /c \"taskkill /F /IM node.exe\")"
+      "Bash(cmd /c \"taskkill /F /IM node.exe\")",
+      "Bash(for dir:*)",
+      "Bash(do ls:*)"
     ]
   }
 }
