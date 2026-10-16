@@ -58,7 +58,7 @@ export default function TerrainOverviewContent({ terrains }: TerrainOverviewCont
   return (
     <>
       <TerrainFilter />
-      <ResultsInfo currentCount={currentItems.length} totalCount={filteredCount} />
+      <ResultsInfo currentCount={currentItems.length} totalCount={filteredCount} unit={t("overview_unit")} />
       {currentItems.length > 0 ? (
         <Table>
           <thead>

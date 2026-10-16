@@ -73,7 +73,18 @@ export default function BiomeForm({ biome, languages, regions, allGames, allDeco
     biome?.priceTypeExpansionsCostId?.toString() ?? "1",
   );
   const [size, setSize] = useState(biome?.size?.toString() ?? "");
-  const [buildTime, setBuildTime] = useState(biome?.buildTime?.toString() ?? "");
+  const [buildTimeH, setBuildTimeH] = useState(() => {
+    const s = biome?.buildTime ?? 0;
+    return s > 0 ? Math.floor(s / 3600).toString() : "";
+  });
+  const [buildTimeM, setBuildTimeM] = useState(() => {
+    const s = biome?.buildTime ?? 0;
+    return s > 0 ? Math.floor((s % 3600) / 60).toString() : "";
+  });
+  const [buildTimeS, setBuildTimeS] = useState(() => {
+    const s = biome?.buildTime ?? 0;
+    return s > 0 ? (s % 60).toString() : "";
+  });
   const [regionId, setRegionId] = useState(biome?.regionId?.toString() ?? "0");
 
   const [biomestext, setBiomestext] = useState<BiomeText[]>(
@@ -171,7 +182,9 @@ export default function BiomeForm({ biome, languages, regions, allGames, allDeco
         expansionsCost: expansionsCost !== "" ? parseInt(expansionsCost, 10) : null,
         priceTypeExpansionsCostId: expansionsCost !== "" ? parseInt(priceTypeExpansionsCostId, 10) : null,
         size: size !== "" ? parseInt(size, 10) : null,
-        buildTime: buildTime !== "" ? parseInt(buildTime, 10) : null,
+        buildTime: (buildTimeH || buildTimeM || buildTimeS)
+          ? (parseInt(buildTimeH || "0") * 3600) + (parseInt(buildTimeM || "0") * 60) + parseInt(buildTimeS || "0")
+          : null,
         regionId: regionId !== "0" ? parseInt(regionId, 10) : null,
         biomestext,
         troughs,
@@ -204,7 +217,7 @@ export default function BiomeForm({ biome, languages, regions, allGames, allDeco
   const decorationItems = allDecorations.map((d) => ({
     id: d.id,
     name: d.texts[0]?.name ?? d.identifier,
-    imagePath: `/images/biomes/${d.biome.identifier}/decoration/${d.identifier}/image.webp`,
+    imagePath: `/images/biomes/${d.biome.identifier}/decoration/${d.identifier}/image.jpg`,
   }));
 
   return (
@@ -236,8 +249,12 @@ export default function BiomeForm({ biome, languages, regions, allGames, allDeco
                 <InputField id="size" type="number" value={size} onChange={(e) => setSize(e.target.value)} />
               </FormGroup>
               <FormGroup>
-                <Label htmlFor="buildTime">{t("build_time")}</Label>
-                <InputField id="buildTime" type="number" value={buildTime} onChange={(e) => setBuildTime(e.target.value)} placeholder={t("form.build_time_hint")} />
+                <Label>{t("build_time")}</Label>
+                <FormRow>
+                  <InputField id="buildTimeH" type="number" value={buildTimeH} onChange={(e) => setBuildTimeH(e.target.value)} placeholder={t("form.build_time_h")} />
+                  <InputField id="buildTimeM" type="number" value={buildTimeM} onChange={(e) => setBuildTimeM(e.target.value)} placeholder={t("form.build_time_m")} />
+                  <InputField id="buildTimeS" type="number" value={buildTimeS} onChange={(e) => setBuildTimeS(e.target.value)} placeholder={t("form.build_time_s")} />
+                </FormRow>
               </FormGroup>
               <FormGroup>
                 <Label htmlFor="regionId">{t("region")}</Label>

@@ -4,6 +4,7 @@
   "shelterLevel": "Stalniveau",
   "noBiome": "Geen verblijf",
   "overview_title": "Biomen",
+  "overview_unit": "Biomen",
   "name": "Naam",
   "identifier": "Identifier",
   "price": "Prijs",
@@ -35,7 +36,9 @@
     "language": "Taal",
     "biome_name": "Naam",
     "biome_description": "Beschrijving",
-    "build_time_hint": "in seconden",
+    "build_time_h": "u",
+    "build_time_m": "min",
+    "build_time_s": "sec",
     "troughs": "Trog",
     "water_holes": "Drinkplaats",
     "messages": {

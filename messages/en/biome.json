@@ -4,6 +4,7 @@
   "shelterLevel": "Shelter Level",
   "noBiome": "No Enclosure",
   "overview_title": "Biomes",
+  "overview_unit": "Biomes",
   "name": "Name",
   "identifier": "Identifier",
   "price": "Price",
@@ -35,7 +36,9 @@
     "language": "Language",
     "biome_name": "Name",
     "biome_description": "Description",
-    "build_time_hint": "in seconds",
+    "build_time_h": "h",
+    "build_time_m": "min",
+    "build_time_s": "sec",
     "troughs": "Trough",
     "water_holes": "Water Hole",
     "messages": {

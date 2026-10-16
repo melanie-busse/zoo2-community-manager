@@ -4,6 +4,7 @@
   "shelterLevel": "Niveau d'abri",
   "noBiome": "Pas d'enclos",
   "overview_title": "Biomes",
+  "overview_unit": "Biomes",
   "name": "Nom",
   "identifier": "Identifiant",
   "price": "Prix",
@@ -35,7 +36,9 @@
     "language": "Langue",
     "biome_name": "Nom",
     "biome_description": "Description",
-    "build_time_hint": "en secondes",
+    "build_time_h": "h",
+    "build_time_m": "min",
+    "build_time_s": "sec",
     "troughs": "Auge",
     "water_holes": "Point d'eau",
     "messages": {

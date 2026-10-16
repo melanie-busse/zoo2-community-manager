@@ -86,7 +86,7 @@ export async function getAllBiomesForOverview(locale: string = "de") {
       biomestext: { where: { languageCode: locale } },
       priceType: true,
     },
-    orderBy: { identifier: "asc" },
+    orderBy: { id: "asc" },
   });
 }
 

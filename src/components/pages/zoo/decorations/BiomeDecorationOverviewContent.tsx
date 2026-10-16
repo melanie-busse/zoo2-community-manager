@@ -48,7 +48,7 @@ export default function BiomeDecorationOverviewContent({ decorations, biomes }: 
   return (
     <>
       <BiomeDecorationFilter biomes={biomes} />
-      <ResultsInfo currentCount={currentItems.length} totalCount={filteredCount} />
+      <ResultsInfo currentCount={currentItems.length} totalCount={filteredCount} unit={t("overview_unit")} />
       {hasItems ? (
         <>
           <DesktopView>

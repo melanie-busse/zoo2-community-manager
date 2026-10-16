@@ -31,7 +31,7 @@ export default function RegionOverviewContent({ regions }: RegionOverviewContent
   return (
     <>
       <RegionFilter />
-      <ResultsInfo currentCount={currentItems.length} totalCount={filteredCount} />
+      <ResultsInfo currentCount={currentItems.length} totalCount={filteredCount} unit={t("overview_unit")} />
       {currentItems.length > 0 ? (
         <>
           <DesktopView>

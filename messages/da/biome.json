@@ -4,6 +4,7 @@
   "shelterLevel": "Staldt niveau",
   "noBiome": "Ingen indhegning",
   "overview_title": "Biomer",
+  "overview_unit": "Biomer",
   "name": "Navn",
   "identifier": "Identifikator",
   "price": "Pris",
@@ -35,7 +36,9 @@
     "language": "Sprog",
     "biome_name": "Navn",
     "biome_description": "Beskrivelse",
-    "build_time_hint": "i sekunder",
+    "build_time_h": "t",
+    "build_time_m": "min",
+    "build_time_s": "sek",
     "troughs": "Trug",
     "water_holes": "Vandhul",
     "messages": {

@@ -49,7 +49,7 @@ export default function BiomeGameOverviewContent({ games, biomes }: BiomeGameOve
   return (
     <>
       <BiomeGameFilter biomes={biomes} />
-      <ResultsInfo currentCount={currentItems.length} totalCount={filteredCount} />
+      <ResultsInfo currentCount={currentItems.length} totalCount={filteredCount} unit={t("overview_unit")} />
       {hasItems ? (
         <>
           <DesktopView>

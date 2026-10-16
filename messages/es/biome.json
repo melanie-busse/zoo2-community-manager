@@ -4,6 +4,7 @@
   "shelterLevel": "Nivel de refugio",
   "noBiome": "Sin recinto",
   "overview_title": "Biomas",
+  "overview_unit": "Biomas",
   "name": "Nombre",
   "identifier": "Identificador",
   "price": "Precio",
@@ -35,7 +36,9 @@
     "language": "Idioma",
     "biome_name": "Nombre",
     "biome_description": "Descripción",
-    "build_time_hint": "en segundos",
+    "build_time_h": "h",
+    "build_time_m": "min",
+    "build_time_s": "seg",
     "troughs": "Comedero",
     "water_holes": "Bebedero",
     "messages": {

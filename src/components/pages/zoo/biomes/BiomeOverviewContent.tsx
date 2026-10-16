@@ -59,7 +59,7 @@ export default function BiomeOverviewContent({ biomes }: BiomeOverviewContentPro
   return (
     <>
       <BiomeFilter />
-      <ResultsInfo currentCount={currentItems.length} totalCount={filteredCount} />
+      <ResultsInfo currentCount={currentItems.length} totalCount={filteredCount} unit={t("overview_unit")} />
       {currentItems.length > 0 ? (
         <Table>
           <thead>
