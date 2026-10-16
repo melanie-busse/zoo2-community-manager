@@ -91,7 +91,7 @@ describe("getRequirementImageSrc", () => {
 
   test("Statue-Requirement → statue image path", () => {
     expect(getRequirementImageSrc(statueReq)).toBe(
-      "/images/animals/grassland/rabbit/statue/image.webp"
+      "/images/animals/grassland/rabbit/statue/image.jpg"
     );
   });
 

@@ -15,7 +15,7 @@ export function getRequirementImageSrc(req: CollectionRequirement): string | nul
   }
   if (req.animal?.identifier && req.animal.biome?.identifier) {
     if (req.type === "DECORATION") {
-      return `/images/animals/${req.animal.biome.identifier}/${req.animal.identifier}/statue/image.webp`;
+      return `/images/animals/${req.animal.biome.identifier}/${req.animal.identifier}/statue/image.jpg`;
     }
     return `/images/animals/${req.animal.biome.identifier}/${req.animal.identifier}/image.jpg`;
   }

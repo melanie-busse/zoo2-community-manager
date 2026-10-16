@@ -54,7 +54,7 @@ export default function StatueInventoryMobileCard({
       <InventoryRow>
         {statue.identifier && statue.biome?.identifier ? (
           <Image
-            src={`/images/animals/${statue.biome.identifier}/${statue.identifier}/statue/image.webp`}
+            src={`/images/animals/${statue.biome.identifier}/${statue.identifier}/statue/image.jpg`}
             alt={displayName}
             width={60}
             height={60}

@@ -78,7 +78,7 @@ export default function StatueInventoryDesktopTable({
                   <Styles.TableThumbnail>
                     {statue.identifier && statue.biome?.identifier ? (
                       <Image
-                        src={`/images/animals/${statue.biome.identifier}/${statue.identifier}/statue/image.webp`}
+                        src={`/images/animals/${statue.biome.identifier}/${statue.identifier}/statue/image.jpg`}
                         alt={statue.animaltext?.[0]?.animalName ?? ""}
                         width={48}
                         height={48}

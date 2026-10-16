@@ -8,4 +8,5 @@ export type InventoryBiomeStatistic = BiomeStatistic & {
   ownedContestStatues: number;
   ownedContestSpecialCoats: number;
   ownedShelterLevelCounts: Record<number, number>;
+  userShelterLevelCounts: Record<number, number>;
 };

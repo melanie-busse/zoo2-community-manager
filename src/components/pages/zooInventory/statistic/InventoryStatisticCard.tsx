@@ -48,6 +48,19 @@ const ShelterItem = styled.div`
 
 const LEVEL_COLORS = ["#4facfe", "#b224ef", "#ff0844", "#f6d365"];
 
+const ShelterCountRow = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+
+  strong {
+    font-size: 0.85rem;
+    color: #333333;
+  }
+`;
+
 interface InventoryStatisticCardProps {
   stat: InventoryBiomeStatistic;
 }
@@ -79,6 +92,20 @@ export default function InventoryStatisticCard({ stat }: InventoryStatisticCardP
           <InlineStatProgress label={t("animals.specialCoats")} current={stat.ownedSpecialCoats} total={stat.totalSpecialCoats} ofLabel={t("of")} />
           <InlineStatProgress label={t("animals.zoodollar")} current={stat.ownedAnimalsForZoodollar} total={stat.animalsForZoodollar} ofLabel={t("of")} />
           <InlineStatProgress label={t("animals.diamond")} current={stat.ownedAnimalsForDiamond} total={stat.animalsForDiamond} ofLabel={t("of")} />
+        </StatSection>
+      </CardStatsRow>
+
+      <CardDivider />
+
+      <CardStatsRow>
+        <StatSection>
+          <SectionTitle>{t("shelter.inventory_title")}</SectionTitle>
+          {shelterLevels.map((level) => (
+            <ShelterCountRow key={level}>
+              <span>{t("shelter.level", { level })}:</span>
+              <strong>{stat.userShelterLevelCounts[level] ?? 0}</strong>
+            </ShelterCountRow>
+          ))}
         </StatSection>
       </CardStatsRow>
 

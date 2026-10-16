@@ -70,7 +70,8 @@
       "Bash(find D:/Entwicklung/zoo2-community-manager -name *.d.ts -path */prisma/client*)",
       "Bash(cmd /c \"taskkill /F /IM node.exe\")",
       "Bash(for dir:*)",
-      "Bash(do ls:*)"
+      "Bash(do ls:*)",
+      "Bash(find \"D:/Entwicklung/zoo2-community-manager/public/images/animals\" -path \"*/statue/image.webp\" -delete)"
     ]
   }
 }

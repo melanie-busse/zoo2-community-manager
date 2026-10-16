@@ -27,6 +27,7 @@
   },
   "shelter": {
     "title": "Niveaux d'abri requis",
+    "inventory_title": "Étables",
     "level": "Niveau {level}"
   }
 }
