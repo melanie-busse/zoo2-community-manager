@@ -63,6 +63,13 @@ export const navConfig: NavItem[] = [
         requiresAuth: true,
         minimumRole: "Director",
       },
+      { labelKey: "origins", href: "/zoo/origins", requiresAuth: false },
+      {
+        labelKey: "origin_create",
+        href: "/zoo/origins/create",
+        requiresAuth: true,
+        minimumRole: "Director",
+      },
     ],
   },
   {

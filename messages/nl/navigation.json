@@ -50,6 +50,8 @@
     "game_create": "Verrijkingsitem toevoegen",
     "decorations": "Decoraties",
     "decoration_create": "Decoratie toevoegen",
+    "origins": "Herkómsten",
+    "origin_create": "Herkomst toevoegen",
     "inventory_biomes": "Biomen"
   },
   "inventory_collections": "Verzamelalbum"

@@ -50,6 +50,8 @@
     "game_create": "Ajouter un élément d'enrichissement",
     "decorations": "Décorations",
     "decoration_create": "Ajouter une décoration",
+    "origins": "Origines",
+    "origin_create": "Ajouter une origine",
     "inventory_biomes": "Biomes"
   },
   "inventory_collections": "Album de Collection"

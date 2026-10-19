@@ -1,0 +1,26 @@
+{
+  "overview_title": "Origines",
+  "overview_unit": "Origines",
+  "name": "Nom",
+  "search_placeholder": "Rechercher des origines...",
+  "identifier": "Identifiant",
+  "emptyState": {
+    "title": "Aucune origine trouvée !"
+  },
+  "form": {
+    "create_origin": "Ajouter une origine",
+    "edit_origin": "Modifier l'origine",
+    "save_origin": "Enregistrer l'origine",
+    "basic_info": "Informations de base",
+    "translations": "Traductions",
+    "description": "Description",
+    "messages": {
+      "createSuccess": "Origine créée avec succès",
+      "editSuccess": "Origine mise à jour avec succès",
+      "requiredIdentifier": "L'identifiant est obligatoire.",
+      "deleteSuccess": "Origine supprimée avec succès",
+      "deleteErrorTitle": "Supprimer l'origine",
+      "confirmDelete": "Voulez-vous vraiment supprimer cette origine ?"
+    }
+  }
+}

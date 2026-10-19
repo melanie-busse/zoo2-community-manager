@@ -1,0 +1,26 @@
+{
+  "overview_title": "Herkünfte",
+  "overview_unit": "Herkünfte",
+  "name": "Name",
+  "search_placeholder": "Herkünfte suchen...",
+  "identifier": "Identifier",
+  "emptyState": {
+    "title": "Keine Herkunft gefunden!"
+  },
+  "form": {
+    "create_origin": "Herkunft anlegen",
+    "edit_origin": "Herkunft bearbeiten",
+    "save_origin": "Herkunft speichern",
+    "basic_info": "Stammdaten",
+    "translations": "Übersetzungen",
+    "description": "Beschreibung",
+    "messages": {
+      "createSuccess": "Herkunft erfolgreich angelegt",
+      "editSuccess": "Herkunft erfolgreich aktualisiert",
+      "requiredIdentifier": "Identifier ist ein Pflichtfeld.",
+      "deleteSuccess": "Herkunft erfolgreich gelöscht",
+      "deleteErrorTitle": "Herkunft löschen",
+      "confirmDelete": "Möchtest du diese Herkunft wirklich löschen?"
+    }
+  }
+}

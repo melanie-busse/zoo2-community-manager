@@ -50,6 +50,8 @@
     "game_create": "Add Enrichment Item",
     "decorations": "Decorations",
     "decoration_create": "Add Decoration",
+    "origins": "Origins",
+    "origin_create": "Add Origin",
     "inventory_biomes": "Biomes"
   },
   "inventory_collections": "Collection Album"
