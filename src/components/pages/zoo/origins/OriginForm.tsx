@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import styled from "styled-components";
 import { useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/routing";
 import { toast } from "react-toastify";
@@ -10,7 +11,6 @@ import InfoAccordion from "@/components/page-structure/Elements/InfoAccordion";
 import InputField from "@/components/ui/form/InputField";
 import Label from "@/components/ui/form/Label";
 import SubmitButton from "@/components/ui/form/SubmitButton";
-import SectionColumn from "@/components/ui/form/styling/SectionColumn";
 import FormGroup from "@/components/ui/form/styling/FormGroup";
 
 interface Language {
@@ -83,54 +83,52 @@ export default function OriginForm({ origin, languages }: OriginFormProps) {
   return (
     <form onSubmit={handleSubmit}>
       <InfoAccordion title={t("form.basic_info")} icon="/images/icons/info.png" defaultOpen>
-        <SectionColumn>
-          <FormGroup>
-            <Label htmlFor="identifier">{t("identifier")}</Label>
-            <InputField
-              id="identifier"
-              type="text"
-              value={identifier}
-              onChange={(e) => setIdentifier(e.target.value)}
-              disabled={!!origin}
-            />
-          </FormGroup>
-        </SectionColumn>
+        <FormGroup>
+          <Label htmlFor="identifier">{t("identifier")}</Label>
+          <InputField
+            id="identifier"
+            type="text"
+            value={identifier}
+            onChange={(e) => setIdentifier(e.target.value)}
+            disabled={!!origin}
+          />
+        </FormGroup>
       </InfoAccordion>
+
       <InfoAccordion title={t("form.translations")} icon="/images/icons/info.png" defaultOpen>
-            <SectionColumn>
-              {texts.map((tx) => {
-                const lang = languages.find((l) => l.code === tx.languageCode);
-                return (
-                  <React.Fragment key={tx.languageCode}>
-                    <FormGroup>
-                      <Label htmlFor={`name-${tx.languageCode}`}>
-                        {t("name")} ({lang?.name ?? tx.languageCode})
-                      </Label>
-                      <InputField
-                        id={`name-${tx.languageCode}`}
-                        type="text"
-                        value={tx.originName}
-                        onChange={(e) => updateText(tx.languageCode, "originName", e.target.value)}
-                      />
-                    </FormGroup>
-                    <FormGroup>
-                      <Label htmlFor={`desc-${tx.languageCode}`}>
-                        {t("form.description")} ({lang?.name ?? tx.languageCode})
-                      </Label>
-                      <InputField
-                        id={`desc-${tx.languageCode}`}
-                        type="text"
-                        value={tx.originDescription}
-                        onChange={(e) =>
-                          updateText(tx.languageCode, "originDescription", e.target.value)
-                        }
-                      />
-                    </FormGroup>
-                  </React.Fragment>
-                );
-              })}
-            </SectionColumn>
+        <TranslationsGrid>
+          {texts.map((tx) => {
+            const lang = languages.find((l) => l.code === tx.languageCode);
+            const langLabel = lang?.name ?? tx.languageCode;
+            return (
+              <LangCard key={tx.languageCode}>
+                <LangHeader>{langLabel}</LangHeader>
+                <FormGroup>
+                  <Label htmlFor={`name-${tx.languageCode}`}>{t("name")}</Label>
+                  <InputField
+                    id={`name-${tx.languageCode}`}
+                    type="text"
+                    value={tx.originName}
+                    onChange={(e) => updateText(tx.languageCode, "originName", e.target.value)}
+                  />
+                </FormGroup>
+                <FormGroup>
+                  <Label htmlFor={`desc-${tx.languageCode}`}>{t("form.description")}</Label>
+                  <InputField
+                    id={`desc-${tx.languageCode}`}
+                    type="text"
+                    value={tx.originDescription}
+                    onChange={(e) =>
+                      updateText(tx.languageCode, "originDescription", e.target.value)
+                    }
+                  />
+                </FormGroup>
+              </LangCard>
+            );
+          })}
+        </TranslationsGrid>
       </InfoAccordion>
+
       <SubmitButton
         label={
           isSubmitting
@@ -144,3 +142,36 @@ export default function OriginForm({ origin, languages }: OriginFormProps) {
     </form>
   );
 }
+
+const TranslationsGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding: 10px 0;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+const LangCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #f9fbf5;
+  border: 1px solid #e8f0d8;
+  border-radius: 8px;
+  padding: 12px;
+`;
+
+const LangHeader = styled.div`
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #5d7a2a;
+  letter-spacing: 0.05em;
+`;
