@@ -402,9 +402,36 @@ model Region {
   transportStation    TransportStation[]
   desingBoutique      DesignBoutique[]
   clubHouse           ClubHouse[]
+  shops               RegionShop[]
 
   @@index([priceTypeId], map: "region_priceTypeId_fkey")
   @@map("region")
+}
+
+model RegionShop {
+  id             Int               @id @default(autoincrement())
+  regionId       Int
+  name           String            @db.VarChar(255)
+  coinsPerClient Int?
+  region         Region            @relation(fields: [regionId], references: [id], onDelete: Cascade)
+  levels         RegionShopLevel[]
+
+  @@index([regionId])
+  @@map("regionshop")
+}
+
+model RegionShopLevel {
+  id           Int        @id @default(autoincrement())
+  shopId       Int
+  level        Int
+  cost         Int
+  currency     String     @default("COINS") @db.VarChar(20)
+  maxCapacity  Int
+  buildTime    String     @db.VarChar(50)
+  shop         RegionShop @relation(fields: [shopId], references: [id], onDelete: Cascade)
+
+  @@index([shopId])
+  @@map("regionshoplevel")
 }
 
 model RegionText {
