@@ -55,6 +55,7 @@ model BiomesText {
 
 model Origin {
   id                Int                 @id @unique(map: "originindex") @default(autoincrement())
+  identifier        String?             @db.VarChar(255)
   wiki_icon_name    String?             @db.VarChar(255)
   image             String?             @db.VarChar(255)
   animalorigin      AnimalOrigin[]
