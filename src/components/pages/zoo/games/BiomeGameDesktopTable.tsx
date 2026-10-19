@@ -11,6 +11,8 @@ import CurrencyBadge from "@/components/ui/badges/CurrencyBadge";
 import ActionGroupBadge from "@/components/ui/badges/ActionGroupBadge";
 import { useRouter } from "@/i18n/routing";
 import { hasMinimumRole, isMayor } from "@/utils/roleUtils";
+import { confirmDeleteDialog } from "@/utils/alerts";
+import { deleteBiomeGameOnClient } from "@/service/frontend/BiomeGame";
 import type { BiomeGame } from "./BiomeGameOverviewContent";
 
 function toCurrencyType(pricetype: number): "Diamond" | "Zoodollar" {
@@ -28,8 +30,21 @@ export default function BiomeGameDesktopTable({ games }: BiomeGameDesktopTablePr
   const { data: session } = useSession();
   const isAdmin = hasMinimumRole(session, "Director") || isMayor(session);
 
-  const handleDelete = () => {
-    toast.info(t("form.messages.deleteNotImplemented"));
+  const handleDelete = async (id: number) => {
+    const confirmed = await confirmDeleteDialog({
+      title: t("form.messages.deleteErrorTitle"),
+      text: t("form.messages.confirmDelete"),
+      confirmButtonText: tCommon("messages.yes_delete"),
+      cancelButtonText: tCommon("messages.cancel"),
+    });
+    if (!confirmed) return;
+    try {
+      await deleteBiomeGameOnClient(id);
+      toast.success(t("form.messages.deleteSuccess"));
+      router.refresh();
+    } catch (e: any) {
+      toast.error(e.message);
+    }
   };
 
   return (
@@ -75,7 +90,7 @@ export default function BiomeGameDesktopTable({ games }: BiomeGameDesktopTablePr
                   <ActionGroupBadge
                     id={game.id}
                     onEdit={() => router.push(`/zoo/games/${game.id}/edit`)}
-                    onDelete={handleDelete}
+                    onDelete={() => handleDelete(game.id)}
                   />
                 </Styles.TableCellRight>
               )}

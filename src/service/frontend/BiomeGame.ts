@@ -16,6 +16,10 @@ export async function createBiomeGameOnClient(data: object) {
   );
 }
 
+export async function deleteBiomeGameOnClient(id: number) {
+  return handleResponse(await fetch(`/api/games/${id}`, { method: "DELETE" }));
+}
+
 export async function updateBiomeGameOnClient(id: number, data: object) {
   return handleResponse(
     await fetch(`/api/games/${id}`, {

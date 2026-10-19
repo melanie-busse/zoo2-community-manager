@@ -7,6 +7,8 @@ import { useTranslations } from "next-intl";
 import { useSession } from "next-auth/react";
 import { toast } from "react-toastify";
 import { useRouter } from "@/i18n/routing";
+import { confirmDeleteDialog } from "@/utils/alerts";
+import { deleteBiomeGameOnClient } from "@/service/frontend/BiomeGame";
 import CardContainer from "@/components/page-structure/Card/CardContainer";
 import CardHeaderRow from "@/components/page-structure/Card/CardHeaderRow";
 import CardDivider from "@/components/page-structure/Card/CardDevider";
@@ -31,6 +33,7 @@ function toCurrencyType(pricetype: number): "Diamond" | "Zoodollar" {
 
 export default function BiomeGameMobileCard({ game }: { game: BiomeGame }) {
   const t = useTranslations("game");
+  const tCommon = useTranslations("common");
   const { data: session } = useSession();
   const router = useRouter();
   const isAdmin = hasMinimumRole(session, "Director") || isMayor(session);
@@ -38,8 +41,21 @@ export default function BiomeGameMobileCard({ game }: { game: BiomeGame }) {
   const name = game.texts[0]?.name ?? game.identifier;
   const imgSrc = `/images/biomes/${game.biomeIdentifier}/game/${game.identifier}/image.jpg`;
 
-  const handleDelete = () => {
-    toast.info(t("form.messages.deleteNotImplemented"));
+  const handleDelete = async () => {
+    const confirmed = await confirmDeleteDialog({
+      title: t("form.messages.deleteErrorTitle"),
+      text: t("form.messages.confirmDelete"),
+      confirmButtonText: tCommon("messages.yes_delete"),
+      cancelButtonText: tCommon("messages.cancel"),
+    });
+    if (!confirmed) return;
+    try {
+      await deleteBiomeGameOnClient(game.id);
+      toast.success(t("form.messages.deleteSuccess"));
+      router.refresh();
+    } catch (e: any) {
+      toast.error(e.message);
+    }
   };
 
   return (

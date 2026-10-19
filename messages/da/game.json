@@ -21,7 +21,7 @@
       "createSuccess": "Enrichment item oprettet.",
       "editSuccess": "Enrichment item opdateret.",
       "requiredIdentifier": "Identifier er påkrævet.",
-      "deleteNotImplemented": "Sletning af enrichment items er ikke tilgængelig endnu.",
+      "deleteSuccess": "Enrichment item slettet.",
       "deleteErrorTitle": "Slet enrichment item",
       "confirmDelete": "Vil du virkelig slette dette enrichment item?"
     }

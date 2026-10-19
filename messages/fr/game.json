@@ -21,7 +21,7 @@
       "createSuccess": "Élément d'enrichissement créé.",
       "editSuccess": "Élément d'enrichissement mis à jour.",
       "requiredIdentifier": "L'identifiant est obligatoire.",
-      "deleteNotImplemented": "La suppression des éléments d'enrichissement n'est pas encore disponible.",
+      "deleteSuccess": "Élément d'enrichissement supprimé.",
       "deleteErrorTitle": "Supprimer l'élément d'enrichissement",
       "confirmDelete": "Voulez-vous vraiment supprimer cet élément d'enrichissement ?"
     }

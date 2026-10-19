@@ -9,7 +9,7 @@
     "title": "Oje, kein Spielgerät gefunden!"
   },
   "identifier": "Identifier",
-  "biome_identifier": "Biom-Identifier",
+  "biome_identifier": "Biom",
   "form": {
     "create_game": "Spielgerät anlegen",
     "edit_game": "Spielgerät bearbeiten",
@@ -21,7 +21,7 @@
       "createSuccess": "Spielgerät erfolgreich angelegt",
       "editSuccess": "Spielgerät erfolgreich aktualisiert",
       "requiredIdentifier": "Identifier ist ein Pflichtfeld.",
-      "deleteNotImplemented": "Das Löschen von Spielgeräten ist noch nicht verfügbar.",
+      "deleteSuccess": "Spielgerät erfolgreich gelöscht.",
       "deleteErrorTitle": "Spielgerät löschen",
       "confirmDelete": "Möchtest du dieses Spielgerät wirklich löschen?"
     }

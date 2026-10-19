@@ -8,6 +8,7 @@ import PageWrapper from "@/components/page-structure/page/PageWrapper";
 import ContentWrapper from "@/components/page-structure/page/ContentWrapper";
 import PageHeader from "@/components/page-structure/page/PageHeader";
 import { getAllLanguages } from "@/service/LanguageService";
+import { getAllBiomesForOverview } from "@/service/BiomeService";
 import BiomeGameForm from "@/components/pages/zoo/games/BiomeGameForm";
 
 export default async function CreateBiomeGamePage({
@@ -22,8 +23,9 @@ export default async function CreateBiomeGamePage({
     redirect(`/${locale}/zoo/games`);
   }
 
-  const [languages, t] = await Promise.all([
+  const [languages, biomes, t] = await Promise.all([
     getAllLanguages(),
+    getAllBiomesForOverview(locale),
     getTranslations({ locale, namespace: "game" }),
   ]);
 
@@ -31,7 +33,7 @@ export default async function CreateBiomeGamePage({
     <PageWrapper>
       <ContentWrapper>
         <PageHeader text={t("form.create_game")} />
-        <BiomeGameForm languages={languages} />
+        <BiomeGameForm languages={languages} biomes={JSON.parse(JSON.stringify(biomes))} />
       </ContentWrapper>
     </PageWrapper>
   );

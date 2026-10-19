@@ -21,7 +21,7 @@
       "createSuccess": "Elemento de enriquecimiento creado.",
       "editSuccess": "Elemento de enriquecimiento actualizado.",
       "requiredIdentifier": "El identificador es obligatorio.",
-      "deleteNotImplemented": "La eliminación de elementos de enriquecimiento no está disponible todavía.",
+      "deleteSuccess": "Elemento de enriquecimiento eliminado.",
       "deleteErrorTitle": "Eliminar elemento de enriquecimiento",
       "confirmDelete": "¿Realmente deseas eliminar este elemento de enriquecimiento?"
     }

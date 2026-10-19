@@ -22,6 +22,12 @@ interface Language {
   name: string;
 }
 
+interface Biome {
+  id: number;
+  identifier: string;
+  biomestext: { biomeName: string }[];
+}
+
 interface BiomeGameFormProps {
   game?: {
     id: number;
@@ -34,9 +40,10 @@ interface BiomeGameFormProps {
     texts: { languageCode: string; name: string }[];
   };
   languages: Language[];
+  biomes: Biome[];
 }
 
-export default function BiomeGameForm({ game, languages }: BiomeGameFormProps) {
+export default function BiomeGameForm({ game, languages, biomes }: BiomeGameFormProps) {
   const t = useTranslations("game");
   const tCommon = useTranslations("common");
   const router = useRouter();
@@ -52,6 +59,11 @@ export default function BiomeGameForm({ game, languages }: BiomeGameFormProps) {
     return languages.map((l) => ({ languageCode: l.code, name: textMap.get(l.code) ?? "" }));
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const biomeOptions = [
+    { value: "", label: "-" },
+    ...biomes.map((b) => ({ value: b.identifier, label: b.biomestext[0]?.biomeName ?? b.identifier })),
+  ];
 
   const currencyOptions = [
     { value: "1", label: tCommon("currencies.zoodollar") },
@@ -115,11 +127,12 @@ export default function BiomeGameForm({ game, languages }: BiomeGameFormProps) {
               </FormGroup>
               <FormGroup>
                 <Label htmlFor="biomeIdentifier">{t("biome_identifier")}</Label>
-                <InputField
+                <Selectbox
                   id="biomeIdentifier"
-                  type="text"
+                  name="biomeIdentifier"
                   value={biomeIdentifier}
                   onChange={(e) => setBiomeIdentifier(e.target.value)}
+                  options={biomeOptions}
                   disabled={!!game}
                 />
               </FormGroup>

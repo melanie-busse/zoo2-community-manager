@@ -21,7 +21,7 @@
       "createSuccess": "Verrijkingsitem aangemaakt.",
       "editSuccess": "Verrijkingsitem bijgewerkt.",
       "requiredIdentifier": "Identifier is verplicht.",
-      "deleteNotImplemented": "Verwijderen van verrijkingsitems is nog niet beschikbaar.",
+      "deleteSuccess": "Verrijkingsitem verwijderd.",
       "deleteErrorTitle": "Verrijkingsitem verwijderen",
       "confirmDelete": "Wil je dit verrijkingsitem echt verwijderen?"
     }
