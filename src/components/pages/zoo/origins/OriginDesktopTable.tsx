@@ -53,7 +53,7 @@ export default function OriginDesktopTable({ origins }: OriginDesktopTableProps)
       <tbody>
         {origins.map((origin) => {
           const name = origin.origintext[0]?.originName ?? origin.identifier ?? "-";
-          const imgSrc = `/images/origins/${origin.identifier}/image.jpg`;
+          const imgSrc = `/images/origins/${origin.identifier}/image.png`;
 
           return (
             <tr key={origin.id}>
@@ -67,7 +67,14 @@ export default function OriginDesktopTable({ origins }: OriginDesktopTableProps)
                       height={64}
                       style={{ objectFit: "contain", borderRadius: 4 }}
                       onError={(e) => {
-                        (e.currentTarget as HTMLImageElement).style.display = "none";
+                        const el = e.currentTarget as HTMLImageElement;
+                        if (el.src.endsWith(".png")) {
+                          el.src = el.src.replace(".png", ".jpg");
+                        } else if (el.src.endsWith(".jpg")) {
+                          el.src = el.src.replace(".jpg", ".webp");
+                        } else {
+                          el.style.display = "none";
+                        }
                       }}
                     />
                   )}
