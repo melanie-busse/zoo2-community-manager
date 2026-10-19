@@ -1,0 +1,26 @@
+{
+  "overview_title": "Origins",
+  "overview_unit": "Origins",
+  "name": "Name",
+  "search_placeholder": "Search origins...",
+  "identifier": "Identifier",
+  "emptyState": {
+    "title": "No origin found!"
+  },
+  "form": {
+    "create_origin": "Add Origin",
+    "edit_origin": "Edit Origin",
+    "save_origin": "Save Origin",
+    "basic_info": "Basic Info",
+    "translations": "Translations",
+    "description": "Description",
+    "messages": {
+      "createSuccess": "Origin successfully created",
+      "editSuccess": "Origin successfully updated",
+      "requiredIdentifier": "Identifier is required.",
+      "deleteSuccess": "Origin successfully deleted",
+      "deleteErrorTitle": "Delete Origin",
+      "confirmDelete": "Do you really want to delete this origin?"
+    }
+  }
+}

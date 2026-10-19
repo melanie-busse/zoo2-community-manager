@@ -50,6 +50,8 @@
     "game_create": "Tilføj legeudstyr",
     "decorations": "Dekorationer",
     "decoration_create": "Tilføj dekoration",
+    "origins": "Oprindelser",
+    "origin_create": "Tilføj oprindelse",
     "inventory_biomes": "Biomer"
   },
   "inventory_collections": "Samlealbum"

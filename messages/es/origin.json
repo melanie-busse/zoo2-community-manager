@@ -1,0 +1,26 @@
+{
+  "overview_title": "Orígenes",
+  "overview_unit": "Orígenes",
+  "name": "Nombre",
+  "search_placeholder": "Buscar orígenes...",
+  "identifier": "Identificador",
+  "emptyState": {
+    "title": "¡No se encontró ningún origen!"
+  },
+  "form": {
+    "create_origin": "Añadir origen",
+    "edit_origin": "Editar origen",
+    "save_origin": "Guardar origen",
+    "basic_info": "Datos básicos",
+    "translations": "Traducciones",
+    "description": "Descripción",
+    "messages": {
+      "createSuccess": "Origen creado correctamente",
+      "editSuccess": "Origen actualizado correctamente",
+      "requiredIdentifier": "El identificador es obligatorio.",
+      "deleteSuccess": "Origen eliminado correctamente",
+      "deleteErrorTitle": "Eliminar origen",
+      "confirmDelete": "¿Realmente deseas eliminar este origen?"
+    }
+  }
+}

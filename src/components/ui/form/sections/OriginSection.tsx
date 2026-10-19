@@ -10,6 +10,7 @@ import SectionColumn from "@/components/ui/form/styling/SectionColumn";
 interface OriginOption {
   id: number;
   name: string;
+  identifier?: string | null;
 }
 
 interface OriginSectionProps {
@@ -34,17 +35,23 @@ export default function OriginSection({
 
   const selectedIds = selectedOrigins.map((o) => o.id);
 
+  const allOrigins = originsData.map((o) => ({
+    id: o.id,
+    name: o.name,
+    imagePath: o.identifier ? `/images/origins/${o.identifier}/image.png` : undefined,
+  }));
+
   return (
     <InfoAccordion
       title={tAnimals("originSection.originTitle")}
-      icon="/images/origins/shop.png"
+      icon="/images/origins/shop/image.png"
       defaultOpen={false}
     >
       <SectionColumn>
         <p className="description">{tAnimals("originSection.originDescription")}</p>
 
         <OriginTransfer
-          allOrigins={originsData}
+          allOrigins={allOrigins}
           selectedIds={selectedIds}
           onChange={handleTransferChange}
         />

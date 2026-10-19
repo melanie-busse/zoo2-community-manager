@@ -71,7 +71,19 @@
       "Bash(cmd /c \"taskkill /F /IM node.exe\")",
       "Bash(for dir:*)",
       "Bash(do ls:*)",
-      "Bash(find \"D:/Entwicklung/zoo2-community-manager/public/images/animals\" -path \"*/statue/image.webp\" -delete)"
+      "Bash(find \"D:/Entwicklung/zoo2-community-manager/public/images/animals\" -path \"*/statue/image.webp\" -delete)",
+      "Bash(for route:*)",
+      "Bash(/dev/null grep:*)",
+      "Bash(do)",
+      "Bash(echo \"=== $f ===\")",
+      "Read(//d/Entwicklung/zoo2-community-manager/messages/$f/**)",
+      "Bash(find D:/Entwicklung/zoo2-community-manager/src -type f -name *decoration*)",
+      "Bash(find /d/Entwicklung/zoo2-community-manager -type f -name *Decoration*)",
+      "Bash(bash \"C:/Users/micro/.claude/plugins/cache/claude-plugins-official/superpowers/6.4.2/skills/executing-plans/scripts/task-done\" docs/superpowers/plans/2026-10-19-origin-crud.md 1 27a86fb0b84b1b66a10c09cccb86a5f235915901 -- npx tsc --noEmit)",
+      "Bash(mkdir -p \"D:/Entwicklung/zoo2-community-manager/src/app/[locale]/zoo/origins/create\")",
+      "Bash(mkdir -p \"D:/Entwicklung/zoo2-community-manager/src/app/[locale]/zoo/origins/[id]/edit\")",
+      "Bash(magick --version)",
+      "Bash(convert --version)"
     ]
   }
 }

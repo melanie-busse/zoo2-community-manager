@@ -1,0 +1,26 @@
+{
+  "overview_title": "Herkómsten",
+  "overview_unit": "Herkómsten",
+  "name": "Naam",
+  "search_placeholder": "Zoek herkómsten...",
+  "identifier": "Identifier",
+  "emptyState": {
+    "title": "Geen herkomst gevonden!"
+  },
+  "form": {
+    "create_origin": "Herkomst toevoegen",
+    "edit_origin": "Herkomst bewerken",
+    "save_origin": "Herkomst opslaan",
+    "basic_info": "Basisgegevens",
+    "translations": "Vertalingen",
+    "description": "Beschrijving",
+    "messages": {
+      "createSuccess": "Herkomst succesvol aangemaakt",
+      "editSuccess": "Herkomst succesvol bijgewerkt",
+      "requiredIdentifier": "Identifier is verplicht.",
+      "deleteSuccess": "Herkomst succesvol verwijderd",
+      "deleteErrorTitle": "Herkomst verwijderen",
+      "confirmDelete": "Wil je deze herkomst echt verwijderen?"
+    }
+  }
+}

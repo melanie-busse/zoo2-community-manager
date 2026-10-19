@@ -50,6 +50,8 @@
     "game_create": "Spielgerät anlegen",
     "decorations": "Dekorationen",
     "decoration_create": "Dekoration anlegen",
+    "origins": "Herkünfte",
+    "origin_create": "Herkunft anlegen",
     "inventory_biomes": "Biome"
   },
   "inventory_collections": "Sammelalbum"

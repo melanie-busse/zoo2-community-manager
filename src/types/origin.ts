@@ -1,6 +1,7 @@
 export interface Origin {
   id: number;
   name: string;
+  identifier: string | null;
   image: string | null;
   origintext?: Array<{ originName: string; languageCode: string }>;
 }

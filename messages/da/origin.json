@@ -1,0 +1,26 @@
+{
+  "overview_title": "Oprindelser",
+  "overview_unit": "Oprindelser",
+  "name": "Navn",
+  "search_placeholder": "Søg oprindelser...",
+  "identifier": "Identifier",
+  "emptyState": {
+    "title": "Ingen oprindelse fundet!"
+  },
+  "form": {
+    "create_origin": "Tilføj oprindelse",
+    "edit_origin": "Rediger oprindelse",
+    "save_origin": "Gem oprindelse",
+    "basic_info": "Stamdata",
+    "translations": "Oversættelser",
+    "description": "Beskrivelse",
+    "messages": {
+      "createSuccess": "Oprindelse oprettet",
+      "editSuccess": "Oprindelse opdateret",
+      "requiredIdentifier": "Identifier er påkrævet.",
+      "deleteSuccess": "Oprindelse slettet",
+      "deleteErrorTitle": "Slet oprindelse",
+      "confirmDelete": "Vil du virkelig slette denne oprindelse?"
+    }
+  }
+}
