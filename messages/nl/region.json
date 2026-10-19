@@ -1,4 +1,12 @@
 {
+  "shops": "Winkels",
+  "coins_per_client": "Munten / Klant",
+  "add_shop": "Winkel toevoegen",
+  "edit_shop": "Winkel bewerken",
+  "save_shop": "Opslaan",
+  "build_cost": "Bouwkosten",
+  "build_time_label": "Bouwtijd",
+  "delete_shop_confirm": "Wilt u deze winkel echt verwijderen?",
   "overview_title": "Regio's",
   "overview_unit": "Regio's",
   "detail_title": "Regio",

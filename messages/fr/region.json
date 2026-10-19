@@ -1,4 +1,12 @@
 {
+  "shops": "Boutiques",
+  "coins_per_client": "Pièces / Client",
+  "add_shop": "Ajouter une boutique",
+  "edit_shop": "Modifier la boutique",
+  "save_shop": "Enregistrer",
+  "build_cost": "Coût de construction",
+  "build_time_label": "Temps de construction",
+  "delete_shop_confirm": "Vraiment supprimer cette boutique ?",
   "overview_title": "Régions",
   "overview_unit": "Régions",
   "detail_title": "Région",

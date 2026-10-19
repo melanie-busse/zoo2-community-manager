@@ -1,4 +1,12 @@
 {
+  "shops": "Tiendas",
+  "coins_per_client": "Monedas / Cliente",
+  "add_shop": "Añadir tienda",
+  "edit_shop": "Editar tienda",
+  "save_shop": "Guardar",
+  "build_cost": "Costo de construcción",
+  "build_time_label": "Tiempo de construcción",
+  "delete_shop_confirm": "¿Realmente eliminar esta tienda?",
   "overview_title": "Regiones",
   "overview_unit": "Regiones",
   "detail_title": "Región",
