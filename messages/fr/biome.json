@@ -1,6 +1,7 @@
 {
   "enclosure": "Enclos",
   "enclosureType": "Type d'enclos",
+  "game": "Élément d'enrichissement",
   "shelterLevel": "Niveau d'abri",
   "noBiome": "Pas d'enclos",
   "overview_title": "Biomes",

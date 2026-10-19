@@ -1,6 +1,7 @@
 {
   "enclosure": "Gehege",
   "enclosureType": "Gehegetyp",
+  "game": "Spielgerät",
   "shelterLevel": "Stall Level",
   "noBiome": "Kein Gehege",
   "overview_title": "Biome",

@@ -86,20 +86,20 @@ describe("BiomeGameForm", () => {
   });
 
   test("rendert den Identifier als disabled Input", () => {
-    render(<BiomeGameForm game={mockGame} languages={mockLanguages} />);
+    render(<BiomeGameForm game={mockGame} languages={mockLanguages} biomes={[]} />);
     const identifierInput = screen.getByDisplayValue("play_pond");
     expect(identifierInput).toBeDisabled();
   });
 
   test("zeigt vorhandene Texte in den Übersetzungsfeldern an", () => {
-    render(<BiomeGameForm game={mockGame} languages={mockLanguages} />);
+    render(<BiomeGameForm game={mockGame} languages={mockLanguages} biomes={[]} />);
     expect(screen.getByDisplayValue("Teich")).toBeInTheDocument();
     expect(screen.getByDisplayValue("Pond")).toBeInTheDocument();
   });
 
   test("zeigt leere Felder für Sprachen ohne Text", () => {
     const gameWithoutEn = { ...mockGame, texts: [{ languageCode: "de", name: "Teich" }] };
-    render(<BiomeGameForm game={gameWithoutEn} languages={mockLanguages} />);
+    render(<BiomeGameForm game={gameWithoutEn} languages={mockLanguages} biomes={[]} />);
     const inputs = screen.getAllByRole("textbox");
     const emptyTextInput = inputs.find((el) => (el as HTMLInputElement).value === "");
     expect(emptyTextInput).toBeInTheDocument();
@@ -107,7 +107,7 @@ describe("BiomeGameForm", () => {
 
   test("ruft updateBiomeGameOnClient beim Submit mit korrekten Daten auf", async () => {
     mockUpdateBiomeGameOnClient.mockResolvedValue({ id: 3 });
-    render(<BiomeGameForm game={mockGame} languages={mockLanguages} />);
+    render(<BiomeGameForm game={mockGame} languages={mockLanguages} biomes={[]} />);
 
     fireEvent.submit(screen.getByRole("button", { name: /game\.form\.save_game/i }).closest("form")!);
 
@@ -129,7 +129,7 @@ describe("BiomeGameForm", () => {
 
   test("zeigt Success-Toast und navigiert nach /zoo/games bei Erfolg", async () => {
     mockUpdateBiomeGameOnClient.mockResolvedValue({ id: 3 });
-    render(<BiomeGameForm game={mockGame} languages={mockLanguages} />);
+    render(<BiomeGameForm game={mockGame} languages={mockLanguages} biomes={[]} />);
 
     fireEvent.submit(screen.getByRole("button").closest("form")!);
 
@@ -141,7 +141,7 @@ describe("BiomeGameForm", () => {
 
   test("zeigt Error-Toast bei fehlgeschlagenem API-Call", async () => {
     mockUpdateBiomeGameOnClient.mockRejectedValue(new Error("Server error"));
-    render(<BiomeGameForm game={mockGame} languages={mockLanguages} />);
+    render(<BiomeGameForm game={mockGame} languages={mockLanguages} biomes={[]} />);
 
     fireEvent.submit(screen.getByRole("button").closest("form")!);
 
@@ -153,7 +153,7 @@ describe("BiomeGameForm", () => {
   test("deaktiviert den Submit-Button während des Speicherns", async () => {
     let resolve: (v: any) => void;
     mockUpdateBiomeGameOnClient.mockReturnValue(new Promise((r) => { resolve = r; }));
-    render(<BiomeGameForm game={mockGame} languages={mockLanguages} />);
+    render(<BiomeGameForm game={mockGame} languages={mockLanguages} biomes={[]} />);
 
     const button = screen.getByRole("button");
     fireEvent.submit(button.closest("form")!);
@@ -169,14 +169,14 @@ describe("BiomeGameForm — Create-Modus (kein game prop)", () => {
   });
 
   test("rendert leere Felder ohne game prop", () => {
-    render(<BiomeGameForm languages={mockLanguages} />);
+    render(<BiomeGameForm languages={mockLanguages} biomes={[]} />);
     const textInputs = screen.getAllByRole("textbox");
     const emptyInputs = textInputs.filter((el) => (el as HTMLInputElement).value === "");
     expect(emptyInputs.length).toBeGreaterThan(0);
   });
 
   test("zeigt Warn-Toast wenn Identifier leer ist", async () => {
-    render(<BiomeGameForm languages={mockLanguages} />);
+    render(<BiomeGameForm languages={mockLanguages} biomes={[]} />);
     fireEvent.submit(screen.getByRole("button").closest("form")!);
     await waitFor(() => {
       expect(toast.warn).toHaveBeenCalledWith("game.form.messages.requiredIdentifier");
@@ -186,7 +186,7 @@ describe("BiomeGameForm — Create-Modus (kein game prop)", () => {
 
   test("ruft createBiomeGameOnClient beim Submit auf", async () => {
     mockCreateBiomeGameOnClient.mockResolvedValue({ id: 99 });
-    render(<BiomeGameForm languages={mockLanguages} />);
+    render(<BiomeGameForm languages={mockLanguages} biomes={[]} />);
 
     fireEvent.change(screen.getByLabelText("game.identifier"), { target: { value: "play_new" } });
     fireEvent.submit(screen.getByRole("button").closest("form")!);
@@ -200,7 +200,7 @@ describe("BiomeGameForm — Create-Modus (kein game prop)", () => {
 
   test("zeigt Success-Toast und navigiert nach /zoo/games bei Erfolg", async () => {
     mockCreateBiomeGameOnClient.mockResolvedValue({ id: 99 });
-    render(<BiomeGameForm languages={mockLanguages} />);
+    render(<BiomeGameForm languages={mockLanguages} biomes={[]} />);
 
     fireEvent.change(screen.getByLabelText("game.identifier"), { target: { value: "play_new" } });
     fireEvent.submit(screen.getByRole("button").closest("form")!);

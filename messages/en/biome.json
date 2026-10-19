@@ -1,6 +1,7 @@
 {
   "enclosure": "Enclosure",
   "enclosureType": "Enclosure Type",
+  "game": "Enrichment Item",
   "shelterLevel": "Shelter Level",
   "noBiome": "No Enclosure",
   "overview_title": "Biomes",

@@ -1,6 +1,7 @@
 {
   "enclosure": "Verblijf",
   "enclosureType": "Verblijftype",
+  "game": "Verrijkingsitem",
   "shelterLevel": "Stalniveau",
   "noBiome": "Geen verblijf",
   "overview_title": "Biomen",

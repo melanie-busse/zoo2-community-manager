@@ -9,7 +9,7 @@ import PageWrapper from "@/components/page-structure/page/PageWrapper";
 import ContentWrapper from "@/components/page-structure/page/ContentWrapper";
 import PageHeader from "@/components/page-structure/page/PageHeader";
 import { getAllLanguages } from "@/service/LanguageService";
-import { getAllBiomes } from "@/service/BiomeService";
+import { getAllBiomes, getAllBiomeGamesWithBiomes } from "@/service/BiomeService";
 import { getAllOrigins } from "@/service/OriginService";
 import AnimalForm from "@/components/pages/animals/AnimalForms/AnimalForm";
 
@@ -20,9 +20,10 @@ interface CreateAnimalPageProps {
 export default async function CreateAnimalPage({ params }: CreateAnimalPageProps) {
   const { locale } = await params;
 
-  const [languages, biomes, origins] = await Promise.all([
+  const [languages, biomes, biomeGames, origins] = await Promise.all([
     getAllLanguages(),
     getAllBiomes(locale),
+    getAllBiomeGamesWithBiomes(locale),
     getAllOrigins(locale),
   ]);
 
@@ -38,7 +39,7 @@ export default async function CreateAnimalPage({ params }: CreateAnimalPageProps
       <ContentWrapper>
         <PageHeader text={tAnimals("form.createAnimal")} />
 
-        <AnimalForm languages={languages} biomes={biomes as any} originsData={origins} />
+        <AnimalForm languages={languages} biomes={biomes as any} biomeGames={biomeGames} originsData={origins} />
       </ContentWrapper>
     </PageWrapper>
   );

@@ -6,7 +6,7 @@ import { getServerSession } from "next-auth";
 import PageWrapper from "@/components/page-structure/page/PageWrapper";
 import ContentWrapper from "@/components/page-structure/page/ContentWrapper";
 import { getAnimalById } from "@/service/AnimalService";
-import { getAllBiomes } from "@/service/BiomeService";
+import { getAllBiomes, getAllBiomeGamesWithBiomes } from "@/service/BiomeService";
 import { getAllOrigins } from "@/service/OriginService";
 import { getAllLanguages } from "@/service/LanguageService";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
@@ -34,10 +34,11 @@ export default async function EditAnimalPage({ params }: EditAnimalPageProps) {
     redirect(`/${locale}/animals`);
   }
 
-  const [animalRaw, languages, biomes, origins] = await Promise.all([
+  const [animalRaw, languages, biomes, biomeGames, origins] = await Promise.all([
     getAnimalById(id),
     getAllLanguages(),
     getAllBiomes(locale),
+    getAllBiomeGamesWithBiomes(locale),
     getAllOrigins(locale),
   ]);
 
@@ -58,6 +59,7 @@ export default async function EditAnimalPage({ params }: EditAnimalPageProps) {
           animal={serializedAnimal}
           languages={languages}
           biomes={biomes as any}
+          biomeGames={biomeGames}
           originsData={origins}
         />
       </ContentWrapper>

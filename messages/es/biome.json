@@ -1,6 +1,7 @@
 {
   "enclosure": "Recinto",
   "enclosureType": "Tipo de recinto",
+  "game": "Elemento de enriquecimiento",
   "shelterLevel": "Nivel de refugio",
   "noBiome": "Sin recinto",
   "overview_title": "Biomas",

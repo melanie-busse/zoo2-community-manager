@@ -29,6 +29,16 @@ export async function getAllBiomeGames(locale: string = "de") {
   });
 }
 
+export async function getAllBiomeGamesWithBiomes(locale: string = "de") {
+  return prisma.biomeGame.findMany({
+    include: {
+      texts: { where: { languageCode: locale } },
+      biomes: { select: { id: true } },
+    },
+    orderBy: { identifier: "asc" },
+  });
+}
+
 export async function getAllBiomeDecorations(locale: string = "de") {
   return prisma.biomeDecoration.findMany({
     include: {
@@ -319,6 +329,10 @@ export async function getBiomeGameById(id: number) {
     where: { id },
     include: { texts: true },
   });
+}
+
+export async function deleteBiomeGame(id: number): Promise<void> {
+  await prisma.biomeGame.delete({ where: { id } });
 }
 
 export async function updateBiomeGame(id: number, data: BiomeGameUpdateData): Promise<void> {

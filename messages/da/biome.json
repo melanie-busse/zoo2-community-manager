@@ -1,6 +1,7 @@
 {
   "enclosure": "Indhegning",
   "enclosureType": "Indhegningstype",
+  "game": "Legeudstyr",
   "shelterLevel": "Staldt niveau",
   "noBiome": "Ingen indhegning",
   "overview_title": "Biomer",
