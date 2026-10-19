@@ -10,8 +10,6 @@ import InfoAccordion from "@/components/page-structure/Elements/InfoAccordion";
 import InputField from "@/components/ui/form/InputField";
 import Label from "@/components/ui/form/Label";
 import SubmitButton from "@/components/ui/form/SubmitButton";
-import FormGrid from "@/components/ui/form/styling/FormGrid";
-import Column from "@/components/ui/form/styling/Column";
 import SectionColumn from "@/components/ui/form/styling/SectionColumn";
 import FormGroup from "@/components/ui/form/styling/FormGroup";
 
@@ -84,25 +82,21 @@ export default function OriginForm({ origin, languages }: OriginFormProps) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <FormGrid>
-        <Column>
-          <InfoAccordion title={t("form.basic_info")} icon="/images/icons/info.png" defaultOpen>
-            <SectionColumn>
-              <FormGroup>
-                <Label htmlFor="identifier">{t("identifier")}</Label>
-                <InputField
-                  id="identifier"
-                  type="text"
-                  value={identifier}
-                  onChange={(e) => setIdentifier(e.target.value)}
-                  disabled={!!origin}
-                />
-              </FormGroup>
-            </SectionColumn>
-          </InfoAccordion>
-        </Column>
-        <Column>
-          <InfoAccordion title={t("form.translations")} icon="/images/icons/info.png" defaultOpen>
+      <InfoAccordion title={t("form.basic_info")} icon="/images/icons/info.png" defaultOpen>
+        <SectionColumn>
+          <FormGroup>
+            <Label htmlFor="identifier">{t("identifier")}</Label>
+            <InputField
+              id="identifier"
+              type="text"
+              value={identifier}
+              onChange={(e) => setIdentifier(e.target.value)}
+              disabled={!!origin}
+            />
+          </FormGroup>
+        </SectionColumn>
+      </InfoAccordion>
+      <InfoAccordion title={t("form.translations")} icon="/images/icons/info.png" defaultOpen>
             <SectionColumn>
               {texts.map((tx) => {
                 const lang = languages.find((l) => l.code === tx.languageCode);
@@ -136,9 +130,7 @@ export default function OriginForm({ origin, languages }: OriginFormProps) {
                 );
               })}
             </SectionColumn>
-          </InfoAccordion>
-        </Column>
-      </FormGrid>
+      </InfoAccordion>
       <SubmitButton
         label={
           isSubmitting
