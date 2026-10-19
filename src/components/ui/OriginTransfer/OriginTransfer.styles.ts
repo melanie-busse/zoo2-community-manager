@@ -57,6 +57,11 @@ export const EmptyNote = styled.div`
   font-style: italic;
 `;
 
+export const SearchWrapper = styled.div`
+  margin-bottom: 8px;
+  width: 100%;
+`;
+
 export const Item = styled.div<{ $disabled?: boolean; $selected?: boolean }>`
   display: flex;
   align-items: center;
