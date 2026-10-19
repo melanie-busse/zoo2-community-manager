@@ -11,6 +11,15 @@ export async function POST(req: NextRequest) {
   }
 
   const data = await req.json();
-  const result = await createOrigin(data);
-  return NextResponse.json(result);
+
+  if (!data.identifier || typeof data.identifier !== "string" || !data.identifier.trim()) {
+    return NextResponse.json({ error: "Identifier is required" }, { status: 400 });
+  }
+
+  try {
+    const result = await createOrigin(data);
+    return NextResponse.json(result);
+  } catch (err: any) {
+    return NextResponse.json({ error: err.message ?? "Internal server error" }, { status: 500 });
+  }
 }

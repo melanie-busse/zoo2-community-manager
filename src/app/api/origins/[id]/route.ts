@@ -16,9 +16,22 @@ export async function PUT(req: NextRequest, { params }: Params) {
 
   const { id } = await params;
   const originId = parseInt(id, 10);
+  if (isNaN(originId)) {
+    return NextResponse.json({ error: "Invalid ID" }, { status: 400 });
+  }
+
   const data = await req.json();
-  await updateOrigin(originId, data);
-  return NextResponse.json({ id: originId });
+
+  if (!data.identifier || typeof data.identifier !== "string" || !data.identifier.trim()) {
+    return NextResponse.json({ error: "Identifier is required" }, { status: 400 });
+  }
+
+  try {
+    await updateOrigin(originId, data);
+    return NextResponse.json({ id: originId });
+  } catch (err: any) {
+    return NextResponse.json({ error: err.message ?? "Internal server error" }, { status: 500 });
+  }
 }
 
 export async function DELETE(_req: NextRequest, { params }: Params) {
@@ -29,6 +42,14 @@ export async function DELETE(_req: NextRequest, { params }: Params) {
 
   const { id } = await params;
   const originId = parseInt(id, 10);
-  await deleteOrigin(originId);
-  return NextResponse.json({ success: true });
+  if (isNaN(originId)) {
+    return NextResponse.json({ error: "Invalid ID" }, { status: 400 });
+  }
+
+  try {
+    await deleteOrigin(originId);
+    return NextResponse.json({ success: true });
+  } catch (err: any) {
+    return NextResponse.json({ error: err.message ?? "Internal server error" }, { status: 500 });
+  }
 }
