@@ -126,16 +126,16 @@ describe("OriginTransfer", () => {
   test("rechtes Suchfeld erscheint erst ab mehr als 5 ausgewählten Items", () => {
     const manyOrigins = Array.from({ length: 7 }, (_, i) => ({ id: i + 1, name: `Item ${i + 1}` }));
 
-    const { rerender } = render(
+    const { rerender, container } = render(
       <OriginTransfer allOrigins={manyOrigins} selectedIds={[1, 2, 3, 4, 5]} onChange={onChange} />,
     );
-    // 5 ausgewählt → noch kein zweites Suchfeld
-    expect(screen.getAllByPlaceholderText("Suchen...")).toHaveLength(1);
+    // 5 ausgewählt → rechtes Suchfeld fehlt noch
+    expect(container.querySelector("#search-selected-origins")).toBeNull();
 
     rerender(
       <OriginTransfer allOrigins={manyOrigins} selectedIds={[1, 2, 3, 4, 5, 6]} onChange={onChange} />,
     );
-    // 6 ausgewählt → zweites Suchfeld erscheint
-    expect(screen.getAllByPlaceholderText("Suchen...")).toHaveLength(2);
+    // 6 ausgewählt → rechtes Suchfeld erscheint
+    expect(container.querySelector("#search-selected-origins")).not.toBeNull();
   });
 });
