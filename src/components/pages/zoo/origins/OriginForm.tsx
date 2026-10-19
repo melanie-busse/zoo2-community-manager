@@ -9,6 +9,7 @@ import { toast } from "react-toastify";
 import { createOriginOnClient, updateOriginOnClient } from "@/service/frontend/Origin";
 import InfoAccordion from "@/components/page-structure/Elements/InfoAccordion";
 import InputField from "@/components/ui/form/InputField";
+import FormTextarea from "@/components/ui/form/Textarea";
 import Label from "@/components/ui/form/Label";
 import SubmitButton from "@/components/ui/form/SubmitButton";
 import FormGroup from "@/components/ui/form/styling/FormGroup";
@@ -112,17 +113,14 @@ export default function OriginForm({ origin, languages }: OriginFormProps) {
                     onChange={(e) => updateText(tx.languageCode, "originName", e.target.value)}
                   />
                 </FormGroup>
-                <FormGroup>
-                  <Label htmlFor={`desc-${tx.languageCode}`}>{t("form.description")}</Label>
-                  <InputField
-                    id={`desc-${tx.languageCode}`}
-                    type="text"
-                    value={tx.originDescription}
-                    onChange={(e) =>
-                      updateText(tx.languageCode, "originDescription", e.target.value)
-                    }
-                  />
-                </FormGroup>
+                <FormTextarea
+                  id={`desc-${tx.languageCode}`}
+                  label={t("form.description")}
+                  value={tx.originDescription}
+                  onChange={(e) =>
+                    updateText(tx.languageCode, "originDescription", e.target.value)
+                  }
+                />
               </LangCard>
             );
           })}
@@ -144,18 +142,10 @@ export default function OriginForm({ origin, languages }: OriginFormProps) {
 }
 
 const TranslationsGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-direction: column;
   gap: 16px;
   padding: 10px 0;
-
-  @media (max-width: 1024px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (max-width: 600px) {
-    grid-template-columns: 1fr;
-  }
 `;
 
 const LangCard = styled.div`
