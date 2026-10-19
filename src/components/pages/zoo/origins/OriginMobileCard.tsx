@@ -67,12 +67,6 @@ export default function OriginMobileCard({ origin }: { origin: OriginItem }) {
           )
         )}
       </CardHeaderRow>
-      {origin.identifier && (
-        <>
-          <CardDivider />
-          <small style={{ color: "#888", padding: "4px 0" }}>{origin.identifier}</small>
-        </>
-      )}
     </CardContainer>
   );
 }

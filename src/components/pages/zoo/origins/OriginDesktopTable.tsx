@@ -47,7 +47,6 @@ export default function OriginDesktopTable({ origins }: OriginDesktopTableProps)
         <tr>
           <th></th>
           <th>{t("name")}</th>
-          <th>{t("identifier")}</th>
           {isAdmin && <Styles.TableHeaderRight>{tCommon("actions")}</Styles.TableHeaderRight>}
         </tr>
       </thead>
@@ -77,7 +76,6 @@ export default function OriginDesktopTable({ origins }: OriginDesktopTableProps)
               <td>
                 <strong>{name}</strong>
               </td>
-              <td>{origin.identifier ?? "-"}</td>
               {isAdmin && (
                 <Styles.TableCellRight>
                   <ActionGroupBadge
