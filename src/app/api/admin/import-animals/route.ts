@@ -26,7 +26,7 @@ async function resolveOriginIds(pageTitle: string): Promise<number[]> {
     if (wikiIcons.length === 0) return [];
 
     const dbOrigins = await prisma.origin.findMany({
-      where: { wiki_icon_name: { in: wikiIcons } },
+      where: { identifier: { in: wikiIcons } },
       select: { id: true },
     });
     return dbOrigins.map((o) => o.id);

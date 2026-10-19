@@ -27,6 +27,7 @@ import Column from "@/components/ui/form/styling/Column";
 interface OriginOption {
   id: number;
   name: string;
+  identifier?: string | null;
 }
 
 interface BiomeGameWithBiomes {

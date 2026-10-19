@@ -102,7 +102,14 @@ export default function OriginTransfer({
                     height={28}
                     style={{ objectFit: "contain", flexShrink: 0 }}
                     onError={(e) => {
-                      (e.currentTarget as HTMLImageElement).style.display = "none";
+                      const el = e.currentTarget as HTMLImageElement;
+                      if (el.src.endsWith(".png")) {
+                        el.src = el.src.replace(".png", ".jpg");
+                      } else if (el.src.endsWith(".jpg")) {
+                        el.src = el.src.replace(".jpg", ".webp");
+                      } else {
+                        el.style.display = "none";
+                      }
                     }}
                   />
                 )}
@@ -150,7 +157,14 @@ export default function OriginTransfer({
                     height={28}
                     style={{ objectFit: "contain", flexShrink: 0 }}
                     onError={(e) => {
-                      (e.currentTarget as HTMLImageElement).style.display = "none";
+                      const el = e.currentTarget as HTMLImageElement;
+                      if (el.src.endsWith(".png")) {
+                        el.src = el.src.replace(".png", ".jpg");
+                      } else if (el.src.endsWith(".jpg")) {
+                        el.src = el.src.replace(".jpg", ".webp");
+                      } else {
+                        el.style.display = "none";
+                      }
                     }}
                   />
                 )}

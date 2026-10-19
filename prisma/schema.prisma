@@ -56,8 +56,6 @@ model BiomesText {
 model Origin {
   id                Int                 @id @unique(map: "originindex") @default(autoincrement())
   identifier        String?             @db.VarChar(255)
-  wiki_icon_name    String?             @db.VarChar(255)
-  image             String?             @db.VarChar(255)
   animalorigin      AnimalOrigin[]
   origintext        OriginText[]
   specialcoatorigin SpecialCoatOrigin[]
@@ -414,6 +412,7 @@ model RegionText {
   regionid     Int
   languageCode String @db.VarChar(255)
   name         String @db.VarChar(255)
+  description  String @db.VarChar(255)
   region       Region @relation(fields: [regionid], references: [id], onDelete: Cascade, map: "regionText_regionId_fkey")
 
   @@index([regionid], map: "regionText_regionId_idx")
@@ -717,7 +716,7 @@ model BiomeShelter {
 model BiomeGame {
   id              Int             @id @default(autoincrement())
   identifier      String          @db.VarChar(255)
-  biomeIdentifier String          @db.VarChar(255) @default("")
+  biomeIdentifier String          @default("") @db.VarChar(255)
   price           Int
   pricetype       Int
   repair          Int
