@@ -1,5 +1,6 @@
 {
   "shops": "Butikker",
+  "shop_name": "Navn",
   "coins_per_client": "Mønter / Klient",
   "add_shop": "Tilføj butik",
   "edit_shop": "Rediger butik",

@@ -1,5 +1,6 @@
 {
   "shops": "Boutiques",
+  "shop_name": "Nom",
   "coins_per_client": "Pièces / Client",
   "add_shop": "Ajouter une boutique",
   "edit_shop": "Modifier la boutique",

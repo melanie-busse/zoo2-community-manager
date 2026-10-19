@@ -1,5 +1,6 @@
 {
   "shops": "Tiendas",
+  "shop_name": "Nombre",
   "coins_per_client": "Monedas / Cliente",
   "add_shop": "Añadir tienda",
   "edit_shop": "Editar tienda",

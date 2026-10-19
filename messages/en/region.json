@@ -1,5 +1,6 @@
 {
   "shops": "Shops",
+  "shop_name": "Name",
   "coins_per_client": "Coins / Client",
   "add_shop": "Add shop",
   "edit_shop": "Edit shop",

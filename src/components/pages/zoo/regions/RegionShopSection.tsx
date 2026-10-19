@@ -103,7 +103,7 @@ function ShopModal({ mode, shop, regionId, onClose, onSaved }: ShopModalProps) {
     if (isSubmitting) return;
 
     if (!name.trim()) {
-      toast.warn(tRegion("shop_name") + " " + tCommon("required_hint", { defaultValue: "ist Pflichtfeld" }));
+      toast.warn(tRegion("shop_name") + " ist Pflichtfeld");
       return;
     }
 
