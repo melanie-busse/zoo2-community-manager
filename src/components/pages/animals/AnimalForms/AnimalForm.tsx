@@ -29,14 +29,22 @@ interface OriginOption {
   name: string;
 }
 
+interface BiomeGameWithBiomes {
+  id: number;
+  identifier: string;
+  texts: { name: string }[];
+  biomes: { id: number }[];
+}
+
 interface AnimalFormProps {
   animal?: Animal;
   languages: Array<{ code: string; name: string }>;
   biomes: Biome[];
+  biomeGames: BiomeGameWithBiomes[];
   originsData: OriginOption[];
 }
 
-export default function AnimalForm({ animal, languages, biomes, originsData }: AnimalFormProps) {
+export default function AnimalForm({ animal, languages, biomes, biomeGames, originsData }: AnimalFormProps) {
   const tAnimals = useTranslations("animal");
   const tCommon = useTranslations("common");
 
@@ -102,7 +110,7 @@ export default function AnimalForm({ animal, languages, biomes, originsData }: A
       <FormGrid>
         <Column>
           <BasicInfoSection formData={formData} setFormData={setFormData} />
-          <EnclosureTypeSection formData={formData} setFormData={setFormData} biomes={biomes} />
+          <EnclosureTypeSection formData={formData} setFormData={setFormData} biomes={biomes} biomeGames={biomeGames} />
           <AnimalTranslationSection
             formData={formData}
             setFormData={setFormData}

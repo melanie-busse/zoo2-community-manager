@@ -1,0 +1,31 @@
+{
+  "overview_title": "Dekorationen",
+  "overview_unit": "Dekorationen",
+  "name": "Name",
+  "price": "Preis",
+  "popularity": "Beliebtheit",
+  "biome": "Biom",
+  "search_placeholder": "Dekorationen suchen...",
+  "emptyState": {
+    "title": "Keine Dekoration gefunden!"
+  },
+  "identifier": "Identifier",
+  "form": {
+    "create_decoration": "Dekoration anlegen",
+    "edit_decoration": "Dekoration bearbeiten",
+    "save_decoration": "Dekoration speichern",
+    "basic_info": "Stammdaten",
+    "translations": "Übersetzungen",
+    "currency": "Währung",
+    "biome": "Biom",
+    "messages": {
+      "createSuccess": "Dekoration erfolgreich angelegt",
+      "editSuccess": "Dekoration erfolgreich aktualisiert",
+      "requiredIdentifier": "Identifier ist ein Pflichtfeld.",
+      "requiredBiome": "Bitte ein Biom auswählen.",
+      "deleteSuccess": "Dekoration erfolgreich gelöscht",
+      "deleteErrorTitle": "Dekoration löschen",
+      "confirmDelete": "Möchtest du diese Dekoration wirklich löschen?"
+    }
+  }
+}

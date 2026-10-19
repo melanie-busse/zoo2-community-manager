@@ -23,7 +23,7 @@ export async function getInventoryStatistics(
   locale: string = "de",
 ): Promise<InventoryBiomeStatistic[]> {
   try {
-    const [biomes, inventoryAnimals, inventorySpecialCoats, inventoryStatues, inventoryContestCoats] =
+    const [biomes, inventoryAnimals, inventorySpecialCoats, inventoryStatues, inventoryContestCoats, inventoryBiomes] =
       await Promise.all([
         prisma.biome.findMany({
           include: {
@@ -35,6 +35,7 @@ export async function getInventoryStatistics(
                 shelter: { select: { level: true } },
               },
             },
+            _count: { select: { games: true, biomeDecorations: true } },
           },
           orderBy: { id: "asc" },
         }),
@@ -42,7 +43,10 @@ export async function getInventoryStatistics(
         prisma.zooInventorySpecialCoat.findMany({ where: { userid: userId } }),
         prisma.zooInventoryStatue.findMany({ where: { userid: userId } }),
         prisma.zooInventoryContestSpecialCoat.findMany({ where: { userid: userId } }),
+        prisma.zooInventoryBiome.findMany({ where: { userid: userId } }),
       ]);
+
+    const inventoryBiomeMap = new Map(inventoryBiomes.map((b) => [b.biomeId, b]));
 
     const ownedAnimalIds = new Set(
       inventoryAnimals.filter((i) => (i.count ?? 0) >= 1).map((i) => i.animalId),
@@ -61,6 +65,14 @@ export async function getInventoryStatistics(
       const animals = biome.animals;
       const shelterLevelCounts: Record<number, number> = {};
       const ownedShelterLevelCounts: Record<number, number> = {};
+
+      const inv = inventoryBiomeMap.get(biome.id);
+      const userShelterLevelCounts: Record<number, number> = {
+        0: inv?.shelterLevel0 ?? 0,
+        1: inv?.shelterLevel1 ?? 0,
+        2: inv?.shelterLevel2 ?? 0,
+        3: inv?.shelterLevel3 ?? 0,
+      };
 
       for (const animal of animals) {
         const level = animal.shelter?.level ?? 0;
@@ -99,6 +111,9 @@ export async function getInventoryStatistics(
           (sc) => sc.isContestSpecialCoat && ownedContestCoatIds.has(sc.id),
         ).length,
         ownedShelterLevelCounts,
+        userShelterLevelCounts,
+        totalGames: biome._count.games,
+        totalDecorations: biome._count.biomeDecorations,
       };
     });
   } catch (error) {

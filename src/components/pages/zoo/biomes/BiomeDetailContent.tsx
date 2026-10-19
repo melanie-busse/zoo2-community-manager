@@ -10,6 +10,7 @@ import { toast } from "react-toastify";
 import BiomeHeaderCard from "./BiomeHeaderCard";
 import ShelterLevelCard from "./ShelterLevelCard";
 import BiomeGameCard from "./BiomeGameCard";
+import BiomeDecorationCard from "./BiomeDecorationCard";
 import BiomeTroughWaterCard from "./BiomeTroughWaterCard";
 import ActionGroupBadge from "@/components/ui/badges/ActionGroupBadge";
 import { hasMinimumRole } from "@/utils/roleUtils";
@@ -44,18 +45,29 @@ interface BiomeGame {
   texts: { name: string }[];
 }
 
+interface BiomeDecoration {
+  id: number;
+  identifier: string;
+  price: number;
+  pricetype: number;
+  popularity: number;
+  texts: { name: string }[];
+}
+
 interface Biome {
   id: number;
   identifier: string;
   price: number | null;
   expansionsCost: number | null;
   size: number | null;
+  buildTime: number | null;
   biomestext: { biomeName: string }[];
   priceType: { name: string } | null;
   shelters: ShelterLevel[];
   troughs: TroughOrWater[];
   waterHoles: TroughOrWater[];
   games: BiomeGame[];
+  biomeDecorations: BiomeDecoration[];
 }
 
 interface BiomeDetailContentProps {
@@ -109,7 +121,7 @@ export default function BiomeDetailContent({ biome }: BiomeDetailContentProps) {
           <CardWrapper>
             <BiomeTroughWaterCard
               title={t("form.troughs")}
-              imagePath={`/images/biomes/${biome.identifier}/trough.webp`}
+              imagePath={`/images/biomes/${biome.identifier}/trough.jpg`}
               items={biome.troughs}
               showRepair={false}
             />
@@ -117,15 +129,17 @@ export default function BiomeDetailContent({ biome }: BiomeDetailContentProps) {
           <CardWrapper>
             <BiomeTroughWaterCard
               title={t("form.water_holes")}
-              imagePath={`/images/biomes/${biome.identifier}/water_hole.webp`}
+              imagePath={`/images/biomes/${biome.identifier}/water_hole.jpg`}
               items={biome.waterHoles}
             />
           </CardWrapper>
         </SideBySideRow>
       )}
 
-      {biome.games.length > 0 && (
-        <BiomeGameCard games={biome.games} />
+      {biome.games.length > 0 && <BiomeGameCard games={biome.games} />}
+
+      {biome.biomeDecorations.length > 0 && (
+        <BiomeDecorationCard decorations={biome.biomeDecorations} biomeIdentifier={biome.identifier} />
       )}
     </DetailWrapper>
   );

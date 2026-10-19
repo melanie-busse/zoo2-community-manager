@@ -49,6 +49,20 @@ export const navConfig: NavItem[] = [
         requiresAuth: true,
         minimumRole: "Director",
       },
+      { labelKey: "games", href: "/zoo/games", requiresAuth: false },
+      {
+        labelKey: "game_create",
+        href: "/zoo/games/create",
+        requiresAuth: true,
+        minimumRole: "Director",
+      },
+      { labelKey: "decorations", href: "/zoo/decorations", requiresAuth: false },
+      {
+        labelKey: "decoration_create",
+        href: "/zoo/decorations/create",
+        requiresAuth: true,
+        minimumRole: "Director",
+      },
     ],
   },
   {
@@ -136,6 +150,11 @@ export const navConfig: NavItem[] = [
       {
         labelKey: "inventory_regions",
         href: "/zooInventory/regions",
+        requiresAuth: true,
+      },
+      {
+        labelKey: "inventory_biomes",
+        href: "/zooInventory/biomes",
         requiresAuth: true,
       },
     ],

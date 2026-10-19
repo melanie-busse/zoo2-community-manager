@@ -75,6 +75,8 @@ export default function ZooSummaryCard({
   const totalDiamond = biomeStatistics.reduce((s, b) => s + b.animalsForDiamond, 0);
   const totalContestStatues = biomeStatistics.reduce((s, b) => s + b.contestStatues, 0);
   const totalContestSpecialCoats = biomeStatistics.reduce((s, b) => s + b.contestSpecialCoats, 0);
+  const totalGames = biomeStatistics.reduce((s, b) => s + b.totalGames, 0);
+  const totalDecorations = biomeStatistics.reduce((s, b) => s + b.totalDecorations, 0);
   const shelterTotals = shelterLevels.map((level) =>
     biomeStatistics.reduce((s, b) => s + (b.shelterLevelCounts[level] ?? 0), 0),
   );
@@ -100,12 +102,28 @@ export default function ZooSummaryCard({
             <strong>{regionStatistics.totalBreedingSlots}</strong>
           </StatRow>
           <StatRow>
-            <span>{t("regions.biomes")}</span>
+            <span>{t("regions.terrains")}</span>
+            <strong>{regionStatistics.totalTerrains}</strong>
+          </StatRow>
+        </StatSection>
+      </CardStatsRow>
+
+      <CardDivider />
+
+      <CardStatsRow>
+        <StatSection>
+          <SectionTitle>{t("biome.title")}</SectionTitle>
+          <StatRow>
+            <span>{t("biome.total")}</span>
             <strong>{regionStatistics.totalBiomes}</strong>
           </StatRow>
           <StatRow>
-            <span>{t("regions.terrains")}</span>
-            <strong>{regionStatistics.totalTerrains}</strong>
+            <span>{t("biome.games")}</span>
+            <strong>{totalGames}</strong>
+          </StatRow>
+          <StatRow>
+            <span>{t("biome.decorations")}</span>
+            <strong>{totalDecorations}</strong>
           </StatRow>
         </StatSection>
       </CardStatsRow>

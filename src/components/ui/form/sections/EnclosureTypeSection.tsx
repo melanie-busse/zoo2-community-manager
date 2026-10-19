@@ -9,16 +9,25 @@ import { Biome } from "@/types/biome";
 import SectionColumn from "@/components/ui/form/styling/SectionColumn";
 import Label from "@/components/ui/form/Label";
 
+interface BiomeGameWithBiomes {
+  id: number;
+  identifier: string;
+  texts: { name: string }[];
+  biomes: { id: number }[];
+}
+
 interface EnclosureTypeSectionProps {
   formData: any;
   setFormData: React.Dispatch<React.SetStateAction<any>>;
   biomes: Biome[];
+  biomeGames: BiomeGameWithBiomes[];
 }
 
 export default function EnclosureTypeSection({
   formData,
   setFormData,
   biomes = [],
+  biomeGames = [],
 }: EnclosureTypeSectionProps) {
   const tBiome = useTranslations("biome");
   const tCommon = useTranslations("common");
@@ -30,11 +39,32 @@ export default function EnclosureTypeSection({
       }))
     : [];
 
+  const selectedBiomeId = formData?.biomeId ? parseInt(formData.biomeId, 10) : null;
+
+  const filteredGameOptions = selectedBiomeId
+    ? biomeGames
+        .filter((g) => g.biomes.some((b) => b.id === selectedBiomeId))
+        .map((g) => ({
+          value: g.id.toString(),
+          label: g.texts?.[0]?.name || g.identifier,
+        }))
+    : [];
+
   const handleBiomeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const val = e.target.value;
+    const newBiomeId = val ? parseInt(val, 10) : null;
+    setFormData((prev: any) => ({
+      ...prev,
+      biomeId: newBiomeId,
+      biomeGameId: null,
+    }));
+  };
+
+  const handleGameChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const val = e.target.value;
     setFormData((prev: any) => ({
       ...prev,
-      biomeId: val ? parseInt(val, 10) : null,
+      biomeGameId: val ? parseInt(val, 10) : null,
     }));
   };
 
@@ -54,6 +84,20 @@ export default function EnclosureTypeSection({
           options={biomeOptions}
           $width="100%"
           placeholder={tCommon("pleaseSelect")}
+        />
+      </SectionColumn>
+
+      <SectionColumn>
+        <Label htmlFor="biomeGameId">{tBiome("game")}</Label>
+        <Selectbox
+          id="biomeGameId"
+          name="biomeGameId"
+          value={formData?.biomeGameId?.toString() ?? ""}
+          onChange={handleGameChange}
+          options={filteredGameOptions}
+          $width="100%"
+          placeholder={tCommon("pleaseSelect")}
+          disabled={!selectedBiomeId}
         />
       </SectionColumn>
     </InfoAccordion>

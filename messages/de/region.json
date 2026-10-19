@@ -1,5 +1,6 @@
 {
   "overview_title": "Regionen",
+  "overview_unit": "Regionen",
   "detail_title": "Region",
   "name": "Name",
   "unlock_level": "Freischalt-Level",
@@ -20,6 +21,7 @@
   "design_boutique": "Designer Boutique",
   "clubhouse": "Clubhaus",
   "terrain": "Gelände",
+  "map": "Karte",
   "inventory": {
     "title": "Meine Regionen",
     "owned": "Habe ich",
@@ -48,5 +50,9 @@
       "deleteSuccess": "Region erfolgreich gelöscht",
       "requiredIdentifier": "Identifier ist ein Pflichtfeld."
     }
+  },
+  "search_placeholder": "Regionen suchen...",
+  "emptyState": {
+    "title": "Keine Region gefunden!"
   }
 }

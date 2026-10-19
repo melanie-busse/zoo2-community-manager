@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { useSession } from "next-auth/react";
@@ -10,21 +10,18 @@ import Table from "@/components/page-structure/Table/Table";
 import * as Styles from "@/components/page-structure/Table/Table.styles";
 import ActionGroupBadge from "@/components/ui/badges/ActionGroupBadge";
 import PriceBadge from "@/components/ui/badges/PriceBadge";
+import EmptyState from "@/components/elements/EmptyState/EmptyState";
+import ResultsInfo from "@/components/elements/Filter/ResultInfo";
 import { hasMinimumRole } from "@/utils/roleUtils";
 import { confirmDeleteDialog } from "@/utils/alerts";
 import { deleteBiomeOnClient } from "@/service/frontend/Biome";
-
-interface Biome {
-  id: number;
-  identifier: string;
-  price: number | null;
-  expansionsCost: number | null;
-  biomestext: { biomeName: string }[];
-  priceType: { name: string } | null;
-}
+import { useBiomeStore } from "@/store/useBiomeStore";
+import type { BiomeItem } from "@/store/useBiomeStore";
+import BiomeFilter from "./BiomeFilter";
+import BiomePagination from "./BiomePagination";
 
 interface BiomeOverviewContentProps {
-  biomes: Biome[];
+  biomes: BiomeItem[];
 }
 
 export default function BiomeOverviewContent({ biomes }: BiomeOverviewContentProps) {
@@ -33,6 +30,14 @@ export default function BiomeOverviewContent({ biomes }: BiomeOverviewContentPro
   const router = useRouter();
   const { data: session } = useSession();
   const isAdmin = hasMinimumRole(session, "Director");
+
+  const setInitialBiomes = useBiomeStore((state) => state.setInitialBiomes);
+  const currentItems = useBiomeStore((state) => state.currentItems);
+  const filteredCount = useBiomeStore((state) => state.filteredCount);
+
+  useEffect(() => {
+    setInitialBiomes(biomes);
+  }, [biomes, setInitialBiomes]);
 
   const handleDelete = async (id: number) => {
     const confirmed = await confirmDeleteDialog({
@@ -52,71 +57,84 @@ export default function BiomeOverviewContent({ biomes }: BiomeOverviewContentPro
   };
 
   return (
-    <Table>
-      <thead>
-        <tr>
-          <th></th>
-          <th>{t("name")}</th>
-          <Styles.TableHeaderRight>{t("price")}</Styles.TableHeaderRight>
-          <Styles.TableHeaderRight>{t("expansion_cost")}</Styles.TableHeaderRight>
-          {isAdmin && <Styles.TableHeaderRight>{tCommon("actions")}</Styles.TableHeaderRight>}
-        </tr>
-      </thead>
-      <tbody>
-        {biomes.map((biome) => {
-          const name = biome.biomestext[0]?.biomeName ?? biome.identifier;
-          const imgSrc = `/images/biomes/${biome.identifier}/area.webp`;
-          const badgeType: "Zoodollar" | "Diamond" =
-            biome.priceType?.name === "Diamond" ? "Diamond" : "Zoodollar";
-
-          return (
-            <tr key={biome.id}>
-              <td>
-                <Styles.TableThumbnail>
-                  <Image
-                    src={imgSrc}
-                    alt={name}
-                    width={64}
-                    height={64}
-                    style={{ objectFit: "cover", borderRadius: 4 }}
-                  />
-                </Styles.TableThumbnail>
-              </td>
-              <td>
-                <strong
-                  style={{ cursor: "pointer", color: "#2d5a27" }}
-                  onClick={() => router.push(`/zoo/biomes/${biome.id}`)}
-                >
-                  {name}
-                </strong>
-              </td>
-              <Styles.TableCellRight>
-                {biome.price != null ? (
-                  <PriceBadge value={biome.price} type={badgeType} />
-                ) : (
-                  "—"
-                )}
-              </Styles.TableCellRight>
-              <Styles.TableCellRight>
-                {biome.expansionsCost != null ? (
-                  <PriceBadge value={biome.expansionsCost} type={badgeType} />
-                ) : (
-                  "—"
-                )}
-              </Styles.TableCellRight>
-              {isAdmin && (
-                <Styles.TableCellRight>
-                  <ActionGroupBadge
-                    id={biome.id}
-                    onEdit={() => router.push(`/zoo/biomes/${biome.id}/edit`)}
-                    onDelete={() => handleDelete(biome.id)}
-                  />
-                </Styles.TableCellRight>
-              )}
+    <>
+      <BiomeFilter />
+      <ResultsInfo currentCount={currentItems.length} totalCount={filteredCount} unit={t("overview_unit")} />
+      {currentItems.length > 0 ? (
+        <Table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>{t("name")}</th>
+              <Styles.TableHeaderRight>{t("price")}</Styles.TableHeaderRight>
+              <Styles.TableHeaderRight>{t("expansion_cost")}</Styles.TableHeaderRight>
+              {isAdmin && <Styles.TableHeaderRight>{tCommon("actions")}</Styles.TableHeaderRight>}
             </tr>
-          );
-        })}
-      </tbody>
-    </Table>
+          </thead>
+          <tbody>
+            {currentItems.map((biome) => {
+              const name = biome.biomestext[0]?.biomeName ?? biome.identifier;
+              const imgSrc = `/images/biomes/${biome.identifier}/area.webp`;
+              const badgeType: "Zoodollar" | "Diamond" =
+                biome.priceType?.name === "Diamond" ? "Diamond" : "Zoodollar";
+
+              return (
+                <tr key={biome.id}>
+                  <td>
+                    <Styles.TableThumbnail>
+                      <Image
+                        src={imgSrc}
+                        alt={name}
+                        width={64}
+                        height={64}
+                        style={{ objectFit: "cover", borderRadius: 4 }}
+                      />
+                    </Styles.TableThumbnail>
+                  </td>
+                  <td>
+                    <strong
+                      style={{ cursor: "pointer", color: "#2d5a27" }}
+                      onClick={() => router.push(`/zoo/biomes/${biome.id}`)}
+                    >
+                      {name}
+                    </strong>
+                  </td>
+                  <Styles.TableCellRight>
+                    {biome.price != null ? (
+                      <PriceBadge value={biome.price} type={badgeType} />
+                    ) : (
+                      "—"
+                    )}
+                  </Styles.TableCellRight>
+                  <Styles.TableCellRight>
+                    {biome.expansionsCost != null ? (
+                      <PriceBadge value={biome.expansionsCost} type={badgeType} />
+                    ) : (
+                      "—"
+                    )}
+                  </Styles.TableCellRight>
+                  {isAdmin && (
+                    <Styles.TableCellRight>
+                      <ActionGroupBadge
+                        id={biome.id}
+                        onEdit={() => router.push(`/zoo/biomes/${biome.id}/edit`)}
+                        onDelete={() => handleDelete(biome.id)}
+                      />
+                    </Styles.TableCellRight>
+                  )}
+                </tr>
+              );
+            })}
+          </tbody>
+        </Table>
+      ) : (
+        <EmptyState
+          object="biomes"
+          title={t("emptyState.title")}
+          message={tCommon("emptyState.message")}
+        />
+      )}
+      <BiomePagination />
+    </>
   );
 }

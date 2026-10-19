@@ -1,5 +1,6 @@
 {
   "overview_title": "Régions",
+  "overview_unit": "Régions",
   "detail_title": "Région",
   "name": "Nom",
   "unlock_level": "Niveau de déverrouillage",
@@ -20,6 +21,7 @@
   "design_boutique": "Boutique de créateur",
   "clubhouse": "Maison de club",
   "terrain": "Terrain",
+  "map": "Carte",
   "inventory": {
     "title": "Mes régions",
     "owned": "Je l'ai",
@@ -48,5 +50,9 @@
       "deleteSuccess": "Région supprimée avec succès",
       "requiredIdentifier": "L'identifiant est un champ obligatoire."
     }
+  },
+  "search_placeholder": "Rechercher des régions...",
+  "emptyState": {
+    "title": "Aucune région trouvée !"
   }
 }

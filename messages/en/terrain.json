@@ -1,5 +1,6 @@
 {
   "overview_title": "Terrain Types",
+  "overview_unit": "Terrain Types",
   "name": "Name",
   "identifier": "Identifier",
   "region": "Region",
@@ -17,5 +18,9 @@
       "deleteSuccess": "Terrain type successfully deleted",
       "requiredIdentifier": "Identifier is a required field."
     }
+  },
+  "search_placeholder": "Search terrain types...",
+  "emptyState": {
+    "title": "No terrain type found!"
   }
 }

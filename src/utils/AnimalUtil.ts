@@ -7,6 +7,7 @@ interface FilterOptions {
   searchTerm: string;
   selectedBiome: string | null;
   selectedShelterLevel: string | null;
+  selectedBiomeGame?: string | null;
   hasStatueFilter?: boolean;
   filterRegionId?: number | null;
   filterLevel10?: boolean;
@@ -26,6 +27,7 @@ export function filterAnimals(
     searchTerm,
     selectedBiome,
     selectedShelterLevel,
+    selectedBiomeGame = null,
     hasStatueFilter = false,
     filterRegionId = null,
     filterLevel10 = false,
@@ -51,6 +53,10 @@ export function filterAnimals(
     }
 
     if (selectedShelterLevel !== null && String(animal.shelter?.level ?? 0) !== selectedShelterLevel) {
+      return false;
+    }
+
+    if (selectedBiomeGame !== null && animal.biomeGame?.identifier !== selectedBiomeGame) {
       return false;
     }
 

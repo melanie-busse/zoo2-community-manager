@@ -9,8 +9,13 @@
     "title": "Regioner",
     "total": "Antal:",
     "breedingSlots": "Avlspladser:",
-    "biomes": "Biomer:",
     "terrains": "Terræntyper:"
+  },
+  "biome": {
+    "title": "Biomer",
+    "total": "Antal:",
+    "games": "Legeudstyr:",
+    "decorations": "Dekorationer:"
   },
   "animals": {
     "title": "Dyr",

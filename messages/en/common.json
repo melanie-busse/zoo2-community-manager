@@ -33,6 +33,7 @@
   "description": "Description",
   "descriptionPlaceholder": "Enter description here...",
   "pleaseSelect": "Please select...",
+  "searchPlaceholder": "Search...",
   "loading": "Loading...",
   "loading_data": "Loading data...",
   "buttons": {
@@ -47,6 +48,8 @@
   "filter": {
     "search_placeholder": "Search for animals...",
     "all_enclosures": "All Enclosures",
+    "all_games": "All Enrichment Items",
+    "all_biomes": "All Biomes",
     "all_levels": "All Shelter Levels",
     "all_status": "All Statuses",
     "all_regions": "All Regions",

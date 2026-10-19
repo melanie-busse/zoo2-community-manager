@@ -23,6 +23,13 @@ const txMock = {
     deleteMany: vi.fn(),
     createMany: vi.fn(),
   },
+  biomeGame: {
+    update: vi.fn(),
+  },
+  biomeGameText: {
+    deleteMany: vi.fn(),
+    createMany: vi.fn(),
+  },
 };
 
 vi.mock("@/lib/prisma", () => ({
@@ -35,6 +42,7 @@ vi.mock("@/lib/prisma", () => ({
     },
     biomeGame: {
       findMany: vi.fn(),
+      findUnique: vi.fn(),
     },
     biomesText: {
       deleteMany: vi.fn(),
@@ -53,8 +61,10 @@ import {
   getAllBiomeGames,
   getBiomeById,
   getBiomeByIdForEdit,
+  getBiomeGameById,
   createBiome,
   updateBiome,
+  updateBiomeGame,
   deleteBiome,
 } from "./BiomeService";
 
@@ -326,5 +336,70 @@ describe("BiomeService", () => {
     expect(prisma.$transaction).toHaveBeenCalledTimes(1);
     expect(prisma.biomesText.deleteMany).toHaveBeenCalledWith({ where: { biomeId: 9 } });
     expect(prisma.biome.delete).toHaveBeenCalledWith({ where: { id: 9 } });
+  });
+
+  // ── getBiomeGameById ──────────────────────────────────────────────────────
+  test("getBiomeGameById calls findUnique with id and includes texts", async () => {
+    const mockGame = { id: 1, identifier: "play_pond", biomeIdentifier: "grassland", texts: [] };
+    vi.mocked(prisma.biomeGame.findUnique).mockResolvedValue(mockGame as any);
+
+    const result = await getBiomeGameById(1);
+
+    expect(prisma.biomeGame.findUnique).toHaveBeenCalledWith({
+      where: { id: 1 },
+      include: { texts: true },
+    });
+    expect(result).toEqual(mockGame);
+  });
+
+  test("getBiomeGameById returns null when game not found", async () => {
+    vi.mocked(prisma.biomeGame.findUnique).mockResolvedValue(null);
+    const result = await getBiomeGameById(999);
+    expect(result).toBeNull();
+  });
+
+  // ── updateBiomeGame ───────────────────────────────────────────────────────
+  describe("updateBiomeGame", () => {
+    const baseData = {
+      price: 500,
+      pricetype: 1,
+      repair: 100,
+      repairpricetype: 2,
+      texts: [{ languageCode: "de", name: "Hüpfburg" }],
+    };
+
+    beforeEach(() => {
+      txMock.biomeGame.update.mockResolvedValue({});
+      txMock.biomeGameText.deleteMany.mockResolvedValue({});
+      txMock.biomeGameText.createMany.mockResolvedValue({});
+    });
+
+    test("updates core fields", async () => {
+      await updateBiomeGame(5, baseData);
+      expect(txMock.biomeGame.update).toHaveBeenCalledWith({
+        where: { id: 5 },
+        data: { price: 500, pricetype: 1, repair: 100, repairpricetype: 2 },
+      });
+    });
+
+    test("replaces texts (delete + recreate), skipping empty names", async () => {
+      await updateBiomeGame(5, {
+        ...baseData,
+        texts: [
+          { languageCode: "de", name: "Hüpfburg" },
+          { languageCode: "en", name: "" },
+        ],
+      });
+      expect(txMock.biomeGameText.deleteMany).toHaveBeenCalledWith({ where: { gameId: 5 } });
+      expect(txMock.biomeGameText.createMany).toHaveBeenCalledWith({
+        data: [{ gameId: 5, languageCode: "de", name: "Hüpfburg" }],
+      });
+    });
+
+    test("does not call biomeGameText.createMany when all names are empty", async () => {
+      await updateBiomeGame(5, { ...baseData, texts: [{ languageCode: "de", name: "" }] });
+      expect(txMock.biomeGameText.deleteMany).toHaveBeenCalled();
+      expect(txMock.biomeGameText.createMany).not.toHaveBeenCalled();
+    });
   });
 });

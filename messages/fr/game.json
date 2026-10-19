@@ -1,0 +1,29 @@
+{
+  "overview_title": "Éléments d'enrichissement",
+  "overview_unit": "Jouets",
+  "name": "Nom",
+  "price": "Prix",
+  "repair": "Coûts de réparation",
+  "search_placeholder": "Rechercher des éléments d'enrichissement...",
+  "emptyState": {
+    "title": "Aucun élément d'enrichissement trouvé !"
+  },
+  "identifier": "Identifiant",
+  "biome_identifier": "Identifiant de biome",
+  "form": {
+    "create_game": "Ajouter un élément d'enrichissement",
+    "edit_game": "Modifier l'élément d'enrichissement",
+    "save_game": "Enregistrer l'élément d'enrichissement",
+    "basic_info": "Informations de base",
+    "translations": "Traductions",
+    "currency": "Devise",
+    "messages": {
+      "createSuccess": "Élément d'enrichissement créé.",
+      "editSuccess": "Élément d'enrichissement mis à jour.",
+      "requiredIdentifier": "L'identifiant est obligatoire.",
+      "deleteSuccess": "Élément d'enrichissement supprimé.",
+      "deleteErrorTitle": "Supprimer l'élément d'enrichissement",
+      "confirmDelete": "Voulez-vous vraiment supprimer cet élément d'enrichissement ?"
+    }
+  }
+}

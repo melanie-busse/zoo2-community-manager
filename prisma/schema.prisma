@@ -24,6 +24,7 @@ model Biome {
   expansionsCost            Int?
   priceTypeExpansionsCostId Int?
   size                      Int?
+  buildTime                 Int?
   regionId                  Int?
   animals                   Animal[]
   priceType                 PriceType?        @relation(fields: [priceTypeId], references: [id])
@@ -761,4 +762,30 @@ model BiomeDecorationText {
 
   @@index([decorationId])
   @@map("biomedecorationtext")
+}
+
+model ZooInventoryBiome {
+  id            Int     @id @default(autoincrement())
+  userid        Int
+  biomeId       Int
+  enclosure     Boolean @default(false)
+  trough        Boolean @default(false)
+  waterHole     Boolean @default(false)
+  shelterLevel0 Int     @default(0)
+  shelterLevel1 Int     @default(0)
+  shelterLevel2 Int     @default(0)
+  shelterLevel3 Int     @default(0)
+
+  @@unique([userid, biomeId])
+  @@map("zooinventorybiome")
+}
+
+model ZooInventoryBiomeGame {
+  id          Int @id @default(autoincrement())
+  userid      Int
+  biomeGameId Int
+  count       Int @default(0)
+
+  @@unique([userid, biomeGameId])
+  @@map("zooinventorybiomegame")
 }

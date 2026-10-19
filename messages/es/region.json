@@ -1,5 +1,6 @@
 {
   "overview_title": "Regiones",
+  "overview_unit": "Regiones",
   "detail_title": "Región",
   "name": "Nombre",
   "unlock_level": "Nivel de desbloqueo",
@@ -20,6 +21,7 @@
   "design_boutique": "Boutique de diseñador",
   "clubhouse": "Casa club",
   "terrain": "Terreno",
+  "map": "Mapa",
   "inventory": {
     "title": "Mis regiones",
     "owned": "Lo tengo",
@@ -48,5 +50,9 @@
       "deleteSuccess": "Región eliminada correctamente",
       "requiredIdentifier": "El identificador es un campo obligatorio."
     }
+  },
+  "search_placeholder": "Buscar regiones...",
+  "emptyState": {
+    "title": "¡No se encontró ninguna región!"
   }
 }

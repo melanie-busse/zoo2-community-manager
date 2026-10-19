@@ -1,17 +1,22 @@
 {
   "enclosure": "Verblijf",
   "enclosureType": "Verblijftype",
+  "game": "Verrijkingsitem",
   "shelterLevel": "Stalniveau",
   "noBiome": "Geen verblijf",
   "overview_title": "Biomen",
+  "overview_unit": "Biomen",
   "name": "Naam",
   "identifier": "Identifier",
   "price": "Prijs",
   "price_type": "Prijstype",
   "expansion_cost": "Uitbreidingskosten",
   "size": "Grootte",
+  "build_time": "Bouwtijd",
   "region": "Regio",
   "games": "Speelgoed",
+  "decorations": "Decoraties",
+  "popularity": "Populariteit",
   "repair": "Reparatie",
   "repair_price_type": "Rep. valuta",
   "shelter_levels": "Stalniveaus",
@@ -32,6 +37,9 @@
     "language": "Taal",
     "biome_name": "Naam",
     "biome_description": "Beschrijving",
+    "build_time_h": "u",
+    "build_time_m": "min",
+    "build_time_s": "sec",
     "troughs": "Trog",
     "water_holes": "Drinkplaats",
     "messages": {
@@ -42,5 +50,17 @@
       "deleteSuccess": "Bioom succesvol verwijderd",
       "requiredIdentifier": "Identifier is een verplicht veld."
     }
+  },
+  "search_placeholder": "Biomen zoeken...",
+  "emptyState": {
+    "title": "Geen bioom gevonden!"
+  },
+  "inventory": {
+    "title": "Bioom Inventaris",
+    "enclosure": "Verblijf",
+    "trough": "Drinkbak",
+    "water_hole": "Waterpoel",
+    "shelter_level": "Stalsniveau {level}",
+    "games": "Verrijkingsitems"
   }
 }

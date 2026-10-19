@@ -1,4 +1,5 @@
 import { BiomeSelect } from "@/components/elements/Filter/BiomeSelect";
+import { BiomeGameSelect } from "@/components/elements/Filter/BiomeGameSelect";
 import FilterCard, { FilterRow } from "@/components/elements/Filter/FilterCard";
 import { SearchInputField } from "@/components/elements/Filter/SearchInputField";
 import { ShelterLevelSelect } from "@/components/elements/Filter/ShelterLevelSelect";
@@ -23,6 +24,8 @@ export default function AnimalOverviewFilter() {
   const setSelectedBiome = useAnimalStore((state) => state.setSelectedBiome);
   const selectedShelterLevel = useAnimalStore((state) => state.selectedShelterLevel);
   const setSelectedShelterLevel = useAnimalStore((state) => state.setSelectedShelterLevel);
+  const selectedBiomeGame = useAnimalStore((state) => state.selectedBiomeGame);
+  const setSelectedBiomeGame = useAnimalStore((state) => state.setSelectedBiomeGame);
   const hasStatueFilter = useAnimalStore((state) => state.hasStatueFilter);
   const setHasStatueFilter = useAnimalStore((state) => state.setHasStatueFilter);
 
@@ -34,6 +37,12 @@ export default function AnimalOverviewFilter() {
         placeholder={tCommon("filter.search_placeholder")}
       />
       <BiomeSelect items={allAnimals} selectedBiome={selectedBiome} onChange={setSelectedBiome} />
+      <BiomeGameSelect
+        animals={allAnimals}
+        selectedBiome={selectedBiome}
+        selectedBiomeGame={selectedBiomeGame}
+        onChange={setSelectedBiomeGame}
+      />
       <ShelterLevelSelect
         items={allAnimals}
         selectedShelterLevel={selectedShelterLevel}

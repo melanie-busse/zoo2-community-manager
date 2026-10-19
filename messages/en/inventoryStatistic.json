@@ -27,6 +27,7 @@
   },
   "shelter": {
     "title": "Required Shelter Levels",
+    "inventory_title": "Shelters",
     "level": "Level {level}"
   }
 }

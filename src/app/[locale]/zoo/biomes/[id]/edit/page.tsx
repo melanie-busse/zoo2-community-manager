@@ -9,7 +9,7 @@ import ContentWrapper from "@/components/page-structure/page/ContentWrapper";
 import PageHeader from "@/components/page-structure/page/PageHeader";
 import { getAllLanguages } from "@/service/LanguageService";
 import { getAllRegions } from "@/service/RegionService";
-import { getBiomeByIdForEdit, getAllBiomeGames } from "@/service/BiomeService";
+import { getBiomeByIdForEdit, getAllBiomeGames, getAllBiomeDecorations } from "@/service/BiomeService";
 import BiomeForm from "@/components/pages/zoo/biomes/BiomeForm";
 
 export default async function EditBiomePage({
@@ -26,11 +26,12 @@ export default async function EditBiomePage({
     redirect(`/${locale}/zoo/biomes`);
   }
 
-  const [biome, languages, regions, allGames, t] = await Promise.all([
+  const [biome, languages, regions, allGames, allDecorations, t] = await Promise.all([
     getBiomeByIdForEdit(biomeId),
     getAllLanguages(),
     getAllRegions(locale),
     getAllBiomeGames(locale),
+    getAllBiomeDecorations(locale),
     getTranslations({ locale, namespace: "biome" }),
   ]);
 
@@ -42,7 +43,7 @@ export default async function EditBiomePage({
     <PageWrapper>
       <ContentWrapper>
         <PageHeader text={t("form.edit_biome")} />
-        <BiomeForm biome={serialized} languages={languages} regions={regions} allGames={JSON.parse(JSON.stringify(allGames))} />
+        <BiomeForm biome={serialized} languages={languages} regions={regions} allGames={JSON.parse(JSON.stringify(allGames))} allDecorations={JSON.parse(JSON.stringify(allDecorations))} />
       </ContentWrapper>
     </PageWrapper>
   );

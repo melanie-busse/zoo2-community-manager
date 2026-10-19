@@ -12,17 +12,39 @@ type NestedBiomeData = {
   expansionsCost: number | null;
   priceTypeExpansionsCostId: number | null;
   size: number | null;
+  buildTime: number | null;
   regionId: number | null;
   biomestext: { languageCode: string; biomeName: string; biomeDescription: string }[];
   troughs?: TroughData[];
   waterHoles?: WaterHoleData[];
   shelters?: ShelterData[];
   gameIds?: number[];
+  decorationIds?: number[];
 };
 
 export async function getAllBiomeGames(locale: string = "de") {
   return prisma.biomeGame.findMany({
     include: { texts: { where: { languageCode: locale } } },
+    orderBy: { identifier: "asc" },
+  });
+}
+
+export async function getAllBiomeGamesWithBiomes(locale: string = "de") {
+  return prisma.biomeGame.findMany({
+    include: {
+      texts: { where: { languageCode: locale } },
+      biomes: { select: { id: true } },
+    },
+    orderBy: { identifier: "asc" },
+  });
+}
+
+export async function getAllBiomeDecorations(locale: string = "de") {
+  return prisma.biomeDecoration.findMany({
+    include: {
+      texts: { where: { languageCode: locale } },
+      biome: { select: { identifier: true } },
+    },
     orderBy: { identifier: "asc" },
   });
 }
@@ -60,6 +82,10 @@ export async function getBiomeById(id: number, locale: string = "de") {
         include: { texts: { where: { languageCode: locale } } },
         orderBy: { identifier: "asc" },
       },
+      biomeDecorations: {
+        include: { texts: { where: { languageCode: locale } } },
+        orderBy: { identifier: "asc" },
+      },
     },
   });
 }
@@ -70,7 +96,7 @@ export async function getAllBiomesForOverview(locale: string = "de") {
       biomestext: { where: { languageCode: locale } },
       priceType: true,
     },
-    orderBy: { identifier: "asc" },
+    orderBy: { id: "asc" },
   });
 }
 
@@ -83,6 +109,7 @@ export async function getBiomeByIdForEdit(id: number) {
       waterHoles: true,
       shelters: { orderBy: { level: "asc" } },
       games: { select: { id: true } },
+      biomeDecorations: { select: { id: true } },
     },
   });
 }
@@ -97,6 +124,7 @@ export async function createBiome(data: NestedBiomeData): Promise<{ id: number }
         expansionsCost: data.expansionsCost,
         priceTypeExpansionsCostId: data.priceTypeExpansionsCostId,
         size: data.size,
+        buildTime: data.buildTime,
         regionId: data.regionId,
         biomestext: {
           createMany: {
@@ -121,6 +149,12 @@ export async function createBiome(data: NestedBiomeData): Promise<{ id: number }
         data: { games: { connect: data.gameIds.map((id) => ({ id })) } },
       });
     }
+    if (data.decorationIds?.length) {
+      await tx.biomeDecoration.updateMany({
+        where: { id: { in: data.decorationIds } },
+        data: { biomeId: biome.id },
+      });
+    }
 
     return { id: biome.id };
   });
@@ -137,6 +171,7 @@ export async function updateBiome(id: number, data: NestedBiomeData): Promise<vo
         expansionsCost: data.expansionsCost,
         priceTypeExpansionsCostId: data.priceTypeExpansionsCostId,
         size: data.size,
+        buildTime: data.buildTime,
         regionId: data.regionId,
       },
     });
@@ -175,6 +210,14 @@ export async function updateBiome(id: number, data: NestedBiomeData): Promise<vo
         },
       },
     });
+
+    // decorations — reassign selected ones to this biome
+    if (data.decorationIds?.length) {
+      await tx.biomeDecoration.updateMany({
+        where: { id: { in: data.decorationIds } },
+        data: { biomeId: id },
+      });
+    }
   });
 }
 
@@ -183,4 +226,132 @@ export async function deleteBiome(id: number): Promise<void> {
     prisma.biomesText.deleteMany({ where: { biomeId: id } }),
     prisma.biome.delete({ where: { id } }),
   ]);
+}
+
+type BiomeDecorationData = {
+  identifier?: string;
+  biomeId: number;
+  price: number;
+  pricetype: number;
+  popularity: number;
+  texts: { languageCode: string; name: string }[];
+};
+
+export async function createBiomeDecoration(data: BiomeDecorationData): Promise<{ id: number }> {
+  return prisma.$transaction(async (tx) => {
+    const decoration = await tx.biomeDecoration.create({
+      data: {
+        identifier: data.identifier ?? "",
+        biomeId: data.biomeId,
+        price: data.price,
+        pricetype: data.pricetype,
+        popularity: data.popularity,
+      },
+    });
+    const validTexts = data.texts.filter((t) => t.name !== "");
+    if (validTexts.length > 0) {
+      await tx.biomeDecorationText.createMany({
+        data: validTexts.map((t) => ({ decorationId: decoration.id, ...t })),
+      });
+    }
+    return { id: decoration.id };
+  });
+}
+
+export async function getBiomeDecorationById(id: number) {
+  return prisma.biomeDecoration.findUnique({
+    where: { id },
+    include: { texts: true, biome: { select: { id: true, identifier: true } } },
+  });
+}
+
+export async function updateBiomeDecoration(id: number, data: BiomeDecorationData): Promise<void> {
+  await prisma.$transaction(async (tx) => {
+    await tx.biomeDecoration.update({
+      where: { id },
+      data: {
+        biomeId: data.biomeId,
+        price: data.price,
+        pricetype: data.pricetype,
+        popularity: data.popularity,
+      },
+    });
+    await tx.biomeDecorationText.deleteMany({ where: { decorationId: id } });
+    const validTexts = data.texts.filter((t) => t.name !== "");
+    if (validTexts.length > 0) {
+      await tx.biomeDecorationText.createMany({
+        data: validTexts.map((t) => ({ decorationId: id, ...t })),
+      });
+    }
+  });
+}
+
+export async function deleteBiomeDecoration(id: number): Promise<void> {
+  await prisma.biomeDecoration.delete({ where: { id } });
+}
+
+type BiomeGameData = {
+  identifier?: string;
+  biomeIdentifier?: string;
+  price: number;
+  pricetype: number;
+  repair: number;
+  repairpricetype: number;
+  texts: { languageCode: string; name: string }[];
+};
+
+type BiomeGameUpdateData = BiomeGameData;
+
+export async function createBiomeGame(data: BiomeGameData): Promise<{ id: number }> {
+  return prisma.$transaction(async (tx) => {
+    const game = await tx.biomeGame.create({
+      data: {
+        identifier: data.identifier ?? "",
+        biomeIdentifier: data.biomeIdentifier ?? "",
+        price: data.price,
+        pricetype: data.pricetype,
+        repair: data.repair,
+        repairpricetype: data.repairpricetype,
+      },
+    });
+    const validTexts = data.texts.filter((t) => t.name !== "");
+    if (validTexts.length > 0) {
+      await tx.biomeGameText.createMany({
+        data: validTexts.map((t) => ({ gameId: game.id, ...t })),
+      });
+    }
+    return { id: game.id };
+  });
+}
+
+export async function getBiomeGameById(id: number) {
+  return prisma.biomeGame.findUnique({
+    where: { id },
+    include: { texts: true },
+  });
+}
+
+export async function deleteBiomeGame(id: number): Promise<void> {
+  await prisma.biomeGame.delete({ where: { id } });
+}
+
+export async function updateBiomeGame(id: number, data: BiomeGameUpdateData): Promise<void> {
+  await prisma.$transaction(async (tx) => {
+    await tx.biomeGame.update({
+      where: { id },
+      data: {
+        price: data.price,
+        pricetype: data.pricetype,
+        repair: data.repair,
+        repairpricetype: data.repairpricetype,
+      },
+    });
+    await tx.biomeGameText.deleteMany({ where: { gameId: id } });
+    const validTexts = data.texts.filter((t) => t.name !== "");
+    if (validTexts.length > 0) {
+      await tx.biomeGameText.createMany({
+        data: validTexts.map((t) => ({ gameId: id, ...t })),
+      });
+    }
+  });
 }

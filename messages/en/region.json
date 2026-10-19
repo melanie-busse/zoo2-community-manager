@@ -1,5 +1,6 @@
 {
   "overview_title": "Regions",
+  "overview_unit": "Regions",
   "detail_title": "Region",
   "name": "Name",
   "unlock_level": "Unlock Level",
@@ -20,6 +21,7 @@
   "design_boutique": "Designer Boutique",
   "clubhouse": "Clubhouse",
   "terrain": "Terrain",
+  "map": "Map",
   "inventory": {
     "title": "My Regions",
     "owned": "I have it",
@@ -48,5 +50,9 @@
       "deleteSuccess": "Region successfully deleted",
       "requiredIdentifier": "Identifier is a required field."
     }
+  },
+  "search_placeholder": "Search regions...",
+  "emptyState": {
+    "title": "No region found!"
   }
 }

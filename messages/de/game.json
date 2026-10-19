@@ -1,0 +1,29 @@
+{
+  "overview_title": "Spielgeräte",
+  "overview_unit": "Spielgeräte",
+  "name": "Name",
+  "price": "Preis",
+  "repair": "Reparaturkosten",
+  "search_placeholder": "Spielgeräte suchen...",
+  "emptyState": {
+    "title": "Oje, kein Spielgerät gefunden!"
+  },
+  "identifier": "Identifier",
+  "biome_identifier": "Biom",
+  "form": {
+    "create_game": "Spielgerät anlegen",
+    "edit_game": "Spielgerät bearbeiten",
+    "save_game": "Spielgerät speichern",
+    "basic_info": "Stammdaten",
+    "translations": "Übersetzungen",
+    "currency": "Währung",
+    "messages": {
+      "createSuccess": "Spielgerät erfolgreich angelegt",
+      "editSuccess": "Spielgerät erfolgreich aktualisiert",
+      "requiredIdentifier": "Identifier ist ein Pflichtfeld.",
+      "deleteSuccess": "Spielgerät erfolgreich gelöscht.",
+      "deleteErrorTitle": "Spielgerät löschen",
+      "confirmDelete": "Möchtest du dieses Spielgerät wirklich löschen?"
+    }
+  }
+}

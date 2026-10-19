@@ -49,7 +49,7 @@ export function getGameImage(
   }
   return {
     name: gameIdentifier,
-    path: `/images/biomes/${biomeIdentifier}/game/${gameIdentifier}/image.webp`,
+    path: `/images/biomes/${biomeIdentifier}/game/${gameIdentifier}/image.jpg`,
     alt: gameIdentifier,
   };
 }
@@ -64,9 +64,9 @@ export function getBiomeDescription(biome: Biome | null | undefined, fallback: s
   return biome.biomestext?.[0]?.biomeDescription || fallback;
 }
 
-export function extractUniqueShelterLevels<T extends { shelter?: { level?: number | null } | null }>(
-  items: T[],
-): T[] {
+export function extractUniqueShelterLevels<
+  T extends { shelter?: { level?: number | null } | null },
+>(items: T[]): T[] {
   return Array.from(
     new Map(
       items

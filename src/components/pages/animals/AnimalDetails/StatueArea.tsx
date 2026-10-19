@@ -18,7 +18,7 @@ export default function StatueArea() {
     return null;
   }
 
-  const imagePath = `/images/animals/${biome}/${animalId}/statue/image.webp`;
+  const imagePath = `/images/animals/${biome}/${animalId}/statue/image.jpg`;
 
   return (
     <>

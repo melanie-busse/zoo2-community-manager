@@ -1,17 +1,22 @@
 {
   "enclosure": "Indhegning",
   "enclosureType": "Indhegningstype",
+  "game": "Legeudstyr",
   "shelterLevel": "Staldt niveau",
   "noBiome": "Ingen indhegning",
   "overview_title": "Biomer",
+  "overview_unit": "Biomer",
   "name": "Navn",
   "identifier": "Identifikator",
   "price": "Pris",
   "price_type": "Pristype",
   "expansion_cost": "Udvidelsesomkostninger",
   "size": "Størrelse",
+  "build_time": "Byggetid",
   "region": "Region",
   "games": "Legetøj",
+  "decorations": "Dekorationer",
+  "popularity": "Popularitet",
   "repair": "Reparation",
   "repair_price_type": "Rep. valuta",
   "shelter_levels": "Staldt niveauer",
@@ -32,6 +37,9 @@
     "language": "Sprog",
     "biome_name": "Navn",
     "biome_description": "Beskrivelse",
+    "build_time_h": "t",
+    "build_time_m": "min",
+    "build_time_s": "sek",
     "troughs": "Trug",
     "water_holes": "Vandhul",
     "messages": {
@@ -42,5 +50,17 @@
       "deleteSuccess": "Biom slettet",
       "requiredIdentifier": "Identifikator er et påkrævet felt."
     }
+  },
+  "search_placeholder": "Søg biomer...",
+  "emptyState": {
+    "title": "Ingen biomer fundet!"
+  },
+  "inventory": {
+    "title": "Biom Inventar",
+    "enclosure": "Indhegning",
+    "trough": "Trug",
+    "water_hole": "Vandhul",
+    "shelter_level": "Stalds niveau {level}",
+    "games": "Legeudstyr"
   }
 }

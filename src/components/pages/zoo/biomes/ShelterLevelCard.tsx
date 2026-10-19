@@ -7,6 +7,7 @@ import { useTranslations } from "next-intl";
 
 import CurrencyBadge, { CurrencyType } from "@/components/ui/badges/CurrencyBadge";
 import * as Styles from "@/components/pages/animals/AnimalDetails/AnimalDetails.styles";
+import { formatMinutes } from "@/components/ui/Formatted/XpDateFormat";
 
 function toCurrencyType(pricetype: number | null): CurrencyType {
   return pricetype === 2 ? "Diamond" : "Zoodollar";
@@ -57,7 +58,7 @@ export default function ShelterLevelCard({ levels, biomeIdentifier }: ShelterLev
                 <CurrencyBadge value={lvl.cost} type={toCurrencyType(lvl.pricetype)} />
               </Styles.TableCell>
               <Styles.TableCell>
-                {lvl.buildTime != null ? t("minutes", { n: lvl.buildTime }) : "—"}
+                {formatMinutes(lvl.buildTime)}
               </Styles.TableCell>
               <Styles.TableCell>
                 {lvl.unlockLevel != null ? lvl.unlockLevel : "—"}
@@ -94,6 +95,10 @@ const ImageWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 8px;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  overflow: hidden;
 `;
 
 const CardTitle = styled.div`

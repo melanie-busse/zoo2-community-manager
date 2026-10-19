@@ -45,7 +45,12 @@
     "terrain_create": "Terreintype toevoegen",
     "collections": "Verzamelalbum",
     "inventory_collections": "Mijn Verzamelalbum",
-    "inventory_regions": "Regio's"
+    "inventory_regions": "Regio's",
+    "games": "Verrijkingsitems",
+    "game_create": "Verrijkingsitem toevoegen",
+    "decorations": "Decoraties",
+    "decoration_create": "Decoratie toevoegen",
+    "inventory_biomes": "Biomen"
   },
   "inventory_collections": "Verzamelalbum"
 }

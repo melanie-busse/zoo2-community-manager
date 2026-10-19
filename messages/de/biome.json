@@ -1,17 +1,22 @@
 {
   "enclosure": "Gehege",
   "enclosureType": "Gehegetyp",
+  "game": "Spielgerät",
   "shelterLevel": "Stall Level",
   "noBiome": "Kein Gehege",
   "overview_title": "Biome",
+  "overview_unit": "Biome",
   "name": "Name",
   "identifier": "Identifier",
   "price": "Preis",
   "price_type": "Preistyp",
   "expansion_cost": "Erweiterungskosten",
   "size": "Größe",
+  "build_time": "Bauzeit",
   "region": "Region",
   "games": "Spielzeuge",
+  "decorations": "Dekorationen",
+  "popularity": "Beliebtheit",
   "repair": "Reparatur",
   "repair_price_type": "Rep. Währung",
   "shelter_levels": "Stalllevel",
@@ -32,6 +37,9 @@
     "language": "Sprache",
     "biome_name": "Name",
     "biome_description": "Beschreibung",
+    "build_time_h": "Std.",
+    "build_time_m": "Min.",
+    "build_time_s": "Sek.",
     "troughs": "Trog",
     "water_holes": "Wasserstelle",
     "messages": {
@@ -42,5 +50,17 @@
       "deleteSuccess": "Biom erfolgreich gelöscht",
       "requiredIdentifier": "Identifier ist ein Pflichtfeld."
     }
+  },
+  "search_placeholder": "Biome suchen...",
+  "emptyState": {
+    "title": "Kein Biom gefunden!"
+  },
+  "inventory": {
+    "title": "Biome Inventar",
+    "enclosure": "Gehege",
+    "trough": "Trog",
+    "water_hole": "Wasserstelle",
+    "shelter_level": "Stalllevel {level}",
+    "games": "Spielgeräte"
   }
 }

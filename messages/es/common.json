@@ -33,6 +33,7 @@
   "description": "Descripción",
   "descriptionPlaceholder": "Introduce la descripción aquí...",
   "pleaseSelect": "Por favor, selecciona...",
+  "searchPlaceholder": "Buscar...",
   "loading": "Cargando...",
   "loading_data": "Cargando datos...",
   "buttons": {
@@ -47,6 +48,7 @@
   "filter": {
     "search_placeholder": "Buscar animales...",
     "all_enclosures": "Todos los recintos",
+    "all_games": "Todos los elementos de enriquecimiento",
     "all_levels": "Todos los niveles del establo",
     "all_status": "Todos los estados",
     "all_regions": "Todas las regiones",

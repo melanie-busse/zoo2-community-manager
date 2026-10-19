@@ -33,6 +33,7 @@
   "description": "Beskrivelse",
   "descriptionPlaceholder": "Indtast beskrivelse her...",
   "pleaseSelect": "Vælg venligst...",
+  "searchPlaceholder": "Søg...",
   "loading": "Indlæser...",
   "loading_data": "Indlæser data...",
   "buttons": {
@@ -47,6 +48,7 @@
   "filter": {
     "search_placeholder": "Søg efter dyr...",
     "all_enclosures": "Alle indhegninger",
+    "all_games": "Alt legeudstyr",
     "all_levels": "Alle stalsniveauer",
     "all_status": "Alle statusser",
     "all_regions": "Alle regioner",

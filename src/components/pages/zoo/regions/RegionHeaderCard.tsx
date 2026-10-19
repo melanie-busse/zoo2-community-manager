@@ -42,43 +42,53 @@ export default function RegionHeaderCard({ region }: RegionHeaderCardProps) {
       </Styles.ImageWrapper>
 
       <InfoSection>
-        <TitleBlock>
-          <h1>{displayName}</h1>
-          <Styles.ReleaseDate>
-            <span className="label">📅 {tCommon("release")}:</span>{" "}
-            <span className="date">
-              <FormattedDate
-                date={region.releasedate}
-                options={{ year: "numeric", month: "long", day: "numeric" }}
-              />
-            </span>
-          </Styles.ReleaseDate>
-        </TitleBlock>
+        <TopRow>
+          <TitleBlock>
+            <h1>{displayName}</h1>
+            <Styles.ReleaseDate>
+              <span className="label">📅 {tCommon("release")}:</span>{" "}
+              <span className="date">
+                <FormattedDate
+                  date={region.releasedate}
+                  options={{ year: "numeric", month: "long", day: "numeric" }}
+                />
+              </span>
+            </Styles.ReleaseDate>
+          </TitleBlock>
 
-        <Styles.StatsGrid>
-          <Styles.StatsGroup>
-            <StatBox>
-              <label>{tCommon("price")}</label>
-              <PriceBadge value={region.price} type={badgeType} />
-            </StatBox>
-          </Styles.StatsGroup>
+          <MapLink
+            href={`/images/regions/${region.identifier.toLowerCase()}/map.webp`}
+            target="_blank"
+            rel="noopener noreferrer"
+            title={tRegion("map")}
+          >
+            <MapThumbnail
+              src={`/images/regions/${region.identifier.toLowerCase()}/map.webp`}
+              alt={tRegion("map")}
+              width={110}
+              height={110}
+            />
+          </MapLink>
+        </TopRow>
 
-          <Styles.StatsGroup>
-            <StatBox>
-              <label>{tRegion("unlock_level")}</label>
-              <div className="value">{tRegion("level_value", { level: region.unlocklevel })}</div>
-            </StatBox>
-          </Styles.StatsGroup>
+        <StatsRow>
+          <StatBox>
+            <label>{tCommon("price")}</label>
+            <PriceBadge value={region.price} type={badgeType} />
+          </StatBox>
+
+          <StatBox>
+            <label>{tRegion("unlock_level")}</label>
+            <div className="value">{tRegion("level_value", { level: region.unlocklevel })}</div>
+          </StatBox>
 
           {region.terrainName && (
-            <Styles.StatsGroup>
-              <StatBox>
-                <label>{tRegion("terrain")}</label>
-                <div className="value">{region.terrainName}</div>
-              </StatBox>
-            </Styles.StatsGroup>
+            <StatBox>
+              <label>{tRegion("terrain")}</label>
+              <div className="value">{region.terrainName}</div>
+            </StatBox>
           )}
-        </Styles.StatsGrid>
+        </StatsRow>
       </InfoSection>
     </Styles.DesktopCardContainer>
   );
@@ -114,7 +124,8 @@ const InfoSection = styled.div`
 `;
 
 const TitleBlock = styled.div`
-  width: 100%;
+  flex: 1;
+  min-width: 0;
 
   h1 {
     color: #2d5a27;
@@ -123,4 +134,43 @@ const TitleBlock = styled.div`
     font-weight: bold;
     line-height: 1.2;
   }
+`;
+
+const TopRow = styled.div`
+  display: flex;
+  align-items: flex-start;
+  gap: ${({ theme }) => theme.spacing(2)};
+  width: 100%;
+`;
+
+const StatsRow = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: ${({ theme }) => theme.spacing(2)};
+  align-items: flex-start;
+  width: 100%;
+
+  > * {
+    flex: 1;
+  }
+`;
+
+const MapLink = styled.a`
+  display: inline-block;
+  flex-shrink: 0;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: opacity 0.15s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+`;
+
+const MapThumbnail = styled(NextImage)`
+  display: block;
+  object-fit: cover;
+  border-radius: 6px;
+  width: 110px;
+  height: 110px;
 `;

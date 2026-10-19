@@ -1,0 +1,29 @@
+{
+  "overview_title": "Enrichment Items",
+  "overview_unit": "Legetøj",
+  "name": "Navn",
+  "price": "Pris",
+  "repair": "Reparationsomkostninger",
+  "search_placeholder": "Søg enrichment items...",
+  "emptyState": {
+    "title": "Ingen enrichment items fundet!"
+  },
+  "identifier": "Identifier",
+  "biome_identifier": "Biom-Identifier",
+  "form": {
+    "create_game": "Tilføj enrichment item",
+    "edit_game": "Rediger enrichment item",
+    "save_game": "Gem enrichment item",
+    "basic_info": "Stamdata",
+    "translations": "Oversættelser",
+    "currency": "Valuta",
+    "messages": {
+      "createSuccess": "Enrichment item oprettet.",
+      "editSuccess": "Enrichment item opdateret.",
+      "requiredIdentifier": "Identifier er påkrævet.",
+      "deleteSuccess": "Enrichment item slettet.",
+      "deleteErrorTitle": "Slet enrichment item",
+      "confirmDelete": "Vil du virkelig slette dette enrichment item?"
+    }
+  }
+}

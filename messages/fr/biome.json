@@ -1,17 +1,22 @@
 {
   "enclosure": "Enclos",
   "enclosureType": "Type d'enclos",
+  "game": "Élément d'enrichissement",
   "shelterLevel": "Niveau d'abri",
   "noBiome": "Pas d'enclos",
   "overview_title": "Biomes",
+  "overview_unit": "Biomes",
   "name": "Nom",
   "identifier": "Identifiant",
   "price": "Prix",
   "price_type": "Type de prix",
   "expansion_cost": "Coût d'expansion",
   "size": "Taille",
+  "build_time": "Temps de construction",
   "region": "Région",
   "games": "Jouets",
+  "decorations": "Décorations",
+  "popularity": "Popularité",
   "repair": "Réparation",
   "repair_price_type": "Devise rép.",
   "shelter_levels": "Niveaux d'étable",
@@ -32,6 +37,9 @@
     "language": "Langue",
     "biome_name": "Nom",
     "biome_description": "Description",
+    "build_time_h": "h",
+    "build_time_m": "min",
+    "build_time_s": "sec",
     "troughs": "Auge",
     "water_holes": "Point d'eau",
     "messages": {
@@ -42,5 +50,17 @@
       "deleteSuccess": "Biome supprimé avec succès",
       "requiredIdentifier": "L'identifiant est un champ obligatoire."
     }
+  },
+  "search_placeholder": "Rechercher des biomes...",
+  "emptyState": {
+    "title": "Aucun biome trouvé !"
+  },
+  "inventory": {
+    "title": "Inventaire des Biomes",
+    "enclosure": "Enclos",
+    "trough": "Auge",
+    "water_hole": "Point d'eau",
+    "shelter_level": "Niveau d'abri {level}",
+    "games": "Éléments d'enrichissement"
   }
 }

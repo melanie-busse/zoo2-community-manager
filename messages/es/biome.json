@@ -1,17 +1,22 @@
 {
   "enclosure": "Recinto",
   "enclosureType": "Tipo de recinto",
+  "game": "Elemento de enriquecimiento",
   "shelterLevel": "Nivel de refugio",
   "noBiome": "Sin recinto",
   "overview_title": "Biomas",
+  "overview_unit": "Biomas",
   "name": "Nombre",
   "identifier": "Identificador",
   "price": "Precio",
   "price_type": "Tipo de precio",
   "expansion_cost": "Coste de expansión",
   "size": "Tamaño",
+  "build_time": "Tiempo de construcción",
   "region": "Región",
   "games": "Juguetes",
+  "decorations": "Decoraciones",
+  "popularity": "Popularidad",
   "repair": "Reparación",
   "repair_price_type": "Moneda rep.",
   "shelter_levels": "Niveles de establo",
@@ -32,6 +37,9 @@
     "language": "Idioma",
     "biome_name": "Nombre",
     "biome_description": "Descripción",
+    "build_time_h": "h",
+    "build_time_m": "min",
+    "build_time_s": "seg",
     "troughs": "Comedero",
     "water_holes": "Bebedero",
     "messages": {
@@ -42,5 +50,17 @@
       "deleteSuccess": "Bioma eliminado correctamente",
       "requiredIdentifier": "El identificador es un campo obligatorio."
     }
+  },
+  "search_placeholder": "Buscar biomas...",
+  "emptyState": {
+    "title": "¡No se encontró ningún bioma!"
+  },
+  "inventory": {
+    "title": "Inventario de Biomas",
+    "enclosure": "Recinto",
+    "trough": "Comedero",
+    "water_hole": "Charca",
+    "shelter_level": "Nivel de refugio {level}",
+    "games": "Elementos de enriquecimiento"
   }
 }

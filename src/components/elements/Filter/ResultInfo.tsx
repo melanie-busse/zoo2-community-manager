@@ -6,16 +6,17 @@ import { useTranslations } from "next-intl";
 interface ResultsInfoProps {
   currentCount: number;
   totalCount: number;
+  unit?: string;
 }
 
-export default function ResultsInfo({ currentCount, totalCount }: ResultsInfoProps) {
+export default function ResultsInfo({ currentCount, totalCount, unit }: ResultsInfoProps) {
   const t = useTranslations("common");
 
   return (
     <StyledInfo>
       {t("filter.results.show")} <strong>{currentCount}</strong>&nbsp;
       {t("filter.results.of")} <strong>{totalCount}</strong>&nbsp;
-      {t("filter.results.unit")}
+      {unit ?? t("filter.results.unit")}
     </StyledInfo>
   );
 }

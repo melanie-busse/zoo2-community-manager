@@ -1,5 +1,6 @@
 {
   "overview_title": "Geländetypen",
+  "overview_unit": "Geländetypen",
   "name": "Name",
   "identifier": "Identifier",
   "region": "Region",
@@ -17,5 +18,9 @@
       "deleteSuccess": "Geländetyp erfolgreich gelöscht",
       "requiredIdentifier": "Identifier ist ein Pflichtfeld."
     }
+  },
+  "search_placeholder": "Geländetypen suchen...",
+  "emptyState": {
+    "title": "Kein Geländetyp gefunden!"
   }
 }

@@ -1,5 +1,6 @@
 {
   "overview_title": "Terræntyper",
+  "overview_unit": "Terræntyper",
   "name": "Navn",
   "identifier": "Identifier",
   "region": "Region",
@@ -17,5 +18,9 @@
       "deleteSuccess": "Terræntype slettet",
       "requiredIdentifier": "Identifier er et obligatorisk felt."
     }
+  },
+  "search_placeholder": "Søg terræntyper...",
+  "emptyState": {
+    "title": "Ingen terræntype fundet!"
   }
 }

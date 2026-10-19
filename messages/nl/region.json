@@ -1,5 +1,6 @@
 {
   "overview_title": "Regio's",
+  "overview_unit": "Regio's",
   "detail_title": "Regio",
   "name": "Naam",
   "unlock_level": "Ontgrendelniveau",
@@ -20,6 +21,7 @@
   "design_boutique": "Designer Boetiek",
   "clubhouse": "Clubhuis",
   "terrain": "Terrein",
+  "map": "Kaart",
   "inventory": {
     "title": "Mijn regio's",
     "owned": "Ik heb het",
@@ -48,5 +50,9 @@
       "deleteSuccess": "Regio succesvol verwijderd",
       "requiredIdentifier": "Identifier is een verplicht veld."
     }
+  },
+  "search_placeholder": "Regio's zoeken...",
+  "emptyState": {
+    "title": "Geen regio gevonden!"
   }
 }

@@ -22,6 +22,13 @@ export async function getAllAnimals(locale = "de") {
             },
           },
         },
+        biomeGame: {
+          select: {
+            identifier: true,
+            biomeIdentifier: true,
+            texts: { where: { languageCode: locale } },
+          },
+        },
         priceType: true,
       },
       orderBy: { id: "asc" },

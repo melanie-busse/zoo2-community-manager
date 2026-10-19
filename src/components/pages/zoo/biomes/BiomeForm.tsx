@@ -44,20 +44,23 @@ interface BiomeFormProps {
     expansionsCost: number | null;
     priceTypeExpansionsCostId: number | null;
     size: number | null;
+    buildTime: number | null;
     regionId: number | null;
     biomestext: { languageCode: string; biomeName: string; biomeDescription: string | null }[];
     troughs: { id: number; price: number; pricetype: number }[];
     waterHoles: { id: number; price: number; pricetype: number; repair: number; repairpricetype: number }[];
     shelters: { id: number; level: number; cost: number; pricetype: number; buildTime: number | null; unlockLevel: number | null }[];
     games: { id: number }[];
+    biomeDecorations: { id: number }[];
   };
   languages: Language[];
   regions: Region[];
   allGames: { id: number; identifier: string; biomeIdentifier: string; texts: { name: string }[] }[];
+  allDecorations: { id: number; identifier: string; biome: { identifier: string }; texts: { name: string }[] }[];
 }
 
 
-export default function BiomeForm({ biome, languages, regions, allGames }: BiomeFormProps) {
+export default function BiomeForm({ biome, languages, regions, allGames, allDecorations }: BiomeFormProps) {
   const t = useTranslations("biome");
   const tCommon = useTranslations("common");
   const router = useRouter();
@@ -70,6 +73,18 @@ export default function BiomeForm({ biome, languages, regions, allGames }: Biome
     biome?.priceTypeExpansionsCostId?.toString() ?? "1",
   );
   const [size, setSize] = useState(biome?.size?.toString() ?? "");
+  const [buildTimeH, setBuildTimeH] = useState(() => {
+    const s = biome?.buildTime ?? 0;
+    return s > 0 ? Math.floor(s / 3600).toString() : "";
+  });
+  const [buildTimeM, setBuildTimeM] = useState(() => {
+    const s = biome?.buildTime ?? 0;
+    return s > 0 ? Math.floor((s % 3600) / 60).toString() : "";
+  });
+  const [buildTimeS, setBuildTimeS] = useState(() => {
+    const s = biome?.buildTime ?? 0;
+    return s > 0 ? (s % 60).toString() : "";
+  });
   const [regionId, setRegionId] = useState(biome?.regionId?.toString() ?? "0");
 
   const [biomestext, setBiomestext] = useState<BiomeText[]>(
@@ -105,6 +120,10 @@ export default function BiomeForm({ biome, languages, regions, allGames }: Biome
 
   const [gameIds, setGameIds] = useState<number[]>(
     () => (biome?.games ?? []).map((g) => g.id)
+  );
+
+  const [decorationIds, setDecorationIds] = useState<number[]>(
+    () => (biome?.biomeDecorations ?? []).map((d) => d.id)
   );
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -163,12 +182,16 @@ export default function BiomeForm({ biome, languages, regions, allGames }: Biome
         expansionsCost: expansionsCost !== "" ? parseInt(expansionsCost, 10) : null,
         priceTypeExpansionsCostId: expansionsCost !== "" ? parseInt(priceTypeExpansionsCostId, 10) : null,
         size: size !== "" ? parseInt(size, 10) : null,
+        buildTime: (buildTimeH || buildTimeM || buildTimeS)
+          ? (parseInt(buildTimeH || "0") * 3600) + (parseInt(buildTimeM || "0") * 60) + parseInt(buildTimeS || "0")
+          : null,
         regionId: regionId !== "0" ? parseInt(regionId, 10) : null,
         biomestext,
         troughs,
         waterHoles,
         shelters: shelterData,
         gameIds,
+        decorationIds,
       };
 
       if (biome?.id) {
@@ -188,7 +211,13 @@ export default function BiomeForm({ biome, languages, regions, allGames }: Biome
   const gameItems = allGames.map((g) => ({
     id: g.id,
     name: g.texts[0]?.name ?? g.identifier,
-    imagePath: g.biomeIdentifier ? `/images/biomes/${g.biomeIdentifier}/game/${g.identifier}/image.webp` : undefined,
+    imagePath: g.biomeIdentifier ? `/images/biomes/${g.biomeIdentifier}/game/${g.identifier}/image.jpg` : undefined,
+  }));
+
+  const decorationItems = allDecorations.map((d) => ({
+    id: d.id,
+    name: d.texts[0]?.name ?? d.identifier,
+    imagePath: `/images/biomes/${d.biome.identifier}/decoration/${d.identifier}/image.jpg`,
   }));
 
   return (
@@ -220,6 +249,14 @@ export default function BiomeForm({ biome, languages, regions, allGames }: Biome
                 <InputField id="size" type="number" value={size} onChange={(e) => setSize(e.target.value)} />
               </FormGroup>
               <FormGroup>
+                <Label>{t("build_time")}</Label>
+                <FormRow>
+                  <InputField id="buildTimeH" type="number" value={buildTimeH} onChange={(e) => setBuildTimeH(e.target.value)} placeholder={t("form.build_time_h")} />
+                  <InputField id="buildTimeM" type="number" value={buildTimeM} onChange={(e) => setBuildTimeM(e.target.value)} placeholder={t("form.build_time_m")} />
+                  <InputField id="buildTimeS" type="number" value={buildTimeS} onChange={(e) => setBuildTimeS(e.target.value)} placeholder={t("form.build_time_s")} />
+                </FormRow>
+              </FormGroup>
+              <FormGroup>
                 <Label htmlFor="regionId">{t("region")}</Label>
                 <Selectbox id="regionId" name="regionId" value={regionId} onChange={(e) => setRegionId(e.target.value)} options={regionOptions} />
               </FormGroup>
@@ -247,7 +284,7 @@ export default function BiomeForm({ biome, languages, regions, allGames }: Biome
         </Column>
 
         <Column>
-          <InfoAccordion title={t("form.water_holes")} icon={biome?.identifier ? `/images/biomes/${biome.identifier}/water_hole.webp` : "/images/icons/info.png"} iconSize={48} defaultOpen>
+          <InfoAccordion title={t("form.water_holes")} icon={biome?.identifier ? `/images/biomes/${biome.identifier}/water_hole.jpg` : "/images/icons/info.png"} iconSize={48} defaultOpen>
             <SectionColumn>
               <FormGroup>
                 <Label htmlFor="waterPrice">{t("price")}</Label>
@@ -268,7 +305,7 @@ export default function BiomeForm({ biome, languages, regions, allGames }: Biome
         </Column>
 
         <Column>
-          <InfoAccordion title={t("form.troughs")} icon={biome?.identifier ? `/images/biomes/${biome.identifier}/trough.webp` : "/images/icons/info.png"} iconSize={48} defaultOpen>
+          <InfoAccordion title={t("form.troughs")} icon={biome?.identifier ? `/images/biomes/${biome.identifier}/trough.jpg` : "/images/icons/info.png"} iconSize={48} defaultOpen>
             <SectionColumn>
               <FormGroup>
                 <Label htmlFor="troughPrice">{t("price")}</Label>
@@ -322,6 +359,16 @@ export default function BiomeForm({ biome, languages, regions, allGames }: Biome
               allOrigins={gameItems}
               selectedIds={gameIds}
               onChange={setGameIds}
+            />
+          </InfoAccordion>
+        </Column>
+
+        <Column $fullWidth>
+          <InfoAccordion title={t("decorations")} icon="/images/icons/star.png" defaultOpen>
+            <OriginTransfer
+              allOrigins={decorationItems}
+              selectedIds={decorationIds}
+              onChange={setDecorationIds}
             />
           </InfoAccordion>
         </Column>

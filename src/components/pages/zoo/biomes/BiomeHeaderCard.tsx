@@ -9,11 +9,23 @@ import * as Styles from "@/components/pages/animals/AnimalDetails/AnimalDetails.
 import StatBox from "@/components/page-structure/Elements/StatBox";
 import PriceBadge from "@/components/ui/badges/PriceBadge";
 
+function formatBuildTime(seconds: number): string {
+  const h = Math.floor(seconds / 3600);
+  const m = Math.floor((seconds % 3600) / 60);
+  const s = seconds % 60;
+  const parts: string[] = [];
+  if (h > 0) parts.push(`${h} h`);
+  if (m > 0) parts.push(`${m} min`);
+  if (s > 0) parts.push(`${s} s`);
+  return parts.join(" ") || "0 s";
+}
+
 interface Biome {
   identifier: string;
   price: number | null;
   expansionsCost: number | null;
   size: number | null;
+  buildTime: number | null;
   biomestext: { biomeName: string }[];
   priceType: { name: string } | null;
 }
@@ -60,6 +72,12 @@ export default function BiomeHeaderCard({ biome }: BiomeHeaderCardProps) {
             <StatBox>
               <label>{t("expansion_cost")}</label>
               <PriceBadge value={biome.expansionsCost} type={badgeType} />
+            </StatBox>
+          )}
+          {biome.buildTime != null && (
+            <StatBox>
+              <label>{t("build_time")}</label>
+              <div className="value">{formatBuildTime(biome.buildTime)}</div>
             </StatBox>
           )}
         </TopRow>

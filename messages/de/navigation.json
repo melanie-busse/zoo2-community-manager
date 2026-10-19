@@ -45,7 +45,12 @@
     "inventory_collections": "Sammelalbum",
     "inventory_regions": "Regionen",
     "admin": "Admin",
-    "import-animals": "Tiere importieren"
+    "import-animals": "Tiere importieren",
+    "games": "Spielgeräte",
+    "game_create": "Spielgerät anlegen",
+    "decorations": "Dekorationen",
+    "decoration_create": "Dekoration anlegen",
+    "inventory_biomes": "Biome"
   },
   "inventory_collections": "Sammelalbum"
 }

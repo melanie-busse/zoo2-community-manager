@@ -27,6 +27,7 @@
   },
   "shelter": {
     "title": "Påkrævede staldeniveauer",
+    "inventory_title": "Stalde",
     "level": "Niveau {level}"
   }
 }

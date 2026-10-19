@@ -1,0 +1,31 @@
+{
+  "overview_title": "Dekorationer",
+  "overview_unit": "Dekorationer",
+  "name": "Navn",
+  "price": "Pris",
+  "popularity": "Popularitet",
+  "biome": "Biom",
+  "search_placeholder": "Søg dekorationer...",
+  "emptyState": {
+    "title": "Ingen dekoration fundet!"
+  },
+  "identifier": "Identifikator",
+  "form": {
+    "create_decoration": "Tilføj dekoration",
+    "edit_decoration": "Rediger dekoration",
+    "save_decoration": "Gem dekoration",
+    "basic_info": "Basisoplysninger",
+    "translations": "Oversættelser",
+    "currency": "Valuta",
+    "biome": "Biom",
+    "messages": {
+      "createSuccess": "Dekoration oprettet",
+      "editSuccess": "Dekoration opdateret",
+      "requiredIdentifier": "Identifikator er et påkrævet felt.",
+      "requiredBiome": "Vælg venligst et biom.",
+      "deleteSuccess": "Dekoration slettet",
+      "deleteErrorTitle": "Slet dekoration",
+      "confirmDelete": "Vil du virkelig slette denne dekoration?"
+    }
+  }
+}

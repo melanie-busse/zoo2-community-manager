@@ -1,5 +1,6 @@
 {
   "overview_title": "Regioner",
+  "overview_unit": "Regioner",
   "detail_title": "Region",
   "name": "Navn",
   "unlock_level": "Oplåsningsniveau",
@@ -20,6 +21,7 @@
   "design_boutique": "Designer Boutique",
   "clubhouse": "Klubhus",
   "terrain": "Terræn",
+  "map": "Kort",
   "inventory": {
     "title": "Mine regioner",
     "owned": "Jeg har",
@@ -48,5 +50,9 @@
       "deleteSuccess": "Region slettet",
       "requiredIdentifier": "Identifier er et obligatorisk felt."
     }
+  },
+  "search_placeholder": "Søg regioner...",
+  "emptyState": {
+    "title": "Ingen region fundet!"
   }
 }

@@ -27,6 +27,7 @@
   },
   "shelter": {
     "title": "Benötigte Stalllevel",
+    "inventory_title": "Ställe",
     "level": "Level {level}"
   }
 }

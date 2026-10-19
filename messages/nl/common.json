@@ -33,6 +33,7 @@
   "description": "Beschrijving",
   "descriptionPlaceholder": "Voer hier beschrijving in...",
   "pleaseSelect": "Selecteer...",
+  "searchPlaceholder": "Zoeken...",
   "loading": "Laden...",
   "loading_data": "Gegevens laden...",
   "buttons": {
@@ -47,6 +48,7 @@
   "filter": {
     "search_placeholder": "Zoek naar dieren...",
     "all_enclosures": "Alle verblijven",
+    "all_games": "Alle verrijkingsitems",
     "all_levels": "Alle stalniveaus",
     "all_status": "Alle statussen",
     "all_regions": "Alle regio's",

@@ -10,4 +10,6 @@ export type BiomeStatistic = {
   shelterLevelCounts: Record<number, number>;
   contestStatues: number;
   contestSpecialCoats: number;
+  totalGames: number;
+  totalDecorations: number;
 };

@@ -1,0 +1,31 @@
+{
+  "overview_title": "Decorations",
+  "overview_unit": "Decorations",
+  "name": "Name",
+  "price": "Price",
+  "popularity": "Popularity",
+  "biome": "Biome",
+  "search_placeholder": "Search decorations...",
+  "emptyState": {
+    "title": "No decoration found!"
+  },
+  "identifier": "Identifier",
+  "form": {
+    "create_decoration": "Add Decoration",
+    "edit_decoration": "Edit Decoration",
+    "save_decoration": "Save Decoration",
+    "basic_info": "Basic Info",
+    "translations": "Translations",
+    "currency": "Currency",
+    "biome": "Biome",
+    "messages": {
+      "createSuccess": "Decoration created successfully",
+      "editSuccess": "Decoration updated successfully",
+      "requiredIdentifier": "Identifier is required.",
+      "requiredBiome": "Please select a biome.",
+      "deleteSuccess": "Decoration deleted successfully",
+      "deleteErrorTitle": "Delete Decoration",
+      "confirmDelete": "Do you really want to delete this decoration?"
+    }
+  }
+}

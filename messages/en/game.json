@@ -1,0 +1,29 @@
+{
+  "overview_title": "Enrichment Items",
+  "overview_unit": "Enrichment Games",
+  "name": "Name",
+  "price": "Price",
+  "repair": "Repair Costs",
+  "search_placeholder": "Search enrichment items...",
+  "emptyState": {
+    "title": "Oh no, no enrichment items found!"
+  },
+  "identifier": "Identifier",
+  "biome_identifier": "Biome Identifier",
+  "form": {
+    "create_game": "Add Enrichment Item",
+    "edit_game": "Edit Enrichment Item",
+    "save_game": "Save Enrichment Item",
+    "basic_info": "Basic Info",
+    "translations": "Translations",
+    "currency": "Currency",
+    "messages": {
+      "createSuccess": "Enrichment item created successfully.",
+      "editSuccess": "Enrichment item updated successfully.",
+      "requiredIdentifier": "Identifier is required.",
+      "deleteSuccess": "Enrichment item deleted successfully.",
+      "deleteErrorTitle": "Delete Enrichment Item",
+      "confirmDelete": "Do you really want to delete this enrichment item?"
+    }
+  }
+}

@@ -9,8 +9,13 @@
     "title": "Regiones",
     "total": "Cantidad:",
     "breedingSlots": "Plazas de cría:",
-    "biomes": "Biomas:",
     "terrains": "Tipos de terreno:"
+  },
+  "biome": {
+    "title": "Biomas",
+    "total": "Cantidad:",
+    "games": "Juguetes:",
+    "decorations": "Decoraciones:"
   },
   "animals": {
     "title": "Animales",
