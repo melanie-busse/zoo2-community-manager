@@ -61,6 +61,7 @@ export async function getRegionByIdForEdit(id: number) {
         visitorCenters: true,
         transportStation: true,
         guestLounges: true,
+        shops: true,
       },
     });
   } catch (error) {
@@ -155,6 +156,13 @@ export async function createRegion(data: any): Promise<{ id: number }> {
           pricetype: parseInt(data.guestLounge?.pricetype || "1"),
           regionId: region.id,
         },
+      });
+    }
+
+    if ((data.shopIds ?? []).length > 0) {
+      await tx.regionShop.updateMany({
+        where: { id: { in: data.shopIds } },
+        data: { regionId: region.id },
       });
     }
 
@@ -265,6 +273,19 @@ export async function updateRegion(id: number, data: any): Promise<{ id: number 
           pricetype: parseInt(data.guestLounge?.pricetype || "1"),
           regionId: id,
         },
+      });
+    }
+
+    // shops — unassign removed shops, assign newly selected ones
+    const shopIds: number[] = data.shopIds ?? [];
+    await tx.regionShop.updateMany({
+      where: { regionId: id, id: { notIn: shopIds } },
+      data: { regionId: null },
+    });
+    if (shopIds.length > 0) {
+      await tx.regionShop.updateMany({
+        where: { id: { in: shopIds } },
+        data: { regionId: id },
       });
     }
 

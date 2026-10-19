@@ -410,10 +410,10 @@ model Region {
 
 model RegionShop {
   id             Int               @id @default(autoincrement())
-  regionId       Int
+  regionId       Int?
   name           String            @db.VarChar(255)
   coinsPerClient Int?
-  region         Region            @relation(fields: [regionId], references: [id], onDelete: Cascade)
+  region         Region?           @relation(fields: [regionId], references: [id], onDelete: SetNull)
   levels         RegionShopLevel[]
 
   @@index([regionId])
@@ -439,7 +439,7 @@ model RegionText {
   regionid     Int
   languageCode String @db.VarChar(255)
   name         String @db.VarChar(255)
-  description  String @db.VarChar(255)
+  description  String @db.Text
   region       Region @relation(fields: [regionid], references: [id], onDelete: Cascade, map: "regionText_regionId_fkey")
 
   @@index([regionid], map: "regionText_regionId_idx")

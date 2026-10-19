@@ -1,0 +1,32 @@
+{
+  "overview_title": "Winkels",
+  "overview_unit": "Winkels",
+  "name": "Naam",
+  "coins_per_client": "Munten / Klant",
+  "build_cost": "Bouwkosten",
+  "build_time": "Bouwtijd",
+  "max_capacity": "Max. capaciteit",
+  "region": "Regio",
+  "unassigned": "Niet toegewezen",
+  "levels": "Niveaus",
+  "level_value": "Niveau {level}",
+  "search_placeholder": "Winkels zoeken...",
+  "emptyState": {
+    "title": "Geen winkel gevonden!"
+  },
+  "form": {
+    "create_shop": "Winkel aanmaken",
+    "edit_shop": "Winkel bewerken",
+    "save_shop": "Winkel opslaan",
+    "basic_info": "Basisgegevens",
+    "levels_section": "Niveaus",
+    "messages": {
+      "createSuccess": "Winkel succesvol aangemaakt",
+      "editSuccess": "Winkel succesvol bijgewerkt",
+      "confirmDelete": "Wil je deze winkel echt verwijderen?",
+      "deleteErrorTitle": "Winkel verwijderen",
+      "deleteSuccess": "Winkel succesvol verwijderd",
+      "requiredName": "Naam is een verplicht veld."
+    }
+  }
+}

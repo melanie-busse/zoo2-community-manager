@@ -70,6 +70,13 @@ export const navConfig: NavItem[] = [
         requiresAuth: true,
         minimumRole: "Director",
       },
+      { labelKey: "shops", href: "/zoo/shops", requiresAuth: false },
+      {
+        labelKey: "shop_create",
+        href: "/zoo/shops/create",
+        requiresAuth: true,
+        minimumRole: "Director",
+      },
     ],
   },
   {

@@ -52,7 +52,9 @@
     "decoration_create": "Tilføj dekoration",
     "origins": "Oprindelser",
     "origin_create": "Tilføj oprindelse",
-    "inventory_biomes": "Biomer"
+    "inventory_biomes": "Biomer",
+    "shops": "Shops",
+    "shop_create": "Opret shop"
   },
   "inventory_collections": "Samlealbum"
 }

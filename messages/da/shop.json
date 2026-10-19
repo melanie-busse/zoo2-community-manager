@@ -1,0 +1,32 @@
+{
+  "overview_title": "Shops",
+  "overview_unit": "Shops",
+  "name": "Navn",
+  "coins_per_client": "Mønter / Kunde",
+  "build_cost": "Byggeomkostninger",
+  "build_time": "Byggetid",
+  "max_capacity": "Maks. kapacitet",
+  "region": "Region",
+  "unassigned": "Ikke tildelt",
+  "levels": "Niveauer",
+  "level_value": "Niveau {level}",
+  "search_placeholder": "Søg efter shops...",
+  "emptyState": {
+    "title": "Ingen shop fundet!"
+  },
+  "form": {
+    "create_shop": "Opret shop",
+    "edit_shop": "Rediger shop",
+    "save_shop": "Gem shop",
+    "basic_info": "Stamdata",
+    "levels_section": "Niveautrin",
+    "messages": {
+      "createSuccess": "Shop oprettet",
+      "editSuccess": "Shop opdateret",
+      "confirmDelete": "Vil du virkelig slette denne shop?",
+      "deleteErrorTitle": "Slet shop",
+      "deleteSuccess": "Shop slettet",
+      "requiredName": "Navn er et obligatorisk felt."
+    }
+  }
+}

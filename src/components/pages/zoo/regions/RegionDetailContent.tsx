@@ -46,7 +46,7 @@ interface Region {
   price: number;
   unlocklevel: number;
   releasedate: Date;
-  regionTexts: { name: string }[];
+  regionTexts: { name: string; description: string }[];
   priceType: { name: string } | null;
   breedingCenters: Building[];
   breedingCenterSlots: BreedingCenterSlot[];
@@ -60,7 +60,7 @@ interface Region {
   terrainName?: string | null;
   shops: Array<{
     id: number;
-    regionId: number;
+    regionId: number | null;
     name: string;
     coinsPerClient: number | null;
     levels: Array<{
@@ -127,6 +127,10 @@ export default function RegionDetailContent({ region }: RegionDetailContentProps
         </TopBar>
       )}
       <RegionHeaderCard region={region} />
+
+      {region.regionTexts[0]?.description && (
+        <DescriptionCard>{region.regionTexts[0].description}</DescriptionCard>
+      )}
 
       {(hasBreedingCenter || hasAdmissionsBooth) && (
         <CardsGrid>
@@ -198,12 +202,10 @@ export default function RegionDetailContent({ region }: RegionDetailContentProps
         </CardsGrid>
       )}
 
-      {(isAdmin || region.shops.length > 0) && (
+      {region.shops.length > 0 && (
         <RegionShopSection
-          regionId={region.id}
           regionIdentifier={region.identifier}
-          initialShops={region.shops}
-          isAdmin={isAdmin}
+          shops={region.shops}
         />
       )}
     </Wrapper>
@@ -232,6 +234,26 @@ const Wrapper = styled.div`
 
   @media (min-width: 1024px) {
     padding: 0;
+  }
+`;
+
+const DescriptionCard = styled.p`
+  width: 100%;
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e0e0e0;
+  box-sizing: border-box;
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #333;
+
+  @media (max-width: 1023px) {
+    width: calc(100% - 16px);
+    margin-left: auto;
+    margin-right: auto;
   }
 `;
 

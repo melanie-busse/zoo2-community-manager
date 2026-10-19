@@ -17,6 +17,8 @@ import RegionGuestLoungeSection from "./form/RegionGuestLoungeSection";
 import SubmitButton from "@/components/ui/form/SubmitButton";
 import FormGrid from "@/components/ui/form/styling/FormGrid";
 import Column from "@/components/ui/form/styling/Column";
+import InfoAccordion from "@/components/page-structure/Elements/InfoAccordion";
+import OriginTransfer from "@/components/ui/OriginTransfer/OriginTransfer";
 
 interface Terrain {
   id: number;
@@ -24,25 +26,41 @@ interface Terrain {
   terrainTexts: { name: string }[];
 }
 
+interface Shop {
+  id: number;
+  name: string;
+  regionId: number | null;
+}
+
 interface RegionFormProps {
   region?: any;
   languages: Array<{ code: string; name: string }>;
   terrains: Terrain[];
+  allShops: Shop[];
 }
 
 const STAFF_ROOM_REGIONS = new Set(["Aviary", "Aquarium", "Terrarium", "NocturnalHouse"]);
 
-export default function RegionForm({ region, languages, terrains }: RegionFormProps) {
+export default function RegionForm({ region, languages, terrains, allShops }: RegionFormProps) {
   const tRegion = useTranslations("region");
+  const tShop = useTranslations("shop");
   const tCommon = useTranslations("common");
   const router = useRouter();
 
   const [formData, setFormData] = useState<any>(() => mapRegionToForm(region ?? null, languages));
+  const [shopIds, setShopIds] = useState<number[]>(
+    () => (region?.shops ?? []).map((s: Shop) => s.id),
+  );
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const adminBuildingTitle = STAFF_ROOM_REGIONS.has(formData.identifier)
     ? tRegion("admin_building_room")
     : tRegion("admin_building");
+
+  const shopItems = allShops.map((s) => ({
+    id: s.id,
+    name: s.name,
+  }));
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -56,10 +74,11 @@ export default function RegionForm({ region, languages, terrains }: RegionFormPr
     setIsSubmitting(true);
     try {
       let result: any;
+      const payload = { ...formData, shopIds };
       if (formData.id) {
-        result = await updateRegionOnClient(formData.id, formData);
+        result = await updateRegionOnClient(formData.id, payload);
       } else {
-        result = await createRegionOnClient(formData);
+        result = await createRegionOnClient(payload);
       }
 
       toast.success(
@@ -121,6 +140,15 @@ export default function RegionForm({ region, languages, terrains }: RegionFormPr
             setFormData={setFormData}
           />
           <RegionGuestLoungeSection formData={formData} setFormData={setFormData} />
+        </Column>
+        <Column $fullWidth>
+          <InfoAccordion title={tShop("overview_title")} icon="/images/icons/buildings.png" defaultOpen>
+            <OriginTransfer
+              allOrigins={shopItems}
+              selectedIds={shopIds}
+              onChange={setShopIds}
+            />
+          </InfoAccordion>
         </Column>
       </FormGrid>
       <SubmitButton

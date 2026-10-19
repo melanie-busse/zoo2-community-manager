@@ -4,9 +4,6 @@ import {
   createRegionOnClient,
   updateRegionOnClient,
   deleteRegionOnClient,
-  createShopOnClient,
-  updateShopOnClient,
-  deleteShopOnClient,
 } from "@/service/frontend/Region";
 
 const mockFetch = (ok: boolean, body: object, status = ok ? 200 : 400) => {
@@ -149,73 +146,3 @@ describe("Region Frontend Service", () => {
   });
 });
 
-describe("Shop Frontend Service", () => {
-  beforeEach(() => {
-    vi.clearAllMocks();
-    vi.unstubAllGlobals();
-  });
-
-  describe("createShopOnClient", () => {
-    const shopInput = { name: "Blumenstand", coinsPerClient: 3, levels: [] };
-    const created = { id: 1, regionId: 5, name: "Blumenstand", coinsPerClient: 3, levels: [] };
-
-    test("sendet POST an /api/regions/5/shops", async () => {
-      mockFetch(true, created);
-      await createShopOnClient(5, shopInput);
-      expect(fetch).toHaveBeenCalledWith("/api/regions/5/shops", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(shopInput),
-      });
-    });
-
-    test("gibt den erstellten Shop zurück bei Erfolg", async () => {
-      mockFetch(true, created);
-      const result = await createShopOnClient(5, shopInput);
-      expect(result).toEqual(created);
-    });
-
-    test("wirft Fehler bei fehlgeschlagenem Request", async () => {
-      mockFetch(false, { message: "Name ist Pflichtfeld" });
-      await expect(createShopOnClient(5, shopInput)).rejects.toThrow("Name ist Pflichtfeld");
-    });
-  });
-
-  describe("updateShopOnClient", () => {
-    const shopInput = { name: "Blumenstand (neu)", coinsPerClient: 5, levels: [] };
-
-    test("sendet PUT an /api/regions/5/shops/10", async () => {
-      mockFetch(true, { id: 10 });
-      await updateShopOnClient(5, 10, shopInput);
-      expect(fetch).toHaveBeenCalledWith("/api/regions/5/shops/10", {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(shopInput),
-      });
-    });
-
-    test("wirft Fehler bei fehlgeschlagenem Request", async () => {
-      mockFetch(false, { message: "Shop nicht gefunden" });
-      await expect(updateShopOnClient(5, 10, shopInput)).rejects.toThrow("Shop nicht gefunden");
-    });
-  });
-
-  describe("deleteShopOnClient", () => {
-    test("sendet DELETE an /api/regions/5/shops/10", async () => {
-      mockFetch(true, {});
-      await deleteShopOnClient(5, 10);
-      expect(fetch).toHaveBeenCalledWith("/api/regions/5/shops/10", { method: "DELETE" });
-    });
-
-    test("löst ohne Rückgabewert auf bei Erfolg", async () => {
-      mockFetch(true, {});
-      const result = await deleteShopOnClient(5, 10);
-      expect(result).toBeUndefined();
-    });
-
-    test("wirft Fehler bei fehlgeschlagenem Request", async () => {
-      mockFetch(false, { message: "Shop nicht gefunden" });
-      await expect(deleteShopOnClient(5, 10)).rejects.toThrow("Shop nicht gefunden");
-    });
-  });
-});

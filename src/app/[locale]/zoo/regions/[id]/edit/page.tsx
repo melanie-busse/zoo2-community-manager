@@ -8,6 +8,7 @@ import ContentWrapper from "@/components/page-structure/page/ContentWrapper";
 import PageHeader from "@/components/page-structure/page/PageHeader";
 import { getRegionByIdForEdit, getTerrains } from "@/service/RegionService";
 import { getAllLanguages } from "@/service/LanguageService";
+import { getAllShops } from "@/service/ShopService";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { hasMinimumRole, isMayor } from "@/utils/roleUtils";
 import RegionForm from "@/components/pages/zoo/regions/RegionForm";
@@ -29,10 +30,11 @@ export default async function EditRegionPage({ params }: EditRegionPageProps) {
     redirect(`/${locale}/zoo/regions`);
   }
 
-  const [regionRaw, languages, terrains] = await Promise.all([
+  const [regionRaw, languages, terrains, allShops] = await Promise.all([
     getRegionByIdForEdit(regionId),
     getAllLanguages(),
     getTerrains(locale),
+    getAllShops(),
   ]);
 
   if (!regionRaw) {
@@ -47,7 +49,12 @@ export default async function EditRegionPage({ params }: EditRegionPageProps) {
     <PageWrapper>
       <ContentWrapper>
         <PageHeader text={tRegion("form.edit_region")} />
-        <RegionForm region={serialized} languages={languages} terrains={terrains} />
+        <RegionForm
+          region={serialized}
+          languages={languages}
+          terrains={terrains}
+          allShops={JSON.parse(JSON.stringify(allShops))}
+        />
       </ContentWrapper>
     </PageWrapper>
   );

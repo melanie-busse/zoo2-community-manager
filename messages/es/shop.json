@@ -1,0 +1,32 @@
+{
+  "overview_title": "Tiendas",
+  "overview_unit": "Tiendas",
+  "name": "Nombre",
+  "coins_per_client": "Monedas / Cliente",
+  "build_cost": "Costo de construcción",
+  "build_time": "Tiempo de construcción",
+  "max_capacity": "Cap. máx.",
+  "region": "Región",
+  "unassigned": "Sin asignar",
+  "levels": "Niveles",
+  "level_value": "Nivel {level}",
+  "search_placeholder": "Buscar tiendas...",
+  "emptyState": {
+    "title": "¡No se encontró ninguna tienda!"
+  },
+  "form": {
+    "create_shop": "Crear tienda",
+    "edit_shop": "Editar tienda",
+    "save_shop": "Guardar tienda",
+    "basic_info": "Información básica",
+    "levels_section": "Niveles",
+    "messages": {
+      "createSuccess": "Tienda creada correctamente",
+      "editSuccess": "Tienda actualizada correctamente",
+      "confirmDelete": "¿Realmente deseas eliminar esta tienda?",
+      "deleteErrorTitle": "Eliminar tienda",
+      "deleteSuccess": "Tienda eliminada correctamente",
+      "requiredName": "El nombre es un campo obligatorio."
+    }
+  }
+}

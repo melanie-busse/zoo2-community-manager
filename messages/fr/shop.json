@@ -1,0 +1,32 @@
+{
+  "overview_title": "Boutiques",
+  "overview_unit": "Boutiques",
+  "name": "Nom",
+  "coins_per_client": "Pièces / Client",
+  "build_cost": "Coût de construction",
+  "build_time": "Temps de construction",
+  "max_capacity": "Cap. max.",
+  "region": "Région",
+  "unassigned": "Non assigné",
+  "levels": "Niveaux",
+  "level_value": "Niveau {level}",
+  "search_placeholder": "Rechercher des boutiques...",
+  "emptyState": {
+    "title": "Aucune boutique trouvée !"
+  },
+  "form": {
+    "create_shop": "Créer une boutique",
+    "edit_shop": "Modifier la boutique",
+    "save_shop": "Enregistrer la boutique",
+    "basic_info": "Informations de base",
+    "levels_section": "Niveaux",
+    "messages": {
+      "createSuccess": "Boutique créée avec succès",
+      "editSuccess": "Boutique mise à jour avec succès",
+      "confirmDelete": "Voulez-vous vraiment supprimer cette boutique ?",
+      "deleteErrorTitle": "Supprimer la boutique",
+      "deleteSuccess": "Boutique supprimée avec succès",
+      "requiredName": "Le nom est un champ obligatoire."
+    }
+  }
+}
