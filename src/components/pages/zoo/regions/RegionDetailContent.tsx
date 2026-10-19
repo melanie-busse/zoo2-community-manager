@@ -9,6 +9,7 @@ import RegionHeaderCard from "./RegionHeaderCard";
 import BreedingCenterCard from "./BreedingCenterCard";
 import AdmissionsBoothCard from "./AdmissionsBoothCard";
 import BuildingCard from "./BuildingCard";
+import RegionShopSection from "./RegionShopSection";
 import ActionGroupBadge from "@/components/ui/badges/ActionGroupBadge";
 import { useRouter } from "@/i18n/routing";
 import { hasMinimumRole, isMayor } from "@/utils/roleUtils";
@@ -57,6 +58,21 @@ interface Region {
   desingBoutique: BuildingWithLevel[];
   clubHouse: BuildingWithLevel[];
   terrainName?: string | null;
+  shops: Array<{
+    id: number;
+    regionId: number;
+    name: string;
+    coinsPerClient: number | null;
+    levels: Array<{
+      id: number;
+      shopId: number;
+      level: number;
+      cost: number;
+      currency: string;
+      maxCapacity: number;
+      buildTime: string;
+    }>;
+  }>;
 }
 
 interface RegionDetailContentProps {
@@ -180,6 +196,15 @@ export default function RegionDetailContent({ region }: RegionDetailContentProps
             />
           )}
         </CardsGrid>
+      )}
+
+      {(isAdmin || region.shops.length > 0) && (
+        <RegionShopSection
+          regionId={region.id}
+          regionIdentifier={region.identifier}
+          initialShops={region.shops}
+          isAdmin={isAdmin}
+        />
       )}
     </Wrapper>
   );
