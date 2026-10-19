@@ -16,12 +16,6 @@ vi.mock("next-intl", () => ({
   },
 }));
 
-vi.mock("styled-components", () => {
-  const Component = ({ children }: any) => children;
-  const tag = () => Component;
-  return { default: new Proxy({}, { get: () => tag }) };
-});
-
 vi.mock("lucide-react", () => ({
   ChevronRight: () => <span data-testid="chevron-right" />,
   ChevronLeft: () => <span data-testid="chevron-left" />,
@@ -39,6 +33,7 @@ vi.mock("./OriginTransfer.styles", () => ({
   Column: ({ children }: any) => <div data-testid="column">{children}</div>,
   ColumnTitle: ({ children }: any) => <div data-testid="column-title">{children}</div>,
   List: ({ children }: any) => <ul>{children}</ul>,
+  SearchWrapper: ({ children }: any) => <div>{children}</div>,
   Item: ({ children, onClick, $disabled, $selected }: any) => (
     <li onClick={$disabled ? undefined : onClick} data-disabled={$disabled} data-selected={$selected}>
       {children}
