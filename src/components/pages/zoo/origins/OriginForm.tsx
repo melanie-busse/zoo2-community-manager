@@ -82,7 +82,7 @@ export default function OriginForm({ origin, languages }: OriginFormProps) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit}>
       <InfoAccordion title={t("form.basic_info")} icon="/images/icons/info.png" defaultOpen>
         <FormGroup>
           <Label htmlFor="identifier">{t("identifier")}</Label>
@@ -137,9 +137,13 @@ export default function OriginForm({ origin, languages }: OriginFormProps) {
         }
         isSubmitting={isSubmitting}
       />
-    </form>
+    </Form>
   );
 }
+
+const Form = styled.form`
+  width: 100%;
+`;
 
 const TranslationsGrid = styled.div`
   display: flex;
