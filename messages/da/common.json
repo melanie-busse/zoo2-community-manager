@@ -33,6 +33,7 @@
   "description": "Beskrivelse",
   "descriptionPlaceholder": "Indtast beskrivelse her...",
   "pleaseSelect": "Vælg venligst...",
+  "searchPlaceholder": "Søg...",
   "loading": "Indlæser...",
   "loading_data": "Indlæser data...",
   "buttons": {

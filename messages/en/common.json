@@ -33,6 +33,7 @@
   "description": "Description",
   "descriptionPlaceholder": "Enter description here...",
   "pleaseSelect": "Please select...",
+  "searchPlaceholder": "Search...",
   "loading": "Loading...",
   "loading_data": "Loading data...",
   "buttons": {

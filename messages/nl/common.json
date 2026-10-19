@@ -33,6 +33,7 @@
   "description": "Beschrijving",
   "descriptionPlaceholder": "Voer hier beschrijving in...",
   "pleaseSelect": "Selecteer...",
+  "searchPlaceholder": "Zoeken...",
   "loading": "Laden...",
   "loading_data": "Gegevens laden...",
   "buttons": {

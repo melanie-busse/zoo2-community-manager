@@ -33,6 +33,7 @@
   "description": "Beschreibung",
   "descriptionPlaceholder": "Hier Beschreibung eingeben...",
   "pleaseSelect": "Bitte wählen...",
+  "searchPlaceholder": "Suchen...",
   "loading": "Wird geladen...",
   "loading_data": "Daten werden geladen...",
   "buttons": {
