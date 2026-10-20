@@ -52,7 +52,9 @@
     "decoration_create": "Añadir decoración",
     "origins": "Orígenes",
     "origin_create": "Añadir origen",
-    "inventory_biomes": "Biomas"
+    "inventory_biomes": "Biomas",
+    "shops": "Tiendas",
+    "shop_create": "Crear tienda"
   },
   "inventory_collections": "Álbum de Colección"
 }

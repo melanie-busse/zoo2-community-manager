@@ -1,0 +1,35 @@
+{
+  "overview_title": "Shops",
+  "overview_unit": "Shops",
+  "name": "Name",
+  "coins_per_client": "Coins / Customer",
+  "build_cost": "Build Cost",
+  "build_time": "Build Time",
+  "max_capacity": "Max. Capacity",
+  "region": "Region",
+  "unassigned": "Unassigned",
+  "levels": "Levels",
+  "level_value": "Level {level}",
+  "search_placeholder": "Search shops...",
+  "emptyState": {
+    "title": "No shop found!"
+  },
+  "form": {
+    "create_shop": "Create Shop",
+    "edit_shop": "Edit Shop",
+    "save_shop": "Save Shop",
+    "basic_info": "Basic Info",
+    "levels_section": "Level Tiers",
+    "messages": {
+      "createSuccess": "Shop created successfully",
+      "editSuccess": "Shop updated successfully",
+      "confirmDelete": "Do you really want to delete this shop?",
+      "deleteErrorTitle": "Delete Shop",
+      "deleteSuccess": "Shop deleted successfully",
+      "requiredName": "Name is a required field."
+    },
+    "translations": "Translations",
+    "language": "Language"
+  },
+  "price": "Price"
+}

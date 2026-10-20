@@ -28,6 +28,7 @@ export async function getRegionById(id: number, locale: string = "de") {
         guestLounges: true,
         desingBoutique: true,
         clubHouse: true,
+        shops: { include: { levels: { orderBy: { level: "asc" } } }, orderBy: { id: "asc" } },
       },
     });
     if (!region) return null;
@@ -60,6 +61,7 @@ export async function getRegionByIdForEdit(id: number) {
         visitorCenters: true,
         transportStation: true,
         guestLounges: true,
+        shops: true,
       },
     });
   } catch (error) {
@@ -154,6 +156,13 @@ export async function createRegion(data: any): Promise<{ id: number }> {
           pricetype: parseInt(data.guestLounge?.pricetype || "1"),
           regionId: region.id,
         },
+      });
+    }
+
+    if ((data.shopIds ?? []).length > 0) {
+      await tx.regionShop.updateMany({
+        where: { id: { in: data.shopIds } },
+        data: { regionId: region.id },
       });
     }
 
@@ -267,6 +276,19 @@ export async function updateRegion(id: number, data: any): Promise<{ id: number 
       });
     }
 
+    // shops — unassign removed shops, assign newly selected ones
+    const shopIds: number[] = data.shopIds ?? [];
+    await tx.regionShop.updateMany({
+      where: { regionId: id, id: { notIn: shopIds } },
+      data: { regionId: null },
+    });
+    if (shopIds.length > 0) {
+      await tx.regionShop.updateMany({
+        where: { id: { in: shopIds } },
+        data: { regionId: id },
+      });
+    }
+
     return { id };
   });
 }
@@ -310,4 +332,44 @@ export async function getAllRegions(locale: string = "de") {
     console.error(`[RegionService] Error in getAllRegions (${locale}):`, error);
     return [];
   }
+}
+
+export async function getShopsByRegionId(regionId: number) {
+  return prisma.regionShop.findMany({
+    where: { regionId },
+    include: { levels: { orderBy: { level: "asc" } } },
+    orderBy: { id: "asc" },
+  });
+}
+
+export async function createShop(regionId: number, data: any) {
+  return prisma.regionShop.create({
+    data: {
+      regionId,
+      name: data.name,
+      identifier: data.identifier ?? "",
+      coinsPerClient: data.coinsPerClient ?? null,
+      levels: { createMany: { data: data.levels ?? [] } },
+    },
+    include: { levels: { orderBy: { level: "asc" } } },
+  });
+}
+
+export async function updateShop(shopId: number, data: any) {
+  return prisma.$transaction(async (tx) => {
+    await tx.regionShopLevel.deleteMany({ where: { shopId } });
+    return tx.regionShop.update({
+      where: { id: shopId },
+      data: {
+        name: data.name,
+        coinsPerClient: data.coinsPerClient ?? null,
+        levels: { createMany: { data: data.levels ?? [] } },
+      },
+      include: { levels: { orderBy: { level: "asc" } } },
+    });
+  });
+}
+
+export async function deleteShop(shopId: number): Promise<void> {
+  await prisma.regionShop.delete({ where: { id: shopId } });
 }

@@ -46,3 +46,4 @@ export async function deleteRegionOnClient(id: number): Promise<void> {
     throw new Error(result.message);
   }
 }
+

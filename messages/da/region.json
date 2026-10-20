@@ -1,4 +1,13 @@
 {
+  "shops": "Butikker",
+  "shop_name": "Navn",
+  "coins_per_client": "Mønter / Klient",
+  "add_shop": "Tilføj butik",
+  "edit_shop": "Rediger butik",
+  "save_shop": "Gem",
+  "build_cost": "Byggeomkostninger",
+  "build_time_label": "Byggetid",
+  "delete_shop_confirm": "Vil du virkelig slette denne butik?",
   "overview_title": "Regioner",
   "overview_unit": "Regioner",
   "detail_title": "Region",

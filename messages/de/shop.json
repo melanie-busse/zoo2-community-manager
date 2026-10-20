@@ -1,0 +1,35 @@
+{
+  "overview_title": "Shops",
+  "overview_unit": "Shops",
+  "name": "Name",
+  "coins_per_client": "Münzen / Kunde",
+  "build_cost": "Baukosten",
+  "build_time": "Bauzeit",
+  "max_capacity": "Max. Kapazität",
+  "region": "Region",
+  "unassigned": "Nicht zugewiesen",
+  "levels": "Stufen",
+  "level_value": "Stufe {level}",
+  "search_placeholder": "Shops suchen...",
+  "emptyState": {
+    "title": "Kein Shop gefunden!"
+  },
+  "form": {
+    "create_shop": "Shop anlegen",
+    "edit_shop": "Shop bearbeiten",
+    "save_shop": "Shop speichern",
+    "basic_info": "Stammdaten",
+    "levels_section": "Level-Stufen",
+    "messages": {
+      "createSuccess": "Shop erfolgreich angelegt",
+      "editSuccess": "Shop erfolgreich aktualisiert",
+      "confirmDelete": "Möchtest du diesen Shop wirklich löschen?",
+      "deleteErrorTitle": "Shop löschen",
+      "deleteSuccess": "Shop erfolgreich gelöscht",
+      "requiredName": "Name ist ein Pflichtfeld."
+    },
+    "translations": "Übersetzungen",
+    "language": "Sprache"
+  },
+  "price": "Preis"
+}

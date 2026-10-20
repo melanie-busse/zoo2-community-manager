@@ -9,6 +9,7 @@ import RegionHeaderCard from "./RegionHeaderCard";
 import BreedingCenterCard from "./BreedingCenterCard";
 import AdmissionsBoothCard from "./AdmissionsBoothCard";
 import BuildingCard from "./BuildingCard";
+import RegionShopSection from "./RegionShopSection";
 import ActionGroupBadge from "@/components/ui/badges/ActionGroupBadge";
 import { useRouter } from "@/i18n/routing";
 import { hasMinimumRole, isMayor } from "@/utils/roleUtils";
@@ -45,7 +46,7 @@ interface Region {
   price: number;
   unlocklevel: number;
   releasedate: Date;
-  regionTexts: { name: string }[];
+  regionTexts: { name: string; description: string }[];
   priceType: { name: string } | null;
   breedingCenters: Building[];
   breedingCenterSlots: BreedingCenterSlot[];
@@ -57,6 +58,22 @@ interface Region {
   desingBoutique: BuildingWithLevel[];
   clubHouse: BuildingWithLevel[];
   terrainName?: string | null;
+  shops: Array<{
+    id: number;
+    regionId: number | null;
+    name: string;
+    identifier: string;
+    coinsPerClient: number | null;
+    levels: Array<{
+      id: number;
+      shopId: number;
+      level: number;
+      cost: number;
+      currency: string;
+      maxCapacity: number;
+      buildTime: string;
+    }>;
+  }>;
 }
 
 interface RegionDetailContentProps {
@@ -111,6 +128,10 @@ export default function RegionDetailContent({ region }: RegionDetailContentProps
         </TopBar>
       )}
       <RegionHeaderCard region={region} />
+
+      {region.regionTexts[0]?.description && (
+        <DescriptionCard>{region.regionTexts[0].description}</DescriptionCard>
+      )}
 
       {(hasBreedingCenter || hasAdmissionsBooth) && (
         <CardsGrid>
@@ -181,6 +202,13 @@ export default function RegionDetailContent({ region }: RegionDetailContentProps
           )}
         </CardsGrid>
       )}
+
+      {region.shops.length > 0 && (
+        <RegionShopSection
+          regionIdentifier={region.identifier}
+          shops={region.shops}
+        />
+      )}
     </Wrapper>
   );
 }
@@ -207,6 +235,26 @@ const Wrapper = styled.div`
 
   @media (min-width: 1024px) {
     padding: 0;
+  }
+`;
+
+const DescriptionCard = styled.p`
+  width: 100%;
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e0e0e0;
+  box-sizing: border-box;
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #333;
+
+  @media (max-width: 1023px) {
+    width: calc(100% - 16px);
+    margin-left: auto;
+    margin-right: auto;
   }
 `;
 

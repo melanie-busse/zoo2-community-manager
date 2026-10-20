@@ -83,7 +83,15 @@
       "Bash(mkdir -p \"D:/Entwicklung/zoo2-community-manager/src/app/[locale]/zoo/origins/create\")",
       "Bash(mkdir -p \"D:/Entwicklung/zoo2-community-manager/src/app/[locale]/zoo/origins/[id]/edit\")",
       "Bash(magick --version)",
-      "Bash(convert --version)"
+      "Bash(convert --version)",
+      "Bash(bash \"C:/Users/micro/.claude/plugins/cache/claude-plugins-official/superpowers/6.4.2/skills/subagent-driven-development/scripts/sdd-workspace\" \"D:/Entwicklung/zoo2-community-manager/docs/superpowers/plans/2026-10-19-region-shops.md\")",
+      "Bash(rm \"D:/Entwicklung/zoo2-community-manager/src/app/api/regions/[id]/shops/route.ts\" \"D:/Entwicklung/zoo2-community-manager/src/app/api/regions/[id]/shops/route.test.ts\")",
+      "Bash(rm -r \"D:/Entwicklung/zoo2-community-manager/src/app/api/regions/[id]/shops/[shopId]\")",
+      "Bash(file=\"D:/Entwicklung/zoo2-community-manager/messages/$locale/navigation.json\")",
+      "Bash(mkdir -p \"D:/Entwicklung/zoo2-community-manager/src/app/[locale]/zoo/shops/create\")",
+      "Bash(mkdir -p \"D:/Entwicklung/zoo2-community-manager/src/app/[locale]/zoo/shops/[id]/edit\")",
+      "Bash(find /d/Entwicklung/zoo2-community-manager/src/app -path *shops* -type f)",
+      "Bash(head -5 grep -rn \"getAllLanguages\\\\|LANGUAGES\\\\b\" src/service/ src/constants/)"
     ]
   }
 }

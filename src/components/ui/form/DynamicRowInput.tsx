@@ -16,6 +16,7 @@ export interface ColumnDefinition {
   $flex?: number;
   placeholder?: string;
   options?: Array<{ value: string; label: string; icon?: string }>;
+  allowDuplicates?: boolean;
 }
 
 interface DynamicRowInputProps {
@@ -72,7 +73,7 @@ export default function DynamicRowInput({
                       id={`select-${row.id}-${col.key}`}
                       value={row[col.key]}
                       onChange={(e) => onChange(row.id, col.key, e.target.value)}
-                      options={(col.options || []).filter((opt) => {
+                      options={col.allowDuplicates ? (col.options || []) : (col.options || []).filter((opt) => {
                         const otherRows = safeRows.filter((r) => r.id !== row.id);
                         const usedValues = otherRows.map((r) => r[col.key]);
                         return !usedValues.includes(opt.value) || opt.value === row[col.key];

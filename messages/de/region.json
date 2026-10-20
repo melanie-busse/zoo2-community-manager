@@ -1,4 +1,13 @@
 {
+  "shops": "Shops",
+  "shop_name": "Name",
+  "coins_per_client": "Coins / Kunde",
+  "add_shop": "Shop hinzufügen",
+  "edit_shop": "Shop bearbeiten",
+  "save_shop": "Speichern",
+  "build_cost": "Baukosten",
+  "build_time_label": "Bauzeit",
+  "delete_shop_confirm": "Diesen Shop wirklich löschen?",
   "overview_title": "Regionen",
   "overview_unit": "Regionen",
   "detail_title": "Region",

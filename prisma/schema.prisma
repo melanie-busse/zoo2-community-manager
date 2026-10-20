@@ -402,9 +402,49 @@ model Region {
   transportStation    TransportStation[]
   desingBoutique      DesignBoutique[]
   clubHouse           ClubHouse[]
+  shops               RegionShop[]
 
   @@index([priceTypeId], map: "region_priceTypeId_fkey")
   @@map("region")
+}
+
+model RegionShop {
+  id             Int                @id @default(autoincrement())
+  regionId       Int?
+  name           String             @db.VarChar(255)
+  identifier     String             @db.VarChar(255)
+  coinsPerClient Int?
+  region         Region?            @relation(fields: [regionId], references: [id], onDelete: SetNull)
+  levels         RegionShopLevel[]
+  texts          RegionShopText[]
+
+  @@index([regionId])
+  @@map("regionshop")
+}
+
+model RegionShopText {
+  id           Int        @id @default(autoincrement())
+  shopId       Int
+  shop         RegionShop @relation(fields: [shopId], references: [id], onDelete: Cascade)
+  languageCode String     @db.VarChar(5)
+  name         String     @db.VarChar(255)
+
+  @@unique([shopId, languageCode])
+  @@map("regionshoptext")
+}
+
+model RegionShopLevel {
+  id          Int        @id @default(autoincrement())
+  shopId      Int
+  level       Int
+  cost        Int
+  currency    String     @default("COINS") @db.VarChar(20)
+  maxCapacity Int
+  buildTime   String     @db.VarChar(50)
+  shop        RegionShop @relation(fields: [shopId], references: [id], onDelete: Cascade)
+
+  @@index([shopId])
+  @@map("regionshoplevel")
 }
 
 model RegionText {
@@ -412,7 +452,7 @@ model RegionText {
   regionid     Int
   languageCode String @db.VarChar(255)
   name         String @db.VarChar(255)
-  description  String @db.VarChar(255)
+  description  String @db.Text
   region       Region @relation(fields: [regionid], references: [id], onDelete: Cascade, map: "regionText_regionId_fkey")
 
   @@index([regionid], map: "regionText_regionId_idx")

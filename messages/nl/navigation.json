@@ -52,7 +52,9 @@
     "decoration_create": "Decoratie toevoegen",
     "origins": "Herkómsten",
     "origin_create": "Herkomst toevoegen",
-    "inventory_biomes": "Biomen"
+    "inventory_biomes": "Biomen",
+    "shops": "Winkels",
+    "shop_create": "Winkel aanmaken"
   },
   "inventory_collections": "Verzamelalbum"
 }
