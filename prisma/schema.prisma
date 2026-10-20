@@ -235,6 +235,7 @@ model ContestStatue {
   animalId  Int
   animal    Animal  @relation(fields: [animalId], references: [id], onDelete: Cascade, map: "contestStatue_animalId_fkey")
   contest   Contest @relation(fields: [contestId], references: [id], onDelete: Cascade, map: "contestStatue_contestId_fkey")
+  collectionRequirements CollectionRequirement[]
 
   @@index([animalId], map: "conteststatue_animalId_fkey")
   @@index([contestId], map: "conteststatue_contestId_fkey")
@@ -494,6 +495,7 @@ model SpecialCoatOrigin {
 enum RequirementType {
   ANIMAL
   DECORATION
+  STATUE
 }
 
 model Collection {
@@ -503,6 +505,7 @@ model Collection {
   regionId            Int
   rewardAnimalId      Int?
   rewardSpecialCoatId Int?
+  rewardVariant       String? @db.VarChar(100)
 
   texts             CollectionText[]
   region            Region                  @relation(fields: [regionId], references: [id])
@@ -535,12 +538,15 @@ model CollectionRequirement {
   animalId      Int?
   specialCoatId Int?
   decorationId  Int?
+  statueId      Int?
 
-  animal      Animal?      @relation(fields: [animalId], references: [id])
-  specialCoat SpecialCoat? @relation(fields: [specialCoatId], references: [id])
-  decoration  Decoration?  @relation(fields: [decorationId], references: [id])
+  animal      Animal?        @relation(fields: [animalId], references: [id])
+  specialCoat SpecialCoat?   @relation(fields: [specialCoatId], references: [id])
+  decoration  Decoration?    @relation(fields: [decorationId], references: [id])
+  statue      ContestStatue? @relation(fields: [statueId], references: [id])
 
   @@index([collectionId], map: "collectionRequirement_collectionId_idx")
+  @@index([statueId], map: "collectionRequirement_statueId_idx")
   @@map("collectionrequirement")
 }
 
