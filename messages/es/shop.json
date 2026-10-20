@@ -27,6 +27,9 @@
       "deleteErrorTitle": "Eliminar tienda",
       "deleteSuccess": "Tienda eliminada correctamente",
       "requiredName": "El nombre es un campo obligatorio."
-    }
-  }
+    },
+    "translations": "Traducciones",
+    "language": "Idioma"
+  },
+  "price": "Precio"
 }

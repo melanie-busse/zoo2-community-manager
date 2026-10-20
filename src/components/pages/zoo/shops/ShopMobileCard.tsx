@@ -32,6 +32,10 @@ export default function ShopMobileCard({ shop }: { shop: ShopItem }) {
   const router = useRouter();
   const isAdmin = hasMinimumRole(session, "Director");
 
+  const handleCardClick = () => {
+    router.push(`/zoo/shops/${shop.id}`);
+  };
+
   const handleDelete = async () => {
     const confirmed = await confirmDeleteDialog({
       title: t("form.messages.deleteErrorTitle"),
@@ -50,7 +54,7 @@ export default function ShopMobileCard({ shop }: { shop: ShopItem }) {
   };
 
   return (
-    <CardContainer>
+    <CardContainer onClick={handleCardClick}>
       <CardHeaderRow>
         <Name>{shop.texts?.[0]?.name ?? shop.name}</Name>
         {isAdmin && (

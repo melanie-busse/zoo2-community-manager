@@ -27,6 +27,9 @@
       "deleteErrorTitle": "Slet shop",
       "deleteSuccess": "Shop slettet",
       "requiredName": "Navn er et obligatorisk felt."
-    }
-  }
+    },
+    "translations": "Oversættelser",
+    "language": "Sprog"
+  },
+  "price": "Pris"
 }

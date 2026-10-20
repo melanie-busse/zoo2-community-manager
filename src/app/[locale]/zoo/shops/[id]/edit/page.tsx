@@ -27,7 +27,7 @@ export default async function EditShopPage({ params }: EditShopPageProps) {
   }
 
   const [shop, regionsRaw, t] = await Promise.all([
-    getShopById(shopId),
+    getShopById(shopId, undefined),
     getAllRegions(locale),
     getTranslations({ locale, namespace: "shop" }),
   ]);
@@ -43,7 +43,7 @@ export default async function EditShopPage({ params }: EditShopPageProps) {
     <PageWrapper>
       <ContentWrapper>
         <PageHeader text={t("form.edit_shop")} />
-        <ShopForm shop={JSON.parse(JSON.stringify(shop))} regions={regions} />
+        <ShopForm shop={JSON.parse(JSON.stringify(shop))} regions={regions} texts={(shop as any).texts ?? []} />
       </ContentWrapper>
     </PageWrapper>
   );

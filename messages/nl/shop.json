@@ -27,6 +27,9 @@
       "deleteErrorTitle": "Winkel verwijderen",
       "deleteSuccess": "Winkel succesvol verwijderd",
       "requiredName": "Naam is een verplicht veld."
-    }
-  }
+    },
+    "translations": "Vertalingen",
+    "language": "Taal"
+  },
+  "price": "Prijs"
 }

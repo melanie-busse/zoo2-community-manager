@@ -15,6 +15,7 @@ import { confirmDeleteDialog } from "@/utils/alerts";
 import { deleteShopOnClient } from "@/service/frontend/Shop";
 import type { ShopItem } from "@/store/useShopStore";
 import { useShopStore } from "@/store/useShopStore";
+import LinkedRow from "@/components/page-structure/Table/LinkedRow";
 
 function toCurrencyType(currency: string): CurrencyType {
   return currency === "DIAMONDS" ? "Diamond" : "Zoodollar";
@@ -76,7 +77,7 @@ export default function ShopDesktopTable({ shops }: ShopDesktopTableProps) {
             ? `/images/regions/${regionId}/shops/${shop.identifier}/image.jpg`
             : null;
           return (
-            <tr key={shop.id}>
+            <LinkedRow key={shop.id} path={`/zoo/shops/${shop.id}`}>
               <td style={{ width: 80, padding: "4px 8px" }}>
                 {imgSrc && (
                   <img
@@ -117,7 +118,7 @@ export default function ShopDesktopTable({ shops }: ShopDesktopTableProps) {
                   />
                 </Styles.TableCellRight>
               )}
-            </tr>
+            </LinkedRow>
           );
         })}
       </tbody>

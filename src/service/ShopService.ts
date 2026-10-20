@@ -18,12 +18,17 @@ export async function getAllShops(locale?: string) {
   });
 }
 
-export async function getShopById(id: number) {
+export async function getShopById(id: number, locale?: string) {
   return prisma.regionShop.findUnique({
     where: { id },
     include: {
       levels: { orderBy: { level: "asc" } },
-      region: true,
+      region: {
+        include: {
+          regionTexts: locale ? { where: { languageCode: locale } } : false,
+        },
+      },
+      texts: locale ? { where: { languageCode: locale } } : true,
     },
   });
 }
@@ -80,6 +85,17 @@ export async function updateShop(id: number, data: any): Promise<void> {
           buildTime: l.buildTime || "",
         })),
       });
+    }
+
+    if (Array.isArray(data.texts)) {
+      await tx.regionShopText.deleteMany({ where: { shopId: id } });
+      if (data.texts.length > 0) {
+        await tx.regionShopText.createMany({
+          data: data.texts
+            .filter((t: any) => t.languageCode && t.name?.trim())
+            .map((t: any) => ({ shopId: id, languageCode: t.languageCode, name: t.name.trim() })),
+        });
+      }
     }
   });
 }

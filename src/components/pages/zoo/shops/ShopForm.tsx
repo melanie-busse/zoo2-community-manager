@@ -8,10 +8,9 @@ import { toast } from "react-toastify";
 
 import InfoAccordion from "@/components/page-structure/Elements/InfoAccordion";
 import SubmitButton from "@/components/ui/form/SubmitButton";
-import FormGrid from "@/components/ui/form/styling/FormGrid";
-import Column from "@/components/ui/form/styling/Column";
-import CurrencyBadge, { CurrencyType } from "@/components/ui/badges/CurrencyBadge";
+import DynamicRowInput from "@/components/ui/form/DynamicRowInput";
 import { createShopOnClient, updateShopOnClient } from "@/service/frontend/Shop";
+import { SUPPORTED_LANGUAGES, FLAG_MAP } from "@/constants/languages";
 
 interface ShopLevel {
   level: number;
@@ -19,6 +18,11 @@ interface ShopLevel {
   currency: string;
   maxCapacity: string;
   buildTime: string;
+}
+
+interface ShopText {
+  languageCode: string;
+  name: string;
 }
 
 interface Region {
@@ -35,18 +39,14 @@ interface ShopFormProps {
     levels: { level: number; cost: number; currency: string; maxCapacity: number; buildTime: string }[];
   };
   regions: Region[];
+  texts?: { languageCode: string; name: string }[];
 }
 
-function toCurrencyType(currency: string): CurrencyType {
-  return currency === "DIAMONDS" ? "Diamond" : "Zoodollar";
-}
-
-export default function ShopForm({ shop, regions }: ShopFormProps) {
+export default function ShopForm({ shop, regions, texts: initialTexts = [] }: ShopFormProps) {
   const t = useTranslations("shop");
   const tCommon = useTranslations("common");
   const router = useRouter();
 
-  const [name, setName] = useState(shop?.name ?? "");
   const [coinsPerClient, setCoinsPerClient] = useState(
     shop?.coinsPerClient != null ? String(shop.coinsPerClient) : "",
   );
@@ -65,34 +65,68 @@ export default function ShopForm({ shop, regions }: ShopFormProps) {
     }
     return [{ level: 0, cost: "", currency: "COINS", maxCapacity: "", buildTime: "" }];
   });
+
+  const [texts, setTexts] = useState<ShopText[]>(
+    initialTexts.map((t) => ({ languageCode: t.languageCode, name: t.name })),
+  );
+
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const addLevel = () => {
+  const languageOptions = SUPPORTED_LANGUAGES.map((l) => ({
+    value: l.code,
+    label: l.name,
+    icon: FLAG_MAP[l.code] || "fi-un",
+  }));
+  const usedCodes = texts.map((t) => t.languageCode);
+  const allLanguagesUsed = texts.length >= SUPPORTED_LANGUAGES.length;
+
+  const onAddText = () => {
+    const next = languageOptions.find((opt) => !usedCodes.includes(opt.value));
+    if (next) setTexts((prev) => [...prev, { languageCode: next.value, name: "" }]);
+  };
+  const onRemoveText = (id: number | string) =>
+    setTexts((prev) => prev.filter((t) => t.languageCode !== id));
+  const onChangeText = (id: number | string, key: string, value: string) =>
+    setTexts((prev) =>
+      prev.map((t) => (t.languageCode === id ? { ...t, [key]: value } : t)),
+    );
+
+  const currencyOptions = [
+    { value: "COINS", label: tCommon("currencies.zoodollar") },
+    { value: "DIAMONDS", label: tCommon("currencies.diamonds") },
+  ];
+
+  const onAddLevel = () => {
     setLevels((prev) => [
       ...prev,
       { level: prev.length, cost: "", currency: "COINS", maxCapacity: "", buildTime: "" },
     ]);
   };
 
-  const removeLevel = (idx: number) => {
-    setLevels((prev) => prev.filter((_, i) => i !== idx).map((l, i) => ({ ...l, level: i })));
+  const onRemoveLevel = (id: number | string) => {
+    setLevels((prev) =>
+      prev.filter((l) => l.level !== Number(id)).map((l, i) => ({ ...l, level: i })),
+    );
   };
 
-  const updateLevel = (idx: number, field: keyof ShopLevel, value: string) => {
-    setLevels((prev) => prev.map((l, i) => (i === idx ? { ...l, [field]: value } : l)));
+  const onChangeLevel = (id: number | string, key: string, value: string) => {
+    setLevels((prev) => prev.map((l) => (l.level === Number(id) ? { ...l, [key]: value } : l)));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (isSubmitting) return;
 
-    if (!name.trim()) {
+    const enText = texts.find((tx) => tx.languageCode === "en")?.name?.trim();
+    const deName = texts.find((tx) => tx.languageCode === "de")?.name?.trim();
+    const fallbackName = enText || deName || texts.find((tx) => tx.name.trim())?.name?.trim();
+    if (!fallbackName) {
       toast.warn(t("form.messages.requiredName"));
       return;
     }
 
     const payload = {
-      name: name.trim(),
+      name: fallbackName,
       coinsPerClient: coinsPerClient !== "" ? parseInt(coinsPerClient) : null,
       regionId: regionId !== "" ? parseInt(regionId) : null,
       levels: levels.map((l) => ({
@@ -102,6 +136,7 @@ export default function ShopForm({ shop, regions }: ShopFormProps) {
         maxCapacity: parseInt(l.maxCapacity) || 0,
         buildTime: l.buildTime,
       })),
+      texts: texts.filter((t) => t.name.trim()),
     };
 
     setIsSubmitting(true);
@@ -124,89 +159,63 @@ export default function ShopForm({ shop, regions }: ShopFormProps) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <FormGrid>
-        <Column>
-          <InfoAccordion title={t("form.basic_info")} icon="/images/icons/buildings.png" defaultOpen>
-            <Fields>
-              <FieldGroup>
-                <Label>{t("name")}</Label>
-                <Input
-                  type="text"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  autoFocus={!shop}
-                />
-              </FieldGroup>
+      <CardsColumn>
+        {/* Stammdaten */}
+        <InfoAccordion title={t("form.basic_info")} icon="/images/icons/buildings.png" defaultOpen>
+          <Fields>
+            <FieldGroup>
+              <Label>{t("coins_per_client")}</Label>
+              <Input
+                type="number"
+                value={coinsPerClient}
+                onChange={(e) => setCoinsPerClient(e.target.value)}
+                min={0}
+              />
+            </FieldGroup>
 
-              <FieldGroup>
-                <Label>{t("coins_per_client")}</Label>
-                <Input
-                  type="number"
-                  value={coinsPerClient}
-                  onChange={(e) => setCoinsPerClient(e.target.value)}
-                  min={0}
-                />
-              </FieldGroup>
+            <FieldGroup>
+              <Label>{t("region")}</Label>
+              <Select value={regionId} onChange={(e) => setRegionId(e.target.value)}>
+                <option value="">{t("unassigned")}</option>
+                {regions.map((r) => (
+                  <option key={r.id} value={r.id}>{r.identifier}</option>
+                ))}
+              </Select>
+            </FieldGroup>
+          </Fields>
+        </InfoAccordion>
 
-              <FieldGroup>
-                <Label>{t("region")}</Label>
-                <Select value={regionId} onChange={(e) => setRegionId(e.target.value)}>
-                  <option value="">{t("unassigned")}</option>
-                  {regions.map((r) => (
-                    <option key={r.id} value={r.id}>{r.identifier}</option>
-                  ))}
-                </Select>
-              </FieldGroup>
-            </Fields>
-          </InfoAccordion>
-        </Column>
+        {/* Übersetzungen */}
+        <InfoAccordion title={t("form.translations")} icon="/images/icons/info.png" defaultOpen>
+          <DynamicRowInput
+            rows={texts.map((tx) => ({ id: tx.languageCode, ...tx }))}
+            columns={[
+              { key: "languageCode", label: t("form.language"), type: "select", $flex: 0.5, options: languageOptions },
+              { key: "name", label: t("name"), type: "text", $flex: 1, placeholder: t("name") },
+            ]}
+            onAdd={onAddText}
+            onRemove={onRemoveText}
+            onChange={onChangeText}
+            disabledAdd={allLanguagesUsed}
+          />
+        </InfoAccordion>
 
-        <Column>
-          <InfoAccordion title={t("form.levels_section")} icon="/images/icons/buildings.png" defaultOpen>
-            <LevelSection>
-              {levels.map((l, idx) => (
-                <LevelRow key={idx}>
-                  <LevelNum>Lvl {l.level}</LevelNum>
-                  <Input
-                    type="number"
-                    placeholder={t("build_cost")}
-                    value={l.cost}
-                    onChange={(e) => updateLevel(idx, "cost", e.target.value)}
-                    min={0}
-                    style={{ flex: 1 }}
-                  />
-                  <CurrencySelect
-                    value={l.currency}
-                    onChange={(e) => updateLevel(idx, "currency", e.target.value)}
-                  >
-                    <option value="COINS">{tCommon("currencies.zoodollar")}</option>
-                    <option value="DIAMONDS">{tCommon("currencies.diamonds")}</option>
-                  </CurrencySelect>
-                  <Input
-                    type="number"
-                    placeholder={t("max_capacity")}
-                    value={l.maxCapacity}
-                    onChange={(e) => updateLevel(idx, "maxCapacity", e.target.value)}
-                    min={0}
-                    style={{ flex: 1 }}
-                  />
-                  <Input
-                    type="text"
-                    placeholder={t("build_time")}
-                    value={l.buildTime}
-                    onChange={(e) => updateLevel(idx, "buildTime", e.target.value)}
-                    style={{ flex: 1 }}
-                  />
-                  {levels.length > 1 && (
-                    <RemoveBtn type="button" onClick={() => removeLevel(idx)}>×</RemoveBtn>
-                  )}
-                </LevelRow>
-              ))}
-              <AddLevelBtn type="button" onClick={addLevel}>+ Level</AddLevelBtn>
-            </LevelSection>
-          </InfoAccordion>
-        </Column>
-      </FormGrid>
+        {/* Level-Stufen */}
+        <InfoAccordion title={t("form.levels_section")} icon="/images/icons/buildings.png" defaultOpen>
+          <DynamicRowInput
+            rows={levels.map((l) => ({ id: l.level, ...l }))}
+            columns={[
+              { key: "cost", label: t("build_cost"), type: "number", $flex: 1, placeholder: t("build_cost") },
+              { key: "currency", label: tCommon("currencies.zoodollar") + "/" + tCommon("currencies.diamonds"), type: "select", $flex: 0.8, options: currencyOptions, allowDuplicates: true },
+              { key: "maxCapacity", label: t("max_capacity"), type: "number", $flex: 1, placeholder: t("max_capacity") },
+              { key: "buildTime", label: t("build_time"), type: "text", $flex: 1, placeholder: t("build_time") },
+            ]}
+            onAdd={onAddLevel}
+            onRemove={onRemoveLevel}
+            onChange={onChangeLevel}
+          />
+        </InfoAccordion>
+      </CardsColumn>
 
       <SubmitButton
         label={isSubmitting ? tCommon("saving") : t("form.save_shop")}
@@ -215,6 +224,13 @@ export default function ShopForm({ shop, regions }: ShopFormProps) {
     </form>
   );
 }
+
+const CardsColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 0;
+`;
 
 const Fields = styled.div`
   display: flex;
@@ -261,60 +277,3 @@ const Select = styled.select`
   }
 `;
 
-const LevelSection = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-`;
-
-const LevelRow = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  flex-wrap: wrap;
-`;
-
-const LevelNum = styled.div`
-  font-size: 0.78rem;
-  font-weight: 700;
-  color: #5d7a2a;
-  white-space: nowrap;
-  min-width: 36px;
-`;
-
-const CurrencySelect = styled.select`
-  padding: 7px 6px;
-  border: 1px solid #d0dcc0;
-  border-radius: 6px;
-  font-size: 0.85rem;
-  background: white;
-`;
-
-const RemoveBtn = styled.button`
-  padding: 4px 8px;
-  border: 1px solid #e05252;
-  background: transparent;
-  color: #e05252;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 1rem;
-
-  &:hover {
-    background: #fdeaea;
-  }
-`;
-
-const AddLevelBtn = styled.button`
-  align-self: flex-start;
-  padding: 5px 12px;
-  border: 1px dashed #aac46a;
-  background: transparent;
-  color: #5d7a2a;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 0.82rem;
-
-  &:hover {
-    background: #f0f7e0;
-  }
-`;

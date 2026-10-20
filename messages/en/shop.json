@@ -27,6 +27,9 @@
       "deleteErrorTitle": "Delete Shop",
       "deleteSuccess": "Shop deleted successfully",
       "requiredName": "Name is a required field."
-    }
-  }
+    },
+    "translations": "Translations",
+    "language": "Language"
+  },
+  "price": "Price"
 }

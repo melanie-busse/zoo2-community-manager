@@ -27,6 +27,9 @@
       "deleteErrorTitle": "Shop löschen",
       "deleteSuccess": "Shop erfolgreich gelöscht",
       "requiredName": "Name ist ein Pflichtfeld."
-    }
-  }
+    },
+    "translations": "Übersetzungen",
+    "language": "Sprache"
+  },
+  "price": "Preis"
 }
