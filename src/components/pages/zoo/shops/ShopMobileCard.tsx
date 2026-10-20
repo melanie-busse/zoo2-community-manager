@@ -52,7 +52,7 @@ export default function ShopMobileCard({ shop }: { shop: ShopItem }) {
   return (
     <CardContainer>
       <CardHeaderRow>
-        <Name>{shop.name}</Name>
+        <Name>{shop.texts?.[0]?.name ?? shop.name}</Name>
         {isAdmin && (
           <ActionGroupBadge
             id={shop.id}
@@ -65,7 +65,7 @@ export default function ShopMobileCard({ shop }: { shop: ShopItem }) {
       <CardStatsRow>
         <InfoRow>
           <span>{t("region")}</span>
-          <span>{shop.region?.identifier ?? <em style={{ color: "#aaa" }}>{t("unassigned")}</em>}</span>
+          <span>{shop.region ? (shop.region.regionTexts?.[0]?.name ?? shop.region.identifier) : <em style={{ color: "#aaa" }}>{t("unassigned")}</em>}</span>
         </InfoRow>
         {shop.coinsPerClient != null && (
           <InfoRow>

@@ -11,12 +11,20 @@ import EmptyState from "@/components/elements/EmptyState/EmptyState";
 import Pagination from "@/components/elements/Pagination/Pagination";
 import FilterCard from "@/components/elements/Filter/FilterCard";
 import { SearchInputField } from "@/components/elements/Filter/SearchInputField";
+import { RegionSelect } from "@/components/elements/Filter/RegionSelect";
+
+interface Region {
+  id: number;
+  identifier: string;
+  regionTexts: { name: string }[];
+}
 
 interface ShopOverviewContentProps {
   shops: ShopItem[];
+  regions: Region[];
 }
 
-export default function ShopOverviewContent({ shops }: ShopOverviewContentProps) {
+export default function ShopOverviewContent({ shops, regions }: ShopOverviewContentProps) {
   const t = useTranslations("shop");
   const tCommon = useTranslations("common");
 
@@ -27,6 +35,8 @@ export default function ShopOverviewContent({ shops }: ShopOverviewContentProps)
   const currentPage = useShopStore((s) => s.currentPage);
   const searchTerm = useShopStore((s) => s.searchTerm);
   const setSearchTerm = useShopStore((s) => s.setSearchTerm);
+  const selectedRegionId = useShopStore((s) => s.selectedRegionId);
+  const setSelectedRegionId = useShopStore((s) => s.setSelectedRegionId);
   const nextPage = useShopStore((s) => s.nextPage);
   const prevPage = useShopStore((s) => s.prevPage);
 
@@ -43,6 +53,11 @@ export default function ShopOverviewContent({ shops }: ShopOverviewContentProps)
           value={searchTerm}
           onChange={setSearchTerm}
           placeholder={t("search_placeholder")}
+        />
+        <RegionSelect
+          regions={regions}
+          selectedRegionId={selectedRegionId}
+          onChange={setSelectedRegionId}
         />
       </FilterCard>
       <ResultsInfo currentCount={currentItems.length} totalCount={filteredCount} unit={t("overview_unit")} />
@@ -76,8 +91,16 @@ export default function ShopOverviewContent({ shops }: ShopOverviewContentProps)
 }
 
 const DesktopView = styled.div`
+  width: 100%;
+
   @media (max-width: 768px) {
     display: none;
+  }
+
+  /* override global table min-width so no horizontal scrollbar appears */
+  table {
+    min-width: unset;
+    width: 100%;
   }
 `;
 

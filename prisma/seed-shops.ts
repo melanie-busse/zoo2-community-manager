@@ -836,6 +836,7 @@ async function main() {
     const created = await prisma.regionShop.create({
       data: {
         name: shop.name,
+        identifier: shop.name.toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_|_$/g, ""),
         coinsPerClient: shop.coinsPerClient,
         levels: {
           createMany: {

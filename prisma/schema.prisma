@@ -409,26 +409,39 @@ model Region {
 }
 
 model RegionShop {
-  id             Int               @id @default(autoincrement())
+  id             Int                @id @default(autoincrement())
   regionId       Int?
-  name           String            @db.VarChar(255)
+  name           String             @db.VarChar(255)
+  identifier     String             @db.VarChar(255)
   coinsPerClient Int?
-  region         Region?           @relation(fields: [regionId], references: [id], onDelete: SetNull)
+  region         Region?            @relation(fields: [regionId], references: [id], onDelete: SetNull)
   levels         RegionShopLevel[]
+  texts          RegionShopText[]
 
   @@index([regionId])
   @@map("regionshop")
 }
 
-model RegionShopLevel {
+model RegionShopText {
   id           Int        @id @default(autoincrement())
   shopId       Int
-  level        Int
-  cost         Int
-  currency     String     @default("COINS") @db.VarChar(20)
-  maxCapacity  Int
-  buildTime    String     @db.VarChar(50)
   shop         RegionShop @relation(fields: [shopId], references: [id], onDelete: Cascade)
+  languageCode String     @db.VarChar(5)
+  name         String     @db.VarChar(255)
+
+  @@unique([shopId, languageCode])
+  @@map("regionshoptext")
+}
+
+model RegionShopLevel {
+  id          Int        @id @default(autoincrement())
+  shopId      Int
+  level       Int
+  cost        Int
+  currency    String     @default("COINS") @db.VarChar(20)
+  maxCapacity Int
+  buildTime   String     @db.VarChar(50)
+  shop        RegionShop @relation(fields: [shopId], references: [id], onDelete: Cascade)
 
   @@index([shopId])
   @@map("regionshoplevel")

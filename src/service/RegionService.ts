@@ -347,6 +347,7 @@ export async function createShop(regionId: number, data: any) {
     data: {
       regionId,
       name: data.name,
+      identifier: data.identifier ?? "",
       coinsPerClient: data.coinsPerClient ?? null,
       levels: { createMany: { data: data.levels ?? [] } },
     },

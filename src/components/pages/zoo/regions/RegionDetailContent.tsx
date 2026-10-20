@@ -62,6 +62,7 @@ interface Region {
     id: number;
     regionId: number | null;
     name: string;
+    identifier: string;
     coinsPerClient: number | null;
     levels: Array<{
       id: number;

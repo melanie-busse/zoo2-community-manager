@@ -5,6 +5,7 @@ import PageWrapper from "@/components/page-structure/page/PageWrapper";
 import ContentWrapper from "@/components/page-structure/page/ContentWrapper";
 import PageHeader from "@/components/page-structure/page/PageHeader";
 import { getAllShops } from "@/service/ShopService";
+import { getAllRegions } from "@/service/RegionService";
 import ShopOverviewContent from "@/components/pages/zoo/shops/ShopOverviewContent";
 
 interface ShopOverviewPageProps {
@@ -14,8 +15,9 @@ interface ShopOverviewPageProps {
 export default async function ShopOverviewPage({ params }: ShopOverviewPageProps) {
   const { locale } = await params;
 
-  const [shops, t] = await Promise.all([
-    getAllShops(),
+  const [shops, regions, t] = await Promise.all([
+    getAllShops(locale),
+    getAllRegions(locale),
     getTranslations({ locale, namespace: "shop" }),
   ]);
 
@@ -23,7 +25,10 @@ export default async function ShopOverviewPage({ params }: ShopOverviewPageProps
     <PageWrapper>
       <ContentWrapper>
         <PageHeader text={t("overview_title")} />
-        <ShopOverviewContent shops={JSON.parse(JSON.stringify(shops))} />
+        <ShopOverviewContent
+          shops={JSON.parse(JSON.stringify(shops))}
+          regions={JSON.parse(JSON.stringify(regions))}
+        />
       </ContentWrapper>
     </PageWrapper>
   );

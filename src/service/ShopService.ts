@@ -1,11 +1,18 @@
 import "server-only";
 import { prisma } from "@/lib/prisma";
 
-export async function getAllShops() {
+export async function getAllShops(locale?: string) {
   return prisma.regionShop.findMany({
     include: {
       levels: { orderBy: { level: "asc" } },
-      region: true,
+      region: {
+        include: {
+          regionTexts: locale
+            ? { where: { languageCode: locale } }
+            : false,
+        },
+      },
+      texts: locale ? { where: { languageCode: locale } } : false,
     },
     orderBy: { name: "asc" },
   });
@@ -26,6 +33,7 @@ export async function createShop(data: any): Promise<{ id: number }> {
     const shop = await tx.regionShop.create({
       data: {
         name: data.name,
+        identifier: data.identifier ?? "",
         coinsPerClient: data.coinsPerClient != null ? parseInt(data.coinsPerClient) : null,
         regionId: data.regionId ? parseInt(data.regionId) : null,
       },

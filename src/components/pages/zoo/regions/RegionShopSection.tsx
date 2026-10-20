@@ -21,6 +21,7 @@ export interface ShopWithLevels {
   id: number;
   regionId: number | null;
   name: string;
+  identifier: string;
   coinsPerClient: number | null;
   levels: ShopLevel[];
 }
@@ -46,26 +47,28 @@ export default function RegionShopSection({ regionIdentifier, shops }: RegionSho
       <ShopList>
         {shops.map((shop) => (
           <ShopCard key={shop.id}>
-            <ShopImageWrapper>
-              <img
-                src={`/images/regions/${identifier}/shops/${shop.name}/image.jpg`}
-                alt={shop.name}
-                width={180}
-                height={120}
-                style={{ objectFit: "cover", display: "block" }}
-                onError={(e) => {
-                  (e.currentTarget as HTMLImageElement).style.display = "none";
-                }}
-              />
-            </ShopImageWrapper>
-
-            <ShopInfo>
+            <ShopLeft>
               <ShopName>{shop.name}</ShopName>
               {shop.coinsPerClient != null && (
                 <CoinsLine>
                   {shop.coinsPerClient} {tRegion("coins_per_client")}
                 </CoinsLine>
               )}
+              <ShopImageWrapper>
+                <img
+                  src={`/images/regions/${identifier}/shops/${shop.identifier}/image.jpg`}
+                  alt={shop.name}
+                  width={180}
+                  height={120}
+                  style={{ objectFit: "cover", display: "block" }}
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).style.display = "none";
+                  }}
+                />
+              </ShopImageWrapper>
+            </ShopLeft>
+
+            <ShopInfo>
 
               {shop.levels.length > 0 && (
                 <LevelTable>
@@ -80,7 +83,9 @@ export default function RegionShopSection({ regionIdentifier, shops }: RegionSho
                   <tbody>
                     {shop.levels.map((lvl) => (
                       <tr key={lvl.id}>
-                        <LevelTd style={{ textAlign: "left", fontWeight: 600 }}>{lvl.level}</LevelTd>
+                        <LevelTd style={{ textAlign: "left", fontWeight: 600 }}>
+                          {lvl.level}
+                        </LevelTd>
                         <LevelTd>
                           <CurrencyBadge value={lvl.cost} type={toCurrencyType(lvl.currency)} />
                         </LevelTd>
@@ -116,13 +121,19 @@ const ShopCard = styled.div`
   padding: 12px;
 `;
 
-const ShopImageWrapper = styled.div`
+const ShopLeft = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
   flex-shrink: 0;
+`;
+
+const ShopImageWrapper = styled.div`
   border-radius: 8px;
   overflow: hidden;
   border: 1px solid #e0e0e0;
   background: #f0f0f0;
-  min-width: 180px;
+  width: 180px;
   min-height: 120px;
 `;
 
