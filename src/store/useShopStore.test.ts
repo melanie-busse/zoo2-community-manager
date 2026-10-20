@@ -107,6 +107,25 @@ describe("useShopStore", () => {
     expect(useShopStore.getState().sortDirection).toBe("asc");
   });
 
+  test("toggleSort nach Region sortiert nach Regionsname (asc)", () => {
+    useShopStore.getState().setInitialShops(mockShops);
+    useShopStore.getState().toggleSort("region");
+    const regions = useShopStore.getState().currentItems.map(
+      (s) => s.region?.regionTexts?.[0]?.name ?? "",
+    );
+    expect(regions).toEqual([...regions].sort((a, b) => a.localeCompare(b)));
+  });
+
+  test("toggleSort nach Region sortiert desc beim zweiten Klick", () => {
+    useShopStore.getState().setInitialShops(mockShops);
+    useShopStore.getState().toggleSort("region");
+    useShopStore.getState().toggleSort("region");
+    const regions = useShopStore.getState().currentItems.map(
+      (s) => s.region?.regionTexts?.[0]?.name ?? "",
+    );
+    expect(regions).toEqual([...regions].sort((a, b) => b.localeCompare(a)));
+  });
+
   test("Pagination: nextPage blättert zur nächsten Seite", () => {
     const manyShops = Array.from({ length: 25 }, (_, i) =>
       makeShop({ id: i + 1, name: `Shop ${String(i + 1).padStart(2, "0")}` }),

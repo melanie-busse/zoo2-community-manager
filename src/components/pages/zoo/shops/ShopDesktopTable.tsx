@@ -64,7 +64,13 @@ export default function ShopDesktopTable({ shops }: ShopDesktopTableProps) {
             currentSortBy={sortBy}
             sortDirection={sortDirection}
           />
-          <th>{t("region")}</th>
+          <SortableTableHeader
+            label={t("region")}
+            columnKey="region"
+            onSort={() => toggleSort("region")}
+            currentSortBy={sortBy}
+            sortDirection={sortDirection}
+          />
           <Styles.TableHeaderRight>{t("build_cost")}</Styles.TableHeaderRight>
           {isAdmin && <Styles.TableHeaderRight>{tCommon("actions")}</Styles.TableHeaderRight>}
         </tr>

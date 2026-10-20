@@ -41,9 +41,16 @@ function filterShops(shops: ShopItem[], searchTerm: string, selectedRegionId: nu
 function sortShops(shops: ShopItem[], sortBy: string | null, sortDirection: "asc" | "desc"): ShopItem[] {
   if (!sortBy) return shops;
   return [...shops].sort((a, b) => {
-    const nameA = (a.texts?.[0]?.name ?? a.name).toLowerCase();
-    const nameB = (b.texts?.[0]?.name ?? b.name).toLowerCase();
-    const cmp = nameA.localeCompare(nameB);
+    let valA: string;
+    let valB: string;
+    if (sortBy === "region") {
+      valA = (a.region?.regionTexts?.[0]?.name ?? a.region?.identifier ?? "").toLowerCase();
+      valB = (b.region?.regionTexts?.[0]?.name ?? b.region?.identifier ?? "").toLowerCase();
+    } else {
+      valA = (a.texts?.[0]?.name ?? a.name).toLowerCase();
+      valB = (b.texts?.[0]?.name ?? b.name).toLowerCase();
+    }
+    const cmp = valA.localeCompare(valB);
     return sortDirection === "asc" ? cmp : -cmp;
   });
 }
