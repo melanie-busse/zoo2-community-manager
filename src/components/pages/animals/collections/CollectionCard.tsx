@@ -9,6 +9,7 @@ import CardContainer from "@/components/page-structure/Card/CardContainer";
 import CardHeaderRow from "@/components/page-structure/Card/CardHeaderRow";
 import CardDivider from "@/components/page-structure/Card/CardDevider";
 import PolaroidBadge from "@/components/ui/badges/PolaroidBadge";
+import ActionGroupBadge from "@/components/ui/badges/ActionGroupBadge";
 import {
   getAnimalImageSrc,
   getRequirementImageSrc,
@@ -60,9 +61,11 @@ const RequirementsGrid = styled.div`
 
 interface CollectionCardProps {
   collection: Collection;
+  onEdit?: () => void;
+  onDelete?: () => void;
 }
 
-export default function CollectionCard({ collection }: CollectionCardProps) {
+export default function CollectionCard({ collection, onEdit, onDelete }: CollectionCardProps) {
   const animalImageSrc = getAnimalImageSrc(collection);
   const { name: rewardName, color: rewardColor } = getRewardLabel(collection);
   const rewardHref = collection.rewardSpecialCoat
@@ -91,6 +94,9 @@ export default function CollectionCard({ collection }: CollectionCardProps) {
             </Star>
           ))}
         </StarsRow>
+        {(onEdit || onDelete) && (
+          <ActionGroupBadge id={collection.id} onEdit={onEdit} onDelete={onDelete} />
+        )}
       </CardHeaderRow>
 
       <SpacedDividerBottom />
