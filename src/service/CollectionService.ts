@@ -36,7 +36,7 @@ export async function getAllCollections(locale: string): Promise<Collection[]> {
           },
           statue: {
             include: {
-              animal: { include: { animaltext: { where: { languageCode: locale } } } },
+              animal: { include: { biome: true, animaltext: { where: { languageCode: locale } } } },
               contest: true,
             },
           },
@@ -118,6 +118,8 @@ export async function getAllCollections(locale: string): Promise<Collection[]> {
             id: r.statue.id,
             animalName: r.statue.animal.animaltext[0]?.animalName ?? r.statue.animal.identifier ?? "",
             contestName: r.statue.contest.endDate.getFullYear().toString(),
+            animalIdentifier: r.statue.animal.identifier ?? "",
+            biomeIdentifier: r.statue.animal.biome?.identifier ?? "",
           }
         : null,
     })),

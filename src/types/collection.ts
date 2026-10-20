@@ -17,7 +17,7 @@ export type CollectionRequirement = {
   animal: Animal | null;
   specialCoat: SpecialCoat | null;
   decoration: Decoration | null;
-  statue: { id: number; animalName: string; contestName: string } | null;
+  statue: { id: number; animalName: string; contestName: string; animalIdentifier: string; biomeIdentifier: string } | null;
 };
 
 export type Collection = {

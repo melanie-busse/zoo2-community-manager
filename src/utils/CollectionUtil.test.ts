@@ -18,6 +18,7 @@ const decoReq: CollectionRequirement = {
   animal: null,
   specialCoat: null,
   decoration: { id: 1, identifier: "snowman", name: "Snowman", category: { identifier: "winter" } },
+  statue: null,
 };
 
 const animalReq: CollectionRequirement = {
@@ -29,6 +30,7 @@ const animalReq: CollectionRequirement = {
   animal: { id: 108, identifier: "rabbit", name: "Rabbit", biome },
   specialCoat: null,
   decoration: null,
+  statue: null,
 };
 
 const statueReq: CollectionRequirement = {
@@ -40,6 +42,7 @@ const statueReq: CollectionRequirement = {
   animal: { id: 108, identifier: "rabbit", name: "Rabbit", biome },
   specialCoat: null,
   decoration: null,
+  statue: null,
 };
 
 const specialCoatReq: CollectionRequirement = {
@@ -50,6 +53,7 @@ const specialCoatReq: CollectionRequirement = {
   sortOrder: 2,
   animal: null,
   decoration: null,
+  statue: null,
   specialCoat: {
     id: 10,
     animalId: 108,
@@ -69,6 +73,25 @@ const decoNoAnimalReq: CollectionRequirement = {
   animal: null,
   specialCoat: null,
   decoration: null,
+  statue: null,
+};
+
+const statueTypeReq: CollectionRequirement = {
+  id: 5,
+  type: "STATUE",
+  requiredLevel: null,
+  itemName: "",
+  sortOrder: 4,
+  animal: null,
+  specialCoat: null,
+  decoration: null,
+  statue: {
+    id: 7,
+    animalName: "Löwe Statue",
+    contestName: "2024",
+    animalIdentifier: "lion",
+    biomeIdentifier: "savanna",
+  },
 };
 
 const baseCollection: Collection = {
@@ -79,6 +102,7 @@ const baseCollection: Collection = {
   region: { id: 1, identifier: "grassland", name: "Grasland" },
   requirements: [animalReq],
   rewardAnimal: null,
+  rewardVariant: null,
   rewardSpecialCoat: null,
 };
 
@@ -109,6 +133,12 @@ describe("getRequirementImageSrc", () => {
 
   test("Deko ohne Tier und ohne Decoration → null", () => {
     expect(getRequirementImageSrc(decoNoAnimalReq)).toBeNull();
+  });
+
+  test("STATUE-Requirement → statue image path", () => {
+    expect(getRequirementImageSrc(statueTypeReq)).toBe(
+      "/images/animals/savanna/lion/statue/image.jpg"
+    );
   });
 });
 
@@ -143,6 +173,10 @@ describe("getRequirementLabel", () => {
       animal: { id: 108, identifier: "rabbit", biome },
     };
     expect(getRequirementLabel(req)).toEqual({ name: "Rabbit" });
+  });
+
+  test("STATUE-Requirement → animalName", () => {
+    expect(getRequirementLabel(statueTypeReq)).toEqual({ name: "Löwe Statue" });
   });
 });
 
