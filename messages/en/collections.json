@@ -29,6 +29,31 @@
   },
   "type": {
     "ANIMAL": "Animal",
-    "DECORATION": "Decoration"
+    "DECORATION": "Decoration",
+    "STATUE": "Statue"
+  },
+  "form": {
+    "create_title": "Create Collection",
+    "edit_title": "Edit Collection",
+    "save": "Save",
+    "region": "Region",
+    "reward_animal": "Reward Animal",
+    "reward_variant": "Color Variant",
+    "stars": "Stars",
+    "translations": "Translations",
+    "requirements": "Requirements",
+    "type": "Type",
+    "animal": "Animal",
+    "statue": "Statue",
+    "level": "Level",
+    "messages": {
+      "createSuccess": "Collection has been created",
+      "editSuccess": "Collection has been updated",
+      "deleteSuccess": "Collection has been deleted",
+      "confirmDelete": "Really delete this collection?",
+      "deleteTitle": "Delete Collection",
+      "requiredName": "At least one name is required",
+      "requiredRegion": "Please select a region"
+    }
   }
 }

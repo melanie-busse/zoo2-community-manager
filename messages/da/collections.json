@@ -29,6 +29,31 @@
   },
   "type": {
     "ANIMAL": "Dyr",
-    "DECORATION": "Dekoration"
+    "DECORATION": "Dekoration",
+    "STATUE": "Statue"
+  },
+  "form": {
+    "create_title": "Sammelalbum anlegen",
+    "edit_title": "Sammelalbum bearbeiten",
+    "save": "Speichern",
+    "region": "Region",
+    "reward_animal": "Belohnungs-Tier",
+    "reward_variant": "Farbvariante",
+    "stars": "Sterne",
+    "translations": "Übersetzungen",
+    "requirements": "Anforderungen",
+    "type": "Typ",
+    "animal": "Tier",
+    "statue": "Statue",
+    "level": "Level",
+    "messages": {
+      "createSuccess": "Sammelalbum wurde angelegt",
+      "editSuccess": "Sammelalbum wurde aktualisiert",
+      "deleteSuccess": "Sammelalbum wurde gelöscht",
+      "confirmDelete": "Sammelalbum wirklich löschen?",
+      "deleteTitle": "Sammelalbum löschen",
+      "requiredName": "Mindestens ein Name ist erforderlich",
+      "requiredRegion": "Bitte eine Region auswählen"
+    }
   }
 }
