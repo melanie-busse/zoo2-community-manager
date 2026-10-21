@@ -844,13 +844,25 @@ model LevelReward {
   level    Int  @unique
   coins    Int?
   diamonds Int?
-  zooItems String? @db.Text
 
   enclosureItems LevelEnclosureItem[]
   chests         LevelChest[]
   animalRewards  LevelAnimalReward[]
+  texts          LevelRewardText[]
 
   @@map("levelreward")
+}
+
+model LevelRewardText {
+  id           Int         @id @default(autoincrement())
+  levelId      Int
+  levelReward  LevelReward @relation(fields: [levelId], references: [id], onDelete: Cascade)
+  languageCode String      @db.VarChar(5)
+  zooItems     String?     @db.Text
+
+  @@unique([levelId, languageCode])
+  @@index([levelId])
+  @@map("levelrewardtext")
 }
 
 model LevelEnclosureItem {

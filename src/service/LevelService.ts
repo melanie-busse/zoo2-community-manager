@@ -39,6 +39,7 @@ export async function getAllLevelRewards(locale: string): Promise<LevelRewardIte
   const rewards = await prisma.levelReward.findMany({
     orderBy: { level: "asc" },
     include: {
+      texts: { where: { languageCode: locale } },
       enclosureItems: {
         include: {
           biomeDecoration: {
@@ -73,7 +74,7 @@ export async function getAllLevelRewards(locale: string): Promise<LevelRewardIte
     level: r.level,
     coins: r.coins,
     diamonds: r.diamonds,
-    zooItems: r.zooItems,
+    zooItems: r.texts[0]?.zooItems ?? null,
     enclosureItems: r.enclosureItems.map((e) => {
       const dec = e.biomeDecoration;
       const game = e.biomeGame;
