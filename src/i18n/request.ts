@@ -21,6 +21,7 @@ const namespaces = [
   "decoration",
   "origin",
   "shop",
+  "levelup",
 ] as const;
 
 export default getRequestConfig(async ({ requestLocale }) => {

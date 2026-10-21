@@ -55,7 +55,9 @@
     "origin_create": "Tilføj oprindelse",
     "inventory_biomes": "Biomer",
     "shops": "Shops",
-    "shop_create": "Opret shop"
+    "shop_create": "Opret shop",
+    "game": "Spil",
+    "levelup": "Level Op"
   },
   "inventory_collections": "Samlealbum"
 }

@@ -109,6 +109,7 @@ export const navConfig: NavItem[] = [
         requiresAuth: true,
         minimumRole: "Director",
       },
+      { labelKey: "import-animals", href: "/admin/import-animals", requiresAuth: true },
     ],
   },
 
@@ -181,11 +182,10 @@ export const navConfig: NavItem[] = [
   },
 
   {
-    id: "admin",
-    labelKey: "admin",
-    basePath: "/admin",
-    requiresAuth: true,
-    minimumRole: "Director",
-    subMenu: [{ labelKey: "import-animals", href: "/admin/import-animals", requiresAuth: true }],
+    id: "game",
+    labelKey: "game",
+    basePath: "/game",
+    requiresAuth: false,
+    subMenu: [{ labelKey: "levelup", href: "/game/levelup", requiresAuth: false }],
   },
 ];

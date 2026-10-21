@@ -99,7 +99,12 @@
       "Bash(echo \"=== $d ===\")",
       "Read(//d/Entwicklung/zoo2-community-manager/$d/**)",
       "Read(//d/Entwicklung/zoo2-community-manager/**)",
-      "Bash(fi)"
+      "Bash(fi)",
+      "Bash(python3 -c \":*)",
+      "Bash(npx eslint:*)",
+      "Bash(tasklist /FI 'IMAGENAME eq node.exe')",
+      "Bash(npx tsx -e \":*)",
+      "Bash(file=\"D:/Entwicklung/zoo2-community-manager/messages/$locale/levelup.json\")"
     ]
   }
 }

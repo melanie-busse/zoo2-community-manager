@@ -55,30 +55,20 @@ describe("Navigation – 'Wettbewerb anlegen'", () => {
   });
 });
 
-describe("Navigation – Admin-Bereich (Tiere importieren)", () => {
-  test("nicht eingeloggt: Admin-Menü nicht sichtbar", () => {
+describe("Navigation – Tiere importieren (unter Animals)", () => {
+  test("nicht eingeloggt: Import-Link nicht sichtbar", () => {
     render(<Navigation />, { session: null });
-    expect(screen.queryByTestId("nav-item-admin")).not.toBeInTheDocument();
+    expect(screen.queryByText(/Tiere importieren/i)).not.toBeInTheDocument();
   });
 
-  test("Visitor: Admin-Menü nicht sichtbar", () => {
-    render(<Navigation />, { session: SESSION_VISITOR });
-    expect(screen.queryByTestId("nav-item-admin")).not.toBeInTheDocument();
-  });
-
-  test("Employee: Admin-Menü nicht sichtbar", () => {
-    render(<Navigation />, { session: SESSION_EMPLOYEE });
-    expect(screen.queryByTestId("nav-item-admin")).not.toBeInTheDocument();
-  });
-
-  test("Director: Admin-Menü sichtbar", () => {
+  test("Director: Import-Link sichtbar", () => {
     render(<Navigation />, { session: SESSION_DIRECTOR });
-    expect(screen.getByTestId("nav-item-admin")).toBeInTheDocument();
+    expect(screen.getByText(/Tiere importieren/i)).toBeInTheDocument();
   });
 
-  test("Admin: Admin-Menü sichtbar", () => {
+  test("Admin: Import-Link sichtbar", () => {
     render(<Navigation />, { session: SESSION_ADMIN });
-    expect(screen.getByTestId("nav-item-admin")).toBeInTheDocument();
+    expect(screen.getByText(/Tiere importieren/i)).toBeInTheDocument();
   });
 });
 

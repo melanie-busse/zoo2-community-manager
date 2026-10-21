@@ -55,7 +55,9 @@
     "origin_create": "Herkunft anlegen",
     "inventory_biomes": "Biome",
     "shops": "Shops",
-    "shop_create": "Shop anlegen"
+    "shop_create": "Shop anlegen",
+    "game": "Spiel",
+    "levelup": "Level Up"
   },
   "inventory_collections": "Sammelalbum"
 }

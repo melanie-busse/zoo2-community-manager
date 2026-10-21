@@ -14,7 +14,9 @@ import { hasMinimumRole, isMayor } from "@/utils/roleUtils";
 export default function MobileNavigation({ isOpen, onClose }) {
   const t = useTranslations("navigation");
   const [openSubMenu, setOpenSubMenu] = useState<string | null>(null);
-  const { data: session } = useSession();
+  const { data: session, status } = useSession();
+  // During "loading" treat as unauthenticated to match SSR output (no session on server)
+  const resolvedSession = status === "loading" ? null : session;
 
   const toggleSubMenu = (menuId: string) => {
     setOpenSubMenu(openSubMenu === menuId ? null : menuId);
@@ -24,8 +26,8 @@ export default function MobileNavigation({ isOpen, onClose }) {
     <Styles.Overlay $isOpen={isOpen}>
       <Styles.MenuContent>
         {navConfig.map((item) => {
-          if (item.requiresAuth && !session) return null;
-          if (item.minimumRole && !hasMinimumRole(session, item.minimumRole) && !isMayor(session)) return null;
+          if (item.requiresAuth && !resolvedSession) return null;
+          if (item.minimumRole && !hasMinimumRole(resolvedSession, item.minimumRole) && !isMayor(resolvedSession)) return null;
 
           if (item.href && !item.subMenu) {
             return (
@@ -44,8 +46,8 @@ export default function MobileNavigation({ isOpen, onClose }) {
 
               <Styles.SubMenu $isOpen={openSubMenu === item.id}>
                 {item.subMenu?.map((sub) => {
-                  if (sub.requiresAuth && !session) return null;
-                  if (sub.minimumRole && !hasMinimumRole(session, sub.minimumRole) && !isMayor(session)) return null;
+                  if (sub.requiresAuth && !resolvedSession) return null;
+                  if (sub.minimumRole && !hasMinimumRole(resolvedSession, sub.minimumRole) && !isMayor(resolvedSession)) return null;
 
                   return (
                     <Styles.SubNavLink key={sub.href} href={sub.href} onClick={onClose}>

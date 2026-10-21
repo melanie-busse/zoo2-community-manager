@@ -66,16 +66,10 @@ describe("MobileNavigation – Rollenbasierte Sichtbarkeit", () => {
     expect(screen.getByText(/Wettbewerb anlegen/i)).toBeInTheDocument();
   });
 
-  test("Mayor: alle Create-Links und Admin-Menü sichtbar", () => {
+  test("Mayor: alle Create-Links sichtbar", () => {
     render(<MobileNavigation isOpen={true} onClose={mockOnClose} />, { session: SESSION_MAYOR });
     expect(screen.getByText(/Tier anlegen/i)).toBeInTheDocument();
     expect(screen.getByText(/Farbvariante anlegen/i)).toBeInTheDocument();
     expect(screen.getByText(/Wettbewerb anlegen/i)).toBeInTheDocument();
-    expect(screen.getByText(/Admin/i)).toBeInTheDocument();
-  });
-
-  test("nicht eingeloggt: kein Admin-Menü", () => {
-    render(<MobileNavigation isOpen={true} onClose={mockOnClose} />, { session: null });
-    expect(screen.queryByText(/Admin/i)).not.toBeInTheDocument();
   });
 });

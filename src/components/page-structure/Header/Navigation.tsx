@@ -11,7 +11,8 @@ import { hasMinimumRole, isMayor } from "@/utils/roleUtils";
 
 export default function Navigation() {
   const t = useTranslations("navigation");
-  const { data: session } = useSession();
+  const { data: session, status } = useSession();
+  const resolvedSession = status === "loading" ? null : session;
   const pathname = usePathname();
 
   const checkActive = (item: any) => {
@@ -25,8 +26,8 @@ export default function Navigation() {
     <Styles.NavContainer>
       <Styles.NavList>
         {navConfig.map((item) => {
-          if (item.requiresAuth && !session) return null;
-          if (item.minimumRole && !hasMinimumRole(session, item.minimumRole) && !isMayor(session)) return null;
+          if (item.requiresAuth && !resolvedSession) return null;
+          if (item.minimumRole && !hasMinimumRole(resolvedSession, item.minimumRole) && !isMayor(resolvedSession)) return null;
 
           return (
             <Styles.NavItem key={item.id} data-testid={`nav-item-${item.id}`}>
@@ -41,8 +42,8 @@ export default function Navigation() {
                   </Styles.NavButton>
                   <Styles.Dropdown>
                     {item.subMenu?.map((sub) => {
-                      if (sub.requiresAuth && !session) return null;
-                      if (sub.minimumRole && !hasMinimumRole(session, sub.minimumRole) && !isMayor(session)) return null;
+                      if (sub.requiresAuth && !resolvedSession) return null;
+                      if (sub.minimumRole && !hasMinimumRole(resolvedSession, sub.minimumRole) && !isMayor(resolvedSession)) return null;
 
                       return (
                         <li key={sub.href}>
