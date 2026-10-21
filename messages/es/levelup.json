@@ -12,5 +12,6 @@
   "col_animals": "Animales",
   "enclosure_trough": "Comedero",
   "enclosure_waterhole": "Abrevadero",
-  "enclosure_shelter": "Refugio"
+  "enclosure_shelter": "Refugio",
+  "col_xp_to_next": "XP hasta siguiente nivel"
 }

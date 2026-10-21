@@ -69,6 +69,7 @@ export default function LevelUpOverviewContent({
           <thead>
             <tr>
               <th>{t("col_level")}</th>
+              <Styles.TableHeaderRight>{t("col_xp_to_next")}</Styles.TableHeaderRight>
               <Styles.TableHeaderRight>{t("col_coins")}</Styles.TableHeaderRight>
               <Styles.TableHeaderRight>{t("col_diamonds")}</Styles.TableHeaderRight>
               <th>{t("col_zoo_items")}</th>
@@ -87,6 +88,9 @@ export default function LevelUpOverviewContent({
                     item.level
                   )}
                 </td>
+                <Styles.TableCellRight>
+                  {item.xpToNext != null ? item.xpToNext.toLocaleString() : "—"}
+                </Styles.TableCellRight>
                 <Styles.TableCellRight>
                   {item.coins != null ? item.coins.toLocaleString() : "—"}
                 </Styles.TableCellRight>

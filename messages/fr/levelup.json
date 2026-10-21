@@ -12,5 +12,6 @@
   "col_animals": "Animaux",
   "enclosure_trough": "Abreuvoir",
   "enclosure_waterhole": "Point d eau",
-  "enclosure_shelter": "Abri"
+  "enclosure_shelter": "Abri",
+  "col_xp_to_next": "XP jusqu'au niveau suivant"
 }

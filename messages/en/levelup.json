@@ -12,5 +12,6 @@
   "col_animals": "Animals",
   "enclosure_trough": "Trough",
   "enclosure_waterhole": "Watering Hole",
-  "enclosure_shelter": "Shelter"
+  "enclosure_shelter": "Shelter",
+  "col_xp_to_next": "XP to Level Up"
 }
