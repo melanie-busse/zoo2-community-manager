@@ -52,9 +52,9 @@ const SpacedDividerBottom = styled.div`
 
 const RequirementsGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, auto);
-  gap: 32px;
-  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 20px;
+  width: 100%;
   margin-top: 40px;
   margin-bottom: 40px;
 `;
@@ -95,7 +95,7 @@ export default function CollectionCard({ collection, onEdit, onDelete }: Collect
           ))}
         </StarsRow>
         {(onEdit || onDelete) && (
-          <ActionGroupBadge id={collection.id} onEdit={onEdit} onDelete={onDelete} />
+          <ActionGroupBadge id={collection.id} onEdit={onEdit!} onDelete={onDelete!} />
         )}
       </CardHeaderRow>
 
@@ -106,6 +106,7 @@ export default function CollectionCard({ collection, onEdit, onDelete }: Collect
         rewardName={rewardName}
         rewardColor={rewardColor}
         href={rewardHref}
+        cardWidth={220}
       />
 
       <SpacedDividerTop />
@@ -128,7 +129,7 @@ export default function CollectionCard({ collection, onEdit, onDelete }: Collect
               rewardName={name}
               rewardColor={color}
               level={req.requiredLevel ?? undefined}
-              cardWidth={110}
+              cardWidth={140}
               href={href}
             />
           );

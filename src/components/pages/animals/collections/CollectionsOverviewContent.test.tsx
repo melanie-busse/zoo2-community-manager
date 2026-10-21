@@ -3,8 +3,9 @@ import { render, screen, fireEvent } from "@/utils/test-utils";
 import CollectionsOverviewContent from "./CollectionsOverviewContent";
 import { Collection } from "@/types/collection";
 
+const pushMock = vi.fn();
 vi.mock("@/i18n/routing", () => ({
-  useRouter: () => ({ refresh: vi.fn(), push: vi.fn() }),
+  useRouter: () => ({ refresh: vi.fn(), push: pushMock }),
 }));
 
 vi.mock("react-toastify", () => ({
@@ -83,13 +84,6 @@ vi.mock("./CollectionCard", () => ({
   ),
 }));
 
-vi.mock("./CollectionForm", () => ({
-  default: ({ onClose }: any) => (
-    <div data-testid="collection-form">
-      <button onClick={onClose}>Close</button>
-    </div>
-  ),
-}));
 
 const makeAnimal = (id: number, name: string) => ({
   id,
@@ -124,7 +118,6 @@ const makeCollection = (
   identifier: `col-${id}`,
   name,
   stars: 1,
-  rewardVariant: null,
   region: { id: 1, identifier: "grassland", name: "Grasland" },
   requirements: [makeRequirement(id * 100)],
   rewardAnimal: null,
@@ -137,21 +130,8 @@ const regions = [
   { id: 2, identifier: "savanna", name: "Savanne" },
 ];
 
-const defaultProps = {
-  isAdmin: false,
-  allAnimals: [],
-  allStatues: [],
-  allRegions: [],
-  allRawCollections: [],
-};
-
-const adminProps = {
-  isAdmin: true,
-  allAnimals: [],
-  allStatues: [],
-  allRegions: [],
-  allRawCollections: [],
-};
+const defaultProps = { isAdmin: false };
+const adminProps = { isAdmin: true };
 
 describe("CollectionsOverviewContent", () => {
   beforeEach(() => {
@@ -338,15 +318,9 @@ describe("CollectionsOverviewContent", () => {
   });
 
   // Admin controls
-  test("zeigt Create-Button für Admins", () => {
-    render(<CollectionsOverviewContent collections={[]} regions={[]} {...adminProps} />);
-    expect(screen.getByTestId("create-collection-btn")).toBeInTheDocument();
-  });
-
   test("zeigt keine Admin-Controls für Non-Admins", () => {
     const collections = [makeCollection(1, "Test")];
     render(<CollectionsOverviewContent collections={collections} regions={[]} {...defaultProps} />);
-    expect(screen.queryByTestId("create-collection-btn")).not.toBeInTheDocument();
     expect(screen.queryByTestId("edit-1")).not.toBeInTheDocument();
     expect(screen.queryByTestId("delete-1")).not.toBeInTheDocument();
   });
@@ -358,16 +332,10 @@ describe("CollectionsOverviewContent", () => {
     expect(screen.getByTestId("delete-1")).toBeInTheDocument();
   });
 
-  test("öffnet CollectionForm beim Klick auf Create-Button", () => {
-    render(<CollectionsOverviewContent collections={[]} regions={[]} {...adminProps} />);
-    fireEvent.click(screen.getByTestId("create-collection-btn"));
-    expect(screen.getByTestId("collection-form")).toBeInTheDocument();
-  });
-
-  test("öffnet CollectionForm beim Klick auf Edit-Button", () => {
+  test("Edit-Button navigiert zur Edit-Seite", () => {
     const collections = [makeCollection(1, "Test")];
     render(<CollectionsOverviewContent collections={collections} regions={[]} {...adminProps} />);
     fireEvent.click(screen.getByTestId("edit-1"));
-    expect(screen.getByTestId("collection-form")).toBeInTheDocument();
+    expect(pushMock).toHaveBeenCalledWith("/animals/collections/1/edit");
   });
 });

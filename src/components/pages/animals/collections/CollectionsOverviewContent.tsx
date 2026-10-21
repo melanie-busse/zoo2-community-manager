@@ -6,23 +6,20 @@ import { useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/routing";
 import { toast } from "react-toastify";
 
-import { Collection, RawCollection } from "@/types/collection";
+import { Collection } from "@/types/collection";
 import CollectionCard from "./CollectionCard";
 import CollectionsOverviewFilter from "./CollectionsOverviewFilter";
-import CollectionForm from "./CollectionForm";
 import { deleteCollectionOnClient } from "@/service/frontend/Collection";
 import { confirmDeleteDialog } from "@/utils/alerts";
 
-/* Angepasstes Grid für 2 größere Karten nebeneinander */
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Genau 2 Spalten */
-  gap: ${({ theme }) => theme.spacing(4)}; /* Etwas mehr Abstand zwischen den großen Karten */
+  grid-template-columns: repeat(2, 1fr);
+  gap: ${({ theme }) => theme.spacing(4)};
   width: 100%;
-  max-width: 1000px; /* Optional: Begrenzt die Gesamtbreite für ein sauberes Layout */
+  max-width: 1000px;
   margin: 0 auto;
 
-  /* Auf mobilen Geräten (unter 768px) automatisch 1 Spalte */
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
@@ -32,22 +29,6 @@ const EmptyState = styled.div`
   text-align: center;
   opacity: 0.5;
   padding: ${({ theme }) => theme.spacing(4)};
-`;
-
-const CreateButton = styled.button`
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 16px;
-  background: #7aad33;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  cursor: pointer;
-  margin-bottom: 16px;
-  &:hover { background: #5d8f22; }
 `;
 
 interface Region {
@@ -60,20 +41,12 @@ interface CollectionsOverviewContentProps {
   collections: Collection[];
   regions: Region[];
   isAdmin: boolean;
-  allAnimals: { id: number; identifier: string; name: string }[];
-  allStatues: { id: number; animalName: string; contestName: string }[];
-  allRegions: { id: number; identifier: string; name: string }[];
-  allRawCollections: RawCollection[];
 }
 
 export default function CollectionsOverviewContent({
   collections,
   regions,
   isAdmin,
-  allAnimals,
-  allStatues,
-  allRegions,
-  allRawCollections,
 }: CollectionsOverviewContentProps) {
   const t = useTranslations("collections");
   const tCommon = useTranslations("common");
@@ -84,9 +57,6 @@ export default function CollectionsOverviewContent({
   const [animalSearch, setAnimalSearch] = useState("");
   const [onlyWithStatue, setOnlyWithStatue] = useState(false);
   const [onlyWithDecoration, setOnlyWithDecoration] = useState(false);
-
-  const [formOpen, setFormOpen] = useState(false);
-  const [editCollection, setEditCollection] = useState<RawCollection | undefined>(undefined);
 
   const filtered = collections.filter((c) => {
     if (selectedRegionId !== null && c.region.id !== selectedRegionId) return false;
@@ -127,15 +97,6 @@ export default function CollectionsOverviewContent({
 
   return (
     <>
-      {isAdmin && (
-        <CreateButton
-          data-testid="create-collection-btn"
-          onClick={() => { setEditCollection(undefined); setFormOpen(true); }}
-        >
-          + {t("form.create_title")}
-        </CreateButton>
-      )}
-
       <CollectionsOverviewFilter
         regions={regions}
         selectedRegionId={selectedRegionId}
@@ -158,22 +119,11 @@ export default function CollectionsOverviewContent({
             <CollectionCard
               key={c.id}
               collection={c}
-              onEdit={isAdmin ? () => { setEditCollection(allRawCollections.find((r) => r.id === c.id)); setFormOpen(true); } : undefined}
+              onEdit={isAdmin ? () => router.push(`/animals/collections/${c.id}/edit`) : undefined}
               onDelete={isAdmin ? () => handleDelete(c.id) : undefined}
             />
           ))}
         </Grid>
-      )}
-
-      {formOpen && (
-        <CollectionForm
-          collection={editCollection}
-          allAnimals={allAnimals}
-          allStatues={allStatues}
-          allRegions={allRegions}
-          onClose={() => setFormOpen(false)}
-          onSaved={() => router.refresh()}
-        />
       )}
     </>
   );

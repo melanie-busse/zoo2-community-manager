@@ -16,6 +16,7 @@ export interface ColumnDefinition {
   $flex?: number;
   placeholder?: string;
   options?: Array<{ value: string; label: string; icon?: string }>;
+  getOptions?: (row: Record<string, any>) => Array<{ value: string; label: string; icon?: string }>;
   allowDuplicates?: boolean;
 }
 
@@ -73,11 +74,13 @@ export default function DynamicRowInput({
                       id={`select-${row.id}-${col.key}`}
                       value={row[col.key]}
                       onChange={(e) => onChange(row.id, col.key, e.target.value)}
-                      options={col.allowDuplicates ? (col.options || []) : (col.options || []).filter((opt) => {
+                      options={(() => {
+                        const base = col.getOptions ? col.getOptions(row) : (col.options || []);
+                        if (col.allowDuplicates || col.getOptions) return base;
                         const otherRows = safeRows.filter((r) => r.id !== row.id);
                         const usedValues = otherRows.map((r) => r[col.key]);
-                        return !usedValues.includes(opt.value) || opt.value === row[col.key];
-                      })}
+                        return base.filter((opt) => !usedValues.includes(opt.value) || opt.value === row[col.key]);
+                      })()}
                     />
                   ) : (
                     <InputField

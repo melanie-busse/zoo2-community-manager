@@ -30,7 +30,6 @@ export type Collection = {
     name: string;
   };
   name: string;
-  rewardVariant: string | null;
   requirements: CollectionRequirement[];
   rewardAnimal: Animal | null;
   rewardSpecialCoat: SpecialCoat | null;
@@ -39,7 +38,7 @@ export type Collection = {
 export type CollectionInput = {
   regionId: number;
   rewardAnimalId: number | null;
-  rewardVariant: string | null;
+  rewardSpecialCoatId: number | null;
   stars: number;
   texts: { languageCode: string; name: string }[];
   requirements: {
@@ -57,7 +56,7 @@ export type RawCollection = {
   stars: number;
   regionId: number;
   rewardAnimalId: number | null;
-  rewardVariant: string | null;
+  rewardSpecialCoatId: number | null;
   texts: { languageCode: string; name: string }[];
   requirements: {
     id: number;

@@ -31,7 +31,7 @@ const prismaMock = prisma as any;
 const baseInput = {
   regionId: 1,
   rewardAnimalId: null,
-  rewardVariant: null,
+  rewardSpecialCoatId: null,
   stars: 2,
   texts: [{ languageCode: "de", name: "Mein Album" }],
   requirements: [{ type: "ANIMAL" as const, animalId: 5, statueId: null, requiredLevel: 3, sortOrder: 0 }],

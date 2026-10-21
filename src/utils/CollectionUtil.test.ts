@@ -102,7 +102,6 @@ const baseCollection: Collection = {
   region: { id: 1, identifier: "grassland", name: "Grasland" },
   requirements: [animalReq],
   rewardAnimal: null,
-  rewardVariant: null,
   rewardSpecialCoat: null,
 };
 

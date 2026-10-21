@@ -64,7 +64,6 @@ export async function getAllCollections(locale: string): Promise<Collection[]> {
     id: c.id,
     identifier: c.identifier,
     stars: c.stars,
-    rewardVariant: c.rewardVariant ?? null,
     region: {
       id: c.region.id,
       identifier: c.region.identifier,
@@ -180,7 +179,7 @@ export async function getAllCollectionsForAdmin(): Promise<RawCollection[]> {
     stars: c.stars,
     regionId: c.regionId,
     rewardAnimalId: c.rewardAnimalId ?? null,
-    rewardVariant: c.rewardVariant ?? null,
+    rewardSpecialCoatId: c.rewardSpecialCoatId ?? null,
     texts: c.texts.map((t) => ({ languageCode: t.languageCode, name: t.name })),
     requirements: c.requirements.map((r) => ({
       id: r.id,
@@ -191,6 +190,76 @@ export async function getAllCollectionsForAdmin(): Promise<RawCollection[]> {
       sortOrder: r.sortOrder,
     })),
   }));
+}
+
+export async function getCollectionForAdmin(id: number): Promise<RawCollection | null> {
+  const c = await prisma.collection.findUnique({
+    where: { id },
+    include: {
+      texts: { select: { languageCode: true, name: true } },
+      requirements: {
+        select: { id: true, type: true, animalId: true, statueId: true, requiredLevel: true, sortOrder: true },
+        orderBy: { sortOrder: "asc" },
+      },
+    },
+  });
+  if (!c) return null;
+  return {
+    id: c.id,
+    identifier: c.identifier,
+    stars: c.stars,
+    regionId: c.regionId,
+    rewardAnimalId: c.rewardAnimalId ?? null,
+    rewardSpecialCoatId: c.rewardSpecialCoatId ?? null,
+    texts: c.texts.map((t) => ({ languageCode: t.languageCode, name: t.name })),
+    requirements: c.requirements.map((r) => ({
+      id: r.id,
+      type: r.type as "ANIMAL" | "STATUE",
+      animalId: r.animalId ?? null,
+      statueId: r.statueId ?? null,
+      requiredLevel: r.requiredLevel ?? null,
+      sortOrder: r.sortOrder,
+    })),
+  };
+}
+
+export async function getAllSpecialCoatVariants(locale: string): Promise<{ value: string; label: string; image: string }[]> {
+  const rows = await prisma.specialCoatsText.findMany({
+    where: { languageCode: locale, color: { not: "" } },
+    select: {
+      color: true,
+      name: true,
+      specialcoat: {
+        select: {
+          id: true,
+          identifier: true,
+          animal: {
+            select: {
+              animaltext: { where: { languageCode: locale }, select: { animalName: true } },
+              identifier: true,
+              biome: { select: { identifier: true } },
+            },
+          },
+        },
+      },
+    },
+    orderBy: { color: "asc" },
+  });
+
+  return rows
+    .filter((r) => r.color)
+    .map((r) => {
+      const animalIdentifier = r.specialcoat.animal.identifier ?? "";
+      const biomeIdentifier = r.specialcoat.animal.biome?.identifier ?? "";
+      const coatFolder = r.specialcoat.identifier ? r.specialcoat.identifier.slice(animalIdentifier.length + 1) : "";
+      const image =
+        biomeIdentifier && animalIdentifier && coatFolder
+          ? `/images/animals/${biomeIdentifier}/${animalIdentifier}/specialcoats/${coatFolder}/image.jpg`
+          : "/images/placeholder.jpg";
+      const animalName = r.specialcoat.animal.animaltext[0]?.animalName ?? animalIdentifier;
+      return { value: String(r.specialcoat.id), label: `${animalName} – ${r.color}`, image };
+    })
+    .sort((a, b) => a.label.localeCompare(b.label));
 }
 
 export async function getAllContestStatues(): Promise<{ id: number; animalName: string; contestName: string }[]> {
@@ -219,7 +288,7 @@ export async function createCollection(data: CollectionInput): Promise<{ id: num
         stars: data.stars,
         regionId: data.regionId,
         rewardAnimalId: data.rewardAnimalId,
-        rewardVariant: data.rewardVariant,
+        rewardSpecialCoatId: data.rewardSpecialCoatId,
       },
     });
 
@@ -257,7 +326,7 @@ export async function updateCollection(id: number, data: CollectionInput): Promi
         stars: data.stars,
         regionId: data.regionId,
         rewardAnimalId: data.rewardAnimalId,
-        rewardVariant: data.rewardVariant,
+        rewardSpecialCoatId: data.rewardSpecialCoatId,
       },
     });
 

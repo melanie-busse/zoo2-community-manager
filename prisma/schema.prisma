@@ -230,11 +230,11 @@ model ContestDonation {
 }
 
 model ContestStatue {
-  id        Int     @id @default(autoincrement())
-  contestId Int
-  animalId  Int
-  animal    Animal  @relation(fields: [animalId], references: [id], onDelete: Cascade, map: "contestStatue_animalId_fkey")
-  contest   Contest @relation(fields: [contestId], references: [id], onDelete: Cascade, map: "contestStatue_contestId_fkey")
+  id                     Int                     @id @default(autoincrement())
+  contestId              Int
+  animalId               Int
+  animal                 Animal                  @relation(fields: [animalId], references: [id], onDelete: Cascade, map: "contestStatue_animalId_fkey")
+  contest                Contest                 @relation(fields: [contestId], references: [id], onDelete: Cascade, map: "contestStatue_contestId_fkey")
   collectionRequirements CollectionRequirement[]
 
   @@index([animalId], map: "conteststatue_animalId_fkey")
@@ -410,12 +410,12 @@ model Region {
 }
 
 model RegionShop {
-  id             Int                @id @default(autoincrement())
+  id             Int               @id @default(autoincrement())
   regionId       Int?
-  name           String             @db.VarChar(255)
-  identifier     String             @db.VarChar(255)
+  name           String            @db.VarChar(255)
+  identifier     String            @db.VarChar(255)
   coinsPerClient Int?
-  region         Region?            @relation(fields: [regionId], references: [id], onDelete: SetNull)
+  region         Region?           @relation(fields: [regionId], references: [id], onDelete: SetNull)
   levels         RegionShopLevel[]
   texts          RegionShopText[]
 
@@ -499,8 +499,8 @@ enum RequirementType {
 }
 
 model Collection {
-  id                  Int    @id @default(autoincrement())
-  identifier          String @unique @db.VarChar(255)
+  id                  Int     @id @default(autoincrement())
+  identifier          String  @unique @db.VarChar(255)
   stars               Int
   regionId            Int
   rewardAnimalId      Int?
