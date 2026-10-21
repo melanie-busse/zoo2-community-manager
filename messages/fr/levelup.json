@@ -1,0 +1,16 @@
+{
+  "title": "Récompenses de montée de niveau",
+  "unit": "Niveaux",
+  "search_placeholder": "Rechercher un niveau...",
+  "all_animals": "Tous les animaux",
+  "col_level": "Niveau",
+  "col_coins": "Pièces",
+  "col_diamonds": "Diamants",
+  "col_zoo_items": "Objets du zoo",
+  "col_enclosure_items": "Objets d'enclos",
+  "col_chests": "Coffres",
+  "col_animals": "Animaux",
+  "enclosure_trough": "Abreuvoir",
+  "enclosure_waterhole": "Point d eau",
+  "enclosure_shelter": "Abri"
+}

@@ -1,0 +1,16 @@
+{
+  "title": "Level Up Rewards",
+  "unit": "Levels",
+  "search_placeholder": "Search level...",
+  "all_animals": "All Animals",
+  "col_level": "Level",
+  "col_coins": "Coins",
+  "col_diamonds": "Diamonds",
+  "col_zoo_items": "Zoo Items",
+  "col_enclosure_items": "Enclosure Items",
+  "col_chests": "Chests",
+  "col_animals": "Animals",
+  "enclosure_trough": "Trough",
+  "enclosure_waterhole": "Watering Hole",
+  "enclosure_shelter": "Shelter"
+}

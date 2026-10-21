@@ -13,6 +13,7 @@ export type LevelRewardItem = {
     name: string;
     biomeIdentifier: string | null;
     localizedName: string | null;
+    nameKey: string | null;
     imagePath: string | null;
     biomeLink: string | null;
   }[];
@@ -76,8 +77,11 @@ export async function getAllLevelRewards(locale: string): Promise<LevelRewardIte
     enclosureItems: r.enclosureItems.map((e) => {
       const dec = e.biomeDecoration;
       const game = e.biomeGame;
+      const nameLower = e.name.toLowerCase();
+      const biome = e.biomeIdentifier;
 
       let localizedName: string | null = null;
+      let nameKey: string | null = null;
       let imagePath: string | null = null;
       let biomeLink: string | null = null;
 
@@ -91,6 +95,24 @@ export async function getAllLevelRewards(locale: string): Promise<LevelRewardIte
         localizedName = game.texts[0]?.name ?? e.name;
         imagePath = `/images/biomes/${biomeId}/game/${game.identifier}/image.jpg`;
         biomeLink = `/biomes/${biomeId}`;
+      } else if (nameLower === "trough") {
+        nameKey = "enclosure_trough";
+        if (biome) {
+          imagePath = `/images/biomes/${biome}/trough.jpg`;
+          biomeLink = `/biomes/${biome}`;
+        }
+      } else if (nameLower === "water hole" || nameLower === "watering hole") {
+        nameKey = "enclosure_waterhole";
+        if (biome) {
+          imagePath = `/images/biomes/${biome}/water_hole.jpg`;
+          biomeLink = `/biomes/${biome}`;
+        }
+      } else if (nameLower === "shelter") {
+        nameKey = "enclosure_shelter";
+        if (biome) {
+          imagePath = `/images/biomes/${biome}/shelter.png`;
+          biomeLink = `/biomes/${biome}`;
+        }
       }
 
       return {
@@ -99,6 +121,7 @@ export async function getAllLevelRewards(locale: string): Promise<LevelRewardIte
         name: e.name,
         biomeIdentifier: e.biomeIdentifier,
         localizedName,
+        nameKey,
         imagePath,
         biomeLink,
       };

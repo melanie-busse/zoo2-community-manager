@@ -124,7 +124,7 @@ export default function LevelUpOverviewContent({
                           ) : null}
                           <span>
                             {enc.quantity > 1 ? `${enc.quantity}x ` : ""}
-                            {enc.localizedName ?? enc.name}
+                            {enc.localizedName ?? (enc.nameKey ? t(enc.nameKey as Parameters<typeof t>[0]) : enc.name)}
                           </span>
                         </ItemRow>
                       ))}
