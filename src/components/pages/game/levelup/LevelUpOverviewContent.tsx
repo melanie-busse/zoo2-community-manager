@@ -70,8 +70,12 @@ export default function LevelUpOverviewContent({
             <tr>
               <th>{t("col_level")}</th>
               <Styles.TableHeaderRight>{t("col_xp_to_next")}</Styles.TableHeaderRight>
-              <Styles.TableHeaderRight>{t("col_coins")}</Styles.TableHeaderRight>
-              <Styles.TableHeaderRight>{t("col_diamonds")}</Styles.TableHeaderRight>
+              <Styles.TableHeaderRight>
+                <Image src="/images/currency/zoodollar.webp" alt={t("col_coins")} width={20} height={20} />
+              </Styles.TableHeaderRight>
+              <Styles.TableHeaderRight>
+                <Image src="/images/currency/diamant.webp" alt={t("col_diamonds")} width={20} height={20} />
+              </Styles.TableHeaderRight>
               <th>{t("col_zoo_items")}</th>
               <th>{t("col_enclosure_items")}</th>
               <th>{t("col_chests")}</th>
