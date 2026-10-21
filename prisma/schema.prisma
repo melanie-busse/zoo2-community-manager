@@ -230,11 +230,12 @@ model ContestDonation {
 }
 
 model ContestStatue {
-  id        Int     @id @default(autoincrement())
-  contestId Int
-  animalId  Int
-  animal    Animal  @relation(fields: [animalId], references: [id], onDelete: Cascade, map: "contestStatue_animalId_fkey")
-  contest   Contest @relation(fields: [contestId], references: [id], onDelete: Cascade, map: "contestStatue_contestId_fkey")
+  id                     Int                     @id @default(autoincrement())
+  contestId              Int
+  animalId               Int
+  animal                 Animal                  @relation(fields: [animalId], references: [id], onDelete: Cascade, map: "contestStatue_animalId_fkey")
+  contest                Contest                 @relation(fields: [contestId], references: [id], onDelete: Cascade, map: "contestStatue_contestId_fkey")
+  collectionRequirements CollectionRequirement[]
 
   @@index([animalId], map: "conteststatue_animalId_fkey")
   @@index([contestId], map: "conteststatue_contestId_fkey")
@@ -409,12 +410,12 @@ model Region {
 }
 
 model RegionShop {
-  id             Int                @id @default(autoincrement())
+  id             Int               @id @default(autoincrement())
   regionId       Int?
-  name           String             @db.VarChar(255)
-  identifier     String             @db.VarChar(255)
+  name           String            @db.VarChar(255)
+  identifier     String            @db.VarChar(255)
   coinsPerClient Int?
-  region         Region?            @relation(fields: [regionId], references: [id], onDelete: SetNull)
+  region         Region?           @relation(fields: [regionId], references: [id], onDelete: SetNull)
   levels         RegionShopLevel[]
   texts          RegionShopText[]
 
@@ -494,15 +495,17 @@ model SpecialCoatOrigin {
 enum RequirementType {
   ANIMAL
   DECORATION
+  STATUE
 }
 
 model Collection {
-  id                  Int    @id @default(autoincrement())
-  identifier          String @unique @db.VarChar(255)
+  id                  Int     @id @default(autoincrement())
+  identifier          String  @unique @db.VarChar(255)
   stars               Int
   regionId            Int
   rewardAnimalId      Int?
   rewardSpecialCoatId Int?
+  rewardVariant       String? @db.VarChar(100)
 
   texts             CollectionText[]
   region            Region                  @relation(fields: [regionId], references: [id])
@@ -535,12 +538,15 @@ model CollectionRequirement {
   animalId      Int?
   specialCoatId Int?
   decorationId  Int?
+  statueId      Int?
 
-  animal      Animal?      @relation(fields: [animalId], references: [id])
-  specialCoat SpecialCoat? @relation(fields: [specialCoatId], references: [id])
-  decoration  Decoration?  @relation(fields: [decorationId], references: [id])
+  animal      Animal?        @relation(fields: [animalId], references: [id])
+  specialCoat SpecialCoat?   @relation(fields: [specialCoatId], references: [id])
+  decoration  Decoration?    @relation(fields: [decorationId], references: [id])
+  statue      ContestStatue? @relation(fields: [statueId], references: [id])
 
   @@index([collectionId], map: "collectionRequirement_collectionId_idx")
+  @@index([statueId], map: "collectionRequirement_statueId_idx")
   @@map("collectionrequirement")
 }
 

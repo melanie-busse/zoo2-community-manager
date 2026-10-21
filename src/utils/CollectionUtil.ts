@@ -13,6 +13,9 @@ export function getRequirementImageSrc(req: CollectionRequirement): string | nul
   if (req.decoration?.identifier && req.decoration.category?.identifier) {
     return `/images/decorations/${req.decoration.category.identifier}/${req.decoration.identifier}/image.jpg`;
   }
+  if (req.statue?.animalIdentifier && req.statue.biomeIdentifier) {
+    return `/images/animals/${req.statue.biomeIdentifier}/${req.statue.animalIdentifier}/statue/image.jpg`;
+  }
   if (req.animal?.identifier && req.animal.biome?.identifier) {
     if (req.type === "DECORATION") {
       return `/images/animals/${req.animal.biome.identifier}/${req.animal.identifier}/statue/image.jpg`;
@@ -29,6 +32,9 @@ export function getRequirementLabel(req: CollectionRequirement): { name: string;
   }
   if (req.decoration) {
     return { name: req.decoration.name };
+  }
+  if (req.statue) {
+    return { name: req.statue.animalName };
   }
   if (req.animal) {
     return { name: req.animal.name ?? req.itemName };

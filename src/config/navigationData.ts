@@ -103,6 +103,12 @@ export const navConfig: NavItem[] = [
         href: "/animals/collections",
         requiresAuth: false,
       },
+      {
+        labelKey: "collection_create",
+        href: "/animals/collections/create",
+        requiresAuth: true,
+        minimumRole: "Director",
+      },
     ],
   },
 

@@ -3,6 +3,23 @@ import { render, screen, fireEvent } from "@/utils/test-utils";
 import CollectionsOverviewContent from "./CollectionsOverviewContent";
 import { Collection } from "@/types/collection";
 
+const pushMock = vi.fn();
+vi.mock("@/i18n/routing", () => ({
+  useRouter: () => ({ refresh: vi.fn(), push: pushMock }),
+}));
+
+vi.mock("react-toastify", () => ({
+  toast: { success: vi.fn(), error: vi.fn(), warn: vi.fn() },
+}));
+
+vi.mock("@/service/frontend/Collection", () => ({
+  deleteCollectionOnClient: vi.fn().mockResolvedValue(undefined),
+}));
+
+vi.mock("@/utils/alerts", () => ({
+  confirmDeleteDialog: vi.fn().mockResolvedValue(true),
+}));
+
 vi.mock("./CollectionsOverviewFilter", () => ({
   default: ({
     selectedRegionId,
@@ -58,10 +75,15 @@ vi.mock("./CollectionsOverviewFilter", () => ({
 }));
 
 vi.mock("./CollectionCard", () => ({
-  default: ({ collection }: any) => (
-    <div data-testid={`card-${collection.id}`}>{collection.name}</div>
+  default: ({ collection, onEdit, onDelete }: any) => (
+    <div data-testid={`card-${collection.id}`}>
+      {collection.name}
+      {onEdit && <button data-testid={`edit-${collection.id}`} onClick={onEdit}>Edit</button>}
+      {onDelete && <button data-testid={`delete-${collection.id}`} onClick={onDelete}>Delete</button>}
+    </div>
   ),
 }));
+
 
 const makeAnimal = (id: number, name: string) => ({
   id,
@@ -83,6 +105,7 @@ const makeRequirement = (
   animal: makeAnimal(id * 10, `Tier ${id}`),
   specialCoat: null,
   decoration: null,
+  statue: null,
   ...overrides,
 });
 
@@ -107,6 +130,9 @@ const regions = [
   { id: 2, identifier: "savanna", name: "Savanne" },
 ];
 
+const defaultProps = { isAdmin: false };
+const adminProps = { isAdmin: true };
+
 describe("CollectionsOverviewContent", () => {
   beforeEach(() => {
     vi.clearAllMocks();
@@ -115,7 +141,7 @@ describe("CollectionsOverviewContent", () => {
   test("zeigt alle Collections standardmäßig an", () => {
     const collections = [makeCollection(1, "Kollektion A"), makeCollection(2, "Kollektion B")];
 
-    render(<CollectionsOverviewContent collections={collections} regions={regions} />);
+    render(<CollectionsOverviewContent collections={collections} regions={regions} {...defaultProps} />);
 
     expect(screen.getByTestId("card-1")).toBeInTheDocument();
     expect(screen.getByTestId("card-2")).toBeInTheDocument();
@@ -127,7 +153,7 @@ describe("CollectionsOverviewContent", () => {
       makeCollection(2, "Kollektion B", { region: { id: 2, identifier: "savanna", name: "Savanne" } }),
     ];
 
-    render(<CollectionsOverviewContent collections={collections} regions={regions} />);
+    render(<CollectionsOverviewContent collections={collections} regions={regions} {...defaultProps} />);
     fireEvent.change(screen.getByTestId("region-select"), { target: { value: "1" } });
 
     expect(screen.getByTestId("card-1")).toBeInTheDocument();
@@ -141,7 +167,7 @@ describe("CollectionsOverviewContent", () => {
       makeCollection(3, "Kollektion C", { stars: 3 }),
     ];
 
-    render(<CollectionsOverviewContent collections={collections} regions={regions} />);
+    render(<CollectionsOverviewContent collections={collections} regions={regions} {...defaultProps} />);
     fireEvent.change(screen.getByTestId("stars-select"), { target: { value: "2" } });
 
     expect(screen.queryByTestId("card-1")).not.toBeInTheDocument();
@@ -155,7 +181,7 @@ describe("CollectionsOverviewContent", () => {
       makeCollection(2, "Kollektion B"),
     ];
 
-    render(<CollectionsOverviewContent collections={collections} regions={regions} />);
+    render(<CollectionsOverviewContent collections={collections} regions={regions} {...defaultProps} />);
     fireEvent.change(screen.getByTestId("animal-search"), { target: { value: "löwe" } });
 
     expect(screen.getByTestId("card-1")).toBeInTheDocument();
@@ -174,7 +200,7 @@ describe("CollectionsOverviewContent", () => {
       makeCollection(2, "Kollektion B"),
     ];
 
-    render(<CollectionsOverviewContent collections={collections} regions={regions} />);
+    render(<CollectionsOverviewContent collections={collections} regions={regions} {...defaultProps} />);
     fireEvent.change(screen.getByTestId("animal-search"), { target: { value: "silber" } });
 
     expect(screen.getByTestId("card-1")).toBeInTheDocument();
@@ -191,7 +217,7 @@ describe("CollectionsOverviewContent", () => {
       }),
     ];
 
-    render(<CollectionsOverviewContent collections={collections} regions={regions} />);
+    render(<CollectionsOverviewContent collections={collections} regions={regions} {...defaultProps} />);
     fireEvent.change(screen.getByTestId("animal-search"), { target: { value: "zebra" } });
 
     expect(screen.getByTestId("card-1")).toBeInTheDocument();
@@ -214,7 +240,7 @@ describe("CollectionsOverviewContent", () => {
       makeCollection(2, "Kollektion B"),
     ];
 
-    render(<CollectionsOverviewContent collections={collections} regions={regions} />);
+    render(<CollectionsOverviewContent collections={collections} regions={regions} {...defaultProps} />);
     fireEvent.change(screen.getByTestId("animal-search"), { target: { value: "gold" } });
 
     expect(screen.getByTestId("card-1")).toBeInTheDocument();
@@ -231,7 +257,7 @@ describe("CollectionsOverviewContent", () => {
       }),
     ];
 
-    render(<CollectionsOverviewContent collections={collections} regions={regions} />);
+    render(<CollectionsOverviewContent collections={collections} regions={regions} {...defaultProps} />);
     fireEvent.click(screen.getByTestId("only-statue"));
 
     expect(screen.getByTestId("card-1")).toBeInTheDocument();
@@ -247,7 +273,7 @@ describe("CollectionsOverviewContent", () => {
       makeCollection(2, "Kollektion B"),
     ];
 
-    render(<CollectionsOverviewContent collections={collections} regions={regions} />);
+    render(<CollectionsOverviewContent collections={collections} regions={regions} {...defaultProps} />);
     fireEvent.click(screen.getByTestId("only-decoration"));
 
     expect(screen.getByTestId("card-1")).toBeInTheDocument();
@@ -257,7 +283,7 @@ describe("CollectionsOverviewContent", () => {
   test("zeigt EmptyState wenn keine Collection dem Filter entspricht", () => {
     const collections = [makeCollection(1, "Kollektion A", { stars: 1 })];
 
-    render(<CollectionsOverviewContent collections={collections} regions={regions} />);
+    render(<CollectionsOverviewContent collections={collections} regions={regions} {...defaultProps} />);
     fireEvent.change(screen.getByTestId("stars-select"), { target: { value: "3" } });
 
     expect(screen.queryByTestId("card-1")).not.toBeInTheDocument();
@@ -282,12 +308,34 @@ describe("CollectionsOverviewContent", () => {
       }),
     ];
 
-    render(<CollectionsOverviewContent collections={collections} regions={regions} />);
+    render(<CollectionsOverviewContent collections={collections} regions={regions} {...defaultProps} />);
     fireEvent.change(screen.getByTestId("stars-select"), { target: { value: "2" } });
     fireEvent.change(screen.getByTestId("animal-search"), { target: { value: "löwe" } });
 
     expect(screen.getByTestId("card-1")).toBeInTheDocument();
     expect(screen.queryByTestId("card-2")).not.toBeInTheDocument();
     expect(screen.queryByTestId("card-3")).not.toBeInTheDocument();
+  });
+
+  // Admin controls
+  test("zeigt keine Admin-Controls für Non-Admins", () => {
+    const collections = [makeCollection(1, "Test")];
+    render(<CollectionsOverviewContent collections={collections} regions={[]} {...defaultProps} />);
+    expect(screen.queryByTestId("edit-1")).not.toBeInTheDocument();
+    expect(screen.queryByTestId("delete-1")).not.toBeInTheDocument();
+  });
+
+  test("zeigt Edit- und Delete-Buttons auf Cards für Admins", () => {
+    const collections = [makeCollection(1, "Test")];
+    render(<CollectionsOverviewContent collections={collections} regions={[]} {...adminProps} />);
+    expect(screen.getByTestId("edit-1")).toBeInTheDocument();
+    expect(screen.getByTestId("delete-1")).toBeInTheDocument();
+  });
+
+  test("Edit-Button navigiert zur Edit-Seite", () => {
+    const collections = [makeCollection(1, "Test")];
+    render(<CollectionsOverviewContent collections={collections} regions={[]} {...adminProps} />);
+    fireEvent.click(screen.getByTestId("edit-1"));
+    expect(pushMock).toHaveBeenCalledWith("/animals/collections/1/edit");
   });
 });

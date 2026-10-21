@@ -9,6 +9,7 @@ import CardContainer from "@/components/page-structure/Card/CardContainer";
 import CardHeaderRow from "@/components/page-structure/Card/CardHeaderRow";
 import CardDivider from "@/components/page-structure/Card/CardDevider";
 import PolaroidBadge from "@/components/ui/badges/PolaroidBadge";
+import ActionGroupBadge from "@/components/ui/badges/ActionGroupBadge";
 import {
   getAnimalImageSrc,
   getRequirementImageSrc,
@@ -51,18 +52,20 @@ const SpacedDividerBottom = styled.div`
 
 const RequirementsGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, auto);
-  gap: 32px;
-  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 20px;
+  width: 100%;
   margin-top: 40px;
   margin-bottom: 40px;
 `;
 
 interface CollectionCardProps {
   collection: Collection;
+  onEdit?: () => void;
+  onDelete?: () => void;
 }
 
-export default function CollectionCard({ collection }: CollectionCardProps) {
+export default function CollectionCard({ collection, onEdit, onDelete }: CollectionCardProps) {
   const animalImageSrc = getAnimalImageSrc(collection);
   const { name: rewardName, color: rewardColor } = getRewardLabel(collection);
   const rewardHref = collection.rewardSpecialCoat
@@ -91,6 +94,9 @@ export default function CollectionCard({ collection }: CollectionCardProps) {
             </Star>
           ))}
         </StarsRow>
+        {(onEdit || onDelete) && (
+          <ActionGroupBadge id={collection.id} onEdit={onEdit!} onDelete={onDelete!} />
+        )}
       </CardHeaderRow>
 
       <SpacedDividerBottom />
@@ -100,6 +106,7 @@ export default function CollectionCard({ collection }: CollectionCardProps) {
         rewardName={rewardName}
         rewardColor={rewardColor}
         href={rewardHref}
+        cardWidth={220}
       />
 
       <SpacedDividerTop />
@@ -122,7 +129,7 @@ export default function CollectionCard({ collection }: CollectionCardProps) {
               rewardName={name}
               rewardColor={color}
               level={req.requiredLevel ?? undefined}
-              cardWidth={110}
+              cardWidth={140}
               href={href}
             />
           );

@@ -91,7 +91,15 @@
       "Bash(mkdir -p \"D:/Entwicklung/zoo2-community-manager/src/app/[locale]/zoo/shops/create\")",
       "Bash(mkdir -p \"D:/Entwicklung/zoo2-community-manager/src/app/[locale]/zoo/shops/[id]/edit\")",
       "Bash(find /d/Entwicklung/zoo2-community-manager/src/app -path *shops* -type f)",
-      "Bash(head -5 grep -rn \"getAllLanguages\\\\|LANGUAGES\\\\b\" src/service/ src/constants/)"
+      "Bash(head -5 grep -rn \"getAllLanguages\\\\|LANGUAGES\\\\b\" src/service/ src/constants/)",
+      "Bash(git checkout:*)",
+      "Bash(for d:*)",
+      "Bash(if grep:*)",
+      "Bash(then)",
+      "Bash(echo \"=== $d ===\")",
+      "Read(//d/Entwicklung/zoo2-community-manager/$d/**)",
+      "Read(//d/Entwicklung/zoo2-community-manager/**)",
+      "Bash(fi)"
     ]
   }
 }

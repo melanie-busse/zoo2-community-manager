@@ -3,21 +3,23 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { useTranslations } from "next-intl";
+import { useRouter } from "@/i18n/routing";
+import { toast } from "react-toastify";
 
 import { Collection } from "@/types/collection";
 import CollectionCard from "./CollectionCard";
 import CollectionsOverviewFilter from "./CollectionsOverviewFilter";
+import { deleteCollectionOnClient } from "@/service/frontend/Collection";
+import { confirmDeleteDialog } from "@/utils/alerts";
 
-/* Angepasstes Grid für 2 größere Karten nebeneinander */
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Genau 2 Spalten */
-  gap: ${({ theme }) => theme.spacing(4)}; /* Etwas mehr Abstand zwischen den großen Karten */
+  grid-template-columns: repeat(2, 1fr);
+  gap: ${({ theme }) => theme.spacing(4)};
   width: 100%;
-  max-width: 1000px; /* Optional: Begrenzt die Gesamtbreite für ein sauberes Layout */
+  max-width: 1000px;
   margin: 0 auto;
 
-  /* Auf mobilen Geräten (unter 768px) automatisch 1 Spalte */
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
   }
@@ -38,13 +40,18 @@ interface Region {
 interface CollectionsOverviewContentProps {
   collections: Collection[];
   regions: Region[];
+  isAdmin: boolean;
 }
 
 export default function CollectionsOverviewContent({
   collections,
   regions,
+  isAdmin,
 }: CollectionsOverviewContentProps) {
   const t = useTranslations("collections");
+  const tCommon = useTranslations("common");
+  const router = useRouter();
+
   const [selectedRegionId, setSelectedRegionId] = useState<number | null>(null);
   const [selectedStars, setSelectedStars] = useState<number | null>(null);
   const [animalSearch, setAnimalSearch] = useState("");
@@ -71,6 +78,23 @@ export default function CollectionsOverviewContent({
     return true;
   });
 
+  const handleDelete = async (id: number) => {
+    const confirmed = await confirmDeleteDialog({
+      title: t("form.messages.deleteTitle"),
+      text: t("form.messages.confirmDelete"),
+      confirmButtonText: tCommon("messages.yes_delete"),
+      cancelButtonText: tCommon("messages.cancel"),
+    });
+    if (!confirmed) return;
+    try {
+      await deleteCollectionOnClient(id);
+      toast.success(t("form.messages.deleteSuccess"));
+      router.refresh();
+    } catch (e: any) {
+      toast.error(e.message);
+    }
+  };
+
   return (
     <>
       <CollectionsOverviewFilter
@@ -92,7 +116,12 @@ export default function CollectionsOverviewContent({
       ) : (
         <Grid>
           {filtered.map((c) => (
-            <CollectionCard key={c.id} collection={c} />
+            <CollectionCard
+              key={c.id}
+              collection={c}
+              onEdit={isAdmin ? () => router.push(`/animals/collections/${c.id}/edit`) : undefined}
+              onDelete={isAdmin ? () => handleDelete(c.id) : undefined}
+            />
           ))}
         </Grid>
       )}
