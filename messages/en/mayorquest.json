@@ -5,5 +5,7 @@
   "col_xp": "XP",
   "col_misc": "Misc. Rewards",
   "col_quest_name": "Quest Name",
-  "objectives_title": "Objectives"
+  "objectives_title": "Objectives",
+  "section_objectives": "Objectives",
+  "section_rewards": "Rewards"
 }

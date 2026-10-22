@@ -5,5 +5,7 @@
   "col_xp": "XP",
   "col_misc": "Sonstige Belohnungen",
   "col_quest_name": "Aufgabenname",
-  "objectives_title": "Aufgaben"
+  "objectives_title": "Aufgaben",
+  "section_objectives": "Aufgaben",
+  "section_rewards": "Belohnungen"
 }

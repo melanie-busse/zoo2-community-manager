@@ -10,7 +10,8 @@ export type MayorQuestItem = {
   xpReward: number;
   miscReward: string;
   questName: string;
-  objectives: { id: number; sortOrder: number; text: string }[];
+  dialogText: string | null;
+  objectives: { id: number; sortOrder: number; text: string; imagePath: string | null }[];
 };
 
 export async function getAllMayorQuests(locale: string): Promise<MayorQuestItem[]> {
@@ -33,10 +34,12 @@ export async function getAllMayorQuests(locale: string): Promise<MayorQuestItem[
       xpReward: q.xpReward,
       miscReward: text?.miscReward ?? q.miscReward,
       questName: text?.questName ?? q.questName,
+      dialogText: text?.dialogText ?? null,
       objectives: q.objectives.map((o) => ({
         id: o.id,
         sortOrder: o.sortOrder,
         text: o.text,
+        imagePath: o.imagePath ?? null,
       })),
     };
   });
