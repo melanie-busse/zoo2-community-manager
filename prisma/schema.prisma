@@ -839,6 +839,31 @@ model ZooInventoryBiomeGame {
   @@map("zooinventorybiomegame")
 }
 
+model MayorQuest {
+  id          Int                    @id @default(autoincrement())
+  sortOrder   Int                    @unique
+  titleName   String                 @db.VarChar(255)
+  level       Int
+  coinReward  Int
+  xpReward    Int
+  miscReward  String                 @db.Text
+  questName   String                 @db.VarChar(255)
+  objectives  MayorQuestObjective[]
+
+  @@map("mayorquest")
+}
+
+model MayorQuestObjective {
+  id        Int        @id @default(autoincrement())
+  questId   Int
+  quest     MayorQuest @relation(fields: [questId], references: [id], onDelete: Cascade)
+  sortOrder Int
+  text      String     @db.VarChar(500)
+
+  @@index([questId])
+  @@map("mayorquestobjective")
+}
+
 model LevelReward {
   id       Int  @id @default(autoincrement())
   level    Int  @unique

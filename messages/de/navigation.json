@@ -57,7 +57,8 @@
     "shops": "Shops",
     "shop_create": "Shop anlegen",
     "game": "Spiel",
-    "levelup": "Level Up"
+    "levelup": "Level Up",
+    "mayor_quests": "Bürgermeisteraufgaben"
   },
   "inventory_collections": "Sammelalbum"
 }

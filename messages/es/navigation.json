@@ -57,7 +57,8 @@
     "shops": "Tiendas",
     "shop_create": "Crear tienda",
     "game": "Juego",
-    "levelup": "Level Up"
+    "levelup": "Level Up",
+    "mayor_quests": "Misiones del Alcalde"
   },
   "inventory_collections": "Álbum de Colección"
 }
