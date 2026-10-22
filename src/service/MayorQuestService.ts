@@ -13,27 +13,31 @@ export type MayorQuestItem = {
   objectives: { id: number; sortOrder: number; text: string }[];
 };
 
-export async function getAllMayorQuests(): Promise<MayorQuestItem[]> {
+export async function getAllMayorQuests(locale: string): Promise<MayorQuestItem[]> {
   const quests = await prisma.mayorQuest.findMany({
     orderBy: { sortOrder: "asc" },
     include: {
       objectives: { orderBy: { sortOrder: "asc" } },
+      texts: { where: { languageCode: locale } },
     },
   });
 
-  return quests.map((q) => ({
-    id: q.id,
-    sortOrder: q.sortOrder,
-    titleName: q.titleName,
-    level: q.level,
-    coinReward: q.coinReward,
-    xpReward: q.xpReward,
-    miscReward: q.miscReward,
-    questName: q.questName,
-    objectives: q.objectives.map((o) => ({
-      id: o.id,
-      sortOrder: o.sortOrder,
-      text: o.text,
-    })),
-  }));
+  return quests.map((q) => {
+    const text = q.texts[0];
+    return {
+      id: q.id,
+      sortOrder: q.sortOrder,
+      titleName: text?.titleName ?? q.titleName,
+      level: q.level,
+      coinReward: q.coinReward,
+      xpReward: q.xpReward,
+      miscReward: text?.miscReward ?? q.miscReward,
+      questName: text?.questName ?? q.questName,
+      objectives: q.objectives.map((o) => ({
+        id: o.id,
+        sortOrder: o.sortOrder,
+        text: o.text,
+      })),
+    };
+  });
 }

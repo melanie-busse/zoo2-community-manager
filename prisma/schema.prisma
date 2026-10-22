@@ -849,8 +849,23 @@ model MayorQuest {
   miscReward  String                 @db.Text
   questName   String                 @db.VarChar(255)
   objectives  MayorQuestObjective[]
+  texts       MayorQuestText[]
 
   @@map("mayorquest")
+}
+
+model MayorQuestText {
+  id           Int        @id @default(autoincrement())
+  questId      Int
+  quest        MayorQuest @relation(fields: [questId], references: [id], onDelete: Cascade)
+  languageCode String     @db.VarChar(5)
+  titleName    String     @db.VarChar(255)
+  miscReward   String     @db.Text
+  questName    String     @db.VarChar(255)
+
+  @@unique([questId, languageCode])
+  @@index([questId])
+  @@map("mayorquesttext")
 }
 
 model MayorQuestObjective {

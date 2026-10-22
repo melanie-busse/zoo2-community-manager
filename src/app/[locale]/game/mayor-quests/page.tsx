@@ -13,7 +13,7 @@ export default async function MayorQuestsPage({
 }) {
   const { locale } = await params;
   const [quests, t] = await Promise.all([
-    getAllMayorQuests(),
+    getAllMayorQuests(locale),
     getTranslations({ locale, namespace: "mayorquest" }),
   ]);
 
