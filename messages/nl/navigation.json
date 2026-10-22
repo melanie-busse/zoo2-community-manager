@@ -55,7 +55,9 @@
     "origin_create": "Herkomst toevoegen",
     "inventory_biomes": "Biomen",
     "shops": "Winkels",
-    "shop_create": "Winkel aanmaken"
+    "shop_create": "Winkel aanmaken",
+    "game": "Spel",
+    "levelup": "Level Up"
   },
   "inventory_collections": "Verzamelalbum"
 }

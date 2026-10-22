@@ -107,6 +107,7 @@ model Animal {
   specialcoat            SpecialCoat[]
   collections            Collection[]
   collectionRequirements CollectionRequirement[]
+  levelRewards           LevelAnimalReward[]
 
   @@index([biomeId], map: "animal_biomeId_fkey")
   @@index([priceTypeId], map: "animal_priceTypeId_fkey")
@@ -760,16 +761,17 @@ model BiomeShelter {
 }
 
 model BiomeGame {
-  id              Int             @id @default(autoincrement())
-  identifier      String          @db.VarChar(255)
-  biomeIdentifier String          @default("") @db.VarChar(255)
+  id              Int                  @id @default(autoincrement())
+  identifier      String               @db.VarChar(255)
+  biomeIdentifier String               @default("") @db.VarChar(255)
   price           Int
   pricetype       Int
   repair          Int
-  repairpricetype Int             @default(1)
-  biomes          Biome[]         @relation("biometogame")
+  repairpricetype Int                  @default(1)
+  biomes          Biome[]              @relation("biometogame")
   texts           BiomeGameText[]
   animals         Animal[]
+  levelEnclosureItems LevelEnclosureItem[]
 
   @@map("biomegame")
 }
@@ -786,14 +788,15 @@ model BiomeGameText {
 }
 
 model BiomeDecoration {
-  id         Int                   @id @default(autoincrement())
-  identifier String                @db.VarChar(255)
-  price      Int
-  pricetype  Int
-  popularity Int
-  biomeId    Int
-  biome      Biome                 @relation(fields: [biomeId], references: [id], onDelete: Cascade)
-  texts      BiomeDecorationText[]
+  id                  Int                   @id @default(autoincrement())
+  identifier          String                @db.VarChar(255)
+  price               Int
+  pricetype           Int
+  popularity          Int
+  biomeId             Int
+  biome               Biome                 @relation(fields: [biomeId], references: [id], onDelete: Cascade)
+  texts               BiomeDecorationText[]
+  levelEnclosureItems LevelEnclosureItem[]
 
   @@index([biomeId])
   @@map("biomedecoration")
@@ -834,4 +837,70 @@ model ZooInventoryBiomeGame {
 
   @@unique([userid, biomeGameId])
   @@map("zooinventorybiomegame")
+}
+
+model LevelReward {
+  id       Int  @id @default(autoincrement())
+  level    Int  @unique
+  coins    Int?
+  diamonds Int?
+
+  enclosureItems LevelEnclosureItem[]
+  chests         LevelChest[]
+  animalRewards  LevelAnimalReward[]
+  texts          LevelRewardText[]
+
+  @@map("levelreward")
+}
+
+model LevelRewardText {
+  id           Int         @id @default(autoincrement())
+  levelId      Int
+  levelReward  LevelReward @relation(fields: [levelId], references: [id], onDelete: Cascade)
+  languageCode String      @db.VarChar(5)
+  zooItems     String?     @db.Text
+
+  @@unique([levelId, languageCode])
+  @@index([levelId])
+  @@map("levelrewardtext")
+}
+
+model LevelEnclosureItem {
+  id                Int              @id @default(autoincrement())
+  levelId           Int
+  levelReward       LevelReward      @relation(fields: [levelId], references: [id], onDelete: Cascade)
+  quantity          Int              @default(1)
+  name              String           @db.VarChar(100)
+  biomeIdentifier   String?          @db.VarChar(100)
+  biomeDecorationId Int?
+  biomeDecoration   BiomeDecoration? @relation(fields: [biomeDecorationId], references: [id], onDelete: SetNull)
+  biomeGameId       Int?
+  biomeGame         BiomeGame?       @relation(fields: [biomeGameId], references: [id], onDelete: SetNull)
+
+  @@index([biomeDecorationId])
+  @@index([biomeGameId])
+  @@map("levelenclosureitem")
+}
+
+model LevelChest {
+  id        Int         @id @default(autoincrement())
+  levelId   Int
+  levelReward LevelReward @relation(fields: [levelId], references: [id], onDelete: Cascade)
+  quantity  Int         @default(1)
+  chestType String      @db.VarChar(50)
+
+  @@map("levelchest")
+}
+
+model LevelAnimalReward {
+  id        Int         @id @default(autoincrement())
+  levelId   Int
+  levelReward LevelReward @relation(fields: [levelId], references: [id], onDelete: Cascade)
+  quantity  Int         @default(1)
+  animalId  Int?
+  animal    Animal?     @relation(fields: [animalId], references: [id], onDelete: SetNull)
+  name      String      @db.VarChar(255)
+
+  @@index([animalId])
+  @@map("levelanimalreward")
 }

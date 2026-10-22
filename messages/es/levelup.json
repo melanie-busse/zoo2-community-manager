@@ -1,0 +1,17 @@
+{
+  "title": "Recompensas de subida de nivel",
+  "unit": "Niveles",
+  "search_placeholder": "Buscar nivel...",
+  "all_animals": "Todos los animales",
+  "col_level": "Nivel",
+  "col_coins": "Monedas",
+  "col_diamonds": "Diamantes",
+  "col_zoo_items": "Objetos del zoo",
+  "col_enclosure_items": "Objetos del recinto",
+  "col_chests": "Cofres",
+  "col_animals": "Animales",
+  "enclosure_trough": "Comedero",
+  "enclosure_waterhole": "Abrevadero",
+  "enclosure_shelter": "Refugio",
+  "col_xp_to_next": "XP hasta siguiente nivel"
+}
