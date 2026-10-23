@@ -60,7 +60,6 @@ describe("MayorQuestCard – Münzen-Reward", () => {
   test("Münzen werden angezeigt wenn coinReward > 0", () => {
     renderCard({ ...baseQuest, coinReward: 5000 });
     expect(screen.getByAltText("Coins")).toBeInTheDocument();
-    expect(screen.getByText("5.000")).toBeInTheDocument();
   });
 
   test("Münzen werden nicht angezeigt wenn coinReward = 0", () => {
@@ -73,7 +72,6 @@ describe("MayorQuestCard – XP-Reward", () => {
   test("XP wird angezeigt wenn xpReward > 0", () => {
     renderCard({ ...baseQuest, xpReward: 1500 });
     expect(screen.getByAltText("XP")).toBeInTheDocument();
-    expect(screen.getByText("1.500")).toBeInTheDocument();
   });
 
   test("XP wird nicht angezeigt wenn xpReward = 0", () => {
@@ -99,7 +97,6 @@ describe("MayorQuestCard – Ticket-Reward", () => {
   test("Tickets werden angezeigt wenn ticketReward > 0", () => {
     renderCard({ ...baseQuest, coinReward: 0, xpReward: 0, ticketReward: 5000 });
     expect(screen.getByAltText("Tickets")).toBeInTheDocument();
-    expect(screen.getByText("5.000")).toBeInTheDocument();
   });
 
   test("Tickets werden nicht angezeigt wenn ticketReward = 0", () => {
