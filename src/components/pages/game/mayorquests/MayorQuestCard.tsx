@@ -5,7 +5,7 @@ import Image from "next/image";
 import styled from "styled-components";
 import { useTranslations } from "next-intl";
 import type { MayorQuestItem } from "@/service/MayorQuestService";
-import CardDivider from "@/components/page-structure/Card/CardDevider";
+import GameBadge from "@/components/ui/badges/GameBadge";
 
 interface MayorQuestCardProps {
   quest: MayorQuestItem;
@@ -19,6 +19,13 @@ export default function MayorQuestCard({ quest }: MayorQuestCardProps) {
 
   return (
     <OuterCard>
+      <QuestTitleRow>
+        <QuestTitle>{quest.titleName}</QuestTitle>
+        <LevelBadge>
+          {t("col_level")} {quest.level}+
+        </LevelBadge>
+      </QuestTitleRow>
+
       {/* Sektion: Bürgermeister & Sprechblase */}
       {quest.dialogText && (
         <MayorHeaderSection>
@@ -37,9 +44,6 @@ export default function MayorQuestCard({ quest }: MayorQuestCardProps) {
         </MayorHeaderSection>
       )}
 
-      <QuestTitle>{quest.titleName}</QuestTitle>
-      <CardDivider />
-
       {/* Sektion: Aufgaben */}
       <SectionHeading>{t("section_objectives", { defaultValue: "Aufgaben" })}</SectionHeading>
       <ObjectivesGrid>
@@ -48,10 +52,10 @@ export default function MayorQuestCard({ quest }: MayorQuestCardProps) {
             {obj.imagePath && (
               <ObjectiveIconWrapper>
                 <Image
-                  src={obj.imagePath}
+                  src={"/images/mayorquests/quests/" + obj.imagePath}
                   alt=""
-                  width={40}
-                  height={40}
+                  width={80}
+                  height={80}
                   style={{ objectFit: "contain" }}
                 />
               </ObjectiveIconWrapper>
@@ -59,7 +63,6 @@ export default function MayorQuestCard({ quest }: MayorQuestCardProps) {
             <ObjectiveContent>
               <ObjectiveText>{obj.text}</ObjectiveText>
             </ObjectiveContent>
-            <CheckBadge>✓</CheckBadge>
           </ObjectiveCard>
         ))}
       </ObjectivesGrid>
@@ -67,51 +70,68 @@ export default function MayorQuestCard({ quest }: MayorQuestCardProps) {
       {/* Sektion: Belohnungen */}
       <SectionHeading>{t("section_rewards", { defaultValue: "Belohnungen" })}</SectionHeading>
       <RewardsContainer>
-        {/* Beispielhafte Reward-Items im Spielstil */}
-        <RewardItemCard>
-          <RewardItemImageWrapper>
-            <Image src="/images/rewards/baby_horse.png" alt="Baby Horse" width={50} height={50} />
-          </RewardItemImageWrapper>
-          <RewardBadgeCount>1x</RewardBadgeCount>
-        </RewardItemCard>
+        {quest.rewards.map((reward) => {
+          const image = {
+            name: "Reward Icon",
+            path: "/images/mayorquests/rewards/" + reward.imagePath,
+            alt: "Reward",
+          };
 
-        <RewardItemCard>
-          <RewardItemImageWrapper>
-            <Image src="/images/rewards/chest_rare.png" alt="Chest" width={50} height={50} />
-          </RewardItemImageWrapper>
-          <RewardBadgeCount>1x</RewardBadgeCount>
-        </RewardItemCard>
+          return (
+            <RewardItemCard key={reward.id}>
+              <RewardItemImageWrapper>
+                <GameBadge image={image} size={100} />
+              </RewardItemImageWrapper>
+              <RewardBadgeCount>{reward.amount}x</RewardBadgeCount>
+            </RewardItemCard>
+          );
+        })}
 
-        <RewardItemCard>
-          <RewardItemImageWrapper>
-            <Image src="/images/rewards/key.png" alt="Key" width={50} height={50} />
-          </RewardItemImageWrapper>
-          <RewardBadgeCount>10x</RewardBadgeCount>
-        </RewardItemCard>
+        {!!quest.coinReward && (
+          <RewardItemCard>
+            <RewardItemImageWrapper>
+              <Image src="/images/currency/zoodollar.webp" alt="Coins" width={100} height={100} />
+            </RewardItemImageWrapper>
+            <RewardBadgeCount>{quest.coinReward.toLocaleString()}</RewardBadgeCount>
+          </RewardItemCard>
+        )}
 
-        <RewardItemCard>
-          <RewardItemImageWrapper>
-            <Image src="/images/currency/zoodollar.webp" alt="Coins" width={45} height={45} />
-          </RewardItemImageWrapper>
-          <RewardBadgeCount>{quest.coinReward.toLocaleString()}</RewardBadgeCount>
-        </RewardItemCard>
+        {!!quest.diamondReward && (
+          <RewardItemCard>
+            <RewardItemImageWrapper>
+              <Image src="/images/currency/diamant.webp" alt="Diamonds" width={100} height={100} />
+            </RewardItemImageWrapper>
+            <RewardBadgeCount>{quest.diamondReward.toLocaleString()}</RewardBadgeCount>
+          </RewardItemCard>
+        )}
 
-        <RewardItemCard>
-          <RewardItemImageWrapper>
-            <Image src="/images/currency/xp_star.png" alt="XP" width={45} height={45} />
-          </RewardItemImageWrapper>
-          <RewardBadgeCount>{quest.xpReward.toLocaleString()}</RewardBadgeCount>
-        </RewardItemCard>
+        {!!quest.ticketReward && (
+          <RewardItemCard>
+            <RewardItemImageWrapper>
+              <Image src="/images/mayorquests/rewards/ticket.png" alt="Tickets" width={100} height={100} />
+            </RewardItemImageWrapper>
+            <RewardBadgeCount>{quest.ticketReward.toLocaleString()}</RewardBadgeCount>
+          </RewardItemCard>
+        )}
+
+        {!!quest.energyReward && (
+          <RewardItemCard>
+            <RewardItemImageWrapper>
+              <Image src="/images/mayorquests/rewards/energy.png" alt="Energy" width={100} height={100} />
+            </RewardItemImageWrapper>
+            <RewardBadgeCount>{quest.energyReward.toLocaleString()}</RewardBadgeCount>
+          </RewardItemCard>
+        )}
+
+        {!!quest.xpReward && (
+          <RewardItemCard>
+            <RewardItemImageWrapper>
+              <Image src="/images/mayorquests/star.png" alt="XP" width={100} height={100} />
+            </RewardItemImageWrapper>
+            <RewardBadgeCount>{quest.xpReward.toLocaleString()}</RewardBadgeCount>
+          </RewardItemCard>
+        )}
       </RewardsContainer>
-
-      {/* Footer mit Level und Questname */}
-      <QuestFooter>
-        <span>
-          {t("col_level")} {quest.level}+
-        </span>
-        <span>•</span>
-        <span>{quest.questName}</span>
-      </QuestFooter>
     </OuterCard>
   );
 }
@@ -142,16 +162,12 @@ const MayorHeaderSection = styled.div`
 
 const MayorAvatarWrapper = styled.div`
   flex-shrink: 0;
-  background: #f0e4d0;
-  border: 2px solid #c8b090;
-  border-radius: 50%;
-  width: 75px;
-  height: 75px;
+  width: 100px;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 `;
 
 const SpeechBubble = styled.div`
@@ -187,18 +203,34 @@ const SpeechBubbleText = styled.p`
   line-height: 1.4;
 `;
 
+const QuestTitleRow = styled.div`
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 0 8px 120px;
+`;
+
 const QuestTitle = styled.h2`
-  font-size: 1.3rem;
-  font-weight: 800;
-  margin: 0 0 8px 0;
+  font-size: 1.6rem;
+  font-family: ${({ theme }) => theme.fonts.comic};
+  margin: 0;
   color: #2c221e;
+`;
+
+const LevelBadge = styled.span`
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #8c7865;
+  white-space: nowrap;
+  flex-shrink: 0;
 `;
 
 const SectionHeading = styled.h3`
   font-size: 1rem;
   font-weight: 700;
   color: #5c4a3e;
-  margin: 16px 0 8px 0;
+  margin: 25px 0 8px 0;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 `;
@@ -227,11 +259,11 @@ const ObjectiveCard = styled.div`
 `;
 
 const ObjectiveIconWrapper = styled.div`
-  width: 45px;
-  height: 45px;
-  background: #fff;
-  border: 2px solid #c8b090;
-  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  //background: #fff;
+  //border: 2px solid #c8b090;
+  //border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -250,25 +282,9 @@ const ObjectiveText = styled.p`
   line-height: 1.3;
 `;
 
-const CheckBadge = styled.div`
-  background: #78bc38;
-  color: white;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8rem;
-  font-weight: bold;
-  border: 2px solid #fff;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
-  flex-shrink: 0;
-`;
-
 const RewardsContainer = styled.div`
   display: flex;
-  gap: 10px;
+  gap: 50px;
   flex-wrap: wrap;
   margin-bottom: 16px;
 `;
@@ -277,8 +293,8 @@ const RewardItemCard = styled.div`
   background: #fbf6ec;
   border: 2px solid #d4c3a8;
   border-radius: 12px;
-  width: 75px;
-  height: 75px;
+  width: 100px;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -303,16 +319,4 @@ const RewardBadgeCount = styled.span`
   font-weight: 700;
   color: #3b2e25;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-`;
-
-const QuestFooter = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.85rem;
-  color: #8c7865;
-  font-weight: 500;
-  margin-top: 12px;
-  padding-top: 8px;
-  border-top: 1px dashed #d4c3a8;
 `;

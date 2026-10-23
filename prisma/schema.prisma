@@ -840,16 +840,19 @@ model ZooInventoryBiomeGame {
 }
 
 model MayorQuest {
-  id         Int                   @id @default(autoincrement())
-  sortOrder  Int                   @unique
-  titleName  String                @db.VarChar(255)
-  level      Int
-  coinReward Int
-  xpReward   Int
-  miscReward String                @db.Text
-  questName  String                @db.VarChar(255)
-  objectives MayorQuestObjective[]
-  texts      MayorQuestText[]
+  id            Int                   @id @default(autoincrement())
+  sortOrder     Int                   @unique
+  titleName     String                @db.VarChar(255)
+  level         Int
+  coinReward    Int
+  diamondReward Int
+  ticketReward  Int
+  energyReward  Int
+  xpReward      Int
+  questName     String                @db.VarChar(255)
+  objectives    MayorQuestObjective[]
+  texts         MayorQuestText[]
+  rewards       MayorQuestReward[]
 
   @@map("mayorquest")
 }
@@ -870,15 +873,40 @@ model MayorQuestText {
 }
 
 model MayorQuestObjective {
+  id        Int                       @id @default(autoincrement())
+  questId   Int
+  quest     MayorQuest                @relation(fields: [questId], references: [id], onDelete: Cascade)
+  sortOrder Int
+  text      String                    @db.VarChar(500)
+  imagePath String?                   @db.VarChar(255)
+  texts     MayorQuestObjectiveText[]
+
+  @@index([questId])
+  @@map("mayorquestobjective")
+}
+
+model MayorQuestObjectiveText {
+  id           Int                 @id @default(autoincrement())
+  objectiveId  Int
+  objective    MayorQuestObjective @relation(fields: [objectiveId], references: [id], onDelete: Cascade)
+  languageCode String              @db.VarChar(5)
+  text         String              @db.VarChar(500)
+
+  @@unique([objectiveId, languageCode])
+  @@index([objectiveId])
+  @@map("mayorquestobjectivetext")
+}
+
+model MayorQuestReward {
   id        Int        @id @default(autoincrement())
   questId   Int
   quest     MayorQuest @relation(fields: [questId], references: [id], onDelete: Cascade)
   sortOrder Int
-  text      String     @db.VarChar(500)
-  imagePath String?    @db.VarChar(255)
+  imagePath String     @db.VarChar(255)
+  amount    Int        @default(1)
 
   @@index([questId])
-  @@map("mayorquestobjective")
+  @@map("mayorquestreward")
 }
 
 model LevelReward {

@@ -207,8 +207,10 @@ async function main() {
         titleName: q.titleName,
         level: q.level,
         coinReward: q.coinReward,
+        diamondReward: 0,
+        ticketReward: 0,
+        energyReward: 0,
         xpReward: q.xpReward,
-        miscReward: q.miscReward,
         questName: q.questName,
         objectives: {
           create: q.objectives.map((text, i) => ({ sortOrder: i + 1, text })),
@@ -219,7 +221,6 @@ async function main() {
         level: q.level,
         coinReward: q.coinReward,
         xpReward: q.xpReward,
-        miscReward: q.miscReward,
         questName: q.questName,
       },
     });
