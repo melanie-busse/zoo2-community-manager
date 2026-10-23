@@ -761,16 +761,16 @@ model BiomeShelter {
 }
 
 model BiomeGame {
-  id              Int                  @id @default(autoincrement())
-  identifier      String               @db.VarChar(255)
-  biomeIdentifier String               @default("") @db.VarChar(255)
-  price           Int
-  pricetype       Int
-  repair          Int
-  repairpricetype Int                  @default(1)
-  biomes          Biome[]              @relation("biometogame")
-  texts           BiomeGameText[]
-  animals         Animal[]
+  id                  Int                  @id @default(autoincrement())
+  identifier          String               @db.VarChar(255)
+  biomeIdentifier     String               @default("") @db.VarChar(255)
+  price               Int
+  pricetype           Int
+  repair              Int
+  repairpricetype     Int                  @default(1)
+  biomes              Biome[]              @relation("biometogame")
+  texts               BiomeGameText[]
+  animals             Animal[]
   levelEnclosureItems LevelEnclosureItem[]
 
   @@map("biomegame")
@@ -839,6 +839,76 @@ model ZooInventoryBiomeGame {
   @@map("zooinventorybiomegame")
 }
 
+model MayorQuest {
+  id            Int                   @id @default(autoincrement())
+  sortOrder     Int                   @unique
+  titleName     String                @db.VarChar(255)
+  level         Int
+  coinReward    Int
+  diamondReward Int
+  ticketReward  Int
+  energyReward  Int
+  xpReward      Int
+  questName     String                @db.VarChar(255)
+  objectives    MayorQuestObjective[]
+  texts         MayorQuestText[]
+  rewards       MayorQuestReward[]
+
+  @@map("mayorquest")
+}
+
+model MayorQuestText {
+  id           Int        @id @default(autoincrement())
+  questId      Int
+  quest        MayorQuest @relation(fields: [questId], references: [id], onDelete: Cascade)
+  languageCode String     @db.VarChar(5)
+  titleName    String     @db.VarChar(255)
+  miscReward   String     @db.Text
+  questName    String     @db.VarChar(255)
+  dialogText   String?    @db.Text
+
+  @@unique([questId, languageCode])
+  @@index([questId])
+  @@map("mayorquesttext")
+}
+
+model MayorQuestObjective {
+  id        Int                       @id @default(autoincrement())
+  questId   Int
+  quest     MayorQuest                @relation(fields: [questId], references: [id], onDelete: Cascade)
+  sortOrder Int
+  text      String                    @db.VarChar(500)
+  imagePath String?                   @db.VarChar(255)
+  texts     MayorQuestObjectiveText[]
+
+  @@index([questId])
+  @@map("mayorquestobjective")
+}
+
+model MayorQuestObjectiveText {
+  id           Int                 @id @default(autoincrement())
+  objectiveId  Int
+  objective    MayorQuestObjective @relation(fields: [objectiveId], references: [id], onDelete: Cascade)
+  languageCode String              @db.VarChar(5)
+  text         String              @db.VarChar(500)
+
+  @@unique([objectiveId, languageCode])
+  @@index([objectiveId])
+  @@map("mayorquestobjectivetext")
+}
+
+model MayorQuestReward {
+  id        Int        @id @default(autoincrement())
+  questId   Int
+  quest     MayorQuest @relation(fields: [questId], references: [id], onDelete: Cascade)
+  sortOrder Int
+  imagePath String     @db.VarChar(255)
+  amount    Int        @default(1)
+
+  @@index([questId])
+  @@map("mayorquestreward")
+}
+
 model LevelReward {
   id       Int  @id @default(autoincrement())
   level    Int  @unique
@@ -883,23 +953,23 @@ model LevelEnclosureItem {
 }
 
 model LevelChest {
-  id        Int         @id @default(autoincrement())
-  levelId   Int
+  id          Int         @id @default(autoincrement())
+  levelId     Int
   levelReward LevelReward @relation(fields: [levelId], references: [id], onDelete: Cascade)
-  quantity  Int         @default(1)
-  chestType String      @db.VarChar(50)
+  quantity    Int         @default(1)
+  chestType   String      @db.VarChar(50)
 
   @@map("levelchest")
 }
 
 model LevelAnimalReward {
-  id        Int         @id @default(autoincrement())
-  levelId   Int
+  id          Int         @id @default(autoincrement())
+  levelId     Int
   levelReward LevelReward @relation(fields: [levelId], references: [id], onDelete: Cascade)
-  quantity  Int         @default(1)
-  animalId  Int?
-  animal    Animal?     @relation(fields: [animalId], references: [id], onDelete: SetNull)
-  name      String      @db.VarChar(255)
+  quantity    Int         @default(1)
+  animalId    Int?
+  animal      Animal?     @relation(fields: [animalId], references: [id], onDelete: SetNull)
+  name        String      @db.VarChar(255)
 
   @@index([animalId])
   @@map("levelanimalreward")

@@ -57,7 +57,8 @@
     "shops": "Boutiques",
     "shop_create": "Créer une boutique",
     "game": "Jeu",
-    "levelup": "Level Up"
+    "levelup": "Level Up",
+    "mayor_quests": "Quêtes du Maire"
   },
   "inventory_collections": "Album de Collection"
 }

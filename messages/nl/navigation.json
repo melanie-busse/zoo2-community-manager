@@ -57,7 +57,8 @@
     "shops": "Winkels",
     "shop_create": "Winkel aanmaken",
     "game": "Spel",
-    "levelup": "Level Up"
+    "levelup": "Level Up",
+    "mayor_quests": "Burgemeestersquests"
   },
   "inventory_collections": "Verzamelalbum"
 }

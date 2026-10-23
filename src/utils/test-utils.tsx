@@ -144,6 +144,17 @@ const messages = {
     emptyState: { title: "Keine Wettbewerbe gefunden" },
     status: { running: "Läuft gerade", upcoming: "Demnächst" },
   },
+  mayorquest: {
+    title: "Bürgermeisteraufgaben",
+    col_level: "Level",
+    col_coins: "Münzen",
+    col_xp: "XP",
+    col_misc: "Sonstige Belohnungen",
+    col_quest_name: "Aufgabenname",
+    objectives_title: "Aufgaben",
+    section_objectives: "Aufgaben",
+    section_rewards: "Belohnungen",
+  },
   page: {
     home: { stats: { animals: "Tiere", specialCoat: "Farbvarianten", biomes: "Gehege", regions: "Zooregionen" }, cards: { lexicon: { title: "Tier-Lexikon", text: "..." }, specialCoat: { title: "Farbvarianten", text: "..." }, club: { title: "Klub", text: "..." } } },
     footer: { imprint: "Impressum" },
