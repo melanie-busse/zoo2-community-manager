@@ -192,6 +192,7 @@ export const navConfig: NavItem[] = [
     basePath: "/game",
     requiresAuth: false,
     subMenu: [
+      { labelKey: "academy_faq", href: "/game/academy-faq", requiresAuth: false },
       { labelKey: "levelup", href: "/game/levelup", requiresAuth: false },
       { labelKey: "mayor_quests", href: "/game/mayor-quests", requiresAuth: false },
     ],

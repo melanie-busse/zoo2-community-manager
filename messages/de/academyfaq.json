@@ -1,0 +1,31 @@
+{
+  "title": "Akademie FAQ",
+  "intro": "Die Zoo-Akademie ist eine Premium-Kontofunktion, die es dir ermöglicht, tägliche Geschenke und Boni für deinen Zoo freizuschalten, wenn sie mit Diamanten aktiviert wird. Zu den Vorteilen gehören unter anderem zusätzliche Erfahrungspunkte beim Pflegen von Tieren, mehr Münzen aus Shops und Eingangskassen, tägliche Geschenke in Form von Truhen-Puzzleteilen sowie Boni für verschiedene Aspekte der Zucht. Wenn du Level 10 erreichst, stellt sich Madame Yu, die Direktorin der Zoo-Akademie, vor und präsentiert dir die ersten Meisterschaftsaufgaben.",
+
+  "membership_title": "Mitgliedschaftsstufen",
+  "membership_body": "Es gibt vier Mitgliedschaftsstufen: Bronze, Silber, Gold und Platin. Wenn du in der Akademie aufsteigst, kannst du die Vorteile jeder Stufe durch den Kauf der entsprechenden Mitgliedschaft freischalten. Eine Bronze-Mitgliedschaft gibt dir alle freigeschalteten Bronze-Vorteile. Eine Silber-Mitgliedschaft gibt dir alle freigeschalteten Silber- und Bronze-Vorteile. Eine Gold-Mitgliedschaft gibt dir alle freigeschalteten Gold-, Silber- und Bronze-Vorteile. Eine Platin-Mitgliedschaft gibt dir alle freigeschalteten Platin-, Gold-, Silber- und Bronze-Vorteile. Wenn du jedoch noch keine Vorteile einer bestimmten Stufe freigeschaltet hast, kannst du die Mitgliedschaft dieser Stufe erst kaufen, wenn du mindestens eine Schriftrolle in der Stufe freigeschaltet hast.",
+
+  "stamps_title": "Stempel",
+  "stamps_body": "Beim Verlängern einer Mitgliedschaft kannst du Stempel sammeln. 10 Stempel ergeben 1 VIP-Münze. Wenn dein Abonnement abgelaufen ist und du ein neues kaufst, bekommst du keine Stempel! Ein einfacher Ausweg ist, 1 Tag Bronze zu kaufen und dann auf das gewünschte Abonnement zu verlängern. Seit dem 19. Juni 2023 erhältst du beim Ausfüllen einer Stempelkarte VIP-Münzen, mit denen du dir zu einem späteren Zeitpunkt eine Belohnung aussuchen kannst. Jede Abonnementstufe bietet exklusive Tierauswahlen. Wenn deine Stempelkarte voll ist, kannst du ein Tier aus deiner aktuellen oder einer niedrigeren Abonnementstufe einlösen.",
+
+  "mastery_title": "Meisterschaftsstufen",
+  "mastery_body": "Du kannst regelmäßige Aufgaben erfüllen, um Meisterschaftspunkte (dargestellt als Schriftrollen in Quest-Belohnungen) für eine Zoo-Meisterschaftsstufe zu sammeln. Die ersten Stufen erfordern nur wenige Schriftrollen, aber die benötigte Anzahl steigt mit dem Fortschritt. Mit einer aktiven Mitgliedschaft kannst du auch gegen Diamanten zur nächsten Stufe springen. Das Aufsteigen zur nächsten Stufe kostet 5 Diamanten pro nicht gesammelter Schriftrolle. Das Überspringen einer Stufe befreit dich jedoch nicht von den verbleibenden Aufgaben der übersprungenen Stufe.",
+
+  "tasks_title": "Aufgaben",
+  "tasks_body": "Madame Yu gibt dir alle 6 Stunden Aufgaben. Die Aufgaben bestehen darin, deinen Zoo zu pflegen: Gehege reinigen, Tiere füttern, Müll aufsammeln, Pflanzen gießen, XP-Pins einsammeln usw. Du solltest die Aufgaben leicht erfüllen können, indem du das Spiel spielst und das tust, was du normalerweise tun würdest. Nach dem Abschluss erscheint unter Madame Yu ein Timer, der bis zu deinen neuen Aufgaben herunterzählt.",
+
+  "tips_title": "Tipps",
+  "tips_intro": "Ein paar Tipps, um das Beste aus der Zoo-Akademie herauszuholen:",
+  "tip_1": "Wenn du Aufgaben erledigst und ein Element nicht finden kannst, klicke auf die Aufgasenblase in der linken Seitenleiste.",
+  "tip_2": "Kaufe beim Abschluss eines neuen Abonnements immer zuerst 1 Tag Bronze und verlängere dann auf das Abonnement, das du eigentlich möchtest. So erhältst du den größten Rabatt und Stempel. Stempel bekommst du nur beim Verlängern!",
+  "tip_3": "Obwohl die Akademie nie im Angebot ist, kannst du Cashback-Events nutzen, um einen Prozentsatz der Diamanten zurückzubekommen, wenn du bis dahin wartest, um dich mit Akademie-Monaten einzudecken. Da Cashback-Events typischerweise 2 Monate (manchmal 3 Monate) auseinanderliegen, ist es am besten, sich einzudecken, damit keine Lücke entsteht. März und November können wichtige Zeiten sein, um sich mit 6+ Monaten einzudecken, indem du 2000 Diamanten ausgibst, um volle 25% der Diamanten zurückzubekommen.",
+  "tip_4": "Beim Wechsel zwischen Mitgliedschaften wird die aktive Mitgliedschaft als Rabatt auf die Upgrade-Mitgliedschaft angerechnet. Achte darauf, keine Diamanten zu verschwenden, indem du auf eine Mitgliedschaft upgradeest, bei der der volle Rabatt nicht genutzt werden kann.",
+  "tip_5": "Manchmal braucht das Spiel beim Öffnen ein paar Sekunden länger, um deine neue Madame Yu-Aufgabe zu berechnen. Nutze diese Gelegenheit, um direkt zu deiner kleinsten Region zu gehen, damit die Aufgaben auf Basis des kleineren Zoos berechnet werden. Alternativ kannst du sicherstellen, dass du das Spiel ein paar Minuten vor der neuen Aufgabe betrittst und deine kleinste Region öffnest, bevor die neue Aufgabe erscheint.",
+
+  "col_membership": "Mitgliedschaft",
+  "col_duration": "Dauer",
+  "col_startup": "Startkosten",
+  "col_extend": "Verlängerungskosten",
+  "col_stamps": "Stempel",
+  "col_cost_per_stamp": "Kosten pro Stempel"
+}
