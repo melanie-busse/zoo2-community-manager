@@ -27,6 +27,7 @@ const namespaces = [
   "academyfaq",
   "visitorfaq",
   "gamefaq",
+  "clubfaq",
 ] as const;
 
 export default getRequestConfig(async ({ requestLocale }) => {

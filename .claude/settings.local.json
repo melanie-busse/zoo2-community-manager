@@ -113,7 +113,8 @@
       "Bash(echo \"$locale: not found\")",
       "Bash(echo \"=== $locale ===\")",
       "Read(//d/Entwicklung/zoo2-community-manager/messages/$locale/**)",
-      "Bash(echo \"=== $locale line 31 ===\")"
+      "Bash(echo \"=== $locale line 31 ===\")",
+      "Bash(find D:/Entwicklung/zoo2-community-manager -name *.pdf)"
     ]
   }
 }

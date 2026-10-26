@@ -18,7 +18,6 @@
   "links": {
     "home": "Home",
     "zoo": "Zoo",
-    "visitor_faq": "Besucher FAQ",
     "statistic": "Statistik",
     "animals": "Tiere",
     "animal_overview": "Tierübersicht",
@@ -28,8 +27,7 @@
     "specialcoats_create": "Farbvariante anlegen",
     "club": "Klub",
     "club_statues": "Statuen",
-    "club_faq": "FAQ",
-"club_contests": "Wettbewerbe",
+    "club_contests": "Wettbewerbe",
     "club_create_contest": "Wettbewerb anlegen",
     "inventory": "Inventar",
     "inventory_statistic": "Statistik",
@@ -59,10 +57,14 @@
     "shops": "Shops",
     "shop_create": "Shop anlegen",
     "game": "Spiel",
-    "game_faq": "Spiel FAQ",
-    "academy_faq": "Akademie FAQ",
     "levelup": "Level Up",
-    "mayor_quests": "Bürgermeisteraufgaben"
+    "mayor_quests": "Bürgermeisteraufgaben",
+    "faq": "FAQ",
+    "faq_game": "Spiel FAQ",
+    "faq_academy": "Akademie FAQ",
+    "faq_visitor": "Besucher FAQ",
+    "faq_contest": "Wettbewerbs-FAQ",
+    "faq_club": "Klub FAQ"
   },
   "inventory_collections": "Sammelalbum"
 }

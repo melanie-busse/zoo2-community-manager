@@ -27,7 +27,6 @@ export const navConfig: NavItem[] = [
     basePath: "/zoo",
     requiresAuth: false,
     subMenu: [
-      { labelKey: "visitor_faq", href: "/zoo/visitor-faq", requiresAuth: false },
       { labelKey: "statistic", href: "/zoo/statistic", requiresAuth: false },
       { labelKey: "biomes", href: "/zoo/biomes", requiresAuth: false },
       {
@@ -121,11 +120,6 @@ export const navConfig: NavItem[] = [
     requiresAuth: false,
     subMenu: [
       {
-        labelKey: "club_faq",
-        href: "/contests/faq",
-        requiresAuth: false,
-      },
-      {
         labelKey: "club_contests",
         href: "/contests",
         requiresAuth: false,
@@ -193,10 +187,22 @@ export const navConfig: NavItem[] = [
     basePath: "/game",
     requiresAuth: false,
     subMenu: [
-      { labelKey: "game_faq", href: "/game/faq", requiresAuth: false },
-      { labelKey: "academy_faq", href: "/game/academy-faq", requiresAuth: false },
       { labelKey: "levelup", href: "/game/levelup", requiresAuth: false },
       { labelKey: "mayor_quests", href: "/game/mayor-quests", requiresAuth: false },
+    ],
+  },
+
+  {
+    id: "faq",
+    labelKey: "faq",
+    basePath: "/faq",
+    requiresAuth: false,
+    subMenu: [
+      { labelKey: "faq_game", href: "/faq/game", requiresAuth: false },
+      { labelKey: "faq_academy", href: "/faq/academy", requiresAuth: false },
+      { labelKey: "faq_visitor", href: "/faq/visitor", requiresAuth: false },
+      { labelKey: "faq_contest", href: "/faq/contest", requiresAuth: false },
+      { labelKey: "faq_club", href: "/faq/club", requiresAuth: false },
     ],
   },
 ];

@@ -18,7 +18,6 @@
   "links": {
     "home": "Inicio",
     "zoo": "Zoo",
-    "visitor_faq": "Visitor FAQ",
     "statistic": "Estadísticas",
     "animals": "Animales",
     "animal_overview": "Resumen de animales",
@@ -28,8 +27,7 @@
     "specialcoats_create": "Añadir variante de color",
     "club": "Club",
     "club_statues": "Estatuas",
-    "club_faq": "FAQ",
-"club_contests": "Concursos",
+    "club_contests": "Concursos",
     "club_create_contest": "Crear concurso",
     "admin": "Admin",
     "inventory": "Inventario",
@@ -59,10 +57,14 @@
     "shops": "Tiendas",
     "shop_create": "Crear tienda",
     "game": "Juego",
-    "game_faq": "Game FAQ",
-    "academy_faq": "Academy FAQ",
     "levelup": "Level Up",
-    "mayor_quests": "Misiones del Alcalde"
+    "mayor_quests": "Misiones del Alcalde",
+    "faq": "FAQ",
+    "faq_game": "Game FAQ",
+    "faq_academy": "Academy FAQ",
+    "faq_visitor": "Visitor FAQ",
+    "faq_contest": "Contest FAQ",
+    "faq_club": "Club FAQ"
   },
   "inventory_collections": "Álbum de Colección"
 }

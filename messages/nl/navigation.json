@@ -18,7 +18,6 @@
   "links": {
     "home": "Home",
     "zoo": "Zoo",
-    "visitor_faq": "Visitor FAQ",
     "statistic": "Statistieken",
     "animals": "Dieren",
     "animal_overview": "Dierenoverzicht",
@@ -28,8 +27,7 @@
     "specialcoats_create": "Kleurvariant toevoegen",
     "club": "Club",
     "club_statues": "Standbeelden",
-    "club_faq": "FAQ",
-"club_contests": "Wedstrijden",
+    "club_contests": "Wedstrijden",
     "club_create_contest": "Wedstrijd aanmaken",
     "admin": "Admin",
     "inventory": "Inventaris",
@@ -59,10 +57,14 @@
     "shops": "Winkels",
     "shop_create": "Winkel aanmaken",
     "game": "Spel",
-    "game_faq": "Game FAQ",
-    "academy_faq": "Academy FAQ",
     "levelup": "Level Up",
-    "mayor_quests": "Burgemeestersquests"
+    "mayor_quests": "Burgemeestersquests",
+    "faq": "FAQ",
+    "faq_game": "Game FAQ",
+    "faq_academy": "Academy FAQ",
+    "faq_visitor": "Visitor FAQ",
+    "faq_contest": "Contest FAQ",
+    "faq_club": "Club FAQ"
   },
   "inventory_collections": "Verzamelalbum"
 }

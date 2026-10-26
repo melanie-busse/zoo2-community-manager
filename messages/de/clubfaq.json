@@ -1,0 +1,88 @@
+{
+  "title": "Klub FAQ",
+  "intro": "Klubs sind spielinterne Zoo-Spielergemeinschaften, die dir helfen können, mehr Inhalte und Belohnungen freizuschalten. Teams von bis zu 18 Mitgliedern treten gegeneinander an, um begehrte Popularitätsstatuen und exklusive Tierfarbvarianten zu gewinnen, die für Sammlungen benötigt werden. Teammitglieder können im Gruppen-Chat kommunizieren, die Hauptzoos voneinander besuchen, an klubweiten Zucht- oder XP-Boost-Events teilnehmen und das Klubemblem auf speziellen Klubdekorationen präsentieren.",
+
+  "roles_title": "Klubmitglieder-Rollen",
+  "roles_body": "Es gibt drei verschiedene Rollen: Präsident, Minister und Klubmitglied. Der Präsident ist Eigentümer des Klubs und hat die meisten Verwaltungsbefugnisse. Minister können fast alles tun, was der Präsident kann, aber sie können weder die Klubbeschreibung ändern noch den Präsidenten entfernen. Klubmitglieder können spenden und chatten. Neue Mitglieder müssen sieben Tage warten, bevor sie die Möglichkeit erhalten, zu Wettbewerben oder Spendenaktionen beizutragen - alle anderen Vorteile und Funktionen sind sofort verfügbar.",
+
+  "roles_table_ability": "Fähigkeit",
+  "roles_table_president": "Präsident",
+  "roles_table_minister": "Minister",
+  "roles_table_member": "Klubmitglied",
+
+  "roles_ability_description": "Beschreibung oder Standardsprache ändern",
+  "roles_ability_manage_members": "Neue Mitglieder einladen, Mitglieder entfernen oder Bewerbungen annehmen/ablehnen",
+  "roles_ability_retract_invitation": "Eine Mitgliedereinladung zurückziehen",
+  "roles_ability_assign_president": "Rolle des Präsidenten zuweisen",
+  "roles_ability_assign_role": "Rolle des Ministers oder Klubmitglieds zuweisen",
+  "roles_ability_fundraiser": "Eine Spendenaktion starten oder abschließen",
+  "roles_ability_contest": "Einen Wettbewerb starten",
+  "roles_ability_donate_fundraiser": "Zu einer Spendenaktion beitragen*",
+  "roles_ability_benefits": "Vorteile einer Spendenaktion erhalten",
+  "roles_ability_donate_contest": "Zu einem Wettbewerb beitragen*",
+  "roles_ability_chat": "Klubhaus-Chat nutzen",
+  "roles_ability_emblem": "Klubemblem ändern",
+  "roles_footnote": "*Neue Mitglieder müssen sieben Tage warten, bevor sie zu Wettbewerben oder Spendenaktionen beitragen können. Alle anderen Vorteile und Funktionen sind sofort nach dem Beitritt oder der Rollenzuweisung verfügbar.",
+
+  "assigning_title": "Rollen zuweisen",
+  "assigning_body": "Der Präsident und die Minister können Rollen im Tab 'Klubmitglieder' im Klubhaus zuweisen. Klicke auf den Namen des Spielers und wähle die grüne Schaltfläche 'Rolle ändern'. Du kannst den Spieler zum Minister machen, zu einem normalen Klubmitglied oder die Präsidentschaft des gesamten Klubs an ein Mitglied übertragen, indem du ihn zum Präsidenten machst.",
+
+  "adding_title": "Mitglieder hinzufügen",
+  "adding_applicants": "Der Präsident und die Minister werden benachrichtigt, wenn der Klub neue Bewerber hat. Im Tab 'Bewerbungen' können Admins den Zoo des Bewerbers besichtigen, seine Statistiken einsehen und seine Nachricht lesen. Nach der Annahme werden alle anderen Bewerbungen des neuen Mitglieds zurückgezogen und das neue Mitglied kann sofort chatten. Alle neuen Mitglieder müssen 7 Tage warten, bevor sie zu Spendenaktionen oder Wettbewerben beitragen können.",
+  "adding_invitations": "Wenn du die alphanumerische Support-ID des Spielers bereits kennst, kann ein Präsident oder Minister eine Einladung direkt über den Tab 'Bewerbungen' senden. Hinweis: Nur der Präsident kann eine Einladung zurückziehen, wenn sie an den falschen Spieler gesendet wurde.",
+
+  "removing_title": "Mitglieder entfernen",
+  "removing_body": "Der Präsident und die Minister können Spieler entfernen, indem sie zum Tab 'Klubmitglieder' gehen, den Namen des Spielers auswählen und auf 'Rolle ändern' und dann 'Löschen' klicken. Nach der Entfernung wird die persönliche Klubrangliste des Spielers auf null zurückgesetzt, der Klubshop wird sofort gesperrt und alle Wettbewerbsspenden dieser Woche gehen aus der Punktzahl des Klubs verloren. Einige Spieler schätzen eine Vorwarnung vor der Entfernung.",
+
+  "turnover_title": "Führungstipps zur Vermeidung hoher Fluktuation",
+  "turnover_body": "Kommuniziere deine Erwartungen an die Spieler, bevor sie beitreten (oder sofort danach, wenn sie spielinterne Bewerber sind). Kommunikation in sozialen Medien hilft dabei, das Team zu leiten und Klubziele zu teilen. Du kannst eine Probezeit einführen, in der neue Mitglieder und du die Eignung beurteilen können, bevor ihr euch langfristig verpflichtet. Wenn du die Erwartungen für das gesamte Team änderst, informiere sie, damit sie sich vorbereiten können. Wenn du Mitglieder entfernst, gib wenn möglich eine Warnung und Erklärung und verweise sie auf soziale Medien, wo andere Klubs nach Mitgliedern suchen.",
+
+  "rank_title": "Mitgliedsrang",
+  "rank_body": "Jedes Teammitglied hat einen persönlichen Mitgliedsrang im Klub, der sich erhöht, je mehr Reputationspunkte der Spieler verdient. Punkte werden durch Beiträge zu Wettbewerben und Spendenaktionen verdient: Für je 1.000 gespendete Münzen zu einer Spendenaktion erhält das Mitglied 10 Reputationspunkte; jeder gespendete Diamant gibt 5 Reputationspunkte; für jedes zu einem Wettbewerb gespendete Tier erhält der Spieler die Hälfte der Popularität des Tieres in Reputationspunkten (Babys geben das Doppelte). Jede Rangstufe schaltet neue kaufbare Inhalte im Klubshop frei.",
+
+  "rank_col_rank": "Rang",
+  "rank_col_title": "Titel",
+  "rank_col_points": "Punkte bis zur nächsten Stufe",
+  "rank_col_cumulative": "Kumulierte Punkte",
+
+  "shop_title": "Klubshop",
+  "shop_body": "Der Klubshop ermöglicht es Klubmitgliedern, Dekorationen und Tiere aus vergangenen Events zu kaufen. Klubartikel werden freigeschaltet, wenn Spieler ihren persönlichen Mitgliedsrang erhöhen. Einige Artikel werden für Sammlungen benötigt. Frühere Event-Artikel sind nach Saison gruppiert. Einige Dekorationen zeigen dein Klubemblem.",
+
+  "shop_animals_title": "Klubshop-Tiere",
+  "shop_col_rank": "Mitgliedsrang",
+  "shop_col_animal": "Tier",
+  "shop_col_cost": "Kosten",
+  "shop_col_popularity": "Popularität",
+  "shop_col_max": "Maximale Anzahl",
+
+  "club_level_title": "Klubstufen-Übersicht",
+  "club_level_body": "Jeder Klub kann aufsteigen, um mehr Mitgliederkapazität, besondere Artikel oder Event-Spendenaktionsfähigkeiten freizuschalten. Die maximale Klubstufe ist 20, aber Klubs schalten ihre maximale Mitgliederkapazität von 18 bei Stufe 8 frei. Klubs verdienen XP durch Teilnahme an Wettbewerben.",
+  "club_level_col_level": "Klubstufe",
+  "club_level_col_members": "Max. Mitglieder",
+  "club_level_col_xp": "XP bis zur nächsten Stufe",
+
+  "fundraisers_title": "Spendenaktionen",
+  "fundraisers_body": "Spendenaktionen bieten Vorteile für alle Klubmitglieder, wenn sie aktiviert werden. Einige Spendenaktionen sind für dauerhafte Artikel, während andere temporäre, wiederholbare Boosts sind. Nur ein Präsident oder Minister kann eine Spendenaktion starten. Jedes Klubmitglied kann Münzen oder Diamanten spenden. Sobald das Spendenaktionsziel erreicht ist, kann ein Präsident oder Minister die Spendenaktion aktivieren und der Vorteil gilt für alle Mitglieder. Je höher die Klubstufe, desto mehr Spendenaktionsoptionen werden freigeschaltet.",
+
+  "fundraiser_types_title": "Arten von Spendenaktionen",
+  "fundraiser_type_capacity": "Mitgliederkapazität (+1 neues Mitglied): Erweitere die Anzahl der erlaubten Mitglieder. Die Hälfte der 18 Mitgliederplätze erfordert Diamanten, der Rest erfordert nur Münzen oder ist bereits freigeschaltet.",
+  "fundraiser_type_stickers": "Sticker: Mitglieder können neue Sticker im Gruppen-Chat im Klubhaus verwenden.",
+  "fundraiser_type_emblems": "Embleme: Schalte neue Optionen für dein Klubemblem frei, indem du diese Spendenaktionen abschließt.",
+  "fundraiser_type_boosters": "Booster-Events: 48-stündige klubweite Events, die wiederholt aktiviert werden können, wenn genug Mittel gesammelt wurden. Nur ein einziges 48-Stunden-Event kann gleichzeitig aktiv sein. Verfügbare Booster: XP-Boost (erhöhtes XP beim Reinigen, Füttern und Spielen mit Tieren) und Zucht-Boost (erhöhte Chance für erfolgreiche Zucht).",
+
+  "contests_title": "Wettbewerbe",
+  "contests_body": "Klubs können an wöchentlichen Wettbewerben teilnehmen, die Mitgliedern exklusive Belohnungen geben und die Klubstufe erhöhen. Weitere Informationen zur Funktionsweise von Wettbewerben findest du in der Wettbewerbs-FAQ.",
+
+  "leaving_title": "Einen Klub verlassen",
+  "leaving_body": "Um einen Klub zu verlassen, stelle sicher, dass du nicht der Präsident des Klubs bist. Gehe zum Tab 'Klubmitglieder', wähle deinen Namen und klicke auf die rote Schaltfläche 'Klub verlassen'. Wenn du der Präsident bist, musst du entweder die Präsidentschaft einem anderen Mitglied übertragen oder zuerst alle Mitglieder entfernen. Wenn du das einzige Mitglied bist, wird das Verlassen den Klub löschen.",
+
+  "leaving_tips_title": "Best Practices beim Verlassen eines Klubs",
+  "leaving_tips_body": "Kaufe vor dem Verlassen alle Klubshop-Artikel, die du möchtest - du verlierst den Zugang zum Klubshop, bis du deinen Mitgliedsrang in einem anderen Klub zurückgewinnst. Jenkins' Geburtstag am 1. Juli ist bekannt als der beste Klubverkauf des Jahres. Du kannst die benötigten Münzen zum Wiedererlangen einer Rangstufe berechnen, indem du die kumulierten Punkte für diese Stufe durch 100 dividierst. Wenn du der Präsident bist und deinen Klub nicht verschwinden lassen möchtest, lass ein vertrauenswürdiges Familienmitglied ein Konto erstellen und die Präsidentschaft halten, während du einen anderen Klub ausprobierst.",
+
+  "joining_title": "Einem Klub beitreten",
+  "joining_applying": "Suche nach Klubs, indem du das Klubsuche-Symbol (Drei-Häuser-Symbol), das dritte Symbol von links im Klubhaus, auswählst. Wähle deine bevorzugte Sprache und filtere dann die Sucheinstellungen, um einen Klub zu finden, der deinen Bedürfnissen entspricht.",
+  "joining_invitation": "Wenn du bereits einen Klubleiter kennst, gib deine Support-ID an, damit er dir eine direkte Einladung senden kann. Gib die exakte Groß-/Kleinschreibung beachtende alphanumerische ID aus deinen Einstellungen an. Du kannst keine Einladungen empfangen, wenn du bereits in einem Klub bist, also verlasse ihn zuerst.",
+
+  "finding_title": "Einen aktiven Klub finden",
+  "finding_body": "Suche in sozialen Medien nach Zoo 2-Communitys, um dich mit Klubführern zu verbinden, oder nutze den Bereich 'Vergangene Wettbewerbe' (1-2-3-Symbol, das fünfte Symbol von links im Klubhaus), um zu sehen, welche Teams zuletzt aktiv waren und wie gut sie in den Wettbewerbsranglisten abgeschnitten haben."
+}
