@@ -1,0 +1,103 @@
+{
+  "title": "Spiel FAQ",
+  "intro": "Einsteiger-Guide: Profi-Tipps von langjährigen Zoo-2-Spielern.",
+
+  "summary_title": "Zusammenfassung des Spiels",
+  "summary_body": "Obwohl es viele verschiedene Spielstile gibt, dreht sich das Spiel hauptsächlich darum, Tiere zu sammeln und zu züchten und deinen Zoo zu pflegen. Du kannst dabei auch gestalten und dekorieren und die vielen Sonderevents und Preise jeden Monat genießen. Du kannst dich mit anderen Spielern verbinden und in einer Gilde zusammenarbeiten, um Belohnungen zu verdienen. Es gibt viele Quests zu erfüllen und Gegenstände zu sammeln, aber viele Spieler sind sich einig, dass Geduld der richtige Weg ist, um dieses Spiel langfristig zu spielen.",
+
+  "free_stuff_title": "Kostenlose Sachen verdienen",
+  "free_stuff_body": "Dieses Spiel erfordert kein echtes Geld, um voranzukommen oder es zu genießen, aber es ist eine optionale Möglichkeit, wenn du extra Vorteile möchtest oder Dinge schneller erreichen willst. Upjers macht viele Tiere und Währungen für engagierte Spieler kostenlos verfügbar. App-Nutzer können auch optionale Bonus-Anzeigen aktivieren, um Boni, Rabatte oder Zeitreduktionen zu verdienen, ohne Geld auszugeben.",
+
+  "levelup_title": "Leveln",
+  "levelup_body": "Du kannst aufsteigen, indem du XP (Erfahrungspunkte) sammelst. Du erhältst XP durch das Reinigen deines Zoos, das Helfen von Freunden, Züchten, das Erfüllen von Erfolgen und Quests sowie das Platzieren neuer Dekorationen, Gehege oder Tiere. Das Aufsteigen gibt Belohnungen, die oft beim Erfüllen von Quests helfen. Um schneller aufzusteigen, platziere viele Tiere mit hoher XP-Generierung in deinem Zoo. Du kannst ihnen blaues Futter gegen Münzen geben, um doppelte XP zu erhalten. Aktiviere einen Klub-Sammelaktions-XP-Bonus von bis zu 10 %. App-Nutzer können eine Anzeige ansehen, um einmal alle 24 Stunden einen einstündigen 10%-XP-Boost zu aktivieren — er gilt für alle generierten XP.",
+
+  "focus_title": "Fokus-Tipps",
+  "focus_intro": "Einige zukünftige Aufgaben, auf die du hinarbeiten solltest:",
+  "focus_tip_1": "Priorisiere die Zucht deiner Pandas auf Level 10.",
+  "focus_tip_2": "Vervollständige sofort alle rosafarbenen Hibiskus-Büsche aus einem einzelnen Puzzlestück, sobald du es bekommst. Lasse es in deinem Inventar und platziere es erst, nachdem du die Quest erhalten hast, 10 rosafarbene Hibiskus-Büsche zu platzieren.",
+  "focus_tip_3": "Wenn du den kostenlosen Zoo-Akademie-Gutschein bei Level 10 maximieren möchtest, priorisiere die Erfüllung der Madame-Yu-Aufgaben alle 6 Stunden, um Level 14 der Akademie zu erreichen, bevor du den Gutschein einlöst.",
+  "focus_tip_4": "Wenn du bei Level 93 noch nur eine oder zwei Regionen hast, erwäge, etwa 24 Stunden vor dem Aufstieg auf Level 94 das Müllsammeln zu stoppen, um genug Müll für eine zeitlich begrenzte Aufgabe zu haben, die 5 Diamanten gibt.",
+  "focus_tip_5": "Nach Level 100 schaltest du eine Quest frei, die erfordert, 50 Retro- und 50 Legendäre Truhen zu öffnen, ab dem Zeitpunkt, an dem du die Quest erhältst. Du kannst kostenlose Truhen aus dem Kalender sammeln und während eines Events alle Event-Truhen kaufen.",
+
+  "coins_title": "Münzen",
+  "coins_body": "Stelle sicher, dass du alle mit Münzen kaufbaren Shops sofort platzierst und aufrüstest. Spieler haben festgestellt, dass sich Shops am schnellsten füllen, wenn das Spiel geschlossen ist. Melde dich alle ein bis zwei Stunden an, um Münzen zu sammeln. Je mehr Beliebtheitspunkte du hast, desto mehr Besucher kaufen in deinen Shops. Spare deine Münzen für ein Event oder einen Ausverkauf. Warte mit dem Kauf oder Aufrüsten von Diamanten-Shops, bis diese im Angebot sind. Einige Spieler züchten und verkaufen hochwertige Münztiere wie den Waldrapp oder den Königsblauen Doktorfisch, um Münzgewinne zu erzielen — jedes mit Münzen kaufbare Tier für 100.000 Münzen oder mehr ist bevorzugt. Diamantentiere sind nicht profitabel für den Münzverkauf.",
+
+  "diamonds_title": "Diamanten",
+  "diamonds_body": "Diamanten gelten als Premiumwährung. Einige Quests erfordern Diamanten zum Erfüllen. Wenn du geduldig bist, sind viele dieser Diamantenobjekte im Spiel kostenlos erhältlich. Du kannst diese Quests bei Bedarf ausblenden. Du kannst Diamanten kostenlos verdienen oder sie im Shop für echtes Geld kaufen.",
+
+  "spending_title": "Ausgaben",
+  "spending_intro": "Fast alles im Spiel wird irgendwann zum Sonderpreis angeboten. Wenn du geduldig bist, kannst du dein Ausgabebudget maximieren. Am besten wartest du auf ein Cashback-Event, um die meisten Sachen zu kaufen, einschließlich Artikel, die bekanntermaßen nie direkt rabattiert werden.",
+  "spending_no_sale_diamonds": "Diamantenartikel, die nicht im Angebot sind: Eingangsbereich-Upgrades, Zuchtplätze*, Schlüssel (für Truhen), Preisrad-Timer-Resets, Zoo-Akademie-Abonnements, Season-Pass-Federn. (*Hinweis: Das Zuchtzentrum selbst war schon im Angebot, aber die gesperrten Plätze darin waren noch nie direkt rabattiert.)",
+  "spending_no_sale_coins": "Münzartikel, die nicht im Angebot sind: Normale blaue Truhen, Geländebearbeiter, Bulldozer.",
+  "spending_avoid": "Käufe, für die du keine Diamanten ausgeben solltest: 3× Diamanten-Futtereimer (nutze stattdessen Münzen für 2× Futter); Tiere als Babys behalten statt aufwachsen lassen (lege Babys in dein Inventar, damit sie nicht aufwachsen).",
+
+  "sales_title": "Verkaufsereignisse",
+  "sales_body": "Zoo 2 hat regelmäßig Angebote auf Unterkünfte/Upgrades, Shops/Upgrades, Dekorationen, Gehege, Diamantentruhen und Landerweiterungen. Manchmal werden Showtiere in verschiedenen Biomen rabattiert. Seltener gibt es Angebote auf Klub-Shop-Artikel, Mülleimer/Toiletten und Gebäude/Regionsfreischaltungen. Angebote reichen generell von 30–50 % Rabatt.",
+
+  "land_title": "Land kaufen",
+  "land_body": "Warte auf Landverkäufe, um 33–50 % Rabatt beim Kauf von Grundstücken zu erhalten. Priorisiere den Kauf von Münzland und plane für die wenigen Diamantengrundstücke, die du zum Verbinden benötigst. Nur Shops und Gehege müssen auf einem verbundenen Weg liegen. Gehege mit Tieren können von einem Weg auf ein nicht verbundenes Grundstück verschoben werden und erzeugen weiterhin XP — aber du erhältst keine Beliebtheitspunkte für nicht verbundene Gehege. Das Freischalten bestimmter Regionen kann dir mehr Münzland zum Kauf bieten. Du kannst den Küsten-Zoo kaufen, um mehr Land für alle Zoo-Gehege sowie Wassergehege zu erhalten (du benötigst zuerst den Geländebearbeiter, um den Boden in blaue Kacheln zu ändern).",
+
+  "seasonal_title": "Saisonale Events",
+  "seasonal_body": "Spare deine Münzen für saisonale Events, damit du alle Preise ohne Diamantenausgaben erhältst. Der Kaufen-Sammeln-Verkaufen-Trick gibt Event-Währung im Austausch für deine Münzen.",
+
+  "season_pass_title": "Season Pass",
+  "season_pass_body": "Mache das tägliche Quiz, indem du auf den Pinguin oben links auf deinem Bildschirm klickst und dann \"Quiz\" auswählst. Beantworte 5 Fragen richtig, um täglich bis zu 350 Season-Pass-XP zu verdienen. Es gibt keine Strafe für falsche Antworten. Erfülle die wöchentlichen Aufgaben für mehr XP. Sie werden jeden Donnerstag zurückgesetzt.",
+
+  "conservation_title": "Conservation Week",
+  "conservation_body": "Züchte und entlasse bestimmte Event-Tiere die ganze Woche lang für die Chance, Konservierungsstatuen-Dekorationen, Profilitel und vor allem Diamanten zu gewinnen! Erfülle Quests für mehr Punkte und Preise. Die gesamte Zoo-2-Gemeinschaft kann auch extra Preise einschließlich Diamanten verdienen, indem sie gemeinsam Punkte sammelt.",
+
+  "calendar_title": "Kalender",
+  "calendar_body": "Ein Anmeldebelohnungskalender gibt tägliche Preise. Wenn du ein Zuchtpaar der belohnten Tiere möchtest, prüfe, wie viele Puzzleteile des Tieres du für den Monat bekommst. Vervollständige dein erstes Tier mit Tickets, bevor du dein letztes Puzzlestück erhältst, damit du das zweite Tier bei einem Truhenverkauf vervollständigen kannst. Der Dezemberkalender funktioniert etwas anders — du musst jeden Tag manuell auf die Türpreis-Tür klicken.",
+
+  "friends_title": "Freunden helfen",
+  "friends_body": "Du kannst auf den \"Springe zu\"-Schnellzugriffsbutton unten in deinem Freundeshilfe-Spiel klicken, um die nächste Krähe, das nächste Kind oder das nächste Tier sofort zu finden. Nutze soziale Medien, um aktive tägliche Helfer zu finden und mehr Freundschaftstruhen zu erhalten. Sie brauchen nur deine Support-ID (in den Einstellungen zu finden). App-Nutzer können auch eine Anzeige ansehen oder einen Diamanten bezahlen, um einem Freund zu helfen, anstatt das Mini-Spiel zu spielen.",
+
+  "animals_title": "Tiere",
+  "animals_body": "Es gibt Hunderte von Tierarten im Spiel. Einige werden für Sammlungen, Wettbewerbe und Quests benötigt. Andere sind Event-Tiere, Premium-Tiere, VIP-Tiere und Truhen-Tiere. Du kannst einige Tiere aus Puzzleteilen in Truhen, dem Kalender, einem Event oder dem Preisrad kostenlos bekommen. Die meisten Tiere werden mit genug Geduld kostenlos im Spiel verfügbar — Bonus-Tiere, die mit einem Echtgeld-Diamantenkauf angeboten werden, brauchen in der Regel bis zu drei Jahre, um in einen kostenlosen Erhältlichkeits-Zyklus zu gelangen.",
+
+  "free_mate_title": "Zweites Tier kostenlos erhalten",
+  "free_mate_body": "Beim Kauf oder anderweitigen Erhalten von Tieren aus dem Tiershop liefern einige ein kostenloses Gegenstück als Quest-Belohnung nach dem Platzieren des ersten Tieres. Bekannte Liste (möglicherweise nicht vollständig): Okapi, Gewöhnlicher Strauß, Netzgiraffe, Amerikanischer Bison, Steppenzebra, Goldfisch (Aquarium), Kaiserskorpion (Terrarium), Riffmanta (Küsten-Zoo).",
+
+  "breeding_title": "Zucht",
+  "breeding_body": "Du kannst Tiere züchten, indem du ein Männchen und ein Weibchen in ein Gehege mit der erforderlichen aufgerüsteten Unterkunft und einem verfügbaren Zuchtplatz stellst. Zwei Level-1-Tiere ergeben ein Level-2-Baby. Nach dem Platzieren in einem Gehege braucht das Baby eine Woche, um aufzuwachsen. Du kannst das Geschlecht eines Tieres ändern, indem du darauf klickst und das Geschlechtssymbol auswählst. Du kannst dieselbe Art gleichzeitig in mehreren Gehegen in jeder Region züchten. Es gibt eine sehr seltene Chance, durch die Zucht eines funkelnden Tieres Level zu überspringen. Um Tiere schneller aufzuleveln, bereite sie für Zwillings-/Drillinge-Zucht-Events vor, indem du die Zuchterfolgswahrscheinlichkeit auf ca. 20 % aufbaust und dann stopps. Um die Zuchterfolgschancen zu erhöhen, tritt einem Klub mit aktivem Zuchtbonus bei (bis zu 10 %), gib im Zuchtzentrum Münzfutter und versetze Tiere in ihre entsprechende Region für Biom-Boni.",
+
+  "oceanside_title": "Küsten-Zoo-Zucht",
+  "oceanside_body": "Du kannst alle Biome im Küsten-Zoo züchten! Nutze den Geländebearbeiter, um den Boden in blaue Kacheln zu ändern, um Grasland-, Ebenen-, Wald-, Berg-, Savanna-, Eis- und Dschungelgehege im Küsten-Zoo zu platzieren. Du kannst alle Biome in dieser Region züchten, nicht nur Wasser.",
+
+  "petting_title": "Tiere streicheln",
+  "petting_body": "Einige Aufgaben erfordern das Streicheln eines Tieres. Klicke auf das Tier und halte es gedrückt, bis die Kamera heranzoomt und kleine Herzen aus dem Tier aufsteigen. Tipps: Aktiviere in den Einstellungen \"Reduzierte Animationen\", damit deine Tiere sich nicht bewegen. Wähle ein größeres Tier, falls die Aufgabe kein bestimmtes Tier angibt. Zoome herein, damit die Tiere größer sind und du ein größeres Ziel hast.",
+
+  "enclosure_resize_title": "Gehegegröße ändern",
+  "enclosure_resize_body": "Du kannst die Größe und Form jedes Geheges für Platzzwecke ändern oder es in eine Dekoration verwandeln. Einige Spieler schneiden sogar Löcher in die Mitte für mehr Dekorationsfläche oder formen Gehege so, dass sie Wörter buchstabieren.",
+
+  "clubs_title": "Klubs",
+  "clubs_body": "Es gibt viele aktive Klubs, die nach Mitgliedern suchen. Obwohl du deinen eigenen Klub für 10 Diamanten gründen kannst, ist es am besten, zuerst soziale Medien zu nutzen, um andere Klubs kennenzulernen. Nur die Top 300–400 Klubs erhalten wöchentlich eine anständige Menge an Puzzlestück-Preisen. Grundlegende Klub-Tipps: Züchte alle Wettbewerbstiere auf Level 20 und priorisiere Diamanten für mehr Zuchtplätze. Top 75 zu erreichen gibt deinem Klub 50 Statuen-Puzzlestücke. Top 300 zu erreichen gibt 50 Varianten-Puzzlestücke. Wenn dein Klub wahrscheinlich keine Top-100-Platzierung schafft, ist es am besten, ein einzelnes Tier zu spenden, Klub-XP zu ernten und es beim nächsten Mal zu versuchen.",
+
+  "puzzles_title": "Puzzleteile",
+  "puzzles_body": "Wenn möglich, warte auf einen Truhenverkauf, bevor du Puzzleteile verschrottest oder Gegenstände vervollständigst. Es ist generell beste Praxis, das erste Diamanten-Tier-Puzzlestück mit Tickets zu vervollständigen, damit das zweite Stück für ein zweites Tier verwendet werden kann. App-Nutzer: Das Aktivieren von Bonus-Anzeigen bietet die Möglichkeit, Puzzles durch Anschauen einer Anzeige mit 10 % Rabatt zu vervollständigen. Für Spieler ab Level 90 ist die Voliere eine gute Investition für Tickets — jeden Tag nach dem Kalender-Reset fallen 20 Federn vom Himmel, und jede Feder hat eine Chance, ein Volieren-Puzzlestück zu geben.",
+
+  "scrap_title": "Was verschrotten",
+  "scrap_body": "Beim Verschrotten ist es generell beste Praxis auf niedrigeren Levels, nur Münzartikel zu verschrotten. Ausnahmen sind der Berggorilla (nicht im Shop erhältlich) und einige Tiere, die nur auf sehr hohen Levels freischaltenbar sind, wie der Afrikanische Büffel oder der Argali. Versuche, keine Diamantentruhe zu öffnen, außer du hast genug Schlüssel (4), um das benötigte Tier zu garantieren.",
+
+  "no_scrap_title": "Was NICHT verschrotten",
+  "no_scrap_intro": "Gegenstände, die für Quests benötigt werden und die du stattdessen aufbewahren solltest:",
+  "no_scrap_decos": "1 Ebenen-Laterne, 1 Savanna-Laterne, 1 Eis-Laterne, 1 Wasser-Spielplatz, 1 Rosenbogen, 4 Rosa Rosenbüsche, 5 Büsche (Ebene), 2 Wald-Laternen, 2 Stockrosen, 1 Waldbrunnen, 1 Spielrad (Laubdickicht), 2 Beerenbusch (Wald), 1 Baumstumpf (Wald), 10 Rosa Hibiskus, 1 Trog (Felsenwüste), 1 Feuerkoralle (Salzwasser), 1 Wegweiser, 1 Ebenen-Wegweiser, 1 Wald-Wegweiser, 1 Dschungel-Wegweiser, 1 Wasser-Wegweiser, 3 Eis-Bänke.",
+  "no_scrap_animals_intro": "Quest-Diamantentiere (nicht als Level-Up-Belohnungen oder Quest-Belohnungen vor Level 106 angeboten):",
+  "no_scrap_animals": "Komodowarane, Erdferkel, Ozelots, Afrikanische Elefanten, Mandrills, Schnee-Eulen, Walrosse, Gefleckte Stinktiere, Fischkatzen, Seeotter, Kaiserpinguine, Harpyienadler, Jaguarundis, Irawadi-Delfine (nur Preisrad), Riesenotter-Spitzmäuse (nur Preisrad), Amerikanische Schwarzbären, Östliche Graue Kängurus, Schabrackenschakale (nur Preisrad), 2. Eisbär, 2. Grüne Anakonda, 2. Scharlachara, 2. Mondenbär, 2. Tapir, 1. Okapi.",
+  "no_scrap_wheel": "Tiere ohne Quests, aber im Preisrad, die möglicherweise für Sammlungen benötigt werden: Lama, Bandrobbe, Weißgesichts-Eule, Fleckenbauch-Adlereule, Totenkopfaffe, Indisches Riesenhörnchen.",
+
+  "tickets_title": "Mehr Tickets bekommen",
+  "tickets_body": "Wenn du wenig Tickets hast, warte auf einen Truhenverkauf, bei dem das Vervollständigen eines Gegenstands 15 % günstiger ist. Du kannst auch das Preisrad für 10 Diamanten zurücksetzen (empfohlen während eines zweimonatlichen Cashback-Verkaufs) oder viele normale blaue Truhen öffnen, bis du genug Material zum Verschrotten hast. Wenn du versuchst, eine Klubstatue ohne alle Puzzleteile zu vervollständigen, erwäge, auf einen Truhenverkauf zu warten — mit 90 Puzzleteilen kannst du sie sofort für 10 Diamanten oder beim Verkauf für 7 Diamanten vervollständigen.",
+
+  "academy_tips_title": "Zoo-Akademie-Tipps",
+  "academy_tips_body": "Für Premium-Spieler bietet die Zoo-Akademie viele Vorteile, darunter exklusive Tiere, kürzere Zuchtzeiten, mehr Münzen und mehr XP. Am besten aktivierst du die Akademie während eines Cashback-Verkaufs. Wenn du kein aktives Abonnement hast, kaufe 1 Tag Bronze für 8 Diamanten, um den Verlängerungsrabatt zu aktivieren — verlängern ist viel günstiger als neu zu starten. Wichtiger Frühspieler-Tipp: Du erhältst einen kostenlosen Akademie-Gutschein für ein 7-Tage-Bronze-Abonnement, sobald du Level 10 des Spiels erreichst. Um den vollen Nutzen zu erzielen, warte bis du Madame-Yu-Schriftrollen-Level 14 erreichst, bevor du den Gutschein einlöst.",
+
+  "hide_quests_title": "Quests ausblenden",
+  "hide_quests_body": "Klicke auf Opa oben links auf dem Bildschirm. Wähle das Buchsymbol, um aktive und abgeschlossene Quests zu sehen. Scrolle zur unvollständigen Quest, die du ausblenden möchtest. Deaktiviere das Kontrollkästchen unten rechts, um die Quest auszublenden.",
+
+  "rocks_title": "Felsen sprengen",
+  "rocks_body": "Der Kujali-Park, eine Savanna-thematische Region für überschüssige Tiere aller Biome aus dem Hauptzoo, enthält zusätzliches Land, das für Diamanten oder Münzen freigeschaltet werden kann. Das Münzland in dieser Region erfordert extra Münzen zum Sprengen von Felsen für spezielle Preise — Puzzleteile für regionsspezifische Dekorationen, Wege, Münzen, XP oder Diamanten sind alle möglichen Preise.",
+
+  "steam_title": "Steam- und Epic-Spieler-Hinweis",
+  "steam_body": "Schön, dass Steam oder Epic Games dich zu Zoo 2 gebracht haben! Es gibt einige Einschränkungen zu beachten — wenn du vorhast, dieses Spiel langfristig zu spielen und noch nicht viel Geld dafür ausgegeben hast, schaue dir die Plattformen-Seite im Zoo-2-Wiki an, um zu entscheiden, ob du mit Steam oder Epic weitermachen solltest."
+}
