@@ -31,5 +31,6 @@
     "translations": "Translations",
     "language": "Language"
   },
-  "price": "Price"
+  "price": "Price",
+  "description": "A player can collect coins from shops as they fill from purchases by visitors. The more visitors in a region, the faster the shops fill. Each shop can be upgraded three times to reach its maximum capacity. Players have found that shops fill faster when the game is closed. Shops must be placed on a connected path in order to fill."
 }

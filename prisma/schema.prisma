@@ -842,14 +842,13 @@ model ZooInventoryBiomeGame {
 model MayorQuest {
   id            Int                   @id @default(autoincrement())
   sortOrder     Int                   @unique
-  titleName     String                @db.VarChar(255)
   level         Int
   coinReward    Int
   diamondReward Int
   ticketReward  Int
   energyReward  Int
   xpReward      Int
-  questName     String                @db.VarChar(255)
+  identifier    String                @db.VarChar(255)
   objectives    MayorQuestObjective[]
   texts         MayorQuestText[]
   rewards       MayorQuestReward[]
@@ -863,9 +862,8 @@ model MayorQuestText {
   quest        MayorQuest @relation(fields: [questId], references: [id], onDelete: Cascade)
   languageCode String     @db.VarChar(5)
   titleName    String     @db.VarChar(255)
-  miscReward   String     @db.Text
-  questName    String     @db.VarChar(255)
   dialogText   String?    @db.Text
+  tip          String     @db.Text
 
   @@unique([questId, languageCode])
   @@index([questId])

@@ -1,0 +1,49 @@
+{
+  "title": "Visitor Level FAQ",
+  "intro": "Visitor Level is very likely the most important aspect of the game. A zoo's visitor level indicates how many visitors are currently coming to your zoo. The higher the number, the more visitors — which means more coins collected not only at the entrance gate, but also at all of your shops. Your current visitor level is displayed just to the right of your zoo level in the upper left of the screen. If you tap on the visitor level display you will get a pop-up screen showing your level, how many visitor points are needed to advance to the next level, and suggestions on what your visitors would like to see added to your zoo.",
+
+  "modifiers_title": "Visitor Level Modifiers",
+  "modifiers_intro": "There are many features that have an effect on zoo visitor level. Unlike the experience level, your zoo's visitor level is dynamic and fluctuating. While most effects are positive, there are negative modifiers which reduce your visitor level.",
+
+  "animals_title": "Animals",
+  "animals_body": "Animals will be a major positive influence. Generally speaking, the more expensive the animal, the larger the number of visitor points you will receive. There is no difference between female and male animals, however, baby animals have a double visitor point bonus (this number drops to the normal adult level when the baby animal grows up after 7 days). An animal's visitor points will be decreased by unhappiness. Animals without food, lacking play time, or in a dirty enclosure have reduced visitor points. Feeding, playing with, and cleaning up the enclosure will restore the visitor points back to full. There are also special structures and the Zookeeper which will automatically keep animals at 100% happiness.",
+
+  "decorations_title": "Decorations",
+  "decorations_intro": "Decorations are your main way of adding and boosting visitor level points. They do not need to be placed on pathways. Usually, the more expensive the decoration, the higher the points added (exception: Club Shop decorations cost more but give overall fewer visitor points). There are several types of decorations:",
+
+  "plants_title": "Plants",
+  "plants_body": "Plants come in a number of varieties but work the same for Visitor Level purposes. Plants will give a bonus for each item planted. However, like animals, they need to be cared for — plants will eventually wilt and their visitor points will drop. Watering the plants will restore their full points value. There is a gem-cost Gardener that automatically waters a certain number of plants.",
+
+  "enclosure_deco_title": "Enclosure Decorations",
+  "enclosure_deco_body": "Enclosure Decorations are placed inside animal enclosures. They do not affect the happiness of the animal but provide popularity points for visitors. Unlike plants outside of enclosures, enclosure plant decorations do not wilt. The enclosure must be connected to a path in order for its contents (animals and enclosure decorations) to count toward your popularity points. Disconnected enclosures add zero popularity.",
+
+  "object_deco_title": "Object Decorations",
+  "object_deco_body": "Decorations placed outside of enclosures include everything from benches to fountains to signs and playgrounds. They do not need to be maintained or connected to any path in order to provide popularity points.",
+
+  "buildings_title": "Buildings",
+  "bathrooms_title": "Bathrooms",
+  "bathrooms_body": "Bathrooms do not need to be placed on pathways to have effect and do not need to be maintained.",
+
+  "trash_title": "Trash and Trash Cans",
+  "trash_body": "Trash will be dropped in your zoo if there are not enough trash cans that visitors can access on pathways. Trash Cans provide no direct positive visitor bonus, but allow visitors to place trash there rather than dropping it on the paths. Trash on the paths will make your visitors leave the zoo faster, but does not affect popularity points directly. There is a gem-cost Garbageman that will collect a limited amount of trash automatically for you.",
+
+  "npcs_title": "Special Guests (NPCs)",
+  "npcs_body": "Special Guests (NPCs) walk around your zoo on paths. They do not take any space, do not affect the happiness of animals, do not need to be maintained, but only provide popularity points for visitors.",
+
+  "calculator_title": "Deco Popularity Calculator",
+  "calculator_intro": "If interested in manually calculating the popularity points of decorations only — for example for the Zoo Title 14 Quest — perform the following steps:",
+  "calculator_step_1": "Water all plants.",
+  "calculator_step_2": "Retract NPCs (using the footprint button in Guest Lounge).",
+  "calculator_step_3": "Remove front entrance paths so that all enclosures are disconnected (red exclamation mark on each enclosure). This may mean removing any enclosure connected to the immovable entrance path.",
+  "calculator_step_4": "Write down the total number of visitors in the region.",
+  "calculator_step_5": "Click the visitor bar and write down the number of points needed to reach the next visitor.",
+  "calculator_step_6": "Use the Visitor Level Popularity Points chart below to find the cumulative popularity for your next visitor, then subtract the points needed.",
+  "calculator_step_7": "Repeat for each region and add the totals to see how close your regions are to a cumulative 500,000 points.",
+  "calculator_link": "A Google Sheets spreadsheet with a built-in calculator is also available (created by a Zoo 2 player): open it and save a copy in order to edit.",
+
+  "table_title": "Visitor Level Popularity Points",
+  "table_note": "The chart below lists the popularity points needed to reach each visitor level in any region of your zoo. There is no known limit to the number of visitors you can have.",
+  "col_level": "Visitor Level",
+  "col_points_to_next": "Points to Next Level",
+  "col_cumulative": "Cumulative Popularity Points"
+}

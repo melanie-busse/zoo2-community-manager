@@ -1,0 +1,49 @@
+{
+  "title": "Besucherlevel FAQ",
+  "intro": "Der Besucherlevel ist mit großer Wahrscheinlichkeit der wichtigste Aspekt des Spiels. Der Besucherlevel eines Zoos gibt an, wie viele Besucher gerade in deinen Zoo kommen. Je höher die Zahl, desto mehr Besucher — was natürlich mehr Münzen bedeutet, die nicht nur am Eingangstor, sondern auch in all deinen Shops gesammelt werden. Dein aktueller Besucherlevel wird rechts neben deinem Zoo-Level oben links auf dem Bildschirm angezeigt. Wenn du auf die Besucherlevel-Anzeige tippst, erscheint ein Popup, das deinen Level, die benötigten Besucherpunkte für den nächsten Level sowie Vorschläge zeigt, was deine Besucher gerne in deinem Zoo sehen würden.",
+
+  "modifiers_title": "Besucherlevel-Modifikatoren",
+  "modifiers_intro": "Es gibt viele Faktoren, die den Besucherlevel beeinflussen. Im Gegensatz zum Erfahrungslevel ist der Besucherlevel deines Zoos dynamisch und schwankend. Während die meisten Auswirkungen positiv sind, gibt es auch negative Modifikatoren, die deinen Besucherlevel verringern.",
+
+  "animals_title": "Tiere",
+  "animals_body": "Tiere haben einen großen positiven Einfluss. Im Allgemeinen gilt: Je teurer das Tier, desto mehr Besucherpunkte erhältst du. Es gibt keinen Unterschied zwischen weiblichen und männlichen Tieren. Babytiere haben jedoch einen doppelten Besucherpunkte-Bonus (dieser sinkt auf den normalen Erwachsenen-Wert, wenn das Baby nach 7 Tagen aufwächst). Die Besucherpunkte eines Tieres sinken durch Unzufriedenheit. Tiere ohne Futter, ohne ausreichende Spielzeit oder in einem schmutzigen Gehege haben reduzierte Besucherpunkte. Füttern, Spielen und das Säubern des Geheges stellt die Besucherpunkte wieder vollständig her. Es gibt auch spezielle Gebäude und den Tierpfleger, die Tiere automatisch bei 100 % Glück halten.",
+
+  "decorations_title": "Dekorationen",
+  "decorations_intro": "Dekorationen sind deine wichtigste Möglichkeit, Besucherpunkte hinzuzufügen und zu steigern. Sie müssen nicht auf Wegen platziert werden. Je teurer die Dekoration, desto mehr Punkte werden im Allgemeinen hinzugefügt (Ausnahme: Klub-Shop-Dekorationen kosten mehr, geben aber insgesamt weniger Besucherpunkte). Es gibt verschiedene Arten von Dekorationen:",
+
+  "plants_title": "Pflanzen",
+  "plants_body": "Pflanzen gibt es in verschiedenen Varianten, funktionieren aber für den Besucherlevel gleich. Pflanzen geben für jedes gepflanzte Objekt einen Bonus. Wie Tiere müssen sie jedoch gepflegt werden — Pflanzen verwelken schließlich und ihre Besucherpunkte sinken. Das Gießen der Pflanzen stellt ihren vollen Punktewert wieder her. Es gibt einen Gärtner für Edelsteine, der automatisch eine bestimmte Anzahl von Pflanzen gießt.",
+
+  "enclosure_deco_title": "Gehege-Dekorationen",
+  "enclosure_deco_body": "Gehege-Dekorationen werden innerhalb von Tiergehegen platziert. Sie beeinflussen nicht das Glück des Tieres, liefern aber Beliebtheitspunkte für Besucher. Im Gegensatz zu Pflanzen außerhalb von Gehegen verwelken Gehege-Pflanzdekorationen nicht. Das Gehege muss mit einem Weg verbunden sein, damit sein Inhalt (Tiere und Gehege-Dekorationen) zu deinen Beliebtheitspunkten beiträgt. Nicht verbundene Gehege tragen keine Beliebtheitspunkte bei.",
+
+  "object_deco_title": "Objekt-Dekorationen",
+  "object_deco_body": "Dekorationen außerhalb von Gehegen umfassen alles von Bänken über Brunnen bis hin zu Schildern und Spielplätzen. Sie müssen weder gewartet noch mit einem Weg verbunden werden, um Beliebtheitspunkte zu liefern.",
+
+  "buildings_title": "Gebäude",
+  "bathrooms_title": "Toiletten",
+  "bathrooms_body": "Toiletten müssen nicht auf Wegen platziert werden, um eine Wirkung zu haben, und müssen nicht gewartet werden.",
+
+  "trash_title": "Müll und Mülleimer",
+  "trash_body": "Müll wird in deinem Zoo abgelegt, wenn es nicht genug Mülleimer gibt, die Besucher auf Wegen erreichen können. Mülleimer geben keinen direkten positiven Besucherbonus, ermöglichen es Besuchern jedoch, Müll dort abzulegen, anstatt ihn auf die Wege zu werfen. Müll auf den Wegen lässt deine Besucher den Zoo schneller verlassen, beeinflusst die Beliebtheitspunkte aber nicht direkt. Es gibt einen Müllmann für Edelsteine, der automatisch eine begrenzte Menge Müll für dich sammelt.",
+
+  "npcs_title": "Besondere Gäste (NPCs)",
+  "npcs_body": "Besondere Gäste (NPCs) laufen auf den Wegen deines Zoos herum. Sie nehmen keinen Platz ein, beeinflussen das Glück der Tiere nicht, müssen nicht gewartet werden und liefern ausschließlich Beliebtheitspunkte für Besucher.",
+
+  "calculator_title": "Deko-Beliebtheitspunkte-Rechner",
+  "calculator_intro": "Wenn du die Beliebtheitspunkte deiner Dekorationen manuell berechnen möchtest — zum Beispiel für die Zoo-Titel-14-Quest — führe die folgenden Schritte durch:",
+  "calculator_step_1": "Alle Pflanzen gießen.",
+  "calculator_step_2": "NPCs zurückziehen (mit dem Fußabdruck-Button im Gästebereich).",
+  "calculator_step_3": "Eingangsbereich-Wege entfernen, sodass alle Gehege getrennt sind (rotes Ausrufezeichen an jedem Gehege). Das kann bedeuten, Gehege zu entfernen, die mit dem unverschieblichen Eingangsweg verbunden sind.",
+  "calculator_step_4": "Die aktuelle Besucheranzahl in der Region notieren.",
+  "calculator_step_5": "Auf die Besucherleiste tippen und die benötigten Punkte für den nächsten Besucher notieren.",
+  "calculator_step_6": "In der untenstehenden Tabelle die kumulativen Beliebtheitspunkte für deinen nächsten Besucher nachschlagen und die benötigten Punkte abziehen.",
+  "calculator_step_7": "Für jede Region wiederholen und die Summen addieren, um zu sehen, wie nah deine Regionen an insgesamt 500.000 Punkten sind.",
+  "calculator_link": "Es gibt auch eine Google-Sheets-Tabelle mit eingebautem Rechner (erstellt von einem Zoo-2-Spieler): Öffne sie und speichere eine Kopie zum Bearbeiten.",
+
+  "table_title": "Besucherlevel-Beliebtheitspunkte",
+  "table_note": "Die Tabelle listet die Beliebtheitspunkte auf, die benötigt werden, um jeden Besucherlevel in einer Region deines Zoos zu erreichen. Es gibt keine bekannte Obergrenze für die Anzahl der Besucher.",
+  "col_level": "Besucherlevel",
+  "col_points_to_next": "Punkte bis zum nächsten Level",
+  "col_cumulative": "Kumulierte Beliebtheitspunkte"
+}

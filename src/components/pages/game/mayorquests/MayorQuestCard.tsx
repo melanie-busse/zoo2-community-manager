@@ -35,7 +35,7 @@ export default function MayorQuestCard({ quest }: MayorQuestCardProps) {
               alt="Bürgermeister"
               width={70}
               height={85}
-              style={{ objectFit: "contain" }}
+              style={{ objectFit: "contain", height: "auto" }}
             />
           </MayorAvatarWrapper>
           <SpeechBubble>
@@ -108,7 +108,12 @@ export default function MayorQuestCard({ quest }: MayorQuestCardProps) {
         {!!quest.ticketReward && (
           <RewardItemCard>
             <RewardItemImageWrapper>
-              <Image src="/images/mayorquests/rewards/ticket.png" alt="Tickets" width={100} height={100} />
+              <Image
+                src="/images/mayorquests/rewards/ticket.png"
+                alt="Tickets"
+                width={100}
+                height={100}
+              />
             </RewardItemImageWrapper>
             <RewardBadgeCount>{quest.ticketReward.toLocaleString()}</RewardBadgeCount>
           </RewardItemCard>
@@ -117,7 +122,12 @@ export default function MayorQuestCard({ quest }: MayorQuestCardProps) {
         {!!quest.energyReward && (
           <RewardItemCard>
             <RewardItemImageWrapper>
-              <Image src="/images/mayorquests/rewards/energy.png" alt="Energy" width={100} height={100} />
+              <Image
+                src="/images/mayorquests/rewards/energy.png"
+                alt="Energy"
+                width={100}
+                height={100}
+              />
             </RewardItemImageWrapper>
             <RewardBadgeCount>{quest.energyReward.toLocaleString()}</RewardBadgeCount>
           </RewardItemCard>

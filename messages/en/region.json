@@ -63,5 +63,8 @@
   "search_placeholder": "Search regions...",
   "emptyState": {
     "title": "No region found!"
+  },
+  "description": {
+    "kujali_park": "Kujali Park is a savanna-themed zoo region that connects to the Main Zoo through the transport station. It contains extra land, breeding slots, quests, and even a free giraffe. To compare Kujali Park to other areas, see Regions. Kujali is compatible with all main zoo biome types."
   }
 }
