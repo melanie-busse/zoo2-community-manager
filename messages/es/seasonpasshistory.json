@@ -1,0 +1,10 @@
+{
+  "title": "Historial del Pase de Temporada",
+  "intro": "Un registro de todos los Pases de Temporada anteriores en Zoo 2: Animal Park, incluyendo los animales y decoraciones disponibles en cada nivel. Cada Pase de Temporada dura aproximadamente 10–11 semanas e incluye recorridos de recompensas Estándar (gratis), Premium y VIP.",
+
+  "col_season": "Temporada",
+  "col_start": "Fecha de Inicio",
+  "col_standard": "Recompensas Estándar",
+  "col_premium": "Recompensas Premium",
+  "col_vip": "Recompensas VIP"
+}

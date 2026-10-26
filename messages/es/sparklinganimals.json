@@ -1,0 +1,26 @@
+{
+  "title": "Animales Brillantes",
+  "intro": "Una cría exitosa de cualquier especie o variante puede resultar aleatoriamente en un animal especial y brillante de la misma especie. Los animales brillantes brillan con un tono purpúreo y resplandeciente debido a su excelente salud y contienen una alta popularidad. Los brillantes solo se pueden obtener mediante la cría regular y son extremadamente raros.",
+
+  "overview_title": "Descripción General",
+  "overview_body": "Cada animal brillante nace en el nivel 40 independientemente del nivel de sus padres. Los brillantes son los únicos animales que pueden alcanzar un nivel tan alto en tu zoo. Todos los animales no brillantes alcanzan su nivel máximo alcanzable en el nivel 20.",
+
+  "streak_title": "Racha de Cría",
+  "streak_body": "La probabilidad de obtener un animal brillante está determinada por tu racha de cría — el número de crías exitosas consecutivas por especie. Una vez que una cría falla, la racha de esa especie se reinicia a cero. Cada especie tiene su propia racha de cría que se muestra en la esquina inferior derecha del cuadro de diálogo de cría. Ya sea que el éxito sea de uno solo, gemelos o trillizos, la sesión cuenta como un solo intento.",
+
+  "chances_title": "Probabilidades de Brillantes",
+  "chances_body": "Cuanto mayor sea el número de crías exitosas consecutivas para una especie, mayores serán tus probabilidades de obtener un animal brillante en la siguiente cría. Las probabilidades comienzan en el 0,1% con una racha de cría de cero y aumentan hasta un máximo del 1,1% con una racha de cría de 10 o más. Cada bebé individual dentro de un conjunto de gemelos o trillizos tiene su propia probabilidad única de nacer brillante.",
+
+  "col_streak": "Racha de Cría",
+  "col_odds": "Probabilidades de Brillante",
+  "col_chance": "Probabilidad de Brillante",
+
+  "breeding_with_title": "Criar con un Animal Brillante",
+  "breeding_with_body": "Una vez que un animal brillante crece, se puede usar para criar bebés de nivel 20, dándote la posibilidad de saltar niveles. Independientemente del nivel o el brillo del otro padre, los bebés deberían producir un nivel 20 regular con una probabilidad ultrarrara de obtener otro brillante de nivel 40. Los brillantes también cumplen instantáneamente cualquier objetivo de colecciones para la misma especie y color, ya que nacen en el nivel 40.",
+
+  "donating_title": "Donar un Animal Brillante",
+  "donating_body": "Al donar un animal brillante de nivel 40 a un concurso del club, el animal da los mismos puntos que su nivel: 400 puntos de club como se muestra en la pantalla de donación de miembros. Es el equivalente a donar dos animales de nivel 20.",
+
+  "glow_title": "Desactivar el Brillo de los Brillantes",
+  "glow_body": "Si los efectos visuales brillantes no son de tu preferencia, puedes desactivar la función brillante en la configuración del juego. Haz clic en el icono de engranaje en la parte inferior derecha de la pantalla del juego, haz clic en la segunda pestaña de configuración, desplázate hacia abajo y marca \"Mostrar animales brillantes como animales regulares\". Esto elimina cualquier efecto brillante de tus animales de nivel 40."
+}

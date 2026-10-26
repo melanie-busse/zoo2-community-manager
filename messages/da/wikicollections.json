@@ -1,35 +1,35 @@
 {
-  "title": "Collections",
-  "intro": "Collections are a set of achievements that reward you for placing specific combinations of animals and items in your zoo simultaneously. Introduced on October 16, 2019, Collections are accessed through the book icon in the Visitor Center, which unlocks at player level 17.",
+  "title": "Samlinger",
+  "intro": "Samlinger er et sæt præstationer, der belønner dig for at placere specifikke kombinationer af dyr og genstande i din zoo samtidigt. Introduceret den 16. oktober 2019, tilgås Samlinger via bogikonen i Besøgscentret, som låses op på spillerniveau 17.",
 
-  "overview_title": "How Collections Work",
-  "overview_body": "Each collection requires you to have a specific set of animals (and sometimes decorations or buildings) placed in your zoo at the same time. The required animals must meet minimum level requirements and, in some cases, must be a specific coat color. All required items must be present in your zoo simultaneously — it is not enough to have owned them previously.",
+  "overview_title": "Sådan fungerer samlinger",
+  "overview_body": "Hver samling kræver, at du har et specifikt sæt dyr (og indimellem dekorationer eller bygninger) placeret i din zoo på samme tid. De nødvendige dyr skal opfylde minimumsniveaukrav og i nogle tilfælde være i en specifik pelsfarve. Alle nødvendige genstande skal være til stede i din zoo samtidigt — det er ikke nok at have ejet dem tidligere.",
 
-  "tiers_title": "Collection Tiers",
-  "tiers_body": "Collections are organized into three tiers based on difficulty and reward value. Higher tiers require rarer animals and more combinations, but provide greater rewards.",
+  "tiers_title": "Samlingsniveauer",
+  "tiers_body": "Samlinger er organiseret i tre niveauer baseret på sværhedsgrad og belønningsværdi. Højere niveauer kræver sjældnere dyr og flere kombinationer, men giver større belønninger.",
 
-  "tier_one_title": "1-Star Collections",
-  "tier_one_body": "1-star collections are the most accessible tier. They typically require common animals at lower levels. Rewards include coins, XP, and occasionally diamonds.",
+  "tier_one_title": "1-stjerne samlinger",
+  "tier_one_body": "1-stjerne samlinger er det mest tilgængelige niveau. De kræver typisk almindelige dyr på lavere niveauer. Belønninger inkluderer mønter, XP og lejlighedsvis diamanter.",
 
-  "tier_two_title": "2-Star Collections",
-  "tier_two_body": "2-star collections require more effort and often include animals from secondary regions or specific coat colors. Rewards are more valuable and may include diamonds and special decorations.",
+  "tier_two_title": "2-stjerne samlinger",
+  "tier_two_body": "2-stjerne samlinger kræver mere indsats og inkluderer ofte dyr fra sekundære regioner eller specifikke pelsfarver. Belønninger er mere værdifulde og kan inkludere diamanter og særlige dekorationer.",
 
-  "tier_three_title": "3-Star Collections",
-  "tier_three_body": "3-star collections are the most challenging and require rare or exclusive animals, sometimes obtainable only through club competitions or special events. Rewards include significant diamonds, exclusive decorations, and other premium items.",
+  "tier_three_title": "3-stjerne samlinger",
+  "tier_three_body": "3-stjerne samlinger er de mest udfordrende og kræver sjældne eller eksklusive dyr, indimellem kun mulige at skaffe via klubkonkurrencer eller særlige events. Belønninger inkluderer betydelige diamanter, eksklusive dekorationer og andre premium-genstande.",
 
-  "requirements_title": "Collection Requirements",
-  "requirements_body": "When viewing a collection, each required animal or item shows its minimum level and any coat color requirement. If a specific coat color is listed, you must have that exact color placed in your zoo. Some collections require animals that can only be won through club competition, such as popularity statues or exclusive color variants.",
+  "requirements_title": "Samlingskrav",
+  "requirements_body": "Når du ser på en samling, viser hvert nødvendigt dyr eller genstand sit minimumsniveau og eventuelle krav til pelsfarve. Hvis en specifik pelsfarve er angivet, skal du have den præcise farve placeret i din zoo. Nogle samlinger kræver dyr, der kun kan vindes ved at vinde klubkonkurrencer, såsom popularitetsstatuer eller eksklusive farvevarianter.",
 
-  "regions_title": "Collections by Region",
-  "regions_body": "Collections are organized by region in the collection book. Regions include: Main Zoo, Fir Grove, Kujali Park, Terrarium, Aquarium, Noctarium, and Aviary. Each region has its own set of collections to complete.",
+  "regions_title": "Samlinger efter region",
+  "regions_body": "Samlinger er organiseret efter region i samlingsbogen. Regioner inkluderer: Hoved-zoo, Grantræslunden, Kujali Park, Terrarium, Akvarium, Noctarium og Fuglevoliere. Hver region har sit eget sæt samlinger at fuldende.",
 
-  "tips_title": "Tips for Completing Collections",
-  "tips_retroactive_title": "Already-Placed Animals Count",
-  "tips_retroactive_body": "Animals already in your zoo count toward collection requirements as long as they meet the level and coat color criteria. You do not need to re-place animals you already own.",
-  "tips_planning_title": "Plan Ahead for Rare Animals",
-  "tips_planning_body": "Some collection animals are only available through seasonal events, club competition rewards, or special chests. Check the collection requirements early so you can plan to acquire rare animals before they become unavailable.",
-  "tips_level_title": "Level Requirements",
-  "tips_level_body": "The level shown on a collection requirement is the minimum level needed. If your animal is already above the minimum level, it qualifies. Focus on leveling up animals needed for multiple collections simultaneously.",
-  "tips_club_title": "Club Competition Animals",
-  "tips_club_body": "Some 3-star collections require animals that can only be obtained by winning club competitions. These are often exclusive color variants awarded to the top-ranked clubs. Participating actively in weekly contests is the best way to earn these animals."
+  "tips_title": "Tips til at fuldende samlinger",
+  "tips_retroactive_title": "Allerede placerede dyr tæller med",
+  "tips_retroactive_body": "Dyr, der allerede er i din zoo, tæller med til samlingskrav, så længe de opfylder niveau- og pelsfarveriterierne. Du behøver ikke at genplacere dyr, du allerede ejer.",
+  "tips_planning_title": "Planlæg forud for sjældne dyr",
+  "tips_planning_body": "Nogle samlingsdyr er kun tilgængelige via sæsonevents, klubkonkurrencebelønninger eller særlige kister. Tjek samlingskravene tidligt, så du kan planlægge at skaffe sjældne dyr, inden de bliver utilgængelige.",
+  "tips_level_title": "Niveaukrav",
+  "tips_level_body": "Det niveau, der vises på et samlingskrav, er det minimumsniveau, der er nødvendigt. Hvis dit dyr allerede er over minimumsniveauet, er det kvalificeret. Fokuser på at niveauup dyr, der er nødvendige for flere samlinger samtidigt.",
+  "tips_club_title": "Klubkonkurrencedyr",
+  "tips_club_body": "Nogle 3-stjerne samlinger kræver dyr, der kun kan fås ved at vinde klubkonkurrencer. Disse er ofte eksklusive farvevarianter tildelt de toprangerede klubber. Aktiv deltagelse i ugentlige konkurrencer er den bedste måde at optjene disse dyr på."
 }

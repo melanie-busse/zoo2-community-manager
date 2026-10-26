@@ -1,0 +1,26 @@
+{
+  "title": "Glimrende dyr",
+  "intro": "En vellykket avl af en hvilken som helst art eller variant kan tilfældigt resultere i et særligt, glimrende dyr af samme art. Glimrende dyr skinner med en glitrende lillaglødende farvetone på grund af deres enestående sundhed og indeholder høj popularitet. Glimrende dyr kan kun fås ved almindelig avl og er ekstremt sjældne.",
+
+  "overview_title": "Oversigt",
+  "overview_body": "Hvert glimrende dyr fødes på niveau 40 uanset forældrenes niveau. Glimrende dyr er de eneste dyr, der kan opnå et så højt niveau i din zoo. Alle ikke-glimrende dyr når deres maksimalt opnåelige niveau på niveau 20.",
+
+  "streak_title": "Avlsstribe",
+  "streak_body": "Chancen for at opnå et glimrende dyr bestemmes af din avlsstribe — antallet af på hinanden følgende avlssucceser pr. art. Når en avl mislykkes, nulstilles striber for den art til nul. Hver art har sin egen avlsstribe vist i nederste højre hjørne af avlsdialogboksen. Uanset om succeessen er enkelt, tvillinger eller trillinger, tæller sessionen som ét enkelt forsøg.",
+
+  "chances_title": "Glimrende chancer",
+  "chances_body": "Jo højere antal på hinanden følgende vellykkede avl for en art, jo større er dine chancer for at få et glimrende dyr ved næste avl. Oddsene starter ved 0,1% med en avlsstribe på nul og stiger til maksimalt 1,1% med en avlsstribe på 10 eller mere. Hvert enkelt baby inden for et sæt af tvillinger eller trillinger har sin egen unikke chance for at blive født glimrende.",
+
+  "col_streak": "Avlsstribe",
+  "col_odds": "Odds for glimrende",
+  "col_chance": "Chance for glimrende",
+
+  "breeding_with_title": "Avl med et glimrende dyr",
+  "breeding_with_body": "Når et glimrende dyr vokser op, kan det bruges til avl for niveau 20 babyer, hvilket giver dig mulighed for at springe niveauer over. Uanset niveauet eller det glimrende aspekt af den anden forælder bør babyer producere en normal niveau 20 med en ultra-sjælden chance for at opnå endnu et glimrende niveau 40. Glimrende dyr opfylder også øjeblikkeligt alle samlingsskrav for samme art og farve, da de fødes på niveau 40.",
+
+  "donating_title": "Donation af et glimrende dyr",
+  "donating_body": "Når du donerer et glimrende niveau 40-dyr til en klubkonkurrence, giver dyret de samme point som dets niveau: 400 klubpoint som vist på skærmen for medlemsdonationer. Det svarer til at donere to dyr på niveau 20.",
+
+  "glow_title": "Deaktivering af glimrende glød",
+  "glow_body": "Hvis glimrende visuelle effekter ikke er din præference, kan du deaktivere den glimrende funktion i spilindstillingerne. Klik på tandhjulsikonet i nederste højre hjørne af din spilskærm, klik på den anden indstillingsfane, rul ned og markér \"Vis glittrende dyr som almindelige dyr\". Dette fjerner alle glimrende effekter fra dine niveau 40-dyr."
+}

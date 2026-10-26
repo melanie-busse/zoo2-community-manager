@@ -1,0 +1,32 @@
+{
+  "title": "Éditeur de terrain",
+  "intro": "L'Éditeur de terrain est un outil de modification du sol qui change le paysage général (plancher) de vos régions de zoo en dehors des enclos. Il se déverrouille à l'achat à partir du niveau 25 pour un tarif unique de 500 000 pièces ou 50 diamants.",
+
+  "overview_title": "Aperçu",
+  "overview_body": "Pour faire fonctionner l'éditeur de terrain, vous aurez besoin d'Énergie, qui peut être obtenue depuis la roue des prix ou parfois depuis le calendrier des récompenses de connexion. Vous pouvez également acheter de l'Énergie contre des diamants. Bien qu'il ne soit pas immédiatement nécessaire d'acheter l'éditeur pour progresser dans le jeu, une quête présentant la fonctionnalité offre une petite récompense. Les joueurs de haut niveau auront besoin de cet outil pour accomplir la quête du maire \"Concepteur paysagiste\" qui se déverrouille au niveau 110.",
+
+  "access_title": "Accéder à l'Éditeur de terrain",
+  "access_body": "L'Éditeur de terrain est accessible en cliquant sur l'icône pinceau située sur le côté gauche de la barre latérale de l'inventaire. Il y a deux fonctionnalités de modification du paysage : l'Éditeur de terrain (pour l'extérieur des enclos) et l'Éditeur de sol des enclos (pour l'intérieur des enclos).",
+
+  "connected_title": "Régions connectées au Zoo principal",
+  "connected_body": "Les coûts en énergie suivants s'appliquent aux modifications de terrain dans le zoo principal et ses régions connectées. Un tiret (-) signifie que ce type de terrain n'est pas disponible dans cette région.",
+
+  "col_terrain": "Terrain",
+  "col_main_zoo": "Zoo principal",
+  "col_fir_grove": "Bosquet de sapins",
+  "col_kujali_park": "Kujali Park",
+  "col_oceanside": "Bord de mer",
+  "col_polar_park": "Parc polaire",
+  "col_rainforest_park": "Rainforest Park",
+  "col_rescue_center": "Centre de sauvetage",
+
+  "disconnected_title": "Régions déconnectées du zoo",
+  "disconnected_body": "Le Terrarium, l'Aquarium et le Noctarium sont des régions déconnectées avec leurs propres types de terrain et coûts en énergie.",
+
+  "col_terrarium": "Terrarium",
+  "col_aquarium": "Aquarium",
+  "col_noctarium": "Noctarium",
+
+  "visuals_title": "Visuels des terrains",
+  "visuals_body": "Chaque type de terrain est conçu pour correspondre à des biomes ou des thèmes spécifiques : la Neige correspond aux biomes Glace, le Sable aux biomes Savane, la Pierre aux biomes Montagne, le Sol ou Terre donne un aspect naturel, les Feuilles d'automne correspondent aux biomes saisonniers ou de Plaines, l'Eau crée des étangs naturels et la Forêt fournit un plancher boisé."
+}

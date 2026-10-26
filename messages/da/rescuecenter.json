@@ -1,42 +1,42 @@
 {
-  "title": "Rescue Center",
-  "intro": "The Rescue Center is a special mixed-species environment released on May 20, 2025. Unlocked at player level 100 for 190 diamonds, it allows you to rehabilitate injured animals and transfer them to your Main Zoo with unique permanent bonuses.",
+  "title": "Redningscenter",
+  "intro": "Redningscentret er et særligt blandet-art-miljø, udgivet den 20. maj 2025. Det låses op på spillerniveau 100 for 190 diamanter og giver dig mulighed for at rehabilitere skadede dyr og overføre dem til din Hoved-zoo med unikke permanente bonusser.",
 
-  "overview_title": "Overview",
-  "overview_body": "The Rescue Center operates independently from your main zoo. It uses a single giant shared enclosure that spans all biomes. You can expand your land by purchasing adjacent plots. Animals rehabilitated here receive permanent popularity and XP bonuses when transferred to your main zoo.",
+  "overview_title": "Oversigt",
+  "overview_body": "Redningscentret fungerer uafhængigt af din hoved-zoo. Det bruger én stor fælles indhegning, der spænder over alle biotoper. Du kan udvide dit land ved at købe tilstødende grunde. Dyr rehabiliteret her modtager permanente popularitets- og XP-bonusser, når de overføres til din hoved-zoo.",
 
-  "unlocking_title": "Unlocking",
-  "unlocking_body": "The Rescue Center requires player level 100 to unlock and costs 190 diamonds. It was released on May 20, 2025.",
+  "unlocking_title": "Oplåsning",
+  "unlocking_body": "Redningscentret kræver spillerniveau 100 for at låse op og koster 190 diamanter. Det blev udgivet den 20. maj 2025.",
 
-  "animal_shop_title": "Animal Shop",
-  "animal_shop_body": "The Rescue Center has its own Animal Shop with 3 offers refreshed every 24 hours: 2 diamond offers and 1 coin offer. The first offer each cycle is always a Rescue Center Exclusive animal. You can reroll the offers early, with each reroll costing 1 diamond per hour remaining in the cycle.",
+  "animal_shop_title": "Dyrebutik",
+  "animal_shop_body": "Redningscentret har sin egen Dyrebutik med 3 tilbud, der opdateres hvert 24. time: 2 diamanttilbud og 1 møntilbud. Det første tilbud i hvert forløb er altid et Redningscenter-eksklusivt dyr. Du kan gerne genrulle tilbuddene tidligt, hvor hvert genrulning koster 1 diamant pr. time tilbage i forløbet.",
 
-  "land_title": "Land & Enclosure",
-  "land_body": "The Rescue Center has one large shared enclosure that houses all animals together across all biomes. Land can be expanded by purchasing adjacent plots. You cannot reduce the land size once purchased. Standard enclosure equipment and Rescue Center exclusive equipment are both available — the exclusive equipment provides double XP and double refill capacity. The shared watering hole costs 4,000 coins to repair.",
+  "land_title": "Land og indhegning",
+  "land_body": "Redningscentret har én stor fælles indhegning, der huser alle dyr sammen på tværs af alle biotoper. Land kan udvides ved at købe tilstødende grunde. Du kan ikke reducere landstørrelsen, når det er købt. Standardindhegningsudstyr og Redningscenter-eksklusivt udstyr er begge tilgængelige — det eksklusive udstyr giver dobbelt XP og dobbelt påfyldningskapacitet. Den fælles vandpost koster 4.000 mønter at reparere.",
 
-  "animal_care_title": "Animal Care",
-  "animal_care_body": "Injured animals require care before they can be transferred. There are six types of care available in the Rescue Center.",
+  "animal_care_title": "Dyrepasset",
+  "animal_care_body": "Skadede dyr kræver pleje, inden de kan overføres. Der er seks typer pleje tilgængelige i Redningscentret.",
 
-  "care_types_title": "Types of Animal Care",
-  "care_type_medication": "Medication: Costs 200 coins or 1 diamond. No equipment required. Can be performed by a hired vet.",
-  "care_type_wound": "Wound Care: Costs 250 coins or 1 diamond. No equipment required. Can be performed by a hired vet.",
-  "care_type_petting": "Petting: Free. No equipment required. Can be performed by a hired zookeeper.",
-  "care_type_playing": "Playing: Free (manual). Requires play equipment. Can be performed by a hired zookeeper.",
-  "care_type_feeding": "Feeding: Free, coin, or diamond cost. Requires a feeding trough. Can be performed by a hired zookeeper.",
-  "care_type_cleaning": "Cleaning: Free (manual). Requires a watering hole. Can be performed by a hired zookeeper.",
+  "care_types_title": "Typer af dyrepasset",
+  "care_type_medication": "Medicin: Koster 200 mønter eller 1 diamant. Ingen udstyr krævet. Kan udføres af en ansat dyrlæge.",
+  "care_type_wound": "Sårpleje: Koster 250 mønter eller 1 diamant. Ingen udstyr krævet. Kan udføres af en ansat dyrlæge.",
+  "care_type_petting": "Kærtegn: Gratis. Ingen udstyr krævet. Kan udføres af en ansat dyrepasser.",
+  "care_type_playing": "Leg: Gratis (manuelt). Kræver legeudstyr. Kan udføres af en ansat dyrepasser.",
+  "care_type_feeding": "Fodring: Gratis, mønt- eller diamantpris. Kræver en fodringstrug. Kan udføres af en ansat dyrepasser.",
+  "care_type_cleaning": "Rengøring: Gratis (manuelt). Kræver en vandpost. Kan udføres af en ansat dyrepasser.",
 
-  "workers_title": "Workers",
-  "workers_body": "You must build the Admin Building (50 diamonds) before hiring any workers. Vets handle medication and wound care. Zookeepers handle petting, playing, feeding, and cleaning. Vets can be hired with diamonds. Reaching Zoo Academy Gold Level 95 earns 1 daily puzzle piece for a team of 3 vets.",
+  "workers_title": "Medarbejdere",
+  "workers_body": "Du skal bygge Administrationsbygningen (50 diamanter), inden du kan ansætte nogen medarbejdere. Dyrlæger håndterer medicin og sårpleje. Dyrepassere håndterer kærtegn, leg, fodring og rengøring. Dyrlæger kan ansættes med diamanter. At nå Zoo Academy Guld Niveau 95 giver 1 daglig puzzlebrik til et hold på 3 dyrlæger.",
 
-  "healing_title": "Healing & Rehabilitation",
-  "healing_body": "Full rehabilitation typically takes approximately one week. You can pay 100 diamonds for instant healing. Baby animals must also grow up separately before they can be transferred. Transferred animals receive double popularity and double XP — a star icon indicates a boosted animal. Released animals give 50 times the normal release XP.",
+  "healing_title": "Helbredelse og rehabilitering",
+  "healing_body": "Fuld rehabilitering tager typisk ca. én uge. Du kan betale 100 diamanter for øjeblikkelig helbredelse. Babydyr skal også vokse op separat, inden de kan overføres. Overførte dyr modtager dobbelt popularitet og dobbelt XP — et stjerneikon indikerer et boostet dyr. Udsendte dyr giver 50 gange den normale udsendnings-XP.",
 
-  "transfer_title": "Transferring Animals",
-  "transfer_body": "Animals can only be transferred out of the Rescue Center to your Main Zoo — nothing can transfer in from outside. Transferred animals permanently keep their double popularity and double XP boosts. Note that breeding is not available in the Rescue Center, and boosted features do not carry over to babies.",
+  "transfer_title": "Overførsel af dyr",
+  "transfer_body": "Dyr kan kun overføres ud af Redningscentret til din Hoved-zoo — intet kan overføres ind udefra. Overførte dyr beholder permanent deres dobbelte popularitets- og dobbelte XP-boosters. Bemærk, at avl ikke er tilgængeligt i Redningscentret, og boostede funktioner overføres ikke til babyer.",
 
-  "exclusives_title": "Rescue Center Exclusive Animals",
-  "exclusives_body": "The following animals are only available through the Rescue Center. All are quest animals with a maximum level of 10 (except where noted).",
+  "exclusives_title": "Redningscenter-eksklusive dyr",
+  "exclusives_body": "Følgende dyr er kun tilgængelige via Redningscentret. Alle er questdyr med et maksimalt niveau på 10 (undtagen hvor anmærket).",
 
-  "col_animal": "Animal",
-  "col_notes": "Notes"
+  "col_animal": "Dyr",
+  "col_notes": "Bemærkninger"
 }

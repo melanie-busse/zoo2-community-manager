@@ -1,26 +1,26 @@
 {
-  "title": "Super Deals",
-  "intro": "Super Deals (also called Top Deals or Flash Sales) are limited-time discounted offers in the Zoo 2 shop. They typically last 24–72 hours and change around noon Germany time.",
+  "title": "Super Ofertas",
+  "intro": "Las Super Ofertas (también llamadas Top Deals o Ventas Flash) son ofertas con descuento por tiempo limitado en la tienda de Zoo 2. Suelen durar 24–72 horas y cambian alrededor del mediodía hora de Alemania.",
 
-  "how_it_works_title": "How Super Deals Work",
-  "how_it_works_body": "Super Deals appear in the shop for a limited time. The most common type bundles a pair of animals with an enclosure, watering hole, and enclosure items at a discount of 39–84% off. Discounts are calculated including the coin-to-diamond conversion rate of 1 diamond per 250 coins.",
+  "how_it_works_title": "Cómo Funcionan las Super Ofertas",
+  "how_it_works_body": "Las Super Ofertas aparecen en la tienda por tiempo limitado. El tipo más común agrupa un par de animales con un recinto, abrevadero y artículos de recinto con un descuento del 39–84%. Los descuentos se calculan incluyendo la tasa de conversión de monedas a diamantes de 1 diamante por 250 monedas.",
 
-  "types_title": "Types of Super Deals",
-  "types_body": "Super Deals come in several forms. The most common type pairs two animals with an enclosure bundle. Less common types include color variant animals at full diamond price, discounted event decorations, and animals from VIP, Legendary, or Friendship chests.",
+  "types_title": "Tipos de Super Ofertas",
+  "types_body": "Las Super Ofertas vienen en varias formas. El tipo más común combina dos animales con un paquete de recinto. Los tipos menos comunes incluyen animales de variantes de color al precio completo en diamantes, decoraciones de eventos con descuento y animales de cofres VIP, Legendarios o de Amistad.",
 
-  "discontinued_title": "Discontinued Deal Types",
-  "discontinued_body": "Safari Restaurants and Zoo Stores were previously available as Super Deals but have been discontinued. Their unlimited purchase potential caused coin imbalance in the game economy. These items are now available through Season Pass rewards, Shell Game, Seasonal Events, and new game regions.",
+  "discontinued_title": "Tipos de Ofertas Descontinuados",
+  "discontinued_body": "Los Restaurantes Safari y las Tiendas del Zoo estaban disponibles anteriormente como Super Ofertas pero se han descontinuado. Su potencial de compra ilimitado causó un desequilibrio de monedas en la economía del juego. Estos artículos ahora están disponibles a través de recompensas del Pase de Temporada, Juego de Conchas, Eventos de Temporada y nuevas regiones del juego.",
 
-  "pricing_title": "Animal Pricing Reference",
-  "pricing_body": "The table below shows diamond costs for animals across different purchase methods: card price, Rescue Center adoption, shop purchase (33% off), Ice Cream offer (40% off), typical Super Deal price, shop bundle pair price (33% off), chest type, and prize wheel availability.",
+  "pricing_title": "Referencia de Precios de Animales",
+  "pricing_body": "La tabla a continuación muestra los costes en diamantes de los animales a través de diferentes métodos de compra: precio de carta, adopción en el Centro de Rescate, compra en tienda (33% de descuento), oferta del Vendedor de Helados (40% de descuento), precio típico de Super Oferta, precio de par en paquete de tienda (33% de descuento), tipo de cofre y disponibilidad en la ruleta de premios.",
 
   "col_animal": "Animal",
-  "col_card_price": "Card Price",
-  "col_rescue": "Rescue Center",
-  "col_shop_33": "Shop (33% off)",
-  "col_ice_cream": "Ice Cream (40% off)",
-  "col_super_deal": "Super Deal",
-  "col_shop_pair": "Shop Pair (33% off)",
-  "col_chest": "Chest Type",
-  "col_prize_wheel": "Prize Wheel"
+  "col_card_price": "Precio de Carta",
+  "col_rescue": "Centro de Rescate",
+  "col_shop_33": "Tienda (33% dto.)",
+  "col_ice_cream": "Vendedor de Helados (40% dto.)",
+  "col_super_deal": "Super Oferta",
+  "col_shop_pair": "Par de Tienda (33% dto.)",
+  "col_chest": "Tipo de Cofre",
+  "col_prize_wheel": "Ruleta de Premios"
 }

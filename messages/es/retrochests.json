@@ -1,21 +1,21 @@
 {
   "title": "Retro Chests",
-  "intro": "Retro Chests are diamond chests costing 39 diamonds each. They contain puzzle pieces from Friendship, Normal, and Epic Chests (excluding those chests' exclusive animals) and have their own large pool of exclusive animals.",
+  "intro": "Los Retro Chests son cofres de diamantes que cuestan 39 diamantes cada uno. Contienen piezas de puzle de los Cofres de Amistad, Normales y Épicos (excluyendo los animales exclusivos de esos cofres) y tienen su propio gran grupo de animales exclusivos.",
 
-  "obtaining_title": "Obtaining Retro Chests",
-  "obtaining_body": "Retro Chests can be obtained from several sources: quests, leveling up, monthly login rewards, the Zoo Academy, and the Events Shop.",
+  "obtaining_title": "Obtener Retro Chests",
+  "obtaining_body": "Los Retro Chests se pueden obtener de varias fuentes: misiones, subir de nivel, recompensas de inicio de sesión mensuales, Zoo Academy y la Tienda de Eventos.",
 
-  "contents_title": "Chest Contents",
-  "contents_body": "Retro Chests contain puzzle pieces from Friendship, Normal, and Epic Chests, but do not include the exclusive animals from those chests. Every Retro Chest guarantees at least one exclusive puzzle piece.",
+  "contents_title": "Contenido del Cofre",
+  "contents_body": "Los Retro Chests contienen piezas de puzle de los Cofres de Amistad, Normales y Épicos, pero no incluyen los animales exclusivos de esos cofres. Cada Retro Chest garantiza al menos una pieza de puzle exclusiva.",
 
-  "drop_bonus_title": "Drop Bonus",
-  "drop_bonus_body": "Retro Chests feature a rotating drop bonus that boosts the chance of receiving a specific exclusive animal's puzzle pieces. The boosted animal changes every 4 weeks, rotating through the exclusive animal list. This system has been active since November 24, 2022.",
+  "drop_bonus_title": "Bonificación de Caída",
+  "drop_bonus_body": "Los Retro Chests tienen una bonificación de caída rotatoria que aumenta la probabilidad de recibir las piezas de puzle de un animal exclusivo específico. El animal bonificado cambia cada 4 semanas, rotando por la lista de animales exclusivos. Este sistema está activo desde el 24 de noviembre de 2022.",
 
-  "animals_title": "Exclusive Retro Chest Animals",
-  "animals_body": "The following animals are exclusive to Retro Chests and cannot be obtained through any other chest type:",
+  "animals_title": "Animales Exclusivos del Retro Chest",
+  "animals_body": "Los siguientes animales son exclusivos de los Retro Chests y no se pueden obtener a través de ningún otro tipo de cofre:",
 
   "animals_col_animal": "Animal",
 
-  "tips_title": "Tips",
-  "tips_body": "Retro Chests rotate their drop bonus every 4 weeks — check the current boosted animal before opening chests if you are targeting a specific exclusive. At 39 diamonds, Retro Chests are more affordable than Legendary Chests and offer a wide selection of exclusive animals, making them a good option for players focused on completing their collections."
+  "tips_title": "Consejos",
+  "tips_body": "Los Retro Chests rotan su bonificación de caída cada 4 semanas — comprueba el animal actualmente bonificado antes de abrir cofres si estás buscando un exclusivo específico. A 39 diamantes, los Retro Chests son más asequibles que los Legendary Chests y ofrecen una amplia selección de animales exclusivos, lo que los convierte en una buena opción para jugadores centrados en completar sus colecciones."
 }

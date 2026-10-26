@@ -1,26 +1,26 @@
 {
   "title": "Super Deals",
-  "intro": "Super Deals (also called Top Deals or Flash Sales) are limited-time discounted offers in the Zoo 2 shop. They typically last 24–72 hours and change around noon Germany time.",
+  "intro": "Super Deals (ook wel Top Deals of Flash Sales genoemd) zijn tijdelijk afgeprijsde aanbiedingen in de Zoo 2-winkel. Ze duren doorgaans 24–72 uur en wisselen rond het middaguur Duitsland tijd.",
 
-  "how_it_works_title": "How Super Deals Work",
-  "how_it_works_body": "Super Deals appear in the shop for a limited time. The most common type bundles a pair of animals with an enclosure, watering hole, and enclosure items at a discount of 39–84% off. Discounts are calculated including the coin-to-diamond conversion rate of 1 diamond per 250 coins.",
+  "how_it_works_title": "Hoe Super Deals werken",
+  "how_it_works_body": "Super Deals verschijnen voor beperkte tijd in de winkel. Het meest voorkomende type bundelt een paar dieren met een verblijf, drinkplaats en verblijfsitems met een korting van 39–84%. Kortingen worden berekend inclusief de munt-naar-diamant wisselkoers van 1 diamant per 250 munten.",
 
-  "types_title": "Types of Super Deals",
-  "types_body": "Super Deals come in several forms. The most common type pairs two animals with an enclosure bundle. Less common types include color variant animals at full diamond price, discounted event decorations, and animals from VIP, Legendary, or Friendship chests.",
+  "types_title": "Soorten Super Deals",
+  "types_body": "Super Deals komen in verschillende vormen voor. Het meest voorkomende type koppelt twee dieren aan een verblijfsbundel. Minder voorkomende soorten zijn kleurvariantdieren op volledige diamantprijs, afgeprijsde evenementdecoties en dieren uit VIP-, Legendarische of Vriendschapskisten.",
 
-  "discontinued_title": "Discontinued Deal Types",
-  "discontinued_body": "Safari Restaurants and Zoo Stores were previously available as Super Deals but have been discontinued. Their unlimited purchase potential caused coin imbalance in the game economy. These items are now available through Season Pass rewards, Shell Game, Seasonal Events, and new game regions.",
+  "discontinued_title": "Stopgezette dealsoorten",
+  "discontinued_body": "Safariaureaurants en Dierentuinwinkels waren voorheen beschikbaar als Super Deals maar zijn stopgezet. Hun onbeperkt aankooppotentieel veroorzaakte een muntonevenwicht in de speleconomie. Deze items zijn nu beschikbaar via Season Pass-beloningen, Shell Game, Seizoenszeven en nieuwe spelregio's.",
 
-  "pricing_title": "Animal Pricing Reference",
-  "pricing_body": "The table below shows diamond costs for animals across different purchase methods: card price, Rescue Center adoption, shop purchase (33% off), Ice Cream offer (40% off), typical Super Deal price, shop bundle pair price (33% off), chest type, and prize wheel availability.",
+  "pricing_title": "Referentie dierenprijzen",
+  "pricing_body": "De onderstaande tabel toont diamantenkosten voor dieren via verschillende aankoopmethoden: kaartprijs, adoptie via Reddingscentrum, winkelaankoop (33% korting), IJsjesverkoper aanbieding (40% korting), typische Super Deal-prijs, winkelbundelpaarprijs (33% korting), kistentype en beschikbaarheid op het prijzenwiel.",
 
-  "col_animal": "Animal",
-  "col_card_price": "Card Price",
-  "col_rescue": "Rescue Center",
-  "col_shop_33": "Shop (33% off)",
-  "col_ice_cream": "Ice Cream (40% off)",
+  "col_animal": "Dier",
+  "col_card_price": "Kaartprijs",
+  "col_rescue": "Reddingscentrum",
+  "col_shop_33": "Winkel (33% korting)",
+  "col_ice_cream": "IJsjesverkoper (40% korting)",
   "col_super_deal": "Super Deal",
-  "col_shop_pair": "Shop Pair (33% off)",
-  "col_chest": "Chest Type",
-  "col_prize_wheel": "Prize Wheel"
+  "col_shop_pair": "Winkelpaar (33% korting)",
+  "col_chest": "Kistentype",
+  "col_prize_wheel": "Prijzenwiel"
 }

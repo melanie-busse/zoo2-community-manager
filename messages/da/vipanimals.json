@@ -1,20 +1,20 @@
 {
-  "title": "VIP & Premium Animals",
-  "intro": "Zoo 2 offers two exclusive paid animal tracks: Premium Animals and VIP Animals. Both rotate on a schedule and are only available for limited windows. These animals cannot be obtained through regular gameplay.",
+  "title": "VIP- og Premium-dyr",
+  "intro": "Zoo 2 tilbyder to eksklusive betalte dyrespor: Premium-dyr og VIP-dyr. Begge roterer på en tidsplan og er kun tilgængelige i begrænsede vinduer. Disse dyr kan ikke fås via almindeligt spil.",
 
-  "premium_title": "Premium Animals",
-  "premium_body": "Premium Animals are exclusive animals available for purchase with diamonds (typically 100+ diamonds). The offer changes every other Tuesday. Starting August 30, 2022, purchasing a Premium Animal for the first time rewarded a Lion Mascot NPC. This was replaced by a Shiba Inu NPC on March 12, 2024, a Penguin Mascot NPC on March 27, 2025, and a Shiba Inu (Black & Tan) NPC in March 2026.",
+  "premium_title": "Premium-dyr",
+  "premium_body": "Premium-dyr er eksklusive dyr tilgængelige til køb med diamanter (typisk 100+ diamanter). Tilbuddet skifter hver anden tirsdag. Fra og med den 30. august 2022 gav køb af et Premium-dyr for første gang en Løve-maskot-NPC som belønning. Denne blev erstattet af en Shiba Inu-NPC den 12. marts 2024, en Pingvin-maskot-NPC den 27. marts 2025 og en Shiba Inu (Sort & Brun) NPC i marts 2026.",
 
-  "vip_title": "VIP Animals",
-  "vip_body": "VIP Animals are exclusive animals included with most diamond packages of 1,000 diamonds or more. The VIP Animal offer rotates every 8 weeks on a Tuesday. Like Premium Animals, each VIP Animal is only available for its rotation window.",
+  "vip_title": "VIP-dyr",
+  "vip_body": "VIP-dyr er eksklusive dyr inkluderet med de fleste diamantpakker på 1.000 diamanter eller mere. VIP-dyretilbuddet roterer hvert 8. uge på en tirsdag. Ligesom Premium-dyr er hvert VIP-dyr kun tilgængeligt i sit rotationsvindue.",
 
-  "premium_history_title": "Premium Animal History",
-  "premium_history_body": "The table below lists all Premium Animals offered, in order from most recent to earliest.",
+  "premium_history_title": "Premium-dyrhistorik",
+  "premium_history_body": "Tabellen nedenfor viser alle tilbudte Premium-dyr, i rækkefølge fra nyeste til ældste.",
 
-  "vip_history_title": "VIP Animal History",
-  "vip_history_body": "The table below lists all VIP Animals offered, in order from most recent to earliest.",
+  "vip_history_title": "VIP-dyrhistorik",
+  "vip_history_body": "Tabellen nedenfor viser alle tilbudte VIP-dyr, i rækkefølge fra nyeste til ældste.",
 
-  "col_date": "Date",
-  "col_animal": "Animal",
-  "col_notes": "Notes"
+  "col_date": "Dato",
+  "col_animal": "Dyr",
+  "col_notes": "Bemærkninger"
 }

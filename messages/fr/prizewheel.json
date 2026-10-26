@@ -1,29 +1,29 @@
 {
-  "title": "Prize Wheel",
-  "intro": "The Prize Wheel is a special feature building that lets you spin a wheel to win various in-game rewards. It unlocks at player level 7.5 and can be spun repeatedly — each spin adds time to the reset timer.",
+  "title": "Roue des prix",
+  "intro": "La Roue des prix est un bâtiment spécial qui vous permet de faire tourner une roue pour gagner diverses récompenses en jeu. Elle se déverrouille au niveau 7,5 et peut être tournée à plusieurs reprises — chaque tour ajoute du temps au minuteur de réinitialisation.",
 
-  "how_it_works_title": "How It Works",
-  "how_it_works_body": "Each spin of the Prize Wheel adds 2 minutes to the reset timer, up to a maximum of 24 hours. Once the timer runs out, the wheel resets and you can spin again for free. You can reset the timer early by spending diamonds — the minimum reset cost is 10 diamonds when 59 minutes or less remain on the timer.",
+  "how_it_works_title": "Comment ça marche",
+  "how_it_works_body": "Chaque tour de la Roue des prix ajoute 2 minutes au minuteur de réinitialisation, jusqu'à un maximum de 24 heures. Une fois le minuteur écoulé, la roue se réinitialise et vous pouvez la tourner à nouveau gratuitement. Vous pouvez réinitialiser le minuteur plus tôt en dépensant des diamants — le coût minimum de réinitialisation est de 10 diamants lorsqu'il reste 59 minutes ou moins sur le minuteur.",
 
-  "rewards_title": "Rewards",
-  "rewards_body": "The Prize Wheel can award a variety of prizes including coin chest puzzle pieces, tickets, energy, and coins. Special exclusive animals and decorations are also available as rare prizes on the wheel.",
+  "rewards_title": "Récompenses",
+  "rewards_body": "La Roue des prix peut attribuer une variété de prix incluant des pièces de puzzle de coffres en pièces, des tickets, de l'énergie et des pièces. Des animaux et décorations exclusifs sont également disponibles comme prix rares sur la roue.",
 
-  "rewards_list_title": "Common Prize Wheel Rewards",
-  "reward_coin_chest": "Coin Chest puzzle pieces",
+  "rewards_list_title": "Récompenses courantes de la Roue des prix",
+  "reward_coin_chest": "Pièces de puzzle de Coffres en pièces",
   "reward_tickets": "100 Tickets",
-  "reward_energy": "500 Energy",
-  "reward_coins_small": "100 Coins",
-  "reward_coins_large": "500 Coins",
-  "reward_exclusive": "Exclusive animals and decorations (rare)",
+  "reward_energy": "500 Énergie",
+  "reward_coins_small": "100 Pièces",
+  "reward_coins_large": "500 Pièces",
+  "reward_exclusive": "Animaux et décorations exclusifs (rares)",
 
-  "timer_title": "Spin Count & Timer Reference",
-  "timer_body": "Each spin adds exactly 2 minutes to the timer. The table below shows approximately how many spins it takes to reach various timer durations and the cumulative time added. This can help you plan how many spins you want to do before letting the timer run down.",
-  "timer_col_spins": "Spins",
-  "timer_col_timer": "Timer Added",
+  "timer_title": "Référence de tours et minuteur",
+  "timer_body": "Chaque tour ajoute exactement 2 minutes au minuteur. Le tableau ci-dessous indique approximativement combien de tours il faut pour atteindre différentes durées de minuteur et le temps cumulé ajouté. Cela peut vous aider à planifier combien de tours vous souhaitez faire avant de laisser le minuteur s'écouler.",
+  "timer_col_spins": "Tours",
+  "timer_col_timer": "Temps ajouté",
 
-  "reset_title": "Early Reset Cost",
-  "reset_body": "If you do not want to wait for the timer to count down, you can pay diamonds to reset early. The cost scales with how much time remains: the minimum is 10 diamonds when 59 minutes or less remain. Resetting early is generally not recommended unless you are close to the minimum cost threshold.",
+  "reset_title": "Coût de réinitialisation anticipée",
+  "reset_body": "Si vous ne voulez pas attendre que le minuteur s'écoule, vous pouvez payer des diamants pour réinitialiser plus tôt. Le coût évolue selon le temps restant : le minimum est de 10 diamants lorsqu'il reste 59 minutes ou moins. La réinitialisation anticipée n'est généralement pas recommandée sauf si vous êtes proche du seuil de coût minimum.",
 
-  "tips_title": "Tips",
-  "tips_body": "Spin until you reach a comfortable timer duration, then let it count down naturally to avoid spending diamonds. The Prize Wheel is one of the few sources of Tickets in the game, making it worth spinning regularly. Exclusive animals on the wheel rotate periodically, so check back if you are hunting a specific prize."
+  "tips_title": "Conseils",
+  "tips_body": "Tournez jusqu'à atteindre une durée de minuteur confortable, puis laissez-le s'écouler naturellement pour éviter de dépenser des diamants. La Roue des prix est l'une des rares sources de Tickets dans le jeu, ce qui vaut la peine de la tourner régulièrement. Les animaux exclusifs sur la roue changent périodiquement, donc revenez si vous cherchez un prix spécifique."
 }

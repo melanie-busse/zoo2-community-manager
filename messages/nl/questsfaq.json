@@ -1,38 +1,38 @@
 {
   "title": "Quests",
-  "intro": "Quests are tasks and missions assigned to your zoo that reward you with coins, diamonds, XP, animals, decorations, and other valuable items. There are many types of quests in Zoo 2: Animal Park, ranging from beginner tutorials to long storyline chains and region-specific challenges.",
+  "intro": "Quests zijn taken en missies die aan je dierentuin worden toegewezen en je belonen met munten, diamanten, XP, dieren, decoraties en andere waardevolle items. Er zijn veel soorten quests in Zoo 2: Animal Park, variërend van beginnerstutorials tot lange verhaallijnketens en regiospecifieke uitdagingen.",
 
-  "types_title": "Quest Types",
-  "types_body": "Zoo 2 features several categories of quests. Understanding the different types helps you prioritize which quests to focus on.",
+  "types_title": "Questsoorten",
+  "types_body": "Zoo 2 heeft verschillende categorieën quests. Inzicht in de verschillende soorten helpt je prioriteiten te stellen voor welke quests je je op wilt richten.",
 
-  "tutorial_title": "Tutorial Quests",
-  "tutorial_body": "Tutorial quests introduce new players to the game mechanics. They guide you through placing your first animals, building enclosures, collecting coins, and interacting with visitors. These quests are completed early in the game and cannot be skipped.",
+  "tutorial_title": "Tutorial quests",
+  "tutorial_body": "Tutorial quests maken nieuwe spelers vertrouwd met de spelmechanica. Ze begeleiden je bij het plaatsen van je eerste dieren, het bouwen van verblijven, het verzamelen van munten en het omgaan met bezoekers. Deze quests worden vroeg in het spel voltooid en kunnen niet worden overgeslagen.",
 
-  "level_title": "Level-Triggered Storyline Quests",
-  "level_body": "As you level up, new storyline quest chains become available. These quests are grouped by level range: Levels 1–25, Levels 26–50, Levels 51–75, Levels 76–100, and Levels 101+. Each group introduces new characters, regions, and gameplay features. Completing storyline quests is one of the main ways to progress through the game.",
+  "level_title": "Niveau-geactiveerde verhaallijn quests",
+  "level_body": "Naarmate je van niveau gaat, worden nieuwe verhaallijnquestketens beschikbaar. Deze quests zijn gegroepeerd per niveaureeks: Niveaus 1–25, Niveaus 26–50, Niveaus 51–75, Niveaus 76–100 en Niveaus 101+. Elke groep introduceert nieuwe personages, regio's en gameplay-functies. Het voltooien van verhaallijnquests is een van de belangrijkste manieren om door het spel te vorderen.",
 
-  "chain_title": "Chain Quests",
-  "chain_body": "Chain quests are multi-step quest sequences where completing one quest unlocks the next in the series. They often involve breeding specific animals, reaching certain population milestones, or building particular structures. Some chain quests span many steps and can take considerable time to complete.",
+  "chain_title": "Kettingquests",
+  "chain_body": "Kettingquests zijn meerstapsquestsequenties waarbij het voltooien van één quest de volgende in de reeks ontgrendelt. Ze omvatten vaak het fokken van specifieke dieren, het bereiken van bepaalde populatiemijlpalen of het bouwen van bepaalde structuren. Sommige kettingquests beslaan vele stappen en kunnen aanzienlijke tijd kosten om te voltooien.",
 
-  "feature_title": "Feature Quests",
-  "feature_body": "Feature quests introduce or expand specific game features such as the Terrarium, Aquarium, Noctarium, Aviary, and other secondary regions. These quests guide you through unlocking and setting up each feature for the first time.",
+  "feature_title": "Functiequests",
+  "feature_body": "Functiequests introduceren of breiden specifieke spelfuncties uit, zoals het Terrarium, Aquarium, Noctarium, Volière en andere secundaire regio's. Deze quests begeleiden je bij het ontgrendelen en instellen van elke functie voor de eerste keer.",
 
-  "region_title": "Region Quests",
-  "region_body": "Each of the 10 regions in Zoo 2 has its own set of region-specific quests. Region quests typically involve populating your region with animals, breaking terrain obstacles, constructing buildings, and reaching breeding milestones within that region.",
+  "region_title": "Regioquests",
+  "region_body": "Elk van de 10 regio's in Zoo 2 heeft zijn eigen set regiospecifieke quests. Regioquests omvatten doorgaans het bevolken van je regio met dieren, het breken van terreinobstakels, het bouwen van gebouwen en het bereiken van fokmijlpalen binnen die regio.",
 
-  "misc_title": "Miscellaneous Quests",
-  "misc_body": "Miscellaneous quests cover a wide variety of one-off tasks that do not fit into the other categories. These may include seasonal event quests, special limited-time challenges, and community milestone objectives.",
+  "misc_title": "Overige quests",
+  "misc_body": "Overige quests omvatten een breed scala aan eenmalige taken die niet in de andere categorieën passen. Deze kunnen seizoenszeven, speciale tijdslimietuitdagingen en gemeenschapsmijlpaaldoelstellingen omvatten.",
 
-  "rewards_title": "Quest Rewards",
-  "rewards_body": "Quest rewards vary depending on the quest type and difficulty. Common rewards include coins, diamonds, XP, animals, decorations, puzzle pieces, and special items. Some quests reward unique animals or decorations that cannot be obtained any other way. Diamonds are sometimes awarded directly, or through completing quest milestones.",
+  "rewards_title": "Questrebeloningen",
+  "rewards_body": "Questrebeloningen variëren afhankelijk van het questtype en de moeilijkheidsgraad. Veelvoorkomende beloningen zijn munten, diamanten, XP, dieren, decoraties, puzzelstukken en speciale items. Sommige quests belonen met unieke dieren of decoraties die op geen andere manier kunnen worden verkregen. Diamanten worden soms direct gegeven of via het voltooien van questmijlpalen.",
 
-  "tips_title": "Quest Tips",
-  "tips_title_retroactive": "Retroactive Completion",
-  "tips_body_retroactive": "Many quests are retroactive, meaning if you have already met the requirements before receiving the quest, it will complete immediately or with minimal additional effort. This is common for quests that require owning a certain animal or reaching a certain level.",
-  "tips_title_timelimited": "Time-Limited Quests",
-  "tips_body_timelimited": "Some quests are only available for a limited time, often tied to seasonal events or special promotions. Check your quest log regularly to ensure you do not miss time-sensitive objectives.",
-  "tips_title_diamonds": "Diamond Costs",
-  "tips_body_diamonds": "Certain quests require spending diamonds to complete, such as unlocking a new region or purchasing a specific building. Review the requirements before accepting a quest to plan your diamond spending accordingly.",
-  "tips_title_puzzles": "Puzzle Pieces",
-  "tips_body_puzzles": "Some quests reward puzzle pieces that are used to unlock special animals or decorations. Collect the required number of puzzle pieces to assemble the reward item."
+  "tips_title": "Quest tips",
+  "tips_title_retroactive": "Terugwerkende kracht voltooiing",
+  "tips_body_retroactive": "Veel quests zijn met terugwerkende kracht, wat betekent dat als je al aan de vereisten hebt voldaan voordat je de quest ontvangt, deze direct of met minimale extra inspanning wordt voltooid. Dit komt veel voor bij quests die vereisen dat je een bepaald dier bezit of een bepaald niveau bereikt.",
+  "tips_title_timelimited": "Tijdgebonden quests",
+  "tips_body_timelimited": "Sommige quests zijn slechts voor beperkte tijd beschikbaar, vaak gekoppeld aan seizoenszeven of speciale promoties. Controleer je questlogboek regelmatig om ervoor te zorgen dat je tijdgevoelige doelstellingen niet mist.",
+  "tips_title_diamonds": "Diamantenkosten",
+  "tips_body_diamonds": "Bepaalde quests vereisen het uitgeven van diamanten om te voltooien, zoals het ontgrendelen van een nieuwe regio of het kopen van een specifiek gebouw. Bekijk de vereisten voordat je een quest accepteert om je diamantuitgaven dienovereenkomstig te plannen.",
+  "tips_title_puzzles": "Puzzelstukken",
+  "tips_body_puzzles": "Sommige quests belonen met puzzelstukken die worden gebruikt om speciale dieren of decoraties te ontgrendelen. Verzamel het vereiste aantal puzzelstukken om het beloningsitem samen te stellen."
 }

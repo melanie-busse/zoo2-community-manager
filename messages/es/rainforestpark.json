@@ -1,42 +1,42 @@
 {
   "title": "Rainforest Park",
-  "intro": "Rainforest Park is a jungle-themed secondary region that unlocks at player level 45 for 100 diamonds. Released on November 25, 2025, the park is set in a lush rainforest environment and features a unique mixed-species jungle enclosure type exclusive to this region. Animals from the Jungle category receive bonus XP and breeding boosts.",
+  "intro": "Rainforest Park es una región secundaria de temática de jungla que se desbloquea al nivel 45 de jugador por 100 diamantes. Lanzado el 25 de noviembre de 2025, el parque está ambientado en un exuberante entorno de selva tropical y presenta un tipo de recinto de jungla de especies mixtas único y exclusivo de esta región. Los animales de la categoría Jungla reciben XP de bonificación e impulsos de cría.",
 
-  "unlocking_title": "Unlocking Rainforest Park",
-  "unlocking_body": "Rainforest Park becomes available when you reach player level 45. It costs 100 diamonds to unlock. Upon unlocking, you receive a free Level 5 Panther. The park features a rainfall animation that plays periodically, adding atmosphere to the environment.",
+  "unlocking_title": "Desbloquear Rainforest Park",
+  "unlocking_body": "Rainforest Park está disponible cuando alcanzas el nivel 45 de jugador. Cuesta 100 diamantes desbloquearlo. Al desbloquearlo, recibes una Pantera gratuita de Nivel 5. El parque presenta una animación de lluvia que se reproduce periódicamente, añadiendo atmósfera al entorno.",
 
-  "storyline_title": "Storyline",
-  "storyline_body": "Rainforest Park introduces the character Tyrell Twiga, who guides you through setting up and expanding your jungle region. Follow Tyrell's quests to unlock new buildings, enclosures, and features as you develop the park.",
+  "storyline_title": "Historia",
+  "storyline_body": "Rainforest Park presenta al personaje Tyrell Twiga, quien te guía para configurar y ampliar tu región de jungla. Sigue las misiones de Tyrell para desbloquear nuevos edificios, recintos y características a medida que desarrollas el parque.",
 
-  "bonuses_title": "Regional Bonuses",
-  "bonuses_body": "Animals from the Jungle category placed in Rainforest Park receive a 50% bonus to both XP earned and breeding success chance. This makes the park the ideal location for breeding jungle species.",
+  "bonuses_title": "Bonificadores Regionales",
+  "bonuses_body": "Los animales de la categoría Jungla colocados en Rainforest Park reciben un 50% de bonificación tanto en XP ganado como en la probabilidad de éxito de cría. Esto hace que el parque sea el lugar ideal para criar especies de jungla.",
 
-  "enclosure_title": "Mixed-Species Jungle Enclosure",
-  "enclosure_body": "Rainforest Park features a unique enclosure type not found in other regions: the mixed-species jungle enclosure. This enclosure allows multiple different jungle animal species to live together in a single habitat. Each mixed-species enclosure costs 45 diamonds and takes 8 hours to build. Expanding an enclosure costs 48,000 coins.",
+  "enclosure_title": "Recinto de Jungla de Especies Mixtas",
+  "enclosure_body": "Rainforest Park presenta un tipo de recinto único que no se encuentra en otras regiones: el recinto de jungla de especies mixtas. Este recinto permite que múltiples especies de animales de jungla diferentes vivan juntos en un solo hábitat. Cada recinto de especies mixtas cuesta 45 diamantes y tarda 8 horas en construirse. Ampliar un recinto cuesta 48.000 monedas.",
 
-  "rocks_title": "Clearing Terrain",
-  "rocks_body": "Dense jungle terrain scattered across Rainforest Park must be cleared to expand your usable space. As with other regions, there are multiple debris types with layers to remove, each costing coins and time.",
+  "rocks_title": "Limpiar Terreno",
+  "rocks_body": "El denso terreno de jungla disperso por Rainforest Park debe limpiarse para ampliar el espacio utilizable. Al igual que con otras regiones, hay múltiples tipos de escombros con capas que eliminar, cada una con un coste en monedas y tiempo.",
 
-  "rocks_col_type": "Debris Type",
-  "rocks_col_layers": "Layers",
-  "rocks_col_cost": "Coin Cost per Layer",
-  "rocks_col_time": "Time per Layer",
+  "rocks_col_type": "Tipo de Escombros",
+  "rocks_col_layers": "Capas",
+  "rocks_col_cost": "Coste en Monedas por Capa",
+  "rocks_col_time": "Tiempo por Capa",
 
-  "buildings_title": "Buildings",
-  "buildings_body": "Rainforest Park has its own set of buildings. Note that the Visitor Center and Breeding Center cost diamonds rather than coins.",
+  "buildings_title": "Edificios",
+  "buildings_body": "Rainforest Park tiene su propio conjunto de edificios. Ten en cuenta que el Centro de Visitantes y el Centro de Cría cuestan diamantes en lugar de monedas.",
 
-  "buildings_col_building": "Building",
-  "buildings_col_cost": "Cost",
+  "buildings_col_building": "Edificio",
+  "buildings_col_cost": "Coste",
 
-  "booth_title": "Booth Upgrades",
-  "booth_body": "The park booth can be upgraded from level 0 to level 10, increasing the maximum coin capacity. Upgrading the booth allows you to collect more coins before the booth fills up.",
+  "booth_title": "Mejoras del Puesto",
+  "booth_body": "El puesto del parque se puede mejorar del nivel 0 al nivel 10, aumentando la capacidad máxima de monedas. Mejorar el puesto te permite recolectar más monedas antes de que el puesto se llene.",
 
-  "booth_col_level": "Booth Level",
-  "booth_col_capacity": "Coin Capacity",
+  "booth_col_level": "Nivel del Puesto",
+  "booth_col_capacity": "Capacidad de Monedas",
 
-  "breeding_title": "Breeding Slots",
-  "breeding_body": "Additional breeding slots can be unlocked in Rainforest Park to allow more simultaneous breedings. Slots are unlocked one at a time using diamonds.",
+  "breeding_title": "Espacios de Cría",
+  "breeding_body": "Se pueden desbloquear espacios de cría adicionales en Rainforest Park para permitir más crías simultáneas. Los espacios se desbloquean de uno en uno usando diamantes.",
 
-  "breeding_col_slot": "Breeding Slot",
-  "breeding_col_cost": "Cost to Unlock"
+  "breeding_col_slot": "Espacio de Cría",
+  "breeding_col_cost": "Coste para Desbloquear"
 }

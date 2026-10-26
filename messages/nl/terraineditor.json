@@ -1,0 +1,32 @@
+{
+  "title": "Terreineditor",
+  "intro": "De Terreineditor is een gereedschap voor het bewerken van de grond dat het algemene landschap (vloer) van je dierentuinregio's buiten verblijven wijzigt. Het wordt beschikbaar voor aankoop vanaf spelerniveau 25 voor een eenmalige vergoeding van 500.000 munten of 50 diamanten.",
+
+  "overview_title": "Overzicht",
+  "overview_body": "Om de terreineditor te gebruiken, heb je Energie nodig, die kan worden verkregen van het prijzenwiel of soms van de inlogbeloningenkalender. Je kunt ook Energie kopen voor diamanten. Hoewel het niet direct nodig is om de editor te kopen om vooruitgang te boeken in het spel, biedt een quest die de functie introduceert een kleine beloning. Spelers op een hoog niveau hebben dit gereedschap nodig om de burgemeesterquest \"Landschapsontwerper Dierentuin\" te voltooien die vrijkomt op spelerniveau 110.",
+
+  "access_title": "De Terreineditor openen",
+  "access_body": "De Terreineditor wordt geopend door op het kwastpictogram te klikken aan de linkerkant van de inventariszijbalk. Er zijn twee landschapsbewerkende functies: de Terreineditor (voor buiten verblijven) en de Verblijfsgrondeditor (voor binnen verblijven).",
+
+  "connected_title": "Verbonden regio's van de Hoofddierentuin",
+  "connected_body": "De volgende energiekosten zijn van toepassing op terreinwijzigingen in de hoofddierentuin en zijn verbonden regio's. Een streepje (-) betekent dat dat terreintype niet beschikbaar is in die regio.",
+
+  "col_terrain": "Terrein",
+  "col_main_zoo": "Hoofddierentuin",
+  "col_fir_grove": "Dennenwoud",
+  "col_kujali_park": "Kujali Park",
+  "col_oceanside": "Oceaanzone",
+  "col_polar_park": "Poolpark",
+  "col_rainforest_park": "Rainforest Park",
+  "col_rescue_center": "Reddingscentrum",
+
+  "disconnected_title": "Niet-verbonden dierentuinregio's",
+  "disconnected_body": "Het Terrarium, Aquarium en Noctarium zijn niet-verbonden regio's met hun eigen set terreintypen en energiekosten.",
+
+  "col_terrarium": "Terrarium",
+  "col_aquarium": "Aquarium",
+  "col_noctarium": "Noctarium",
+
+  "visuals_title": "Terreinuiterlijk",
+  "visuals_body": "Elk terreintype is ontworpen om te passen bij specifieke bioomen of thema's: Sneeuw past bij IJs-bioomen, Zand past bij Savanne-bioomen, Steen past bij Berg-bioomen, Aarde of Grond biedt een natuurlijk uiterlijk, Herfstbladeren passen bij seizoens- of Vlaktes-bioomen, Water creëert natuurlijke vijvers en Woud biedt een bosbodem."
+}

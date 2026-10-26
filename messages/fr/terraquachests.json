@@ -1,0 +1,33 @@
+{
+  "title": "Coffres Terraqua",
+  "intro": "Les Coffres Terraqua peuvent être achetés pour 29 diamants. Ils ont été introduits le 13 mars 2023 et contiennent des pièces pour les Maisons Terrarium et Aquarium. Les pièces de puzzle trouvées dans les Coffres Terraqua peuvent également se trouver dans la Roue des prix. Les pass Premium et VIP de la Saison 4 du Season Pass incluaient des Coffres Terraqua parmi leurs récompenses. Il n'y a PAS d'animaux dans les Coffres Terraqua.",
+
+  "content_title": "Contenu possible",
+  "content_note": "Remarque : Seuls les objets avec des descriptions de rareté confirmées sont listés ici.",
+
+  "terrarium_title": "Maison Terrarium",
+  "terrarium_leafy_title": "Fourré feuillu",
+  "terrarium_rocky_title": "Désert rocheux",
+  "terrarium_buildings_title": "Bâtiments",
+  "terrarium_flowers_title": "Fleurs et décorations",
+  "terrarium_trees_title": "Arbres",
+  "terrarium_boundaries_title": "Clôtures",
+  "terrarium_special_title": "Objets spéciaux",
+
+  "aquarium_title": "Maison Aquarium",
+  "aquarium_freshwater_title": "Eau douce",
+  "aquarium_saltwater_title": "Eau salée",
+  "aquarium_buildings_title": "Bâtiments",
+  "aquarium_flowers_title": "Fleurs et décorations",
+  "aquarium_trees_title": "Arbres",
+  "aquarium_boundaries_title": "Clôtures",
+  "aquarium_special_title": "Objets spéciaux",
+
+  "col_item": "Article",
+  "col_rarity": "Rareté",
+
+  "rarity_common": "Commun",
+  "rarity_rare": "Rare",
+  "rarity_epic": "Épique",
+  "rarity_legendary": "Légendaire"
+}

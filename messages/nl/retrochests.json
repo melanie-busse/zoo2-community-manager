@@ -1,21 +1,21 @@
 {
-  "title": "Retro Chests",
-  "intro": "Retro Chests are diamond chests costing 39 diamonds each. They contain puzzle pieces from Friendship, Normal, and Epic Chests (excluding those chests' exclusive animals) and have their own large pool of exclusive animals.",
+  "title": "Retrokisten",
+  "intro": "Retrokisten zijn diamantenkisten die 39 diamanten per stuk kosten. Ze bevatten puzzelstukken van Vriendschaps-, Gewone en Epische Kisten (exclusief de exclusieve dieren van die kisten) en hebben hun eigen grote pool exclusieve dieren.",
 
-  "obtaining_title": "Obtaining Retro Chests",
-  "obtaining_body": "Retro Chests can be obtained from several sources: quests, leveling up, monthly login rewards, the Zoo Academy, and the Events Shop.",
+  "obtaining_title": "Retrokisten verkrijgen",
+  "obtaining_body": "Retrokisten kunnen worden verkregen via verschillende bronnen: quests, omhooggaan in niveau, maandelijkse inlogbeloningen, de Zoo Academy en de Evenementenwinkel.",
 
-  "contents_title": "Chest Contents",
-  "contents_body": "Retro Chests contain puzzle pieces from Friendship, Normal, and Epic Chests, but do not include the exclusive animals from those chests. Every Retro Chest guarantees at least one exclusive puzzle piece.",
+  "contents_title": "Kisteninhoud",
+  "contents_body": "Retrokisten bevatten puzzelstukken van Vriendschaps-, Gewone en Epische Kisten, maar omvatten niet de exclusieve dieren van die kisten. Elke Retrokist garandeert ten minste één exclusief puzzelstuk.",
 
-  "drop_bonus_title": "Drop Bonus",
-  "drop_bonus_body": "Retro Chests feature a rotating drop bonus that boosts the chance of receiving a specific exclusive animal's puzzle pieces. The boosted animal changes every 4 weeks, rotating through the exclusive animal list. This system has been active since November 24, 2022.",
+  "drop_bonus_title": "Dropbonus",
+  "drop_bonus_body": "Retrokisten hebben een roterende dropbonus die de kans vergroot op het ontvangen van puzzelstukken van een specifiek exclusief dier. Het verhoogde dier wisselt elke 4 weken en roteert door de lijst van exclusieve dieren. Dit systeem is actief sinds 24 november 2022.",
 
-  "animals_title": "Exclusive Retro Chest Animals",
-  "animals_body": "The following animals are exclusive to Retro Chests and cannot be obtained through any other chest type:",
+  "animals_title": "Exclusieve Retrokist Dieren",
+  "animals_body": "De volgende dieren zijn exclusief voor Retrokisten en kunnen via geen enkel ander kistentype worden verkregen:",
 
-  "animals_col_animal": "Animal",
+  "animals_col_animal": "Dier",
 
   "tips_title": "Tips",
-  "tips_body": "Retro Chests rotate their drop bonus every 4 weeks — check the current boosted animal before opening chests if you are targeting a specific exclusive. At 39 diamonds, Retro Chests are more affordable than Legendary Chests and offer a wide selection of exclusive animals, making them a good option for players focused on completing their collections."
+  "tips_body": "Retrokisten roteren hun dropbonus elke 4 weken — controleer het huidige verhoogde dier voordat je kisten opent als je gericht bent op een specifieke exclusieve. Met 39 diamanten zijn Retrokisten betaalbaarder dan Legendarische Kisten en bieden ze een brede selectie van exclusieve dieren, waardoor ze een goede optie zijn voor spelers die gericht zijn op het voltooien van hun collecties."
 }

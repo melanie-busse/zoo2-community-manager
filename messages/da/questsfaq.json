@@ -1,38 +1,38 @@
 {
   "title": "Quests",
-  "intro": "Quests are tasks and missions assigned to your zoo that reward you with coins, diamonds, XP, animals, decorations, and other valuable items. There are many types of quests in Zoo 2: Animal Park, ranging from beginner tutorials to long storyline chains and region-specific challenges.",
+  "intro": "Quests er opgaver og missioner tildelt til din zoo, der belønner dig med mønter, diamanter, XP, dyr, dekorationer og andre værdifulde genstande. Der er mange typer quests i Zoo 2: Animal Park, der spænder fra begyndertutorials til lange storyline-kæder og regionsspecifikke udfordringer.",
 
-  "types_title": "Quest Types",
-  "types_body": "Zoo 2 features several categories of quests. Understanding the different types helps you prioritize which quests to focus on.",
+  "types_title": "Questtyper",
+  "types_body": "Zoo 2 har flere kategorier af quests. Forståelse af de forskellige typer hjælper dig med at prioritere, hvilke quests du skal fokusere på.",
 
-  "tutorial_title": "Tutorial Quests",
-  "tutorial_body": "Tutorial quests introduce new players to the game mechanics. They guide you through placing your first animals, building enclosures, collecting coins, and interacting with visitors. These quests are completed early in the game and cannot be skipped.",
+  "tutorial_title": "Tutorial-quests",
+  "tutorial_body": "Tutorial-quests introducerer nye spillere til spillets mekanik. De guider dig gennem placering af dine første dyr, bygning af indhegninger, indsamling af mønter og interaktion med besøgende. Disse quests fuldføres tidligt i spillet og kan ikke springes over.",
 
-  "level_title": "Level-Triggered Storyline Quests",
-  "level_body": "As you level up, new storyline quest chains become available. These quests are grouped by level range: Levels 1–25, Levels 26–50, Levels 51–75, Levels 76–100, and Levels 101+. Each group introduces new characters, regions, and gameplay features. Completing storyline quests is one of the main ways to progress through the game.",
+  "level_title": "Niveau-udløste storyline-quests",
+  "level_body": "Efterhånden som du rykker op i niveau, bliver nye storyline-questkæder tilgængelige. Disse quests er grupperet efter niveauinterval: Niveau 1–25, Niveau 26–50, Niveau 51–75, Niveau 76–100 og Niveau 101+. Hver gruppe introducerer nye karakterer, regioner og spilmekanismer. Fuldførelse af storyline-quests er én af de vigtigste måder at komme videre i spillet på.",
 
-  "chain_title": "Chain Quests",
-  "chain_body": "Chain quests are multi-step quest sequences where completing one quest unlocks the next in the series. They often involve breeding specific animals, reaching certain population milestones, or building particular structures. Some chain quests span many steps and can take considerable time to complete.",
+  "chain_title": "Kæde-quests",
+  "chain_body": "Kæde-quests er flertrinns questsekvenser, hvor fuldførelse af én quest låser den næste i serien op. De involverer ofte avl af specifikke dyr, opnåelse af visse befolkningsmilepæle eller bygning af bestemte strukturer. Nogle kæde-quests strækker sig over mange trin og kan tage betydelig tid at fuldføre.",
 
-  "feature_title": "Feature Quests",
-  "feature_body": "Feature quests introduce or expand specific game features such as the Terrarium, Aquarium, Noctarium, Aviary, and other secondary regions. These quests guide you through unlocking and setting up each feature for the first time.",
+  "feature_title": "Funktions-quests",
+  "feature_body": "Funktions-quests introducerer eller udvider specifikke spilfunktioner såsom Terrarium, Akvarium, Noctarium, Fuglevoliere og andre sekundære regioner. Disse quests guider dig gennem oplåsning og opsætning af hver funktion for første gang.",
 
-  "region_title": "Region Quests",
-  "region_body": "Each of the 10 regions in Zoo 2 has its own set of region-specific quests. Region quests typically involve populating your region with animals, breaking terrain obstacles, constructing buildings, and reaching breeding milestones within that region.",
+  "region_title": "Regions-quests",
+  "region_body": "Hver af de 10 regioner i Zoo 2 har sit eget sæt regionsspecifikke quests. Regions-quests involverer typisk at udfylde din region med dyr, bryde terrænahindringer, opføre bygninger og nå avlsmilepæle inden for den region.",
 
-  "misc_title": "Miscellaneous Quests",
-  "misc_body": "Miscellaneous quests cover a wide variety of one-off tasks that do not fit into the other categories. These may include seasonal event quests, special limited-time challenges, and community milestone objectives.",
+  "misc_title": "Diverse quests",
+  "misc_body": "Diverse quests dækker en bred vifte af engangsopgaver, der ikke passer ind i de andre kategorier. Disse kan inkludere sæsonevent-quests, særlige tidsbegrænsede udfordringer og fællesskabsmilepælsmål.",
 
-  "rewards_title": "Quest Rewards",
-  "rewards_body": "Quest rewards vary depending on the quest type and difficulty. Common rewards include coins, diamonds, XP, animals, decorations, puzzle pieces, and special items. Some quests reward unique animals or decorations that cannot be obtained any other way. Diamonds are sometimes awarded directly, or through completing quest milestones.",
+  "rewards_title": "Questbelønninger",
+  "rewards_body": "Questbelønninger varierer afhængigt af questtypen og sværhedsgraden. Almindelige belønninger inkluderer mønter, diamanter, XP, dyr, dekorationer, puzzlebrikker og særlige genstande. Nogle quests belønner unikke dyr eller dekorationer, der ikke kan fås på nogen anden måde. Diamanter gives indimellem direkte eller ved fuldførelse af questmilepæle.",
 
-  "tips_title": "Quest Tips",
-  "tips_title_retroactive": "Retroactive Completion",
-  "tips_body_retroactive": "Many quests are retroactive, meaning if you have already met the requirements before receiving the quest, it will complete immediately or with minimal additional effort. This is common for quests that require owning a certain animal or reaching a certain level.",
-  "tips_title_timelimited": "Time-Limited Quests",
-  "tips_body_timelimited": "Some quests are only available for a limited time, often tied to seasonal events or special promotions. Check your quest log regularly to ensure you do not miss time-sensitive objectives.",
-  "tips_title_diamonds": "Diamond Costs",
-  "tips_body_diamonds": "Certain quests require spending diamonds to complete, such as unlocking a new region or purchasing a specific building. Review the requirements before accepting a quest to plan your diamond spending accordingly.",
-  "tips_title_puzzles": "Puzzle Pieces",
-  "tips_body_puzzles": "Some quests reward puzzle pieces that are used to unlock special animals or decorations. Collect the required number of puzzle pieces to assemble the reward item."
+  "tips_title": "Questtips",
+  "tips_title_retroactive": "Retroaktiv fuldførelse",
+  "tips_body_retroactive": "Mange quests er retroaktive, hvilket betyder, at hvis du allerede har opfyldt kravene inden du modtager questen, vil den fuldføres øjeblikkeligt eller med minimal yderligere indsats. Dette er almindeligt for quests, der kræver at eje et bestemt dyr eller nå et bestemt niveau.",
+  "tips_title_timelimited": "Tidsbegrænsede quests",
+  "tips_body_timelimited": "Nogle quests er kun tilgængelige i en begrænset tid, ofte knyttet til sæsonevents eller særlige kampagner. Tjek din questlog regelmæssigt for at sikre, at du ikke misser tidsfølsomme mål.",
+  "tips_title_diamonds": "Diamantomkostninger",
+  "tips_body_diamonds": "Visse quests kræver at bruge diamanter for at fuldføre, såsom oplåsning af en ny region eller køb af en bestemt bygning. Gennemse kravene inden du accepterer en quest for at planlægge dit diamantforbrug i overensstemmelse hermed.",
+  "tips_title_puzzles": "Puzzlebrikker",
+  "tips_body_puzzles": "Nogle quests belønner puzzlebrikker, der bruges til at låse op for særlige dyr eller dekorationer. Saml det nødvendige antal puzzlebrikker for at samle belønningsgenstanden."
 }

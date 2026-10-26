@@ -1,38 +1,38 @@
 {
-  "title": "Quests",
-  "intro": "Quests are tasks and missions assigned to your zoo that reward you with coins, diamonds, XP, animals, decorations, and other valuable items. There are many types of quests in Zoo 2: Animal Park, ranging from beginner tutorials to long storyline chains and region-specific challenges.",
+  "title": "Quêtes",
+  "intro": "Les quêtes sont des tâches et missions assignées à votre zoo qui vous récompensent avec des pièces, des diamants, de l'XP, des animaux, des décorations et d'autres objets précieux. Il existe de nombreux types de quêtes dans Zoo 2: Animal Park, allant des tutoriels pour débutants aux longues chaînes de trame principale et aux défis spécifiques à chaque région.",
 
-  "types_title": "Quest Types",
-  "types_body": "Zoo 2 features several categories of quests. Understanding the different types helps you prioritize which quests to focus on.",
+  "types_title": "Types de quêtes",
+  "types_body": "Zoo 2 propose plusieurs catégories de quêtes. Comprendre les différents types vous aide à prioriser les quêtes sur lesquelles vous concentrer.",
 
-  "tutorial_title": "Tutorial Quests",
-  "tutorial_body": "Tutorial quests introduce new players to the game mechanics. They guide you through placing your first animals, building enclosures, collecting coins, and interacting with visitors. These quests are completed early in the game and cannot be skipped.",
+  "tutorial_title": "Quêtes tutoriels",
+  "tutorial_body": "Les quêtes tutoriels initient les nouveaux joueurs aux mécanismes du jeu. Elles vous guident pour placer vos premiers animaux, construire des enclos, collecter des pièces et interagir avec les visiteurs. Ces quêtes sont accomplies tôt dans le jeu et ne peuvent pas être ignorées.",
 
-  "level_title": "Level-Triggered Storyline Quests",
-  "level_body": "As you level up, new storyline quest chains become available. These quests are grouped by level range: Levels 1–25, Levels 26–50, Levels 51–75, Levels 76–100, and Levels 101+. Each group introduces new characters, regions, and gameplay features. Completing storyline quests is one of the main ways to progress through the game.",
+  "level_title": "Quêtes de trame principale déclenchées par le niveau",
+  "level_body": "À mesure que vous montez de niveau, de nouvelles chaînes de quêtes de trame principale deviennent disponibles. Ces quêtes sont regroupées par tranche de niveaux : Niveaux 1–25, Niveaux 26–50, Niveaux 51–75, Niveaux 76–100 et Niveaux 101+. Chaque groupe introduit de nouveaux personnages, régions et fonctionnalités de jeu. L'accomplissement des quêtes de trame principale est l'un des principaux moyens de progresser dans le jeu.",
 
-  "chain_title": "Chain Quests",
-  "chain_body": "Chain quests are multi-step quest sequences where completing one quest unlocks the next in the series. They often involve breeding specific animals, reaching certain population milestones, or building particular structures. Some chain quests span many steps and can take considerable time to complete.",
+  "chain_title": "Quêtes en chaîne",
+  "chain_body": "Les quêtes en chaîne sont des séquences de quêtes en plusieurs étapes où l'accomplissement d'une quête débloque la suivante dans la série. Elles impliquent souvent de reproduire des animaux spécifiques, d'atteindre certains jalons de population ou de construire des structures particulières. Certaines quêtes en chaîne comportent de nombreuses étapes et peuvent prendre un temps considérable à accomplir.",
 
-  "feature_title": "Feature Quests",
-  "feature_body": "Feature quests introduce or expand specific game features such as the Terrarium, Aquarium, Noctarium, Aviary, and other secondary regions. These quests guide you through unlocking and setting up each feature for the first time.",
+  "feature_title": "Quêtes de fonctionnalités",
+  "feature_body": "Les quêtes de fonctionnalités introduisent ou étendent des fonctionnalités spécifiques du jeu telles que le Terrarium, l'Aquarium, le Noctarium, la Volière et d'autres régions secondaires. Ces quêtes vous guident pour déverrouiller et configurer chaque fonctionnalité pour la première fois.",
 
-  "region_title": "Region Quests",
-  "region_body": "Each of the 10 regions in Zoo 2 has its own set of region-specific quests. Region quests typically involve populating your region with animals, breaking terrain obstacles, constructing buildings, and reaching breeding milestones within that region.",
+  "region_title": "Quêtes de région",
+  "region_body": "Chacune des 10 régions de Zoo 2 dispose de son propre ensemble de quêtes spécifiques à la région. Les quêtes de région impliquent généralement de peupler votre région avec des animaux, de briser des obstacles de terrain, de construire des bâtiments et d'atteindre des jalons de reproduction dans cette région.",
 
-  "misc_title": "Miscellaneous Quests",
-  "misc_body": "Miscellaneous quests cover a wide variety of one-off tasks that do not fit into the other categories. These may include seasonal event quests, special limited-time challenges, and community milestone objectives.",
+  "misc_title": "Quêtes diverses",
+  "misc_body": "Les quêtes diverses couvrent une grande variété de tâches ponctuelles qui ne rentrent pas dans les autres catégories. Celles-ci peuvent inclure des quêtes d'événements saisonniers, des défis spéciaux à durée limitée et des objectifs de jalons communautaires.",
 
-  "rewards_title": "Quest Rewards",
-  "rewards_body": "Quest rewards vary depending on the quest type and difficulty. Common rewards include coins, diamonds, XP, animals, decorations, puzzle pieces, and special items. Some quests reward unique animals or decorations that cannot be obtained any other way. Diamonds are sometimes awarded directly, or through completing quest milestones.",
+  "rewards_title": "Récompenses de quêtes",
+  "rewards_body": "Les récompenses de quêtes varient selon le type et la difficulté de la quête. Les récompenses courantes comprennent des pièces, des diamants, de l'XP, des animaux, des décorations, des pièces de puzzle et des objets spéciaux. Certaines quêtes récompensent des animaux ou décorations uniques qui ne peuvent pas être obtenus autrement. Les diamants sont parfois attribués directement ou lors de l'accomplissement de jalons de quêtes.",
 
-  "tips_title": "Quest Tips",
-  "tips_title_retroactive": "Retroactive Completion",
-  "tips_body_retroactive": "Many quests are retroactive, meaning if you have already met the requirements before receiving the quest, it will complete immediately or with minimal additional effort. This is common for quests that require owning a certain animal or reaching a certain level.",
-  "tips_title_timelimited": "Time-Limited Quests",
-  "tips_body_timelimited": "Some quests are only available for a limited time, often tied to seasonal events or special promotions. Check your quest log regularly to ensure you do not miss time-sensitive objectives.",
-  "tips_title_diamonds": "Diamond Costs",
-  "tips_body_diamonds": "Certain quests require spending diamonds to complete, such as unlocking a new region or purchasing a specific building. Review the requirements before accepting a quest to plan your diamond spending accordingly.",
-  "tips_title_puzzles": "Puzzle Pieces",
-  "tips_body_puzzles": "Some quests reward puzzle pieces that are used to unlock special animals or decorations. Collect the required number of puzzle pieces to assemble the reward item."
+  "tips_title": "Conseils pour les quêtes",
+  "tips_title_retroactive": "Accomplissement rétroactif",
+  "tips_body_retroactive": "De nombreuses quêtes sont rétroactives, ce qui signifie que si vous avez déjà rempli les conditions avant de recevoir la quête, elle se complètera immédiatement ou avec un effort minimal supplémentaire. C'est courant pour les quêtes qui nécessitent de posséder un certain animal ou d'atteindre un certain niveau.",
+  "tips_title_timelimited": "Quêtes à durée limitée",
+  "tips_body_timelimited": "Certaines quêtes ne sont disponibles que pour une durée limitée, souvent liées à des événements saisonniers ou à des promotions spéciales. Vérifiez régulièrement votre journal de quêtes pour vous assurer de ne pas manquer les objectifs limités dans le temps.",
+  "tips_title_diamonds": "Coûts en diamants",
+  "tips_body_diamonds": "Certaines quêtes nécessitent de dépenser des diamants pour être accomplies, comme déverrouiller une nouvelle région ou acheter un bâtiment spécifique. Examinez les conditions avant d'accepter une quête pour planifier votre dépense de diamants en conséquence.",
+  "tips_title_puzzles": "Pièces de puzzle",
+  "tips_body_puzzles": "Certaines quêtes récompensent des pièces de puzzle utilisées pour débloquer des animaux ou des décorations spéciaux. Collectez le nombre requis de pièces de puzzle pour assembler l'objet récompense."
 }

@@ -1,23 +1,23 @@
 {
   "title": "Epic Chests",
-  "intro": "Epic Chests are diamond chests costing 29 diamonds each (formerly known as Rare Chests). They guarantee both a purple-rarity puzzle piece and an exclusive animal puzzle piece with every opening.",
+  "intro": "Los Epic Chests son cofres de diamantes que cuestan 29 diamantes cada uno (antes conocidos como Rare Chests). Garantizan tanto una pieza de puzle de rareza morada como una pieza de puzle de animal exclusivo con cada apertura.",
 
-  "obtaining_title": "Obtaining Epic Chests",
-  "obtaining_body": "Epic Chests can be obtained from several sources: quests, leveling up, monthly login rewards, and the Zoo Academy.",
+  "obtaining_title": "Obtener Epic Chests",
+  "obtaining_body": "Los Epic Chests se pueden obtener de varias fuentes: misiones, subir de nivel, recompensas de inicio de sesión mensuales y Zoo Academy.",
 
-  "contents_title": "Chest Contents",
-  "contents_body": "Epic Chests contain puzzle pieces from Friendship and Normal Chests, but do not include the exclusive animals from those chests. Every Epic Chest guarantees at least one purple-rarity puzzle piece and at least one exclusive animal puzzle piece.",
+  "contents_title": "Contenido del Cofre",
+  "contents_body": "Los Epic Chests contienen piezas de puzle de los Cofres de Amistad y Normales, pero no incluyen los animales exclusivos de esos cofres. Cada Epic Chest garantiza al menos una pieza de puzle de rareza morada y al menos una pieza de puzle de animal exclusivo.",
 
-  "drop_bonus_title": "Drop Bonus",
-  "drop_bonus_body": "Epic Chests feature a rotating drop bonus that boosts the chance of receiving a specific exclusive animal's puzzle pieces. The boosted animal changes every 6 weeks, rotating through the exclusive animal list.",
+  "drop_bonus_title": "Bonificación de Caída",
+  "drop_bonus_body": "Los Epic Chests tienen una bonificación de caída rotatoria que aumenta la probabilidad de recibir las piezas de puzle de un animal exclusivo específico. El animal bonificado cambia cada 6 semanas, rotando por la lista de animales exclusivos.",
 
-  "animals_title": "Exclusive Epic Chest Animals",
-  "animals_body": "The following animals are exclusive to Epic Chests and cannot be obtained through any other chest type:",
+  "animals_title": "Animales Exclusivos del Epic Chest",
+  "animals_body": "Los siguientes animales son exclusivos de los Epic Chests y no se pueden obtener a través de ningún otro tipo de cofre:",
 
   "animals_col_animal": "Animal",
-  "animals_col_rarity": "Rarity",
-  "animals_col_biome": "Biome",
+  "animals_col_rarity": "Rareza",
+  "animals_col_biome": "Bioma",
 
-  "tips_title": "Tips",
-  "tips_body": "Epic Chests are the most affordable diamond chest at 29 diamonds and offer guaranteed exclusive animal puzzle pieces with every opening. The drop bonus rotates every 6 weeks — check the current bonus animal if you are working toward a specific collection. At this price point, Epic Chests are excellent value for players who want to progress efficiently on exclusive animal collections."
+  "tips_title": "Consejos",
+  "tips_body": "Los Epic Chests son el cofre de diamantes más asequible a 29 diamantes y ofrecen piezas de puzle de animales exclusivos garantizadas con cada apertura. La bonificación de caída rota cada 6 semanas — comprueba el animal de bonificación actual si estás trabajando hacia una colección específica. A este precio, los Epic Chests son excelente valor para jugadores que quieren progresar eficientemente en las colecciones de animales exclusivos."
 }

@@ -1,20 +1,20 @@
 {
-  "title": "VIP & Premium Animals",
-  "intro": "Zoo 2 offers two exclusive paid animal tracks: Premium Animals and VIP Animals. Both rotate on a schedule and are only available for limited windows. These animals cannot be obtained through regular gameplay.",
+  "title": "VIP & Premium Dieren",
+  "intro": "Zoo 2 biedt twee exclusieve betaalde dierenlijnen: Premium Dieren en VIP-Dieren. Beide roteren volgens een schema en zijn slechts voor beperkte vensters beschikbaar. Deze dieren kunnen niet worden verkregen via regulier gameplay.",
 
-  "premium_title": "Premium Animals",
-  "premium_body": "Premium Animals are exclusive animals available for purchase with diamonds (typically 100+ diamonds). The offer changes every other Tuesday. Starting August 30, 2022, purchasing a Premium Animal for the first time rewarded a Lion Mascot NPC. This was replaced by a Shiba Inu NPC on March 12, 2024, a Penguin Mascot NPC on March 27, 2025, and a Shiba Inu (Black & Tan) NPC in March 2026.",
+  "premium_title": "Premium Dieren",
+  "premium_body": "Premium Dieren zijn exclusieve dieren beschikbaar voor aankoop met diamanten (doorgaans 100 of meer diamanten). Het aanbod wisselt elke tweede dinsdag. Vanaf 30 augustus 2022 beloonde het voor de eerste keer kopen van een Premium Dier een Leeuw Mascotte NPC. Dit werd vervangen door een Shiba Inu NPC op 12 maart 2024, een Pinguïn Mascotte NPC op 27 maart 2025 en een Shiba Inu (Zwart & Tan) NPC in maart 2026.",
 
-  "vip_title": "VIP Animals",
-  "vip_body": "VIP Animals are exclusive animals included with most diamond packages of 1,000 diamonds or more. The VIP Animal offer rotates every 8 weeks on a Tuesday. Like Premium Animals, each VIP Animal is only available for its rotation window.",
+  "vip_title": "VIP-Dieren",
+  "vip_body": "VIP-Dieren zijn exclusieve dieren die zijn inbegrepen bij de meeste diamantenpakketten van 1.000 diamanten of meer. Het VIP-Dieraanbod roteert elke 8 weken op een dinsdag. Net als Premium Dieren is elk VIP-Dier alleen beschikbaar tijdens zijn rotatievenster.",
 
-  "premium_history_title": "Premium Animal History",
-  "premium_history_body": "The table below lists all Premium Animals offered, in order from most recent to earliest.",
+  "premium_history_title": "Geschiedenis Premium Dieren",
+  "premium_history_body": "De onderstaande tabel geeft alle aangeboden Premium Dieren weer, van meest recent naar vroegst.",
 
-  "vip_history_title": "VIP Animal History",
-  "vip_history_body": "The table below lists all VIP Animals offered, in order from most recent to earliest.",
+  "vip_history_title": "Geschiedenis VIP-Dieren",
+  "vip_history_body": "De onderstaande tabel geeft alle aangeboden VIP-Dieren weer, van meest recent naar vroegst.",
 
-  "col_date": "Date",
-  "col_animal": "Animal",
-  "col_notes": "Notes"
+  "col_date": "Datum",
+  "col_animal": "Dier",
+  "col_notes": "Notities"
 }

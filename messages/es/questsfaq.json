@@ -1,38 +1,38 @@
 {
-  "title": "Quests",
-  "intro": "Quests are tasks and missions assigned to your zoo that reward you with coins, diamonds, XP, animals, decorations, and other valuable items. There are many types of quests in Zoo 2: Animal Park, ranging from beginner tutorials to long storyline chains and region-specific challenges.",
+  "title": "Misiones",
+  "intro": "Las misiones son tareas y encargos asignados a tu zoo que te recompensan con monedas, diamantes, XP, animales, decoraciones y otros objetos valiosos. Hay muchos tipos de misiones en Zoo 2: Animal Park, desde tutoriales para principiantes hasta largas cadenas de historia y desafíos específicos de regiones.",
 
-  "types_title": "Quest Types",
-  "types_body": "Zoo 2 features several categories of quests. Understanding the different types helps you prioritize which quests to focus on.",
+  "types_title": "Tipos de Misiones",
+  "types_body": "Zoo 2 tiene varias categorías de misiones. Entender los diferentes tipos te ayuda a priorizar en qué misiones centrarte.",
 
-  "tutorial_title": "Tutorial Quests",
-  "tutorial_body": "Tutorial quests introduce new players to the game mechanics. They guide you through placing your first animals, building enclosures, collecting coins, and interacting with visitors. These quests are completed early in the game and cannot be skipped.",
+  "tutorial_title": "Misiones de Tutorial",
+  "tutorial_body": "Las misiones de tutorial introducen a los nuevos jugadores a la mecánica del juego. Te guían a través de colocar tus primeros animales, construir recintos, recolectar monedas e interactuar con los visitantes. Estas misiones se completan al principio del juego y no se pueden omitir.",
 
-  "level_title": "Level-Triggered Storyline Quests",
-  "level_body": "As you level up, new storyline quest chains become available. These quests are grouped by level range: Levels 1–25, Levels 26–50, Levels 51–75, Levels 76–100, and Levels 101+. Each group introduces new characters, regions, and gameplay features. Completing storyline quests is one of the main ways to progress through the game.",
+  "level_title": "Misiones de Historia Activadas por Nivel",
+  "level_body": "A medida que subes de nivel, se vuelven disponibles nuevas cadenas de misiones de historia. Estas misiones se agrupan por rango de nivel: Niveles 1–25, Niveles 26–50, Niveles 51–75, Niveles 76–100 y Niveles 101+. Cada grupo introduce nuevos personajes, regiones y características del juego. Completar las misiones de historia es una de las principales formas de progresar en el juego.",
 
-  "chain_title": "Chain Quests",
-  "chain_body": "Chain quests are multi-step quest sequences where completing one quest unlocks the next in the series. They often involve breeding specific animals, reaching certain population milestones, or building particular structures. Some chain quests span many steps and can take considerable time to complete.",
+  "chain_title": "Misiones en Cadena",
+  "chain_body": "Las misiones en cadena son secuencias de misiones de varios pasos donde completar una misión desbloquea la siguiente de la serie. A menudo implican criar animales específicos, alcanzar ciertos hitos de población o construir estructuras particulares. Algunas misiones en cadena abarcan muchos pasos y pueden llevar un tiempo considerable para completarse.",
 
-  "feature_title": "Feature Quests",
-  "feature_body": "Feature quests introduce or expand specific game features such as the Terrarium, Aquarium, Noctarium, Aviary, and other secondary regions. These quests guide you through unlocking and setting up each feature for the first time.",
+  "feature_title": "Misiones de Características",
+  "feature_body": "Las misiones de características introducen o amplían características específicas del juego, como el Terrarium, el Aquarium, el Noctarium, el Aviario y otras regiones secundarias. Estas misiones te guían a través del desbloqueo y configuración de cada característica por primera vez.",
 
-  "region_title": "Region Quests",
-  "region_body": "Each of the 10 regions in Zoo 2 has its own set of region-specific quests. Region quests typically involve populating your region with animals, breaking terrain obstacles, constructing buildings, and reaching breeding milestones within that region.",
+  "region_title": "Misiones de Región",
+  "region_body": "Cada una de las 10 regiones en Zoo 2 tiene su propio conjunto de misiones específicas de la región. Las misiones de región generalmente implican poblar tu región con animales, romper obstáculos de terreno, construir edificios y alcanzar hitos de cría dentro de esa región.",
 
-  "misc_title": "Miscellaneous Quests",
-  "misc_body": "Miscellaneous quests cover a wide variety of one-off tasks that do not fit into the other categories. These may include seasonal event quests, special limited-time challenges, and community milestone objectives.",
+  "misc_title": "Misiones Misceláneas",
+  "misc_body": "Las misiones misceláneas cubren una amplia variedad de tareas únicas que no encajan en las otras categorías. Pueden incluir misiones de eventos de temporada, desafíos especiales de tiempo limitado y objetivos de hitos comunitarios.",
 
-  "rewards_title": "Quest Rewards",
-  "rewards_body": "Quest rewards vary depending on the quest type and difficulty. Common rewards include coins, diamonds, XP, animals, decorations, puzzle pieces, and special items. Some quests reward unique animals or decorations that cannot be obtained any other way. Diamonds are sometimes awarded directly, or through completing quest milestones.",
+  "rewards_title": "Recompensas de Misiones",
+  "rewards_body": "Las recompensas de las misiones varían según el tipo y la dificultad de la misión. Las recompensas comunes incluyen monedas, diamantes, XP, animales, decoraciones, piezas de puzle y artículos especiales. Algunas misiones recompensan con animales o decoraciones únicos que no se pueden obtener de ninguna otra manera. Los diamantes a veces se otorgan directamente o al completar hitos de misiones.",
 
-  "tips_title": "Quest Tips",
-  "tips_title_retroactive": "Retroactive Completion",
-  "tips_body_retroactive": "Many quests are retroactive, meaning if you have already met the requirements before receiving the quest, it will complete immediately or with minimal additional effort. This is common for quests that require owning a certain animal or reaching a certain level.",
-  "tips_title_timelimited": "Time-Limited Quests",
-  "tips_body_timelimited": "Some quests are only available for a limited time, often tied to seasonal events or special promotions. Check your quest log regularly to ensure you do not miss time-sensitive objectives.",
-  "tips_title_diamonds": "Diamond Costs",
-  "tips_body_diamonds": "Certain quests require spending diamonds to complete, such as unlocking a new region or purchasing a specific building. Review the requirements before accepting a quest to plan your diamond spending accordingly.",
-  "tips_title_puzzles": "Puzzle Pieces",
-  "tips_body_puzzles": "Some quests reward puzzle pieces that are used to unlock special animals or decorations. Collect the required number of puzzle pieces to assemble the reward item."
+  "tips_title": "Consejos de Misiones",
+  "tips_title_retroactive": "Finalización Retroactiva",
+  "tips_body_retroactive": "Muchas misiones son retroactivas, lo que significa que si ya has cumplido los requisitos antes de recibir la misión, se completará inmediatamente o con un esfuerzo mínimo adicional. Esto es común para las misiones que requieren poseer cierto animal o alcanzar cierto nivel.",
+  "tips_title_timelimited": "Misiones de Tiempo Limitado",
+  "tips_body_timelimited": "Algunas misiones solo están disponibles por un tiempo limitado, a menudo vinculadas a eventos de temporada o promociones especiales. Revisa tu registro de misiones regularmente para asegurarte de no perder objetivos sensibles al tiempo.",
+  "tips_title_diamonds": "Costes de Diamantes",
+  "tips_body_diamonds": "Ciertas misiones requieren gastar diamantes para completarse, como desbloquear una nueva región o comprar un edificio específico. Revisa los requisitos antes de aceptar una misión para planificar tu gasto de diamantes en consecuencia.",
+  "tips_title_puzzles": "Piezas de Puzle",
+  "tips_body_puzzles": "Algunas misiones recompensan con piezas de puzle que se usan para desbloquear animales o decoraciones especiales. Recolecta el número requerido de piezas de puzle para ensamblar el artículo de recompensa."
 }

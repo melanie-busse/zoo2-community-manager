@@ -1,24 +1,24 @@
 {
-  "title": "Normal Chests",
-  "intro": "Normal Chests are blue coin-purchased chests that are one of the most accessible chest types in the game. They can be bought with coins, or obtained for free through quests, leveling up, and daily login rewards.",
+  "title": "Gewone Kisten",
+  "intro": "Gewone Kisten zijn blauwe kisten die met munten worden gekocht en behoren tot de meest toegankelijke kistentypen in het spel. Ze kunnen worden gekocht met munten of gratis worden verkregen via quests, omhooggaan in niveau en dagelijkse inlogbeloningen.",
 
-  "obtaining_title": "Obtaining Normal Chests",
-  "obtaining_body": "Normal Chests can be purchased with coins from the shop. They are also awarded for free by completing quests, reaching new player levels, and through daily login rewards. The coin cost of a Normal Chest scales with your player level.",
+  "obtaining_title": "Gewone Kisten verkrijgen",
+  "obtaining_body": "Gewone Kisten kunnen worden gekocht met munten in de winkel. Ze worden ook gratis gegeven voor het voltooien van quests, het bereiken van nieuwe spelerniveaus en via dagelijkse inlogbeloningen. De muntenkosten van een Gewone Kist worden hoger naarmate je spelerniveau stijgt.",
 
-  "cost_title": "Coin Cost by Level",
-  "cost_body": "The cost of a Normal Chest is your current player level multiplied by 250 coins. For example, at level 1 a chest costs 250 coins, at level 10 it costs 2,500 coins, and at level 70 it costs 17,500 coins.",
-  "cost_col_level": "Player Level",
-  "cost_col_cost": "Chest Cost",
+  "cost_title": "Muntenkosten per niveau",
+  "cost_body": "De kosten van een Gewone Kist zijn je huidige spelerniveau vermenigvuldigd met 250 munten. Bijvoorbeeld: op niveau 1 kost een kist 250 munten, op niveau 10 kost het 2.500 munten en op niveau 70 kost het 17.500 munten.",
+  "cost_col_level": "Spelerniveau",
+  "cost_col_cost": "Kistenkosten",
 
-  "contents_title": "Chest Contents",
-  "contents_body": "Normal Chests contain two types of items: enclosure puzzle pieces and ready-to-place zoo decorations. This makes them unique among the free-to-obtain chest types, as they can directly provide decorations for your zoo without requiring puzzle completion.",
+  "contents_title": "Kisteninhoud",
+  "contents_body": "Gewone Kisten bevatten twee soorten items: verblijfspuzzelstukken en kant-en-klare dierentuindecoties. Dit maakt ze uniek onder de gratis te verkrijgen kistentypen, omdat ze rechtstreeks decoraties voor je dierentuin kunnen bieden zonder dat puzzelvoltooiing vereist is.",
 
-  "special_items_title": "Special Diamond Items as Puzzle Pieces",
-  "special_items_body": "Normal Chests also contain puzzle pieces for a small number of items that are typically only available for diamonds. These can be assembled into the item for free by collecting enough pieces:",
+  "special_items_title": "Speciale diamantitems als puzzelstukken",
+  "special_items_body": "Gewone Kisten bevatten ook puzzelstukken voor een klein aantal items die doorgaans alleen beschikbaar zijn voor diamanten. Deze kunnen gratis worden samengesteld door genoeg stukken te verzamelen:",
 
-  "animals_title": "Animal Puzzle Pieces",
-  "animals_body": "Normal Chests contain puzzle pieces for most regular Shop Animals across all biomes, spanning Common through Legendary rarity. The Howler Monkey and all animals exclusive to diamond chests are not included.",
+  "animals_title": "Dierpuzzelstukken",
+  "animals_body": "Gewone Kisten bevatten puzzelstukken voor de meeste gewone Winkeldieren in alle bioomen, van Gewone tot Legendarische zeldzaamheid. De Brulaap en alle dieren exclusief voor diamantenkisten zijn niet inbegrepen.",
 
   "tips_title": "Tips",
-  "tips_body": "Normal Chests are an excellent source of ready-to-place zoo decorations, making them great for building out your zoo. The special diamond items available as puzzle pieces — including the Animal Carousel — represent significant value, so collecting Normal Chests consistently is worthwhile even at higher levels."
+  "tips_body": "Gewone Kisten zijn een uitstekende bron van kant-en-klare dierentuindecoties, waardoor ze ideaal zijn voor het opbouwen van je dierentuin. De speciale diamantitems beschikbaar als puzzelstukken — inclusief de Dierenkarrousel — vertegenwoordigen aanzienlijke waarde, dus het consistent verzamelen van Gewone Kisten is de moeite waard, zelfs op hogere niveaus."
 }

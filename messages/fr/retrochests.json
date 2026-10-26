@@ -1,21 +1,21 @@
 {
-  "title": "Retro Chests",
-  "intro": "Retro Chests are diamond chests costing 39 diamonds each. They contain puzzle pieces from Friendship, Normal, and Epic Chests (excluding those chests' exclusive animals) and have their own large pool of exclusive animals.",
+  "title": "Coffres rétro",
+  "intro": "Les Coffres rétro sont des coffres à diamants coûtant 39 diamants chacun. Ils contiennent des pièces de puzzle des Coffres d'amitié, Normaux et Épiques (à l'exclusion des animaux exclusifs de ces coffres) et disposent de leur propre grand catalogue d'animaux exclusifs.",
 
-  "obtaining_title": "Obtaining Retro Chests",
-  "obtaining_body": "Retro Chests can be obtained from several sources: quests, leveling up, monthly login rewards, the Zoo Academy, and the Events Shop.",
+  "obtaining_title": "Obtenir des Coffres rétro",
+  "obtaining_body": "Les Coffres rétro peuvent être obtenus de plusieurs sources : quêtes, montée de niveau, récompenses de connexion mensuelle, l'Académie du zoo et la Boutique des événements.",
 
-  "contents_title": "Chest Contents",
-  "contents_body": "Retro Chests contain puzzle pieces from Friendship, Normal, and Epic Chests, but do not include the exclusive animals from those chests. Every Retro Chest guarantees at least one exclusive puzzle piece.",
+  "contents_title": "Contenu des coffres",
+  "contents_body": "Les Coffres rétro contiennent des pièces de puzzle des Coffres d'amitié, Normaux et Épiques, mais n'incluent pas les animaux exclusifs de ces coffres. Chaque Coffre rétro garantit au moins une pièce de puzzle exclusive.",
 
-  "drop_bonus_title": "Drop Bonus",
-  "drop_bonus_body": "Retro Chests feature a rotating drop bonus that boosts the chance of receiving a specific exclusive animal's puzzle pieces. The boosted animal changes every 4 weeks, rotating through the exclusive animal list. This system has been active since November 24, 2022.",
+  "drop_bonus_title": "Bonus de tirage",
+  "drop_bonus_body": "Les Coffres rétro proposent un bonus de tirage rotatif qui augmente les chances de recevoir les pièces de puzzle d'un animal exclusif spécifique. L'animal renforcé change toutes les 4 semaines, en rotation dans la liste des animaux exclusifs. Ce système est actif depuis le 24 novembre 2022.",
 
-  "animals_title": "Exclusive Retro Chest Animals",
-  "animals_body": "The following animals are exclusive to Retro Chests and cannot be obtained through any other chest type:",
+  "animals_title": "Animaux exclusifs des Coffres rétro",
+  "animals_body": "Les animaux suivants sont exclusifs aux Coffres rétro et ne peuvent être obtenus par aucun autre type de coffre :",
 
   "animals_col_animal": "Animal",
 
-  "tips_title": "Tips",
-  "tips_body": "Retro Chests rotate their drop bonus every 4 weeks — check the current boosted animal before opening chests if you are targeting a specific exclusive. At 39 diamonds, Retro Chests are more affordable than Legendary Chests and offer a wide selection of exclusive animals, making them a good option for players focused on completing their collections."
+  "tips_title": "Conseils",
+  "tips_body": "Les Coffres rétro changent leur bonus de tirage toutes les 4 semaines — vérifiez l'animal renforcé actuel avant d'ouvrir des coffres si vous ciblez un exclusif spécifique. À 39 diamants, les Coffres rétro sont plus abordables que les Coffres légendaires et offrent une large sélection d'animaux exclusifs, en faisant une bonne option pour les joueurs axés sur la complétion de leurs collections."
 }

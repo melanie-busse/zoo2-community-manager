@@ -1,23 +1,23 @@
 {
-  "title": "Epic Chests",
-  "intro": "Epic Chests are diamond chests costing 29 diamonds each (formerly known as Rare Chests). They guarantee both a purple-rarity puzzle piece and an exclusive animal puzzle piece with every opening.",
+  "title": "Epische Kisten",
+  "intro": "Epische Kisten zijn diamantenkisten die 29 diamanten per stuk kosten (voorheen bekend als Zeldzame Kisten). Ze garanderen bij elke opening zowel een puzzelstuk van paarse zeldzaamheid als een exclusief dierpuzzelstuk.",
 
-  "obtaining_title": "Obtaining Epic Chests",
-  "obtaining_body": "Epic Chests can be obtained from several sources: quests, leveling up, monthly login rewards, and the Zoo Academy.",
+  "obtaining_title": "Epische Kisten verkrijgen",
+  "obtaining_body": "Epische Kisten kunnen worden verkregen via verschillende bronnen: quests, omhooggaan in niveau, maandelijkse inlogbeloningen en de Zoo Academy.",
 
-  "contents_title": "Chest Contents",
-  "contents_body": "Epic Chests contain puzzle pieces from Friendship and Normal Chests, but do not include the exclusive animals from those chests. Every Epic Chest guarantees at least one purple-rarity puzzle piece and at least one exclusive animal puzzle piece.",
+  "contents_title": "Kisteninhoud",
+  "contents_body": "Epische Kisten bevatten puzzelstukken van Vriendschaps- en Gewone Kisten, maar omvatten niet de exclusieve dieren van die kisten. Elke Epische Kist garandeert ten minste één puzzelstuk van paarse zeldzaamheid en ten minste één exclusief dierpuzzelstuk.",
 
-  "drop_bonus_title": "Drop Bonus",
-  "drop_bonus_body": "Epic Chests feature a rotating drop bonus that boosts the chance of receiving a specific exclusive animal's puzzle pieces. The boosted animal changes every 6 weeks, rotating through the exclusive animal list.",
+  "drop_bonus_title": "Dropbonus",
+  "drop_bonus_body": "Epische Kisten hebben een roterende dropbonus die de kans vergroot op het ontvangen van puzzelstukken van een specifiek exclusief dier. Het verhoogde dier wisselt elke 6 weken en roteert door de lijst van exclusieve dieren.",
 
-  "animals_title": "Exclusive Epic Chest Animals",
-  "animals_body": "The following animals are exclusive to Epic Chests and cannot be obtained through any other chest type:",
+  "animals_title": "Exclusieve Epische Kist Dieren",
+  "animals_body": "De volgende dieren zijn exclusief voor Epische Kisten en kunnen via geen enkel ander kistentype worden verkregen:",
 
-  "animals_col_animal": "Animal",
-  "animals_col_rarity": "Rarity",
-  "animals_col_biome": "Biome",
+  "animals_col_animal": "Dier",
+  "animals_col_rarity": "Zeldzaamheid",
+  "animals_col_biome": "Bioom",
 
   "tips_title": "Tips",
-  "tips_body": "Epic Chests are the most affordable diamond chest at 29 diamonds and offer guaranteed exclusive animal puzzle pieces with every opening. The drop bonus rotates every 6 weeks — check the current bonus animal if you are working toward a specific collection. At this price point, Epic Chests are excellent value for players who want to progress efficiently on exclusive animal collections."
+  "tips_body": "Epische Kisten zijn de meest betaalbare diamantenkist voor 29 diamanten en bieden bij elke opening gegarandeerde exclusieve dierpuzzelstukken. De dropbonus roteert elke 6 weken — controleer het huidige bonusdier als je werkt aan een specifieke collectie. Voor deze prijs zijn Epische Kisten uitstekende waarde voor spelers die efficiënt vooruitgang willen boeken op exclusieve dierencollecties."
 }

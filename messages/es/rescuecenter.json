@@ -1,42 +1,42 @@
 {
-  "title": "Rescue Center",
-  "intro": "The Rescue Center is a special mixed-species environment released on May 20, 2025. Unlocked at player level 100 for 190 diamonds, it allows you to rehabilitate injured animals and transfer them to your Main Zoo with unique permanent bonuses.",
+  "title": "Centro de Rescate",
+  "intro": "El Centro de Rescate es un entorno especial de especies mixtas lanzado el 20 de mayo de 2025. Se desbloquea al nivel 100 de jugador por 190 diamantes y te permite rehabilitar animales heridos y transferirlos a tu Zoo Principal con bonificadores permanentes únicos.",
 
-  "overview_title": "Overview",
-  "overview_body": "The Rescue Center operates independently from your main zoo. It uses a single giant shared enclosure that spans all biomes. You can expand your land by purchasing adjacent plots. Animals rehabilitated here receive permanent popularity and XP bonuses when transferred to your main zoo.",
+  "overview_title": "Descripción General",
+  "overview_body": "El Centro de Rescate opera de forma independiente a tu zoo principal. Utiliza un único recinto compartido gigante que abarca todos los biomas. Puedes ampliar tu terreno comprando parcelas adyacentes. Los animales rehabilitados aquí reciben bonificadores permanentes de popularidad y XP cuando se transfieren a tu zoo principal.",
 
-  "unlocking_title": "Unlocking",
-  "unlocking_body": "The Rescue Center requires player level 100 to unlock and costs 190 diamonds. It was released on May 20, 2025.",
+  "unlocking_title": "Desbloquear",
+  "unlocking_body": "El Centro de Rescate requiere el nivel 100 de jugador para desbloquearse y cuesta 190 diamantes. Se lanzó el 20 de mayo de 2025.",
 
-  "animal_shop_title": "Animal Shop",
-  "animal_shop_body": "The Rescue Center has its own Animal Shop with 3 offers refreshed every 24 hours: 2 diamond offers and 1 coin offer. The first offer each cycle is always a Rescue Center Exclusive animal. You can reroll the offers early, with each reroll costing 1 diamond per hour remaining in the cycle.",
+  "animal_shop_title": "Tienda de Animales",
+  "animal_shop_body": "El Centro de Rescate tiene su propia Tienda de Animales con 3 ofertas que se renuevan cada 24 horas: 2 ofertas de diamantes y 1 oferta de monedas. La primera oferta de cada ciclo es siempre un animal Exclusivo del Centro de Rescate. Puedes volver a lanzar las ofertas antes del tiempo, con cada relanzamiento costando 1 diamante por hora restante en el ciclo.",
 
-  "land_title": "Land & Enclosure",
-  "land_body": "The Rescue Center has one large shared enclosure that houses all animals together across all biomes. Land can be expanded by purchasing adjacent plots. You cannot reduce the land size once purchased. Standard enclosure equipment and Rescue Center exclusive equipment are both available — the exclusive equipment provides double XP and double refill capacity. The shared watering hole costs 4,000 coins to repair.",
+  "land_title": "Terreno y Recinto",
+  "land_body": "El Centro de Rescate tiene un gran recinto compartido que alberga a todos los animales juntos en todos los biomas. El terreno se puede ampliar comprando parcelas adyacentes. No puedes reducir el tamaño del terreno una vez comprado. Tanto el equipo estándar de recinto como el equipo exclusivo del Centro de Rescate están disponibles — el equipo exclusivo proporciona el doble de XP y el doble de capacidad de recarga. El abrevadero compartido cuesta 4.000 monedas reparar.",
 
-  "animal_care_title": "Animal Care",
-  "animal_care_body": "Injured animals require care before they can be transferred. There are six types of care available in the Rescue Center.",
+  "animal_care_title": "Cuidado de Animales",
+  "animal_care_body": "Los animales heridos requieren cuidados antes de que puedan ser transferidos. Hay seis tipos de cuidados disponibles en el Centro de Rescate.",
 
-  "care_types_title": "Types of Animal Care",
-  "care_type_medication": "Medication: Costs 200 coins or 1 diamond. No equipment required. Can be performed by a hired vet.",
-  "care_type_wound": "Wound Care: Costs 250 coins or 1 diamond. No equipment required. Can be performed by a hired vet.",
-  "care_type_petting": "Petting: Free. No equipment required. Can be performed by a hired zookeeper.",
-  "care_type_playing": "Playing: Free (manual). Requires play equipment. Can be performed by a hired zookeeper.",
-  "care_type_feeding": "Feeding: Free, coin, or diamond cost. Requires a feeding trough. Can be performed by a hired zookeeper.",
-  "care_type_cleaning": "Cleaning: Free (manual). Requires a watering hole. Can be performed by a hired zookeeper.",
+  "care_types_title": "Tipos de Cuidado de Animales",
+  "care_type_medication": "Medicación: Cuesta 200 monedas o 1 diamante. No se requiere equipo. Puede realizarlo un veterinario contratado.",
+  "care_type_wound": "Cuidado de Heridas: Cuesta 250 monedas o 1 diamante. No se requiere equipo. Puede realizarlo un veterinario contratado.",
+  "care_type_petting": "Acariciar: Gratis. No se requiere equipo. Puede realizarlo un cuidador contratado.",
+  "care_type_playing": "Jugar: Gratis (manual). Requiere equipo de juego. Puede realizarlo un cuidador contratado.",
+  "care_type_feeding": "Alimentar: Gratis, costo de monedas o diamantes. Requiere un comedero. Puede realizarlo un cuidador contratado.",
+  "care_type_cleaning": "Limpiar: Gratis (manual). Requiere un abrevadero. Puede realizarlo un cuidador contratado.",
 
-  "workers_title": "Workers",
-  "workers_body": "You must build the Admin Building (50 diamonds) before hiring any workers. Vets handle medication and wound care. Zookeepers handle petting, playing, feeding, and cleaning. Vets can be hired with diamonds. Reaching Zoo Academy Gold Level 95 earns 1 daily puzzle piece for a team of 3 vets.",
+  "workers_title": "Trabajadores",
+  "workers_body": "Debes construir el Edificio de Administración (50 diamantes) antes de contratar a cualquier trabajador. Los veterinarios se encargan de la medicación y el cuidado de heridas. Los cuidadores se encargan de acariciar, jugar, alimentar y limpiar. Los veterinarios se pueden contratar con diamantes. Alcanzar el Nivel de Oro 95 de Zoo Academy otorga 1 pieza de puzle diaria para un equipo de 3 veterinarios.",
 
-  "healing_title": "Healing & Rehabilitation",
-  "healing_body": "Full rehabilitation typically takes approximately one week. You can pay 100 diamonds for instant healing. Baby animals must also grow up separately before they can be transferred. Transferred animals receive double popularity and double XP — a star icon indicates a boosted animal. Released animals give 50 times the normal release XP.",
+  "healing_title": "Curación y Rehabilitación",
+  "healing_body": "La rehabilitación completa suele tardar aproximadamente una semana. Puedes pagar 100 diamantes para una curación instantánea. Los animales bebé también deben crecer por separado antes de poder ser transferidos. Los animales transferidos reciben el doble de popularidad y el doble de XP — un icono de estrella indica un animal con bonificación. Los animales liberados dan 50 veces el XP normal de liberación.",
 
-  "transfer_title": "Transferring Animals",
-  "transfer_body": "Animals can only be transferred out of the Rescue Center to your Main Zoo — nothing can transfer in from outside. Transferred animals permanently keep their double popularity and double XP boosts. Note that breeding is not available in the Rescue Center, and boosted features do not carry over to babies.",
+  "transfer_title": "Transferir Animales",
+  "transfer_body": "Los animales solo se pueden transferir desde el Centro de Rescate a tu Zoo Principal — nada puede transferirse desde fuera. Los animales transferidos mantienen permanentemente sus bonificadores de doble popularidad y doble XP. Ten en cuenta que la cría no está disponible en el Centro de Rescate y que las características con bonificación no se transmiten a los bebés.",
 
-  "exclusives_title": "Rescue Center Exclusive Animals",
-  "exclusives_body": "The following animals are only available through the Rescue Center. All are quest animals with a maximum level of 10 (except where noted).",
+  "exclusives_title": "Animales Exclusivos del Centro de Rescate",
+  "exclusives_body": "Los siguientes animales solo están disponibles a través del Centro de Rescate. Todos son animales de misión con un nivel máximo de 10 (excepto donde se indique).",
 
   "col_animal": "Animal",
-  "col_notes": "Notes"
+  "col_notes": "Notas"
 }

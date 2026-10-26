@@ -1,31 +1,31 @@
 {
   "title": "Season Pass",
-  "intro": "The Season Pass is a 10-week (70-day) progression system with three membership tiers: Standard (free), Premium, and VIP (both paid). Players earn XP through daily quizzes and weekly quests to level up through 35 levels and earn exclusive rewards.",
+  "intro": "De Season Pass is een 10-weken (70 dagen) progressiesysteem met drie lidmaatschapsniveaus: Standaard (gratis), Premium en VIP (beide betaald). Spelers verdienen XP via dagelijkse quizzen en wekelijkse quests om door 35 niveaus omhoog te gaan en exclusieve beloningen te verdienen.",
 
-  "tiers_title": "Membership Tiers",
-  "tiers_body": "There are three Season Pass tiers. The Standard tier is free and available to all players. Premium and VIP are paid upgrades that unlock additional rewards at each level. VIP includes all Premium rewards plus extra bonuses. You can upgrade your tier at any point during the season and retroactively receive all rewards from completed levels.",
+  "tiers_title": "Lidmaatschapsniveaus",
+  "tiers_body": "Er zijn drie Season Pass-niveaus. Het Standaard niveau is gratis en beschikbaar voor alle spelers. Premium en VIP zijn betaalde upgrades die extra beloningen op elk niveau ontgrendelen. VIP omvat alle Premiumbeloningen plus extra bonussen. Je kunt je niveau op elk moment tijdens het seizoen upgraden en met terugwerkende kracht alle beloningen ontvangen van voltooide niveaus.",
 
-  "leveling_title": "Leveling Up",
-  "leveling_body": "The Season Pass has 35 main levels. After level 35, there are unlimited bonus levels — each bonus level requires 1,000 XP and awards one mystery bag per tier. You can also skip a level instantly by spending 10 diamonds.",
+  "leveling_title": "Omhooggaan in niveau",
+  "leveling_body": "De Season Pass heeft 35 hoofdniveaus. Na niveau 35 zijn er onbeperkte bonusniveaus — elk bonusniveau vereist 1.000 XP en geeft één mysteriepakket per niveau. Je kunt ook een niveau direct overslaan door 10 diamanten uit te geven.",
 
-  "xp_title": "Earning XP",
-  "xp_body": "XP is earned primarily through the daily quiz and weekly quests. The daily quiz awards 70 XP per correct answer with 5 questions available each day, for a maximum of 350 XP per day. Weekly quests award approximately 2,000–2,200 XP per week. The total possible XP over a full season is around 46,000; you need approximately 34,000 XP to reach level 35.",
+  "xp_title": "XP verdienen",
+  "xp_body": "XP wordt voornamelijk verdiend via de dagelijkse quiz en wekelijkse quests. De dagelijkse quiz geeft 70 XP per correct antwoord met 5 vragen per dag, voor een maximum van 350 XP per dag. Wekelijkse quests geven ongeveer 2.000–2.200 XP per week. De totaal mogelijke XP over een volledig seizoen is ongeveer 46.000; je hebt ongeveer 34.000 XP nodig om niveau 35 te bereiken.",
 
-  "quiz_title": "Daily Quiz",
-  "quiz_body": "The daily quiz presents 5 questions each day. Each correct answer awards 70 XP, for a maximum of 350 XP per day. Quiz questions are related to Zoo 2: Animal Park game content and general animal knowledge.",
+  "quiz_title": "Dagelijkse quiz",
+  "quiz_body": "De dagelijkse quiz presenteert elke dag 5 vragen. Elk correct antwoord geeft 70 XP, voor een maximum van 350 XP per dag. Quizvragen zijn gerelateerd aan Zoo 2: Animal Park spelinhoud en algemene dierenkennis.",
 
-  "quests_title": "Weekly Quests",
-  "quests_body": "Weekly quests refresh regularly and award XP upon completion. Completing all available weekly quests earns approximately 2,000–2,200 XP per week. Prioritizing weekly quests is essential to reaching level 35 by the end of the season.",
+  "quests_title": "Wekelijkse quests",
+  "quests_body": "Wekelijkse quests worden regelmatig vernieuwd en geven XP bij voltooiing. Het voltooien van alle beschikbare wekelijkse quests geeft ongeveer 2.000–2.200 XP per week. Wekelijkse quests prioriteren is essentieel om niveau 35 te bereiken tegen het einde van het seizoen.",
 
-  "feathers_title": "Feather Bundles",
-  "feathers_body": "Season Pass currency (feathers) can be purchased in bundles to buy items in the seasonal shop. Feather bundles are available at three sizes. The permanent shop item is an enclosure ground decoration costing 50 feathers.",
-  "feathers_col_bundle": "Bundle",
-  "feathers_col_feathers": "Feathers",
-  "feathers_col_cost": "Cost",
+  "feathers_title": "Verenbundels",
+  "feathers_body": "Season Pass-valuta (veren) kan in bundels worden gekocht om items in de seizoenswinkel te kopen. Verenbundels zijn beschikbaar in drie formaten. Het permanente winkelitem is een verblijfsgronddecoitie van 50 veren.",
+  "feathers_col_bundle": "Bundel",
+  "feathers_col_feathers": "Veren",
+  "feathers_col_cost": "Kosten",
 
-  "schedule_title": "Season Schedule",
-  "schedule_body": "Each season lasts 10 weeks (70 days). Season 9 ends on December 17, 2026. New seasons begin shortly after the previous one ends.",
+  "schedule_title": "Seizoensschema",
+  "schedule_body": "Elk seizoen duurt 10 weken (70 dagen). Seizoen 9 eindigt op 17 december 2026. Nieuwe seizoenen beginnen kort nadat het vorige is geëindigd.",
 
   "tips_title": "Tips",
-  "tips_body": "Complete the daily quiz every day — it is the most consistent XP source at up to 350 XP per day. Do not miss weekly quests, as they provide the bulk of XP needed to reach level 35. If you are behind on XP, you can spend 10 diamonds per level to skip ahead. Upgrading to Premium or VIP is worthwhile if you want the exclusive animals and decorations — you can upgrade at any point and receive all missed rewards retroactively."
+  "tips_body": "Voltooi de dagelijkse quiz elke dag — het is de meest consistente XP-bron met tot 350 XP per dag. Mis wekelijkse quests niet, want zij leveren het grootste deel van de XP die nodig is om niveau 35 te bereiken. Als je achterloopt op XP, kun je 10 diamanten per niveau uitgeven om vooruit te springen. Upgraden naar Premium of VIP is de moeite waard als je de exclusieve dieren en decoraties wilt — je kunt op elk moment upgraden en alle gemiste beloningen met terugwerkende kracht ontvangen."
 }

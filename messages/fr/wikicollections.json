@@ -1,35 +1,35 @@
 {
   "title": "Collections",
-  "intro": "Collections are a set of achievements that reward you for placing specific combinations of animals and items in your zoo simultaneously. Introduced on October 16, 2019, Collections are accessed through the book icon in the Visitor Center, which unlocks at player level 17.",
+  "intro": "Les Collections sont un ensemble de succès qui vous récompensent pour avoir placé des combinaisons spécifiques d'animaux et d'objets dans votre zoo simultanément. Introduites le 16 octobre 2019, les Collections sont accessibles via l'icône livre dans le Centre d'accueil des visiteurs, qui se déverrouille au niveau 17.",
 
-  "overview_title": "How Collections Work",
-  "overview_body": "Each collection requires you to have a specific set of animals (and sometimes decorations or buildings) placed in your zoo at the same time. The required animals must meet minimum level requirements and, in some cases, must be a specific coat color. All required items must be present in your zoo simultaneously — it is not enough to have owned them previously.",
+  "overview_title": "Comment fonctionnent les Collections",
+  "overview_body": "Chaque collection nécessite d'avoir un ensemble spécifique d'animaux (et parfois de décorations ou de bâtiments) placés dans votre zoo en même temps. Les animaux requis doivent répondre à des exigences de niveau minimum et, dans certains cas, doivent être d'une couleur de robe spécifique. Tous les objets requis doivent être présents dans votre zoo simultanément — il ne suffit pas de les avoir possédés précédemment.",
 
-  "tiers_title": "Collection Tiers",
-  "tiers_body": "Collections are organized into three tiers based on difficulty and reward value. Higher tiers require rarer animals and more combinations, but provide greater rewards.",
+  "tiers_title": "Paliers de Collections",
+  "tiers_body": "Les Collections sont organisées en trois paliers selon la difficulté et la valeur de récompense. Les paliers supérieurs nécessitent des animaux plus rares et plus de combinaisons, mais offrent de meilleures récompenses.",
 
-  "tier_one_title": "1-Star Collections",
-  "tier_one_body": "1-star collections are the most accessible tier. They typically require common animals at lower levels. Rewards include coins, XP, and occasionally diamonds.",
+  "tier_one_title": "Collections 1 étoile",
+  "tier_one_body": "Les collections 1 étoile sont le palier le plus accessible. Elles nécessitent généralement des animaux communs à des niveaux inférieurs. Les récompenses comprennent des pièces, de l'XP et occasionnellement des diamants.",
 
-  "tier_two_title": "2-Star Collections",
-  "tier_two_body": "2-star collections require more effort and often include animals from secondary regions or specific coat colors. Rewards are more valuable and may include diamonds and special decorations.",
+  "tier_two_title": "Collections 2 étoiles",
+  "tier_two_body": "Les collections 2 étoiles nécessitent plus d'efforts et incluent souvent des animaux de régions secondaires ou des couleurs de robe spécifiques. Les récompenses sont plus précieuses et peuvent inclure des diamants et des décorations spéciales.",
 
-  "tier_three_title": "3-Star Collections",
-  "tier_three_body": "3-star collections are the most challenging and require rare or exclusive animals, sometimes obtainable only through club competitions or special events. Rewards include significant diamonds, exclusive decorations, and other premium items.",
+  "tier_three_title": "Collections 3 étoiles",
+  "tier_three_body": "Les collections 3 étoiles sont les plus difficiles et nécessitent des animaux rares ou exclusifs, parfois obtenables uniquement via des compétitions de club ou des événements spéciaux. Les récompenses comprennent des diamants significatifs, des décorations exclusives et d'autres objets premium.",
 
-  "requirements_title": "Collection Requirements",
-  "requirements_body": "When viewing a collection, each required animal or item shows its minimum level and any coat color requirement. If a specific coat color is listed, you must have that exact color placed in your zoo. Some collections require animals that can only be won through club competition, such as popularity statues or exclusive color variants.",
+  "requirements_title": "Conditions des Collections",
+  "requirements_body": "Lors de la consultation d'une collection, chaque animal ou objet requis affiche son niveau minimum et toute exigence de couleur de robe. Si une couleur de robe spécifique est indiquée, vous devez avoir exactement cette couleur placée dans votre zoo. Certaines collections nécessitent des animaux qui ne peuvent être gagnés que via la compétition de club, tels que les statues de popularité ou les variantes de couleur exclusives.",
 
-  "regions_title": "Collections by Region",
-  "regions_body": "Collections are organized by region in the collection book. Regions include: Main Zoo, Fir Grove, Kujali Park, Terrarium, Aquarium, Noctarium, and Aviary. Each region has its own set of collections to complete.",
+  "regions_title": "Collections par région",
+  "regions_body": "Les Collections sont organisées par région dans le livre de collections. Les régions comprennent : Zoo principal, Bosquet de sapins, Kujali Park, Terrarium, Aquarium, Noctarium et Volière. Chaque région dispose de son propre ensemble de collections à compléter.",
 
-  "tips_title": "Tips for Completing Collections",
-  "tips_retroactive_title": "Already-Placed Animals Count",
-  "tips_retroactive_body": "Animals already in your zoo count toward collection requirements as long as they meet the level and coat color criteria. You do not need to re-place animals you already own.",
-  "tips_planning_title": "Plan Ahead for Rare Animals",
-  "tips_planning_body": "Some collection animals are only available through seasonal events, club competition rewards, or special chests. Check the collection requirements early so you can plan to acquire rare animals before they become unavailable.",
-  "tips_level_title": "Level Requirements",
-  "tips_level_body": "The level shown on a collection requirement is the minimum level needed. If your animal is already above the minimum level, it qualifies. Focus on leveling up animals needed for multiple collections simultaneously.",
-  "tips_club_title": "Club Competition Animals",
-  "tips_club_body": "Some 3-star collections require animals that can only be obtained by winning club competitions. These are often exclusive color variants awarded to the top-ranked clubs. Participating actively in weekly contests is the best way to earn these animals."
+  "tips_title": "Conseils pour compléter les Collections",
+  "tips_retroactive_title": "Les animaux déjà placés comptent",
+  "tips_retroactive_body": "Les animaux déjà dans votre zoo comptent pour les conditions de collection tant qu'ils remplissent les critères de niveau et de couleur de robe. Vous n'avez pas besoin de replacer des animaux que vous possédez déjà.",
+  "tips_planning_title": "Planifier à l'avance pour les animaux rares",
+  "tips_planning_body": "Certains animaux de collection ne sont disponibles que lors d'événements saisonniers, de récompenses de compétitions de club ou de coffres spéciaux. Vérifiez les conditions de collection tôt pour pouvoir planifier l'acquisition d'animaux rares avant qu'ils ne deviennent indisponibles.",
+  "tips_level_title": "Exigences de niveau",
+  "tips_level_body": "Le niveau affiché sur une condition de collection est le niveau minimum requis. Si votre animal est déjà au-dessus du niveau minimum, il est éligible. Concentrez-vous sur la montée en niveau des animaux nécessaires pour plusieurs collections simultanément.",
+  "tips_club_title": "Animaux de compétition de club",
+  "tips_club_body": "Certaines collections 3 étoiles nécessitent des animaux qui ne peuvent être obtenus qu'en gagnant des compétitions de club. Ce sont souvent des variantes de couleur exclusives attribuées aux clubs les mieux classés. Participer activement aux concours hebdomadaires est la meilleure façon de gagner ces animaux."
 }

@@ -1,42 +1,42 @@
 {
-  "title": "Rescue Center",
-  "intro": "The Rescue Center is a special mixed-species environment released on May 20, 2025. Unlocked at player level 100 for 190 diamonds, it allows you to rehabilitate injured animals and transfer them to your Main Zoo with unique permanent bonuses.",
+  "title": "Reddingscentrum",
+  "intro": "Het Reddingscentrum is een speciale omgeving met gemengde soorten, uitgebracht op 20 mei 2025. Ontgrendeld op spelerniveau 100 voor 190 diamanten, stelt het je in staat gewonde dieren te revalideren en ze over te brengen naar je Hoofddierentuin met unieke permanente bonussen.",
 
-  "overview_title": "Overview",
-  "overview_body": "The Rescue Center operates independently from your main zoo. It uses a single giant shared enclosure that spans all biomes. You can expand your land by purchasing adjacent plots. Animals rehabilitated here receive permanent popularity and XP bonuses when transferred to your main zoo.",
+  "overview_title": "Overzicht",
+  "overview_body": "Het Reddingscentrum werkt onafhankelijk van je hoofddierentuin. Het gebruikt één enkel groot gedeeld verblijf dat alle bioomen omspant. Je kunt je land uitbreiden door aangrenzende percelen te kopen. Dieren die hier worden gerevalideerd, ontvangen permanente populariteits- en XP-bonussen wanneer ze worden overgebracht naar je hoofddierentuin.",
 
-  "unlocking_title": "Unlocking",
-  "unlocking_body": "The Rescue Center requires player level 100 to unlock and costs 190 diamonds. It was released on May 20, 2025.",
+  "unlocking_title": "Ontgrendelen",
+  "unlocking_body": "Het Reddingscentrum vereist spelerniveau 100 om te ontgrendelen en kost 190 diamanten. Het werd uitgebracht op 20 mei 2025.",
 
-  "animal_shop_title": "Animal Shop",
-  "animal_shop_body": "The Rescue Center has its own Animal Shop with 3 offers refreshed every 24 hours: 2 diamond offers and 1 coin offer. The first offer each cycle is always a Rescue Center Exclusive animal. You can reroll the offers early, with each reroll costing 1 diamond per hour remaining in the cycle.",
+  "animal_shop_title": "Dierenwinkel",
+  "animal_shop_body": "Het Reddingscentrum heeft zijn eigen Dierenwinkel met 3 aanbiedingen die elke 24 uur worden vernieuwd: 2 diamantenaanbiedingen en 1 muntenpenning. De eerste aanbieding van elke cyclus is altijd een Reddingscentrum Exclusief dier. Je kunt de aanbiedingen vroeg opnieuw gooien, waarbij elke hergooi 1 diamant per resterende uur in de cyclus kost.",
 
-  "land_title": "Land & Enclosure",
-  "land_body": "The Rescue Center has one large shared enclosure that houses all animals together across all biomes. Land can be expanded by purchasing adjacent plots. You cannot reduce the land size once purchased. Standard enclosure equipment and Rescue Center exclusive equipment are both available — the exclusive equipment provides double XP and double refill capacity. The shared watering hole costs 4,000 coins to repair.",
+  "land_title": "Land & Verblijf",
+  "land_body": "Het Reddingscentrum heeft één groot gedeeld verblijf dat alle dieren samen over alle bioomen huisvest. Land kan worden uitgebreid door aangrenzende percelen te kopen. Je kunt de landgrootte niet verkleinen eenmaal gekocht. Standaard verblijfsuitrusting en exclusieve Reddingscentrumuitrusting zijn beide beschikbaar — de exclusieve uitrusting biedt dubbele XP en dubbele bijvulcapaciteit. De gedeelde drinkplaats kost 4.000 munten om te repareren.",
 
-  "animal_care_title": "Animal Care",
-  "animal_care_body": "Injured animals require care before they can be transferred. There are six types of care available in the Rescue Center.",
+  "animal_care_title": "Dierenverzorging",
+  "animal_care_body": "Gewonde dieren vereisen verzorging voordat ze kunnen worden overgebracht. Er zijn zes soorten verzorging beschikbaar in het Reddingscentrum.",
 
-  "care_types_title": "Types of Animal Care",
-  "care_type_medication": "Medication: Costs 200 coins or 1 diamond. No equipment required. Can be performed by a hired vet.",
-  "care_type_wound": "Wound Care: Costs 250 coins or 1 diamond. No equipment required. Can be performed by a hired vet.",
-  "care_type_petting": "Petting: Free. No equipment required. Can be performed by a hired zookeeper.",
-  "care_type_playing": "Playing: Free (manual). Requires play equipment. Can be performed by a hired zookeeper.",
-  "care_type_feeding": "Feeding: Free, coin, or diamond cost. Requires a feeding trough. Can be performed by a hired zookeeper.",
-  "care_type_cleaning": "Cleaning: Free (manual). Requires a watering hole. Can be performed by a hired zookeeper.",
+  "care_types_title": "Soorten dierenverzorging",
+  "care_type_medication": "Medicatie: Kost 200 munten of 1 diamant. Geen uitrusting vereist. Kan worden uitgevoerd door een aangestelde dierenarts.",
+  "care_type_wound": "Wondverzorging: Kost 250 munten of 1 diamant. Geen uitrusting vereist. Kan worden uitgevoerd door een aangestelde dierenarts.",
+  "care_type_petting": "Aaien: Gratis. Geen uitrusting vereist. Kan worden uitgevoerd door een aangestelde verzorger.",
+  "care_type_playing": "Spelen: Gratis (handmatig). Vereist speeluitrusting. Kan worden uitgevoerd door een aangestelde verzorger.",
+  "care_type_feeding": "Voeden: Gratis, munt- of diamantkosten. Vereist een voederbak. Kan worden uitgevoerd door een aangestelde verzorger.",
+  "care_type_cleaning": "Reinigen: Gratis (handmatig). Vereist een drinkplaats. Kan worden uitgevoerd door een aangestelde verzorger.",
 
-  "workers_title": "Workers",
-  "workers_body": "You must build the Admin Building (50 diamonds) before hiring any workers. Vets handle medication and wound care. Zookeepers handle petting, playing, feeding, and cleaning. Vets can be hired with diamonds. Reaching Zoo Academy Gold Level 95 earns 1 daily puzzle piece for a team of 3 vets.",
+  "workers_title": "Medewerkers",
+  "workers_body": "Je moet het Administratiegebouw (50 diamanten) bouwen voordat je medewerkers kunt aannemen. Dierenartsen verzorgen medicatie en wondverzorging. Verzorgers verzorgen aaien, spelen, voeden en reinigen. Dierenartsen kunnen worden aangenomen met diamanten. Het bereiken van Zoo Academy Goud Niveau 95 geeft 1 dagelijks puzzelstuk voor een team van 3 dierenartsen.",
 
-  "healing_title": "Healing & Rehabilitation",
-  "healing_body": "Full rehabilitation typically takes approximately one week. You can pay 100 diamonds for instant healing. Baby animals must also grow up separately before they can be transferred. Transferred animals receive double popularity and double XP — a star icon indicates a boosted animal. Released animals give 50 times the normal release XP.",
+  "healing_title": "Genezing & Revalidatie",
+  "healing_body": "Volledige revalidatie duurt doorgaans ongeveer een week. Je kunt 100 diamanten betalen voor directe genezing. Babydieren moeten ook apart opgroeien voordat ze kunnen worden overgebracht. Overgebrachte dieren ontvangen dubbele populariteit en dubbele XP — een steripictogram geeft een verhoogd dier aan. Vrijgelaten dieren geven 50 keer de normale vrijlaat-XP.",
 
-  "transfer_title": "Transferring Animals",
-  "transfer_body": "Animals can only be transferred out of the Rescue Center to your Main Zoo — nothing can transfer in from outside. Transferred animals permanently keep their double popularity and double XP boosts. Note that breeding is not available in the Rescue Center, and boosted features do not carry over to babies.",
+  "transfer_title": "Dieren overbrengen",
+  "transfer_body": "Dieren kunnen alleen uit het Reddingscentrum worden overgebracht naar je Hoofddierentuin — niets kan van buiten worden ingebracht. Overgebrachte dieren behouden permanent hun dubbele populariteits- en dubbele XP-boosts. Let op dat fokken niet beschikbaar is in het Reddingscentrum en dat verhoogde functies niet worden doorgegeven aan babydieren.",
 
-  "exclusives_title": "Rescue Center Exclusive Animals",
-  "exclusives_body": "The following animals are only available through the Rescue Center. All are quest animals with a maximum level of 10 (except where noted).",
+  "exclusives_title": "Reddingscentrum Exclusieve Dieren",
+  "exclusives_body": "De volgende dieren zijn alleen beschikbaar via het Reddingscentrum. Alle zijn questdieren met een maximumniveau van 10 (tenzij anders vermeld).",
 
-  "col_animal": "Animal",
-  "col_notes": "Notes"
+  "col_animal": "Dier",
+  "col_notes": "Notities"
 }

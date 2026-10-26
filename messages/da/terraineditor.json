@@ -1,0 +1,32 @@
+{
+  "title": "Terræneditor",
+  "intro": "Terrænredigeringen er et jordredigeringsværktøj, der ændrer det generelle landskab (gulvet) i dine zooregioner uden for indhegningerne. Det låses op til køb fra spillerniveau 25 for et engangsgebyr på 500.000 mønter eller 50 diamanter.",
+
+  "overview_title": "Oversigt",
+  "overview_body": "For at kunne køre terrænredigeringen skal du bruge Energi, som kan fås fra præmiehjulet eller indimellem fra login-belønningskalenderen. Du kan også købe Energi for diamanter. Selvom der ikke er et umiddelbart behov for at købe editoren for at komme videre i spillet, giver en quest, der introducerer funktionen, en lille belønning. Højniveauspillere vil få brug for dette værktøj for at fuldende \"Landscape Designer Zoo\"-borgmesterquesten, der låses op på spillerniveau 110.",
+
+  "access_title": "Adgang til terrænredigeringen",
+  "access_body": "Terrænredigeringen tilgås ved at klikke på penselpension-ikonet på venstre side af inventarsidebjælken. Der er to landskabsændrende funktioner: Terrænredigeringen (til uden for indhegninger) og Indhegningsgrundseditoren (til inde i indhegninger).",
+
+  "connected_title": "Hoved-zoo forbundne regioner",
+  "connected_body": "Følgende energiomkostninger gælder for terrænændringer i hoved-zooen og dens tilsluttede regioner. En streg (-) betyder, at den terræntype ikke er tilgængelig i den region.",
+
+  "col_terrain": "Terræn",
+  "col_main_zoo": "Hoved-zoo",
+  "col_fir_grove": "Grantræslunden",
+  "col_kujali_park": "Kujali Park",
+  "col_oceanside": "Kystzooen",
+  "col_polar_park": "Polarpolen",
+  "col_rainforest_park": "Regnskovpark",
+  "col_rescue_center": "Redningscenter",
+
+  "disconnected_title": "Afkoblede zooregioner",
+  "disconnected_body": "Terrarium, Akvarium og Noctarium er afkoblede regioner med deres egne terræntyper og energiomkostninger.",
+
+  "col_terrarium": "Terrarium",
+  "col_aquarium": "Akvarium",
+  "col_noctarium": "Noctarium",
+
+  "visuals_title": "Terrænvisuals",
+  "visuals_body": "Hver terræntype er designet til at matche specifikke biotoper eller temaer: Sne matcher Is-biotoper, Sand matcher Savanne-biotoper, Sten matcher Bjerg-biotoper, Jord giver et naturligt udseende, Efterårsblade matcher sæsonbestemte eller Slette-biotoper, Vand skaber naturlige søer, og Skov giver et skovbundsgulv."
+}

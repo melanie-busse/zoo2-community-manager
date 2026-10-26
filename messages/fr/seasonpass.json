@@ -1,31 +1,31 @@
 {
   "title": "Season Pass",
-  "intro": "The Season Pass is a 10-week (70-day) progression system with three membership tiers: Standard (free), Premium, and VIP (both paid). Players earn XP through daily quizzes and weekly quests to level up through 35 levels and earn exclusive rewards.",
+  "intro": "Le Season Pass est un système de progression de 10 semaines (70 jours) avec trois paliers d'adhésion : Standard (gratuit), Premium et VIP (tous deux payants). Les joueurs gagnent de l'XP via des quiz quotidiens et des quêtes hebdomadaires pour monter en niveau sur 35 niveaux et gagner des récompenses exclusives.",
 
-  "tiers_title": "Membership Tiers",
-  "tiers_body": "There are three Season Pass tiers. The Standard tier is free and available to all players. Premium and VIP are paid upgrades that unlock additional rewards at each level. VIP includes all Premium rewards plus extra bonuses. You can upgrade your tier at any point during the season and retroactively receive all rewards from completed levels.",
+  "tiers_title": "Paliers d'adhésion",
+  "tiers_body": "Il y a trois paliers de Season Pass. Le palier Standard est gratuit et disponible pour tous les joueurs. Premium et VIP sont des améliorations payantes qui débloquent des récompenses supplémentaires à chaque niveau. VIP inclut toutes les récompenses Premium plus des bonus supplémentaires. Vous pouvez améliorer votre palier à tout moment pendant la saison et recevoir rétroactivement toutes les récompenses des niveaux complétés.",
 
-  "leveling_title": "Leveling Up",
-  "leveling_body": "The Season Pass has 35 main levels. After level 35, there are unlimited bonus levels — each bonus level requires 1,000 XP and awards one mystery bag per tier. You can also skip a level instantly by spending 10 diamonds.",
+  "leveling_title": "Monter de niveau",
+  "leveling_body": "Le Season Pass comporte 35 niveaux principaux. Après le niveau 35, il y a des niveaux bonus illimités — chaque niveau bonus nécessite 1 000 XP et attribue un sachet mystère par palier. Vous pouvez également passer un niveau instantanément en dépensant 10 diamants.",
 
-  "xp_title": "Earning XP",
-  "xp_body": "XP is earned primarily through the daily quiz and weekly quests. The daily quiz awards 70 XP per correct answer with 5 questions available each day, for a maximum of 350 XP per day. Weekly quests award approximately 2,000–2,200 XP per week. The total possible XP over a full season is around 46,000; you need approximately 34,000 XP to reach level 35.",
+  "xp_title": "Gagner de l'XP",
+  "xp_body": "L'XP est principalement gagné via le quiz quotidien et les quêtes hebdomadaires. Le quiz quotidien attribue 70 XP par bonne réponse avec 5 questions disponibles chaque jour, pour un maximum de 350 XP par jour. Les quêtes hebdomadaires attribuent environ 2 000–2 200 XP par semaine. L'XP total possible sur une saison complète est d'environ 46 000 ; vous avez besoin d'environ 34 000 XP pour atteindre le niveau 35.",
 
-  "quiz_title": "Daily Quiz",
-  "quiz_body": "The daily quiz presents 5 questions each day. Each correct answer awards 70 XP, for a maximum of 350 XP per day. Quiz questions are related to Zoo 2: Animal Park game content and general animal knowledge.",
+  "quiz_title": "Quiz quotidien",
+  "quiz_body": "Le quiz quotidien présente 5 questions chaque jour. Chaque bonne réponse attribue 70 XP, pour un maximum de 350 XP par jour. Les questions du quiz sont liées au contenu du jeu Zoo 2: Animal Park et aux connaissances générales sur les animaux.",
 
-  "quests_title": "Weekly Quests",
-  "quests_body": "Weekly quests refresh regularly and award XP upon completion. Completing all available weekly quests earns approximately 2,000–2,200 XP per week. Prioritizing weekly quests is essential to reaching level 35 by the end of the season.",
+  "quests_title": "Quêtes hebdomadaires",
+  "quests_body": "Les quêtes hebdomadaires se renouvellent régulièrement et attribuent de l'XP à leur accomplissement. Accomplir toutes les quêtes hebdomadaires disponibles rapporte environ 2 000–2 200 XP par semaine. Prioriser les quêtes hebdomadaires est essentiel pour atteindre le niveau 35 avant la fin de la saison.",
 
-  "feathers_title": "Feather Bundles",
-  "feathers_body": "Season Pass currency (feathers) can be purchased in bundles to buy items in the seasonal shop. Feather bundles are available at three sizes. The permanent shop item is an enclosure ground decoration costing 50 feathers.",
-  "feathers_col_bundle": "Bundle",
-  "feathers_col_feathers": "Feathers",
-  "feathers_col_cost": "Cost",
+  "feathers_title": "Lots de plumes",
+  "feathers_body": "La monnaie du Season Pass (plumes) peut être achetée en lots pour acquérir des objets dans la boutique saisonnière. Les lots de plumes sont disponibles en trois tailles. L'article permanent de la boutique est une décoration de sol d'enclos coûtant 50 plumes.",
+  "feathers_col_bundle": "Lot",
+  "feathers_col_feathers": "Plumes",
+  "feathers_col_cost": "Coût",
 
-  "schedule_title": "Season Schedule",
-  "schedule_body": "Each season lasts 10 weeks (70 days). Season 9 ends on December 17, 2026. New seasons begin shortly after the previous one ends.",
+  "schedule_title": "Calendrier des saisons",
+  "schedule_body": "Chaque saison dure 10 semaines (70 jours). La saison 9 se termine le 17 décembre 2026. Les nouvelles saisons commencent peu après la fin de la précédente.",
 
-  "tips_title": "Tips",
-  "tips_body": "Complete the daily quiz every day — it is the most consistent XP source at up to 350 XP per day. Do not miss weekly quests, as they provide the bulk of XP needed to reach level 35. If you are behind on XP, you can spend 10 diamonds per level to skip ahead. Upgrading to Premium or VIP is worthwhile if you want the exclusive animals and decorations — you can upgrade at any point and receive all missed rewards retroactively."
+  "tips_title": "Conseils",
+  "tips_body": "Faites le quiz quotidien chaque jour — c'est la source d'XP la plus régulière avec jusqu'à 350 XP par jour. Ne manquez pas les quêtes hebdomadaires, car elles fournissent la majeure partie de l'XP nécessaire pour atteindre le niveau 35. Si vous êtes en retard sur l'XP, vous pouvez dépenser 10 diamants par niveau pour avancer. Passer au Premium ou VIP vaut la peine si vous souhaitez les animaux et décorations exclusifs — vous pouvez améliorer à tout moment et recevoir toutes les récompenses manquées rétroactivement."
 }

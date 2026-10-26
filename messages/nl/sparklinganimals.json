@@ -1,0 +1,26 @@
+{
+  "title": "Glinsterende Dieren",
+  "intro": "Een succesvol fokken van een soort of variant kan willekeurig resulteren in een speciaal, glinsterend dier van dezelfde soort. Glinsterende dieren schitteren met een glitterachtige paarsachtig gloeiende tint vanwege hun uitstekende gezondheid en bevatten hoge populariteit. Glinsterende dieren kunnen alleen worden verkregen door regulier fokken en zijn uiterst zeldzaam.",
+
+  "overview_title": "Overzicht",
+  "overview_body": "Elk glinsterend dier wordt geboren op niveau 40, ongeacht het niveau van zijn ouders. Glinsterende dieren zijn de enige dieren die een dergelijk hoog niveau in je dierentuin kunnen bereiken. Alle niet-glinsterende dieren bereiken hun maximaal haalbare niveau op niveau 20.",
+
+  "streak_title": "Fokserie",
+  "streak_body": "De kans om een glinsterend dier te verkrijgen wordt bepaald door je fokserie — het aantal opeenvolgende foksuccessen per soort. Zodra een fokpoging mislukt, wordt de serie voor die soort gereset naar nul. Elke soort heeft zijn eigen fokserie weergegeven rechtsonder in het fokdialoogvenster. Of het succes een enkel dier, tweelingen of drielingen zijn, de sessie telt als één poging.",
+
+  "chances_title": "Glinsterkansen",
+  "chances_body": "Hoe hoger het aantal opeenvolgende succesvolle fokkingen voor een soort, hoe groter je kansen om een glinsterend dier te krijgen bij de volgende fokpoging. De kansen beginnen bij 0,1% met een fokserie van nul en stijgen naar een maximum van 1,1% met een fokserie van 10 of meer. Elk afzonderlijk babydier binnen een set tweelingen of drielingen heeft zijn eigen unieke kans op glinsterend geboren te worden.",
+
+  "col_streak": "Fokserie",
+  "col_odds": "Kansen op Glinstering",
+  "col_chance": "Kans op Glinstering",
+
+  "breeding_with_title": "Fokken met een Glinsterend Dier",
+  "breeding_with_body": "Zodra een glinsterend dier volwassen is, kan het worden gebruikt om te fokken voor niveau 20-babydieren, waardoor je niveaus kunt overslaan. Ongeacht het niveau of de glinstering van de andere ouder, zouden babydieren een normaal niveau 20 moeten produceren met een ultra-zeldzame kans om een ander glinsterend niveau 40 te verkrijgen. Glinsterende dieren voldoen ook direct aan eventuele collectiedoelen voor dezelfde soort en kleur omdat ze op niveau 40 worden geboren.",
+
+  "donating_title": "Een Glinsterend Dier doneren",
+  "donating_body": "Bij het doneren van een niveau 40 glinsterend dier aan een clubwedstrijd geeft het dier dezelfde punten als zijn niveau: 400 clubpunten zoals weergegeven op het ledendona tiescherm. Het is het equivalent van het doneren van twee niveau 20-dieren.",
+
+  "glow_title": "Glinstering uitschakelen",
+  "glow_body": "Als glinsterende visuele effecten niet je voorkeur hebben, kun je de glinsterfunctie uitschakelen in de spelinstellingen. Klik op het tandwielpictogram rechtsonder op je spelscherm, klik op het tweede instellingentabblad, scroll naar beneden en vink \"Glinsterende dieren weergeven als gewone dieren\" aan. Dit verwijdert elk glinstereffect van je niveau 40-dieren."
+}

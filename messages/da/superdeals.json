@@ -1,26 +1,26 @@
 {
-  "title": "Super Deals",
-  "intro": "Super Deals (also called Top Deals or Flash Sales) are limited-time discounted offers in the Zoo 2 shop. They typically last 24–72 hours and change around noon Germany time.",
+  "title": "Supertilbud",
+  "intro": "Supertilbud (også kaldet Toptilbud eller Flash-salg) er tidsbegrænsede rabatterede tilbud i Zoo 2-butikken. De varer typisk 24–72 timer og skifter omkring middag tysk tid.",
 
-  "how_it_works_title": "How Super Deals Work",
-  "how_it_works_body": "Super Deals appear in the shop for a limited time. The most common type bundles a pair of animals with an enclosure, watering hole, and enclosure items at a discount of 39–84% off. Discounts are calculated including the coin-to-diamond conversion rate of 1 diamond per 250 coins.",
+  "how_it_works_title": "Sådan fungerer Supertilbud",
+  "how_it_works_body": "Supertilbud vises i butikken i en begrænset tid. Den mest almindelige type samler et par dyr med en indhegning, vandpost og indhegningsgenstande til en rabat på 39–84% af. Rabatter beregnes inklusiv mønt-til-diamant-vekselkursen på 1 diamant pr. 250 mønter.",
 
-  "types_title": "Types of Super Deals",
-  "types_body": "Super Deals come in several forms. The most common type pairs two animals with an enclosure bundle. Less common types include color variant animals at full diamond price, discounted event decorations, and animals from VIP, Legendary, or Friendship chests.",
+  "types_title": "Typer af Supertilbud",
+  "types_body": "Supertilbud findes i flere former. Den mest almindelige type parrer to dyr med et indhegningsbundt. Mindre almindelige typer inkluderer farvevarianter af dyr til fuld diamantpris, rabatterede eventdekorationer og dyr fra VIP-, Legendariske eller Venskabskister.",
 
-  "discontinued_title": "Discontinued Deal Types",
-  "discontinued_body": "Safari Restaurants and Zoo Stores were previously available as Super Deals but have been discontinued. Their unlimited purchase potential caused coin imbalance in the game economy. These items are now available through Season Pass rewards, Shell Game, Seasonal Events, and new game regions.",
+  "discontinued_title": "Udgåede tilbudstyper",
+  "discontinued_body": "Safari-restauranter og Zoobutikker var tidligere tilgængelige som Supertilbud, men er blevet afviklet. Deres ubegrænsede købspotentiale forårsagede møntmæssig ubalance i spilekonomien. Disse genstande er nu tilgængelige via Sæsonpassbelønninger, Shell-spil, Sæsonevents og nye spilregioner.",
 
-  "pricing_title": "Animal Pricing Reference",
-  "pricing_body": "The table below shows diamond costs for animals across different purchase methods: card price, Rescue Center adoption, shop purchase (33% off), Ice Cream offer (40% off), typical Super Deal price, shop bundle pair price (33% off), chest type, and prize wheel availability.",
+  "pricing_title": "Dyrepriserreference",
+  "pricing_body": "Tabellen nedenfor viser diamantpriser for dyr på tværs af forskellige købsmetoder: kortpris, Redningscenter-adoption, butikskøb (33% af), Iskagevogn-tilbud (40% af), typisk Supertilbudspris, butikspar-pris (33% af), kistetype og præmiehjulstilgængelighed.",
 
-  "col_animal": "Animal",
-  "col_card_price": "Card Price",
-  "col_rescue": "Rescue Center",
-  "col_shop_33": "Shop (33% off)",
-  "col_ice_cream": "Ice Cream (40% off)",
-  "col_super_deal": "Super Deal",
-  "col_shop_pair": "Shop Pair (33% off)",
-  "col_chest": "Chest Type",
-  "col_prize_wheel": "Prize Wheel"
+  "col_animal": "Dyr",
+  "col_card_price": "Kortpris",
+  "col_rescue": "Redningscenter",
+  "col_shop_33": "Butik (33% af)",
+  "col_ice_cream": "Iskagevogn (40% af)",
+  "col_super_deal": "Supertilbud",
+  "col_shop_pair": "Butikspar (33% af)",
+  "col_chest": "Kistetype",
+  "col_prize_wheel": "Præmiehjul"
 }

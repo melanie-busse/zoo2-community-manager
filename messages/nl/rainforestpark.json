@@ -1,42 +1,42 @@
 {
   "title": "Rainforest Park",
-  "intro": "Rainforest Park is a jungle-themed secondary region that unlocks at player level 45 for 100 diamonds. Released on November 25, 2025, the park is set in a lush rainforest environment and features a unique mixed-species jungle enclosure type exclusive to this region. Animals from the Jungle category receive bonus XP and breeding boosts.",
+  "intro": "Rainforest Park is een jungle-thematische secundaire regio die vrijkomt op spelerniveau 45 voor 100 diamanten. Uitgebracht op 25 november 2025 is het park gesitueerd in een weelderige regenwoudomgeving en beschikt het over een uniek verblijfstype voor gemengde junglesoorten dat exclusief is voor deze regio. Dieren uit de Jungle-categorie ontvangen bonus-XP en fokboosts.",
 
-  "unlocking_title": "Unlocking Rainforest Park",
-  "unlocking_body": "Rainforest Park becomes available when you reach player level 45. It costs 100 diamonds to unlock. Upon unlocking, you receive a free Level 5 Panther. The park features a rainfall animation that plays periodically, adding atmosphere to the environment.",
+  "unlocking_title": "Rainforest Park ontgrendelen",
+  "unlocking_body": "Rainforest Park wordt beschikbaar wanneer je spelerniveau 45 bereikt. Het kost 100 diamanten om te ontgrendelen. Bij het ontgrendelen ontvang je een gratis Panter op Niveau 5. Het park heeft een neerslaginimatie die periodiek afspeelt, wat sfeer toevoegt aan de omgeving.",
 
-  "storyline_title": "Storyline",
-  "storyline_body": "Rainforest Park introduces the character Tyrell Twiga, who guides you through setting up and expanding your jungle region. Follow Tyrell's quests to unlock new buildings, enclosures, and features as you develop the park.",
+  "storyline_title": "Verhaallijn",
+  "storyline_body": "Rainforest Park introduceert het personage Tyrell Twiga, die je begeleidt bij het opzetten en uitbreiden van je jungleregio. Volg Tyrell's quests om nieuwe gebouwen, verblijven en functies te ontgrendelen terwijl je het park ontwikkelt.",
 
-  "bonuses_title": "Regional Bonuses",
-  "bonuses_body": "Animals from the Jungle category placed in Rainforest Park receive a 50% bonus to both XP earned and breeding success chance. This makes the park the ideal location for breeding jungle species.",
+  "bonuses_title": "Regionale bonussen",
+  "bonuses_body": "Dieren uit de Jungle-categorie die in Rainforest Park worden geplaatst, ontvangen een bonus van 50% op zowel verdiende XP als kans op foksucces. Dit maakt het park de ideale locatie voor het fokken van junglesoorten.",
 
-  "enclosure_title": "Mixed-Species Jungle Enclosure",
-  "enclosure_body": "Rainforest Park features a unique enclosure type not found in other regions: the mixed-species jungle enclosure. This enclosure allows multiple different jungle animal species to live together in a single habitat. Each mixed-species enclosure costs 45 diamonds and takes 8 hours to build. Expanding an enclosure costs 48,000 coins.",
+  "enclosure_title": "Gemengde-soorten Jungleverblijf",
+  "enclosure_body": "Rainforest Park heeft een uniek verblijfstype dat in andere regio's niet voorkomt: het gemengde-soorten jungleverblijf. Dit verblijf staat meerdere verschillende jungledierssoorten toe samen te leven in één leefgebied. Elk gemengde-soorten verblijf kost 45 diamanten en duurt 8 uur om te bouwen. Het uitbreiden van een verblijf kost 48.000 munten.",
 
-  "rocks_title": "Clearing Terrain",
-  "rocks_body": "Dense jungle terrain scattered across Rainforest Park must be cleared to expand your usable space. As with other regions, there are multiple debris types with layers to remove, each costing coins and time.",
+  "rocks_title": "Terrein vrijmaken",
+  "rocks_body": "Dicht jungleterrein verspreid over Rainforest Park moet worden vrijgemaakt om je bruikbare ruimte uit te breiden. Net als bij andere regio's zijn er meerdere puintypen met lagen om te verwijderen, die elk munten en tijd kosten.",
 
-  "rocks_col_type": "Debris Type",
-  "rocks_col_layers": "Layers",
-  "rocks_col_cost": "Coin Cost per Layer",
-  "rocks_col_time": "Time per Layer",
+  "rocks_col_type": "Puintype",
+  "rocks_col_layers": "Lagen",
+  "rocks_col_cost": "Muntkosten per laag",
+  "rocks_col_time": "Tijd per laag",
 
-  "buildings_title": "Buildings",
-  "buildings_body": "Rainforest Park has its own set of buildings. Note that the Visitor Center and Breeding Center cost diamonds rather than coins.",
+  "buildings_title": "Gebouwen",
+  "buildings_body": "Rainforest Park heeft zijn eigen set gebouwen. Let op dat het Bezoekerscentrum en het Fokcentrum diamanten kosten in plaats van munten.",
 
-  "buildings_col_building": "Building",
-  "buildings_col_cost": "Cost",
+  "buildings_col_building": "Gebouw",
+  "buildings_col_cost": "Kosten",
 
-  "booth_title": "Booth Upgrades",
-  "booth_body": "The park booth can be upgraded from level 0 to level 10, increasing the maximum coin capacity. Upgrading the booth allows you to collect more coins before the booth fills up.",
+  "booth_title": "Kraampje upgrades",
+  "booth_body": "Het parkkraampje kan worden geüpgraded van niveau 0 naar niveau 10, waardoor de maximale muntcapaciteit toeneemt. Het upgraden van het kraampje stelt je in staat meer munten te verzamelen voordat het kraampje vol is.",
 
-  "booth_col_level": "Booth Level",
-  "booth_col_capacity": "Coin Capacity",
+  "booth_col_level": "Kraampjeniveau",
+  "booth_col_capacity": "Muntcapaciteit",
 
-  "breeding_title": "Breeding Slots",
-  "breeding_body": "Additional breeding slots can be unlocked in Rainforest Park to allow more simultaneous breedings. Slots are unlocked one at a time using diamonds.",
+  "breeding_title": "Fokslots",
+  "breeding_body": "Extra fokslots kunnen worden ontgrendeld in Rainforest Park om meer gelijktijdige fokkingen mogelijk te maken. Slots worden één voor één ontgrendeld met diamanten.",
 
-  "breeding_col_slot": "Breeding Slot",
-  "breeding_col_cost": "Cost to Unlock"
+  "breeding_col_slot": "Fokslot",
+  "breeding_col_cost": "Kosten om te ontgrendelen"
 }

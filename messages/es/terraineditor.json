@@ -1,0 +1,32 @@
+{
+  "title": "Editor de Terreno",
+  "intro": "El Editor de Terreno es una herramienta de edición del suelo que cambia el paisaje general (piso) de las regiones de tu zoo fuera de los recintos. Se desbloquea para comprar a partir del nivel 25 del juego por una tarifa única de 500.000 monedas o 50 diamantes.",
+
+  "overview_title": "Descripción General",
+  "overview_body": "Para ejecutar el editor de terreno, necesitarás Energía, que se puede obtener de la ruleta de premios o a veces del calendario de recompensas de inicio de sesión. También puedes comprar Energía con diamantes. Aunque no hay necesidad inmediata de comprar el editor para progresar en el juego, una misión que presenta la función ofrece una pequeña recompensa. Los jugadores de nivel alto necesitarán esta herramienta para completar la misión del alcalde «Zoo Diseñador de Paisajes» que se desbloquea al nivel 110 del juego.",
+
+  "access_title": "Acceder al Editor de Terreno",
+  "access_body": "Se accede al Editor de Terreno haciendo clic en el icono de pincel ubicado en el lado izquierdo de la barra lateral del inventario. Hay dos funciones que alteran el paisaje: el Editor de Terreno (para el exterior de los recintos) y el Editor de Suelo de Recintos (para el interior de los recintos).",
+
+  "connected_title": "Regiones Conectadas del Zoo Principal",
+  "connected_body": "Los siguientes costes de energía se aplican a los cambios de terreno en el zoo principal y sus regiones conectadas. Un guión (-) significa que ese tipo de terreno no está disponible en esa región.",
+
+  "col_terrain": "Terreno",
+  "col_main_zoo": "Zoo Principal",
+  "col_fir_grove": "Bosque de Abetos",
+  "col_kujali_park": "Kujali Park",
+  "col_oceanside": "Costa Oceánica",
+  "col_polar_park": "Parque Polar",
+  "col_rainforest_park": "Rainforest Park",
+  "col_rescue_center": "Centro de Rescate",
+
+  "disconnected_title": "Regiones del Zoo Desconectadas",
+  "disconnected_body": "El Terrarium, el Aquarium y el Noctarium son regiones desconectadas con sus propios tipos de terreno y costes de energía.",
+
+  "col_terrarium": "Terrarium",
+  "col_aquarium": "Aquarium",
+  "col_noctarium": "Noctarium",
+
+  "visuals_title": "Apariencia del Terreno",
+  "visuals_body": "Cada tipo de terreno está diseñado para coincidir con biomas o temas específicos: la Nieve coincide con los biomas de Hielo, la Arena coincide con los biomas de Sabana, la Piedra coincide con los biomas de Montaña, la Tierra o Suelo proporciona un aspecto natural, las hojas de Otoño coinciden con los biomas de temporada o Llanuras, el Agua crea estanques naturales y el Bosque proporciona un suelo boscoso."
+}

@@ -1,16 +1,16 @@
 {
-  "title": "Video Chests",
-  "intro": "The Video Chest is a bonus type of chest available once a day by watching Video Ads. Like any other chest, multiple Video Chests can be collected over time without opening them.",
+  "title": "Videokisten",
+  "intro": "De Videokist is een bonuskist die eenmaal per dag beschikbaar is door Video-advertenties te bekijken. Net als elke andere kist kunnen meerdere Videokisten in de loop der tijd worden verzameld zonder ze te openen.",
 
-  "content_title": "Contents",
-  "content_body": "The Video Chest contains all the items found in a Normal (coin) chest, including shop animals and legendary (yellow) puzzle pieces.",
+  "content_title": "Inhoud",
+  "content_body": "De Videokist bevat alle items die in een Gewone (munten) kist te vinden zijn, inclusief winkel dieren en legendarische (gele) puzzelstukken.",
 
-  "availability_title": "Availability",
-  "availability_body": "You can find the Video Chest under the standard \"Chest\" tab in the right drop-down menu. It appears there once you enable video ads in the Game Settings by unticking the \"Don't show video offers\" checkbox. Make sure not to tick the option to hide ads while collecting coins from admission booths, as this will deactivate the setting.",
+  "availability_title": "Beschikbaarheid",
+  "availability_body": "Je kunt de Videokist vinden onder het standaard tabblad \"Kist\" in het rechteruitklapmenu. Het verschijnt daar zodra je video-advertenties inschakelt in de Spelinstellingen door het vinkje \"Geen videoadvertenties tonen\" uit te schakelen. Zorg ervoor dat je de optie om advertenties te verbergen bij het verzamelen van munten van entreebalies niet aanvinkt, want dit deactiveert de instelling.",
 
-  "limit_title": "Daily Limit and Storage",
-  "limit_body": "You can receive only one Video Chest every 24 hours. Since video chests are earned rather than purchased, they do not have a storage limit.",
+  "limit_title": "Dagelijkse limiet en opslag",
+  "limit_body": "Je kunt slechts één Videokist ontvangen per 24 uur. Omdat videokisten worden verdiend en niet worden gekocht, hebben ze geen opslaglimiet.",
 
-  "platform_title": "Platform Availability",
-  "platform_body": "Video Chests are available only to users playing the game through the app on Android or iOS. They are not available on devices that do not support ads or on certain platforms such as Steam, Epic Games, or Amazon."
+  "platform_title": "Platformbeschikbaarheid",
+  "platform_body": "Videokisten zijn alleen beschikbaar voor gebruikers die het spel spelen via de app op Android of iOS. Ze zijn niet beschikbaar op apparaten die geen advertenties ondersteunen of op bepaalde platforms zoals Steam, Epic Games of Amazon."
 }

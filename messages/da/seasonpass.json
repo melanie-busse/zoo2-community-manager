@@ -1,31 +1,31 @@
 {
-  "title": "Season Pass",
-  "intro": "The Season Pass is a 10-week (70-day) progression system with three membership tiers: Standard (free), Premium, and VIP (both paid). Players earn XP through daily quizzes and weekly quests to level up through 35 levels and earn exclusive rewards.",
+  "title": "Sæsonpas",
+  "intro": "Sæsonpasset er et 10-ugers (70-dages) progressionssystem med tre medlemskabsniveauer: Standard (gratis), Premium og VIP (begge betalte). Spillere optjener XP via daglige quizzer og ugentlige quests for at rykke op gennem 35 niveauer og optjene eksklusive belønninger.",
 
-  "tiers_title": "Membership Tiers",
-  "tiers_body": "There are three Season Pass tiers. The Standard tier is free and available to all players. Premium and VIP are paid upgrades that unlock additional rewards at each level. VIP includes all Premium rewards plus extra bonuses. You can upgrade your tier at any point during the season and retroactively receive all rewards from completed levels.",
+  "tiers_title": "Medlemskabsniveauer",
+  "tiers_body": "Der er tre Sæsonpas-niveauer. Standard-niveauet er gratis og tilgængeligt for alle spillere. Premium og VIP er betalte opgraderinger, der låser yderligere belønninger op på hvert niveau. VIP inkluderer alle Premium-belønninger plus ekstra bonusser. Du kan opgradere dit niveau til enhver tid under sæsonen og retroaktivt modtage alle belønninger fra fuldførte niveauer.",
 
-  "leveling_title": "Leveling Up",
-  "leveling_body": "The Season Pass has 35 main levels. After level 35, there are unlimited bonus levels — each bonus level requires 1,000 XP and awards one mystery bag per tier. You can also skip a level instantly by spending 10 diamonds.",
+  "leveling_title": "Niveau-op",
+  "leveling_body": "Sæsonpasset har 35 hovedniveauer. Efter niveau 35 er der ubegrænsede bonusniveauer — hvert bonusniveau kræver 1.000 XP og giver én mysteriepakke pr. niveau. Du kan også springe et niveau øjeblikkeligt over ved at bruge 10 diamanter.",
 
-  "xp_title": "Earning XP",
-  "xp_body": "XP is earned primarily through the daily quiz and weekly quests. The daily quiz awards 70 XP per correct answer with 5 questions available each day, for a maximum of 350 XP per day. Weekly quests award approximately 2,000–2,200 XP per week. The total possible XP over a full season is around 46,000; you need approximately 34,000 XP to reach level 35.",
+  "xp_title": "Optjening af XP",
+  "xp_body": "XP optjenes primært via den daglige quiz og ugentlige quests. Den daglige quiz giver 70 XP pr. korrekt svar med 5 spørgsmål tilgængelige hver dag, for maksimalt 350 XP pr. dag. Ugentlige quests giver ca. 2.000–2.200 XP pr. uge. Den samlede mulige XP over en hel sæson er ca. 46.000; du har brug for ca. 34.000 XP for at nå niveau 35.",
 
-  "quiz_title": "Daily Quiz",
-  "quiz_body": "The daily quiz presents 5 questions each day. Each correct answer awards 70 XP, for a maximum of 350 XP per day. Quiz questions are related to Zoo 2: Animal Park game content and general animal knowledge.",
+  "quiz_title": "Daglig quiz",
+  "quiz_body": "Den daglige quiz præsenterer 5 spørgsmål hver dag. Hvert korrekt svar giver 70 XP, for maksimalt 350 XP pr. dag. Quizspørgsmål er relateret til Zoo 2: Animal Park-spilindhold og generel dyreviden.",
 
-  "quests_title": "Weekly Quests",
-  "quests_body": "Weekly quests refresh regularly and award XP upon completion. Completing all available weekly quests earns approximately 2,000–2,200 XP per week. Prioritizing weekly quests is essential to reaching level 35 by the end of the season.",
+  "quests_title": "Ugentlige quests",
+  "quests_body": "Ugentlige quests opdateres regelmæssigt og giver XP ved fuldførelse. Fuldførelse af alle tilgængelige ugentlige quests giver ca. 2.000–2.200 XP pr. uge. Prioritering af ugentlige quests er afgørende for at nå niveau 35 ved sæsonens afslutning.",
 
-  "feathers_title": "Feather Bundles",
-  "feathers_body": "Season Pass currency (feathers) can be purchased in bundles to buy items in the seasonal shop. Feather bundles are available at three sizes. The permanent shop item is an enclosure ground decoration costing 50 feathers.",
-  "feathers_col_bundle": "Bundle",
-  "feathers_col_feathers": "Feathers",
-  "feathers_col_cost": "Cost",
+  "feathers_title": "Fjerbundter",
+  "feathers_body": "Sæsonpas-valuta (fjer) kan købes i bundter for at købe genstande i den sæsonbestemte butik. Fjerbundter er tilgængelige i tre størrelser. Den permanente butiksgenstand er en indhegningsgrundsdekoration, der koster 50 fjer.",
+  "feathers_col_bundle": "Bundt",
+  "feathers_col_feathers": "Fjer",
+  "feathers_col_cost": "Pris",
 
-  "schedule_title": "Season Schedule",
-  "schedule_body": "Each season lasts 10 weeks (70 days). Season 9 ends on December 17, 2026. New seasons begin shortly after the previous one ends.",
+  "schedule_title": "Sæsonplan",
+  "schedule_body": "Hver sæson varer 10 uger (70 dage). Sæson 9 slutter den 17. december 2026. Nye sæsoner begynder kort efter, at den foregående er afsluttet.",
 
   "tips_title": "Tips",
-  "tips_body": "Complete the daily quiz every day — it is the most consistent XP source at up to 350 XP per day. Do not miss weekly quests, as they provide the bulk of XP needed to reach level 35. If you are behind on XP, you can spend 10 diamonds per level to skip ahead. Upgrading to Premium or VIP is worthwhile if you want the exclusive animals and decorations — you can upgrade at any point and receive all missed rewards retroactively."
+  "tips_body": "Fuldfør den daglige quiz hver dag — det er den mest konsistente XP-kilde med op til 350 XP pr. dag. Gå ikke glip af ugentlige quests, da de udgør størstedelen af den XP, der er nødvendig for at nå niveau 35. Hvis du er bagud på XP, kan du bruge 10 diamanter pr. niveau for at springe frem. Opgradering til Premium eller VIP er umagen værd, hvis du ønsker de eksklusive dyr og dekorationer — du kan opgradere til enhver tid og modtage alle mistede belønninger retroaktivt."
 }

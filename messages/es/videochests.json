@@ -1,16 +1,16 @@
 {
-  "title": "Video Chests",
-  "intro": "The Video Chest is a bonus type of chest available once a day by watching Video Ads. Like any other chest, multiple Video Chests can be collected over time without opening them.",
+  "title": "Cofres de Video",
+  "intro": "El Cofre de Video es un tipo de cofre de bonificación disponible una vez al día viendo Anuncios de Video. Como cualquier otro cofre, se pueden recolectar múltiples Cofres de Video con el tiempo sin abrirlos.",
 
-  "content_title": "Contents",
-  "content_body": "The Video Chest contains all the items found in a Normal (coin) chest, including shop animals and legendary (yellow) puzzle pieces.",
+  "content_title": "Contenido",
+  "content_body": "El Cofre de Video contiene todos los artículos que se encuentran en un cofre Normal (de monedas), incluidos los animales de tienda y las piezas de puzle legendarias (amarillas).",
 
-  "availability_title": "Availability",
-  "availability_body": "You can find the Video Chest under the standard \"Chest\" tab in the right drop-down menu. It appears there once you enable video ads in the Game Settings by unticking the \"Don't show video offers\" checkbox. Make sure not to tick the option to hide ads while collecting coins from admission booths, as this will deactivate the setting.",
+  "availability_title": "Disponibilidad",
+  "availability_body": "Puedes encontrar el Cofre de Video en la pestaña estándar de «Cofre» en el menú desplegable de la derecha. Aparece allí una vez que habilitas los anuncios de video en la Configuración del Juego desmarcando la casilla «No mostrar ofertas de video». Asegúrate de no marcar la opción de ocultar anuncios mientras recolectas monedas de las taquillas de admisión, ya que esto desactivará la configuración.",
 
-  "limit_title": "Daily Limit and Storage",
-  "limit_body": "You can receive only one Video Chest every 24 hours. Since video chests are earned rather than purchased, they do not have a storage limit.",
+  "limit_title": "Límite Diario y Almacenamiento",
+  "limit_body": "Solo puedes recibir un Cofre de Video cada 24 horas. Como los cofres de video se ganan en lugar de comprarse, no tienen límite de almacenamiento.",
 
-  "platform_title": "Platform Availability",
-  "platform_body": "Video Chests are available only to users playing the game through the app on Android or iOS. They are not available on devices that do not support ads or on certain platforms such as Steam, Epic Games, or Amazon."
+  "platform_title": "Disponibilidad por Plataforma",
+  "platform_body": "Los Cofres de Video solo están disponibles para usuarios que juegan el juego a través de la app en Android o iOS. No están disponibles en dispositivos que no admiten anuncios ni en ciertas plataformas como Steam, Epic Games o Amazon."
 }

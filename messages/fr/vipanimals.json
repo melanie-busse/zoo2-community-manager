@@ -1,20 +1,20 @@
 {
-  "title": "VIP & Premium Animals",
-  "intro": "Zoo 2 offers two exclusive paid animal tracks: Premium Animals and VIP Animals. Both rotate on a schedule and are only available for limited windows. These animals cannot be obtained through regular gameplay.",
+  "title": "Animaux VIP et Premium",
+  "intro": "Zoo 2 propose deux catégories exclusives d'animaux payants : les Animaux Premium et les Animaux VIP. Les deux suivent un calendrier de rotation et ne sont disponibles que pour des fenêtres limitées. Ces animaux ne peuvent pas être obtenus via le jeu régulier.",
 
-  "premium_title": "Premium Animals",
-  "premium_body": "Premium Animals are exclusive animals available for purchase with diamonds (typically 100+ diamonds). The offer changes every other Tuesday. Starting August 30, 2022, purchasing a Premium Animal for the first time rewarded a Lion Mascot NPC. This was replaced by a Shiba Inu NPC on March 12, 2024, a Penguin Mascot NPC on March 27, 2025, and a Shiba Inu (Black & Tan) NPC in March 2026.",
+  "premium_title": "Animaux Premium",
+  "premium_body": "Les Animaux Premium sont des animaux exclusifs disponibles à l'achat avec des diamants (généralement 100 diamants ou plus). L'offre change chaque deuxième mardi. À partir du 30 août 2022, l'achat d'un Animal Premium pour la première fois récompensait d'un PNJ Mascotte Lion. Celui-ci a été remplacé par un PNJ Shiba Inu le 12 mars 2024, un PNJ Mascotte Pingouin le 27 mars 2025 et un PNJ Shiba Inu (Noir & Feu) en mars 2026.",
 
-  "vip_title": "VIP Animals",
-  "vip_body": "VIP Animals are exclusive animals included with most diamond packages of 1,000 diamonds or more. The VIP Animal offer rotates every 8 weeks on a Tuesday. Like Premium Animals, each VIP Animal is only available for its rotation window.",
+  "vip_title": "Animaux VIP",
+  "vip_body": "Les Animaux VIP sont des animaux exclusifs inclus avec la plupart des lots de diamants de 1 000 diamants ou plus. L'offre d'Animaux VIP change toutes les 8 semaines un mardi. Comme les Animaux Premium, chaque Animal VIP n'est disponible que pendant sa fenêtre de rotation.",
 
-  "premium_history_title": "Premium Animal History",
-  "premium_history_body": "The table below lists all Premium Animals offered, in order from most recent to earliest.",
+  "premium_history_title": "Historique des Animaux Premium",
+  "premium_history_body": "Le tableau ci-dessous liste tous les Animaux Premium proposés, du plus récent au plus ancien.",
 
-  "vip_history_title": "VIP Animal History",
-  "vip_history_body": "The table below lists all VIP Animals offered, in order from most recent to earliest.",
+  "vip_history_title": "Historique des Animaux VIP",
+  "vip_history_body": "Le tableau ci-dessous liste tous les Animaux VIP proposés, du plus récent au plus ancien.",
 
   "col_date": "Date",
   "col_animal": "Animal",
-  "col_notes": "Notes"
+  "col_notes": "Remarques"
 }

@@ -1,0 +1,26 @@
+{
+  "title": "Animaux scintillants",
+  "intro": "Une reproduction réussie de n'importe quelle espèce ou variante peut aléatoirement donner lieu à un animal spécial et scintillant de la même espèce. Les animaux scintillants brillent d'un éclat violet pailleté en raison de leur excellente santé et contiennent une popularité élevée. Les scintillants ne peuvent être obtenus que par la reproduction ordinaire et sont extrêmement rares.",
+
+  "overview_title": "Aperçu",
+  "overview_body": "Chaque animal scintillant naît au niveau 40 indépendamment du niveau de ses parents. Les scintillants sont les seuls animaux qui peuvent atteindre un niveau aussi élevé dans votre zoo. Tous les animaux non scintillants atteignent leur niveau maximum réalisable au niveau 20.",
+
+  "streak_title": "Série de reproductions",
+  "streak_body": "La chance d'obtenir un animal scintillant est déterminée par votre série de reproductions — le nombre de succès de reproduction consécutifs par espèce. Dès qu'une reproduction échoue, la série pour cette espèce repart à zéro. Chaque espèce a sa propre série de reproductions affichée en bas à droite de la fenêtre de dialogue de reproduction. Que le succès soit un individu, des jumeaux ou des triplés, la session compte comme une seule tentative.",
+
+  "chances_title": "Chances d'obtenir un scintillant",
+  "chances_body": "Plus le nombre de reproductions réussies consécutives pour une espèce est élevé, plus vos chances d'obtenir un animal scintillant lors de la prochaine reproduction sont grandes. Les probabilités commencent à 0,1% avec une série de reproductions de zéro et augmentent jusqu'à un maximum de 1,1% avec une série de reproductions de 10 ou plus. Chaque bébé individuel au sein d'un set de jumeaux ou triplés a sa propre chance unique de naître scintillant.",
+
+  "col_streak": "Série de reproductions",
+  "col_odds": "Probabilités de scintillant",
+  "col_chance": "Chance de scintillant",
+
+  "breeding_with_title": "Reproduire avec un animal scintillant",
+  "breeding_with_body": "Une fois qu'un animal scintillant grandit, il peut être utilisé pour reproduire des bébés de niveau 20, vous donnant la possibilité de sauter des niveaux. Indépendamment du niveau ou du scintillement de l'autre parent, les bébés devraient produire un niveau 20 ordinaire avec une chance ultra-rare d'obtenir un autre scintillant de niveau 40. Les scintillants remplissent également instantanément tous les objectifs de collection pour la même espèce et couleur car ils naissent au niveau 40.",
+
+  "donating_title": "Donner un animal scintillant",
+  "donating_body": "Lors du don d'un animal scintillant de niveau 40 à un concours de club, l'animal donne les mêmes points que son niveau : 400 points de club tels qu'affichés sur l'écran de don des membres. C'est l'équivalent de donner deux animaux de niveau 20.",
+
+  "glow_title": "Désactiver l'éclat scintillant",
+  "glow_body": "Si les effets visuels scintillants ne sont pas à votre goût, vous pouvez désactiver la fonctionnalité scintillante dans les paramètres du jeu. Cliquez sur l'icône engrenage en bas à droite de votre écran de jeu, cliquez sur le deuxième onglet des paramètres, faites défiler vers le bas et cochez \"Afficher les animaux scintillants comme des animaux normaux\". Cela supprime tout effet scintillant de vos animaux de niveau 40."
+}

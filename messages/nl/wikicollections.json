@@ -1,35 +1,35 @@
 {
-  "title": "Collections",
-  "intro": "Collections are a set of achievements that reward you for placing specific combinations of animals and items in your zoo simultaneously. Introduced on October 16, 2019, Collections are accessed through the book icon in the Visitor Center, which unlocks at player level 17.",
+  "title": "Collecties",
+  "intro": "Collecties zijn een reeks prestaties die je belonen voor het gelijktijdig plaatsen van specifieke combinaties van dieren en items in je dierentuin. Geïntroduceerd op 16 oktober 2019 zijn Collecties toegankelijk via het boekpictogram in het Bezoekerscentrum, dat vrijkomt op spelerniveau 17.",
 
-  "overview_title": "How Collections Work",
-  "overview_body": "Each collection requires you to have a specific set of animals (and sometimes decorations or buildings) placed in your zoo at the same time. The required animals must meet minimum level requirements and, in some cases, must be a specific coat color. All required items must be present in your zoo simultaneously — it is not enough to have owned them previously.",
+  "overview_title": "Hoe Collecties werken",
+  "overview_body": "Elke collectie vereist dat je op hetzelfde moment een specifieke set dieren (en soms decoraties of gebouwen) in je dierentuin hebt geplaatst. De vereiste dieren moeten voldoen aan minimale niveauvereisten en in sommige gevallen een specifieke vachtkleur hebben. Alle vereiste items moeten tegelijkertijd aanwezig zijn in je dierentuin — het is niet voldoende om ze eerder te hebben bezeten.",
 
-  "tiers_title": "Collection Tiers",
-  "tiers_body": "Collections are organized into three tiers based on difficulty and reward value. Higher tiers require rarer animals and more combinations, but provide greater rewards.",
+  "tiers_title": "Collectieniveaus",
+  "tiers_body": "Collecties zijn georganiseerd in drie niveaus op basis van moeilijkheidsgraad en beloningswaarde. Hogere niveaus vereisen zeldzamere dieren en meer combinaties, maar bieden grotere beloningen.",
 
-  "tier_one_title": "1-Star Collections",
-  "tier_one_body": "1-star collections are the most accessible tier. They typically require common animals at lower levels. Rewards include coins, XP, and occasionally diamonds.",
+  "tier_one_title": "1-Ster Collecties",
+  "tier_one_body": "1-ster collecties zijn het meest toegankelijke niveau. Ze vereisen doorgaans gewone dieren op lagere niveaus. Beloningen omvatten munten, XP en af en toe diamanten.",
 
-  "tier_two_title": "2-Star Collections",
-  "tier_two_body": "2-star collections require more effort and often include animals from secondary regions or specific coat colors. Rewards are more valuable and may include diamonds and special decorations.",
+  "tier_two_title": "2-Ster Collecties",
+  "tier_two_body": "2-ster collecties vereisen meer inspanning en bevatten vaak dieren uit secundaire regio's of specifieke vachtkleuren. Beloningen zijn waardevoller en kunnen diamanten en speciale decoraties omvatten.",
 
-  "tier_three_title": "3-Star Collections",
-  "tier_three_body": "3-star collections are the most challenging and require rare or exclusive animals, sometimes obtainable only through club competitions or special events. Rewards include significant diamonds, exclusive decorations, and other premium items.",
+  "tier_three_title": "3-Ster Collecties",
+  "tier_three_body": "3-ster collecties zijn de meest uitdagende en vereisen zeldzame of exclusieve dieren, soms alleen verkrijgbaar via clubcompetities of speciale evenementen. Beloningen omvatten aanzienlijke diamanten, exclusieve decoraties en andere premium items.",
 
-  "requirements_title": "Collection Requirements",
-  "requirements_body": "When viewing a collection, each required animal or item shows its minimum level and any coat color requirement. If a specific coat color is listed, you must have that exact color placed in your zoo. Some collections require animals that can only be won through club competition, such as popularity statues or exclusive color variants.",
+  "requirements_title": "Collectievereisten",
+  "requirements_body": "Bij het bekijken van een collectie toont elk vereist dier of item zijn minimumniveau en eventuele vachtkleurvereisten. Als een specifieke vachtkleur is vermeld, moet je die exacte kleur in je dierentuin hebben geplaatst. Sommige collecties vereisen dieren die alleen gewonnen kunnen worden via clubcompetitie, zoals populariteitsstandbeelden of exclusieve kleurvarianten.",
 
-  "regions_title": "Collections by Region",
-  "regions_body": "Collections are organized by region in the collection book. Regions include: Main Zoo, Fir Grove, Kujali Park, Terrarium, Aquarium, Noctarium, and Aviary. Each region has its own set of collections to complete.",
+  "regions_title": "Collecties per regio",
+  "regions_body": "Collecties zijn per regio georganiseerd in het collectieboek. Regio's omvatten: Hoofddierentuin, Dennenwoud, Kujali Park, Terrarium, Aquarium, Noctarium en Volière. Elke regio heeft zijn eigen set collecties om te voltooien.",
 
-  "tips_title": "Tips for Completing Collections",
-  "tips_retroactive_title": "Already-Placed Animals Count",
-  "tips_retroactive_body": "Animals already in your zoo count toward collection requirements as long as they meet the level and coat color criteria. You do not need to re-place animals you already own.",
-  "tips_planning_title": "Plan Ahead for Rare Animals",
-  "tips_planning_body": "Some collection animals are only available through seasonal events, club competition rewards, or special chests. Check the collection requirements early so you can plan to acquire rare animals before they become unavailable.",
-  "tips_level_title": "Level Requirements",
-  "tips_level_body": "The level shown on a collection requirement is the minimum level needed. If your animal is already above the minimum level, it qualifies. Focus on leveling up animals needed for multiple collections simultaneously.",
-  "tips_club_title": "Club Competition Animals",
-  "tips_club_body": "Some 3-star collections require animals that can only be obtained by winning club competitions. These are often exclusive color variants awarded to the top-ranked clubs. Participating actively in weekly contests is the best way to earn these animals."
+  "tips_title": "Tips voor het voltooien van Collecties",
+  "tips_retroactive_title": "Al geplaatste dieren tellen mee",
+  "tips_retroactive_body": "Dieren die al in je dierentuin staan, tellen mee voor collectievereisten zolang ze voldoen aan de niveau- en vachtkleurcriteria. Je hoeft dieren die je al bezit niet opnieuw te plaatsen.",
+  "tips_planning_title": "Plan vooruit voor zeldzame dieren",
+  "tips_planning_body": "Sommige collectiedieren zijn alleen beschikbaar via seizoenszeven, clubcompetitiebeloningen of speciale kisten. Controleer de collectievereisten vroeg zodat je kunt plannen om zeldzame dieren te verwerven voordat ze niet meer beschikbaar zijn.",
+  "tips_level_title": "Niveauvereisten",
+  "tips_level_body": "Het niveau dat wordt weergegeven op een collectievereiste is het minimumniveau dat nodig is. Als je dier al boven het minimumniveau zit, kwalificeert het. Richt je op het tegelijkertijd omhoog fokken van dieren die nodig zijn voor meerdere collecties.",
+  "tips_club_title": "Clubcompetitiedieren",
+  "tips_club_body": "Sommige 3-ster collecties vereisen dieren die alleen kunnen worden verkregen door clubcompetities te winnen. Dit zijn vaak exclusieve kleurvarianten die worden toegekend aan de best gerangschikte clubs. Actief deelnemen aan wekelijkse wedstrijden is de beste manier om deze dieren te verdienen."
 }

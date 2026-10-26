@@ -1,21 +1,21 @@
 {
-  "title": "Retro Chests",
-  "intro": "Retro Chests are diamond chests costing 39 diamonds each. They contain puzzle pieces from Friendship, Normal, and Epic Chests (excluding those chests' exclusive animals) and have their own large pool of exclusive animals.",
+  "title": "Retro-kister",
+  "intro": "Retro-kister er diamantkister, der koster 39 diamanter stykket. De indeholder puzzlebrikker fra Venskabs-, Normale og Episke kister (undtagen disse kisters eksklusive dyr) og har deres eget store udvalg af eksklusive dyr.",
 
-  "obtaining_title": "Obtaining Retro Chests",
-  "obtaining_body": "Retro Chests can be obtained from several sources: quests, leveling up, monthly login rewards, the Zoo Academy, and the Events Shop.",
+  "obtaining_title": "Anskaffelse af Retro-kister",
+  "obtaining_body": "Retro-kister kan fås fra flere kilder: quests, niveau-op, månedlige login-belønninger, Zoo Academy og Eventbutikken.",
 
-  "contents_title": "Chest Contents",
-  "contents_body": "Retro Chests contain puzzle pieces from Friendship, Normal, and Epic Chests, but do not include the exclusive animals from those chests. Every Retro Chest guarantees at least one exclusive puzzle piece.",
+  "contents_title": "Kisteindhold",
+  "contents_body": "Retro-kister indeholder puzzlebrikker fra Venskabs-, Normale og Episke kister, men inkluderer ikke de eksklusive dyr fra disse kister. Hver Retro-kiste garanterer mindst én eksklusiv puzzlebrik.",
 
-  "drop_bonus_title": "Drop Bonus",
-  "drop_bonus_body": "Retro Chests feature a rotating drop bonus that boosts the chance of receiving a specific exclusive animal's puzzle pieces. The boosted animal changes every 4 weeks, rotating through the exclusive animal list. This system has been active since November 24, 2022.",
+  "drop_bonus_title": "Dropbonus",
+  "drop_bonus_body": "Retro-kister har en roterende dropbonus, der øger chancen for at modtage puzzlebrikker til et bestemt eksklusivt dyrs. Det boostede dyr skifter hvert 4. uge og roterer gennem listen over eksklusive dyr. Dette system har været aktivt siden den 24. november 2022.",
 
-  "animals_title": "Exclusive Retro Chest Animals",
-  "animals_body": "The following animals are exclusive to Retro Chests and cannot be obtained through any other chest type:",
+  "animals_title": "Eksklusive Retro-kistdyr",
+  "animals_body": "Følgende dyr er eksklusive for Retro-kister og kan ikke fås fra nogen anden kistetype:",
 
-  "animals_col_animal": "Animal",
+  "animals_col_animal": "Dyr",
 
   "tips_title": "Tips",
-  "tips_body": "Retro Chests rotate their drop bonus every 4 weeks — check the current boosted animal before opening chests if you are targeting a specific exclusive. At 39 diamonds, Retro Chests are more affordable than Legendary Chests and offer a wide selection of exclusive animals, making them a good option for players focused on completing their collections."
+  "tips_body": "Retro-kister roterer deres dropbonus hvert 4. uge — tjek det aktuelle boostede dyr, inden du åbner kister, hvis du sigter mod et specifikt eksklusivt dyr. Til 39 diamanter er Retro-kister mere overkommelige end Legendariske kister og tilbyder et bredt udvalg af eksklusive dyr, hvilket gør dem til et godt valg for spillere fokuseret på at fuldende deres samlinger."
 }

@@ -1,42 +1,42 @@
 {
-  "title": "Rainforest Park",
-  "intro": "Rainforest Park is a jungle-themed secondary region that unlocks at player level 45 for 100 diamonds. Released on November 25, 2025, the park is set in a lush rainforest environment and features a unique mixed-species jungle enclosure type exclusive to this region. Animals from the Jungle category receive bonus XP and breeding boosts.",
+  "title": "Regnskovpark",
+  "intro": "Regnskovpark er en jungle-temabaseret sekundær region, der låses op på spillerniveau 45 for 100 diamanter. Udgivet den 25. november 2025, er parken placeret i et frodigt regnskovsmiljø og har en unik blandet-art-junglertype eksklusiv for denne region. Dyr fra Junglekategorien modtager bonus-XP og avlsbooster.",
 
-  "unlocking_title": "Unlocking Rainforest Park",
-  "unlocking_body": "Rainforest Park becomes available when you reach player level 45. It costs 100 diamonds to unlock. Upon unlocking, you receive a free Level 5 Panther. The park features a rainfall animation that plays periodically, adding atmosphere to the environment.",
+  "unlocking_title": "Låsning af Regnskovpark op",
+  "unlocking_body": "Regnskovpark bliver tilgængelig, når du når spillerniveau 45. Det koster 100 diamanter at låse op. Ved oplåsning modtager du en gratis panter på niveau 5. Parken har en regnfaldanimation, der afspilles periodisk, hvilket tilføjer atmosfære til miljøet.",
 
   "storyline_title": "Storyline",
-  "storyline_body": "Rainforest Park introduces the character Tyrell Twiga, who guides you through setting up and expanding your jungle region. Follow Tyrell's quests to unlock new buildings, enclosures, and features as you develop the park.",
+  "storyline_body": "Regnskovpark introducerer karakteren Tyrell Twiga, der guider dig gennem opsætning og udvidelse af din jungleregion. Følg Tyrells quests for at låse nye bygninger, indhegninger og funktioner op, mens du udvikler parken.",
 
-  "bonuses_title": "Regional Bonuses",
-  "bonuses_body": "Animals from the Jungle category placed in Rainforest Park receive a 50% bonus to both XP earned and breeding success chance. This makes the park the ideal location for breeding jungle species.",
+  "bonuses_title": "Regionsbonusser",
+  "bonuses_body": "Dyr fra Junglekategorien placeret i Regnskovpark modtager en 50% bonus til både optjent XP og avlssucceschance. Dette gør parken til det ideelle sted for avl af junglearter.",
 
-  "enclosure_title": "Mixed-Species Jungle Enclosure",
-  "enclosure_body": "Rainforest Park features a unique enclosure type not found in other regions: the mixed-species jungle enclosure. This enclosure allows multiple different jungle animal species to live together in a single habitat. Each mixed-species enclosure costs 45 diamonds and takes 8 hours to build. Expanding an enclosure costs 48,000 coins.",
+  "enclosure_title": "Blandet-art-jungleindhegning",
+  "enclosure_body": "Regnskovpark har en unik indhegningstype, der ikke findes i andre regioner: blandet-art-jungleindhegningen. Denne indhegning giver mulighed for, at flere forskellige jungleart-dyrearter kan leve sammen i ét habitat. Hver blandet-art-indhegning koster 45 diamanter og tager 8 timer at bygge. Udvidelse af en indhegning koster 48.000 mønter.",
 
-  "rocks_title": "Clearing Terrain",
-  "rocks_body": "Dense jungle terrain scattered across Rainforest Park must be cleared to expand your usable space. As with other regions, there are multiple debris types with layers to remove, each costing coins and time.",
+  "rocks_title": "Rydning af terræn",
+  "rocks_body": "Tæt jungleterræn spredt over Regnskovpark skal ryddes for at udvide din brugbare plads. Som med andre regioner er der flere affaldstyper med lag at fjerne, der hver koster mønter og tid.",
 
-  "rocks_col_type": "Debris Type",
-  "rocks_col_layers": "Layers",
-  "rocks_col_cost": "Coin Cost per Layer",
-  "rocks_col_time": "Time per Layer",
+  "rocks_col_type": "Affaldstype",
+  "rocks_col_layers": "Lag",
+  "rocks_col_cost": "Møntpris pr. lag",
+  "rocks_col_time": "Tid pr. lag",
 
-  "buildings_title": "Buildings",
-  "buildings_body": "Rainforest Park has its own set of buildings. Note that the Visitor Center and Breeding Center cost diamonds rather than coins.",
+  "buildings_title": "Bygninger",
+  "buildings_body": "Regnskovpark har sit eget sæt bygninger. Bemærk, at Besøgscentret og Avlscentret koster diamanter frem for mønter.",
 
-  "buildings_col_building": "Building",
-  "buildings_col_cost": "Cost",
+  "buildings_col_building": "Bygning",
+  "buildings_col_cost": "Pris",
 
-  "booth_title": "Booth Upgrades",
-  "booth_body": "The park booth can be upgraded from level 0 to level 10, increasing the maximum coin capacity. Upgrading the booth allows you to collect more coins before the booth fills up.",
+  "booth_title": "Bodopgraderinger",
+  "booth_body": "Parkboden kan opgraderes fra niveau 0 til niveau 10, hvilket øger den maksimale møntkapacitet. Opgradering af boden giver dig mulighed for at samle flere mønter, inden boden fyldes op.",
 
-  "booth_col_level": "Booth Level",
-  "booth_col_capacity": "Coin Capacity",
+  "booth_col_level": "Bodniveau",
+  "booth_col_capacity": "Møntkapacitet",
 
-  "breeding_title": "Breeding Slots",
-  "breeding_body": "Additional breeding slots can be unlocked in Rainforest Park to allow more simultaneous breedings. Slots are unlocked one at a time using diamonds.",
+  "breeding_title": "Avlspladser",
+  "breeding_body": "Yderligere avlspladser kan låses op i Regnskovpark for at muliggøre flere samtidige avl. Pladser låses op én ad gangen med diamanter.",
 
-  "breeding_col_slot": "Breeding Slot",
-  "breeding_col_cost": "Cost to Unlock"
+  "breeding_col_slot": "Avlsplads",
+  "breeding_col_cost": "Pris for oplåsning"
 }
