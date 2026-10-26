@@ -23,6 +23,7 @@ const namespaces = [
   "shop",
   "levelup",
   "mayorquest",
+  "contestfaq",
 ] as const;
 
 export default getRequestConfig(async ({ requestLocale }) => {

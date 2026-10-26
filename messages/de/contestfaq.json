@@ -1,0 +1,36 @@
+{
+  "title": "Wettbewerbs-FAQ",
+  "intro": "Wöchentliche Klub-Wettbewerbe wurden am 29. Mai 2019 eingeführt und ermöglichen es Klubs, um exklusive Statuendekorationen zu konkurrieren. Spezialfell-Wettbewerbe wurden im Februar 2021 als zweiwöchentliche Wettbewerbe eingeführt und wechselten im Mai 2026 zu wöchentlichen Wettbewerben. Eine neue Wettbewerbswoche beginnt jeden Mittwoch gegen 10:25 Uhr MESZ.",
+
+  "description_title": "Beschreibung",
+  "description_p1": "Jeden Mittwoch generiert das Spiel eine neue Auswahl von 4 Wettbewerbsoptionen: drei Statuen-Wettbewerbe und einen Spezialfell-Wettbewerb.",
+  "description_p2": "Präsidenten und Minister können jederzeit in der Woche einen Wettbewerb öffnen. Eine Gilde kann pro Woche nur an einem Wettbewerb teilnehmen. Sobald ein Wettbewerb ausgewählt wurde, kann die Aktion nicht rückgängig gemacht werden – wählt also sorgfältig aus.",
+  "description_p3": "Klubmitglieder können am gewählten Wettbewerb teilnehmen, indem sie im Klubhaus den Wettbewerbs-Tab öffnen. Tippe auf \"Karten spenden\", um den Spendenbildschirm zu öffnen. Mitglieder können ihre entsprechenden Tierkarten aus dem Inventar spenden (falls vorhanden) oder Stufe-1-Tierkarten gegen Münzen oder Diamanten (je nach Tier) im Spendenbildschirm kaufen. Tierkarten können durch Züchten oder den Kauf weiterer Tiere erhalten werden. Es gibt kein Spendenlimit.",
+  "description_p4": "Klubmitglieder können Tiere jeder Stufe, jedes Alters, Geschlechts oder jeder Farbe spenden, solange sie zur aktuellen Wettbewerbsart passen. Farbe und Geschlecht haben keinen Einfluss auf die Punkte.",
+
+  "new_members_title": "Neue Mitglieder",
+  "new_members_body": "Seit November 2023 müssen neue Klubmitglieder sieben Tage warten, bevor sie an Sammelaktionen und Wettbewerben spenden dürfen. Sie können jedoch sofort von aktivierten Klub-Sammelaktionen und Wettbewerbsbelohnungen profitieren. Diese Maßnahme wurde von der Community stark gefordert, um bestimmte Arten von Betrug zu verhindern.",
+
+  "donation_title": "Spendenpunkte",
+  "donation_intro": "Das Spenden von Tierkarten ergibt zwei Arten von Punkten: Wettbewerbspunkte und Mitgliedschafts-Erfahrungspunkte.",
+
+  "contest_points_title": "Wettbewerbspunkte",
+  "contest_points_body": "Wettbewerbspunkte tragen zum Gesamt-Klubpunktestand für das Endergebnis des wöchentlichen Wettbewerbs bei. Nur die Tierstufe zählt – Farbe und Reifegrad des Tieres haben keinen Einfluss auf die Berechnung der Wettbewerbspunkte. Stufe 1 (ob gekauft oder aus dem Inventar) ist 10 Punkte für den wöchentlichen Wettbewerb wert.",
+
+  "member_points_title": "Mitgliedschafts-Erfahrungspunkte",
+  "member_points_body": "Mitgliedschaftspunkte werden zu den persönlichen Klub-Mitgliedschaftsrang-Punkten des Spielers addiert, die Gegenstände im Klub-Shop freischalten und dem Mitglied einen neuen Rangtitel verleihen. Die Mitgliedschaftspunkte entsprechen der Hälfte der Beliebtheitspunkte des gespendeten Tieres (abgerundet auf die nächste ganze Zahl). Babys sind doppelt so beliebt wie Erwachsene – Babys geben daher doppelt so viele persönliche Mitgliedschaftspunkte wie Erwachsene.",
+
+  "rank_bonus_title": "Rang-Bonusmultiplikator",
+  "rank_bonus_intro": "Es gibt einen Bonusmultiplikator abhängig vom Mitgliederrang bei den Spenden zum Wettbewerb in der jeweiligen Woche. Dieser Rang wird durch den gesamten wöchentlichen Beitrag jedes Spielers bestimmt. Der Gesamt-Wochenpunktestand der Gilde berechnet sich, indem die Punkte jedes Spielers mit ihrem Rangbonus multipliziert werden und diese Ergebnisse dann addiert werden.",
+
+  "rewards_title": "Belohnungen",
+  "rewards_body": "Jeder Klub, der an einem wöchentlichen Wettbewerb teilnimmt, erhält Belohnungen basierend auf seiner endgültigen Rangposition. Der Klub selbst erhält rangbasierte Erfahrungspunkte, und jedes Klubmitglied erhält Puzzleteile unabhängig von seiner Teilnahme.",
+  "statue_rewards_title": "Statuen-Wettbewerb: Belohnungen",
+  "special_coat_rewards_title": "Spezialfell-Wettbewerb: Belohnungen",
+
+  "col_rank": "Gildenrang",
+  "col_multiplier": "Multiplikator",
+  "col_guild_exp": "Gilden-EP",
+  "col_puzzle_pct": "Puzzleteile",
+  "col_animal_purchases": "Tierkäufe"
+}

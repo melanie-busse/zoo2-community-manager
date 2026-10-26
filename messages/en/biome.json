@@ -62,5 +62,6 @@
     "water_hole": "Water Hole",
     "shelter_level": "Shelter Level {level}",
     "games": "Enrichment Items"
-  }
+  },
+  "description": "In Zoo 2 there are two, very important, key aspects to understand about Enclosure size;\n\nThe first, is Units, (Enclosure Units are fixed groups of 16 tiles)\nThe second, is Tiles, (this is the smallest amount of space an item might occupy in game)\nA new enclosure is always of a size of 9 units (3 units x 3 units = 144 tiles)\n\nEach enclosure expansion is ONE unit (16 tiles) and costs the equivalent of the new enclosure purchase price. The expansions can be removed/sold for a few coins.\nTapping on the expansion icon of an occupied enclosure, will give you the number of expansions needed for a new animal (if the maximum housing quantity has not been reached)."
 }

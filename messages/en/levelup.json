@@ -13,5 +13,6 @@
   "enclosure_trough": "Trough",
   "enclosure_waterhole": "Watering Hole",
   "enclosure_shelter": "Shelter",
-  "col_xp_to_next": "XP to Level Up"
+  "col_xp_to_next": "XP to Level Up",
+  "description": "Your player level increases thanks to experience points (stars). Completing quests and achievements, taking care of animals, collecting trash, watering plants, breeding, helping friends, and placing new items all give experience points.\n\nRewards\nAs players increase their player level, they receive various rewards. These rewards may include coins or diamond currency, chests, decorations, or even animals. Often, the higher the player level, the better the reward."
 }

@@ -7,5 +7,6 @@
   "col_quest_name": "Aufgabenname",
   "objectives_title": "Aufgaben",
   "section_objectives": "Aufgaben",
-  "section_rewards": "Belohnungen"
+  "section_rewards": "Belohnungen",
+  "description": "Neben dem allgemeinen Zoo-Level des Spielers vergibt der Bürgermeister besondere Titel, wenn du verschiedene Erfolge in deinem Zoo erzielst!"
 }

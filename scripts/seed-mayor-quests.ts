@@ -204,24 +204,22 @@ async function main() {
       where: { sortOrder: q.sortOrder },
       create: {
         sortOrder: q.sortOrder,
-        titleName: q.titleName,
+        identifier: q.questName,
         level: q.level,
         coinReward: q.coinReward,
         diamondReward: 0,
         ticketReward: 0,
         energyReward: 0,
         xpReward: q.xpReward,
-        questName: q.questName,
         objectives: {
           create: q.objectives.map((text, i) => ({ sortOrder: i + 1, text })),
         },
       },
       update: {
-        titleName: q.titleName,
+        identifier: q.questName,
         level: q.level,
         coinReward: q.coinReward,
         xpReward: q.xpReward,
-        questName: q.questName,
       },
     });
   }

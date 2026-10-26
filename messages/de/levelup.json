@@ -13,5 +13,6 @@
   "enclosure_trough": "Trog",
   "enclosure_waterhole": "Wasserstelle",
   "enclosure_shelter": "Unterstand",
-  "col_xp_to_next": "XP bis Aufstieg"
+  "col_xp_to_next": "XP bis Aufstieg",
+  "description": "Die Spielerstufe steigt dank Erfahrungspunkten (XP). Das Abschließen von Quests und Erfolgen, die Pflege von Tieren, das Einsammeln von Müll, das Gießen von Pflanzen, das Züchten, das Helfen von Freunden und das Platzieren neuer Gegenstände bringen Erfahrungspunkte ein. Wenn Spieler ihre Spielerstufe erhöhen, erhalten sie verschiedene Belohnungen wie z.B. Münzen oder Diamanten, Truhen, Dekorationen oder sogar Tiere gehören."
 }

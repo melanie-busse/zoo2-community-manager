@@ -14,6 +14,7 @@ vi.mock("@/components/ui/badges/GameBadge", () => ({
 const baseQuest: MayorQuestItem = {
   id: 1,
   sortOrder: 1,
+  identifier: "lofty_aspirations",
   titleName: "Small Town Zoo",
   level: 8,
   coinReward: 5000,
@@ -21,7 +22,6 @@ const baseQuest: MayorQuestItem = {
   ticketReward: 0,
   energyReward: 0,
   xpReward: 1500,
-  questName: "Lofty Aspirations",
   dialogText: null,
   objectives: [],
   rewards: [],

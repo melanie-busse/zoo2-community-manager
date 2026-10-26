@@ -120,6 +120,11 @@ export const navConfig: NavItem[] = [
     requiresAuth: false,
     subMenu: [
       {
+        labelKey: "club_faq",
+        href: "/contests/faq",
+        requiresAuth: false,
+      },
+      {
         labelKey: "club_contests",
         href: "/contests",
         requiresAuth: false,

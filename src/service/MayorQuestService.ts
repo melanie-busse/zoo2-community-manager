@@ -4,6 +4,7 @@ import { prisma } from "@/lib/prisma";
 export type MayorQuestItem = {
   id: number;
   sortOrder: number;
+  identifier: string;
   titleName: string;
   level: number;
   coinReward: number;
@@ -11,8 +12,8 @@ export type MayorQuestItem = {
   ticketReward: number;
   energyReward: number;
   xpReward: number;
-  questName: string;
   dialogText: string | null;
+  tip: string | null;
   objectives: { id: number; sortOrder: number; text: string; imagePath: string | null }[];
   rewards: { id: number; sortOrder: number; imagePath: string; amount: number }[];
 };
@@ -35,15 +36,16 @@ export async function getAllMayorQuests(locale: string): Promise<MayorQuestItem[
     return {
       id: q.id,
       sortOrder: q.sortOrder,
-      titleName: text?.titleName ?? q.titleName,
+      identifier: q.identifier,
+      titleName: text?.titleName ?? "",
       level: q.level,
       coinReward: q.coinReward,
       diamondReward: q.diamondReward,
       ticketReward: q.ticketReward,
       energyReward: q.energyReward,
       xpReward: q.xpReward,
-      questName: text?.questName ?? q.questName,
       dialogText: text?.dialogText ?? null,
+      tip: text?.tip ?? null,
       objectives: q.objectives.map((o) => ({
         id: o.id,
         sortOrder: o.sortOrder,

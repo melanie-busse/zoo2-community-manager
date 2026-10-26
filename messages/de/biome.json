@@ -62,5 +62,6 @@
     "water_hole": "Wasserstelle",
     "shelter_level": "Stalllevel {level}",
     "games": "Spielgeräte"
-  }
+  },
+  "description": "Im Zoo erwarten dich viele unterschiedliche Gehegetypen. Zusätzlich kannst du ganz besondere Areale für spezielle Tierarten freischalten. Um deinen Tieren die bestmöglichen Lebensbedingungen zu bieten, stehen dir eine breite Auswahl an Möglichkeiten zur Verfügung\nJede Tierart benötigt ein Gehege, das ihrer natürlichen Umgebung entspricht. Allen gemeinsam ist, dass jede Gehegeart ähnliche, zum Gehege passende Einrichtungsgegenstände aufnehmen kann. Das sind Tröge, Wasserstellen, Ställe, Spielgelegenheiten, und Dekorationen."
 }
