@@ -1,0 +1,29 @@
+{
+  "title": "Glücksrad",
+  "intro": "Das Glücksrad ist ein besonderes Gebäude, das dir ermöglicht, ein Rad zu drehen und verschiedene Spielbelohnungen zu gewinnen. Es wird ab Spielerlevel 7,5 freigeschaltet und kann mehrfach gedreht werden – jede Drehung fügt Zeit zum Zurückset-Timer hinzu.",
+
+  "how_it_works_title": "So funktioniert es",
+  "how_it_works_body": "Jede Drehung des Glücksrads fügt dem Zurückset-Timer 2 Minuten hinzu, bis zu einem Maximum von 24 Stunden. Wenn der Timer abgelaufen ist, setzt sich das Rad zurück und du kannst es erneut kostenlos drehen. Du kannst den Timer auch vorzeitig zurücksetzen, indem du Diamanten ausgibst – die Minestkosten betragen 10 Diamanten, wenn noch höchstens 59 Minuten auf dem Timer verbleiben.",
+
+  "rewards_title": "Belohnungen",
+  "rewards_body": "Das Glücksrad kann verschiedene Preise vergeben, darunter Münztruhen-Puzzleteile, Tickets, Energie und Münzen. Als seltene Preise sind auch exklusive Tiere und Dekorationen verfügbar.",
+
+  "rewards_list_title": "Häufige Glücksrad-Belohnungen",
+  "reward_coin_chest": "Münztruhen-Puzzleteile",
+  "reward_tickets": "100 Tickets",
+  "reward_energy": "500 Energie",
+  "reward_coins_small": "100 Münzen",
+  "reward_coins_large": "500 Münzen",
+  "reward_exclusive": "Exklusive Tiere und Dekorationen (selten)",
+
+  "timer_title": "Drehanzahl & Timer-Übersicht",
+  "timer_body": "Jede Drehung fügt genau 2 Minuten zum Timer hinzu. Die folgende Tabelle zeigt ungefähr, wie viele Drehungen nötig sind, um verschiedene Timer-Dauern zu erreichen. So kannst du planen, wie viele Drehungen du machen möchtest, bevor du den Timer ablaufen lässt.",
+  "timer_col_spins": "Drehungen",
+  "timer_col_timer": "Hinzugefügte Zeit",
+
+  "reset_title": "Kosten für vorzeitiges Zurücksetzen",
+  "reset_body": "Wenn du nicht warten möchtest, bis der Timer abläuft, kannst du Diamanten ausgeben, um ihn vorzeitig zurückzusetzen. Die Kosten richten sich nach der verbleibenden Zeit: Minimum sind 10 Diamanten bei höchstens 59 verbleibenden Minuten. Ein vorzeitiges Zurücksetzen ist generell nicht empfehlenswert, es sei denn, du bist nah an der Mindestkostenschwelle.",
+
+  "tips_title": "Tipps",
+  "tips_body": "Drehe so lange, bis du eine angenehme Timer-Dauer erreicht hast, und lass ihn dann natürlich ablaufen, um keine Diamanten zu verschwenden. Das Glücksrad ist eine der wenigen Ticketquellen im Spiel und damit regelmäßiges Drehen lohnenswert. Die exklusiven Tiere auf dem Rad wechseln periodisch – schau also wieder vorbei, wenn du auf ein bestimmtes Tier wartest."
+}

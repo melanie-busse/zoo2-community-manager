@@ -1,0 +1,13 @@
+{
+  "title": "Bulldozer",
+  "intro": "Der Bulldozer ist ein Dekorations-Auswahlwerkzeug, das ab Level 25 zum Kauf verfügbar ist. Er kann für 50 Diamanten oder 500.000 Münzen freigeschaltet werden und benötigt Energie zum Betrieb. Das Werkzeug kann bis zu 500 Dekorationen auf einmal auswählen, um sie ins Inventar zurückzulegen oder in ihrer beibehaltenen Form über deine aktuelle Zoo-Region zu verschieben.",
+
+  "overview_title": "Übersicht",
+  "overview_body": "Wenn Gegenstände ins Inventar zurückgelegt werden, behalten sie ihre gruppierte Form nicht bei, sondern werden als einzelne Gegenstände gestapelt. Der Bulldozer kann nur Gegenstände aufnehmen, die als Dekorationen klassifiziert sind, wie Pflanzen, Statuen, Toiletten usw. Er kann keine Mülleimer, Wege, Gebäude, Gehege, Gehegedekorationen, NPCs oder Geländeteile aufnehmen.",
+
+  "event_title": "Saisonale Event-Dekorationen",
+  "event_body": "Während eines saisonalen Events können die Event-Dekorationen, die Währung generieren, erst nach dem vollständigen Abschluss des gesamten Events mit dem Bulldozer ausgewählt werden.",
+
+  "energy_title": "Energie",
+  "energy_body": "Energie kann mit Diamanten, als Questbelohnungen, als kostenloses Geschenk vom monatlichen Login-Belohnungspfad oder mit dem Glücksrad erhalten werden."
+}

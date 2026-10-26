@@ -1,0 +1,21 @@
+{
+  "title": "IJsjesverkoper",
+  "intro": "De IJsjesverkoper is een speciale NPC die periodiek je dierentuin bezoekt en afgeprijsde dieren aanbiedt vanuit zijn kar. Hij is een van de beste manieren om zeldzame dieren tegen een verlaagde prijs te verkrijgen.",
+
+  "how_it_works_title": "Hoe het werkt",
+  "how_it_works_body": "De IJsjesverkoper bezoekt de dierentuin ongeveer elke 44 uur. Wanneer hij aankomt, biedt hij tot 3 dieren aan met een korting van 14–40% op hun standaardprijs. Je hebt 1 uur om je aankopen te doen voordat hij vertrekt. De verkoper controleert welke dieren je al in je dierentuin hebt geplaatst en zal je geen dieren aanbieden die je al bezit.",
+
+  "deals_title": "Aanbiedingen en kortingen",
+  "deals_body": "Elk bezoek biedt 1 tot 3 dieren aan die geselecteerd zijn uit zijn pool. Kortingen variëren van 14% tot 40% op de reguliere aankoopprijs. De afgeprijsde prijs wordt direct op de kar van de verkoper weergegeven. Je kunt een of alle aangeboden dieren kopen tijdens het 1-uursvenster.",
+
+  "obtaining_title": "Dieren verkrijgen",
+  "obtaining_body": "De dieren die beschikbaar zijn bij de IJsjesverkoper kunnen ook via andere bronnen worden verkregen, zoals de Hoofddierentuin Winkel, speciale kisten, de Clubwinkel, Super Deals of het Reddingscentrum. De onderstaande tabel geeft de dieren in zijn pool weer samen met hun alternatieve bronnen.",
+
+  "col_animal": "Dier",
+  "col_shop_tab": "Hoofddierentuin Winkeltabblad",
+  "col_chest": "Kist",
+  "col_other": "Andere bron",
+
+  "npc_title": "Over de IJsjesverkoper",
+  "npc_body": "De IJsjesverkoper is een vriendelijk NPC-personage dat zijn kar door je dierentuin duwt. Hij verschijnt als een melding wanneer hij aankomt. Tik op zijn kar om het huidige aanbod te bekijken. Als je hem mist, moet je wachten op zijn volgende bezoek over ongeveer 44 uur."
+}

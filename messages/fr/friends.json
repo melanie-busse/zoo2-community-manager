@@ -1,0 +1,60 @@
+{
+  "title": "Amis",
+  "intro": "Les joueurs peuvent gagner des récompenses grâce à deux types d'amis différents : les nouvelles recrues et les amis en jeu. Les nouvelles recrues sont des utilisateurs invités qui n'ont jamais joué à Zoo 2 auparavant, tandis que les amis en jeu sont des joueurs existants dont les comptes peuvent être liés au vôtre pour des interactions en jeu.",
+
+  "recruited_title": "Amis recrutés",
+  "recruited_body": "Vous pouvez gagner des récompenses en recrutant de nouveaux joueurs dans Zoo 2 avec votre lien d'invitation personnel. Cliquez sur le bouton rose \"inviter\" dans votre fenêtre Recruter des amis et envoyez le lien aux nouveaux joueurs. Le nouveau joueur doit utiliser votre lien pour télécharger le jeu et accomplir l'un des 5 objectifs disponibles pour que vous gagniez des Pièces d'amitié. Remarque : Cette fonctionnalité n'est pas disponible pour les joueurs Steam ou Epic Games.",
+
+  "objectives_title": "Objectifs des amis recrutés",
+  "objective_level": "Atteindre le niveau 10",
+  "objective_animals": "Avoir 10 animaux en tout dans leur zoo",
+  "objective_diamonds": "Acheter des diamants",
+  "objective_academy": "Étendre l'Académie",
+  "objective_recruit": "Recruter un autre ami",
+
+  "objectives_note": "L'accomplissement de chaque objectif d'un ami recruté vous donne 1 Pièce d'amitié. Si un ami recruté accomplit le même objectif deux fois, aucune pièce supplémentaire n'est accordée.",
+
+  "rewards_title": "Récompenses des amis recrutés",
+
+  "ingame_title": "Amis en jeu",
+  "ingame_body": "Les joueurs peuvent avoir jusqu'à 16 amis en jeu. Comme les amis partagent certaines récompenses, avoir des amis en jeu actifs peut être extrêmement bénéfique. Remarque : Dans le cadre d'une réglementation de jeu équitable, il est contraire aux conditions d'utilisation d'Upjers d'avoir des amis en jeu qui utilisent la même source internet que vous.",
+
+  "adding_title": "Ajouter des amis",
+  "adding_body": "Pour ajouter de nouveaux amis en jeu, vous devez accepter une demande d'ami ou envoyer une demande d'ami à un joueur existant. Appuyez sur l'icône du menu amis et sélectionnez un emplacement d'ami disponible pour voir 12 joueurs suggérés proches de votre niveau. Pour ajouter un joueur spécifique, utilisez l'outil de recherche et saisissez son Support ID depuis ses Paramètres. Fermer et rouvrir la fenêtre actualise les suggestions.",
+
+  "removing_title": "Supprimer des amis",
+  "removing_body": "Pour libérer un emplacement d'ami, sélectionnez un ami et appuyez sur la corbeille dans son panneau d'informations. L'emplacement sera verrouillé pendant 24 heures avant que vous puissiez inviter à nouveau ou accepter des invitations. Notez qu'obtenir et conserver 16 amis actifs est assez difficile, et les joueurs devront recourir à d'autres méthodes de recrutement telles que les réseaux sociaux ou les forums.",
+
+  "zoo_details_title": "Détails du zoo de l'ami",
+  "zoo_details_body": "Appuyer sur un ami affiche des informations sur la progression de son zoo : titres de zoo détenus, nombre d'extensions de parc, nombre d'espèces différentes placées, nombre d'animaux de niveau 10+, nombre de succès obtenus et nombre de bébés animaux placés en train de grandir dans la région principale du zoo.",
+
+  "helping_title": "Aider les amis",
+  "helping_body": "Aider nécessite de visiter le zoo de votre ami. Appuyez sur le cœur dans la liste d'amis ou sur le bouton Aider l'ami. L'aide accorde un point de cœur d'amitié à vous et à votre ami ainsi que de l'XP. Pour chaque ami que vous aidez, vous gagnez de l'XP équivalent à dix fois votre niveau de jeu actuel.",
+
+  "minigames_title": "Mini-jeux d'aide",
+  "minigame_crows": "Chasser les corneilles : 5 corneilles se trouvent dans des enclos aléatoires. Appuyez sur chaque corneille 3 fois pour la chasser.",
+  "minigame_children": "Réconforter les enfants : 5 enfants en pleurs sont placés aléatoirement sur les allées. Donnez un ballon à chacun pour les réconforter.",
+  "minigame_animals": "Attraper des animaux : 10 animaux courent aléatoirement sur les allées du zoo. Passez le filet au-dessus de chacun d'eux.",
+
+  "skip_title": "Passer les mini-jeux",
+  "skip_body": "Vous pouvez aider un ami ou tous les amis instantanément en payant des diamants. \"Passer l'aide\" coûte 1 diamant par joueur. Le bouton \"Tout aider\" coûte 5 diamants par joueur non encore aidé au total. Les utilisateurs de l'application peuvent également regarder une publicité pour passer l'aide d'un ami (limite de 20 publicités par 24h).",
+
+  "messaging_title": "Envoyer des messages aux amis",
+  "messaging_body": "Le jeu fournit une boîte de discussion privée pour envoyer des messages aux amis en jeu. Appuyez sur l'enveloppe à côté de votre ami pour envoyer un message. Lorsqu'un nouveau message est reçu, une notification apparaît à côté de l'icône ami. L'icône d'enveloppe passe du gris au jaune lorsqu'un message non lu apparaît. Il n'est pas possible de supprimer ou de modifier un message envoyé.",
+
+  "deleting_title": "Supprimer des amis",
+  "deleting_body": "Pour supprimer un ami, cliquez sur le joueur, puis cliquez sur la petite icône de corbeille dans le coin inférieur droit de la fenêtre d'aperçu de l'ami. La suppression ne peut pas être annulée et vous ne pouvez pas réinviter le même ami sans saisir manuellement son Support ID à nouveau. L'emplacement d'amitié sera bloqué pendant les 24 heures suivant la suppression.",
+
+  "levelup_title": "Cadeaux de montée de niveau",
+  "levelup_body": "Lorsque vous montez de niveau, chacun de vos amis en jeu recevra également le cadeau de montée de niveau que vous choisissez. Vous recevrez également les cadeaux de montée de niveau de vos amis. Vous choisissez une pièce de puzzle parmi un ensemble aléatoire de 3.",
+
+  "chests_title": "Coffres d'amitié",
+  "chests_body": "Chaque fois que vous aidez un ami ou êtes aidé par lui, vous obtenez un point d'amitié. Chaque 10 points vous récompense d'un Coffre d'amitié contenant des pièces de puzzle pour des décorations, des enclos et des objets d'enclos, ainsi que des animaux d'amitié exclusifs. Le maximum de points d'amitié par jour est de 32 avec 16 amis actifs (3 coffres par jour). La limite de stockage est de 5 coffres.",
+
+  "troubleshooting_title": "Dépannage",
+  "troubleshooting_body": "Si votre jeu se ferme lors de l'aide aux amis sans erreur, votre appareil manque peut-être de RAM. Charger des zoos grands et entièrement animés nécessite une mémoire importante. Essayez les solutions suivantes :",
+
+  "fix_device": "Changer d'appareil : Essayez d'aider les amis avec un appareil ayant plus de RAM, comme un ordinateur portable ou de bureau.",
+  "fix_friends": "Changer d'amis : Supprimez les amis avec de très grands zoos (au-dessus du niveau 60) et remplacez-les par des joueurs de niveau inférieur qui ont des zoos plus petits nécessitant moins de RAM.",
+  "fix_settings": "Modifier les paramètres du jeu : Activez \"Animations réduites\", désactivez \"Autoriser le zoom étendu\", ou activez \"Limiter la fréquence d'images\" dans le deuxième onglet des paramètres pour réduire l'utilisation de la RAM."
+}

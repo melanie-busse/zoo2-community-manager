@@ -1,0 +1,27 @@
+{
+  "title": "Animal Package Trades",
+  "intro": "Purchasing diamond packages often includes exclusive bonus animals. Players receive one or two premium bonus animals with a purchase of 100+ diamonds. For the most expensive diamond package, players are gifted one exclusive VIP bonus animal or a pair of premium bonus animals if selected.",
+
+  "bonus_title": "Bonus Animals",
+  "bonus_body": "The premium bonus animals change every other week and the VIP bonus animals every 8 weeks. Check Forecasts for current pattern predictions on when the bonus animals should change and animals predicted to be skipped from chest rotations. Some previous animals are sometimes offered again, but Upjers also allows players to trade a current bonus animal for a select list of previously offered bonus animals.",
+
+  "how_title": "How to Trade Bonus Animals",
+  "how_step1": "Purchase any diamond package that awards bonus animals.",
+  "how_step2": "After completing the purchase, leave the animal(s) in inventory on the side bar. Do NOT place them in your zoo. If you intend to trade, do not select the NPC because it makes a lot more work for Support to trade it out for an animal.",
+  "how_step3": "Open a support ticket with Upjers at support.upjers.com. Explain that you have purchased a package and would like to trade the animal(s). Make sure to include your Support ID (User ID), username, and the animal(s) you would like to swap. The animals need to be the current Premium or VIP on offer, so exchange them before the bonus animals change.",
+  "how_step4": "Generally within one to two business days Upjers will swap out the animal(s).",
+
+  "exclusions_title": "Exclusions",
+  "exclusions_body": "Trading bonus animals is a courtesy service and not an official feature of the game, so Upjers may decide at any time not to continue animal exchanges.",
+
+  "exclusions_rules_title": "Trade Rules",
+  "exclusion_premium": "Premium bonus animals can only be traded for Premium, but VIP can be traded for a VIP or a pair of Premium.",
+  "exclusion_pairs": "Animals acquired in pairs can only be exchanged in pairs.",
+  "exclusion_list": "You only swap for a specific list of animals.",
+  "exclusion_enclosure": "Support will only swap the animals, not the enclosure. If the enclosure of the requested trade animal is different than what was gifted from the package, players will be responsible for obtaining the correct enclosure.",
+
+  "tradelist_title": "Trade List",
+  "tradelist_body": "Currently you can only trade for a limited set of animals. The official courtesy trade list can be requested from Upjers Support. The Animals page shows a blue diamond icon with a P (premium) or V (VIP) that indicates which animals are known to be on the current list. A gray diamond icon means the animal is no longer on the trade list but was a former premium or VIP animal.",
+
+  "tradelist_tip": "You may want to check Chest Forecasts to see if the animal is predicted to be coming to chest soon where you could obtain it for free. Also see Skipped Animals which are predicted not to come to chests. Some animals are also known to be offered on very rare occasion as a Super Deal."
+}

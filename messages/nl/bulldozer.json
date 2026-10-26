@@ -1,0 +1,13 @@
+{
+  "title": "Bulldozer",
+  "intro": "De bulldozer is een gereedschap voor het selecteren van decoraties dat beschikbaar is voor aankoop op niveau 25. Het is te ontgrendelen voor 50 diamanten of 500.000 munten en vereist energie om te werken. Het gereedschap kan tot 500 decoraties tegelijk selecteren om terug in de inventaris te plaatsen of in de bewaarde vorm te verplaatsen binnen je huidige dierentuinregio.",
+
+  "overview_title": "Overzicht",
+  "overview_body": "Wanneer items terug in de inventaris worden geplaatst, behouden ze hun gegroepeerde vorm niet maar worden ze opnieuw als afzonderlijke items gestapeld. De bulldozer is beperkt tot het oppakken van alleen die items die als decoraties zijn geclassificeerd, zoals planten, standbeelden, toiletten, enz. Hij kan geen vuilnisbakken, paden, gebouwen, verblijven, verblijfsdecoties, NPC's of terreinonderdelen oppakken.",
+
+  "event_title": "Seizoensdecoraties",
+  "event_body": "Tijdens een seizoensevenement kunnen de evenementdecoties die valuta genereren niet worden geselecteerd door de bulldozer totdat het volledige evenement is afgelopen.",
+
+  "energy_title": "Energie",
+  "energy_body": "Energie kan worden verkregen met diamanten, als questrebeloningen, als gratis geschenk van het maandelijkse inlogbeloningenpad of met het prijzenwiel."
+}

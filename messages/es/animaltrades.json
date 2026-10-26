@@ -1,0 +1,27 @@
+{
+  "title": "Intercambio de Paquetes de Animales",
+  "intro": "La compra de paquetes de diamantes a menudo incluye animales de bonificación exclusivos. Los jugadores reciben uno o dos animales de bonificación premium con una compra de 100 o más diamantes. Para el paquete de diamantes más caro, los jugadores reciben un animal de bonificación VIP exclusivo o un par de animales de bonificación premium si así lo eligen.",
+
+  "bonus_title": "Animales de Bonificación",
+  "bonus_body": "Los animales de bonificación premium cambian cada dos semanas y los animales de bonificación VIP cada 8 semanas. Consulta las Previsiones para ver las predicciones actuales sobre cuándo deberían cambiar los animales de bonificación y los animales que se prevé que se saltarán de las rotaciones de cofres. Algunos animales anteriores se ofrecen de nuevo a veces, pero Upjers también permite a los jugadores intercambiar un animal de bonificación actual por una lista seleccionada de animales de bonificación ofrecidos anteriormente.",
+
+  "how_title": "Cómo Intercambiar Animales de Bonificación",
+  "how_step1": "Compra cualquier paquete de diamantes que otorgue animales de bonificación.",
+  "how_step2": "Después de completar la compra, deja los animales en el inventario de la barra lateral. NO los coloques en tu zoo. Si tienes intención de intercambiarlos, no selecciones el NPC porque le genera mucho más trabajo al Soporte para cambiarlo por un animal.",
+  "how_step3": "Abre un ticket de soporte con Upjers en support.upjers.com. Explica que has comprado un paquete y que te gustaría intercambiar los animales. Asegúrate de incluir tu Support ID (ID de usuario), nombre de usuario y los animales que deseas canjear. Los animales deben ser el Premium o VIP actual en oferta, así que cámbialos antes de que los animales de bonificación cambien.",
+  "how_step4": "Generalmente, en uno o dos días hábiles, Upjers realizará el intercambio de los animales.",
+
+  "exclusions_title": "Exclusiones",
+  "exclusions_body": "El intercambio de animales de bonificación es un servicio de cortesía y no una función oficial del juego, por lo que Upjers puede decidir en cualquier momento no continuar con los intercambios de animales.",
+
+  "exclusions_rules_title": "Reglas de Intercambio",
+  "exclusion_premium": "Los animales de bonificación Premium solo se pueden intercambiar por Premium, pero los VIP se pueden intercambiar por un VIP o por un par de Premium.",
+  "exclusion_pairs": "Los animales adquiridos en pares solo se pueden intercambiar en pares.",
+  "exclusion_list": "Solo puedes intercambiar por una lista específica de animales.",
+  "exclusion_enclosure": "El Soporte solo intercambiará los animales, no el recinto. Si el recinto del animal de intercambio solicitado es diferente al que venía incluido en el paquete, los jugadores serán responsables de obtener el recinto correcto.",
+
+  "tradelist_title": "Lista de Intercambio",
+  "tradelist_body": "Actualmente solo puedes intercambiar por un conjunto limitado de animales. La lista oficial de intercambio de cortesía se puede solicitar al Soporte de Upjers. La página de Animales muestra un icono de diamante azul con una P (premium) o V (VIP) que indica qué animales se sabe que están en la lista actual. Un icono de diamante gris significa que el animal ya no está en la lista de intercambio pero fue un animal premium o VIP anteriormente.",
+
+  "tradelist_tip": "Puede que quieras consultar las Previsiones de Cofres para ver si se prevé que el animal llegue a los cofres pronto, donde podrías obtenerlo gratis. Consulta también los Animales Omitidos, que son aquellos que se prevé que no llegarán a los cofres. Se sabe que algunos animales también se ofrecen en ocasiones muy raras como Super Oferta."
+}

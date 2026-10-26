@@ -1,0 +1,26 @@
+{
+  "title": "Glitzertiere",
+  "intro": "Eine erfolgreiche Zucht einer beliebigen Art oder Variante kann zufällig ein besonderes, glitzerndes Tier derselben Art ergeben. Glitzertiere leuchten in einem glitzernden, violett-glühenden Schein aufgrund ihrer außergewöhnlichen Gesundheit und enthalten eine hohe Popularität. Glitzertiere können nur durch reguläre Zucht erhalten werden und sind äußerst selten.",
+
+  "overview_title": "Übersicht",
+  "overview_body": "Jedes Glitzertier wird auf Level 40 geboren, unabhängig vom Level seiner Eltern. Glitzertiere sind die einzigen Tiere, die ein so hohes Level in deinem Zoo erreichen können. Alle nicht-glitzernden Tiere erreichen ihr maximales Level bei Level 20.",
+
+  "streak_title": "Zucht-Serie",
+  "streak_body": "Die Chance, ein Glitzertier zu erhalten, wird durch deine Zucht-Serie bestimmt — die Anzahl aufeinanderfolgender erfolgreicher Zuchten pro Art. Sobald eine Zucht fehlschlägt, wird die Serie für diese Art auf null zurückgesetzt. Jede Art hat ihre eigene Zucht-Serie, die unten rechts im Zucht-Dialogfeld angezeigt wird. Ob es sich um ein Einzel-, Zwillings- oder Drillingsergebnis handelt, die Sitzung zählt als ein einzelner Versuch.",
+
+  "chances_title": "Glitzer-Chancen",
+  "chances_body": "Je höher die Anzahl aufeinanderfolgender erfolgreicher Zuchten für eine Art, desto größer sind deine Chancen, beim nächsten Zuchtversuch ein Glitzertier zu erhalten. Die Chancen beginnen bei 0,1% bei einer Zucht-Serie von null und steigen auf maximal 1,1% bei einer Zucht-Serie von 10 oder mehr. Jedes einzelne Baby in einem Zwillings- oder Drillingspaar hat seine eigene Chance, als Glitzertier geboren zu werden.",
+
+  "col_streak": "Zucht-Serie",
+  "col_odds": "Chance als Verhältnis",
+  "col_chance": "Chance als Prozent",
+
+  "breeding_with_title": "Zucht mit einem Glitzertier",
+  "breeding_with_body": "Sobald ein Glitzertier aufgewachsen ist, kann es für die Zucht von Level-20-Babys verwendet werden, was dir ermöglicht, Level zu überspringen. Unabhängig vom Level oder der Glitzer-Eigenschaft des anderen Elternteils sollten Babys ein normales Level 20 produzieren, mit einer ultra-seltenen Chance, ein weiteres Glitzer-Level-40-Tier zu erhalten. Glitzertiere erfüllen auch sofort alle Sammlungsziele für die gleiche Art und Farbe, da sie auf Level 40 geboren werden.",
+
+  "donating_title": "Ein Glitzertier spenden",
+  "donating_body": "Wenn du ein Level-40-Glitzertier für einen Klubwettbewerb spendest, gibt das Tier die gleichen Punkte wie sein Level: 400 Klubpunkte, wie auf dem Mitglied-Spendebildschirm angezeigt. Das entspricht dem Spenden von zwei Level-20-Tieren.",
+
+  "glow_title": "Glitzer-Leuchten ausschalten",
+  "glow_body": "Wenn dir die Glitzer-Effekte nicht gefallen, kannst du die Glitzerfunktion in den Spieleinstellungen deaktivieren. Klicke auf das Zahnrad-Symbol unten rechts auf deinem Spielbildschirm, klicke auf den zweiten Einstellungs-Tab, scrolle nach unten und setze ein Häkchen bei \"Glitzertiere als normale Tiere anzeigen\". Dies entfernt jeden Glitzereffekt von deinen Level-40-Tieren."
+}

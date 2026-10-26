@@ -1,0 +1,29 @@
+{
+  "title": "Ruleta de Premios",
+  "intro": "La Ruleta de Premios es un edificio de características especial que te permite girar una rueda para ganar varias recompensas del juego. Se desbloquea a nivel 7,5 de jugador y se puede girar repetidamente — cada giro añade tiempo al temporizador de reinicio.",
+
+  "how_it_works_title": "Cómo Funciona",
+  "how_it_works_body": "Cada giro de la Ruleta de Premios añade 2 minutos al temporizador de reinicio, hasta un máximo de 24 horas. Una vez que el temporizador se agota, la rueda se reinicia y puedes girar de nuevo gratis. Puedes reiniciar el temporizador antes pagando diamantes — el coste mínimo de reinicio es de 10 diamantes cuando quedan 59 minutos o menos en el temporizador.",
+
+  "rewards_title": "Recompensas",
+  "rewards_body": "La Ruleta de Premios puede otorgar una variedad de premios que incluyen piezas de puzle de cofres de monedas, tickets, energía y monedas. También hay animales y decoraciones exclusivos especiales disponibles como premios raros en la rueda.",
+
+  "rewards_list_title": "Recompensas Comunes de la Ruleta de Premios",
+  "reward_coin_chest": "Piezas de puzle de Cofres de Monedas",
+  "reward_tickets": "100 Tickets",
+  "reward_energy": "500 Energía",
+  "reward_coins_small": "100 Monedas",
+  "reward_coins_large": "500 Monedas",
+  "reward_exclusive": "Animales y decoraciones exclusivos (raro)",
+
+  "timer_title": "Referencia de Contador de Giros y Temporizador",
+  "timer_body": "Cada giro añade exactamente 2 minutos al temporizador. La tabla a continuación muestra aproximadamente cuántos giros se necesitan para alcanzar varias duraciones del temporizador y el tiempo acumulado añadido. Esto puede ayudarte a planificar cuántos giros quieres hacer antes de dejar que el temporizador se agote.",
+  "timer_col_spins": "Giros",
+  "timer_col_timer": "Tiempo Añadido",
+
+  "reset_title": "Coste de Reinicio Anticipado",
+  "reset_body": "Si no quieres esperar a que el temporizador llegue a cero, puedes pagar diamantes para reiniciarlo antes. El coste escala según el tiempo que quede: el mínimo es de 10 diamantes cuando quedan 59 minutos o menos. Reiniciar anticipadamente generalmente no se recomienda a menos que estés cerca del umbral mínimo de coste.",
+
+  "tips_title": "Consejos",
+  "tips_body": "Gira hasta alcanzar una duración de temporizador cómoda, luego deja que cuente de forma natural para evitar gastar diamantes. La Ruleta de Premios es una de las pocas fuentes de Tickets en el juego, por lo que vale la pena girarla regularmente. Los animales exclusivos de la rueda rotan periódicamente, así que vuelve a comprobarlo si estás buscando un premio específico."
+}

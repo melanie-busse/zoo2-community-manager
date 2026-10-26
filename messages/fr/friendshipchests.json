@@ -1,0 +1,23 @@
+{
+  "title": "Coffres d'amitié",
+  "intro": "Les Coffres d'amitié sont des coffres roses attribués pour avoir collecté des points d'amis avec d'autres joueurs. Pour chaque 10 points d'amis que vous accumulez, vous recevez un Coffre d'amitié. Vous pouvez détenir un maximum de 5 Coffres d'amitié à la fois.",
+
+  "earning_title": "Gagner des Coffres d'amitié",
+  "earning_body": "Les points d'amis sont gagnés en visitant les zoos d'autres joueurs et en les ayant vous rendre visite. Une fois que vous atteignez 10 points d'amis, un Coffre d'amitié est automatiquement ajouté à votre inventaire. La limite de 5 coffres signifie que vous devriez ouvrir les coffres régulièrement pour continuer à en gagner de nouveaux.",
+
+  "contents_title": "Contenu des coffres",
+  "contents_body": "Les Coffres d'amitié contiennent exclusivement des pièces de puzzle d'enclos — ils ne contiennent pas de décorations prêtes à être placées. Cela inclut des pièces de puzzle pour les décorations d'enclos et les bâtiments utilitaires dans tous les biomes. Depuis le 17 février 2022, les Coffres d'amitié contiennent également des pièces pour les Animaux d'amitié exclusifs, qui ne peuvent être obtenus par aucun autre type de coffre.",
+
+  "animals_title": "Animaux d'amitié exclusifs",
+  "animals_body": "Les animaux suivants sont exclusifs aux Coffres d'amitié et ne peuvent être obtenus par aucun autre coffre :",
+
+  "animals_col_animal": "Animal",
+  "animals_col_rarity": "Rareté",
+  "animals_col_biome": "Biome",
+
+  "enclosures_title": "Pièces de puzzle d'enclos",
+  "enclosures_body": "Les Coffres d'amitié contiennent des pièces de puzzle pour les décorations d'enclos et les bâtiments utilitaires. Ces pièces sont réparties dans tous les biomes et comprennent à la fois des objets d'enclos décoratifs et fonctionnels.",
+
+  "tips_title": "Conseils",
+  "tips_body": "Ouvrez vos Coffres d'amitié régulièrement afin de ne pas atteindre la limite de 5 coffres et d'arrêter d'en gagner de nouveaux. Le moyen le plus efficace de gagner des points d'amis est d'avoir une liste d'amis active et de visiter des zoos quotidiennement. Les Animaux d'amitié sont exclusifs à ce type de coffre, en faisant la seule source pour compléter leurs collections."
+}

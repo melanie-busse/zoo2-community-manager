@@ -1,0 +1,32 @@
+{
+  "title": "Terrain Editor",
+  "intro": "The Terrain Editor is a ground editing tool that changes the general landscape (floor) of your zoo regions outside of enclosures. It unlocks for purchase beginning at game level 25 for a one-time fee of 500,000 coins or 50 diamonds.",
+
+  "overview_title": "Overview",
+  "overview_body": "In order to run the terrain editor, you will need Energy, which can be obtained from the prize wheel or sometimes from the login rewards calendar. You may also buy Energy for diamonds. Although there is no immediate need to purchase the editor to progress in the game, a quest introducing the feature offers a small reward. High level players will need this tool to complete the \"Landscape Designer Zoo\" mayor quest which unlocks at game level 110.",
+
+  "access_title": "Accessing the Terrain Editor",
+  "access_body": "The Terrain Editor is accessed by clicking the paintbrush icon located on the left side of the inventory sidebar. There are two landscape-altering features: the Terrain Editor (for outside enclosures) and the Enclosure Grounds Editor (for inside enclosures).",
+
+  "connected_title": "Main Zoo Connected Regions",
+  "connected_body": "The following energy costs apply to terrain changes in the main zoo and its connected regions. A dash (-) means that terrain type is not available in that region.",
+
+  "col_terrain": "Terrain",
+  "col_main_zoo": "Main Zoo",
+  "col_fir_grove": "Fir Grove",
+  "col_kujali_park": "Kujali Park",
+  "col_oceanside": "Oceanside",
+  "col_polar_park": "Polar Park",
+  "col_rainforest_park": "Rainforest Park",
+  "col_rescue_center": "Rescue Center",
+
+  "disconnected_title": "Disconnected Zoo Regions",
+  "disconnected_body": "The Terrarium, Aquarium, and Noctarium are disconnected regions with their own set of terrain types and energy costs.",
+
+  "col_terrarium": "Terrarium",
+  "col_aquarium": "Aquarium",
+  "col_noctarium": "Noctarium",
+
+  "visuals_title": "Terrain Visuals",
+  "visuals_body": "Each terrain type is designed to match specific biomes or themes: Snow matches Ice biomes, Sand matches Savanna biomes, Stone matches Mountain biomes, Soil or Dirt provides a natural look, Autumn leaves match seasonal or Plains biomes, Water creates natural ponds, and Forest provides a woodland floor."
+}

@@ -1,0 +1,31 @@
+{
+  "title": "Resumen de Cofres",
+  "intro": "Los Cofres del Tesoro ofrecen una forma de obtener casi todo lo que se puede comprar para el Zoo. Casi todos los objetos relacionados con Misiones que cuestan diamantes se pueden encontrar en los Cofres Normales, que cuestan monedas. Aunque pagar diamantes es más rápido, ¡la paciencia también tiene su recompensa!",
+
+  "overview_title": "Resumen Rápido",
+  "overview_body": "Hay 6 tipos de cofres disponibles en el juego. Los cofres Legendario, Retro y Épico rotan animales con bonificación de vez en cuando. Independientemente de en qué cofre esté el animal bonificado, su pieza de puzle es morada (raro) o amarilla (legendario). Las piezas moradas cuestan 2.500 tickets para completar con solo una pieza de puzle. Las piezas amarillas cuestan 10.000 tickets con solo una pieza de puzle. A veces puedes esperar a un evento de cofre para completarlas con un 15% de descuento. Históricamente, si la popularidad del animal es de 840 puntos o más (84 diamantes), será una pieza de puzle amarilla.",
+
+  "chest_types_title": "Tipos de Cofres",
+  "chest_friendship": "Cofres de Amistad (Rosa) — Coste: 10 corazones. Contienen animales (sin pieza garantizada). Solo canjeables mediante recompensas de amigos, no se pueden comprar. Límite de 5 — ábrelos diariamente para no perder recompensas.",
+  "chest_normal": "Cofres Normales (Azul) — Coste: monedas (según el nivel). Contienen todos los animales de la historia (sin pieza garantizada). Sin límite de compra más allá de la regla de apilamiento de 100 cofres.",
+  "chest_epic": "Cofres Épicos (Morado) — Coste: 29 diamantes. Contienen animales con 1 pieza de puzle garantizada. Presentan animales rotatorios con bonificación.",
+  "chest_retro": "Cofres Retro (Rojo) — Coste: 39 diamantes. Contienen animales con 1 pieza de puzle garantizada. Presentan animales rotatorios con bonificación.",
+  "chest_legendary": "Cofres Legendarios (Dorado) — Contienen animales con 1 pieza de puzle garantizada. Presentan animales rotatorios con bonificación.",
+  "chest_video": "Cofres de Video — Se obtienen viendo anuncios de video. Pueden apilarse más allá del límite de 100 cofres.",
+
+  "forecasts_title": "Previsiones de Cofres",
+  "forecasts_body": "Para futuras predicciones de cofres, consulta la página de Previsiones.",
+
+  "limits_title": "Límites de Compra",
+  "limits_body": "Los cofres de amistad solo son canjeables mediante recompensas de ayudar a amigos y no se pueden comprar con monedas ni diamantes. Tienen un límite de 5 — una vez que acumulas 5, se pierden las recompensas adicionales. Se recomienda abrirlos diariamente. El límite conocido para los cofres comprables es de 100. Después de recoger 100, siguen apilándose pero no puedes comprar más hasta que abras suficientes para bajar de 100. Los cofres del calendario, recompensas de eventos o recompensas de la academia deberían seguir apilándose más allá del límite de 100.",
+
+  "keys_title": "Llaves",
+  "keys_body": "Las llaves se pueden comprar por 5 diamantes cada una, o recibirlas como parte de las recompensas de Inicio de Sesión Diario o el Pase de Temporada. En ciertas ocasiones se pueden comprar en la Tienda del Pase de Temporada. Los Juegos de Conchas frecuentemente ofrecen llaves como premio gratuito. Las llaves se usan para revelar cartas adicionales al abrir cofres. Cada cofre contiene ocho cartas, pero solo las primeras cuatro revelaciones están incluidas. Cada revelación adicional usa una Llave.",
+
+  "exceptions_title": "Qué No Se Puede Encontrar en los Cofres",
+  "exceptions_body": "Aunque casi todo en el juego se puede encontrar en los cofres, hay algunos objetos que no están disponibles:",
+  "exception_expansions": "Expansiones — No hay cartas para expansiones de recintos o parques. Solo se pueden adquirir al comprarlas con monedas o diamantes.",
+  "exception_upgrades": "Mejoras — Aunque las piezas para los refugios en sí se pueden encontrar en los cofres, TODAS las mejoras solo se pueden obtener al comprarlas con monedas o diamantes. Esto incluye las mejoras de la Tienda. ¡Consulta los Eventos de Oferta para descuentos del 25–50%!",
+  "exception_employees": "Empleados del Zoo — No hay piezas de puzle para empleados en los cofres. Sin embargo, los tres vales de empleado se regalan como parte de la Recompensa de Inicio de Sesión Diario. Las piezas de puzle para empleados de 7 días se dan en el Pase de Temporada. Las piezas de puzle para empleados de equipo se dan como recompensas de inicio de sesión diario de Zoo Academy una vez que se desbloquean ciertos niveles de Academy.",
+  "exception_other": "Los NPCs Invitados Especiales, los artículos de avatar personal, los edificios de características, los caminos y las papeleras tampoco están disponibles en los cofres."
+}

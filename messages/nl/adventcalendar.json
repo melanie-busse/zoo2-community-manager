@@ -1,0 +1,27 @@
+{
+  "title": "Adventskalender",
+  "intro": "Elke december vervangt de Adventskalender het dagelijkse inlogbeloningssysteem. Open elke dag een nieuw deurtje om speciale beloningen te verzamelen. Gemiste deurtjes kunnen tot 7 januari worden ontgrendeld voor 3 diamanten elk.",
+
+  "how_it_works_title": "Hoe het werkt",
+  "how_it_works_body": "Tik in december op de kalenderballon in het spel om het deurtje van die dag te vinden. Elk deurtje is maar 24 uur open voordat het vergrendelt. Je hebt tot 7 januari van het volgende jaar de tijd om gemiste deurtjes te ontgrendelen, voor een prijs van 3 diamanten per deurtje.",
+
+  "rewards_title": "Jaarlijkse beloningsoverzichten",
+  "rewards_body": "Elke jaargang van de Adventskalender heeft unieke dieren en kisten. De tabellen hieronder geven de dagelijkse beloningen per jaar weer, van meest recent naar vroegst.",
+
+  "col_day": "Dag",
+  "col_reward": "Beloning",
+
+  "year_2025": "2025",
+  "year_2024": "2024",
+  "year_2023": "2023",
+  "year_2022": "2022",
+  "year_2021": "2021",
+  "year_2020": "2020",
+  "year_2019": "2019",
+  "year_2018": "2018",
+
+  "summary_2025": "2025: 2x Pel's Visarend, 1x IJsbeer, 1x Legendarische Kist, 1x Retrokist, 1x Epische Kist, 1x Terraqua-kist (Dag 8 — alleen zichtbaar in Terrarium/Aquarium).",
+  "summary_2024": "2024: 2x Zuidelijke Muriqui, 1x Sneeuwluipaard, 2x Legendarische Kist, 1x Retrokist, 1x Epische Kist.",
+  "summary_2023": "2023: 2x Grote Koedoe, 1x Rendier, 2x Legendarische Kist, 1x Retrokist, 1x Zeldzame/Epische Kist.",
+  "summary_2022": "2022: 2x Adélie-Pinguïn, 1x Poitou-Ezel, 2x Legendarische Kist, 1x Retrokist, 1x Zeldzame Kist."
+}

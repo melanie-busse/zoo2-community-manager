@@ -1,0 +1,30 @@
+{
+  "title": "NoctAvia Chests",
+  "intro": "NoctAvia Chests can be bought for 29 diamonds. They were introduced on April 7th, 2026 and contain pieces for the Noctarium and Aviary regions. They can only be purchased from inside these two regions. Puzzle pieces found in NoctAvia Chests might also be found in the Prize Wheel or as a friend level-up reward option. Aviary exclusive pieces can be found in Aviary Feather prizes. There are NO animals in the NoctAvia Chests.",
+
+  "content_title": "Possible Content",
+  "content_note": "Note: Only items with confirmed rarity descriptions are listed here. Noctarium and Aviary shops are available in these chests but cannot be completed with diamonds or tickets.",
+
+  "noctarium_title": "Noctarium (Nocturnal House)",
+  "noctarium_enclosures_title": "Enclosures and Enclosure Items",
+  "noctarium_buildings_title": "Buildings",
+  "noctarium_flowers_title": "Flowers & Decorations",
+  "noctarium_boundaries_title": "Boundaries",
+  "noctarium_special_title": "Special Items",
+
+  "aviary_title": "Aviary",
+  "aviary_enclosures_title": "Enclosures and Enclosure Items",
+  "aviary_buildings_title": "Buildings",
+  "aviary_flowers_title": "Flowers & Decorations",
+  "aviary_boundaries_title": "Boundaries",
+  "aviary_special_title": "Special Items",
+
+  "col_item": "Item",
+  "col_rarity": "Rarity",
+
+  "rarity_common": "Common",
+  "rarity_rare": "Rare",
+  "rarity_epic": "Epic",
+  "rarity_legendary": "Legendary",
+  "rarity_unconfirmed": "Unconfirmed"
+}

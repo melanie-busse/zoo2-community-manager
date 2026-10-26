@@ -1,0 +1,43 @@
+{
+  "title": "Conservation Week",
+  "intro": "Conservation Week is both a personal and community event that allows Zoo Directors to earn special rewards by completing specific quests, such as breeding designated animals, releasing them into the wild, and completing special event tasks. Starting June 30th, 2026, Conservation Week occurs approximately every 9 weeks and lasts for 7 days. Each week features a different theme dedicated to a specific biome.",
+
+  "participation_title": "Participation",
+  "participation_body": "Every player above level 20 who has built a Breeding Center in the Main Zoo can join the event. To join, open the event bubble on the left when it is active and click Participate. All participants can receive rewards from the Community Goal, Personal Ranking, and Personal Rewards (Tiers). Players do not need to have animals from the event list to participate and receive rewards.",
+
+  "tiers_title": "Conservation Week Tiers",
+  "tiers_body": "There are two tiers in Conservation Week: Helper and Expert. Both tier rewards include Puzzle Pieces for event-exclusive animals, Diamonds, Standard and Premium Fertility Feed, and other items. It is NOT necessary to buy the Expert tier to participate.",
+  "tiers_helper": "Helper tier is free and available to all players. There are 10 rewards in the pass and several quests available to complete.",
+  "tiers_expert": "Expert tier is an optional paid pass, valid for one week and applied to each event separately. It offers 10 additional rewards and several extra quests. Already achieved rewards can be collected retroactively if you buy the pass later.",
+
+  "points_title": "Conservation Points",
+  "points_body": "To progress in Conservation Week and get certain rewards, players collect Conservation Points (green leaves) by breeding selected animals, releasing them into the wild, and completing Conservation Week quests. Points are needed to unlock personal rewards, contribute to the community goal, and improve your ranking on the personal leaderboard.",
+
+  "tasks_title": "Tasks",
+  "tasks_body": "The following tasks can be completed at any time during Conservation Week, regardless of active quests or subscription status. Animal levels and colors do not play a role in earning points, but species do.",
+  "task_breed_biome": "Breed biome-matching animals — 44 points",
+  "task_release_biome": "Release biome-matching animals — 11 points",
+  "task_breed_list": "Breed animals from the Animal List — 77 points",
+  "task_release_list": "Release animals from the Animal List — 22 points",
+
+  "animal_list_title": "Animal List",
+  "animal_list_body": "Animals that participate in the event give more points for taking actions with them. The list changes from event to event and corresponds to the biome theme. Animals from the list are marked with a pink Conservation Week icon in the Breeding Center and Inventory. Animals that match the event theme but are not on the main list can still earn Conservation Points and are marked with a yellow Conservation Week icon.",
+
+  "quests_title": "Quests",
+  "quests_body": "Conservation Week quests are divided into two tiers: Helper (bronze butterfly icon) and Expert (golden butterfly icon). Not all quests are available right away — more tasks are generated as previous tasks are completed, at progressively higher levels. The Expert quest to Become a Conservation Expert means buying the Expert tier; it is NOT necessary to progress in the event.",
+
+  "community_goal_title": "Community Goal Rewards",
+  "community_goal_body": "Community goals are shared objectives where all players' points are combined. At the end of Conservation Week, all participants receive global rewards for each milestone achieved. There are five reward milestones. For every 10,000,000 points earned globally, the entire community earns an additional milestone.",
+
+  "personal_ranking_title": "Personal Ranking",
+  "personal_ranking_body": "In addition to personal rewards, there is a global leaderboard for extra competition. The more Conservation Points you collect, the higher you rise in the ranking. Players with the same number of points share the same position in the final ranking. Top players receive exclusive Gold, Silver, and/or Bronze Statues.",
+
+  "titles_title": "Titles",
+  "titles_body": "Another reward for competing in Conservation Week is earning in-game titles awarded for placing on the leaderboard. These titles can be displayed permanently in your in-game profile or showcased through the Fashion Boutique. They are visible to all your friends in the Friends tab. Titles are a way to stand out but do not provide any additional bonuses.",
+
+  "fertility_feed_title": "Fertility Feed",
+  "fertility_feed_body": "Fertility Feed bags are exclusive to the Conservation Week feature. They function like regular breeding food but are available for free and can be saved for use at any time. Types: Standard (coin breeding feed), Premium (diamond breeding feed), Speed (diamond food to speed up breeding). To use Fertility Feed, start breeding and click the corresponding icon at the bottom of the breeding window.",
+
+  "tips_title": "Player Tips",
+  "tips_body": "All eligible players should open the event bubble and click Participate to receive Community Goal Rewards (which likely include free diamonds) at the end of the event. Even very low-level players should be able to participate, as one quest only requires using coin fertility feed for any breeding. Players can purchase the least expensive shop animals and release them to earn extra Conservation Points. Check the status of your quests before doing mass actions — complete quests in stages to avoid wasting actions on an already-completed quest. The level and color of the animals do not matter for points, only the species."
+}

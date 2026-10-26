@@ -1,0 +1,27 @@
+{
+  "title": "Calendrier de l'Avent",
+  "intro": "Chaque décembre, le Calendrier de l'Avent remplace le suivi des récompenses de connexion quotidienne. Ouvrez une nouvelle porte chaque jour pour collecter des récompenses spéciales. Les portes manquées peuvent être déverrouillées jusqu'au 7 janvier pour 3 diamants chacune.",
+
+  "how_it_works_title": "Comment ça marche",
+  "how_it_works_body": "En décembre, appuyez sur la bulle du calendrier dans le jeu pour trouver la porte du jour. Chaque porte n'est ouverte que 24 heures avant de se verrouiller. Vous avez jusqu'au 7 janvier de l'année suivante pour déverrouiller les portes manquées, au coût de 3 diamants par porte.",
+
+  "rewards_title": "Récapitulatifs des récompenses annuelles",
+  "rewards_body": "Chaque année, le Calendrier de l'Avent propose des animaux et des coffres uniques. Les tableaux ci-dessous listent les récompenses quotidiennes pour chaque année, de la plus récente à la plus ancienne.",
+
+  "col_day": "Jour",
+  "col_reward": "Récompense",
+
+  "year_2025": "2025",
+  "year_2024": "2024",
+  "year_2023": "2023",
+  "year_2022": "2022",
+  "year_2021": "2021",
+  "year_2020": "2020",
+  "year_2019": "2019",
+  "year_2018": "2018",
+
+  "summary_2025": "2025 : 2x Chouette pêcheuse de Pel, 1x Ours polaire, 1x Coffre légendaire, 1x Coffre rétro, 1x Coffre épique, 1x Coffre Terraqua (Jour 8 — visible uniquement dans le Terrarium/Aquarium).",
+  "summary_2024": "2024 : 2x Muriqui du sud, 1x Léopard des neiges, 2x Coffre légendaire, 1x Coffre rétro, 1x Coffre épique.",
+  "summary_2023": "2023 : 2x Grand koudou, 1x Renne, 2x Coffre légendaire, 1x Coffre rétro, 1x Coffre rare/épique.",
+  "summary_2022": "2022 : 2x Manchot Adélie, 1x Âne du Poitou, 2x Coffre légendaire, 1x Coffre rétro, 1x Coffre rare."
+}

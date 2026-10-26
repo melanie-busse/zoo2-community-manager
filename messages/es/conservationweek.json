@@ -1,0 +1,43 @@
+{
+  "title": "Semana de Conservación",
+  "intro": "La Semana de Conservación es tanto un evento personal como comunitario que permite a los Directores de Zoo ganar recompensas especiales completando misiones específicas, como criar los animales designados, liberarlos en la naturaleza y completar tareas especiales del evento. A partir del 30 de junio de 2026, la Semana de Conservación se celebra aproximadamente cada 9 semanas y dura 7 días. Cada semana presenta un tema diferente dedicado a un bioma específico.",
+
+  "participation_title": "Participación",
+  "participation_body": "Todos los jugadores por encima del nivel 20 que hayan construido un Centro de Cría en el Zoo Principal pueden unirse al evento. Para unirte, abre la burbuja del evento a la izquierda cuando esté activo y haz clic en Participar. Todos los participantes pueden recibir recompensas del Objetivo Comunitario, el Ranking Personal y las Recompensas Personales (Niveles). Los jugadores no necesitan tener animales de la lista del evento para participar y recibir recompensas.",
+
+  "tiers_title": "Niveles de la Semana de Conservación",
+  "tiers_body": "Hay dos niveles en la Semana de Conservación: Ayudante y Experto. Ambas recompensas de nivel incluyen Piezas de Puzle para animales exclusivos del evento, Diamantes, Alimento de Fertilidad Estándar y Premium, y otros objetos. NO es necesario comprar el nivel Experto para participar.",
+  "tiers_helper": "El nivel Ayudante es gratuito y está disponible para todos los jugadores. Hay 10 recompensas en el pase y varias misiones disponibles para completar.",
+  "tiers_expert": "El nivel Experto es un pase de pago opcional, válido por una semana y aplicado a cada evento por separado. Ofrece 10 recompensas adicionales y varias misiones extra. Las recompensas ya obtenidas se pueden recoger retroactivamente si compras el pase más tarde.",
+
+  "points_title": "Puntos de Conservación",
+  "points_body": "Para progresar en la Semana de Conservación y obtener ciertas recompensas, los jugadores recolectan Puntos de Conservación (hojas verdes) criando animales seleccionados, liberándolos en la naturaleza y completando misiones de la Semana de Conservación. Los puntos son necesarios para desbloquear recompensas personales, contribuir al objetivo comunitario y mejorar tu posición en el ranking personal.",
+
+  "tasks_title": "Tareas",
+  "tasks_body": "Las siguientes tareas se pueden completar en cualquier momento durante la Semana de Conservación, independientemente de las misiones activas o el estado de suscripción. Los niveles y colores de los animales no juegan ningún papel en la obtención de puntos, pero las especies sí.",
+  "task_breed_biome": "Criar animales del bioma correspondiente — 44 puntos",
+  "task_release_biome": "Liberar animales del bioma correspondiente — 11 puntos",
+  "task_breed_list": "Criar animales de la Lista de Animales — 77 puntos",
+  "task_release_list": "Liberar animales de la Lista de Animales — 22 puntos",
+
+  "animal_list_title": "Lista de Animales",
+  "animal_list_body": "Los animales que participan en el evento otorgan más puntos al realizar acciones con ellos. La lista cambia de evento en evento y corresponde al tema del bioma. Los animales de la lista están marcados con un icono rosa de la Semana de Conservación en el Centro de Cría y el Inventario. Los animales que coinciden con el tema del evento pero no están en la lista principal aún pueden ganar Puntos de Conservación y están marcados con un icono amarillo de la Semana de Conservación.",
+
+  "quests_title": "Misiones",
+  "quests_body": "Las misiones de la Semana de Conservación se dividen en dos niveles: Ayudante (icono de mariposa de bronce) y Experto (icono de mariposa dorada). No todas las misiones están disponibles de inmediato — se generan más tareas a medida que se completan las anteriores, a niveles progresivamente más altos. La misión de Experto de Convertirse en Experto en Conservación significa comprar el nivel Experto; NO es necesario para progresar en el evento.",
+
+  "community_goal_title": "Recompensas del Objetivo Comunitario",
+  "community_goal_body": "Los objetivos comunitarios son metas compartidas donde se combinan los puntos de todos los jugadores. Al final de la Semana de Conservación, todos los participantes reciben recompensas globales por cada hito alcanzado. Hay cinco hitos de recompensa. Por cada 10.000.000 de puntos ganados globalmente, toda la comunidad gana un hito adicional.",
+
+  "personal_ranking_title": "Ranking Personal",
+  "personal_ranking_body": "Además de las recompensas personales, hay una tabla de clasificación global para competencia adicional. Cuantos más Puntos de Conservación recolectes, más alto subirás en el ranking. Los jugadores con el mismo número de puntos comparten la misma posición en el ranking final. Los mejores jugadores reciben Estatuas exclusivas de Oro, Plata y/o Bronce.",
+
+  "titles_title": "Títulos",
+  "titles_body": "Otra recompensa por competir en la Semana de Conservación es obtener títulos del juego otorgados por colocarse en la tabla de clasificación. Estos títulos se pueden mostrar permanentemente en tu perfil del juego o exhibirlos a través de la Boutique de Moda. Son visibles para todos tus amigos en la pestaña de Amigos. Los títulos son una forma de destacar pero no proporcionan ningún bonificador adicional.",
+
+  "fertility_feed_title": "Alimento de Fertilidad",
+  "fertility_feed_body": "Las bolsas de Alimento de Fertilidad son exclusivas de la función Semana de Conservación. Funcionan como el alimento de cría regular pero están disponibles de forma gratuita y se pueden guardar para usar en cualquier momento. Tipos: Estándar (alimento de cría de monedas), Premium (alimento de cría de diamantes), Rápido (alimento de diamantes para acelerar la cría). Para usar el Alimento de Fertilidad, inicia la cría y haz clic en el icono correspondiente en la parte inferior de la ventana de cría.",
+
+  "tips_title": "Consejos de Jugadores",
+  "tips_body": "Todos los jugadores elegibles deben abrir la burbuja del evento y hacer clic en Participar para recibir las Recompensas del Objetivo Comunitario (que probablemente incluyan diamantes gratuitos) al final del evento. Incluso los jugadores de muy bajo nivel deberían poder participar, ya que una misión solo requiere usar alimento de fertilidad de monedas para cualquier cría. Los jugadores pueden comprar los animales más baratos de la tienda y liberarlos para ganar Puntos de Conservación adicionales. Revisa el estado de tus misiones antes de hacer acciones masivas — completa las misiones por etapas para evitar desperdiciar acciones en una misión ya completada. El nivel y el color de los animales no importan para los puntos, solo la especie."
+}

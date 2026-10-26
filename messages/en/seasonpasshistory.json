@@ -1,0 +1,10 @@
+{
+  "title": "Season Pass History",
+  "intro": "A record of all past Season Passes in Zoo 2: Animal Park, including the animals and decorations available in each tier. Each Season Pass runs for approximately 10–11 weeks and includes Standard (free), Premium, and VIP reward tracks.",
+
+  "col_season": "Season",
+  "col_start": "Start Date",
+  "col_standard": "Standard Rewards",
+  "col_premium": "Premium Rewards",
+  "col_vip": "VIP Rewards"
+}

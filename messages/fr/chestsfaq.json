@@ -1,0 +1,31 @@
+{
+  "title": "Aperçu des coffres",
+  "intro": "Les coffres au trésor permettent aux joueurs d'acquérir presque tout ce qui peut être acheté pour le zoo. Presque tous les objets liés aux quêtes qui coûtent des diamants se trouvent dans les Coffres normaux, qui coûtent des pièces. Bien que payer des diamants soit plus rapide, la patience est aussi récompensée !",
+
+  "overview_title": "Aperçu rapide",
+  "overview_body": "Il existe 6 types de coffres disponibles dans le jeu. Les coffres légendaires, rétro et épiques font tourner de temps en temps des animaux renforcés. Indépendamment du coffre dans lequel se trouve un animal renforcé, sa pièce de puzzle est soit violette (rare) soit jaune (légendaire). Les pièces violettes coûtent 2 500 tickets pour être complétées avec une seule pièce. Les pièces jaunes coûtent 10 000 tickets avec une seule pièce. Parfois, vous pouvez attendre un événement de coffre pour les compléter à 15% de moins. Historiquement, si la popularité de l'animal est de 840 points ou plus (84 diamants), ce sera une pièce de puzzle jaune.",
+
+  "chest_types_title": "Types de coffres",
+  "chest_friendship": "Coffres d'amitié (roses) — Coût : 10 cœurs. Contiennent des animaux (aucune pièce garantie). Échangeables uniquement via les récompenses d'amis, non achetables. Limite de 5 — ouvrez-les quotidiennement pour ne pas perdre de récompenses.",
+  "chest_normal": "Coffres normaux (bleus) — Coût : pièces (selon le niveau). Contiennent tous les animaux de la trame principale (aucune pièce garantie). Pas de limite d'achat au-delà de la règle des 100 coffres.",
+  "chest_epic": "Coffres épiques (violets) — Coût : 29 diamants. Contiennent des animaux avec 1 pièce de puzzle garantie. Proposent des animaux renforcés en rotation.",
+  "chest_retro": "Coffres rétro (rouges) — Coût : 39 diamants. Contiennent des animaux avec 1 pièce de puzzle garantie. Proposent des animaux renforcés en rotation.",
+  "chest_legendary": "Coffres légendaires (dorés) — Contiennent des animaux avec 1 pièce de puzzle garantie. Proposent des animaux renforcés en rotation.",
+  "chest_video": "Coffres vidéo — Gagnés en regardant des publicités vidéo. Peuvent dépasser la limite de 100 coffres.",
+
+  "forecasts_title": "Prévisions des coffres",
+  "forecasts_body": "Pour les prédictions futures des coffres, consultez la page Prévisions.",
+
+  "limits_title": "Limites d'achat",
+  "limits_body": "Les coffres d'amitié ne sont échangeables que via les récompenses obtenues en aidant des amis et ne peuvent pas être achetés avec des pièces ou des diamants. Ils ont une limite de 5 — une fois que vous en avez 5, toute récompense de coffre supplémentaire est perdue. Il est recommandé de les ouvrir quotidiennement. La limite connue pour les coffres achetables est de 100. Après en avoir collecté 100, ils continuent de s'empiler mais vous ne pouvez plus en acheter jusqu'à ce que vous en ouvriez suffisamment pour passer sous 100. Les coffres collectés via le calendrier, les récompenses d'événements ou les récompenses de l'académie devraient continuer à s'empiler au-delà de la limite de 100.",
+
+  "keys_title": "Clés",
+  "keys_body": "Les clés peuvent être achetées pour 5 diamants chacune, ou reçues dans le cadre des récompenses de connexion quotidiennes ou du Season Pass. Elles peuvent parfois être achetables à la Boutique du Season Pass. Les jeux de coquilles proposent souvent des clés comme prix gratuit. Les clés servent à révéler des cartes supplémentaires lors de l'ouverture de coffres. Chaque coffre contient huit cartes, mais seules les quatre premières révélations sont incluses. Chaque révélation de carte supplémentaire utilise une Clé.",
+
+  "exceptions_title": "Ce qui ne peut pas être trouvé dans les coffres",
+  "exceptions_body": "Bien que presque tout dans le jeu puisse être trouvé dans des coffres, quelques objets ne sont pas disponibles :",
+  "exception_expansions": "Extensions — Il n'y a pas de cartes pour les extensions d'enclos ou de parc. Celles-ci ne peuvent être obtenues que lors d'un achat avec des pièces ou des diamants.",
+  "exception_upgrades": "Améliorations — Bien que les pièces pour les abris eux-mêmes se trouvent dans les coffres, TOUTES les améliorations ne peuvent être obtenues que lors d'un achat avec des pièces ou des diamants. Cela inclut les améliorations de la boutique. Consultez les Événements Soldes pour des remises de 25–50% !",
+  "exception_employees": "Employés du zoo — Il n'y a pas de pièces de puzzle pour les employés dans les coffres. Cependant, les trois bons d'employés sont offerts dans le cadre des Récompenses de connexion quotidiennes. Les pièces de puzzle pour les employés 7 jours sont données dans le Season Pass. Les pièces de puzzle pour les employés d'équipe sont données comme récompenses de connexion quotidiennes de l'Académie du zoo une fois que certains niveaux de l'Académie sont débloqués.",
+  "exception_other": "Les PNJ invités spéciaux, les objets d'avatar personnel, les bâtiments de fonctionnalités, les allées et les poubelles ne sont également pas disponibles dans les coffres."
+}

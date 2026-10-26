@@ -1,0 +1,24 @@
+{
+  "title": "Normale Truhen",
+  "intro": "Normale Truhen sind blaue, mit Münzen kaufbare Truhen und gehören zu den zugänglichsten Truppenarten im Spiel. Sie können mit Münzen gekauft oder kostenlos durch Quests, Level-Aufstiege und tägliche Login-Belohnungen erhalten werden.",
+
+  "obtaining_title": "Normale Truhen erhalten",
+  "obtaining_body": "Normale Truhen können im Shop für Münzen gekauft werden. Sie werden auch kostenlos vergeben für das Abschließen von Quests, das Erreichen neuer Spielerlevel und durch tägliche Login-Belohnungen. Die Münzkosten einer normalen Truhe richten sich nach deinem aktuellen Spielerlevel.",
+
+  "cost_title": "Münzkosten nach Level",
+  "cost_body": "Die Kosten einer normalen Truhe betragen dein aktuelles Spielerlevel multipliziert mit 250 Münzen. Beispielsweise kostet eine Truhe auf Level 1 250 Münzen, auf Level 10 kostet sie 2.500 Münzen und auf Level 70 kostet sie 17.500 Münzen.",
+  "cost_col_level": "Spielerlevel",
+  "cost_col_cost": "Truppenkosten",
+
+  "contents_title": "Truppeninhalt",
+  "contents_body": "Normale Truhen enthalten zwei Arten von Gegenständen: Gehege-Puzzleteile und direkt platzierbare Zoo-Dekorationen. Das macht sie einzigartig unter den kostenlos erhältlichen Truppenarten, da sie direkt Dekorationen für deinen Zoo bereitstellen können, ohne dass Puzzles vervollständigt werden müssen.",
+
+  "special_items_title": "Besondere Diamanten-Artikel als Puzzleteile",
+  "special_items_body": "Normale Truhen enthalten auch Puzzleteile für eine kleine Anzahl von Artikeln, die normalerweise nur für Diamanten erhältlich sind. Diese können durch Sammeln von genügend Teilen kostenlos zusammengebaut werden:",
+
+  "animals_title": "Tier-Puzzleteile",
+  "animals_body": "Normale Truhen enthalten Puzzleteile für die meisten regulären Shop-Tiere aller Biome, von Gewöhnlich bis Legendär. Der Brüllaffe und alle Tiere, die exklusiv in Diamanten-Truhen erhältlich sind, sind nicht enthalten.",
+
+  "tips_title": "Tipps",
+  "tips_body": "Normale Truhen sind eine hervorragende Quelle für direkt platzierbare Zoo-Dekorationen und daher ideal, um deinen Zoo auszubauen. Die besonderen Diamanten-Artikel, die als Puzzleteile erhältlich sind – darunter das Tierkarussell – stellen einen erheblichen Wert dar, daher lohnt es sich, Normale Truhen auch auf höheren Leveln regelmäßig zu sammeln."
+}

@@ -1,0 +1,21 @@
+{
+  "title": "Iskagevognen",
+  "intro": "Iskagevognen (IKV) er en særlig NPC, der besøger din zoo periodisk og tilbyder rabatterede dyr fra sin vogn. Han er én af de bedste måder at skaffe sjældne dyr til en nedsat pris på.",
+
+  "how_it_works_title": "Sådan virker det",
+  "how_it_works_body": "Iskagevognen besøger ca. hvert 44. time. Når han ankommer, tilbyder han op til 3 dyr med en rabat på 14–40% af deres standardpris. Du har 1 time til at foretage dine køb, inden han tager af sted. Sælgeren tjekker, hvilke dyr du allerede har placeret i din zoo, og tilbyder dig ikke dyr, du allerede ejer.",
+
+  "deals_title": "Tilbud og rabatter",
+  "deals_body": "Hvert besøg tilbyder 1 til 3 dyr udvalgt fra hans pulje. Rabatter varierer fra 14% til 40% af den normale købspris. Den rabatterede pris vises direkte på sælgerens vogn. Du kan købe et eller alle de tilbudte dyr inden for det 1-times vindue.",
+
+  "obtaining_title": "Anskaffe dyr",
+  "obtaining_body": "Dyrene tilgængelige fra Iskagevognen kan også fås gennem andre kilder såsom Hoved-zooboutikken, særlige kister, Klubbutikken, Supertilbud eller Redningscentret. Tabellen nedenfor viser dyrene i hans pulje sammen med deres alternative kilder.",
+
+  "col_animal": "Dyr",
+  "col_shop_tab": "Hoved-zoo butiksfane",
+  "col_chest": "Kiste",
+  "col_other": "Anden kilde",
+
+  "npc_title": "Om Iskagevognen",
+  "npc_body": "Iskagevognen er en venlig NPC-karakter, der skubber sin vogn gennem din zoo. Han vises som en notifikation, når han ankommer. Tryk på hans vogn for at gennemse det aktuelle udvalg. Hvis du misser ham, skal du vente på hans næste besøg om ca. 44 timer."
+}

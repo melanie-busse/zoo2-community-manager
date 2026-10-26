@@ -1,0 +1,43 @@
+{
+  "title": "Semaine de la conservation",
+  "intro": "La Semaine de la conservation est à la fois un événement personnel et communautaire qui permet aux directeurs de zoo de gagner des récompenses spéciales en accomplissant des quêtes spécifiques, comme reproduire des animaux désignés, les relâcher dans la nature et compléter des tâches d'événement spéciales. À partir du 30 juin 2026, la Semaine de la conservation se produit environ toutes les 9 semaines et dure 7 jours. Chaque semaine est dédiée à un biome spécifique.",
+
+  "participation_title": "Participation",
+  "participation_body": "Tout joueur au-dessus du niveau 20 qui a construit un Centre de reproduction dans le Zoo principal peut rejoindre l'événement. Pour participer, ouvrez la bulle de l'événement à gauche lorsqu'elle est active et cliquez sur Participer. Tous les participants peuvent recevoir des récompenses de l'Objectif communautaire, du Classement personnel et des Récompenses personnelles (Paliers). Les joueurs n'ont pas besoin d'avoir des animaux de la liste de l'événement pour participer et recevoir des récompenses.",
+
+  "tiers_title": "Paliers de la Semaine de la conservation",
+  "tiers_body": "Il y a deux paliers dans la Semaine de la conservation : Aide et Expert. Les deux récompenses de paliers comprennent des pièces de puzzle pour des animaux exclusifs à l'événement, des diamants, de la Nourriture de fertilité standard et premium, ainsi que d'autres objets. Il n'est PAS nécessaire d'acheter le palier Expert pour participer.",
+  "tiers_helper": "Le palier Aide est gratuit et disponible pour tous les joueurs. Il y a 10 récompenses dans le pass et plusieurs quêtes disponibles à accomplir.",
+  "tiers_expert": "Le palier Expert est un pass payant optionnel, valable une semaine et appliqué à chaque événement séparément. Il offre 10 récompenses supplémentaires et plusieurs quêtes supplémentaires. Les récompenses déjà atteintes peuvent être collectées rétroactivement si vous achetez le pass plus tard.",
+
+  "points_title": "Points de conservation",
+  "points_body": "Pour progresser dans la Semaine de la conservation et obtenir certaines récompenses, les joueurs collectent des Points de conservation (feuilles vertes) en reproduisant des animaux sélectionnés, en les relâchant dans la nature et en accomplissant des quêtes de la Semaine de la conservation. Les points sont nécessaires pour débloquer les récompenses personnelles, contribuer à l'objectif communautaire et améliorer votre classement dans le classement personnel.",
+
+  "tasks_title": "Tâches",
+  "tasks_body": "Les tâches suivantes peuvent être accomplies à tout moment pendant la Semaine de la conservation, indépendamment des quêtes actives ou du statut d'abonnement. Les niveaux et les couleurs des animaux ne jouent aucun rôle dans l'obtention de points, mais les espèces, oui.",
+  "task_breed_biome": "Reproduire des animaux correspondant au biome — 44 points",
+  "task_release_biome": "Relâcher des animaux correspondant au biome — 11 points",
+  "task_breed_list": "Reproduire des animaux de la liste des animaux — 77 points",
+  "task_release_list": "Relâcher des animaux de la liste des animaux — 22 points",
+
+  "animal_list_title": "Liste des animaux",
+  "animal_list_body": "Les animaux qui participent à l'événement donnent plus de points pour les actions effectuées avec eux. La liste change d'un événement à l'autre et correspond au thème du biome. Les animaux de la liste sont marqués d'une icône rose de la Semaine de la conservation dans le Centre de reproduction et l'Inventaire. Les animaux qui correspondent au thème de l'événement mais ne figurent pas sur la liste principale peuvent toujours gagner des Points de conservation et sont marqués d'une icône jaune de la Semaine de la conservation.",
+
+  "quests_title": "Quêtes",
+  "quests_body": "Les quêtes de la Semaine de la conservation sont divisées en deux paliers : Aide (icône papillon bronze) et Expert (icône papillon doré). Toutes les quêtes ne sont pas disponibles immédiatement — d'autres tâches sont générées au fur et à mesure que les tâches précédentes sont accomplies, à des niveaux progressivement plus élevés. La quête Expert pour Devenir un Expert en conservation signifie acheter le palier Expert ; il n'est PAS nécessaire de progresser dans l'événement.",
+
+  "community_goal_title": "Récompenses de l'objectif communautaire",
+  "community_goal_body": "Les objectifs communautaires sont des objectifs partagés où les points de tous les joueurs sont combinés. À la fin de la Semaine de la conservation, tous les participants reçoivent des récompenses mondiales pour chaque étape atteinte. Il y a cinq étapes de récompenses. Pour chaque 10 000 000 points gagnés globalement, toute la communauté gagne une étape supplémentaire.",
+
+  "personal_ranking_title": "Classement personnel",
+  "personal_ranking_body": "En plus des récompenses personnelles, il y a un classement mondial pour une compétition supplémentaire. Plus vous collectez de Points de conservation, plus vous montez dans le classement. Les joueurs ayant le même nombre de points partagent la même position dans le classement final. Les meilleurs joueurs reçoivent des Statues exclusives en Or, Argent et/ou Bronze.",
+
+  "titles_title": "Titres",
+  "titles_body": "Une autre récompense pour participer à la Semaine de la conservation est d'obtenir des titres en jeu attribués pour avoir figuré dans le classement. Ces titres peuvent être affichés en permanence dans votre profil en jeu ou mis en valeur via la Boutique de mode. Ils sont visibles pour tous vos amis dans l'onglet Amis. Les titres sont un moyen de se distinguer mais ne procurent aucun bonus supplémentaire.",
+
+  "fertility_feed_title": "Nourriture de fertilité",
+  "fertility_feed_body": "Les sacs de Nourriture de fertilité sont exclusifs à la fonctionnalité Semaine de la conservation. Ils fonctionnent comme de la nourriture de reproduction ordinaire mais sont disponibles gratuitement et peuvent être conservés pour être utilisés à tout moment. Types : Standard (nourriture de reproduction aux pièces), Premium (nourriture de reproduction aux diamants), Vitesse (nourriture aux diamants pour accélérer la reproduction). Pour utiliser la Nourriture de fertilité, lancez une reproduction et cliquez sur l'icône correspondante en bas de la fenêtre de reproduction.",
+
+  "tips_title": "Conseils des joueurs",
+  "tips_body": "Tous les joueurs éligibles devraient ouvrir la bulle de l'événement et cliquer sur Participer pour recevoir les Récompenses de l'objectif communautaire (qui incluent probablement des diamants gratuits) à la fin de l'événement. Même les joueurs de très bas niveau devraient pouvoir participer, car une quête ne nécessite que l'utilisation de nourriture de reproduction aux pièces pour n'importe quelle reproduction. Les joueurs peuvent acheter les animaux les moins chers de la boutique et les relâcher pour gagner des Points de conservation supplémentaires. Vérifiez l'état de vos quêtes avant d'effectuer des actions en masse — accomplissez les quêtes par étapes pour éviter de gaspiller des actions sur une quête déjà complétée. Le niveau et la couleur des animaux n'ont pas d'importance pour les points, seule l'espèce compte."
+}

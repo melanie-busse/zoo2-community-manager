@@ -1,0 +1,36 @@
+{
+  "title": "Kujali Park",
+  "intro": "Kujali Park is a savanna-themed secondary region that unlocks at player level 40 for 100 diamonds. \"Kujali\" is the Swahili word for \"care,\" reflecting the region's conservation theme. The park features open plains and classic African savanna animals, and rewards players with bonus XP and breeding boosts for savanna and plains species.",
+
+  "unlocking_title": "Unlocking Kujali Park",
+  "unlocking_body": "Kujali Park becomes available when you reach player level 40. It costs 100 diamonds to unlock. Upon unlocking, you receive a free Level 8 Giraffe to start your collection.",
+
+  "bonuses_title": "Regional Bonuses",
+  "bonuses_body": "Animals from the Savanna and Plains categories placed in Kujali Park receive a 50% bonus to both XP earned and breeding success chance. This makes the park an excellent location for breeding savanna and plains species.",
+
+  "rocks_title": "Breaking Rocks",
+  "rocks_body": "Rocks and debris scattered across Kujali Park must be cleared to expand your usable space. There are 5 types of debris, each with multiple layers that must be removed one at a time. Each removal costs coins and takes a set amount of time.",
+
+  "rocks_col_type": "Debris Type",
+  "rocks_col_layers": "Layers",
+  "rocks_col_cost": "Coin Cost per Layer",
+  "rocks_col_time": "Time per Layer",
+
+  "buildings_title": "Buildings",
+  "buildings_body": "Kujali Park has its own set of buildings that must be constructed to unlock features such as the visitor center, guest lounge, and breeding center. Each building is purchased and built separately.",
+
+  "buildings_col_building": "Building",
+  "buildings_col_cost": "Cost",
+
+  "booth_title": "Booth Upgrades",
+  "booth_body": "The park booth can be upgraded from level 0 to level 10, increasing the maximum coin capacity. Upgrading the booth allows you to collect more coins before the booth fills up.",
+
+  "booth_col_level": "Booth Level",
+  "booth_col_capacity": "Coin Capacity",
+
+  "breeding_title": "Breeding Slots",
+  "breeding_body": "Additional breeding slots can be unlocked in Kujali Park to allow more simultaneous breedings. Slots are unlocked one at a time using diamonds.",
+
+  "breeding_col_slot": "Breeding Slot",
+  "breeding_col_cost": "Cost to Unlock"
+}

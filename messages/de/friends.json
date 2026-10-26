@@ -1,0 +1,60 @@
+{
+  "title": "Freunde",
+  "intro": "Spieler können Belohnungen von zwei verschiedenen Arten von Freunden verdienen: neu geworbene Freunde und Spielfreunde. Neu geworbene Freunde sind eingeladene Nutzer, die Zoo 2 noch nie gespielt haben, während Spielfreunde bestehende Spieler sind, deren Konten mit deinem verknüpft werden können.",
+
+  "recruited_title": "Geworbene Freunde",
+  "recruited_body": "Du kannst Belohnungen für das Anwerben neuer Spieler in Zoo 2 mit deinem persönlichen Einladungslink verdienen. Klicke auf den rosa \"Einladen\"-Button in deinem Freunde-werben-Fenster und sende den Link an neue Spieler. Der neue Spieler muss deinen Link verwenden, um das Spiel herunterzuladen und bis zu 5 Ziele zu erfüllen, damit du Freundschaftsmünzen verdienst. Hinweis: Diese Funktion ist für Steam- oder Epic Games-Spieler nicht verfügbar.",
+
+  "objectives_title": "Ziele für geworbene Freunde",
+  "objective_level": "Level 10 erreichen",
+  "objective_animals": "10 Tiere insgesamt im Zoo haben",
+  "objective_diamonds": "Diamanten kaufen",
+  "objective_academy": "Akademie erweitern",
+  "objective_recruit": "Einen weiteren Freund werben",
+
+  "objectives_note": "Jedes abgeschlossene Ziel eines geworbenen Freundes gibt dir 1 Freundschaftsmünze. Wenn ein geworbener Freund dasselbe Ziel zweimal erfüllt, gibt es keine weiteren Münzen.",
+
+  "rewards_title": "Belohnungen für geworbene Freunde",
+
+  "ingame_title": "Spielfreunde",
+  "ingame_body": "Spieler können bis zu 16 Spielfreunde haben. Da Freunde bestimmte Belohnungen teilen, ist es sehr vorteilhaft, aktive Spielfreunde zu haben. Hinweis: Als Teil einer Fair-Play-Regelung verstößt es gegen die Upjers-Nutzungsbedingungen, Spielfreunde zu haben, die dieselbe Internetverbindung nutzen.",
+
+  "adding_title": "Freunde hinzufügen",
+  "adding_body": "Um neue Spielfreunde hinzuzufügen, musst du eine Freundschaftsanfrage annehmen oder eine an einen bestehenden Spieler senden. Tippe auf das Freunde-Menü-Symbol und wähle einen freien Freundschaftsplatz, um 12 vorgeschlagene Spieler auf ähnlichem Level zu sehen. Um einen bestimmten Spieler hinzuzufügen, verwende das Suchwerkzeug und gib dessen Support-ID ein.",
+
+  "removing_title": "Freunde entfernen",
+  "removing_body": "Um einen Freundschaftsplatz freizumachen, wähle einen Freund aus und tippe auf den Papierkorb in seinem Informationsbereich. Der Platz wird für 24 Stunden gesperrt, bevor du wieder einladen oder Einladungen annehmen kannst. 16 aktive Freunde zu bekommen und zu halten ist schwierig, und Spieler müssen oft auf andere Wege zurückgreifen, z.B. soziale Netzwerke oder Foren.",
+
+  "zoo_details_title": "Zoo-Details des Freundes",
+  "zoo_details_body": "Wenn du auf einen Freund tippst, siehst du Informationen über seinen Zoofortschritt: gehaltene Zoo-Titel, Anzahl der Parkerweiterungen, Anzahl verschiedener Tierarten, Anzahl der Tiere ab Level 10, Anzahl der Errungenschaften und die Anzahl der platzierten Babytiere, die gerade im Hauptzoo aufwachsen.",
+
+  "helping_title": "Freunden helfen",
+  "helping_body": "Helfen erfordert einen Besuch im Zoo deines Freundes. Tippe auf das Herz in der Freundesliste oder den Hilf-einem-Freund-Button. Helfen schenkt beiden einen Freundschaftsherzpunkt plus XP. Pro gehelfenem Freund erhältst du XP entsprechend dem Zehnfachen deines aktuellen Spiellevels.",
+
+  "minigames_title": "Hilfs-Minispiele",
+  "minigame_crows": "Krähen vertreiben: 5 Krähen befinden sich in zufälligen Gehegen. Tippe jede Krähe 3 Mal an, um sie zu vertreiben.",
+  "minigame_children": "Kinder trösten: 5 weinende Kinder sind zufällig auf Wegen platziert. Gib jedem Kind einen Luftballon, um es zu trösten.",
+  "minigame_animals": "Tiere einfangen: 10 Tiere laufen zufällig auf den Zoo-Wegen. Fahre mit dem Netz über jedes von ihnen.",
+
+  "skip_title": "Minispiele überspringen",
+  "skip_body": "Du kannst einem oder allen Freunden sofort helfen, indem du Diamanten bezahlst. \"Hilfe überspringen\" kostet 1 Diamant pro Spieler. Die Schaltfläche \"Allen helfen\" kostet 5 Diamanten pro verbliebenem ungehelftem Spieler. App-Nutzer können auch eine Anzeige anschauen, um einem Freund zu helfen (Limit 20 Anzeigen pro 24h).",
+
+  "messaging_title": "Freunde benachrichtigen",
+  "messaging_body": "Das Spiel bietet eine private Chatbox zum Schreiben von Nachrichten an Spielfreunde. Tippe auf den Briefumschlag neben deinem Freund. Wenn eine neue Nachricht eingeht, erscheint eine Benachrichtigung neben dem Freundesymbol. Der Briefumschlag wechselt von grau zu gelb bei ungelesenen Nachrichten. Gesendete Nachrichten können nicht gelöscht oder bearbeitet werden.",
+
+  "deleting_title": "Freunde löschen",
+  "deleting_body": "Um einen Freund zu löschen, klicke auf den Spieler und dann auf das kleine Papierkorb-Symbol in der unteren rechten Ecke. Löschen kann nicht rückgängig gemacht werden, und du kannst denselben Freund nur durch manuelle Eingabe der Support-ID erneut einladen. Der Freundschaftsplatz wird für die nächsten 24 Stunden gesperrt.",
+
+  "levelup_title": "Level-Up-Geschenke",
+  "levelup_body": "Wenn du ein Level aufsteigst, erhalten alle deine Spielfreunde auch das Level-Up-Geschenk, das du auswählst. Du erhältst auch die Level-Up-Geschenke deiner Freunde. Du wählst ein Puzzleteil aus einem zufälligen Satz von 3 aus.",
+
+  "chests_title": "Freundschaftstruhen",
+  "chests_body": "Jedes Mal, wenn du einem Freund hilfst oder von ihm geholfen wirst, erhältst du einen Freundschaftspunkt. Alle 10 Punkte belohnen dich mit einer Freundschaftstruhe, die Puzzleteile für Dekorationen, Gehege und Gehegeausstattung sowie exklusive Freundschaftstiere enthält. Das Maximum sind 32 Punkte pro Tag mit 16 aktiven Freunden (3 Truhen pro Tag). Das Speicherlimit beträgt 5 Truhen.",
+
+  "troubleshooting_title": "Fehlerbehebung",
+  "troubleshooting_body": "Wenn dein Spiel beim Helfen von Freunden ohne Fehlermeldung abbricht, könnte dein Gerät zu wenig RAM haben. Das Laden großer, vollständig animierter Zoos erfordert erheblich Arbeitsspeicher. Versuche folgende Lösungen:",
+
+  "fix_device": "Gerät wechseln: Versuche, Freunden mit einem Gerät mit mehr RAM zu helfen, z.B. einem Laptop oder Desktop-Computer.",
+  "fix_friends": "Freunde wechseln: Entferne Freunde mit sehr großen Zoos (über Level 60) und ersetze sie durch Spieler mit niedrigerem Level und kleineren Zoos, die weniger RAM benötigen.",
+  "fix_settings": "Spieleinstellungen anpassen: Aktiviere \"Reduzierte Animationen\", deaktiviere \"Erweitertes Zoomen\" oder aktiviere \"Bildrate begrenzen\" im zweiten Einstellungs-Tab, um den RAM-Verbrauch zu reduzieren."
+}

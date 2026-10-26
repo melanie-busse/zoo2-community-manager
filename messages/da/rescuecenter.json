@@ -1,0 +1,42 @@
+{
+  "title": "Rescue Center",
+  "intro": "The Rescue Center is a special mixed-species environment released on May 20, 2025. Unlocked at player level 100 for 190 diamonds, it allows you to rehabilitate injured animals and transfer them to your Main Zoo with unique permanent bonuses.",
+
+  "overview_title": "Overview",
+  "overview_body": "The Rescue Center operates independently from your main zoo. It uses a single giant shared enclosure that spans all biomes. You can expand your land by purchasing adjacent plots. Animals rehabilitated here receive permanent popularity and XP bonuses when transferred to your main zoo.",
+
+  "unlocking_title": "Unlocking",
+  "unlocking_body": "The Rescue Center requires player level 100 to unlock and costs 190 diamonds. It was released on May 20, 2025.",
+
+  "animal_shop_title": "Animal Shop",
+  "animal_shop_body": "The Rescue Center has its own Animal Shop with 3 offers refreshed every 24 hours: 2 diamond offers and 1 coin offer. The first offer each cycle is always a Rescue Center Exclusive animal. You can reroll the offers early, with each reroll costing 1 diamond per hour remaining in the cycle.",
+
+  "land_title": "Land & Enclosure",
+  "land_body": "The Rescue Center has one large shared enclosure that houses all animals together across all biomes. Land can be expanded by purchasing adjacent plots. You cannot reduce the land size once purchased. Standard enclosure equipment and Rescue Center exclusive equipment are both available — the exclusive equipment provides double XP and double refill capacity. The shared watering hole costs 4,000 coins to repair.",
+
+  "animal_care_title": "Animal Care",
+  "animal_care_body": "Injured animals require care before they can be transferred. There are six types of care available in the Rescue Center.",
+
+  "care_types_title": "Types of Animal Care",
+  "care_type_medication": "Medication: Costs 200 coins or 1 diamond. No equipment required. Can be performed by a hired vet.",
+  "care_type_wound": "Wound Care: Costs 250 coins or 1 diamond. No equipment required. Can be performed by a hired vet.",
+  "care_type_petting": "Petting: Free. No equipment required. Can be performed by a hired zookeeper.",
+  "care_type_playing": "Playing: Free (manual). Requires play equipment. Can be performed by a hired zookeeper.",
+  "care_type_feeding": "Feeding: Free, coin, or diamond cost. Requires a feeding trough. Can be performed by a hired zookeeper.",
+  "care_type_cleaning": "Cleaning: Free (manual). Requires a watering hole. Can be performed by a hired zookeeper.",
+
+  "workers_title": "Workers",
+  "workers_body": "You must build the Admin Building (50 diamonds) before hiring any workers. Vets handle medication and wound care. Zookeepers handle petting, playing, feeding, and cleaning. Vets can be hired with diamonds. Reaching Zoo Academy Gold Level 95 earns 1 daily puzzle piece for a team of 3 vets.",
+
+  "healing_title": "Healing & Rehabilitation",
+  "healing_body": "Full rehabilitation typically takes approximately one week. You can pay 100 diamonds for instant healing. Baby animals must also grow up separately before they can be transferred. Transferred animals receive double popularity and double XP — a star icon indicates a boosted animal. Released animals give 50 times the normal release XP.",
+
+  "transfer_title": "Transferring Animals",
+  "transfer_body": "Animals can only be transferred out of the Rescue Center to your Main Zoo — nothing can transfer in from outside. Transferred animals permanently keep their double popularity and double XP boosts. Note that breeding is not available in the Rescue Center, and boosted features do not carry over to babies.",
+
+  "exclusives_title": "Rescue Center Exclusive Animals",
+  "exclusives_body": "The following animals are only available through the Rescue Center. All are quest animals with a maximum level of 10 (except where noted).",
+
+  "col_animal": "Animal",
+  "col_notes": "Notes"
+}

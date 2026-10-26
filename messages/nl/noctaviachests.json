@@ -1,0 +1,30 @@
+{
+  "title": "NoctAvia Kisten",
+  "intro": "NoctAvia Kisten kunnen worden gekocht voor 29 diamanten. Ze zijn geïntroduceerd op 7 april 2026 en bevatten stukken voor de Noctarium- en Volièreregio's. Ze kunnen alleen worden gekocht vanuit deze twee regio's. Puzzelstukken gevonden in NoctAvia Kisten kunnen ook worden gevonden in het Prijzenwiel of als een beloningsoptie bij het omhooggaan van een vriend. Exclusieve Volièrestukken zijn te vinden in Volière Verenprijzen. Er zijn GEEN dieren in de NoctAvia Kisten.",
+
+  "content_title": "Mogelijke inhoud",
+  "content_note": "Let op: Alleen items met bevestigde zeldzaamheidsbeschrijvingen zijn hier vermeld. Noctarium- en Volièrewinkels zijn beschikbaar in deze kisten maar kunnen niet worden voltooid met diamanten of tickets.",
+
+  "noctarium_title": "Noctarium (Nachtdierenverblijf)",
+  "noctarium_enclosures_title": "Verblijven en verblijfsitems",
+  "noctarium_buildings_title": "Gebouwen",
+  "noctarium_flowers_title": "Bloemen & Decoraties",
+  "noctarium_boundaries_title": "Grenzen",
+  "noctarium_special_title": "Speciale items",
+
+  "aviary_title": "Volière",
+  "aviary_enclosures_title": "Verblijven en verblijfsitems",
+  "aviary_buildings_title": "Gebouwen",
+  "aviary_flowers_title": "Bloemen & Decoraties",
+  "aviary_boundaries_title": "Grenzen",
+  "aviary_special_title": "Speciale items",
+
+  "col_item": "Item",
+  "col_rarity": "Zeldzaamheid",
+
+  "rarity_common": "Gewoon",
+  "rarity_rare": "Zeldzaam",
+  "rarity_epic": "Episch",
+  "rarity_legendary": "Legendarisch",
+  "rarity_unconfirmed": "Onbevestigd"
+}

@@ -1,0 +1,60 @@
+{
+  "title": "Reproduction",
+  "intro": "La reproduction vous permet de produire des bébés animaux dans votre zoo. Avec la bonne configuration, les bons bonus et le bon timing, vous pouvez maximiser vos chances d'obtenir des robes spéciales et optimiser votre programme de reproduction.",
+
+  "requirements_title": "Prérequis",
+  "requirements_body": "Pour reproduire, vous avez besoin : d'un mâle et d'une femelle adultes de la même espèce, d'un abri de reproduction au niveau requis, de suffisamment de pièces pour lancer la reproduction et d'un emplacement de reproduction disponible.",
+
+  "how_to_breed_title": "Comment reproduire",
+  "how_to_breed_body": "Appuyez sur un abri de reproduction ou un emplacement du centre de reproduction, puis sélectionnez l'animal. Vous pouvez optionnellement ajouter de la Nourriture de fertilité pour améliorer les chances d'obtenir une robe spéciale. Lorsque le minuteur se termine, récupérez le bébé. Une période de repos de 8 heures suit la collecte avant que l'abri puisse être réutilisé.",
+
+  "gestation_title": "Temps de gestation",
+  "gestation_body": "Les temps de gestation varient de 2 à 16 heures selon l'espèce. Le temps exact pour chaque espèce est indiqué dans l'abri de reproduction.",
+
+  "simultaneous_title": "Reproduction simultanée",
+  "simultaneous_body": "Vous pouvez reproduire dans plusieurs enclos en même temps. L'ordre dans lequel vous récupérez les bébés est important pour le bonus d'échec de reproduction — un échec ajoute un pourcentage bonus à votre prochaine tentative. Le résultat est déterminé au moment où vous appuyez pour collecter.",
+
+  "twins_title": "Jumeaux et triplés",
+  "twins_body": "Les jumeaux et triplés sont garantis lors des événements Semaine de la reproduction. En dehors des événements, un abonnement à l'Académie du zoo vous donne une chance d'avoir des jumeaux ou des triplés. Notez que la reproduction doit COMMENCER pendant la fenêtre de l'événement pour bénéficier des jumeaux/triplés garantis.",
+
+  "growing_up_title": "Croissance",
+  "growing_up_body": "Les bébés mettent 7 jours à devenir adultes. Vous pouvez mettre en pause le vieillissement en déplaçant un bébé dans votre inventaire. Les bébés donnent deux fois plus de popularité que les adultes. La croissance rapporte une petite quantité d'XP.",
+
+  "power_growth_title": "Croissance accélérée",
+  "power_growth_body": "Vous pouvez faire grandir instantanément un animal en utilisant des diamants (Formule de croissance accélérée). C'est souvent à prix réduit pendant la Semaine de la reproduction.",
+
+  "reducing_time_title": "Réduire le temps de reproduction",
+  "reducing_time_body": "Plusieurs méthodes réduisent la durée de la reproduction : payer des diamants (5 par heure restante), regarder une publicité (réduction de 10%, application uniquement), utiliser un sac de Nourriture de fertilité vitesse (réduction de 20%, obtenu lors de la Semaine de la conservation, cumulable), ou l'abonnement à l'Académie du zoo (jusqu'à 80% de réduction).",
+
+  "reducing_rest_title": "Réduire le temps de repos",
+  "reducing_rest_body": "La période de repos de 8 heures après la collecte peut être réduite en payant 1 diamant par heure restante. Les utilisateurs de l'application peuvent regarder une publicité pour une réduction de 10%.",
+
+  "bonuses_title": "Bonus de reproduction",
+  "bonuses_body": "Plusieurs bonus se cumulent pour augmenter vos chances d'obtenir une robe spéciale.",
+
+  "bonus_types_title": "Types de bonus",
+  "bonus_club": "Boost de club : bonus de 2–10%, actif pendant les événements de club de 48 heures. Doit être activé AVANT le début de la reproduction.",
+  "bonus_academy": "Académie du zoo : pourcentage de base augmenté par biome. Varie selon l'espèce.",
+  "bonus_fertility": "Nourriture de fertilité : Standard donne le % de base ; Premium donne 4x le % de base (cumulable) ; Publicité vidéo donne le % de base (limite 1 par reproduction, jusqu'à 20 publicités par 24 heures).",
+  "bonus_failed": "Échec de reproduction : Ajoute le % de base ou 10% (le plus bas des deux) par tentative échouée. Maximum 75% de bonus. Cumulé dans les régions et les emplacements.",
+  "bonus_region": "Bonus de région : +50% du taux de base dans la région correspondante (Bosquet de sapins=Forêt, Kujali Park=Plaines & Savane, Zoo côtier=Eau, Parc polaire=Glace, Rainforest Park=Jungle).",
+
+  "special_coats_title": "Robes spéciales",
+  "special_coats_body": "Appuyez sur le bouton d'information bleu sur un abri de reproduction pour voir les chances de robe spéciale pour cette espèce. Les chances sont augmentées lors d'événements spéciaux. Les couleurs des parents influencent les options de couleur disponibles pour le bébé.",
+
+  "animal_levels_title": "Niveaux des bébés animaux",
+  "animal_levels_body": "Niveau du bébé = arrondi à l'entier inférieur((niveau maman + niveau papa) / 2) + 1. Le niveau maximum est 20 (les animaux scintillants peuvent aller jusqu'au niveau 40). Chaque niveau ajoute 5% à la popularité de base de l'animal. Les bébés donnent toujours deux fois plus de popularité.",
+
+  "animal_xp_title": "XP des animaux",
+  "animal_xp_body": "L'XP des animaux est la même à tout niveau, sauf si l'animal a été obtenu au Centre de sauvetage — ces animaux donnent le double d'XP.",
+
+  "region_bonus_title": "Bonus de région",
+  "region_bonus_body": "Reproduire dans la région correspondante pour une espèce donne +50% au taux de robe spéciale de base.",
+
+  "col_region": "Région",
+  "col_biome": "Biome",
+
+  "gestation_table_title": "Exemples de temps de gestation",
+  "col_species": "Espèce",
+  "col_gestation": "Temps de gestation"
+}

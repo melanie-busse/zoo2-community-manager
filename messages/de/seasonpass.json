@@ -1,0 +1,31 @@
+{
+  "title": "Season-Pass",
+  "intro": "Der Season-Pass ist ein 10-wöchiges (70-tägiges) Fortschrittssystem mit drei Mitgliedschaftsstufen: Standard (kostenlos), Premium und VIP (beide kostenpflichtig). Spieler verdienen XP durch tägliche Quizze und wöchentliche Quests, um durch 35 Level aufzusteigen und exklusive Belohnungen zu erhalten.",
+
+  "tiers_title": "Mitgliedschaftsstufen",
+  "tiers_body": "Es gibt drei Season-Pass-Stufen. Die Standard-Stufe ist kostenlos und für alle Spieler verfügbar. Premium und VIP sind kostenpflichtige Upgrades, die auf jeder Levelstufe zusätzliche Belohnungen freischalten. VIP beinhaltet alle Premium-Belohnungen plus zusätzliche Boni. Du kannst deine Stufe jederzeit während der Saison upgraden und erhältst rückwirkend alle Belohnungen für bereits abgeschlossene Level.",
+
+  "leveling_title": "Leveln",
+  "leveling_body": "Der Season-Pass hat 35 Hauptlevel. Nach Level 35 gibt es unbegrenzte Bonuslevel – jedes Bonuslevel erfordert 1.000 XP und belohnt dich mit einer Mystery-Bag pro Stufe. Du kannst auch ein Level sofort überspringen, indem du 10 Diamanten ausgibst.",
+
+  "xp_title": "XP verdienen",
+  "xp_body": "XP werden hauptsächlich durch das tägliche Quiz und wöchentliche Quests verdient. Das tägliche Quiz gibt 70 XP pro richtiger Antwort bei 5 Fragen pro Tag, also maximal 350 XP pro Tag. Wöchentliche Quests geben ungefähr 2.000–2.200 XP pro Woche. Die insgesamt mögliche XP-Menge über eine vollständige Saison beträgt ca. 46.000; du brauchst ungefähr 34.000 XP, um Level 35 zu erreichen.",
+
+  "quiz_title": "Tägliches Quiz",
+  "quiz_body": "Das tägliche Quiz stellt jeden Tag 5 Fragen. Jede richtige Antwort gibt 70 XP, für maximal 350 XP pro Tag. Die Quizfragen beziehen sich auf Inhalte von Zoo 2: Animal Park und allgemeines Tierwissen.",
+
+  "quests_title": "Wöchentliche Quests",
+  "quests_body": "Wöchentliche Quests werden regelmäßig erneuert und geben bei Abschluss XP. Das Abschließen aller verfügbaren wöchentlichen Quests bringt ungefähr 2.000–2.200 XP pro Woche. Das Priorisieren wöchentlicher Quests ist entscheidend, um Level 35 bis zum Ende der Saison zu erreichen.",
+
+  "feathers_title": "Federpakete",
+  "feathers_body": "Die Season-Pass-Währung (Federn) kann in Paketen gekauft werden, um Artikel im Saisonshop zu erwerben. Federpakete sind in drei Größen erhältlich. Der permanente Shop-Artikel ist eine Gehegeboden-Dekoration für 50 Federn.",
+  "feathers_col_bundle": "Paket",
+  "feathers_col_feathers": "Federn",
+  "feathers_col_cost": "Kosten",
+
+  "schedule_title": "Saisonplan",
+  "schedule_body": "Jede Saison dauert 10 Wochen (70 Tage). Saison 9 endet am 17. Dezember 2026. Neue Saisons beginnen kurz nach dem Ende der vorherigen.",
+
+  "tips_title": "Tipps",
+  "tips_body": "Mach jeden Tag das tägliche Quiz – es ist die zuverlässigste XP-Quelle mit bis zu 350 XP pro Tag. Verpasse keine wöchentlichen Quests, da sie den Großteil der XP liefern, die du brauchst, um Level 35 zu erreichen. Wenn du bei XP im Rückstand bist, kannst du 10 Diamanten pro Level ausgeben, um voranzukommen. Das Upgrade auf Premium oder VIP lohnt sich, wenn du die exklusiven Tiere und Dekorationen haben möchtest – du kannst jederzeit upgraden und erhältst alle verpassten Belohnungen rückwirkend."
+}

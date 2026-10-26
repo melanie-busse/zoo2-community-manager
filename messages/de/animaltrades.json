@@ -1,0 +1,27 @@
+{
+  "title": "Tierpaket-Tausch",
+  "intro": "Der Kauf von Diamantpaketen beinhaltet oft exklusive Bonustiere. Spieler erhalten ein oder zwei Premium-Bonustiere beim Kauf von 100+ Diamanten. Beim teuersten Diamantpaket wird ein exklusives VIP-Bonustier oder ein Paar Premium-Bonustiere verschenkt.",
+
+  "bonus_title": "Bonustiere",
+  "bonus_body": "Die Premium-Bonustiere wechseln alle zwei Wochen und die VIP-Bonustiere alle 8 Wochen. Überprüfe Prognosen für aktuelle Mustervorhersagen, wann die Bonustiere wechseln sollten und welche Tiere voraussichtlich aus Truhen-Rotationen übersprungen werden. Einige frühere Tiere werden manchmal erneut angeboten. Upjers ermöglicht es Spielern auch, ein aktuelles Bonustier gegen eine ausgewählte Liste zuvor angebotener Bonustiere zu tauschen.",
+
+  "how_title": "Wie man Bonustiere tauscht",
+  "how_step1": "Kaufe ein Diamantpaket, das Bonustiere beinhaltet.",
+  "how_step2": "Lass die Tiere nach dem Kauf in der Seitenleiste im Inventar. Platziere sie NICHT in deinem Zoo. Wenn du tauschen möchtest, wähle nicht den NPC aus, da dies für den Support mehr Arbeit bedeutet.",
+  "how_step3": "Öffne ein Support-Ticket bei Upjers unter support.upjers.com. Erkläre, dass du ein Paket gekauft hast und die Tiere tauschen möchtest. Gib unbedingt deine Support-ID (Benutzer-ID), deinen Benutzernamen und die gewünschten Tiere an. Die Tiere müssen das aktuelle Premium- oder VIP-Angebot sein, also tausche sie vor dem nächsten Wechsel.",
+  "how_step4": "Upjers tauscht die Tiere in der Regel innerhalb von ein bis zwei Werktagen aus.",
+
+  "exclusions_title": "Ausnahmen",
+  "exclusions_body": "Der Tausch von Bonustieren ist ein Kulanzservice und kein offizielles Spielmerkmal, daher kann Upjers jederzeit entscheiden, den Tiertausch nicht fortzusetzen.",
+
+  "exclusions_rules_title": "Tauschregeln",
+  "exclusion_premium": "Premium-Bonustiere können nur gegen Premium getauscht werden, VIP kann jedoch gegen ein VIP oder ein Paar Premium getauscht werden.",
+  "exclusion_pairs": "In Paaren erhaltene Tiere können nur paarweise getauscht werden.",
+  "exclusion_list": "Du kannst nur gegen eine bestimmte Liste von Tieren tauschen.",
+  "exclusion_enclosure": "Der Support tauscht nur die Tiere, nicht das Gehege. Wenn das Gehege des angeforderten Tauschertieres sich von dem unterscheidet, das mit dem Paket verschenkt wurde, sind die Spieler selbst dafür verantwortlich, das richtige Gehege zu besorgen.",
+
+  "tradelist_title": "Tauschlist",
+  "tradelist_body": "Derzeit kannst du nur gegen eine begrenzte Auswahl an Tieren tauschen. Die offizielle Tausch-Kulanzliste kann beim Upjers-Support angefragt werden. Die Tierseite zeigt ein blaues Diamantsymbol mit einem P (Premium) oder V (VIP), das anzeigt, welche Tiere bekanntermaßen auf der aktuellen Liste stehen. Ein graues Diamantsymbol bedeutet, das Tier ist nicht mehr auf der Tauschlist, war aber früher ein Premium- oder VIP-Tier.",
+
+  "tradelist_tip": "Du solltest die Truhen-Prognosen überprüfen, um zu sehen, ob das Tier voraussichtlich bald in Truhen erscheint, wo du es kostenlos erhalten könntest. Sieh dir auch Übersprungene Tiere an, die voraussichtlich nicht in Truhen erscheinen. Einige Tiere werden auch selten als Super Deal angeboten."
+}

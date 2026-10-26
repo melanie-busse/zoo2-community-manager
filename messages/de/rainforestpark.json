@@ -1,0 +1,42 @@
+{
+  "title": "Regenwald-Park",
+  "intro": "Der Regenwald-Park ist eine dschungel-themed Sekundärregion, die bei Spielerstufe 45 für 100 Diamanten freigeschaltet wird. Am 25. November 2025 veröffentlicht, ist der Park in einer üppigen Regenwald-Umgebung angesiedelt und verfügt über einen einzigartigen Gemischte-Arten-Dschungelgehege-Typ, der exklusiv für diese Region ist. Tiere der Kategorie Dschungel erhalten Bonus-XP und Zucht-Boosts.",
+
+  "unlocking_title": "Regenwald-Park freischalten",
+  "unlocking_body": "Der Regenwald-Park wird verfügbar, wenn du Spielerstufe 45 erreichst. Das Freischalten kostet 100 Diamanten. Nach dem Freischalten erhältst du einen kostenlosen Panther der Stufe 5. Der Park verfügt über eine Regenanimation, die periodisch abgespielt wird und der Umgebung Atmosphäre verleiht.",
+
+  "storyline_title": "Handlung",
+  "storyline_body": "Der Regenwald-Park stellt den Charakter Tyrell Twiga vor, der dich durch den Aufbau und die Erweiterung deiner Dschungelregion führt. Folge Tyrells Quests, um neue Gebäude, Gehege und Funktionen freizuschalten, während du den Park entwickelst.",
+
+  "bonuses_title": "Regionale Boni",
+  "bonuses_body": "Tiere der Kategorie Dschungel, die im Regenwald-Park platziert werden, erhalten einen 50%igen Bonus sowohl auf verdiente XP als auch auf die Zuchterfolgswahrscheinlichkeit. Dies macht den Park zum idealen Ort für die Zucht von Dschungelarten.",
+
+  "enclosure_title": "Gemischte-Arten-Dschungelgehege",
+  "enclosure_body": "Der Regenwald-Park verfügt über einen einzigartigen Gehege-Typ, den es in anderen Regionen nicht gibt: das Gemischte-Arten-Dschungelgehege. Dieses Gehege ermöglicht es, mehrere verschiedene Dschungeltierarten gemeinsam in einem einzigen Lebensraum zu halten. Jedes Gemischte-Arten-Gehege kostet 45 Diamanten und dauert 8 Stunden zum Bauen. Das Erweitern eines Geheges kostet 48.000 Münzen.",
+
+  "rocks_title": "Gelände freimachen",
+  "rocks_body": "Dichtes Dschungelgelände, das über den Regenwald-Park verstreut ist, muss geräumt werden, um nutzbaren Platz zu erweitern. Wie in anderen Regionen gibt es mehrere Trümmertypen mit Schichten, die entfernt werden müssen, wobei jede Entfernung Münzen und Zeit kostet.",
+
+  "rocks_col_type": "Trümmertyp",
+  "rocks_col_layers": "Schichten",
+  "rocks_col_cost": "Münzkosten pro Schicht",
+  "rocks_col_time": "Zeit pro Schicht",
+
+  "buildings_title": "Gebäude",
+  "buildings_body": "Der Regenwald-Park hat seine eigenen Gebäude. Beachte, dass das Besucherzentrum und das Zuchtzentrum Diamanten statt Münzen kosten.",
+
+  "buildings_col_building": "Gebäude",
+  "buildings_col_cost": "Kosten",
+
+  "booth_title": "Standverbesserungen",
+  "booth_body": "Der Parkstand kann von Stufe 0 auf Stufe 10 aufgewertet werden, wodurch die maximale Münzkapazität erhöht wird. Die Verbesserung des Standes ermöglicht es dir, mehr Münzen zu sammeln, bevor der Stand voll ist.",
+
+  "booth_col_level": "Standstufe",
+  "booth_col_capacity": "Münzkapazität",
+
+  "breeding_title": "Zuchtplätze",
+  "breeding_body": "Zusätzliche Zuchtplätze können im Regenwald-Park freigeschaltet werden, um mehr gleichzeitige Zuchtversuche zu ermöglichen. Plätze werden einzeln mit Diamanten freigeschaltet.",
+
+  "breeding_col_slot": "Zuchtplatz",
+  "breeding_col_cost": "Freischaltkosten"
+}

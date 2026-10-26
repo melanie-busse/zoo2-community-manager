@@ -1,0 +1,60 @@
+{
+  "title": "Fokken",
+  "intro": "Fokken stelt je in staat babydieren te produceren in je dierentuin. Met de juiste opstelling, bonussen en timing kun je je kansen op speciale vachten maximaliseren en je fokschema optimaliseren.",
+
+  "requirements_title": "Vereisten",
+  "requirements_body": "Om te fokken heb je nodig: een volwassen mannetje en vrouwtje van dezelfde soort, een fokschuur op het vereiste niveau, genoeg munten om het fokken te starten en een beschikbaar fokslot.",
+
+  "how_to_breed_title": "Hoe te fokken",
+  "how_to_breed_body": "Tik op een fokschuur of een fokcentrumslot en selecteer vervolgens het dier. Je kunt optioneel Vruchtbaarheidsvoeding toevoegen om de kansen op speciale vachten te verbeteren. Wanneer de timer eindigt, verzamel je het babydier. Na het verzamelen volgt een rusttijd van 8 uur voordat de schuur opnieuw gebruikt kan worden.",
+
+  "gestation_title": "Draagtijd",
+  "gestation_body": "Draagtijden variëren van 2 tot 16 uur afhankelijk van de soort. De exacte tijd voor elke soort wordt weergegeven in de fokschuur.",
+
+  "simultaneous_title": "Gelijktijdig fokken",
+  "simultaneous_body": "Je kunt in meerdere verblijven tegelijk fokken. De volgorde waarin je babydieren verzamelt, is belangrijk voor de bonus bij mislukt fokken — een mislukt fokpoging voegt een bonuspercentage toe aan je volgende poging. De uitkomst wordt bepaald op het moment dat je tikt om te verzamelen.",
+
+  "twins_title": "Tweelingen & drielingen",
+  "twins_body": "Tweelingen en drielingen zijn gegarandeerd tijdens Fok Week-evenementen. Buiten evenementen geeft een Zoo Academy-abonnement je een kans op tweelingen of drielingen. Let op: het fokken moet STARTEN tijdens het evenementvenster om in aanmerking te komen voor de gegarandeerde tweelingen/drielingen.",
+
+  "growing_up_title": "Opgroeien",
+  "growing_up_body": "Babydieren doen er 7 dagen over om volwassen te worden. Je kunt het ouder worden pauzeren door een babydier naar je inventaris te verplaatsen. Babydieren geven dubbele populariteit ten opzichte van volwassen dieren. Opgroeien geeft een kleine hoeveelheid XP.",
+
+  "power_growth_title": "Krachtige groei",
+  "power_growth_body": "Je kunt een dier direct laten opgroeien met diamanten (Krachtige Groeiformule). Dit is vaak met korting verkrijgbaar tijdens Fok Week.",
+
+  "reducing_time_title": "Foktijd verkorten",
+  "reducing_time_body": "Verschillende methoden verkorten de foktijd: diamanten betalen (5 per resterende uur), een advertentie bekijken (10% vermindering, alleen app), een Speed-Vruchtbaarheidsvoedingszak gebruiken (20% vermindering, verdiend tijdens Conservation Week, stapelbaar) of het Zoo Academy-abonnement (tot 80% vermindering).",
+
+  "reducing_rest_title": "Rusttijd verkorten",
+  "reducing_rest_body": "De rusttijd van 8 uur na het verzamelen kan worden verkort door 1 diamant per resterende uur te betalen. App-gebruikers kunnen een advertentie bekijken voor een vermindering van 10%.",
+
+  "bonuses_title": "Fokbonussen",
+  "bonuses_body": "Meerdere bonussen stapelen om je kansen op een speciale vacht te verhogen.",
+
+  "bonus_types_title": "Soorten bonussen",
+  "bonus_club": "Clubboost: 2–10% bonus, actief tijdens 48-uur durende clubevenementen. Moet worden geactiveerd VOORDAT het fokken begint.",
+  "bonus_academy": "Zoo Academy: Verhoogd basispercentage per bioom. Varieert per soort.",
+  "bonus_fertility": "Vruchtbaarheidsvoeding: Standaard geeft basispercentage %; Premium geeft 4x basispercentage % (stapelbaar); Video-advertentie geeft basispercentage % (limiet 1 per fokpoging, tot 20 advertenties per 24 uur).",
+  "bonus_failed": "Mislukt fokken: Voegt basispercentage % of 10% toe (afhankelijk van wat lager is) per mislukte poging. Maximum 75% bonus. Overgedragen over regio's en slots.",
+  "bonus_region": "Regiebonus: +50% basispercentage in overeenkomende regio (Dennenwoud=Woud, Kujali Park=Vlaktes & Savanne, Oceaan Dierentuin=Water, Poolpark=IJs, Regenwoudpark=Jungle).",
+
+  "special_coats_title": "Speciale vachten",
+  "special_coats_body": "Tik op de blauwe informatieknop op een fokschuur om de kansen op speciale vachten voor die soort te zien. Kansen worden vergroot tijdens speciale evenementen. De kleuren van de ouders beïnvloeden welke kleuropties beschikbaar zijn voor het babydier.",
+
+  "animal_levels_title": "Babydier niveaus",
+  "animal_levels_body": "Babydierniveau = afronden naar beneden((moeder niveau + vader niveau) / 2) + 1. Maximum niveau is 20 (glinsterende dieren gaan tot niveau 40). Elk niveau voegt 5% toe aan de basispopulariteit van het dier. Babydieren geven altijd dubbele populariteit.",
+
+  "animal_xp_title": "Dier-XP",
+  "animal_xp_body": "Dier-XP is hetzelfde op elk niveau, tenzij het dier afkomstig is uit het Reddingscentrum — die dieren geven dubbele XP.",
+
+  "region_bonus_title": "Regiebonussen",
+  "region_bonus_body": "Fokken in de overeenkomende regio voor een soort geeft +50% op de basis speciale vachtpercentage.",
+
+  "col_region": "Regio",
+  "col_biome": "Bioom",
+
+  "gestation_table_title": "Voorbeeld draagtijden",
+  "col_species": "Soort",
+  "col_gestation": "Draagtijd"
+}

@@ -1,0 +1,35 @@
+{
+  "title": "Sammlungen",
+  "intro": "Sammlungen sind eine Reihe von Errungenschaften, die dich dafür belohnen, bestimmte Kombinationen von Tieren und Gegenständen gleichzeitig in deinem Zoo zu platzieren. Am 16. Oktober 2019 eingeführt, werden Sammlungen über das Buchsymbol im Besucherzentrum aufgerufen, das bei Spielerstufe 17 freigeschaltet wird.",
+
+  "overview_title": "Wie Sammlungen funktionieren",
+  "overview_body": "Jede Sammlung erfordert, dass du einen bestimmten Satz von Tieren (und manchmal Dekorationen oder Gebäuden) gleichzeitig in deinem Zoo platziert hast. Die erforderlichen Tiere müssen Mindestanforderungen an die Stufe erfüllen und in einigen Fällen eine bestimmte Fellfarbe haben. Alle erforderlichen Gegenstände müssen gleichzeitig in deinem Zoo vorhanden sein — es reicht nicht aus, sie früher einmal besessen zu haben.",
+
+  "tiers_title": "Sammlungsstufen",
+  "tiers_body": "Sammlungen sind nach Schwierigkeitsgrad und Belohnungswert in drei Stufen unterteilt. Höhere Stufen erfordern seltenere Tiere und mehr Kombinationen, bieten aber größere Belohnungen.",
+
+  "tier_one_title": "1-Sterne-Sammlungen",
+  "tier_one_body": "1-Sterne-Sammlungen sind die zugänglichste Stufe. Sie erfordern in der Regel gewöhnliche Tiere auf niedrigeren Stufen. Belohnungen umfassen Münzen, XP und gelegentlich Diamanten.",
+
+  "tier_two_title": "2-Sterne-Sammlungen",
+  "tier_two_body": "2-Sterne-Sammlungen erfordern mehr Aufwand und beinhalten oft Tiere aus Sekundärregionen oder bestimmte Fellfarben. Die Belohnungen sind wertvoller und können Diamanten und spezielle Dekorationen umfassen.",
+
+  "tier_three_title": "3-Sterne-Sammlungen",
+  "tier_three_body": "3-Sterne-Sammlungen sind die anspruchsvollsten und erfordern seltene oder exklusive Tiere, die manchmal nur durch Klub-Wettbewerbe oder besondere Events erhältlich sind. Belohnungen umfassen bedeutende Diamanten, exklusive Dekorationen und andere Premium-Gegenstände.",
+
+  "requirements_title": "Sammlungsanforderungen",
+  "requirements_body": "Beim Anzeigen einer Sammlung zeigt jedes erforderliche Tier oder Element seine Mindeststufe und eventuelle Fellfarbanforderungen. Wenn eine bestimmte Fellfarbe angegeben ist, musst du genau diese Farbe in deinem Zoo platziert haben. Einige Sammlungen erfordern Tiere, die nur durch Klub-Wettbewerbe gewonnen werden können, wie Popularitätsstatuen oder exklusive Farbvarianten.",
+
+  "regions_title": "Sammlungen nach Region",
+  "regions_body": "Sammlungen sind im Sammlungsbuch nach Region geordnet. Zu den Regionen gehören: Hauptzoo, Tannenwald, Kujali-Park, Terrarium, Aquarium, Noctarium und Vogelhaus. Jede Region hat ihre eigenen Sammlungen zu vervollständigen.",
+
+  "tips_title": "Tipps zum Vervollständigen von Sammlungen",
+  "tips_retroactive_title": "Bereits platzierte Tiere zählen",
+  "tips_retroactive_body": "Tiere, die bereits in deinem Zoo sind, zählen für Sammlungsanforderungen, solange sie die Stufen- und Fellfarbenkriterien erfüllen. Du musst Tiere, die du bereits besitzt, nicht erneut platzieren.",
+  "tips_planning_title": "Plane im Voraus für seltene Tiere",
+  "tips_planning_body": "Einige Sammlungstiere sind nur durch saisonale Events, Klub-Wettbewerbsbelohnungen oder besondere Truhen erhältlich. Überprüfe die Sammlungsanforderungen frühzeitig, damit du seltene Tiere erwerben kannst, bevor sie nicht mehr verfügbar sind.",
+  "tips_level_title": "Stufenanforderungen",
+  "tips_level_body": "Die bei einer Sammlungsanforderung angezeigte Stufe ist die Mindeststufe. Wenn dein Tier bereits über der Mindeststufe liegt, erfüllt es die Anforderung. Konzentriere dich darauf, Tiere, die für mehrere Sammlungen benötigt werden, gleichzeitig aufzuleveln.",
+  "tips_club_title": "Klub-Wettbewerbstiere",
+  "tips_club_body": "Einige 3-Sterne-Sammlungen erfordern Tiere, die nur durch das Gewinnen von Klub-Wettbewerben erhalten werden können. Dies sind oft exklusive Farbvarianten, die an die bestplatzierten Klubs vergeben werden. Die aktive Teilnahme an wöchentlichen Wettbewerben ist der beste Weg, diese Tiere zu verdienen."
+}

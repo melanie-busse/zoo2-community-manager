@@ -1,0 +1,43 @@
+{
+  "title": "Naturschutzwoche",
+  "intro": "Die Naturschutzwoche ist sowohl ein persönliches als auch ein Gemeinschaftsevent, das Zoodirektoren ermöglicht, besondere Belohnungen zu verdienen, indem sie spezifische Quests abschließen – etwa das Züchten bestimmter Tiere, deren Freilassung in die Wildnis und das Erledigen besonderer Eventaufgaben. Ab dem 30. Juni 2026 findet die Naturschutzwoche ungefähr alle 9 Wochen statt und dauert 7 Tage. Jede Woche steht unter einem anderen Thema, das einem bestimmten Biom gewidmet ist.",
+
+  "participation_title": "Teilnahme",
+  "participation_body": "Jeder Spieler über Level 20, der ein Brutzentrum im Hauptzoo gebaut hat, kann am Event teilnehmen. Um beizutreten, öffne die Eventblase auf der linken Seite, wenn das Event aktiv ist, und klicke auf Teilnehmen. Alle Teilnehmer können Belohnungen vom Gemeinschaftsziel, der persönlichen Rangliste und den persönlichen Belohnungen (Stufen) erhalten. Spieler müssen keine Tiere aus der Eventliste besitzen, um teilzunehmen und Belohnungen zu erhalten.",
+
+  "tiers_title": "Naturschutzwoche-Stufen",
+  "tiers_body": "Es gibt zwei Stufen in der Naturschutzwoche: Helfer und Experte. Beide Stufenbelohnungen umfassen Puzzleteile für eventexklusive Tiere, Diamanten, Standard- und Premium-Fruchtbarkeitsfutter und andere Gegenstände. Es ist NICHT notwendig, die Expertenstufe zu kaufen, um teilzunehmen.",
+  "tiers_helper": "Die Helferstufe ist kostenlos und für alle Spieler verfügbar. Es gibt 10 Belohnungen im Pass und mehrere Quests zu erledigen.",
+  "tiers_expert": "Die Expertenstufe ist ein optionaler kostenpflichtiger Pass, der für eine Woche gültig und für jedes Event separat gilt. Er bietet 10 zusätzliche Belohnungen und mehrere Extraquests. Bereits erreichte Belohnungen können rückwirkend abgeholt werden, wenn der Pass später gekauft wird.",
+
+  "points_title": "Naturschutzpunkte",
+  "points_body": "Um in der Naturschutzwoche voranzukommen und bestimmte Belohnungen zu erhalten, sammeln Spieler Naturschutzpunkte (grüne Blätter), indem sie ausgewählte Tiere züchten, sie in die Wildnis entlassen und Naturschutzwoche-Quests abschließen. Punkte werden benötigt, um persönliche Belohnungen freizuschalten, zum Gemeinschaftsziel beizutragen und die eigene Position auf der persönlichen Rangliste zu verbessern.",
+
+  "tasks_title": "Aufgaben",
+  "tasks_body": "Die folgenden Aufgaben können jederzeit während der Naturschutzwoche abgeschlossen werden, unabhängig von aktiven Quests oder dem Abonnementstatus. Level und Farbe der Tiere spielen keine Rolle beim Punktesammeln, wohl aber die Art.",
+  "task_breed_biome": "Biom-passende Tiere züchten – 44 Punkte",
+  "task_release_biome": "Biom-passende Tiere freilassen – 11 Punkte",
+  "task_breed_list": "Tiere aus der Tierliste züchten – 77 Punkte",
+  "task_release_list": "Tiere aus der Tierliste freilassen – 22 Punkte",
+
+  "animal_list_title": "Tierliste",
+  "animal_list_body": "Tiere, die am Event teilnehmen, geben mehr Punkte bei Aktionen mit ihnen. Die Liste ändert sich von Event zu Event und entspricht dem Biom-Thema. Tiere aus der Liste sind im Brutzentrum und Inventar mit einem pinken Naturschutzwoche-Symbol markiert. Tiere, die zum Event-Thema passen, aber nicht auf der Hauptliste stehen, können trotzdem Naturschutzpunkte einbringen und sind mit einem gelben Naturschutzwoche-Symbol markiert.",
+
+  "quests_title": "Quests",
+  "quests_body": "Naturschutzwoche-Quests sind in zwei Stufen unterteilt: Helfer (Bronze-Schmetterlingsymbol) und Experte (Gold-Schmetterlingssymbol). Nicht alle Quests sind sofort verfügbar – mit dem Abschluss vorheriger Aufgaben werden weitere Aufgaben freigeschaltet, auf progressiv höheren Leveln. Die Expertenquest, Naturschutzexperte zu werden, bedeutet den Kauf der Expertenstufe; es ist NICHT notwendig, im Event voranzukommen.",
+
+  "community_goal_title": "Gemeinschaftsziel-Belohnungen",
+  "community_goal_body": "Gemeinschaftsziele sind gemeinsame Ziele, bei denen die Punkte aller Spieler zusammengezählt werden. Am Ende der Naturschutzwoche erhalten alle Teilnehmer globale Belohnungen für jeden erreichten Meilenstein. Es gibt fünf Belohnungsmeilensteine. Für je 10.000.000 global gesammelte Punkte erhält die gesamte Gemeinschaft einen zusätzlichen Meilenstein.",
+
+  "personal_ranking_title": "Persönliche Rangliste",
+  "personal_ranking_body": "Neben persönlichen Belohnungen gibt es eine globale Bestenliste für zusätzlichen Wettbewerb. Je mehr Naturschutzpunkte gesammelt werden, desto höher steigt man in der Rangliste. Spieler mit der gleichen Punktzahl teilen sich dieselbe Position im Endranking. Top-Spieler erhalten exklusive Gold-, Silber- und/oder Bronze-Statuen.",
+
+  "titles_title": "Titel",
+  "titles_body": "Eine weitere Belohnung für das Teilnehmen an der Naturschutzwoche ist das Verdienen von Im-Spiel-Titeln, die für die Platzierung auf der Bestenliste vergeben werden. Diese Titel können dauerhaft im Im-Spiel-Profil angezeigt oder durch die Fashion Boutique präsentiert werden. Sie sind für alle Freunde im Freunde-Tab sichtbar. Titel sind eine Möglichkeit, aufzufallen, bieten aber keine zusätzlichen Boni.",
+
+  "fertility_feed_title": "Fruchtbarkeitsfutter",
+  "fertility_feed_body": "Fruchtbarkeitsfutter-Beutel sind exklusiv für das Naturschutzwoche-Feature. Sie funktionieren wie normales Zuchtfutter, sind aber kostenlos erhältlich und können jederzeit gespeichert und verwendet werden. Typen: Standard (Münz-Zuchtfutter), Premium (Diamanten-Zuchtfutter), Schnell (Diamantennahrung zum Beschleunigen der Zucht). Um Fruchtbarkeitsfutter zu verwenden, starte die Zucht und klicke auf das entsprechende Symbol am unteren Rand des Zuchtfensters.",
+
+  "tips_title": "Spielertipps",
+  "tips_body": "Alle berechtigten Spieler sollten die Eventblase öffnen und auf Teilnehmen klicken, um am Ende des Events Gemeinschaftsziel-Belohnungen zu erhalten (die wahrscheinlich kostenlose Diamanten beinhalten). Auch sehr niedrigstufige Spieler sollten teilnehmen können, da eine Quest nur die Verwendung von Münz-Fruchtbarkeitsfutter für irgendeine Zucht erfordert. Spieler können die günstigsten Shop-Tiere kaufen und freilassen, um zusätzliche Naturschutzpunkte zu verdienen. Überprüfe den Status deiner Quests vor Massenaktionen – schließe Quests phasenweise ab, um keine Aktionen für eine bereits abgeschlossene Quest zu verschwenden. Level und Farbe der Tiere spielen keine Rolle für Punkte, nur die Art."
+}

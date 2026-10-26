@@ -1,0 +1,20 @@
+{
+  "title": "VIP & Premium Animals",
+  "intro": "Zoo 2 offers two exclusive paid animal tracks: Premium Animals and VIP Animals. Both rotate on a schedule and are only available for limited windows. These animals cannot be obtained through regular gameplay.",
+
+  "premium_title": "Premium Animals",
+  "premium_body": "Premium Animals are exclusive animals available for purchase with diamonds (typically 100+ diamonds). The offer changes every other Tuesday. Starting August 30, 2022, purchasing a Premium Animal for the first time rewarded a Lion Mascot NPC. This was replaced by a Shiba Inu NPC on March 12, 2024, a Penguin Mascot NPC on March 27, 2025, and a Shiba Inu (Black & Tan) NPC in March 2026.",
+
+  "vip_title": "VIP Animals",
+  "vip_body": "VIP Animals are exclusive animals included with most diamond packages of 1,000 diamonds or more. The VIP Animal offer rotates every 8 weeks on a Tuesday. Like Premium Animals, each VIP Animal is only available for its rotation window.",
+
+  "premium_history_title": "Premium Animal History",
+  "premium_history_body": "The table below lists all Premium Animals offered, in order from most recent to earliest.",
+
+  "vip_history_title": "VIP Animal History",
+  "vip_history_body": "The table below lists all VIP Animals offered, in order from most recent to earliest.",
+
+  "col_date": "Date",
+  "col_animal": "Animal",
+  "col_notes": "Notes"
+}

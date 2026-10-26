@@ -1,0 +1,60 @@
+{
+  "title": "Friends",
+  "intro": "Players can earn rewards from two different types of friends: new recruits and in-game friends. New recruits are invited users who have never played Zoo 2 before, while in-game friends are existing players whose accounts can link to yours for in-game interaction.",
+
+  "recruited_title": "Recruited Friends",
+  "recruited_body": "You can earn rewards for recruiting new players to Zoo 2 with your personal invite link. Click the pink \"invite\" button in your Recruit Friends window and send the link to new players. The new player must use your link to download the game and complete any of up to 5 objectives in order for you to earn Friendship Coins. Note: This feature is not available to Steam or Epic Games players.",
+
+  "objectives_title": "Recruited Friend Objectives",
+  "objective_level": "Reach Level 10",
+  "objective_animals": "Have 10 total animals in their zoo",
+  "objective_diamonds": "Buy diamonds",
+  "objective_academy": "Extend Academy",
+  "objective_recruit": "Recruit another friend",
+
+  "objectives_note": "Each recruited friend's completed objective gives you 1 Friendship Coin. If one recruited friend completes the same objective twice, there are no further coins given.",
+
+  "rewards_title": "Recruited Friend Rewards",
+
+  "ingame_title": "In-Game Friends",
+  "ingame_body": "Players can have up to 16 in-game friends. Since friends share certain rewards, having active in-game friends can be extremely beneficial. Note: As part of a fair-play regulation, it is against Upjers terms of service to have in-game friends who use your same internet source.",
+
+  "adding_title": "Adding Friends",
+  "adding_body": "To add new in-game friends, you must accept a friend request or send a friend request to an existing player. Tap on the friends menu icon and select an available friend slot to see 12 suggested players close in level to you. To add a specific player, use the search tool and type their support ID from their Settings. Closing and reopening the window refreshes suggestions.",
+
+  "removing_title": "Removing Friends",
+  "removing_body": "To free a friend slot, select a friend and tap the bin in their information panel. The slot will be locked for 24 hours before you can invite again or accept invitations. Note that getting and keeping 16 active friends is quite hard, and players will need to resort to other recruiting ways such as social networks or forums.",
+
+  "zoo_details_title": "Friend's Zoo Details",
+  "zoo_details_body": "Tapping a friend shows information about their zoo progress: zoo titles held, number of park expansions, number of different species placed, number of level 10+ animals, number of achievements obtained, and the number of placed baby animals currently growing in the main zoo region.",
+
+  "helping_title": "Helping Friends",
+  "helping_body": "Helping requires you to visit your friend's zoo. Tap the heart in the friends list or the Help Friend button. Helping grants a friendship heart point to both you and your friend plus XP. For each friend you help, you gain XP equivalent to ten times your current game level.",
+
+  "minigames_title": "Help Mini-Games",
+  "minigame_crows": "Chasing Crows: 5 crows are located in random enclosures. Tap each crow 3 times to chase it away.",
+  "minigame_children": "Comforting Children: 5 crying children are randomly placed on pathways. Give each a balloon to comfort them.",
+  "minigame_animals": "Catching Animals: 10 animals are randomly running on zoo pathways. Swipe the net over each of them.",
+
+  "skip_title": "Skipping Mini-Games",
+  "skip_body": "You can help one or all friends instantly by paying diamonds. \"Skip Help\" costs 1 diamond per player. The \"Help All\" button costs 5 diamonds per remaining unhelped player in total. App users can also watch an ad to skip helping a friend (limit 20 ads per 24h).",
+
+  "messaging_title": "Messaging Friends",
+  "messaging_body": "The game provides a private chat box to message in-game friends. Tap the envelope beside your friend to send a message. When a new message is received, a notification appears beside the friend icon. The envelope icon turns from gray to yellow when an unread message appears. It is not possible to delete or edit a sent message.",
+
+  "deleting_title": "Deleting Friends",
+  "deleting_body": "To delete a friend, click on the player, then click the small bin icon in the bottom right corner of the friend overview window. Deletion cannot be undone, and you cannot reinvite the same friend without manually entering their Support ID again. The friendship slot will be blocked for the next 24 hours after deletion.",
+
+  "levelup_title": "Level Up Gifts",
+  "levelup_body": "When you level up, every one of your in-game friends will also receive the level up gift you choose. You will also receive the level up gifts from your friends. You pick one puzzle piece from a random set of 3.",
+
+  "chests_title": "Friendship Chests",
+  "chests_body": "Each time you help a friend or are helped by them, you get a friendship point. Every 10 points rewards you with a Friendship Chest containing puzzle pieces for decorations, enclosures and enclosure items, and exclusive friendship animals. The maximum friendship points per day is 32 with 16 active friends (3 chests per day). The storage limit is 5 chests.",
+
+  "troubleshooting_title": "Troubleshooting",
+  "troubleshooting_body": "If your game quits while helping friends without an error, your device may be running low on RAM. Loading large, fully-animated zoos requires significant memory. Try the following solutions:",
+
+  "fix_device": "Switch Devices: Try helping friends with a device that has more RAM, such as a laptop or desktop.",
+  "fix_friends": "Switch Friends: Remove friends with very large zoos (above level 60) and replace them with lower level players who have smaller zoos requiring less RAM.",
+  "fix_settings": "Switch Game Settings: Enable \"Reduced Animations\", disable \"Allow Extended Zoom\", or enable \"Limit Framerate\" in the second settings tab to reduce RAM usage."
+}

@@ -1,0 +1,27 @@
+{
+  "title": "Advent Calendar",
+  "intro": "Every December, the Advent Calendar replaces the daily login reward track. Open a new door each day to collect special rewards. Missed doors can be unlocked until January 7 for 3 diamonds each.",
+
+  "how_it_works_title": "How It Works",
+  "how_it_works_body": "During December, tap the calendar bubble in the game to find the day's door. Each door is only open for 24 hours before it locks. You have until January 7 of the following year to unlock any doors you missed, at a cost of 3 diamonds per door.",
+
+  "rewards_title": "Annual Reward Summaries",
+  "rewards_body": "Each year's Advent Calendar features unique animals and chests. The tables below list daily rewards for each year, from most recent to earliest.",
+
+  "col_day": "Day",
+  "col_reward": "Reward",
+
+  "year_2025": "2025",
+  "year_2024": "2024",
+  "year_2023": "2023",
+  "year_2022": "2022",
+  "year_2021": "2021",
+  "year_2020": "2020",
+  "year_2019": "2019",
+  "year_2018": "2018",
+
+  "summary_2025": "2025: 2x Pel's Fishing Owl, 1x Polar Bear, 1x Legendary Chest, 1x Retro Chest, 1x Epic Chest, 1x Terraqua Chest (Day 8 — only visible in Terrarium/Aquarium).",
+  "summary_2024": "2024: 2x Southern Muriqui, 1x Snow Leopard, 2x Legendary Chest, 1x Retro Chest, 1x Epic Chest.",
+  "summary_2023": "2023: 2x Greater Kudu, 1x Reindeer, 2x Legendary Chest, 1x Retro Chest, 1x Rare/Epic Chest.",
+  "summary_2022": "2022: 2x Adélie Penguin, 1x Poitou Donkey, 2x Legendary Chest, 1x Retro Chest, 1x Rare Chest."
+}

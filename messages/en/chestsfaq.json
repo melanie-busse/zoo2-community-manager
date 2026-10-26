@@ -1,0 +1,31 @@
+{
+  "title": "Chests Overview",
+  "intro": "Treasure Chests provide a way for players to acquire almost everything that can be purchased for the Zoo. Almost all Quest-related diamond-cost items can be found in Normal Chests, which cost coins. Though paying diamonds is quicker, patience is rewarded too!",
+
+  "overview_title": "Quick Overview",
+  "overview_body": "There are 6 types of chests available in the game. Legendary, Retro, and Epic chests rotate boosted animals from time to time. Independent of which chest a boosted animal is in, its puzzle piece is either purple (rare) or yellow (legendary). Purple pieces cost 2,500 tickets to complete with only one puzzle piece. Yellow pieces cost 10,000 tickets with only one puzzle piece. Sometimes you can wait for a chest event to complete them for 15% less. Historically, if the popularity of the animal is 840 points or more (84 diamonds), it will be a yellow puzzle piece.",
+
+  "chest_types_title": "Chest Types",
+  "chest_friendship": "Friendship Chests (Pink) — Cost: 10 hearts. Contain animals (no guaranteed piece). Redeemable only through friend rewards, not purchasable. Limit of 5 — open daily to avoid losing rewards.",
+  "chest_normal": "Normal Chests (Blue) — Cost: coins (level dependent). Contain all story line animals (no guaranteed piece). No purchase limit beyond the 100-chest stack rule.",
+  "chest_epic": "Epic Chests (Purple) — Cost: 29 diamonds. Contain animals with 1 guaranteed puzzle piece. Feature rotating boosted animals.",
+  "chest_retro": "Retro Chests (Red) — Cost: 39 diamonds. Contain animals with 1 guaranteed puzzle piece. Feature rotating boosted animals.",
+  "chest_legendary": "Legendary Chests (Gold) — Contain animals with 1 guaranteed puzzle piece. Feature rotating boosted animals.",
+  "chest_video": "Video Chests — Earned by watching video ads. Can stack beyond the 100-chest limit.",
+
+  "forecasts_title": "Chest Forecasts",
+  "forecasts_body": "For future chest predictions, see the Forecasts page.",
+
+  "limits_title": "Purchase Limits",
+  "limits_body": "Friendship chests are only redeemable through rewards from helping friends and cannot be purchased with coins or diamonds. They have a limit of 5 — once you stack up 5, any additional chest rewards are lost. It is recommended to open them daily. The known limit for purchasable chests is 100. After you collect 100, they continue to stack but you cannot buy any more until you open enough to go below 100. Collecting chests from the calendar, event rewards, or academy rewards should continue to stack past the 100 limit.",
+
+  "keys_title": "Keys",
+  "keys_body": "Keys can be purchased for 5 diamonds each, or received as part of the Daily Login rewards or the Season Pass. On certain occasions they may be purchasable from the Season Pass Shop. Shell Games often offer keys as a free prize. Keys are used to reveal extra cards when opening chests. Each chest contains eight cards, but only the first four card reveals are included. Each additional card reveal uses one Key.",
+
+  "exceptions_title": "What Cannot Be Found in Chests",
+  "exceptions_body": "While almost everything in the game can be found in chests, a few items are not available:",
+  "exception_expansions": "Expansions — There are no cards for enclosure or park expansions. These can only be acquired when purchased with coins or diamonds.",
+  "exception_upgrades": "Upgrades — While pieces for the shelters themselves can be found in chests, ALL upgrades can only be obtained when purchased with coins or diamonds. This includes Shop upgrades. Check Sale Events for discounts of 25–50% off!",
+  "exception_employees": "Zoo Employees — There are no puzzle pieces for employees from chests. However, all three employee vouchers are given away as part of the Daily Login Reward. Puzzle pieces for 7-day employees are given in the Season Pass. Team employee puzzle pieces are given as Zoo Academy daily login rewards once certain Academy levels are unlocked.",
+  "exception_other": "Special Guest NPCs, personal avatar items, feature buildings, paths, and trash bins are also not available in chests."
+}

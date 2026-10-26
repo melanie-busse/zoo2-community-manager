@@ -1,0 +1,34 @@
+{
+  "title": "Boutique de Moda",
+  "intro": "La Boutique de Moda, también conocida como Boutique de Diseñador o Boutique Fashionista, es un edificio de características que permite a los jugadores personalizar sus avatares personales. Al igual que los invitados especiales (NPCs), estos personajes deambulan por tu zoo y te representan mientras caminan por los zoos de tus amigos.",
+
+  "building_title": "Edificio",
+  "building_body": "La boutique se puede comprar por 50.000 monedas a partir del nivel 10. Tarda 12 horas en construirse. El edificio se puede guardar en el inventario o colocar en cualquier región compatible del zoo principal.",
+
+  "finding_avatar_title": "Encontrar tu Avatar",
+  "finding_avatar_body": "Encuentra tu avatar fácilmente haciendo clic en el edificio de la Boutique de Moda y seleccionando el icono de huella. Puedes seleccionar tu avatar y moverlo a cualquier lugar dentro de la región. El avatar se muestra en todas las regiones, igual que tus amigos.",
+
+  "collecting_gifts_title": "Recoger Regalos",
+  "collecting_gifts_body": "Tu avatar da pequeños regalos de vez en cuando. La cuenta regresiva inicial para reclamar tu próximo regalo es de 12h 15m con 15 minutos añadidos a la cuenta regresiva después de cada recolección adicional. Los regalos se pueden recoger encontrando tu avatar y seleccionando el regalo sobre su cabeza, o haciendo clic en el edificio de la boutique y seleccionando el icono de persona con lápiz (el editor de perfil) y cogiendo el regalo en la parte superior derecha si está disponible.",
+
+  "customizing_title": "Personalizar tu Avatar",
+  "customizing_body": "Puedes personalizar el cabello, el tono de piel, el color de ojos, la camiseta, los pantalones, los zapatos, los sombreros, las gafas y otros accesorios según el género de tu avatar seleccionado. Puedes cambiar el género haciendo clic en el símbolo de género junto a tu avatar mientras te vistes en la pestaña de perfil.",
+
+  "clothes_title": "Ropa",
+  "clothes_body": "Los avatares masculinos y femeninos a menudo tienen diferentes opciones. A veces un artículo se muestra como un solo icono (unisex) y al comprar ese artículo se desbloquea para ambos géneros. Todos los artículos de la tabla se pueden comprar en la tienda de la Boutique de Moda. Los artículos predeterminados son gratuitos. Los artículos unisex están disponibles para ambos géneros con una sola compra.",
+
+  "reward_items_title": "Artículos de Recompensa",
+  "reward_items_body": "Estos artículos se podían obtener mediante misiones o eventos y no son visibles en la Boutique de Moda para compra directa. Nota: Todas las opciones de sombreros comprables cuentan para la misión de la boutique de moda de comprar un sombrero. Los sombreros recompensados, como las orejas de conejo blancas o azules, no cuentan para esta misión.",
+
+  "col_item": "Artículo",
+  "col_gender": "Género",
+  "col_value": "Valor",
+  "col_how": "Cómo Obtenerlo",
+
+  "accessories_title": "Accesorios",
+  "hats_title": "Sombreros",
+  "tops_title": "Parte de Arriba",
+  "bottoms_title": "Parte de Abajo",
+  "shoes_title": "Zapatos",
+  "outfits_title": "Outfits"
+}

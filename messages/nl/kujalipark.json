@@ -1,0 +1,36 @@
+{
+  "title": "Kujali Park",
+  "intro": "Kujali Park is een savanne-thematische secundaire regio die vrijkomt op spelerniveau 40 voor 100 diamanten. \"Kujali\" is het Swahiliwoord voor \"zorgen\", wat het conservatiethema van de regio weerspiegelt. Het park kenmerkt zich door open vlaktes en klassieke Afrikaanse savannes dieren, en beloont spelers met bonus-XP en fokboosts voor savanne- en vlaktesoorten.",
+
+  "unlocking_title": "Kujali Park ontgrendelen",
+  "unlocking_body": "Kujali Park wordt beschikbaar wanneer je spelerniveau 40 bereikt. Het kost 100 diamanten om te ontgrendelen. Bij het ontgrendelen ontvang je een gratis Giraffe op Niveau 8 om je collectie te starten.",
+
+  "bonuses_title": "Regionale bonussen",
+  "bonuses_body": "Dieren uit de categorieën Savanne en Vlaktes die in Kujali Park worden geplaatst, ontvangen een bonus van 50% op zowel verdiende XP als kans op foksucces. Dit maakt het park een uitstekende locatie voor het fokken van savanne- en vlaktesoorten.",
+
+  "rocks_title": "Rotsen breken",
+  "rocks_body": "Rotsen en puin verspreid over Kujali Park moeten worden vrijgemaakt om je bruikbare ruimte uit te breiden. Er zijn 5 soorten puin, elk met meerdere lagen die één voor één verwijderd moeten worden. Elke verwijdering kost munten en duurt een bepaalde tijd.",
+
+  "rocks_col_type": "Puintype",
+  "rocks_col_layers": "Lagen",
+  "rocks_col_cost": "Muntkosten per laag",
+  "rocks_col_time": "Tijd per laag",
+
+  "buildings_title": "Gebouwen",
+  "buildings_body": "Kujali Park heeft zijn eigen set gebouwen die moeten worden gebouwd om functies te ontgrendelen zoals het bezoekerscentrum, de gastlounge en het fokcentrum. Elk gebouw wordt afzonderlijk gekocht en gebouwd.",
+
+  "buildings_col_building": "Gebouw",
+  "buildings_col_cost": "Kosten",
+
+  "booth_title": "Kraampje upgrades",
+  "booth_body": "Het parkkraampje kan worden geüpgraded van niveau 0 naar niveau 10, waardoor de maximale muntcapaciteit toeneemt. Het upgraden van het kraampje stelt je in staat meer munten te verzamelen voordat het kraampje vol is.",
+
+  "booth_col_level": "Kraampjeniveau",
+  "booth_col_capacity": "Muntcapaciteit",
+
+  "breeding_title": "Fokslots",
+  "breeding_body": "Extra fokslots kunnen worden ontgrendeld in Kujali Park om meer gelijktijdige fokkingen mogelijk te maken. Slots worden één voor één ontgrendeld met diamanten.",
+
+  "breeding_col_slot": "Fokslot",
+  "breeding_col_cost": "Kosten om te ontgrendelen"
+}

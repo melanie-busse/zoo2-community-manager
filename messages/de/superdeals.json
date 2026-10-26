@@ -1,0 +1,26 @@
+{
+  "title": "Super-Angebote",
+  "intro": "Super-Angebote (auch als Top-Angebote oder Flash-Sales bezeichnet) sind zeitlich begrenzte Rabattangebote im Zoo 2 Shop. Sie dauern typischerweise 24–72 Stunden und wechseln um die Mittagszeit in Deutschland.",
+
+  "how_it_works_title": "So funktionieren Super-Angebote",
+  "how_it_works_body": "Super-Angebote erscheinen für eine begrenzte Zeit im Shop. Der häufigste Typ bündelt ein Tierpaar mit einem Gehege, einem Wasserloch und Gehegeobjekten mit einem Rabatt von 39–84 %. Die Rabatte werden einschließlich des Münzen-zu-Diamanten-Umrechnungskurses von 1 Diamant pro 250 Münzen berechnet.",
+
+  "types_title": "Arten von Super-Angeboten",
+  "types_body": "Super-Angebote gibt es in verschiedenen Formen. Der häufigste Typ kombiniert zwei Tiere mit einem Gehege-Paket. Weniger häufige Typen umfassen Farbvarianten-Tiere zum vollen Diamantenpreis, vergünstigte Event-Dekorationen und Tiere aus VIP-, Legendären oder Freundschafts-Truhen.",
+
+  "discontinued_title": "Eingestellte Angebotstypen",
+  "discontinued_body": "Safari-Restaurants und Zoo-Läden waren früher als Super-Angebote verfügbar, wurden jedoch eingestellt. Ihr unbegrenztes Kaufpotenzial verursachte ein Münzenungleichgewicht in der Spielwirtschaft. Diese Artikel sind jetzt über Saisonpass-Belohnungen, das Muschelspiel, Saisonevents und neue Spielregionen verfügbar.",
+
+  "pricing_title": "Tierpreisreferenz",
+  "pricing_body": "Die folgende Tabelle zeigt Diamantenkosten für Tiere bei verschiedenen Kaufmethoden: Kartenpreis, Rettungszentrum-Adoption, Shop-Kauf (33 % Rabatt), Eiscreme-Angebot (40 % Rabatt), typischer Super-Deal-Preis, Shop-Paketpreis (33 % Rabatt), Truhentyp und Glücksrad-Verfügbarkeit.",
+
+  "col_animal": "Tier",
+  "col_card_price": "Kartenpreis",
+  "col_rescue": "Rettungszentrum",
+  "col_shop_33": "Shop (33 % Rabatt)",
+  "col_ice_cream": "Eiscreme (40 % Rabatt)",
+  "col_super_deal": "Super-Angebot",
+  "col_shop_pair": "Shop-Paar (33 % Rabatt)",
+  "col_chest": "Truhentyp",
+  "col_prize_wheel": "Glücksrad"
+}

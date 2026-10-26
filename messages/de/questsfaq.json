@@ -1,0 +1,38 @@
+{
+  "title": "Quests",
+  "intro": "Quests sind Aufgaben und Missionen, die deinem Zoo zugewiesen werden und dich mit Münzen, Diamanten, XP, Tieren, Dekorationen und anderen wertvollen Gegenständen belohnen. Es gibt viele Arten von Quests in Zoo 2: Animal Park, von Anfänger-Tutorials bis hin zu langen Handlungsketten und regionsspezifischen Herausforderungen.",
+
+  "types_title": "Quest-Typen",
+  "types_body": "Zoo 2 bietet mehrere Kategorien von Quests. Das Verständnis der verschiedenen Typen hilft dir, Prioritäten zu setzen, welche Quests du zuerst angehen möchtest.",
+
+  "tutorial_title": "Tutorial-Quests",
+  "tutorial_body": "Tutorial-Quests führen neue Spieler in die Spielmechaniken ein. Sie leiten dich durch das Platzieren deiner ersten Tiere, den Bau von Gehegen, das Sammeln von Münzen und die Interaktion mit Besuchern. Diese Quests werden früh im Spiel abgeschlossen und können nicht übersprungen werden.",
+
+  "level_title": "Stufenausgelöste Handlungs-Quests",
+  "level_body": "Wenn du aufsteigst, werden neue Handlungs-Quest-Ketten verfügbar. Diese Quests sind nach Stufenbereich gruppiert: Stufen 1–25, Stufen 26–50, Stufen 51–75, Stufen 76–100 und Stufen 101+. Jede Gruppe führt neue Charaktere, Regionen und Gameplay-Funktionen ein. Das Abschließen von Handlungs-Quests ist eine der Hauptmethoden, um im Spiel voranzukommen.",
+
+  "chain_title": "Ketten-Quests",
+  "chain_body": "Ketten-Quests sind mehrstufige Quest-Sequenzen, bei denen das Abschließen einer Quest die nächste in der Serie freischaltet. Sie beinhalten häufig das Züchten bestimmter Tiere, das Erreichen bestimmter Populationsmeilensteine oder den Bau bestimmter Strukturen. Einige Ketten-Quests umfassen viele Schritte und können erhebliche Zeit in Anspruch nehmen.",
+
+  "feature_title": "Funktions-Quests",
+  "feature_body": "Funktions-Quests führen bestimmte Spielfunktionen wie das Terrarium, Aquarium, Noctarium, Vogelhaus und andere Sekundärregionen ein oder erweitern sie. Diese Quests leiten dich durch das Freischalten und Einrichten jeder Funktion zum ersten Mal.",
+
+  "region_title": "Regions-Quests",
+  "region_body": "Jede der 10 Regionen in Zoo 2 hat ihre eigenen regionsspezifischen Quests. Regions-Quests beinhalten in der Regel das Bevölkern deiner Region mit Tieren, das Abbauen von Geländehindernissen, den Bau von Gebäuden und das Erreichen von Zuchtmeilensteinen innerhalb dieser Region.",
+
+  "misc_title": "Verschiedene Quests",
+  "misc_body": "Verschiedene Quests decken eine Vielzahl von einmaligen Aufgaben ab, die nicht in die anderen Kategorien passen. Dazu können saisonale Event-Quests, spezielle zeitlich begrenzte Herausforderungen und Community-Meilensteinziele gehören.",
+
+  "rewards_title": "Quest-Belohnungen",
+  "rewards_body": "Quest-Belohnungen variieren je nach Quest-Typ und Schwierigkeitsgrad. Häufige Belohnungen umfassen Münzen, Diamanten, XP, Tiere, Dekorationen, Puzzleteile und besondere Gegenstände. Einige Quests belohnen einzigartige Tiere oder Dekorationen, die auf keine andere Weise erhalten werden können. Diamanten werden manchmal direkt vergeben oder durch das Abschließen von Quest-Meilensteinen.",
+
+  "tips_title": "Quest-Tipps",
+  "tips_title_retroactive": "Rückwirkender Abschluss",
+  "tips_body_retroactive": "Viele Quests sind rückwirkend, d. h., wenn du die Anforderungen bereits vor Erhalt der Quest erfüllt hast, wird sie sofort oder mit minimalem zusätzlichem Aufwand abgeschlossen. Dies ist häufig bei Quests der Fall, die den Besitz eines bestimmten Tieres oder das Erreichen einer bestimmten Stufe erfordern.",
+  "tips_title_timelimited": "Zeitlich begrenzte Quests",
+  "tips_body_timelimited": "Einige Quests sind nur für eine begrenzte Zeit verfügbar, oft im Zusammenhang mit saisonalen Events oder besonderen Aktionen. Überprüfe regelmäßig dein Quest-Protokoll, um sicherzustellen, dass du zeitkritische Ziele nicht verpasst.",
+  "tips_title_diamonds": "Diamantenkosten",
+  "tips_body_diamonds": "Bestimmte Quests erfordern das Ausgeben von Diamanten zum Abschließen, wie das Freischalten einer neuen Region oder den Kauf eines bestimmten Gebäudes. Überprüfe die Anforderungen, bevor du eine Quest annimmst, um deine Diamantenausgaben entsprechend zu planen.",
+  "tips_title_puzzles": "Puzzleteile",
+  "tips_body_puzzles": "Einige Quests belohnen Puzzleteile, die verwendet werden, um besondere Tiere oder Dekorationen freizuschalten. Sammle die erforderliche Anzahl von Puzzleteilen, um den Belohnungsgegenstand zusammenzusetzen."
+}

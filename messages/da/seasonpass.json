@@ -1,0 +1,31 @@
+{
+  "title": "Season Pass",
+  "intro": "The Season Pass is a 10-week (70-day) progression system with three membership tiers: Standard (free), Premium, and VIP (both paid). Players earn XP through daily quizzes and weekly quests to level up through 35 levels and earn exclusive rewards.",
+
+  "tiers_title": "Membership Tiers",
+  "tiers_body": "There are three Season Pass tiers. The Standard tier is free and available to all players. Premium and VIP are paid upgrades that unlock additional rewards at each level. VIP includes all Premium rewards plus extra bonuses. You can upgrade your tier at any point during the season and retroactively receive all rewards from completed levels.",
+
+  "leveling_title": "Leveling Up",
+  "leveling_body": "The Season Pass has 35 main levels. After level 35, there are unlimited bonus levels — each bonus level requires 1,000 XP and awards one mystery bag per tier. You can also skip a level instantly by spending 10 diamonds.",
+
+  "xp_title": "Earning XP",
+  "xp_body": "XP is earned primarily through the daily quiz and weekly quests. The daily quiz awards 70 XP per correct answer with 5 questions available each day, for a maximum of 350 XP per day. Weekly quests award approximately 2,000–2,200 XP per week. The total possible XP over a full season is around 46,000; you need approximately 34,000 XP to reach level 35.",
+
+  "quiz_title": "Daily Quiz",
+  "quiz_body": "The daily quiz presents 5 questions each day. Each correct answer awards 70 XP, for a maximum of 350 XP per day. Quiz questions are related to Zoo 2: Animal Park game content and general animal knowledge.",
+
+  "quests_title": "Weekly Quests",
+  "quests_body": "Weekly quests refresh regularly and award XP upon completion. Completing all available weekly quests earns approximately 2,000–2,200 XP per week. Prioritizing weekly quests is essential to reaching level 35 by the end of the season.",
+
+  "feathers_title": "Feather Bundles",
+  "feathers_body": "Season Pass currency (feathers) can be purchased in bundles to buy items in the seasonal shop. Feather bundles are available at three sizes. The permanent shop item is an enclosure ground decoration costing 50 feathers.",
+  "feathers_col_bundle": "Bundle",
+  "feathers_col_feathers": "Feathers",
+  "feathers_col_cost": "Cost",
+
+  "schedule_title": "Season Schedule",
+  "schedule_body": "Each season lasts 10 weeks (70 days). Season 9 ends on December 17, 2026. New seasons begin shortly after the previous one ends.",
+
+  "tips_title": "Tips",
+  "tips_body": "Complete the daily quiz every day — it is the most consistent XP source at up to 350 XP per day. Do not miss weekly quests, as they provide the bulk of XP needed to reach level 35. If you are behind on XP, you can spend 10 diamonds per level to skip ahead. Upgrading to Premium or VIP is worthwhile if you want the exclusive animals and decorations — you can upgrade at any point and receive all missed rewards retroactively."
+}

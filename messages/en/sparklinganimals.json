@@ -1,0 +1,26 @@
+{
+  "title": "Sparkling Animals",
+  "intro": "A successful breeding of any species or variant can randomly result in a special, sparkling animal of the same species. Sparkling animals shine with a glittery purplish-glowing hue because of their exquisite health and contain high popularity. Sparklies can only be obtained by regular breeding and are extremely rare.",
+
+  "overview_title": "Overview",
+  "overview_body": "Every sparkling animal is born at level 40 regardless of the level of its parents. Sparklies are the only animals that can obtain such a high level in your zoo. All non-sparkling animals reach their maximum achievable level at level 20.",
+
+  "streak_title": "Breeding Streak",
+  "streak_body": "The chance to obtain a sparkling animal is determined by your breeding streak — the number of consecutive breeding successes per species. Once a breeding fails, the streak for that species resets to zero. Each species has its own breeding streak displayed in the lower right of the breeding dialogue box. Whether the success is a single, twins, or triplets, the session counts as a single attempt.",
+
+  "chances_title": "Sparkly Chances",
+  "chances_body": "The higher the number of consecutive successful breedings for a species, the greater your chances of getting a sparkling animal on the next breeding. The odds begin at 0.1% with a breeding streak of zero and increase to a maximum of 1.1% with a breeding streak of 10 or more. Each individual baby within a set of twins or triplets has its own unique chance at being born sparkly.",
+
+  "col_streak": "Breeding Streak",
+  "col_odds": "Odds of Sparkly",
+  "col_chance": "Chance of Sparkly",
+
+  "breeding_with_title": "Breeding with a Sparkling Animal",
+  "breeding_with_body": "Once a sparkling animal grows up, it can be used to breed for level 20 babies, giving you the ability to jump levels. Regardless of the level or sparkliness of the other parent, babies should produce a regular level 20 with an ultra-rare chance of obtaining another sparkling level 40. Sparklies also instantly fulfill any collections goals for the same species and color since they are born at level 40.",
+
+  "donating_title": "Donating a Sparkling Animal",
+  "donating_body": "When donating a level 40 sparkling animal to a club contest, the animal gives the same points as its level: 400 club points as displayed on the member donation screen. It is the equivalent of donating two level 20 animals.",
+
+  "glow_title": "Turning Off Sparkling Glow",
+  "glow_body": "If sparkling visual effects are not your preference, you can disable the sparkling feature in the game settings. Click the gear icon at the bottom right of your game screen, click the second settings tab, scroll down and check \"Show glittering animals as regular animals\". This removes any sparkling effect from your level 40 animals."
+}

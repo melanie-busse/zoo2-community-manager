@@ -1,0 +1,60 @@
+{
+  "title": "Amigos",
+  "intro": "Los jugadores pueden ganar recompensas de dos tipos diferentes de amigos: nuevos reclutas y amigos del juego. Los nuevos reclutas son usuarios invitados que nunca han jugado a Zoo 2 antes, mientras que los amigos del juego son jugadores existentes cuyas cuentas se pueden vincular a la tuya para interacción en el juego.",
+
+  "recruited_title": "Amigos Reclutados",
+  "recruited_body": "Puedes ganar recompensas por reclutar nuevos jugadores a Zoo 2 con tu enlace de invitación personal. Haz clic en el botón rosa \"invitar\" en tu ventana de Reclutar Amigos y envía el enlace a nuevos jugadores. El nuevo jugador debe usar tu enlace para descargar el juego y completar cualquiera de hasta 5 objetivos para que tú ganes Monedas de Amistad. Nota: Esta función no está disponible para jugadores de Steam o Epic Games.",
+
+  "objectives_title": "Objetivos de Amigos Reclutados",
+  "objective_level": "Alcanzar el Nivel 10",
+  "objective_animals": "Tener 10 animales en total en su zoo",
+  "objective_diamonds": "Comprar diamantes",
+  "objective_academy": "Ampliar la Academy",
+  "objective_recruit": "Reclutar otro amigo",
+
+  "objectives_note": "El objetivo completado de cada amigo reclutado te da 1 Moneda de Amistad. Si un amigo reclutado completa el mismo objetivo dos veces, no se dan más monedas.",
+
+  "rewards_title": "Recompensas de Amigos Reclutados",
+
+  "ingame_title": "Amigos del Juego",
+  "ingame_body": "Los jugadores pueden tener hasta 16 amigos del juego. Como los amigos comparten ciertas recompensas, tener amigos activos del juego puede ser extremadamente beneficioso. Nota: Como parte de una regulación de juego justo, está en contra de los términos de servicio de Upjers tener amigos del juego que usen la misma fuente de internet que tú.",
+
+  "adding_title": "Añadir Amigos",
+  "adding_body": "Para añadir nuevos amigos del juego, debes aceptar una solicitud de amistad o enviar una solicitud de amistad a un jugador existente. Toca el icono del menú de amigos y selecciona un espacio de amigo disponible para ver 12 jugadores sugeridos cercanos a tu nivel. Para añadir a un jugador específico, usa la herramienta de búsqueda y escribe su Support ID de su Configuración. Cerrar y volver a abrir la ventana actualiza las sugerencias.",
+
+  "removing_title": "Eliminar Amigos",
+  "removing_body": "Para liberar un espacio de amigo, selecciona un amigo y toca el cubo de basura en su panel de información. El espacio estará bloqueado durante 24 horas antes de que puedas volver a invitar o aceptar invitaciones. Ten en cuenta que conseguir y mantener 16 amigos activos es bastante difícil, y los jugadores tendrán que recurrir a otras formas de reclutamiento como redes sociales o foros.",
+
+  "zoo_details_title": "Detalles del Zoo del Amigo",
+  "zoo_details_body": "Tocar a un amigo muestra información sobre el progreso de su zoo: títulos de zoo obtenidos, número de expansiones del parque, número de especies diferentes colocadas, número de animales de nivel 10 o más, número de logros obtenidos y el número de animales bebé colocados que actualmente crecen en la región principal del zoo.",
+
+  "helping_title": "Ayudar a Amigos",
+  "helping_body": "Ayudar requiere que visites el zoo de tu amigo. Toca el corazón en la lista de amigos o el botón de Ayudar a Amigo. Ayudar otorga un punto de corazón de amistad tanto a ti como a tu amigo, más XP. Por cada amigo al que ayudes, ganas XP equivalente a diez veces tu nivel actual del juego.",
+
+  "minigames_title": "Minijuegos de Ayuda",
+  "minigame_crows": "Ahuyentar Cuervos: 5 cuervos están ubicados en recintos aleatorios. Toca cada cuervo 3 veces para ahuyentarlo.",
+  "minigame_children": "Consolar Niños: 5 niños llorando están colocados aleatoriamente en los caminos. Dale a cada uno un globo para consolarlos.",
+  "minigame_animals": "Atrapar Animales: 10 animales corren aleatoriamente por los caminos del zoo. Desliza la red sobre cada uno de ellos.",
+
+  "skip_title": "Saltarse los Minijuegos",
+  "skip_body": "Puedes ayudar a uno o todos los amigos al instante pagando diamantes. \"Saltar Ayuda\" cuesta 1 diamante por jugador. El botón \"Ayudar a Todos\" cuesta 5 diamantes por jugador restante sin ayudar en total. Los usuarios de la app también pueden ver un anuncio para saltarse ayudar a un amigo (límite 20 anuncios cada 24h).",
+
+  "messaging_title": "Enviar Mensajes a Amigos",
+  "messaging_body": "El juego proporciona una caja de chat privado para enviar mensajes a los amigos del juego. Toca el sobre junto a tu amigo para enviar un mensaje. Cuando se recibe un nuevo mensaje, aparece una notificación junto al icono de amigos. El icono del sobre cambia de gris a amarillo cuando aparece un mensaje no leído. No es posible eliminar ni editar un mensaje enviado.",
+
+  "deleting_title": "Eliminar Amigos",
+  "deleting_body": "Para eliminar un amigo, haz clic en el jugador, luego haz clic en el pequeño icono de cubo de basura en la esquina inferior derecha de la ventana de resumen del amigo. La eliminación no se puede deshacer y no puedes volver a invitar al mismo amigo sin introducir manualmente su Support ID de nuevo. El espacio de amistad estará bloqueado durante las próximas 24 horas después de la eliminación.",
+
+  "levelup_title": "Regalos de Subida de Nivel",
+  "levelup_body": "Cuando subes de nivel, cada uno de tus amigos del juego también recibirá el regalo de subida de nivel que elijas. También recibirás los regalos de subida de nivel de tus amigos. Elige una pieza de puzle de un conjunto aleatorio de 3.",
+
+  "chests_title": "Cofres de Amistad",
+  "chests_body": "Cada vez que ayudas a un amigo o te ayudan, obtienes un punto de amistad. Cada 10 puntos te recompensa con un Cofre de Amistad que contiene piezas de puzle para decoraciones, recintos y artículos de recinto, y animales de amistad exclusivos. El máximo de puntos de amistad por día es 32 con 16 amigos activos (3 cofres por día). El límite de almacenamiento es de 5 cofres.",
+
+  "troubleshooting_title": "Solución de Problemas",
+  "troubleshooting_body": "Si el juego se cierra mientras ayudas a amigos sin un error, es posible que tu dispositivo tenga poca RAM. Cargar zoos grandes y completamente animados requiere una memoria significativa. Prueba las siguientes soluciones:",
+
+  "fix_device": "Cambiar de Dispositivo: Intenta ayudar a amigos con un dispositivo que tenga más RAM, como un portátil o un ordenador de escritorio.",
+  "fix_friends": "Cambiar de Amigos: Elimina amigos con zoos muy grandes (por encima del nivel 60) y reemplázalos con jugadores de nivel más bajo que tengan zoos más pequeños que requieran menos RAM.",
+  "fix_settings": "Cambiar la Configuración del Juego: Activa \"Animaciones Reducidas\", desactiva \"Permitir Zoom Extendido\" o activa \"Limitar Velocidad de Fotogramas\" en la segunda pestaña de configuración para reducir el uso de RAM."
+}

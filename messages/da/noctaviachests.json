@@ -1,0 +1,30 @@
+{
+  "title": "NoctAvia-kister",
+  "intro": "NoctAvia-kister kan købes for 29 diamanter. De blev introduceret den 7. april 2026 og indeholder brikker til Noctarium- og Fuglevoliere-regionerne. De kan kun købes inde fra disse to regioner. Puzzlebrikker fra NoctAvia-kister kan også findes i Præmiehjulet eller som en vens niveau-op-belønningmulighed. Eksklusive Fuglevoliere-brikker kan findes i Fuglevoliere-fjerpræmier. Der er INGEN dyr i NoctAvia-kisterne.",
+
+  "content_title": "Muligt indhold",
+  "content_note": "Bemærk: Kun genstande med bekræftede sjældenhedsbeskrivelser er angivet her. Noctarium- og Fuglevoliere-butikker er tilgængelige i disse kister, men kan ikke fuldføres med diamanter eller billetter.",
+
+  "noctarium_title": "Noctarium (Natdyrehus)",
+  "noctarium_enclosures_title": "Indhegninger og indhegningsgenstande",
+  "noctarium_buildings_title": "Bygninger",
+  "noctarium_flowers_title": "Blomster og dekorationer",
+  "noctarium_boundaries_title": "Grænser",
+  "noctarium_special_title": "Særlige genstande",
+
+  "aviary_title": "Fuglevoliere",
+  "aviary_enclosures_title": "Indhegninger og indhegningsgenstande",
+  "aviary_buildings_title": "Bygninger",
+  "aviary_flowers_title": "Blomster og dekorationer",
+  "aviary_boundaries_title": "Grænser",
+  "aviary_special_title": "Særlige genstande",
+
+  "col_item": "Genstand",
+  "col_rarity": "Sjældenhed",
+
+  "rarity_common": "Almindelig",
+  "rarity_rare": "Sjælden",
+  "rarity_epic": "Episk",
+  "rarity_legendary": "Legendarisk",
+  "rarity_unconfirmed": "Ubekræftet"
+}

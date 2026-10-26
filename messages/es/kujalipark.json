@@ -1,0 +1,36 @@
+{
+  "title": "Kujali Park",
+  "intro": "Kujali Park es una región secundaria de temática de sabana que se desbloquea a nivel 40 de jugador por 100 diamantes. «Kujali» es la palabra swahili para «cuidado», lo que refleja el tema de conservación de la región. El parque presenta llanuras abiertas y animales clásicos de la sabana africana, y recompensa a los jugadores con XP de bonificación e impulsos de cría para las especies de sabana y llanuras.",
+
+  "unlocking_title": "Desbloquear Kujali Park",
+  "unlocking_body": "Kujali Park está disponible cuando alcanzas el nivel 40 de jugador. Cuesta 100 diamantes desbloquearlo. Al desbloquearlo, recibes una Jirafa gratuita de Nivel 8 para comenzar tu colección.",
+
+  "bonuses_title": "Bonificadores Regionales",
+  "bonuses_body": "Los animales de las categorías Sabana y Llanuras colocados en Kujali Park reciben un 50% de bonificación tanto en XP ganado como en la probabilidad de éxito de cría. Esto hace que el parque sea un excelente lugar para criar especies de sabana y llanuras.",
+
+  "rocks_title": "Romper Rocas",
+  "rocks_body": "Las rocas y escombros dispersos por Kujali Park deben limpiarse para ampliar el espacio utilizable. Hay 5 tipos de escombros, cada uno con múltiples capas que deben eliminarse una a la vez. Cada eliminación cuesta monedas y lleva un tiempo determinado.",
+
+  "rocks_col_type": "Tipo de Escombros",
+  "rocks_col_layers": "Capas",
+  "rocks_col_cost": "Coste en Monedas por Capa",
+  "rocks_col_time": "Tiempo por Capa",
+
+  "buildings_title": "Edificios",
+  "buildings_body": "Kujali Park tiene su propio conjunto de edificios que deben construirse para desbloquear funciones como el centro de visitantes, el salón de invitados y el centro de cría. Cada edificio se compra y construye por separado.",
+
+  "buildings_col_building": "Edificio",
+  "buildings_col_cost": "Coste",
+
+  "booth_title": "Mejoras del Puesto",
+  "booth_body": "El puesto del parque se puede mejorar del nivel 0 al nivel 10, aumentando la capacidad máxima de monedas. Mejorar el puesto te permite recolectar más monedas antes de que el puesto se llene.",
+
+  "booth_col_level": "Nivel del Puesto",
+  "booth_col_capacity": "Capacidad de Monedas",
+
+  "breeding_title": "Espacios de Cría",
+  "breeding_body": "Se pueden desbloquear espacios de cría adicionales en Kujali Park para permitir más crías simultáneas. Los espacios se desbloquean de uno en uno usando diamantes.",
+
+  "breeding_col_slot": "Espacio de Cría",
+  "breeding_col_cost": "Coste para Desbloquear"
+}

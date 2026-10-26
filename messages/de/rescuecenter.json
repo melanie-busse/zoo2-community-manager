@@ -1,0 +1,42 @@
+{
+  "title": "Rettungszentrum",
+  "intro": "Das Rettungszentrum ist eine besondere gemischte Umgebung, die am 20. Mai 2025 veröffentlicht wurde. Es wird auf Spielerstufe 100 für 190 Diamanten freigeschaltet und ermöglicht die Rehabilitierung verletzter Tiere sowie deren Transfer in deinen Hauptzoo mit einzigartigen dauerhaften Boni.",
+
+  "overview_title": "Übersicht",
+  "overview_body": "Das Rettungszentrum funktioniert unabhängig von deinem Hauptzoo. Es nutzt ein einziges großes gemeinsames Gehege, das alle Biome umspannt. Du kannst dein Land durch den Kauf angrenzender Grundstücke erweitern. Hier rehabilitierte Tiere erhalten dauerhafte Popularitäts- und XP-Boni, wenn sie in deinen Hauptzoo transferiert werden.",
+
+  "unlocking_title": "Freischalten",
+  "unlocking_body": "Das Rettungszentrum erfordert Spielerstufe 100 zum Freischalten und kostet 190 Diamanten. Es wurde am 20. Mai 2025 veröffentlicht.",
+
+  "animal_shop_title": "Tiershop",
+  "animal_shop_body": "Das Rettungszentrum hat seinen eigenen Tiershop mit 3 Angeboten, die alle 24 Stunden erneuert werden: 2 Diamantenangebote und 1 Münzenangebot. Das erste Angebot in jedem Zyklus ist immer ein Rettungszentrum-Exklusivtier. Du kannst die Angebote früher neu würfeln, wobei jedes Neu-Würfeln 1 Diamant pro verbleibender Stunde im Zyklus kostet.",
+
+  "land_title": "Land & Gehege",
+  "land_body": "Das Rettungszentrum hat ein großes gemeinsames Gehege, das alle Tiere zusammen über alle Biome beherbergt. Land kann durch den Kauf angrenzender Grundstücke erweitert werden. Die Grundstücksgröße kann nach dem Kauf nicht mehr verringert werden. Sowohl Standard-Gehegeausrüstung als auch exklusive Rettungszentrums-Ausrüstung sind verfügbar — die exklusive Ausrüstung bietet doppelte XP und doppelte Nachfüllkapazität. Das gemeinsame Wasserloch kostet 4.000 Münzen zur Reparatur.",
+
+  "animal_care_title": "Tierpflege",
+  "animal_care_body": "Verletzte Tiere benötigen Pflege, bevor sie transferiert werden können. Im Rettungszentrum sind sechs Arten der Pflege verfügbar.",
+
+  "care_types_title": "Arten der Tierpflege",
+  "care_type_medication": "Medikation: Kostet 200 Münzen oder 1 Diamant. Keine Ausrüstung erforderlich. Kann von einem angeheuerten Tierarzt durchgeführt werden.",
+  "care_type_wound": "Wundversorgung: Kostet 250 Münzen oder 1 Diamant. Keine Ausrüstung erforderlich. Kann von einem angeheuerten Tierarzt durchgeführt werden.",
+  "care_type_petting": "Streicheln: Kostenlos. Keine Ausrüstung erforderlich. Kann von einem angeheuerten Tierpfleger durchgeführt werden.",
+  "care_type_playing": "Spielen: Kostenlos (manuell). Erfordert Spielausrüstung. Kann von einem angeheuerten Tierpfleger durchgeführt werden.",
+  "care_type_feeding": "Füttern: Kostenlos, Münzen oder Diamantenkosten. Erfordert einen Futtertrog. Kann von einem angeheuerten Tierpfleger durchgeführt werden.",
+  "care_type_cleaning": "Reinigen: Kostenlos (manuell). Erfordert ein Wasserloch. Kann von einem angeheuerten Tierpfleger durchgeführt werden.",
+
+  "workers_title": "Mitarbeiter",
+  "workers_body": "Du musst das Verwaltungsgebäude (50 Diamanten) bauen, bevor du Mitarbeiter einstellen kannst. Tierärzte übernehmen Medikation und Wundversorgung. Tierpfleger übernehmen Streicheln, Spielen, Füttern und Reinigen. Tierärzte können gegen Diamanten eingestellt werden. Das Erreichen von Zoo-Akademie Gold-Stufe 95 bringt täglich 1 Puzzleteil für ein Team aus 3 Tierärzten.",
+
+  "healing_title": "Heilung & Rehabilitation",
+  "healing_body": "Die vollständige Rehabilitation dauert in der Regel etwa eine Woche. Du kannst 100 Diamanten für sofortige Heilung bezahlen. Babytiere müssen auch separat aufwachsen, bevor sie transferiert werden können. Transferierte Tiere erhalten doppelte Popularität und doppelte XP — ein Stern-Symbol zeigt ein verbessertes Tier an. Freigelassene Tiere geben das 50-fache der normalen Freilassungs-XP.",
+
+  "transfer_title": "Tiere transferieren",
+  "transfer_body": "Tiere können nur aus dem Rettungszentrum in deinen Hauptzoo transferiert werden — von außen kann nichts hereintransferiert werden. Transferierte Tiere behalten dauerhaft ihre doppelten Popularitäts- und XP-Boni. Beachte, dass Zucht im Rettungszentrum nicht verfügbar ist und die verbesserten Eigenschaften nicht auf Babys übertragen werden.",
+
+  "exclusives_title": "Rettungszentrum-Exklusive Tiere",
+  "exclusives_body": "Die folgenden Tiere sind nur über das Rettungszentrum erhältlich. Alle sind Quest-Tiere mit einem maximalen Level von 10 (sofern nicht anders angegeben).",
+
+  "col_animal": "Tier",
+  "col_notes": "Hinweise"
+}

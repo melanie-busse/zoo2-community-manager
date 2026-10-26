@@ -1,0 +1,27 @@
+{
+  "title": "Adventskalender",
+  "intro": "Jeden Dezember ersetzt der Adventskalender die tägliche Anmeldebelohnungsspur. Öffne jeden Tag eine neue Tür, um besondere Belohnungen zu sammeln. Verpasste Türen können bis zum 7. Januar für je 3 Diamanten freigeschaltet werden.",
+
+  "how_it_works_title": "So funktioniert es",
+  "how_it_works_body": "Im Dezember tippst du auf die Kalenderblase im Spiel, um die Tür des Tages zu finden. Jede Tür ist nur 24 Stunden lang geöffnet, bevor sie sich verschließt. Du hast bis zum 7. Januar des Folgejahres Zeit, verpasste Türen für 3 Diamanten pro Tür freizuschalten.",
+
+  "rewards_title": "Jährliche Belohnungsübersichten",
+  "rewards_body": "Der Adventskalender jedes Jahres bietet einzigartige Tiere und Truhen. Die folgenden Tabellen listen die täglichen Belohnungen für jedes Jahr auf, vom neuesten bis zum ältesten.",
+
+  "col_day": "Tag",
+  "col_reward": "Belohnung",
+
+  "year_2025": "2025",
+  "year_2024": "2024",
+  "year_2023": "2023",
+  "year_2022": "2022",
+  "year_2021": "2021",
+  "year_2020": "2020",
+  "year_2019": "2019",
+  "year_2018": "2018",
+
+  "summary_2025": "2025: 2x Pel's Fischeule, 1x Eisbär, 1x Legendäre Truhe, 1x Retro-Truhe, 1x Epische Truhe, 1x Terraqua-Truhe (Tag 8 — nur im Terrarium/Aquarium sichtbar).",
+  "summary_2024": "2024: 2x Südliches Muriqui, 1x Schneeleopard, 2x Legendäre Truhe, 1x Retro-Truhe, 1x Epische Truhe.",
+  "summary_2023": "2023: 2x Großer Kudu, 1x Rentier, 2x Legendäre Truhe, 1x Retro-Truhe, 1x Seltene/Epische Truhe.",
+  "summary_2022": "2022: 2x Adelie-Pinguin, 1x Poitou-Esel, 2x Legendäre Truhe, 1x Retro-Truhe, 1x Seltene Truhe."
+}

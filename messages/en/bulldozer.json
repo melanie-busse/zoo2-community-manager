@@ -1,0 +1,13 @@
+{
+  "title": "Bulldozer",
+  "intro": "The bulldozer is a decoration selection tool available for purchase at level 25. It unlocks at a purchase price of 50 diamonds or 500,000 coins and requires energy to run. The tool can select up to 500 decorations at a time to place back into inventory or move in its retained shape across your current zoo region.",
+
+  "overview_title": "Overview",
+  "overview_body": "When placed back into inventory, the items do not retain their grouped shape but stack as individual items again. The bulldozer is limited to picking up only those items classified as decorations, such as plants, statues, restrooms, etc. It cannot pick up trash cans, paths, buildings, enclosures, enclosure decorations, NPCs, or pieces of terrain.",
+
+  "event_title": "Seasonal Event Decorations",
+  "event_body": "During a seasonal event, the event decorations that generate currency cannot be selected by the bulldozer until after the entire event concludes.",
+
+  "energy_title": "Energy",
+  "energy_body": "Energy can be obtained with diamonds, as quest rewards, as a free gift from the monthly login rewards path, or with the prize wheel."
+}

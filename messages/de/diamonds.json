@@ -1,0 +1,47 @@
+{
+  "title": "Diamanten",
+  "intro": "Diamanten sind die Premiumwährung von Zoo 2 und können durch das Spielgeschehen und Gewinnspiele verdient oder für echtes Geld gekauft werden. Verschiedene Tiere, Dekorationen, Grundstückserweiterungen, Zuchtplätze, Truhenschlüssel, Gebietsfreischaltungen und bestimmte Gebäude erfordern Diamanten. Diese Währung ist viel schwerer zu bekommen als Münzen, aber es gibt mehrere Wege, kostenlose Diamanten zu verdienen und einige Möglichkeiten, sie klug mit echtem Geld zu kaufen.",
+
+  "earning_title": "Kostenlose Diamanten verdienen",
+  "earning_body": "Diamanten können durch reguläres Spielgeschehen verdient, durch Upjers-Social-Media-Followings oder Gewinnspiele vergeben, durch das Ansehen von Werbung (nur auf bestimmten Plattformen) und auf verschiedene andere Weisen erhalten werden. Quellen umfassen: Level-Aufstiegsbelohnungen, Naturschutzwoche-Events, tägliche Login-Belohnungen, den Season Pass, Shell Games, Questbelohnungen, Billboard-Video-Anzeigen (bis zu 2 pro Tag), Aktionscodes aus Newslettern und sozialen Medien, das Upjers-Portal und den Telegram/Discord-Uppy-Bot.",
+
+  "spending_title": "Diamanten ausgeben",
+  "spending_body": "Der beste Zeitpunkt, Diamanten auszugeben, ist während eines Cashback-Events. Maximiere die zurückerhaltenen Diamanten, indem du während des Events 2.000 oder mehr Diamanten ausgibst. Die größten Sales tendieren dazu, Mitte Frühling (um Mai) und Mitte Herbst (Ende November) stattzufinden. Fast alles, was mit Diamanten kaufbar ist, kommt irgendwann in den Sale – mit Ausnahme von Zuchtplätzen, Truhenschlüsseln, Einlasskassen-Upgrades und Zoo-Akademie-Abonnements.",
+
+  "deals_title": "Diamanten-Angebote",
+  "deals_body": "Diamanten können für echtes Geld gekauft werden. Diamantenpakete ab 100+ Diamanten beinhalten in der Regel mindestens ein exklusives Bonustier mit seinem Gehege. Der Preis von Diamantenpaketen hängt von der Plattform und dem Land des Spielers sowie der aktuellen Aktion ab.",
+
+  "deal_special_guest_title": "Special-Guest-Bonus",
+  "deal_special_guest_body": "Ein Dauerangebot für einen exklusiven Special-Guest-NPC ist für Spieler bei jedem echten Geldkauf verfügbar. Limit ein pro Aktion. Aktionen laufen etwa ein Jahr, bevor sie zu einem neuen NPC wechseln. Verdiente Diamanten aus Videowerbung, Spielgeschehen, Abonnements und Gewinnspielen zählen nicht.",
+
+  "deal_piggy_bank_title": "Das Sparschwein-Angebot",
+  "deal_piggy_bank_body": "Ein zeitlich begrenztes Angebot für Spieler, die das Sparschwein-Angebot noch nie gekauft haben. Gib 5.000 Münzen im Spiel aus, um das Sparschwein zu füllen, und kaufe 100 Diamanten für etwa 60 % Rabatt. Bonustier nicht inklusive. Limit einmal pro Konto.",
+
+  "deal_welcome_title": "Der Willkommensbonus",
+  "deal_welcome_body": "Spieler, die noch nie Diamanten gekauft haben, können 100–120 % Bonusdiamanten für die 50-, 100- oder 200-Diamanten-Pakete im Browser erhalten. Special-Guest-Bonus inklusive. Dieses Angebot kommt einmal im Jahr und ist in der Regel nur für eine Woche verfügbar.",
+
+  "deal_fun_fiesta_title": "Das Fun-Fiesta-Angebot",
+  "deal_fun_fiesta_body": "Bis zu 400 % Rabatt – gibt 50 Diamanten zum Preis von 10 Diamanten. Bonustier nicht inklusive. Limit einmal pro Aktionsangebot. Dieses Angebot kommt etwa zweimal im Jahr und ist nur für eine Woche verfügbar. Empfohlen wird, nur das kleine Paket mit diesem Angebot zu kaufen.",
+
+  "deal_bunny_bite_title": "Das Bunny-Bite-Angebot",
+  "deal_bunny_bite_body": "Spare bis zu 50 $ – Diamantenpakete werden ohne überschüssige Bonusdiamanten angeboten, was zu einem insgesamt niedrigeren Preis führt. Ideal für Spieler, die Bonustiere möchten, ohne so viel auszugeben. Kommt etwa zweimal im Jahr, verfügbar für eine Woche.",
+
+  "deal_voucher_title": "Gutschein-Angebot",
+  "deal_voucher_body": "Code für 300 Premiumwährung – Exklusiv in der Browserversion angeboten. Diamantenpakete geben dir die Hälfte der Bonusdiamanten und die andere Hälfte in einem Einlösecode, den du mit einem Freund teilen oder selbst verwenden kannst. Das Einlösen von Gutscheinen ab 100 Diamanten gibt ein Bonustier und sein Gehege. Kommt einmal oder zweimal im Jahr.",
+
+  "deal_star_savings_title": "Das Star-Savings-Angebot",
+  "deal_star_savings_body": "Bis zu 101 % mehr – Das beste Angebot im Preis-pro-Diamant-Verhältnis. Für ungefähr den gleichen Preis wie das normale 1.000+-Diamanten-Paket kannst du 2.010 Diamanten kaufen, die als 67 Diamanten pro Tag für 30 Tage verteilt werden. Limit einmal je Paket pro Aktion. Kommt ein- oder zweimal im Jahr, verfügbar für eine Woche.",
+
+  "deal_55_title": "Bis zu 55 % mehr",
+  "deal_55_body": "Ein häufiges Angebot mit verschiedenen Aktionsnamen, wie Frühlingsbonus, Midsommar, Buzzing Bonus, Herbstbonus und Shimmering Skies.",
+
+  "deal_60_title": "Bis zu 60 % mehr",
+  "deal_60_body": "Ein häufiges Angebot mit verschiedenen Aktionsnamen, wie Sommerbonus, Happy Hearts und Winterbonus. Das nur im Browser erhältliche Treuepaket ist ebenfalls dasselbe Angebot für 200-, 500- und 1.000-Pakete.",
+
+  "buying_title": "Diamanten kaufen",
+  "buying_body": "Spieler können Diamanten in Bündeln von 10, 30, 50, 100, 200, 500, 1.000 und 2.500 kaufen. Beim Kauf von 100 oder mehr Diamanten enthalten Bündel oft Bonusdiamanten und/oder Bonustiere. Standardpreise variieren je nach Plattform und Land. Steam-, Epic-, Apple-App-Store- und Google-Play-Preise können von den Browser-Preisen abweichen.",
+
+  "col_diamonds": "Diamanten",
+  "col_usd": "USD",
+  "col_eur": "EUR"
+}

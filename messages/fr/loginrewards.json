@@ -1,0 +1,18 @@
+{
+  "title": "Récompenses de connexion",
+  "intro": "Connectez-vous chaque jour pour collecter des récompenses quotidiennes. Connectez-vous 25 jours dans un mois pour gagner deux animaux spéciaux en pièces de puzzle. Les jours 26–31 récompensent 1–2 diamants chacun. En décembre, le Calendrier de l'Avent remplace les récompenses de connexion quotidiennes.",
+
+  "how_it_works_title": "Comment ça marche",
+  "how_it_works_body": "Chaque jour où vous ouvrez le jeu, vous collectez une récompense de connexion quotidienne. Les récompenses suivent un parcours mensuel. Se connecter 25 jours dans un mois vous permet de gagner les deux animaux en pièces de puzzle pour ce mois. Les jours 26 à 31 donnent des diamants bonus. Le parcours de récompenses se réinitialise au début de chaque nouveau mois.",
+
+  "monthly_rewards_title": "Parcours de récompenses mensuels",
+  "monthly_rewards_body": "Chaque mois propose deux animaux spéciaux (gagnés en pièces de puzzle sur 25 jours de connexion) et des coffres bonus attribués en cours de route. Le tableau ci-dessous liste les animaux et les coffres pour chaque mois.",
+
+  "col_month": "Mois",
+  "col_animal1": "Animal 1",
+  "col_animal2": "Animal 2",
+  "col_chests": "Coffres bonus",
+
+  "advent_title": "Décembre et Calendrier de l'Avent",
+  "advent_body": "En décembre, le parcours standard de récompenses de connexion est remplacé par le Calendrier de l'Avent. Consultez la page du Calendrier de l'Avent pour tous les détails sur les récompenses de décembre."
+}

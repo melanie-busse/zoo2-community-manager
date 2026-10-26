@@ -1,0 +1,34 @@
+{
+  "title": "Fashion Boutique",
+  "intro": "Die Fashion Boutique, auch bekannt als Designer Boutique oder Fashionista Boutique, ist ein Funktionsgebäude, das Spielern die Anpassung ihrer persönlichen Avatare ermöglicht. Genau wie Special Guests (NPCs) laufen diese Charaktere durch deinen Zoo und repräsentieren dich, während sie durch die Zoos deiner Freunde spazieren.",
+
+  "building_title": "Das Gebäude",
+  "building_body": "Die Boutique kann ab Level 10 für 50.000 Münzen gekauft werden. Der Bau dauert 12 Stunden. Das Gebäude kann im Inventar aufbewahrt oder in einer beliebigen kompatiblen Hauptzoo-Region platziert werden.",
+
+  "finding_avatar_title": "Deinen Avatar finden",
+  "finding_avatar_body": "Finde deinen Avatar ganz einfach, indem du auf das Gebäude der Fashion Boutique klickst und das Fußabdruck-Symbol auswählst. Du kannst deinen Avatar auswählen und überall in der Region platzieren. Der Avatar wird in allen Regionen angezeigt, genau wie deine Freunde.",
+
+  "collecting_gifts_title": "Geschenke einsammeln",
+  "collecting_gifts_body": "Dein Avatar verteilt von Zeit zu Zeit kleine Geschenke. Der anfängliche Countdown bis zum nächsten Geschenk beträgt 12 Stunden und 15 Minuten, wobei nach jeder weiteren Sammlung 15 Minuten hinzugefügt werden. Geschenke können gesammelt werden, indem du deinen Avatar findest und das Geschenk über seinem Kopf auswählst, oder indem du auf das Boutique-Gebäude klickst und das Person-mit-Stift-Symbol (den Profileditor) auswählst und das Geschenk oben rechts nimmst, falls verfügbar.",
+
+  "customizing_title": "Deinen Avatar anpassen",
+  "customizing_body": "Du kannst Haare, Hautton, Augenfarbe, Hemd, Hosen, Schuhe, Hüte, Brillen und andere Accessoires basierend auf dem ausgewählten Avatargeschlecht anpassen. Das Geschlecht kann durch Klicken auf das Geschlechtssymbol neben dem Avatar im Profil-Tab geändert werden.",
+
+  "clothes_title": "Kleidung",
+  "clothes_body": "Männliche und weibliche Avatare haben oft unterschiedliche Optionen. Manchmal wird ein Gegenstand nur als ein Symbol (unisex) angezeigt, und der Kauf dieses einen Gegenstands schaltet ihn für beide Geschlechter frei. Alle Gegenstände in der Tabelle sind im Fashion-Boutique-Shop kaufbar. Standardgegenstände sind kostenlos. Unisex-Gegenstände sind für beide Geschlechter mit einem einzigen Kauf verfügbar.",
+
+  "reward_items_title": "Belohnungsgegenstände",
+  "reward_items_body": "Diese Gegenstände waren durch Quests oder Events erhältlich und sind nicht in der Fashion Boutique zum direkten Kauf sichtbar. Hinweis: Alle käuflichen Hutoptionen zählen zur Fashion-Boutique-Quest, einen Hut zu kaufen. Belohnte Hüte wie die weißen oder blauen Hasenohren zählen für diese Quest nicht.",
+
+  "col_item": "Gegenstand",
+  "col_gender": "Geschlecht",
+  "col_value": "Wert",
+  "col_how": "Wie zu erhalten",
+
+  "accessories_title": "Accessoires",
+  "hats_title": "Hüte",
+  "tops_title": "Oberteile",
+  "bottoms_title": "Unterteile",
+  "shoes_title": "Schuhe",
+  "outfits_title": "Outfits"
+}

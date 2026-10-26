@@ -1,0 +1,60 @@
+{
+  "title": "Cría",
+  "intro": "La cría te permite producir animales bebé en tu zoo. Con la configuración, los bonificadores y el momento adecuados, puedes maximizar tus posibilidades de obtener pelajes especiales y optimizar tu calendario de cría.",
+
+  "requirements_title": "Requisitos",
+  "requirements_body": "Para criar necesitas: un macho y una hembra adultos de la misma especie, un refugio de cría al nivel requerido, suficientes monedas para iniciar la cría y un espacio de cría disponible.",
+
+  "how_to_breed_title": "Cómo Criar",
+  "how_to_breed_body": "Toca un refugio de cría o un espacio del centro de cría y selecciona el animal. Opcionalmente puedes añadir Alimento de Fertilidad para mejorar las probabilidades de obtener un pelaje especial. Cuando el temporizador termine, recoge al bebé. Tras recogerlo hay un período de descanso de 8 horas antes de que el refugio pueda volver a usarse.",
+
+  "gestation_title": "Tiempo de Gestación",
+  "gestation_body": "Los tiempos de gestación van de 2 a 16 horas según la especie. El tiempo exacto de cada especie se muestra en el refugio de cría.",
+
+  "simultaneous_title": "Cría Simultánea",
+  "simultaneous_body": "Puedes criar en varios recintos al mismo tiempo. El orden en que recoges a los bebés importa para el bonificador de cría fallida — una cría fallida añade un porcentaje de bonificación a tu siguiente intento. El resultado se determina en el momento en que tocas para recoger.",
+
+  "twins_title": "Gemelos y Trillizos",
+  "twins_body": "Los gemelos y trillizos están garantizados durante los eventos de Semana de Cría. Fuera de los eventos, una suscripción a Zoo Academy te da la posibilidad de obtener gemelos o trillizos. Ten en cuenta que la cría debe COMENZAR durante la ventana del evento para optar a los gemelos/trillizos garantizados.",
+
+  "growing_up_title": "Crecimiento",
+  "growing_up_body": "Los bebés tardan 7 días en convertirse en adultos. Puedes pausar el envejecimiento moviendo un bebé a tu inventario. Los bebés dan el doble de popularidad que los adultos. Crecer otorga una pequeña cantidad de XP.",
+
+  "power_growth_title": "Crecimiento Acelerado",
+  "power_growth_body": "Puedes hacer crecer a un animal al instante usando diamantes (Fórmula de Crecimiento Acelerado). Esto suele tener descuento durante la Semana de Cría.",
+
+  "reducing_time_title": "Reducir el Tiempo de Cría",
+  "reducing_time_body": "Varios métodos reducen el tiempo de cría: pagar diamantes (5 por hora restante), ver un anuncio (reducción del 10%, solo en la app), usar una bolsa de Alimento de Fertilidad Rápido (reducción del 20%, obtenida durante la Semana de Conservación, acumulable), o la suscripción a Zoo Academy (reducción de hasta el 80%).",
+
+  "reducing_rest_title": "Reducir el Tiempo de Descanso",
+  "reducing_rest_body": "El período de descanso de 8 horas tras la recogida se puede reducir pagando 1 diamante por hora restante. Los usuarios de la app pueden ver un anuncio para una reducción del 10%.",
+
+  "bonuses_title": "Bonificadores de Cría",
+  "bonuses_body": "Múltiples bonificadores se acumulan para aumentar tu probabilidad de pelaje especial.",
+
+  "bonus_types_title": "Tipos de Bonificadores",
+  "bonus_club": "Impulso de Club: bonificación del 2–10%, activo durante eventos de club de 48 horas. Debe activarse ANTES de que comience la cría.",
+  "bonus_academy": "Zoo Academy: porcentaje base aumentado por bioma. Varía según la especie.",
+  "bonus_fertility": "Alimento de Fertilidad: el Estándar da % base; el Premium da 4 veces el % base (acumulable); el anuncio de video da % base (límite 1 por cría, hasta 20 anuncios cada 24 horas).",
+  "bonus_failed": "Cría Fallida: añade % base o 10% (el que sea menor) por intento fallido. Bonificación máxima del 75%. Se mantiene entre regiones y espacios.",
+  "bonus_region": "Bonificador de Región: +50% de tasa base en la región correspondiente (Bosque de Abetos=Bosque, Kujali Park=Llanuras y Sabana, Zoo Costero=Agua, Parque Polar=Hielo, Rainforest Park=Jungla).",
+
+  "special_coats_title": "Pelajes Especiales",
+  "special_coats_body": "Toca el botón de información azul en un refugio de cría para ver las probabilidades de pelaje especial de esa especie. Las probabilidades aumentan durante los eventos especiales. Los colores de los padres afectan qué opciones de color están disponibles para el bebé.",
+
+  "animal_levels_title": "Niveles de Animales Bebé",
+  "animal_levels_body": "Nivel del bebé = redondear hacia abajo((nivel de la madre + nivel del padre) / 2) + 1. El nivel máximo es 20 (los animales brillantes llegan hasta el nivel 40). Cada nivel añade un 5% a la popularidad base del animal. Los bebés siempre dan el doble de popularidad.",
+
+  "animal_xp_title": "XP de Animales",
+  "animal_xp_body": "El XP del animal es el mismo a cualquier nivel, a menos que el animal se haya obtenido del Centro de Rescate — esos animales dan el doble de XP.",
+
+  "region_bonus_title": "Bonificadores de Región",
+  "region_bonus_body": "Criar en la región correspondiente a una especie otorga un +50% a la tasa base de pelaje especial.",
+
+  "col_region": "Región",
+  "col_biome": "Bioma",
+
+  "gestation_table_title": "Tiempos de Gestación de Muestra",
+  "col_species": "Especie",
+  "col_gestation": "Tiempo de Gestación"
+}

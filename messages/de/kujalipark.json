@@ -1,0 +1,36 @@
+{
+  "title": "Kujali-Park",
+  "intro": "Der Kujali-Park ist eine Savannah-themed Sekundärregion, die bei Spielerstufe 40 für 100 Diamanten freigeschaltet wird. \"Kujali\" ist das Suaheli-Wort für \"Fürsorge\" und spiegelt das Naturschutzthema der Region wider. Der Park bietet offene Ebenen und klassische afrikanische Savannen-Tiere und belohnt Spieler mit Bonus-XP und Zucht-Boosts für Savannen- und Steppentiere.",
+
+  "unlocking_title": "Kujali-Park freischalten",
+  "unlocking_body": "Der Kujali-Park wird verfügbar, wenn du Spielerstufe 40 erreichst. Das Freischalten kostet 100 Diamanten. Nach dem Freischalten erhältst du eine kostenlose Giraffe der Stufe 8, um deine Sammlung zu starten.",
+
+  "bonuses_title": "Regionale Boni",
+  "bonuses_body": "Tiere aus den Kategorien Savanne und Steppe, die im Kujali-Park platziert werden, erhalten einen 50%igen Bonus sowohl auf verdiente XP als auch auf die Zuchterfolgswahrscheinlichkeit. Dies macht den Park zu einem ausgezeichneten Ort für die Zucht von Savannen- und Steppenarten.",
+
+  "rocks_title": "Felsen abbauen",
+  "rocks_body": "Felsen und Trümmer, die über den Kujali-Park verstreut sind, müssen geräumt werden, um nutzbaren Platz zu erweitern. Es gibt 5 Arten von Trümmern, jede mit mehreren Schichten, die einzeln entfernt werden müssen. Jede Entfernung kostet Münzen und dauert eine bestimmte Zeit.",
+
+  "rocks_col_type": "Trümmertyp",
+  "rocks_col_layers": "Schichten",
+  "rocks_col_cost": "Münzkosten pro Schicht",
+  "rocks_col_time": "Zeit pro Schicht",
+
+  "buildings_title": "Gebäude",
+  "buildings_body": "Der Kujali-Park hat seine eigenen Gebäude, die gebaut werden müssen, um Funktionen wie das Besucherzentrum, die Gästelunge und das Zuchtzentrum freizuschalten. Jedes Gebäude wird separat gekauft und gebaut.",
+
+  "buildings_col_building": "Gebäude",
+  "buildings_col_cost": "Kosten",
+
+  "booth_title": "Standverbesserungen",
+  "booth_body": "Der Parkstand kann von Stufe 0 auf Stufe 10 aufgewertet werden, wodurch die maximale Münzkapazität erhöht wird. Die Verbesserung des Standes ermöglicht es dir, mehr Münzen zu sammeln, bevor der Stand voll ist.",
+
+  "booth_col_level": "Standstufe",
+  "booth_col_capacity": "Münzkapazität",
+
+  "breeding_title": "Zuchtplätze",
+  "breeding_body": "Zusätzliche Zuchtplätze können im Kujali-Park freigeschaltet werden, um mehr gleichzeitige Zuchtversuche zu ermöglichen. Plätze werden einzeln mit Diamanten freigeschaltet.",
+
+  "breeding_col_slot": "Zuchtplatz",
+  "breeding_col_cost": "Freischaltkosten"
+}

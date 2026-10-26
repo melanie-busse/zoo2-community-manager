@@ -1,0 +1,13 @@
+{
+  "title": "Bulldozer",
+  "intro": "Bulldozeren er et dekorationsudvælgelsesværktøj tilgængeligt for køb på niveau 25. Den låses op til en købspris på 50 diamanter eller 500.000 mønter og kræver energi for at køre. Værktøjet kan vælge op til 500 dekorationer ad gangen og placere dem tilbage i inventaret eller flytte dem i deres bibeholdte form på tværs af din aktuelle zooregion.",
+
+  "overview_title": "Oversigt",
+  "overview_body": "Når genstande placeres tilbage i inventaret, bevarer de ikke deres grupperede form, men stables igen som individuelle genstande. Bulldozeren er begrænset til kun at samle genstande klassificeret som dekorationer, såsom planter, statuer, toiletter osv. Den kan ikke samle skraldespande, stier, bygninger, indhegninger, indhegningsdekorationer, NPC'er eller terrænostykker.",
+
+  "event_title": "Dekorationer til sæsonevents",
+  "event_body": "Under et sæsonevent kan de eventdekorationer, der genererer valuta, ikke vælges af bulldozeren, indtil hele eventet er afsluttet.",
+
+  "energy_title": "Energi",
+  "energy_body": "Energi kan fås med diamanter, som questbelønninger, som en gratis gave fra den månedlige login-belønningssti eller med præmiehjulet."
+}

@@ -1,0 +1,18 @@
+{
+  "title": "Login-belønninger",
+  "intro": "Log ind hver dag for at samle daglige belønninger. Log ind 25 dage i en vilkårlig måned for at optjene to særlige puzzlebrikkedyr. Dag 26–31 giver 1–2 diamanter hver. I december erstatter Julekalenderen de daglige login-belønninger.",
+
+  "how_it_works_title": "Sådan virker det",
+  "how_it_works_body": "Hver dag du åbner spillet, samler du en daglig login-belønning. Belønningerne cykler gennem et månedligt spor. Indlogning 25 dage i en måned giver dig begge puzzlebrikkedyr for den måned. Dag 26 til 31 giver bonusdiamanter. Belønningssporet nulstilles ved starten af hver ny måned.",
+
+  "monthly_rewards_title": "Månedlige belønningsspor",
+  "monthly_rewards_body": "Hver måned har to særlige dyr (optjent som puzzlebrikker over 25 login-dage) og bonuskister givet undervejs. Tabellen nedenfor viser dyrene og kisterne for hver måned.",
+
+  "col_month": "Måned",
+  "col_animal1": "Dyr 1",
+  "col_animal2": "Dyr 2",
+  "col_chests": "Bonuskister",
+
+  "advent_title": "December og Julekalender",
+  "advent_body": "I december erstattes det standard login-belønningsspor af Julekalenderen. Se siden Julekalender for alle detaljer om decemberbelønninger."
+}

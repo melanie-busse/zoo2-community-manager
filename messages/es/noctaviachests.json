@@ -1,0 +1,30 @@
+{
+  "title": "NoctAvia Chests",
+  "intro": "Los NoctAvia Chests se pueden comprar por 29 diamantes. Se introdujeron el 7 de abril de 2026 y contienen piezas para las regiones del Noctarium y el Aviario. Solo se pueden comprar dentro de estas dos regiones. Las piezas de puzle encontradas en los NoctAvia Chests también se pueden encontrar en la Ruleta de Premios o como opción de recompensa de subida de nivel de amigos. Las piezas exclusivas del Aviario se pueden encontrar en los premios de Plumas del Aviario. NO hay animales en los NoctAvia Chests.",
+
+  "content_title": "Contenido Posible",
+  "content_note": "Nota: Aquí solo se listan los artículos con descripciones de rareza confirmadas. Las tiendas del Noctarium y el Aviario están disponibles en estos cofres pero no se pueden completar con diamantes o tickets.",
+
+  "noctarium_title": "Noctarium (Casa Nocturna)",
+  "noctarium_enclosures_title": "Recintos y Artículos de Recinto",
+  "noctarium_buildings_title": "Edificios",
+  "noctarium_flowers_title": "Flores y Decoraciones",
+  "noctarium_boundaries_title": "Límites",
+  "noctarium_special_title": "Artículos Especiales",
+
+  "aviary_title": "Aviario",
+  "aviary_enclosures_title": "Recintos y Artículos de Recinto",
+  "aviary_buildings_title": "Edificios",
+  "aviary_flowers_title": "Flores y Decoraciones",
+  "aviary_boundaries_title": "Límites",
+  "aviary_special_title": "Artículos Especiales",
+
+  "col_item": "Artículo",
+  "col_rarity": "Rareza",
+
+  "rarity_common": "Común",
+  "rarity_rare": "Raro",
+  "rarity_epic": "Épico",
+  "rarity_legendary": "Legendario",
+  "rarity_unconfirmed": "Sin confirmar"
+}

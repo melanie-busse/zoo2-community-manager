@@ -1,0 +1,18 @@
+{
+  "title": "Login Rewards",
+  "intro": "Log in each day to collect daily rewards. Log in 25 days in any month to earn two special puzzle piece animals. Days 26–31 reward 1–2 diamonds each. In December, the Advent Calendar replaces the daily login rewards.",
+
+  "how_it_works_title": "How It Works",
+  "how_it_works_body": "Each day you open the game, you collect a daily login reward. The rewards cycle through a monthly track. Logging in 25 days in a month earns you both puzzle piece animals for that month. Days 26 through 31 give bonus diamonds. The reward track resets at the start of each new month.",
+
+  "monthly_rewards_title": "Monthly Reward Tracks",
+  "monthly_rewards_body": "Each month features two special animals (earned as puzzle pieces over 25 login days) and bonus chests awarded along the way. The table below lists the animals and chests for each month.",
+
+  "col_month": "Month",
+  "col_animal1": "Animal 1",
+  "col_animal2": "Animal 2",
+  "col_chests": "Bonus Chests",
+
+  "advent_title": "December & Advent Calendar",
+  "advent_body": "In December, the standard login reward track is replaced by the Advent Calendar. See the Advent Calendar page for full details on December rewards."
+}

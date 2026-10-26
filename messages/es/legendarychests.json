@@ -1,0 +1,24 @@
+{
+  "title": "Legendary Chests",
+  "intro": "Los Legendary Chests son cofres de diamantes que cuestan 49 diamantes cada uno. Son el tipo de cofre más completo, ya que contienen piezas de puzle de casi todos los demás tipos de cofres, además de sus propios animales exclusivos y la única fuente de piezas de puzle de carros de tienda.",
+
+  "obtaining_title": "Obtener Legendary Chests",
+  "obtaining_body": "Los Legendary Chests se pueden obtener de varias fuentes: recompensas de inicio de sesión mensuales, subir de nivel, Zoo Academy, la Tienda de Eventos y como recompensas de misiones.",
+
+  "contents_title": "Contenido del Cofre",
+  "contents_body": "Los Legendary Chests contienen piezas de puzle de todos los demás tipos de cofres excepto los animales exclusivos de Amistad y Épico/Retro. Siempre garantizan al menos una pieza de puzle exclusiva por cofre. También son el único tipo de cofre que contiene piezas de puzle para las cuatro decoraciones de Carro de Tienda.",
+
+  "shop_carts_title": "Piezas de Puzle Exclusivas de Carro de Tienda",
+  "shop_carts_body": "Los Legendary Chests son la única fuente de piezas de puzle para las siguientes decoraciones de tienda de rareza Legendaria:",
+
+  "drop_bonus_title": "Bonificación de Caída",
+  "drop_bonus_body": "Los Legendary Chests tienen una bonificación de caída rotatoria que aumenta la probabilidad de recibir las piezas de puzle de un animal exclusivo específico. El animal bonificado cambia cada 8 semanas, rotando por la lista de animales exclusivos. Este sistema está activo desde el 24 de noviembre de 2022.",
+
+  "animals_title": "Animales Exclusivos del Legendary Chest",
+  "animals_body": "Los siguientes animales son exclusivos de los Legendary Chests y no se pueden obtener a través de ningún otro tipo de cofre:",
+
+  "animals_col_animal": "Animal",
+
+  "tips_title": "Consejos",
+  "tips_body": "Comprueba qué animal exclusivo tiene actualmente la bonificación de caída antes de gastar diamantes en Legendary Chests — si necesitas ese animal, es un buen momento para abrir varios. Como los Legendary Chests contienen piezas de la mayoría de los otros cofres, son una fuente eficiente de todo en uno cuando tienes diamantes de sobra. Las decoraciones de Carro de Tienda son de rareza Legendaria y solo se pueden obtener aquí, lo que las hace valiosas para las colecciones."
+}

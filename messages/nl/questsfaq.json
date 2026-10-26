@@ -1,0 +1,38 @@
+{
+  "title": "Quests",
+  "intro": "Quests are tasks and missions assigned to your zoo that reward you with coins, diamonds, XP, animals, decorations, and other valuable items. There are many types of quests in Zoo 2: Animal Park, ranging from beginner tutorials to long storyline chains and region-specific challenges.",
+
+  "types_title": "Quest Types",
+  "types_body": "Zoo 2 features several categories of quests. Understanding the different types helps you prioritize which quests to focus on.",
+
+  "tutorial_title": "Tutorial Quests",
+  "tutorial_body": "Tutorial quests introduce new players to the game mechanics. They guide you through placing your first animals, building enclosures, collecting coins, and interacting with visitors. These quests are completed early in the game and cannot be skipped.",
+
+  "level_title": "Level-Triggered Storyline Quests",
+  "level_body": "As you level up, new storyline quest chains become available. These quests are grouped by level range: Levels 1–25, Levels 26–50, Levels 51–75, Levels 76–100, and Levels 101+. Each group introduces new characters, regions, and gameplay features. Completing storyline quests is one of the main ways to progress through the game.",
+
+  "chain_title": "Chain Quests",
+  "chain_body": "Chain quests are multi-step quest sequences where completing one quest unlocks the next in the series. They often involve breeding specific animals, reaching certain population milestones, or building particular structures. Some chain quests span many steps and can take considerable time to complete.",
+
+  "feature_title": "Feature Quests",
+  "feature_body": "Feature quests introduce or expand specific game features such as the Terrarium, Aquarium, Noctarium, Aviary, and other secondary regions. These quests guide you through unlocking and setting up each feature for the first time.",
+
+  "region_title": "Region Quests",
+  "region_body": "Each of the 10 regions in Zoo 2 has its own set of region-specific quests. Region quests typically involve populating your region with animals, breaking terrain obstacles, constructing buildings, and reaching breeding milestones within that region.",
+
+  "misc_title": "Miscellaneous Quests",
+  "misc_body": "Miscellaneous quests cover a wide variety of one-off tasks that do not fit into the other categories. These may include seasonal event quests, special limited-time challenges, and community milestone objectives.",
+
+  "rewards_title": "Quest Rewards",
+  "rewards_body": "Quest rewards vary depending on the quest type and difficulty. Common rewards include coins, diamonds, XP, animals, decorations, puzzle pieces, and special items. Some quests reward unique animals or decorations that cannot be obtained any other way. Diamonds are sometimes awarded directly, or through completing quest milestones.",
+
+  "tips_title": "Quest Tips",
+  "tips_title_retroactive": "Retroactive Completion",
+  "tips_body_retroactive": "Many quests are retroactive, meaning if you have already met the requirements before receiving the quest, it will complete immediately or with minimal additional effort. This is common for quests that require owning a certain animal or reaching a certain level.",
+  "tips_title_timelimited": "Time-Limited Quests",
+  "tips_body_timelimited": "Some quests are only available for a limited time, often tied to seasonal events or special promotions. Check your quest log regularly to ensure you do not miss time-sensitive objectives.",
+  "tips_title_diamonds": "Diamond Costs",
+  "tips_body_diamonds": "Certain quests require spending diamonds to complete, such as unlocking a new region or purchasing a specific building. Review the requirements before accepting a quest to plan your diamond spending accordingly.",
+  "tips_title_puzzles": "Puzzle Pieces",
+  "tips_body_puzzles": "Some quests reward puzzle pieces that are used to unlock special animals or decorations. Collect the required number of puzzle pieces to assemble the reward item."
+}

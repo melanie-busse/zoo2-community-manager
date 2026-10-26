@@ -1,0 +1,34 @@
+{
+  "title": "Boutique de mode",
+  "intro": "La Boutique de mode, également connue sous le nom de Boutique créateur ou Boutique fashionista, est un bâtiment spécial qui permet aux joueurs de personnaliser leurs avatars personnels. Tout comme les invités spéciaux (PNJ), ces personnages se promènent dans votre zoo et vous représentent en se baladant dans les zoos de vos amis.",
+
+  "building_title": "Bâtiment",
+  "building_body": "La boutique peut être achetée pour 50 000 pièces à partir du niveau 10. Sa construction prend 12 heures. Le bâtiment peut être stocké dans l'inventaire ou placé dans n'importe quelle région compatible du zoo principal.",
+
+  "finding_avatar_title": "Trouver votre avatar",
+  "finding_avatar_body": "Trouvez facilement votre avatar en cliquant sur le bâtiment de la Boutique de mode et en sélectionnant l'icône d'empreinte. Vous pouvez sélectionner votre avatar et le déplacer n'importe où dans la région. L'avatar apparaît dans toutes les régions, tout comme vos amis.",
+
+  "collecting_gifts_title": "Collecter des cadeaux",
+  "collecting_gifts_body": "Votre avatar offre de petits cadeaux de temps en temps. Le compte à rebours initial avant de réclamer votre prochain cadeau est de 12h 15min avec 15 minutes ajoutées au compte à rebours après chaque collecte supplémentaire. Les cadeaux peuvent être collectés en trouvant votre avatar et en sélectionnant le cadeau au-dessus de sa tête, ou en cliquant sur le bâtiment de la boutique et en sélectionnant l'icône de la personne avec crayon (l'éditeur de profil) et en prenant le cadeau en haut à droite s'il est disponible.",
+
+  "customizing_title": "Personnaliser votre avatar",
+  "customizing_body": "Vous pouvez personnaliser votre coiffure, teint de peau, couleur des yeux, chemise, pantalon, chaussures, chapeaux, lunettes et autres accessoires selon le genre de votre avatar sélectionné. Vous pouvez changer le genre en cliquant sur le symbole de genre à côté de votre avatar lors de l'habillage dans l'onglet profil.",
+
+  "clothes_title": "Vêtements",
+  "clothes_body": "Les avatars masculins et féminins ont souvent des options différentes. Parfois, un article est présenté avec une seule icône (unisexe) et l'achat de cet article le déverrouille pour les deux genres. Tous les articles du tableau sont achetables dans la boutique de la Boutique de mode. Les articles par défaut sont gratuits. Les articles unisexes sont disponibles pour les deux genres avec un seul achat.",
+
+  "reward_items_title": "Articles de récompense",
+  "reward_items_body": "Ces articles étaient obtenables via des quêtes ou des événements et ne sont pas visibles dans la Boutique de mode pour un achat direct. Remarque : Toutes les options de chapeaux achetables comptent pour la quête de la boutique de mode consistant à acheter un chapeau. Les chapeaux offerts en récompense comme les oreilles de lapin blanches ou bleues ne comptent pas pour cette quête.",
+
+  "col_item": "Article",
+  "col_gender": "Genre",
+  "col_value": "Valeur",
+  "col_how": "Comment l'obtenir",
+
+  "accessories_title": "Accessoires",
+  "hats_title": "Chapeaux",
+  "tops_title": "Hauts",
+  "bottoms_title": "Bas",
+  "shoes_title": "Chaussures",
+  "outfits_title": "Tenues"
+}

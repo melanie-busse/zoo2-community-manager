@@ -1,0 +1,60 @@
+{
+  "title": "Avl",
+  "intro": "Avl giver dig mulighed for at frembringe babydyr i din zoo. Med den rette opsætning, bonusser og timing kan du maksimere dine chancer for at få specialpelse og optimere din avlsplan.",
+
+  "requirements_title": "Krav",
+  "requirements_body": "For at avle skal du have: en voksen han og hun af samme art, en avlshytte på det nødvendige niveau, nok mønter til at starte avlen og en ledig avlsplads.",
+
+  "how_to_breed_title": "Sådan avler du",
+  "how_to_breed_body": "Tryk på en avlshytte eller en avlscenterplads, og vælg derefter dyret. Du kan valgfrit tilføje Frugtbarhedsfoder for at forbedre chancerne for specialpelse. Når timeren udløber, hentes babyet. En 8-timers hvileperiode følger efter afhentning, inden hytten kan bruges igen.",
+
+  "gestation_title": "Drægtighedstid",
+  "gestation_body": "Drægtighedstider varierer fra 2 til 16 timer afhængigt af arten. Den præcise tid for hver art vises i avlshytten.",
+
+  "simultaneous_title": "Samtidig avl",
+  "simultaneous_body": "Du kan avle i flere indhegninger samtidigt. Den rækkefølge, du henter babyer i, er vigtig for den mislykkede avlsbonus — en mislykket avl tilføjer bonusprocent til dit næste forsøg. Resultatet bestemmes i det øjeblik, du trykker for at hente.",
+
+  "twins_title": "Tvillinger og trillinger",
+  "twins_body": "Tvillinger og trillinger er garanterede under Avlsuge-events. Uden for events giver et Zoo Academy-abonnement dig en chance for tvillinger eller trillinger. Bemærk, at avlen skal STARTE inden for eventvinduet for at kvalificere sig til garanterede tvillinger/trillinger.",
+
+  "growing_up_title": "Voksning",
+  "growing_up_body": "Babyer tager 7 dage om at vokse til voksne. Du kan sætte aldringen på pause ved at flytte et baby til dit inventar. Babyer giver dobbelt popularitet i forhold til voksne. Voksning giver en lille mængde XP.",
+
+  "power_growth_title": "Hurtigvækst",
+  "power_growth_body": "Du kan øjeblikkeligt lade et dyr vokse op ved at bruge diamanter (Hurtigvækstformel). Dette er ofte sat ned under Avlsuge.",
+
+  "reducing_time_title": "Reduktion af avlstid",
+  "reducing_time_body": "Flere metoder reducerer, hvor lang tid avlen tager: betale diamanter (5 pr. time tilbage), se en reklame (10% reduktion, kun app), bruge en Hurtig frugtbarhedsfodersæk (20% reduktion, optjent under Bevaringsugen, kan stables), eller Zoo Academy-abonnementet (op til 80% reduktion).",
+
+  "reducing_rest_title": "Reduktion af hviletid",
+  "reducing_rest_body": "Den 8-timers hvileperiode efter afhentning kan reduceres ved at betale 1 diamant pr. time tilbage. App-brugere kan se en reklame for en 10% reduktion.",
+
+  "bonuses_title": "Avlsbonusser",
+  "bonuses_body": "Flere bonusser stables for at øge din chance for specialpelse.",
+
+  "bonus_types_title": "Typer af bonusser",
+  "bonus_club": "Klubboost: 2–10% bonus, aktiv under 48-timers klubevents. Skal aktiveres FØR avlen starter.",
+  "bonus_academy": "Zoo Academy: Øget basisprocent efter biotop. Varierer efter art.",
+  "bonus_fertility": "Frugtbarhedsfoder: Standard giver basisprocent; Premium giver 4x basisprocent (kan stables); Videoreklame giver basisprocent (grænse 1 pr. avl, op til 20 reklamer pr. 24 timer).",
+  "bonus_failed": "Mislykket avl: Tilføjer basisprocent eller 10% (afhængigt af hvad der er lavest) pr. mislykket forsøg. Maksimum 75% bonus. Overføres på tværs af regioner og pladser.",
+  "bonus_region": "Regionsbonus: +50% basisrate i matchende region (Grantræslunden=Skov, Kujali Park=Sletter og Savanne, Kystzooen=Vand, Polarpolen=Is, Regnskovsparkken=Jungle).",
+
+  "special_coats_title": "Specialpelse",
+  "special_coats_body": "Tryk på den blå infoknap på en avlshytte for at se chancerne for specialpelse for den pågældende art. Chancerne øges under særlige events. Forældrenes farver påvirker, hvilke farvevalg der er tilgængelige for babyets.",
+
+  "animal_levels_title": "Babydyrniveauer",
+  "animal_levels_body": "Babyniveau = floor((mors niveau + fars niveau) / 2) + 1. Maksniveau er 20 (glimrende dyr går op til niveau 40). Hvert niveau tilføjer 5% til dyrets basisopularitet. Babyer giver altid dobbelt popularitet.",
+
+  "animal_xp_title": "Dyre-XP",
+  "animal_xp_body": "Dyre-XP er den samme på ethvert niveau, medmindre dyret er hentet fra Redningscentret — de dyr giver dobbelt XP.",
+
+  "region_bonus_title": "Regionsbonusser",
+  "region_bonus_body": "Avl i den matchende region for en art giver +50% til basisraten for specialpelse.",
+
+  "col_region": "Region",
+  "col_biome": "Biotop",
+
+  "gestation_table_title": "Eksempler på drægtighedstider",
+  "col_species": "Art",
+  "col_gestation": "Drægtighedstid"
+}

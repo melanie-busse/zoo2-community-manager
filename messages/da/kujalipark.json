@@ -1,0 +1,36 @@
+{
+  "title": "Kujali Park",
+  "intro": "Kujali Park er en savanne-temabaseret sekundær region, der låses op på spillerniveau 40 for 100 diamanter. \"Kujali\" er det swahiliske ord for \"omsorg\", hvilket afspejler regionens bevaringstema. Parken indeholder åbne sletter og klassiske afrikanske savannedyr og belønner spillere med bonus-XP og avlsbooster til savanne- og slettearter.",
+
+  "unlocking_title": "Låsning af Kujali Park op",
+  "unlocking_body": "Kujali Park bliver tilgængelig, når du når spillerniveau 40. Det koster 100 diamanter at låse op. Ved oplåsning modtager du en gratis giraf på niveau 8 til din samling.",
+
+  "bonuses_title": "Regionsbonusser",
+  "bonuses_body": "Dyr fra Savanne- og Slettekategorierne placeret i Kujali Park modtager en 50% bonus til både optjent XP og avlssucceschance. Dette gør parken til et fremragende sted for avl af savanne- og slettearter.",
+
+  "rocks_title": "Rydning af sten",
+  "rocks_body": "Sten og affald spredt over Kujali Park skal ryddes for at udvide din brugbare plads. Der er 5 typer affald, hver med flere lag, der skal fjernes ét ad gangen. Hver fjernelse koster mønter og tager en bestemt tid.",
+
+  "rocks_col_type": "Affaldstype",
+  "rocks_col_layers": "Lag",
+  "rocks_col_cost": "Møntpris pr. lag",
+  "rocks_col_time": "Tid pr. lag",
+
+  "buildings_title": "Bygninger",
+  "buildings_body": "Kujali Park har sit eget sæt bygninger, der skal opføres for at låse funktioner op såsom besøgscenter, gæstelounge og avlscenter. Hver bygning købes og opføres separat.",
+
+  "buildings_col_building": "Bygning",
+  "buildings_col_cost": "Pris",
+
+  "booth_title": "Bodopgraderinger",
+  "booth_body": "Parkboden kan opgraderes fra niveau 0 til niveau 10, hvilket øger den maksimale møntkapacitet. Opgradering af boden giver dig mulighed for at samle flere mønter, inden boden fyldes op.",
+
+  "booth_col_level": "Bodniveau",
+  "booth_col_capacity": "Møntkapacitet",
+
+  "breeding_title": "Avlspladser",
+  "breeding_body": "Yderligere avlspladser kan låses op i Kujali Park for at muliggøre flere samtidige avl. Pladser låses op én ad gangen med diamanter.",
+
+  "breeding_col_slot": "Avlsplads",
+  "breeding_col_cost": "Pris for oplåsning"
+}

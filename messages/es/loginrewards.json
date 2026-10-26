@@ -1,0 +1,18 @@
+{
+  "title": "Recompensas de Inicio de Sesión",
+  "intro": "Inicia sesión cada día para recolectar recompensas diarias. Inicia sesión 25 días en cualquier mes para ganar dos animales especiales de piezas de puzle. Los días 26–31 recompensan 1–2 diamantes cada uno. En diciembre, el Calendario de Adviento reemplaza las recompensas diarias de inicio de sesión.",
+
+  "how_it_works_title": "Cómo Funciona",
+  "how_it_works_body": "Cada día que abres el juego, recolectas una recompensa de inicio de sesión diario. Las recompensas siguen un recorrido mensual. Iniciar sesión 25 días en un mes te otorga ambos animales de piezas de puzle de ese mes. Los días 26 al 31 dan diamantes de bonificación. El recorrido de recompensas se reinicia al comienzo de cada nuevo mes.",
+
+  "monthly_rewards_title": "Recorridos de Recompensas Mensuales",
+  "monthly_rewards_body": "Cada mes presenta dos animales especiales (obtenidos como piezas de puzle durante 25 días de inicio de sesión) y cofres de bonificación otorgados a lo largo del camino. La tabla a continuación lista los animales y cofres de cada mes.",
+
+  "col_month": "Mes",
+  "col_animal1": "Animal 1",
+  "col_animal2": "Animal 2",
+  "col_chests": "Cofres de Bonificación",
+
+  "advent_title": "Diciembre y Calendario de Adviento",
+  "advent_body": "En diciembre, el recorrido estándar de recompensas de inicio de sesión es reemplazado por el Calendario de Adviento. Consulta la página del Calendario de Adviento para obtener detalles completos sobre las recompensas de diciembre."
+}

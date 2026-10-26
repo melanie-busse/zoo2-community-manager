@@ -1,0 +1,24 @@
+{
+  "title": "Normale kister",
+  "intro": "Normale kister er blå møntkøbte kister, der er én af de mest tilgængelige kistetyper i spillet. De kan købes med mønter eller fås gratis via quests, niveau-op og daglige login-belønninger.",
+
+  "obtaining_title": "Anskaffelse af normale kister",
+  "obtaining_body": "Normale kister kan købes med mønter fra butikken. De gives også gratis ved fuldførelse af quests, ved at nå nye spillerniveauer og via daglige login-belønninger. Møntprisen for en Normal kiste stiger med dit spillerniveau.",
+
+  "cost_title": "Møntpris efter niveau",
+  "cost_body": "Prisen på en Normal kiste er dit aktuelle spillerniveau ganget med 250 mønter. For eksempel koster en kiste 250 mønter på niveau 1, 2.500 mønter på niveau 10 og 17.500 mønter på niveau 70.",
+  "cost_col_level": "Spillerniveau",
+  "cost_col_cost": "Kistepris",
+
+  "contents_title": "Kisteindhold",
+  "contents_body": "Normale kister indeholder to typer genstande: indhegnings-puzzlebrikker og klar-til-placering zoo-dekorationer. Dette gør dem unikke blandt de gratis-at-skaffe kistetyper, da de direkte kan give dekorationer til din zoo uden at kræve puzzleafslutning.",
+
+  "special_items_title": "Særlige diamantgenstande som puzzlebrikker",
+  "special_items_body": "Normale kister indeholder også puzzlebrikker til et lille antal genstande, der typisk kun er tilgængelige for diamanter. Disse kan samles gratis til genstanden ved at samle nok brikker:",
+
+  "animals_title": "Dyre-puzzlebrikker",
+  "animals_body": "Normale kister indeholder puzzlebrikker til de fleste almindelige Butiksdyr på tværs af alle biotoper, fra Almindelig til Legendarisk sjældenhed. Howleraben og alle dyr eksklusivt for diamantkister er ikke inkluderet.",
+
+  "tips_title": "Tips",
+  "tips_body": "Normale kister er en fremragende kilde til klar-til-placering zoo-dekorationer, hvilket gør dem gode til at udbygge din zoo. De særlige diamantgenstande tilgængelige som puzzlebrikker — herunder Dyrekarrusellen — repræsenterer betydelig værdi, så det er umagen værd at samle Normale kister konsekvent selv på højere niveauer."
+}

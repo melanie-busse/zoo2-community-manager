@@ -1,0 +1,60 @@
+{
+  "title": "Breeding",
+  "intro": "Breeding allows you to produce baby animals in your zoo. With the right setup, bonuses, and timing, you can maximize your chances of getting special coats and optimize your breeding schedule.",
+
+  "requirements_title": "Requirements",
+  "requirements_body": "To breed, you need: an adult male and female of the same species, a breeding shelter at the required level, enough coins to start the breeding, and an available breeding slot.",
+
+  "how_to_breed_title": "How to Breed",
+  "how_to_breed_body": "Tap a breeding shelter or a breeding center slot, then select the animal. You can optionally add Fertility Feed to improve special coat chances. When the timer ends, collect the baby. An 8-hour resting period follows collection before the shelter can be used again.",
+
+  "gestation_title": "Gestation Time",
+  "gestation_body": "Gestation times range from 2 to 16 hours depending on the species. The exact time for each species is shown in the breeding shelter.",
+
+  "simultaneous_title": "Simultaneous Breeding",
+  "simultaneous_body": "You can breed in multiple enclosures at the same time. The order you collect babies matters for the failed breeding bonus — a failed breeding adds bonus percentage to your next attempt. The outcome is determined at the moment you tap to collect.",
+
+  "twins_title": "Twins & Triplets",
+  "twins_body": "Twins and triplets are guaranteed during Breeding Week events. Outside of events, a Zoo Academy subscription gives you a chance of twins or triplets. Note that the breeding must START during the event window to qualify for the guaranteed twins/triplets.",
+
+  "growing_up_title": "Growing Up",
+  "growing_up_body": "Babies take 7 days to grow into adults. You can pause aging by moving a baby to your inventory. Babies give double the popularity of adults. Growing up gives a small amount of XP.",
+
+  "power_growth_title": "Power Growth",
+  "power_growth_body": "You can instantly grow up an animal using diamonds (Power Growth Formula). This is often discounted during Breeding Week.",
+
+  "reducing_time_title": "Reducing Breeding Time",
+  "reducing_time_body": "Several methods reduce how long breeding takes: paying diamonds (5 per hour remaining), watching an ad (10% reduction, app only), using a Speed Fertility Feed bag (20% reduction, earned during Conservation Week, stackable), or the Zoo Academy subscription (up to 80% reduction).",
+
+  "reducing_rest_title": "Reducing Resting Time",
+  "reducing_rest_body": "The 8-hour resting period after collection can be reduced by paying 1 diamond per hour remaining. App users can watch an ad for a 10% reduction.",
+
+  "bonuses_title": "Breeding Bonuses",
+  "bonuses_body": "Multiple bonuses stack to increase your special coat chance.",
+
+  "bonus_types_title": "Types of Bonuses",
+  "bonus_club": "Club Boost: 2–10% bonus, active during 48-hour club events. Must be activated BEFORE breeding starts.",
+  "bonus_academy": "Zoo Academy: Increased base percentage by biome. Varies by species.",
+  "bonus_fertility": "Fertility Feed: Standard gives base %; Premium gives 4x base % (stackable); Video ad gives base % (limit 1 per breeding, up to 20 ads per 24 hours).",
+  "bonus_failed": "Failed Breeding: Adds base % or 10% (whichever is lower) per failed attempt. Maximum 75% bonus. Carried across regions and slots.",
+  "bonus_region": "Region Bonus: +50% base rate in matching region (Fir Grove=Forest, Kujali Park=Plains & Savanna, Oceanside Zoo=Water, Polar Park=Ice, Rainforest Park=Jungle).",
+
+  "special_coats_title": "Special Coats",
+  "special_coats_body": "Tap the blue info button on a breeding shelter to see the special coat chances for that species. Chances are boosted during special events. Parent colors affect which color options are available for the baby.",
+
+  "animal_levels_title": "Baby Animal Levels",
+  "animal_levels_body": "Baby level = floor((mom level + dad level) / 2) + 1. Maximum level is 20 (sparkling animals go up to level 40). Each level adds 5% to the animal's base popularity. Babies always give double popularity.",
+
+  "animal_xp_title": "Animal XP",
+  "animal_xp_body": "Animal XP is the same at any level, unless the animal was obtained from the Rescue Center — those animals give double XP.",
+
+  "region_bonus_title": "Region Bonuses",
+  "region_bonus_body": "Breeding in the matching region for a species gives +50% to the base special coat rate.",
+
+  "col_region": "Region",
+  "col_biome": "Biome",
+
+  "gestation_table_title": "Sample Gestation Times",
+  "col_species": "Species",
+  "col_gestation": "Gestation Time"
+}

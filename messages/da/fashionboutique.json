@@ -1,0 +1,34 @@
+{
+  "title": "Modeboutik",
+  "intro": "Modeboutikken, også kendt som Designerboutikken eller Fashionistaboutikken, er en funktionsbygning, der giver spillere mulighed for at tilpasse deres personlige avatarer. Ligesom særlige gæster (NPC'er) vandrer disse karakterer rundt i din zoo og repræsenterer dig, mens de går igennem dine venners zooer.",
+
+  "building_title": "Bygning",
+  "building_body": "Boutikken kan købes for 50.000 mønter fra niveau 10. Det tager 12 timer at bygge. Bygningen kan opbevares i inventaret eller placeres i en hvilken som helst region i hoved-zooen.",
+
+  "finding_avatar_title": "Find din avatar",
+  "finding_avatar_body": "Find nemt din avatar ved at klikke på Modeboutik-bygningen og vælge fodsporsikoner. Du kan vælge din avatar og flytte den til et vilkårligt sted inden for regionen. Avataren vises i alle regioner, ligesom dine venner gør.",
+
+  "collecting_gifts_title": "Indsamling af gaver",
+  "collecting_gifts_body": "Din avatar giver små gaver fra tid til anden. Den indledende nedtælling til at hente din næste gave er 12t 15m med 15 minutter tilføjet til nedtællingen efter hver yderligere indsamling. Gaver kan indsamles ved at finde din avatar og vælge gaven over dens hoved, eller ved at klikke på boutikbygningen og vælge person med blyantikon (profireditoren) og tage gaven øverst til højre, hvis tilgængeligt.",
+
+  "customizing_title": "Tilpasning af din avatar",
+  "customizing_body": "Du kan tilpasse dit hår, hudfarve, øjenfarve, skjorte, bukser, sko, hatte, briller og andre tilbehør baseret på dit valgte avatarkøn. Du kan ændre køn ved at klikke på kønnssymbolet ved siden af din avatar, mens du klæder dig i profilfanen.",
+
+  "clothes_title": "Tøj",
+  "clothes_body": "Mandlige og kvindelige avatarer har ofte forskellige muligheder. Indimellem vises en genstand kun som ét ikon (unisex), og køb af den ene genstand låser den op for begge køn. Alle genstande i tabellen kan købes i Modeboutikkens butik. Standardgenstande er gratis. Unisex-genstande er tilgængelige for begge køn med et enkelt køb.",
+
+  "reward_items_title": "Belønningsgenstande",
+  "reward_items_body": "Disse genstande kunne opnås gennem quests eller events og er ikke synlige i Modeboutikken til direkte køb. Bemærk: Alle købare hattemuligheder tæller med i modeboutikkens quest om at købe en hat. Belønningshatte som de hvide eller blå kaninører tæller ikke med i denne quest.",
+
+  "col_item": "Genstand",
+  "col_gender": "Køn",
+  "col_value": "Værdi",
+  "col_how": "Sådan opnås det",
+
+  "accessories_title": "Tilbehør",
+  "hats_title": "Hatte",
+  "tops_title": "Overdele",
+  "bottoms_title": "Underdele",
+  "shoes_title": "Sko",
+  "outfits_title": "Outfits"
+}

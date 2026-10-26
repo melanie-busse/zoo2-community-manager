@@ -1,0 +1,21 @@
+{
+  "title": "Vendedor de Helados",
+  "intro": "El Vendedor de Helados (VH) es un NPC especial que visita tu zoo periódicamente, ofreciendo animales con descuento desde su carrito. Es una de las mejores formas de obtener animales raros a un precio reducido.",
+
+  "how_it_works_title": "Cómo Funciona",
+  "how_it_works_body": "El Vendedor de Helados visita aproximadamente cada 44 horas. Cuando llega, ofrece hasta 3 animales con un descuento del 14–40% sobre su precio estándar. Tienes 1 hora para hacer tus compras antes de que se vaya. El vendedor comprueba qué animales ya has colocado en tu zoo y no te ofrecerá animales que ya poseas.",
+
+  "deals_title": "Ofertas y Descuentos",
+  "deals_body": "Cada visita ofrece de 1 a 3 animales seleccionados de su grupo. Los descuentos van del 14% al 40% sobre el precio de compra regular. El precio con descuento se muestra directamente en el carrito del vendedor. Puedes comprar cualquiera o todos los animales ofrecidos durante la ventana de 1 hora.",
+
+  "obtaining_title": "Obtener Animales",
+  "obtaining_body": "Los animales disponibles del Vendedor de Helados también se pueden obtener a través de otras fuentes como la Tienda del Zoo Principal, cofres especiales, la Tienda del Club, Super Ofertas o el Centro de Rescate. La tabla a continuación lista los animales de su grupo junto con sus fuentes alternativas.",
+
+  "col_animal": "Animal",
+  "col_shop_tab": "Pestaña de la Tienda del Zoo Principal",
+  "col_chest": "Cofre",
+  "col_other": "Otra Fuente",
+
+  "npc_title": "Sobre el Vendedor de Helados",
+  "npc_body": "El Vendedor de Helados es un amable personaje NPC que empuja su carrito por tu zoo. Aparece como una notificación cuando llega. Toca su carrito para ver la selección actual. Si te lo pierdes, tendrás que esperar a su próxima visita en aproximadamente 44 horas."
+}

@@ -1,0 +1,32 @@
+{
+  "title": "Geländeeditor",
+  "intro": "Der Geländeeditor ist ein Bodenbearbeitungswerkzeug, das die allgemeine Landschaft (den Boden) deiner Zooregionen außerhalb von Gehegen verändert. Er kann ab Spiellevel 25 für eine einmalige Gebühr von 500.000 Münzen oder 50 Diamanten freigeschaltet werden.",
+
+  "overview_title": "Übersicht",
+  "overview_body": "Um den Geländeeditor zu betreiben, benötigst du Energie, die du vom Glücksrad oder manchmal vom Login-Belohnungskalender erhalten kannst. Du kannst Energie auch für Diamanten kaufen. Obwohl der Editor für den Spielfortschritt nicht zwingend erforderlich ist, bietet eine einführende Quest eine kleine Belohnung. Spieler auf hohem Level benötigen dieses Werkzeug für die Bürgermeister-Quest \"Landschaftsarchitekt-Zoo\", die ab Spiellevel 110 freigeschaltet wird.",
+
+  "access_title": "Zugang zum Geländeeditor",
+  "access_body": "Der Geländeeditor wird durch Klicken auf das Pinsel-Symbol auf der linken Seite der Inventar-Seitenleiste aufgerufen. Es gibt zwei Landschaftsänderungs-Features: den Geländeeditor (für außerhalb von Gehegen) und den Gehege-Boden-Editor (für innerhalb von Gehegen).",
+
+  "connected_title": "Verbundene Hauptzoo-Regionen",
+  "connected_body": "Die folgenden Energiekosten gelten für Geländeänderungen im Hauptzoo und seinen verbundenen Regionen. Ein Bindestrich (-) bedeutet, dass dieser Geländetyp in dieser Region nicht verfügbar ist.",
+
+  "col_terrain": "Gelände",
+  "col_main_zoo": "Hauptzoo",
+  "col_fir_grove": "Tannenhain",
+  "col_kujali_park": "Kujali-Park",
+  "col_oceanside": "Küste",
+  "col_polar_park": "Polarpark",
+  "col_rainforest_park": "Regenwald-Park",
+  "col_rescue_center": "Rettungszentrum",
+
+  "disconnected_title": "Getrennte Zooregionen",
+  "disconnected_body": "Das Terrarium, Aquarium und Noctarium sind getrennte Regionen mit eigenen Geländetypen und Energiekosten.",
+
+  "col_terrarium": "Terrarium",
+  "col_aquarium": "Aquarium",
+  "col_noctarium": "Noctarium",
+
+  "visuals_title": "Gelände-Visualisierungen",
+  "visuals_body": "Jeder Geländetyp ist für bestimmte Biome oder Themen gestaltet: Schnee passt zu Eis-Biomen, Sand zu Savannenbereichen, Stein zu Gebirgs-Biomen, Erde bietet ein natürliches Aussehen, Herbstlaub passt zu Saison- oder Plains-Biomen, Wasser schafft natürliche Teiche und Wald bietet einen Waldbodenbelag."
+}

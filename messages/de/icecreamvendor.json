@@ -1,0 +1,21 @@
+{
+  "title": "Eisverkäufer",
+  "intro": "Der Eisverkäufer (ICV) ist ein besonderer NPC, der deinen Zoo regelmäßig besucht und vergünstigte Tiere aus seinem Wagen anbietet. Er ist eine der besten Möglichkeiten, seltene Tiere zu einem reduzierten Preis zu erhalten.",
+
+  "how_it_works_title": "So funktioniert es",
+  "how_it_works_body": "Der Eisverkäufer besucht deinen Zoo ungefähr alle 44 Stunden. Bei seiner Ankunft bietet er bis zu 3 Tiere mit einem Rabatt von 14–40 % auf den normalen Preis an. Du hast 1 Stunde Zeit, deine Einkäufe zu tätigen, bevor er wieder abreist. Der Verkäufer überprüft, welche Tiere du bereits in deinem Zoo platziert hast, und bietet dir keine Tiere an, die du bereits besitzt.",
+
+  "deals_title": "Angebote und Rabatte",
+  "deals_body": "Bei jedem Besuch werden 1 bis 3 Tiere aus seinem Pool angeboten. Die Rabatte reichen von 14 % bis 40 % auf den regulären Kaufpreis. Der rabattierte Preis wird direkt am Wagen des Verkäufers angezeigt. Du kannst alle angebotenen Tiere innerhalb des 1-Stunden-Fensters kaufen.",
+
+  "obtaining_title": "Tiere erhalten",
+  "obtaining_body": "Die beim Eisverkäufer erhältlichen Tiere können auch über andere Quellen bezogen werden, z. B. den Hauptzoo-Shop, spezielle Truhen, den Klubshop, Super-Deals oder das Rettungszentrum. Die folgende Tabelle listet die Tiere in seinem Pool zusammen mit ihren alternativen Quellen auf.",
+
+  "col_animal": "Tier",
+  "col_shop_tab": "Hauptzoo-Shop-Tab",
+  "col_chest": "Truhe",
+  "col_other": "Andere Quelle",
+
+  "npc_title": "Über den Eisverkäufer",
+  "npc_body": "Der Eisverkäufer ist ein freundlicher NPC-Charakter, der seinen Wagen durch deinen Zoo schiebt. Er erscheint als Benachrichtigung, wenn er ankommt. Tippe auf seinen Wagen, um die aktuelle Auswahl zu sehen. Wenn du ihn verpasst, musst du ungefähr 44 Stunden auf seinen nächsten Besuch warten."
+}

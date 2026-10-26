@@ -1,0 +1,18 @@
+{
+  "title": "Inlogbeloningen",
+  "intro": "Log elke dag in om dagelijkse beloningen te verzamelen. Log 25 dagen in een maand in om twee speciale puzzelstukdieren te verdienen. Dag 26–31 geven elk 1–2 diamanten. In december vervangt de Adventskalender de dagelijkse inlogbeloningen.",
+
+  "how_it_works_title": "Hoe het werkt",
+  "how_it_works_body": "Elke dag dat je het spel opent, verzamel je een dagelijkse inlogbeloning. De beloningen doorlopen een maandelijks pad. 25 dagen in een maand inloggen geeft je beide puzzelstukdieren voor die maand. Dag 26 tot en met 31 geven bonusdiamanten. Het beloningenpad wordt gereset aan het begin van elke nieuwe maand.",
+
+  "monthly_rewards_title": "Maandelijkse beloningspaden",
+  "monthly_rewards_body": "Elke maand heeft twee speciale dieren (verdiend als puzzelstukken over 25 inlogdagen) en bonuskisten die onderweg worden gegeven. De onderstaande tabel geeft de dieren en kisten voor elke maand weer.",
+
+  "col_month": "Maand",
+  "col_animal1": "Dier 1",
+  "col_animal2": "Dier 2",
+  "col_chests": "Bonuskisten",
+
+  "advent_title": "December & Adventskalender",
+  "advent_body": "In december wordt het standaard inlogbeloningenpad vervangen door de Adventskalender. Zie de Adventskalenderpagina voor volledige details over december-beloningen."
+}

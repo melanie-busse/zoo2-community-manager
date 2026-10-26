@@ -1,0 +1,21 @@
+{
+  "title": "Ice Cream Vendor",
+  "intro": "The Ice Cream Vendor (ICV) is a special NPC who visits your zoo periodically, offering discounted animals from his cart. He is one of the best ways to obtain rare animals at a reduced price.",
+
+  "how_it_works_title": "How It Works",
+  "how_it_works_body": "The Ice Cream Vendor visits approximately every 44 hours. When he arrives, he offers up to 3 animals at a discount of 14–40% off their standard price. You have 1 hour to make your purchases before he leaves. The vendor checks which animals you have already placed in your zoo and will not offer you animals you already own.",
+
+  "deals_title": "Deals and Discounts",
+  "deals_body": "Each visit offers 1 to 3 animals selected from his pool. Discounts range from 14% to 40% off the regular purchase price. The discounted price is shown directly on the vendor's cart. You can buy any or all of the offered animals during the 1-hour window.",
+
+  "obtaining_title": "Obtaining Animals",
+  "obtaining_body": "The animals available from the Ice Cream Vendor can also be obtained through other sources such as the Main Zoo Shop, special chests, the Club Shop, Super Deals, or the Rescue Center. The table below lists the animals in his pool along with their alternative sources.",
+
+  "col_animal": "Animal",
+  "col_shop_tab": "Main Zoo Shop Tab",
+  "col_chest": "Chest",
+  "col_other": "Other Source",
+
+  "npc_title": "About the Ice Cream Vendor",
+  "npc_body": "The Ice Cream Vendor is a friendly NPC character who pushes his cart through your zoo. He appears as a notification when he arrives. Tap his cart to browse the current selection. If you miss him, you will need to wait for his next visit in roughly 44 hours."
+}

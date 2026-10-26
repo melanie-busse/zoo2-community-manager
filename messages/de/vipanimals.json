@@ -1,0 +1,20 @@
+{
+  "title": "VIP- & Premium-Tiere",
+  "intro": "Zoo 2 bietet zwei exklusive kostenpflichtige Tierspuren: Premium-Tiere und VIP-Tiere. Beide rotieren nach einem Zeitplan und sind nur für begrenzte Zeitfenster verfügbar. Diese Tiere können nicht durch normales Gameplay erworben werden.",
+
+  "premium_title": "Premium-Tiere",
+  "premium_body": "Premium-Tiere sind exklusive Tiere, die gegen Diamanten erworben werden können (typischerweise 100+ Diamanten). Das Angebot wechselt jeden zweiten Dienstag. Ab dem 30. August 2022 erhielt man beim erstmaligen Kauf eines Premium-Tiers einen Löwen-Maskottchen-NPC. Dieser wurde am 12. März 2024 durch einen Shiba-Inu-NPC ersetzt, am 27. März 2025 durch ein Pinguin-Maskottchen-NPC und im März 2026 durch einen Shiba Inu (Schwarz & Tan) NPC.",
+
+  "vip_title": "VIP-Tiere",
+  "vip_body": "VIP-Tiere sind exklusive Tiere, die in den meisten Diamantenpaketen ab 1.000 Diamanten enthalten sind. Das VIP-Tierangebot rotiert alle 8 Wochen an einem Dienstag. Wie Premium-Tiere ist jedes VIP-Tier nur während seines Rotationsfensters verfügbar.",
+
+  "premium_history_title": "Premium-Tier-Verlauf",
+  "premium_history_body": "Die folgende Tabelle listet alle angebotenen Premium-Tiere auf, vom neuesten bis zum ältesten.",
+
+  "vip_history_title": "VIP-Tier-Verlauf",
+  "vip_history_body": "Die folgende Tabelle listet alle angebotenen VIP-Tiere auf, vom neuesten bis zum ältesten.",
+
+  "col_date": "Datum",
+  "col_animal": "Tier",
+  "col_notes": "Hinweise"
+}

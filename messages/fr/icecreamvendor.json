@@ -1,0 +1,21 @@
+{
+  "title": "Marchand de glaces",
+  "intro": "Le Marchand de glaces (MG) est un PNJ spécial qui visite votre zoo périodiquement, proposant des animaux à prix réduit depuis son chariot. C'est l'un des meilleurs moyens d'obtenir des animaux rares à prix réduit.",
+
+  "how_it_works_title": "Comment ça marche",
+  "how_it_works_body": "Le Marchand de glaces passe environ toutes les 44 heures. Lorsqu'il arrive, il propose jusqu'à 3 animaux avec une remise de 14–40% sur leur prix standard. Vous avez 1 heure pour faire vos achats avant qu'il ne parte. Le vendeur vérifie quels animaux vous avez déjà placés dans votre zoo et ne vous proposera pas les animaux que vous possédez déjà.",
+
+  "deals_title": "Offres et remises",
+  "deals_body": "Chaque visite propose 1 à 3 animaux sélectionnés dans son catalogue. Les remises vont de 14% à 40% sur le prix d'achat habituel. Le prix réduit est affiché directement sur le chariot du vendeur. Vous pouvez acheter l'un ou tous les animaux proposés pendant la fenêtre d'1 heure.",
+
+  "obtaining_title": "Obtenir des animaux",
+  "obtaining_body": "Les animaux disponibles chez le Marchand de glaces peuvent également être obtenus via d'autres sources telles que la Boutique du zoo principal, des coffres spéciaux, la Boutique du club, les Super Promos ou le Centre de sauvetage. Le tableau ci-dessous liste les animaux de son catalogue ainsi que leurs sources alternatives.",
+
+  "col_animal": "Animal",
+  "col_shop_tab": "Onglet Boutique du zoo principal",
+  "col_chest": "Coffre",
+  "col_other": "Autre source",
+
+  "npc_title": "À propos du Marchand de glaces",
+  "npc_body": "Le Marchand de glaces est un personnage PNJ sympathique qui pousse son chariot à travers votre zoo. Il apparaît sous forme de notification à son arrivée. Appuyez sur son chariot pour parcourir la sélection actuelle. Si vous le manquez, vous devrez attendre sa prochaine visite dans environ 44 heures."
+}

@@ -1,0 +1,27 @@
+{
+  "title": "Dyrepakkehandler",
+  "intro": "Køb af diamantpakker inkluderer ofte eksklusive bonusdyr. Spillere modtager ét eller to premium-bonusdyr ved køb af 100+ diamanter. For den dyreste diamantpakke modtager spillere ét eksklusivt VIP-bonusdyr eller et par premium-bonusdyr, hvis det vælges.",
+
+  "bonus_title": "Bonusdyr",
+  "bonus_body": "Premium-bonusdyrene skifter hver anden uge, og VIP-bonusdyrene skifter hvert 8. uge. Tjek Prognoser for aktuelle forudsigelser om, hvornår bonusdyrene skifter, og hvilke dyr der forventes at blive sprunget over i kisterotationer. Nogle tidligere dyr tilbydes indimellem igen, men Upjers giver også spillere mulighed for at bytte et nuværende bonusdyr for en udvalgt liste over tidligere tilbudte bonusdyr.",
+
+  "how_title": "Sådan bytter du bonusdyr",
+  "how_step1": "Køb en diamantpakke, der giver bonusdyr.",
+  "how_step2": "Efter købet skal du lade dyret/dyrene blive i inventaret på sidebjælken. Placer dem IKKE i din zoo. Hvis du har til hensigt at bytte, skal du ikke vælge NPC'en, da det gør det meget sværere for Support at bytte den ud med et dyr.",
+  "how_step3": "Åbn en supportanmodning hos Upjers på support.upjers.com. Forklar, at du har købt en pakke og gerne vil bytte dyret/dyrene. Sørg for at angive dit Support ID (bruger-ID), brugernavn og de dyr, du gerne vil bytte. Dyrene skal være de aktuelle Premium- eller VIP-tilbud, så byt dem inden bonusdyrene skifter.",
+  "how_step4": "Normalt inden for én til to arbejdsdage vil Upjers bytte dyret/dyrene.",
+
+  "exclusions_title": "Undtagelser",
+  "exclusions_body": "Bytte af bonusdyr er en venlighedstjeneste og ikke en officiel spilfunktion, så Upjers kan til enhver tid beslutte ikke at fortsætte med dyrebytter.",
+
+  "exclusions_rules_title": "Bytteregler",
+  "exclusion_premium": "Premium-bonusdyr kan kun byttes til Premium, men VIP kan byttes til et VIP eller et par Premium.",
+  "exclusion_pairs": "Dyr erhvervet i par kan kun byttes i par.",
+  "exclusion_list": "Du kan kun bytte til en specifik liste over dyr.",
+  "exclusion_enclosure": "Support bytter kun dyrene, ikke indhegningen. Hvis indhegningen til det ønskede byttedyr er forskellig fra det, der fulgte med pakken, er spillerne selv ansvarlige for at skaffe den korrekte indhegning.",
+
+  "tradelist_title": "Bytteliste",
+  "tradelist_body": "Du kan i øjeblikket kun bytte til et begrænset sæt dyr. Den officielle bytteliste kan anmodes hos Upjers Support. Siden Dyr viser et blåt diamantikon med et P (premium) eller V (VIP), der angiver, hvilke dyr der er kendte for at være på den aktuelle liste. Et gråt diamantikon betyder, at dyret ikke længere er på byttelisten, men tidligere var et premium- eller VIP-dyr.",
+
+  "tradelist_tip": "Du kan med fordel tjekke Kisteprognoser for at se, om dyret forventes at komme til kister snart, så du kan få det gratis. Se også Oversprungne dyr, som forventes ikke at komme til kister. Nogle dyr er også kendte for at blive tilbudt meget sjældent som et Supertilbud."
+}

@@ -1,0 +1,24 @@
+{
+  "title": "Coffres légendaires",
+  "intro": "Les Coffres légendaires sont des coffres à diamants coûtant 49 diamants chacun. Ce sont les coffres les plus complets, contenant des pièces de puzzle de presque tous les autres types de coffres, leurs propres animaux exclusifs et la seule source de pièces de puzzle pour les chariots de boutique.",
+
+  "obtaining_title": "Obtenir des Coffres légendaires",
+  "obtaining_body": "Les Coffres légendaires peuvent être obtenus de plusieurs sources : récompenses de connexion mensuelle, montée de niveau, l'Académie du zoo, la Boutique des événements et comme récompenses de quêtes.",
+
+  "contents_title": "Contenu des coffres",
+  "contents_body": "Les Coffres légendaires contiennent des pièces de puzzle de tous les autres types de coffres, à l'exception des animaux exclusifs des Coffres d'amitié et Épiques/Rétro. Ils garantissent toujours au moins une pièce de puzzle exclusive par coffre. Ils sont également le seul type de coffre à contenir des pièces de puzzle pour les quatre décorations Chariot de boutique.",
+
+  "shop_carts_title": "Pièces de puzzle exclusives des Chariots de boutique",
+  "shop_carts_body": "Les Coffres légendaires sont la seule source de pièces de puzzle pour les décorations de boutique de rareté légendaire suivantes :",
+
+  "drop_bonus_title": "Bonus de tirage",
+  "drop_bonus_body": "Les Coffres légendaires proposent un bonus de tirage rotatif qui augmente les chances de recevoir les pièces de puzzle d'un animal exclusif spécifique. L'animal renforcé change toutes les 8 semaines, en rotation dans la liste des animaux exclusifs. Ce système est actif depuis le 24 novembre 2022.",
+
+  "animals_title": "Animaux exclusifs des Coffres légendaires",
+  "animals_body": "Les animaux suivants sont exclusifs aux Coffres légendaires et ne peuvent être obtenus par aucun autre type de coffre :",
+
+  "animals_col_animal": "Animal",
+
+  "tips_title": "Conseils",
+  "tips_body": "Vérifiez quel animal exclusif bénéficie actuellement du bonus de tirage avant de dépenser des diamants sur des Coffres légendaires — si vous avez besoin de cet animal, c'est un bon moment pour en ouvrir plusieurs. Comme les Coffres légendaires contiennent des pièces de la plupart des autres coffres, ils sont une source complète et efficace lorsque vous avez des diamants à dépenser. Les décorations Chariot de boutique sont de rareté légendaire et uniquement disponibles ici, les rendant précieuses pour les collections."
+}

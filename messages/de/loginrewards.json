@@ -1,0 +1,18 @@
+{
+  "title": "Tägliche Belohnungen",
+  "intro": "Melde dich jeden Tag an, um tägliche Belohnungen zu sammeln. Melde dich 25 Tage in einem Monat an, um zwei besondere Puzzleteil-Tiere zu erhalten. An den Tagen 26–31 gibt es jeweils 1–2 Diamanten. Im Dezember ersetzt der Adventskalender die täglichen Anmeldebelohnungen.",
+
+  "how_it_works_title": "So funktioniert es",
+  "how_it_works_body": "Jeden Tag, an dem du das Spiel öffnest, sammelst du eine tägliche Anmeldebelohnung. Die Belohnungen durchlaufen eine monatliche Spur. Wenn du dich 25 Tage im Monat anmeldest, erhältst du beide Puzzleteil-Tiere für diesen Monat. An den Tagen 26 bis 31 gibt es Bonus-Diamanten. Die Belohnungsspur setzt sich zu Beginn eines neuen Monats zurück.",
+
+  "monthly_rewards_title": "Monatliche Belohnungsspuren",
+  "monthly_rewards_body": "Jeden Monat gibt es zwei besondere Tiere (die als Puzzleteile über 25 Anmeldetage verdient werden) und Bonus-Truhen, die unterwegs vergeben werden. Die folgende Tabelle zeigt die Tiere und Truhen für jeden Monat.",
+
+  "col_month": "Monat",
+  "col_animal1": "Tier 1",
+  "col_animal2": "Tier 2",
+  "col_chests": "Bonus-Truhen",
+
+  "advent_title": "Dezember & Adventskalender",
+  "advent_body": "Im Dezember wird die normale Anmeldebelohnungsspur durch den Adventskalender ersetzt. Weitere Details zu den Dezemberbelohnungen findest du auf der Adventskalender-Seite."
+}

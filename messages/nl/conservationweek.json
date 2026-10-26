@@ -1,0 +1,43 @@
+{
+  "title": "Conservation Week",
+  "intro": "Conservation Week is zowel een persoonlijk als een gemeenschappelijk evenement waarmee dierentuindirecteuren speciale beloningen kunnen verdienen door specifieke quests te voltooien, zoals het fokken van aangewezen dieren, ze de vrije natuur in sturen en speciale evenementtaken voltooien. Vanaf 30 juni 2026 vindt Conservation Week ongeveer elke 9 weken plaats en duurt het 7 dagen. Elke week heeft een ander thema gewijd aan een specifiek bioom.",
+
+  "participation_title": "Deelname",
+  "participation_body": "Elke speler boven niveau 20 die een Fokcentrum in de Hoofddierentuin heeft gebouwd, kan aan het evenement deelnemen. Om deel te nemen, open je de evenementballon aan de linkerkant wanneer deze actief is en klik je op Deelnemen. Alle deelnemers kunnen beloningen ontvangen van het Gemeenschapsdoel, Persoonlijke Rangschikking en Persoonlijke Beloningen (Niveaus). Spelers hoeven geen dieren van de evenementslijst te hebben om deel te nemen en beloningen te ontvangen.",
+
+  "tiers_title": "Conservation Week niveaus",
+  "tiers_body": "Er zijn twee niveaus in Conservation Week: Helper en Expert. Beide niveaarbeloningen bevatten Puzzelstukken voor evenementexclusieve dieren, Diamanten, Standaard en Premium Vruchtbaarheidsvoeding en andere items. Het is NIET nodig om het Expertniveau te kopen om deel te nemen.",
+  "tiers_helper": "Helperniveau is gratis en beschikbaar voor alle spelers. Er zijn 10 beloningen in de pass en meerdere quests beschikbaar om te voltooien.",
+  "tiers_expert": "Expertniveau is een optionele betaalde pass, geldig voor één week en apart toegepast op elk evenement. Het biedt 10 extra beloningen en meerdere extra quests. Al behaalde beloningen kunnen met terugwerkende kracht worden verzameld als je de pass later koopt.",
+
+  "points_title": "Conservatiepunten",
+  "points_body": "Om vooruitgang te boeken in Conservation Week en bepaalde beloningen te krijgen, verzamelen spelers Conservatiepunten (groene blaadjes) door geselecteerde dieren te fokken, ze vrij te laten en Conservation Week-quests te voltooien. Punten zijn nodig om persoonlijke beloningen te ontgrendelen, bij te dragen aan het gemeenschapsdoel en je positie op het persoonlijke klassement te verbeteren.",
+
+  "tasks_title": "Taken",
+  "tasks_body": "De volgende taken kunnen op elk moment tijdens Conservation Week worden voltooid, ongeacht actieve quests of abonnementsstatus. Dierenniveaus en kleuren spelen geen rol bij het verdienen van punten, maar soorten wel.",
+  "task_breed_biome": "Fokken van bioom-passende dieren — 44 punten",
+  "task_release_biome": "Vrijlaten van bioom-passende dieren — 11 punten",
+  "task_breed_list": "Fokken van dieren van de Dierenlijst — 77 punten",
+  "task_release_list": "Vrijlaten van dieren van de Dierenlijst — 22 punten",
+
+  "animal_list_title": "Dierenlijst",
+  "animal_list_body": "Dieren die deelnemen aan het evenement geven meer punten voor acties met hen. De lijst wisselt van evenement tot evenement en komt overeen met het bioomthema. Dieren van de lijst zijn gemarkeerd met een roze Conservation Week-pictogram in het Fokcentrum en Inventaris. Dieren die bij het evenementthema passen maar niet op de hoofdlijst staan, kunnen nog steeds Conservatiepunten verdienen en zijn gemarkeerd met een geel Conservation Week-pictogram.",
+
+  "quests_title": "Quests",
+  "quests_body": "Conservation Week-quests zijn verdeeld in twee niveaus: Helper (bronzen vlinderipictogram) en Expert (gouden vlinderipictogram). Niet alle quests zijn direct beschikbaar — meer taken worden gegenereerd naarmate eerdere taken worden voltooid, op progressief hogere niveaus. De Expertquest om Conservatie-expert te worden betekent het kopen van het Expertniveau; het is NIET nodig om vooruitgang te boeken in het evenement.",
+
+  "community_goal_title": "Gemeenschapsdoelbeloningen",
+  "community_goal_body": "Gemeenschapsdoelen zijn gedeelde doelstellingen waarbij de punten van alle spelers worden gecombineerd. Aan het einde van Conservation Week ontvangen alle deelnemers globale beloningen voor elke bereikte mijlpaal. Er zijn vijf beloningmijlpalen. Voor elke 10.000.000 punten die wereldwijd worden verdiend, verdient de hele gemeenschap een extra mijlpaal.",
+
+  "personal_ranking_title": "Persoonlijke rangschikking",
+  "personal_ranking_body": "Naast persoonlijke beloningen is er een globaal klassement voor extra competitie. Hoe meer Conservatiepunten je verzamelt, hoe hoger je stijgt in de rangschikking. Spelers met hetzelfde aantal punten delen dezelfde positie in de eindrangschikking. Topspelers ontvangen exclusieve Gouden, Zilveren en/of Bronzen Standbeelden.",
+
+  "titles_title": "Titels",
+  "titles_body": "Een andere beloning voor deelname aan Conservation Week is het verdienen van in-speltitels die worden toegekend voor plaatsing op het klassement. Deze titels kunnen permanent worden weergegeven in je in-spelprofiel of worden gepresenteerd via de Fashion Boutique. Ze zijn zichtbaar voor al je vrienden op het tabblad Vrienden. Titels zijn een manier om op te vallen, maar bieden geen extra bonussen.",
+
+  "fertility_feed_title": "Vruchtbaarheidsvoeding",
+  "fertility_feed_body": "Zakken Vruchtbaarheidsvoeding zijn exclusief voor de Conservation Week-functie. Ze werken als gewone fokvoeding maar zijn gratis beschikbaar en kunnen worden bewaard voor gebruik op elk gewenst moment. Soorten: Standaard (muntfokvoeding), Premium (diamantfokvoeding), Speed (diamantvoeding om het fokken te versnellen). Om Vruchtbaarheidsvoeding te gebruiken, start je het fokken en klik je op het overeenkomstige pictogram onderaan het fokvenster.",
+
+  "tips_title": "Spelerstips",
+  "tips_body": "Alle in aanmerking komende spelers moeten de evenementballon openen en op Deelnemen klikken om Gemeenschapsdoelbeloningen te ontvangen (die waarschijnlijk gratis diamanten bevatten) aan het einde van het evenement. Zelfs spelers op een zeer laag niveau zouden kunnen deelnemen, omdat één quest alleen vereist muntfokvoeding te gebruiken voor enig fokken. Spelers kunnen de goedkoopste winkelentieren kopen en ze vrijlaten om extra Conservatiepunten te verdienen. Controleer de status van je quests voordat je massale acties uitvoert — voltooi quests in fasen om te voorkomen dat je acties verspilt aan een al voltooide quest. Het niveau en de kleur van de dieren doen er niet toe voor punten, alleen de soort."
+}

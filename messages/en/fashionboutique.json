@@ -1,0 +1,34 @@
+{
+  "title": "Fashion Boutique",
+  "intro": "The Fashion Boutique, also known as the Designer Boutique or the Fashionista Boutique, is a feature building that allows players to customize their personal avatars. Just like special guests (NPCs), these characters roam your zoo and represent you as they walk through your friends' zoos.",
+
+  "building_title": "Building",
+  "building_body": "The boutique can be purchased for 50,000 coins beginning at level 10. It takes 12 hours to build. The building can be stored in inventory or placed in any main zoo compatible region.",
+
+  "finding_avatar_title": "Finding Your Avatar",
+  "finding_avatar_body": "Find your avatar easily by clicking the Fashion Boutique building and selecting the footprint icon. You can select your avatar and move it anywhere within the region. The avatar shows in all regions, just like your friends do.",
+
+  "collecting_gifts_title": "Collecting Gifts",
+  "collecting_gifts_body": "Your avatar gives small gifts from time to time. The initial countdown to claim your next gift is 12h 15m with 15 minutes added to the countdown after each additional collection. Gifts can be collected by finding your avatar and selecting the gift over its head, or by clicking the boutique building and selecting the person with pencil icon (the profile editor) and grabbing the gift in the top right if available.",
+
+  "customizing_title": "Customizing Your Avatar",
+  "customizing_body": "You can customize your hair, skin tone, eye color, shirt, pants, shoes, hats, glasses, and other accessories based on your selected avatar gender. You can change the gender by clicking on the gender symbol beside your avatar while dressing in the profile tab.",
+
+  "clothes_title": "Clothes",
+  "clothes_body": "Male and Female avatars often have different options. Sometimes an item is shown as only one icon (unisex) and purchasing the one item unlocks it for both genders. All items in the table are purchasable in the Fashion Boutique shop. Default items are free. Unisex items are available for both genders with a single purchase.",
+
+  "reward_items_title": "Reward Items",
+  "reward_items_body": "These items were obtainable through quests or events and are not visible in the Fashion Boutique for direct purchase. Note: All purchasable hat options count toward the fashion boutique quest to buy a hat. Rewarded hats such as the white or blue rabbit ears do not count for this quest.",
+
+  "col_item": "Item",
+  "col_gender": "Gender",
+  "col_value": "Value",
+  "col_how": "How to Obtain",
+
+  "accessories_title": "Accessories",
+  "hats_title": "Hats",
+  "tops_title": "Tops",
+  "bottoms_title": "Bottoms",
+  "shoes_title": "Shoes",
+  "outfits_title": "Outfits"
+}

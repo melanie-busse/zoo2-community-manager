@@ -1,0 +1,13 @@
+{
+  "title": "Bulldozer",
+  "intro": "Le bulldozer est un outil de sélection de décorations disponible à l'achat au niveau 25. Il se déverrouille pour un prix d'achat de 50 diamants ou 500 000 pièces et nécessite de l'énergie pour fonctionner. L'outil peut sélectionner jusqu'à 500 décorations à la fois pour les remettre dans l'inventaire ou les déplacer en conservant leur forme groupée dans la région actuelle de votre zoo.",
+
+  "overview_title": "Aperçu",
+  "overview_body": "Lorsque les objets sont remis dans l'inventaire, ils ne conservent pas leur forme groupée mais s'empilent à nouveau en tant qu'éléments individuels. Le bulldozer ne peut ramasser que les objets classés comme décorations, tels que les plantes, les statues, les toilettes, etc. Il ne peut pas ramasser les poubelles, les allées, les bâtiments, les enclos, les décorations d'enclos, les PNJ ou les éléments de terrain.",
+
+  "event_title": "Décorations d'événements saisonniers",
+  "event_body": "Pendant un événement saisonnier, les décorations d'événement qui génèrent de la monnaie ne peuvent pas être sélectionnées par le bulldozer tant que l'événement entier n'est pas terminé.",
+
+  "energy_title": "Énergie",
+  "energy_body": "L'énergie peut être obtenue avec des diamants, comme récompenses de quêtes, comme cadeau gratuit du chemin des récompenses de connexion mensuel, ou avec la roue des prix."
+}

@@ -1,0 +1,50 @@
+{
+  "title": "Monedas del Juego",
+  "intro": "Zoo 2: Animal Park tiene múltiples tipos de moneda: monedas, diamantes, energía, tickets, llaves, plumas y moneda de evento de temporada. Estas monedas te permiten comprar objetos e iniciar mejoras en tu zoo.",
+
+  "coins_title": "Monedas",
+  "coins_body": "Las monedas son la moneda básica que se gana y usa en Zoo 2: Animal Park. Las monedas son generalmente fáciles de obtener y se pueden usar para comprar animales, edificios, decoraciones, la mayoría de las mejoras, recintos, expansiones de recintos, cofres regulares y expansiones del parque (terreno).",
+
+  "generating_coins_title": "Generar Monedas",
+  "generating_coins_body": "Las tiendas y las taquillas de admisión generan monedas de los visitantes — cuantos más visitantes, más rápido se llenan. Las misiones y las recompensas del Título de Zoo del Alcalde casi siempre dan monedas al completarlas. Los logros otorgan monedas al completarlos. Los caminos de recompensas mensuales suelen dar monedas la primera vez que inicias sesión en el nuevo mes. Subir de nivel otorga monedas. Los Juegos de Conchas pueden dar un premio en monedas. Los niveles del Pase de Temporada pueden contener monedas. Vender ciertos animales de monedas es la mejor manera de generar ingresos: cría animales de alto coste en monedas y vende los que no necesitas. El precio de venta comienza en el 20% del precio de compra y aumenta un 5% a medida que subes de nivel la especie. Importante: Incluso los objetos de diamantes se pueden vender por monedas, pero esto tiene una tasa de cambio muy mala. Cambiar diamantes por monedas está generalmente aceptado como la peor práctica. No puedes cambiar monedas por diamantes.",
+
+  "spending_coins_title": "Gastar Monedas",
+  "spending_coins_body": "Casi todo en el juego que se puede comprar con monedas tiene ofertas. Los cofres regulares (cofres azules de monedas), los recaudadores del club y las reparaciones de equipos nunca tienen descuento. Los gastadores eficientes pueden esperar un descuento en el objeto deseado si tienen suficiente paciencia. Algunos jugadores recolectan tantas monedas como pueden para donar a los concursos del club cuando su equipo juega con un animal de monedas. Otros usan monedas en alimento de fertilidad para aumentar sus posibilidades de una cría exitosa. Muchos ahorran monedas para eventos para obtener todos los objetos usando el truco de Comprar-Recolectar-Vender.",
+
+  "diamonds_title": "Diamantes",
+  "diamonds_body": "Los diamantes son la moneda premium. Varios animales, decoraciones, expansiones de terreno, mejoras, espacios de cría, llaves de cofres, desbloqueos de regiones y ciertos edificios requieren diamantes. Los diamantes son mucho más difíciles de obtener que las monedas, pero hay varias formas de ganar diamantes gratis y algunas formas de comprarlos con dinero real de manera inteligente.",
+
+  "free_diamonds_title": "Diamantes Gratuitos",
+  "free_diamonds_gameplay_title": "Juego Regular",
+  "free_diamonds_gameplay_body": "La Semana de Conservación (cada ~9 semanas) puede dar diamantes por tu ranking personal, el ranking global de la comunidad y al completar ciertas misiones. Limpiar escombros enormes en la región de sabana de Kujali Park a veces puede generar un diamante gratuito. El juego da al menos un diamante por alcanzar el siguiente nivel; los niveles que terminan en 5 otorgan 5 diamantes; los niveles que terminan en 0 otorgan ese valor en diamantes (máximo 100). Los inicios de sesión diarios dan recompensas de diamantes en algunos días de cada mes — iniciar sesión más de 25 días otorga uno o dos diamantes cada día. El nivel Estándar del Pase de Temporada es gratuito y puede dar diamantes por ciertos niveles. Una recompensa de diamantes puede acompañar a un premio con descuento en un juego de conchas. Las misiones a veces otorgan diamantes al completarlas, especialmente las misiones del Título de Zoo.",
+
+  "watching_ads_title": "Ver Anuncios",
+  "watching_ads_body": "Los Anuncios de Video del cartel de la entrada principal del zoo pueden generar hasta 2 diamantes por día. Ver 10 anuncios genera un diamante. Después de ver 20 anuncios, debes esperar 24 horas antes de ver otro. Guardar 1.000 anuncios de video y luego canjearlos también puede dar un animal premium. Guardar 2.000 puede dar dos animales premium. 10.000 anuncios pueden dar una opción de bonificación VIP.",
+
+  "news_subscriptions_title": "Suscripciones a Noticias",
+  "news_subscriptions_body": "Upjers a veces regala códigos promocionales para diamantes gratuitos en redes sociales o en un boletín. Los códigos pueden ser de uso único personal o universales. Suscríbete a Facebook de Zoo 2, Instagram de Zoo 2, WhatsApp de Upjers, Telegram de Upjers y los boletines de Upjers/Zoo 2 para mantenerte actualizado. Al suscribirte a Uppy Bot en Telegram, puedes ganar 1 diamante por cada 10 anuncios de noticias. Obtén 10 diamantes por tu suscripción inicial, luego aproximadamente 2 diamantes por mes.",
+
+  "social_media_title": "Concursos e Interacciones en Redes Sociales",
+  "social_media_body": "Discord, Facebook e Instagram de Upjers tienen concursos para ganar 20–100 diamantes. Los concursos de Discord son casi semanales. Al unirte al servidor oficial de Upjers Discord, puedes ganar 1 diamante por cada 10 reacciones de pulgar hacia arriba que des a sus publicaciones de noticias, hasta 2 diamantes por mes.",
+
+  "upjers_portal_title": "Interacciones en el Portal de Upjers",
+  "upjers_portal_body": "De vez en cuando, Upjers puede organizar un evento comunitario donde los jugadores abren una puerta del calendario para revelar un código o enlace canjeable por moneda premium — normalmente hasta 20 diamantes por evento. El Foro de Upjers ocasionalmente celebra concursos. Si tienes una cuenta de Upjers en upjers.com, puedes recolectar puntos con inicios de sesión diarios y canjearlos por diamantes (cada 200 puntos = 2 diamantes). Los usuarios de Windows pueden descargar Upjers Home para obtener el doble de puntos.",
+
+  "buying_diamonds_title": "Comprar Diamantes",
+  "buying_diamonds_body": "Consulta la página de Diamantes para ver un resumen de las bonificaciones, así como consejos para comprar, ahorrar y gastar diamantes.",
+
+  "tickets_title": "Tickets",
+  "tickets_body": "Los tickets son un tipo de moneda especial permanente que se usa para completar piezas de puzle. Puedes encontrar tu saldo actual de tickets en la pantalla de piezas de puzle. Los tickets se pueden obtener del camino del calendario de recompensas mensuales, desechando piezas de puzle no deseadas, girando la Ruleta de Premios, recompensas de nivel del Pase de Temporada de cualquier nivel, y raramente de algunas Misiones especiales y recompensas del Título de Zoo.",
+
+  "keys_title": "Llaves",
+  "keys_body": "Las llaves se usan para abrir cartas adicionales al abrir cofres. Cada cofre contiene ocho cartas, pero solo las primeras cuatro revelaciones están incluidas gratuitamente. Cada revelación posterior usa una Llave. Las llaves se pueden obtener del camino del calendario de recompensas mensuales, recompensas de nivel del Pase de Temporada de cualquier nivel, compras realizadas con diamantes en la ventana del cofre abierto, a veces comprables con plumas en la Tienda del Pase de Temporada, y los Juegos de Conchas a menudo tienen llaves como premio gratuito.",
+
+  "energy_title": "Energía",
+  "energy_body": "La energía está representada por el icono del rayo y se usa para alimentar el bulldozer y el editor de terreno. La energía se puede obtener del camino del calendario de recompensas mensuales, girando la Ruleta de Premios, ocasionalmente de Misiones o recompensas del Título de Zoo, y compras realizadas con diamantes en las ventanas del Bulldozer o del Editor de Terreno.",
+
+  "feathers_title": "Plumas",
+  "feathers_body": "Las plumas son exclusivas del Pase de Temporada y te permiten cambiar el color del suelo del recinto. Las plumas se pueden obtener de recompensas de nivel del Pase de Temporada de cualquier nivel y compras realizadas con diamantes en la Tienda del Pase de Temporada.",
+
+  "event_currency_title": "Moneda de Evento",
+  "event_currency_body": "Durante los Eventos de Temporada, decoraciones especiales están disponibles para compra por tiempo limitado usando monedas o diamantes. Los eventos constan de una Fase de Recolección y una Fase de Canje. Durante la Fase de Recolección compras decoraciones especiales y recolectas moneda del evento. Una vez que termina la Fase de Recolección, las decoraciones terminan su cuenta regresiva y generan una última recolección, luego no se pueden comprar nuevas decoraciones que generen moneda. La Fase de Canje dura siete días después de que termine la Fase de Recolección — aún puedes gastar la moneda del evento recolectada, con la opción de cambiar diamantes por moneda adicional del evento. Importante: La Moneda de Evento NO se conserva más allá de la duración del evento especial. Cualquier moneda del evento no gastada desaparece después de que la Fase de Canje esté completa."
+}

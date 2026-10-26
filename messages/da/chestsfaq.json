@@ -1,0 +1,31 @@
+{
+  "title": "Kisteoversigt",
+  "intro": "Skattekister giver spillere mulighed for at anskaffe sig næsten alt, hvad der kan købes til Zooen. Næsten alle questreleaterede genstandskøb med diamanter kan findes i Normale kister, som koster mønter. Selvom det er hurtigere at betale med diamanter, belønnes tålmodighed også!",
+
+  "overview_title": "Hurtig oversigt",
+  "overview_body": "Der er 6 typer kister tilgængelige i spillet. Legendariske, Retro- og Episke kister roterer boostede dyr fra tid til anden. Uanset hvilken kiste et boostet dyr befinder sig i, er dets puzzlebrik enten lilla (sjælden) eller gul (legendarisk). Lilla brikker koster 2.500 billetter for at fuldende med kun én puzzlebrik. Gule brikker koster 10.000 billetter med kun én puzzlebrik. Indimellem kan du vente på et kisteevent for at fuldende dem for 15% mindre. Historisk set vil det være en gul puzzlebrik, hvis dyrets popularitet er 840 point eller derover (84 diamanter).",
+
+  "chest_types_title": "Kistetyper",
+  "chest_friendship": "Venskabskister (lyserøde) — Pris: 10 hjerter. Indeholder dyr (ingen garanteret brik). Kan kun indløses via vennebelønninger, ikke købes. Grænse på 5 — åbn dagligt for ikke at miste belønninger.",
+  "chest_normal": "Normale kister (blå) — Pris: mønter (niveauafhængig). Indeholder alle storyline-dyr (ingen garanteret brik). Ingen købsgrænse udover reglen om 100-kistestak.",
+  "chest_epic": "Episke kister (lilla) — Pris: 29 diamanter. Indeholder dyr med 1 garanteret puzzlebrik. Har roterende boostede dyr.",
+  "chest_retro": "Retro-kister (røde) — Pris: 39 diamanter. Indeholder dyr med 1 garanteret puzzlebrik. Har roterende boostede dyr.",
+  "chest_legendary": "Legendariske kister (guld) — Indeholder dyr med 1 garanteret puzzlebrik. Har roterende boostede dyr.",
+  "chest_video": "Videokister — Optjenes ved at se videoreklamer. Kan stables ud over grænsen på 100 kister.",
+
+  "forecasts_title": "Kisteprognoser",
+  "forecasts_body": "For fremtidige kisteprognoser, se siden Prognoser.",
+
+  "limits_title": "Købsgrænser",
+  "limits_body": "Venskabskister kan kun indløses via belønninger fra hjælp til venner og kan ikke købes med mønter eller diamanter. De har en grænse på 5 — når du har stablet 5, mistes eventuelle yderligere kistebelønninger. Det anbefales at åbne dem dagligt. Den kendte grænse for købare kister er 100. Når du har samlet 100, fortsætter de med at stable sig, men du kan ikke købe flere, før du har åbnet nok til at komme under 100. Kister fra kalenderen, eventbelønninger eller Academy-belønninger bør fortsat kunne stables over 100-grænsen.",
+
+  "keys_title": "Nøgler",
+  "keys_body": "Nøgler kan købes for 5 diamanter stykket, modtages som del af de daglige login-belønninger eller Sæsonpasset. Ved visse lejligheder kan de købes fra Sæsonpassbutikken. Shell-spil tilbyder ofte nøgler som en gratis præmie. Nøgler bruges til at afsløre ekstra kort ved åbning af kister. Hver kiste indeholder otte kort, men kun de første fire kortafsløringer er inkluderet. Hver yderligere kortafsløring bruger én nøgle.",
+
+  "exceptions_title": "Hvad kan ikke findes i kister",
+  "exceptions_body": "Selvom næsten alt i spillet kan findes i kister, er et par genstande ikke tilgængelige:",
+  "exception_expansions": "Udvidelser — Der er ingen kort til indhegnings- eller parkudvidelser. Disse kan kun skaffes, når de købes med mønter eller diamanter.",
+  "exception_upgrades": "Opgraderinger — Selvom brikker til selve hytten kan findes i kister, kan ALLE opgraderinger kun skaffes, når de købes med mønter eller diamanter. Dette inkluderer butiksopgraderinger. Tjek salgseventene for rabatter på 25–50% af!",
+  "exception_employees": "Zoomedarbejdere — Der er ingen puzzlebrikker til medarbejdere fra kister. Alle tre medarbejdervouchers gives dog som del af den daglige login-belønning. Puzzlebrikker til 7-dages medarbejdere gives i Sæsonpasset. Holdmedarbejderpuzzlebrikker gives som daglige login-belønninger i Zoo Academy, når visse Academy-niveauer er låst op.",
+  "exception_other": "Særlige gæste-NPC'er, personlige avataremner, funktionesbygninger, stier og skraldespande er heller ikke tilgængelige i kister."
+}

@@ -1,0 +1,43 @@
+{
+  "title": "Bevaringsuge",
+  "intro": "Bevaringsuge er både et personligt og et fællesskabsevent, der giver Zoodirektører mulighed for at optjene særlige belønninger ved at fuldføre specifikke quests, såsom avl af udpegede dyr, udsætning af dem i naturen og fuldførelse af særlige eventopgaver. Fra og med den 30. juni 2026 finder Bevaringsuge sted ca. hvert 9. uge og varer 7 dage. Hver uge har et andet tema dedikeret til en specifik biotop.",
+
+  "participation_title": "Deltagelse",
+  "participation_body": "Alle spillere over niveau 20, der har bygget et Avlscenter i Hoved-Zooen, kan deltage i eventet. For at tilmelde dig skal du åbne eventboblen til venstre, når den er aktiv, og klikke på Deltag. Alle deltagere kan modtage belønninger fra Fællesskabsmålet, Personlig rangering og Personlige belønninger (Niveauer). Spillere behøver ikke at have dyr fra eventlisten for at deltage og modtage belønninger.",
+
+  "tiers_title": "Bevaringsugens niveauer",
+  "tiers_body": "Der er to niveauer i Bevaringsuge: Hjælper og Ekspert. Begge niveaubelønninger inkluderer Puzzlebrikker til event-eksklusive dyr, Diamanter, Standard- og Premium-frugtbarhedsfoder og andre genstande. Det er IKKE nødvendigt at købe Ekspert-niveauet for at deltage.",
+  "tiers_helper": "Hjælper-niveauet er gratis og tilgængeligt for alle spillere. Der er 10 belønninger i passet og flere quests tilgængelige for at fuldføre.",
+  "tiers_expert": "Ekspert-niveauet er et valgfrit betalt pas, gyldigt i én uge og gælder for hvert event separat. Det tilbyder 10 yderligere belønninger og flere ekstra quests. Allerede opnåede belønninger kan indsamles retroaktivt, hvis du køber passet senere.",
+
+  "points_title": "Bevaringspoint",
+  "points_body": "For at komme videre i Bevaringsuge og få visse belønninger samler spillere Bevaringspoint (grønne blade) ved at avle udvalgte dyr, udsætte dem i naturen og fuldføre Bevaringsuge-quests. Point er nødvendige for at låse personlige belønninger op, bidrage til fællesskabsmålet og forbedre din placering på den personlige rangliste.",
+
+  "tasks_title": "Opgaver",
+  "tasks_body": "Følgende opgaver kan udføres til enhver tid under Bevaringsuge, uanset aktive quests eller abonnementsstatus. Dyreniveauer og -farver spiller ingen rolle for optjening af point, men arterne gør.",
+  "task_breed_biome": "Avl biotop-matchende dyr — 44 point",
+  "task_release_biome": "Udsæt biotop-matchende dyr — 11 point",
+  "task_breed_list": "Avl dyr fra Dyrelisten — 77 point",
+  "task_release_list": "Udsæt dyr fra Dyrelisten — 22 point",
+
+  "animal_list_title": "Dyreliste",
+  "animal_list_body": "Dyr, der deltager i eventet, giver flere point for at udføre handlinger med dem. Listen ændres fra event til event og svarer til biotoptemaet. Dyr fra listen er markeret med et lyserødt Bevaringsuge-ikon i Avlscentret og Inventaret. Dyr, der matcher eventtemaet, men ikke er på hovdlisten, kan stadig optjene Bevaringspoint og er markeret med et gult Bevaringsuge-ikon.",
+
+  "quests_title": "Quests",
+  "quests_body": "Bevaringsuge-quests er opdelt i to niveauer: Hjælper (bronze sommerfugl-ikon) og Ekspert (guld sommerfugl-ikon). Ikke alle quests er tilgængelige med det samme — flere opgaver genereres, efterhånden som tidligere opgaver fuldføres, ved progressivt højere niveauer. Ekspert-questen om at Blive Bevaringsekspert betyder at købe Ekspert-niveauet; det er IKKE nødvendigt for at komme videre i eventet.",
+
+  "community_goal_title": "Fællesskabsmålbelønninger",
+  "community_goal_body": "Fællesskabsmål er fælles mål, hvor alle spillernes point kombineres. Ved slutningen af Bevaringsuge modtager alle deltagere globale belønninger for hvert opnået milepæl. Der er fem belønningsmilepæle. For hver 10.000.000 point optjent globalt, optjener hele fællesskabet en yderligere milepæl.",
+
+  "personal_ranking_title": "Personlig rangering",
+  "personal_ranking_body": "Udover personlige belønninger er der en global rangliste for ekstra konkurrence. Jo flere Bevaringspoint du samler, jo højere stiger du i rangeringen. Spillere med samme antal point deler samme position i den endelige rangering. Topspillere modtager eksklusive Guld-, Sølv- og/eller Bronzestatuer.",
+
+  "titles_title": "Titler",
+  "titles_body": "En anden belønning for at konkurrere i Bevaringsuge er at optjene in-game titler tildelt for at placere sig på ranglisten. Disse titler kan vises permanent i din in-game profil eller fremvises via Modeboutikken. De er synlige for alle dine venner under venner-fanen. Titler er en måde at skille sig ud på, men giver ikke nogen yderligere bonusser.",
+
+  "fertility_feed_title": "Frugtbarhedsfoder",
+  "fertility_feed_body": "Frugtbarhedsfodersække er eksklusive for Bevaringsuge-funktionen. De fungerer som almindeligt avlsfoder, men er tilgængeligt gratis og kan gemmes til brug til enhver tid. Typer: Standard (mønt-avlsfoder), Premium (diamant-avlsfoder), Hurtig (diamantmad til at fremskynde avl). For at bruge Frugtbarhedsfoder skal du starte avl og klikke på det tilsvarende ikon i bunden af avlsvinduet.",
+
+  "tips_title": "Spillertips",
+  "tips_body": "Alle berettigede spillere bør åbne eventboblen og klikke på Deltag for at modtage Fællesskabsmålbelønninger (som sandsynligvis inkluderer gratis diamanter) ved afslutningen af eventet. Selv meget lavniveauspillere bør kunne deltage, da én quest kun kræver brug af mønt-frugtbarhedsfoder til en avl. Spillere kan købe de billigste butiksdyr og udsætte dem for at optjene ekstra Bevaringspoint. Tjek status på dine quests, inden du foretager massehandlinger — fuldfør quests i etaper for at undgå at spilde handlinger på en allerede fuldført quest. Dyrets niveau og farve er ligegyldigt for point, kun arten."
+}

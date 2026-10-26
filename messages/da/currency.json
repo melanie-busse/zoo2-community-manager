@@ -1,0 +1,50 @@
+{
+  "title": "Valuta",
+  "intro": "Zoo 2: Animal Park har flere typer valuta: mønter, diamanter, energi, billetter, nøgler, fjer og sæsoneventvaluta. Disse valutaer giver dig mulighed for at købe genstande og starte opgraderinger i din zoo.",
+
+  "coins_title": "Mønter",
+  "coins_body": "Mønter er den grundlæggende valuta, der optjenes og bruges i Zoo 2: Animal Park. Mønter er generelt nemme at skaffe og kan bruges til at købe dyr, bygninger, dekorationer, de fleste opgraderinger, indhegninger, indhegningsudvidelser, almindelige kister og parkudvidelser (land).",
+
+  "generating_coins_title": "Generering af mønter",
+  "generating_coins_body": "Butikker og indgangsboder genererer mønter fra besøgende — jo flere besøgende, jo hurtigere fyldes de. Quests og Borgmesterens Zootitel-belønninger giver næsten altid mønter ved fuldførelse. Præstationer giver mønter ved fuldførelse. Månedlige belønningsstier giver normalt mønter første gang du logger ind i den nye måned. Niveau-op giver mønter. Shell-spil kan give en møntpræmie. Sæsonpassniveauer kan indeholde mønter. Salg af visse møntdyr er den bedste måde at generere indkomst på: avl dyr med høj møntpris og sælg dem, du ikke har brug for. Salgsprisen starter ved 20% af købsprisen og stiger med 5%, efterhånden som du niveauer op arten. Vigtigt: Selv diamantgenstande kan sælges for mønter, men det er en meget dårlig vekslingskurs. Veksling af diamanter til mønter betragtes generelt som den dårligste praksis. Du kan ikke veksle mønter til diamanter.",
+
+  "spending_coins_title": "Forbrug af mønter",
+  "spending_coins_body": "Næsten alt i spillet, der kan købes med mønter, sættes på udsalg. Almindelige kister (blå møntkister), klubindsamlinger og udstyrsreparationer sættes aldrig på udsalg. Effektive forbrugere kan vente på rabat på den ønskede genstand, hvis de er tålmodige nok. Nogle spillere samler så mange mønter som muligt for at donere til klubkonkurrencer, når deres hold spiller et møntdyr. Andre bruger mønter på frugtbarhedsfoder for at øge deres chancer for en vellykket avl. Mange gemmer mønter til events for at få alle genstande ved hjælp af Køb-Saml-Sælg-tricket.",
+
+  "diamonds_title": "Diamanter",
+  "diamonds_body": "Diamanter er premiumvalutaen. Forskellige dyr, dekorationer, landudvidelser, opgraderinger, avlspladser, kistenøgler, regionslåsninger og visse bygninger kræver diamanter. Diamanter er meget sværere at skaffe end mønter, men der er flere måder at tjene gratis diamanter på og et par måder at købe dem med rigtige penge på klogt vis.",
+
+  "free_diamonds_title": "Gratis diamanter",
+  "free_diamonds_gameplay_title": "Almindeligt spil",
+  "free_diamonds_gameplay_body": "Bevaringsuge (ca. hvert 9. uge) kan give diamanter for din personlige rangering, fællesskabets globale rangering og ved at fuldføre visse quests. Rydning af enorme affald i Kujali Parks savannregion kan indimellem generere en gratis diamant. Spillet giver mindst én diamant for at nå næste niveau; niveauer der slutter på 5 giver 5 diamanter; niveauer der slutter på 0 giver den værdi i diamanter (maks 100). Daglige logins giver diamantbelønninger på et par dage hver måned — indlogning mere end 25 dage giver én eller to diamanter hver dag. Standard Sæsonpassniveauet er gratis at spille og kan give diamanter for visse niveauer. En diamantbelønning kan ledsage en rabateret præmie i et shell-spil. Quests giver indimellem diamanter ved fuldførelse, især Zoo-titelquests.",
+
+  "watching_ads_title": "Se reklamer",
+  "watching_ads_body": "Videoreklamer fra reklameskilttet ved hoved-zoo-indgangen kan generere op til 2 diamanter pr. dag. At se 10 reklamer genererer én diamant. Efter at have set 20 reklamer skal du vente 24 timer, inden du kan se endnu en. At gemme 1.000 videoreklamer og derefter indløse kan også give et premium-dyr. At gemme 2.000 kan give to premium-dyr. 10.000 reklamer kan give én VIP-bonusmulighed.",
+
+  "news_subscriptions_title": "Nyhedsabonnementer",
+  "news_subscriptions_body": "Upjers uddeler indimellem promokoder til gratis diamanter på sociale medier eller i et nyhedsbrev. Koder kan være personlig engangsbrug eller universelle. Abonner på Zoo 2 Facebook, Zoo 2 Instagram, Upjers WhatsApp, Upjers Telegram og Upjers/Zoo 2-nyhedsbreve for at holde dig opdateret. Ved at abonnere på Uppy Bot på Telegram kan du tjene 1 diamant for hver 10 nyhedsmeddelelser. Få 10 diamanter for dit indledende abonnement og derefter ca. 2 diamanter om måneden.",
+
+  "social_media_title": "Sociale mediekonkurrencer og interaktioner",
+  "social_media_body": "Upjers Discord, Facebook og Instagram afholder konkurrencer om at vinde 20–100 diamanter. Discord-konkurrencer finder sted næsten ugentligt. Ved at tilslutte dig den officielle Upjers Discord-server kan du tjene 1 diamant for hver 10 tommelfinger-op-reaktioner, du giver på deres nyhedsindlæg, op til 2 diamanter om måneden.",
+
+  "upjers_portal_title": "Upjers Portal-interaktioner",
+  "upjers_portal_body": "Fra tid til anden kan Upjers afholde et fællesskabsevent, hvor spillere åbner en kalenderlåge for at afsløre en kode eller et indløseligt link til premiumvaluta — typisk op til 20 diamanter pr. event. Upjers Forum afholder lejlighedsvis konkurrencer. Hvis du har en Upjers-konto på upjers.com, kan du samle point med daglige logins og veksle dem til diamanter (hvert 200 point = 2 diamanter). Windows-brugere kan downloade Upjers Home for dobbelt point.",
+
+  "buying_diamonds_title": "Køb af diamanter",
+  "buying_diamonds_body": "Se siden Diamanter for en oversigt over bonusser samt tips til at købe, spare og bruge diamanter.",
+
+  "tickets_title": "Billetter",
+  "tickets_body": "Billetter er en type permanent specialvaluta, der bruges til at fuldende puzzlebrikker. Du kan finde din aktuelle billetbeholdning på puzzlebrikkerne-skærmen. Billetter kan fås fra den månedlige belønningskalendersti, skrotning af uønskede puzzlebrikker, snurring på Præmiehjulet, Sæsonpassniveau-belønninger fra ethvert niveau og sjældent fra et par specialquests og Zootitel-belønninger.",
+
+  "keys_title": "Nøgler",
+  "keys_body": "Nøgler bruges til at åbne ekstra kort ved åbning af kister. Hver kiste indeholder otte kort, men kun de første fire kortafsløringer er inkluderet gratis. Hver efterfølgende kortafsløring bruger én nøgle. Nøgler kan fås fra den månedlige belønningskalendersti, Sæsonpassniveau-belønninger fra ethvert niveau, køb foretaget for diamanter i det åbnede kistevindue, indimellem kan de købes med fjer i Sæsonpassbutikken, og Shell-spil har ofte nøgler som en gratis belønningspræmie.",
+
+  "energy_title": "Energi",
+  "energy_body": "Energi er repræsenteret ved lynbolt-ikonet og bruges til at drive bulldozeren og terræneditoren. Energi kan fås fra den månedlige belønningskalendersti, snurring på Præmiehjulet, lejlighedsvis fra Quests eller Zootitel-belønninger og køb foretaget for diamanter i Bulldozer- eller Terræneditorsvinduerne.",
+
+  "feathers_title": "Fjer",
+  "feathers_body": "Fjer er eksklusive for Sæsonpasset og giver dig mulighed for at ændre indhegningens baggrundsfarve. Fjer kan fås fra Sæsonpassniveau-belønninger fra ethvert niveau og køb foretaget for diamanter i Sæsonpassbutikken.",
+
+  "event_currency_title": "Eventvaluta",
+  "event_currency_body": "Under sæsonevents er særlige dekorationer tilgængelige for tidsbegrænset køb med mønter eller diamanter. Events består af en Indsamlingsfase og en Indløsningsfase. Under Indsamlingsfasen køber du særlige dekorationer og samler eventvaluta. Når Indsamlingsfasen slutter, afslutter dekorationer deres nedtælling og genererer én endelig indsamling, derefter kan der ikke købes nye valutagenererende dekorationer. Indløsningsfasen varer syv dage efter Indsamlingsfasens afslutning — du kan stadig bruge indsamlet eventvaluta med mulighed for at veksle diamanter til yderligere eventvaluta. Vigtigt: Eventvaluta beholdes IKKE efter det særlige events varighed. Enhver ubrugt eventvaluta forsvinder efter Indløsningsfasen er afsluttet."
+}

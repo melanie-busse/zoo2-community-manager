@@ -1,0 +1,42 @@
+{
+  "title": "Rainforest Park",
+  "intro": "Rainforest Park is a jungle-themed secondary region that unlocks at player level 45 for 100 diamonds. Released on November 25, 2025, the park is set in a lush rainforest environment and features a unique mixed-species jungle enclosure type exclusive to this region. Animals from the Jungle category receive bonus XP and breeding boosts.",
+
+  "unlocking_title": "Unlocking Rainforest Park",
+  "unlocking_body": "Rainforest Park becomes available when you reach player level 45. It costs 100 diamonds to unlock. Upon unlocking, you receive a free Level 5 Panther. The park features a rainfall animation that plays periodically, adding atmosphere to the environment.",
+
+  "storyline_title": "Storyline",
+  "storyline_body": "Rainforest Park introduces the character Tyrell Twiga, who guides you through setting up and expanding your jungle region. Follow Tyrell's quests to unlock new buildings, enclosures, and features as you develop the park.",
+
+  "bonuses_title": "Regional Bonuses",
+  "bonuses_body": "Animals from the Jungle category placed in Rainforest Park receive a 50% bonus to both XP earned and breeding success chance. This makes the park the ideal location for breeding jungle species.",
+
+  "enclosure_title": "Mixed-Species Jungle Enclosure",
+  "enclosure_body": "Rainforest Park features a unique enclosure type not found in other regions: the mixed-species jungle enclosure. This enclosure allows multiple different jungle animal species to live together in a single habitat. Each mixed-species enclosure costs 45 diamonds and takes 8 hours to build. Expanding an enclosure costs 48,000 coins.",
+
+  "rocks_title": "Clearing Terrain",
+  "rocks_body": "Dense jungle terrain scattered across Rainforest Park must be cleared to expand your usable space. As with other regions, there are multiple debris types with layers to remove, each costing coins and time.",
+
+  "rocks_col_type": "Debris Type",
+  "rocks_col_layers": "Layers",
+  "rocks_col_cost": "Coin Cost per Layer",
+  "rocks_col_time": "Time per Layer",
+
+  "buildings_title": "Buildings",
+  "buildings_body": "Rainforest Park has its own set of buildings. Note that the Visitor Center and Breeding Center cost diamonds rather than coins.",
+
+  "buildings_col_building": "Building",
+  "buildings_col_cost": "Cost",
+
+  "booth_title": "Booth Upgrades",
+  "booth_body": "The park booth can be upgraded from level 0 to level 10, increasing the maximum coin capacity. Upgrading the booth allows you to collect more coins before the booth fills up.",
+
+  "booth_col_level": "Booth Level",
+  "booth_col_capacity": "Coin Capacity",
+
+  "breeding_title": "Breeding Slots",
+  "breeding_body": "Additional breeding slots can be unlocked in Rainforest Park to allow more simultaneous breedings. Slots are unlocked one at a time using diamonds.",
+
+  "breeding_col_slot": "Breeding Slot",
+  "breeding_col_cost": "Cost to Unlock"
+}

@@ -1,0 +1,54 @@
+{
+  "title": "Videoanzeigen",
+  "intro": "Zoo 2 bietet zwei Arten von Videoanzeigen für mobile App-Nutzer: Plakatwand-Anzeigen, die Diamanten verdienen, und Bonusangebots-Anzeigen, die verschiedene Boni, Rabatte oder Timer-Reduzierungen bieten. Browser-Anzeigen sind nur in begrenzten Regionen verfügbar.",
+
+  "billboard_title": "Plakatwand-Anzeigen",
+  "billboard_body": "Eine Plakatwand links vom Haupteingang ermöglicht es einigen Plattformen, kurze Videoanzeigen gegen Diamanten anzusehen. Das Ansehen von 10 Anzeigen erzeugt 1 Diamant bei einer maximalen Verfügbarkeit von 20 Anzeigen in einem 24-Stunden-Zeitraum. Die Verfügbarkeit von Anzeigen kann durch Region, Plattform und andere Faktoren begrenzt sein.",
+
+  "redeeming_title": "Diamanten einlösen",
+  "redeeming_body": "Du kannst Diamanten einlösen, sobald du 10 Anzeigen erreicht hast. Wenn du jedoch 1.000 Anzeigen sparst, bevor du einlöst, gibt das Spiel dir ein 100-Diamanten-Paket-Bonustier. 2.000+ Anzeigen verdienen ein Paar Premium-Tiere mit deiner 200-Diamanten-Einlösung. Das Einlösen von 10.000+ Anzeigen gibt 1.000 Diamanten und ein einzelnes VIP-Tier oder eine andere aktuelle VIP-Angebotswahl. Dieses Bonustier-Feature ist nicht von Upjers garantiert, und vorzeitige Einlösungen können nicht rückgängig gemacht werden.",
+
+  "availability_title": "Anzeigenverfügbarkeit",
+  "availability_body": "Plakatwand-Anzeigen sind auf 20 pro 24-Stunden-Zeitraum begrenzt. Jede Anzeige startet ihren eigenen 24-Stunden-Timer. Sobald das Tageslimit erreicht ist, zeigt ein Timer an, wann weitere Anzeigen verfügbar sind. Geräte, die die App aus dem Google Play Store herunterladen können, sollten generell Anzeigen anbieten.",
+
+  "age_title": "Altersverifikation",
+  "age_body": "Das Spiel fragt nach dem Alter des Spielers, bezogen auf Datenschutzrichtlinien für Werbung. Die Eingabe eines Alters von 12 oder jünger sperrt das Spiel auf dem Gerät mit der Meldung, dass das Spiel nicht für Kinder konzipiert ist. Die Neuinstallation des Spiels sollte die Frage erneut stellen.",
+
+  "tips_title": "Tipps zur Freischaltung der Anzeigenverfügbarkeit",
+  "tips_intro": "Die Verfügbarkeit von Anzeigen hängt am häufigsten mit der Anzeigen-Tracking-Identität zusammen. Wichtig: Derzeit sind Plakatwand-Anzeigen mit der Einstellung für Bonusangebots-Anzeigen verknüpft — stelle sicher, dass du \"Videoangebote nicht anzeigen\" in den Einstellungen entfernst, um alle Anzeigenfunktionen zu aktivieren.",
+  "tip_delay": "VERZÖGERUNG: Warte 5 Sekunden zwischen Anzeigen, bevor du versuchst, eine weitere anzusehen.",
+  "tip_restart": "NEU STARTEN: Manchmal erhöht das einfache Neustarten des Spiels die Anzeigenverfügbarkeit.",
+  "tip_internet": "INTERNET WECHSELN: Versuche, eine andere Internetverbindung oder mobile Daten zu verwenden, um zu sehen, ob Anzeigen verfügbar werden.",
+  "tip_device": "GERÄT WECHSELN: Versuche, Anzeigen auf einem anderen Gerät anzusehen, das mit deiner Support-ID verknüpft ist.",
+  "tip_tracking": "TRACKING ZURÜCKSETZEN: Für Android, Google Ads-ID zurücksetzen. Für iOS, durch Aus- und Einschalten des Trackings zurücksetzen.",
+
+  "ios_tracking_title": "iOS: Tracking erlauben",
+  "ios_tracking_body": "Gehe zu Einstellungen > Datenschutz & Sicherheit > Tracking. Aktiviere \"Apps erlauben, Tracking zu beantragen\", dann aktiviere die App \"Zoo 2\". Starte das Spiel neu. Wenn du dies zum ersten Mal seit der Neuinstallation tust, klicke auf den grünen \"Aktivieren\"-Button beim Anklicken zum Ansehen von Anzeigen.",
+
+  "ios_reset_title": "iOS: Tracking zurücksetzen",
+  "ios_reset_body": "Gehe zu Einstellungen > Datenschutz & Sicherheit > Tracking. Deaktiviere \"Apps erlauben, Tracking zu beantragen\" und bestätige \"Anzeigen auffordern, Tracking zu stoppen\". Aktiviere es dann wieder und aktiviere auch die App \"Zoo 2\". Starte das Spiel neu. Du musst dies möglicherweise jedes Mal wiederholen, wenn Anzeigen nicht mehr verfügbar sind.",
+
+  "android_reset_title": "Android: Google-Werbe-ID zurücksetzen",
+  "android_reset_body": "Gehe zu Einstellungen > Google > Anzeigen. Tippe auf \"Werbe-ID zurücksetzen\" und dann OK. Starte das Spiel neu. Du musst dies möglicherweise jedes Mal wiederholen, wenn Anzeigen nicht mehr verfügbar sind.",
+
+  "bonus_title": "Bonusangebots-Anzeigen",
+  "bonus_body": "Für mobile App-Plattformen können Spieler Video-Bonusangebote in den Spieleinstellungen aktivieren, indem sie das Häkchen bei \"Videoangebote nicht anzeigen\" entfernen. Wichtig: Wenn du beim Einsammeln von Münzen an Kassen auf \"Videoangebote nicht anzeigen\" klickst, werden alle Bonus-Anzeigen wieder deaktiviert. Bonusangebote haben ihr eigenes Limit von bis zu 20 Anzeigen alle 24 Stunden.",
+
+  "col_type": "Typ",
+  "col_offer": "Angebot",
+  "col_limit": "Limit",
+  "col_details": "Details",
+
+  "bonus_notes_title": "Hinweise zu Boni",
+  "xp_bonus_title": "10% XP-Bonus",
+  "xp_bonus_body": "Dieses Feature schaltet 24 Stunden nach der vorherigen Aktivierung frei. Derzeit verknüpft ein Konfigurationsproblem diesen Bonus mit dem Plakatwand-Anzeigen-Timer, sodass einige Spieler möglicherweise warten müssen, bis ihr Plakatwand-Countdown-Timer endet. Das Problem soll in einem zukünftigen Update behoben werden.",
+  "xp_sources_title": "XP-Quellen",
+  "xp_sources_body": "Gehege reinigen, mit Tieren spielen, Tiere füttern, Quests abschließen, neue Gegenstände oder Tiere platzieren, Tiere freilassen, Freunden helfen, Pflanzen gießen, Müll einsammeln, erfolglose Zucht, Babys aufwachsen lassen oder XP von Arbeitern einsammeln.",
+  "fertility_title": "Fruchtbarkeitsbonus",
+  "fertility_body": "Dieser Zucht-Boost kann nur auf aktive Zuchtversuche angewendet werden. Stelle sicher, dass du genug Zeit hast, das Video vollständig anzusehen, bevor die Zucht abgeschlossen ist, da der Bonus sonst nicht angewendet wird und die Anzeige nicht auf dein Limit angerechnet wird.",
+  "video_chests_title": "Videotruhen",
+  "video_chests_body": "Dieses Feature schaltet 24 Stunden nach der vorherigen Aktivierung frei. Du musst außerdem noch genug von deinem 20-Anzeigen-Bonuslimit nach Ablauf der 24-Stunden-Wartezeit übrig haben.",
+
+  "limits_title": "Anzeigenlimits",
+  "limits_body": "Die Limits für Bonusangebots-Anzeigen sind von deinem Plakatwand-Anzeigen-Limit getrennt. Innerhalb eines 24-Stunden-Zeitraums kannst du bis zu 20 Bonusangebots-Anzeigen ansehen. Jede Anzeige startet ihren eigenen 24-Stunden-Timer. Wenn du eine Anzeige nicht abschließt, wird der Bonus nicht angewendet und die Anzeige wird nicht auf dein Limit angerechnet."
+}

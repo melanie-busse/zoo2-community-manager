@@ -1,0 +1,34 @@
+{
+  "title": "Fashion Boutique",
+  "intro": "De Fashion Boutique, ook wel de Designer Boutique of de Fashionista Boutique genoemd, is een functiegebouw waarmee spelers hun persoonlijke avatars kunnen aanpassen. Net als speciale gasten (NPC's) dwalen deze personages door je dierentuin en vertegenwoordigen ze jou terwijl ze door de dierentuinen van je vrienden lopen.",
+
+  "building_title": "Gebouw",
+  "building_body": "De boutique kan worden gekocht voor 50.000 munten vanaf niveau 10. Het duurt 12 uur om te bouwen. Het gebouw kan in de inventaris worden opgeslagen of in een willekeurige voor de hoofddierentuin geschikte regio worden geplaatst.",
+
+  "finding_avatar_title": "Je avatar vinden",
+  "finding_avatar_body": "Vind je avatar eenvoudig door op het Fashion Boutique-gebouw te klikken en het voetafdrukpictogram te selecteren. Je kunt je avatar selecteren en overal binnen de regio verplaatsen. De avatar is in alle regio's zichtbaar, net als je vrienden.",
+
+  "collecting_gifts_title": "Cadeaus verzamelen",
+  "collecting_gifts_body": "Je avatar geeft van tijd tot tijd kleine cadeaus. De eerste aftelling om je volgende cadeau op te eisen is 12u 15m, waarbij na elke extra verzameling 15 minuten wordt toegevoegd aan de aftelling. Cadeaus kunnen worden verzameld door je avatar te vinden en het cadeau boven zijn hoofd te selecteren, of door op het boutiquegebouw te klikken en het persoonspictogram met potlood (de profieleditor) te selecteren en het cadeau rechtsboven te pakken als dat beschikbaar is.",
+
+  "customizing_title": "Je avatar aanpassen",
+  "customizing_body": "Je kunt je haar, huidskleur, oogkleur, shirt, broek, schoenen, hoeden, brillen en andere accessoires aanpassen op basis van het geselecteerde geslacht van je avatar. Je kunt het geslacht wijzigen door op het geslachtssymbool naast je avatar te klikken terwijl je je kleedt in het profieltabblad.",
+
+  "clothes_title": "Kleding",
+  "clothes_body": "Mannelijke en vrouwelijke avatars hebben vaak verschillende opties. Soms wordt een item weergegeven als slechts één pictogram (uniseks) en het kopen van het ene item ontgrendelt het voor beide geslachten. Alle items in de tabel zijn te kopen in de Fashion Boutique-winkel. Standaarditems zijn gratis. Uniseksitems zijn beschikbaar voor beide geslachten met één aankoop.",
+
+  "reward_items_title": "Beloningsitems",
+  "reward_items_body": "Deze items waren verkrijgbaar via quests of evenementen en zijn niet zichtbaar in de Fashion Boutique voor directe aankoop. Let op: Alle te kopen hoedenopties tellen mee voor de Fashion Boutique-quest om een hoed te kopen. Beloonde hoeden zoals de witte of blauwe konijnenoren tellen niet mee voor deze quest.",
+
+  "col_item": "Item",
+  "col_gender": "Geslacht",
+  "col_value": "Waarde",
+  "col_how": "Hoe te verkrijgen",
+
+  "accessories_title": "Accessoires",
+  "hats_title": "Hoeden",
+  "tops_title": "Bovenkledij",
+  "bottoms_title": "Onderkledij",
+  "shoes_title": "Schoenen",
+  "outfits_title": "Outfits"
+}

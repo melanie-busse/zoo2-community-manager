@@ -1,0 +1,27 @@
+{
+  "title": "Échanges d'animaux en lot",
+  "intro": "L'achat de lots de diamants inclut souvent des animaux bonus exclusifs. Les joueurs reçoivent un ou deux animaux bonus premium pour un achat de 100 diamants ou plus. Pour le lot de diamants le plus cher, les joueurs reçoivent un animal bonus VIP exclusif ou une paire d'animaux bonus premium selon leur choix.",
+
+  "bonus_title": "Animaux bonus",
+  "bonus_body": "Les animaux bonus premium changent toutes les deux semaines et les animaux bonus VIP toutes les 8 semaines. Consultez les Prévisions pour les prédictions sur quand les animaux bonus devraient changer et ceux prévus pour être ignorés des rotations de coffres. Certains animaux précédents sont parfois proposés à nouveau, mais Upjers permet également aux joueurs d'échanger un animal bonus actuel contre une liste sélective d'animaux bonus précédemment proposés.",
+
+  "how_title": "Comment échanger des animaux bonus",
+  "how_step1": "Achetez n'importe quel lot de diamants qui octroie des animaux bonus.",
+  "how_step2": "Après avoir finalisé l'achat, laissez le(s) animal(aux) dans l'inventaire de la barre latérale. Ne les placez PAS dans votre zoo. Si vous souhaitez échanger, ne sélectionnez pas le PNJ car cela complique beaucoup le travail du Support pour l'échanger contre un autre animal.",
+  "how_step3": "Ouvrez un ticket d'assistance auprès d'Upjers sur support.upjers.com. Expliquez que vous avez acheté un lot et que vous souhaitez échanger le(s) animal(aux). Assurez-vous d'inclure votre Support ID (identifiant utilisateur), votre nom d'utilisateur et le(s) animal(aux) que vous souhaitez échanger. Les animaux doivent correspondre au Premium ou VIP actuellement en offre, donc échangez-les avant que les animaux bonus ne changent.",
+  "how_step4": "Généralement dans un à deux jours ouvrables, Upjers procédera à l'échange du(des) animal(aux).",
+
+  "exclusions_title": "Exclusions",
+  "exclusions_body": "L'échange d'animaux bonus est un service de courtoisie et non une fonctionnalité officielle du jeu. Upjers peut donc décider à tout moment d'arrêter les échanges d'animaux.",
+
+  "exclusions_rules_title": "Règles d'échange",
+  "exclusion_premium": "Les animaux bonus Premium ne peuvent être échangés que contre des Premium, mais les VIP peuvent être échangés contre un VIP ou une paire de Premium.",
+  "exclusion_pairs": "Les animaux obtenus en paires ne peuvent être échangés qu'en paires.",
+  "exclusion_list": "Vous ne pouvez échanger que contre une liste spécifique d'animaux.",
+  "exclusion_enclosure": "Le Support n'échangera que les animaux, pas l'enclos. Si l'enclos de l'animal demandé en échange est différent de celui offert avec le lot, les joueurs devront se procurer le bon enclos eux-mêmes.",
+
+  "tradelist_title": "Liste d'échange",
+  "tradelist_body": "Actuellement, vous ne pouvez échanger que contre un ensemble limité d'animaux. La liste officielle d'échange de courtoisie peut être demandée au Support Upjers. La page Animaux affiche une icône de diamant bleu avec un P (premium) ou V (VIP) indiquant quels animaux sont connus pour figurer sur la liste actuelle. Une icône de diamant gris signifie que l'animal ne figure plus sur la liste d'échange mais était auparavant un animal premium ou VIP.",
+
+  "tradelist_tip": "Vous pouvez consulter les Prévisions des coffres pour voir si l'animal est prévu pour arriver prochainement dans un coffre, ce qui vous permettrait de l'obtenir gratuitement. Consultez également les Animaux ignorés qui ne sont pas prévus dans les coffres. Certains animaux sont également connus pour être proposés très rarement dans les Super Promos."
+}

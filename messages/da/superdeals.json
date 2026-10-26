@@ -1,0 +1,26 @@
+{
+  "title": "Super Deals",
+  "intro": "Super Deals (also called Top Deals or Flash Sales) are limited-time discounted offers in the Zoo 2 shop. They typically last 24–72 hours and change around noon Germany time.",
+
+  "how_it_works_title": "How Super Deals Work",
+  "how_it_works_body": "Super Deals appear in the shop for a limited time. The most common type bundles a pair of animals with an enclosure, watering hole, and enclosure items at a discount of 39–84% off. Discounts are calculated including the coin-to-diamond conversion rate of 1 diamond per 250 coins.",
+
+  "types_title": "Types of Super Deals",
+  "types_body": "Super Deals come in several forms. The most common type pairs two animals with an enclosure bundle. Less common types include color variant animals at full diamond price, discounted event decorations, and animals from VIP, Legendary, or Friendship chests.",
+
+  "discontinued_title": "Discontinued Deal Types",
+  "discontinued_body": "Safari Restaurants and Zoo Stores were previously available as Super Deals but have been discontinued. Their unlimited purchase potential caused coin imbalance in the game economy. These items are now available through Season Pass rewards, Shell Game, Seasonal Events, and new game regions.",
+
+  "pricing_title": "Animal Pricing Reference",
+  "pricing_body": "The table below shows diamond costs for animals across different purchase methods: card price, Rescue Center adoption, shop purchase (33% off), Ice Cream offer (40% off), typical Super Deal price, shop bundle pair price (33% off), chest type, and prize wheel availability.",
+
+  "col_animal": "Animal",
+  "col_card_price": "Card Price",
+  "col_rescue": "Rescue Center",
+  "col_shop_33": "Shop (33% off)",
+  "col_ice_cream": "Ice Cream (40% off)",
+  "col_super_deal": "Super Deal",
+  "col_shop_pair": "Shop Pair (33% off)",
+  "col_chest": "Chest Type",
+  "col_prize_wheel": "Prize Wheel"
+}

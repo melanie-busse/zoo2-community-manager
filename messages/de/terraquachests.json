@@ -1,0 +1,33 @@
+{
+  "title": "Terraqua-Truhen",
+  "intro": "Terraqua-Truhen können für 29 Diamanten gekauft werden. Sie wurden am 13. März 2023 eingeführt und enthalten Teile für Terrarium- und Aquarium-Häuser. Puzzleteile aus Terraqua-Truhen können auch am Glücksrad gefunden werden. Die Premium- und VIP-Pässe für Staffel 4 des Season Pass enthielten Terraqua-Truhen unter ihren Belohnungen. Es gibt KEINE Tiere in den Terraqua-Truhen.",
+
+  "content_title": "Mögliche Inhalte",
+  "content_note": "Hinweis: Hier sind nur Gegenstände mit bestätigten Seltenheitsbeschreibungen aufgeführt.",
+
+  "terrarium_title": "Terrariumhaus",
+  "terrarium_leafy_title": "Laubiges Dickicht",
+  "terrarium_rocky_title": "Felsige Wüste",
+  "terrarium_buildings_title": "Gebäude",
+  "terrarium_flowers_title": "Blumen & Dekorationen",
+  "terrarium_trees_title": "Bäume",
+  "terrarium_boundaries_title": "Grenzen",
+  "terrarium_special_title": "Besondere Gegenstände",
+
+  "aquarium_title": "Aquariumhaus",
+  "aquarium_freshwater_title": "Süßwasser",
+  "aquarium_saltwater_title": "Salzwasser",
+  "aquarium_buildings_title": "Gebäude",
+  "aquarium_flowers_title": "Blumen & Dekorationen",
+  "aquarium_trees_title": "Bäume",
+  "aquarium_boundaries_title": "Grenzen",
+  "aquarium_special_title": "Besondere Gegenstände",
+
+  "col_item": "Gegenstand",
+  "col_rarity": "Seltenheit",
+
+  "rarity_common": "Gewöhnlich",
+  "rarity_rare": "Selten",
+  "rarity_epic": "Episch",
+  "rarity_legendary": "Legendär"
+}

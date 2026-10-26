@@ -1,0 +1,50 @@
+{
+  "title": "Currency",
+  "intro": "Zoo 2: Animal Park has multiple types of currency: coins, diamonds, energy, tickets, keys, feathers, and seasonal event currency. These currencies allow you to purchase items and start upgrades in your zoo.",
+
+  "coins_title": "Coins",
+  "coins_body": "Coins are the basic currency earned and used in Zoo 2: Animal Park. Coins are generally easy to obtain and can be used to purchase animals, buildings, decorations, most upgrades, enclosures, enclosure expansions, regular chests, and park expansions (land).",
+
+  "generating_coins_title": "Generating Coins",
+  "generating_coins_body": "Shops and admission booths generate coins from visitors — the more visitors, the faster they fill. Quests and the Mayor's Zoo Title rewards almost always give coins for completion. Achievements award coins for completion. Monthly rewards paths usually give coins for the first time you log in for the new month. Leveling up awards coins. Shell games may give a coin prize. Season Pass levels may contain coins. Selling certain coin animals is the best way to generate income: breed high coin-cost animals and sell the ones you do not need. The selling price starts at 20% of the purchase price and increases by 5% as you level up the species. Important: Even diamond items can be sold for coins, but this is a very poor exchange rate. Exchanging diamonds for coins is generally accepted as the worst practice. You cannot exchange coins for diamonds.",
+
+  "spending_coins_title": "Spending Coins",
+  "spending_coins_body": "Almost everything in the game that is purchasable with coins goes on sale. Regular chests (blue coin chests), club fundraisers, and equipment repairs never go on sale. Efficient spenders can wait for a discount on the desired item if they are patient enough. Some players collect as many coins as they can to donate to club contests when their team plays a coin animal. Others use coins on fertility feed to boost their chances for a successful breeding. Many save coins for events to get all the items using the Buy-Collect-Sell trick.",
+
+  "diamonds_title": "Diamonds",
+  "diamonds_body": "Diamonds are the premium currency. Various animals, decorations, land expansions, upgrades, breeding slots, chest keys, region unlocks, and certain buildings require diamonds. Diamonds are much harder to get than coins, but there are several ways to earn free diamonds and a few ways to buy them with real money in a savvy way.",
+
+  "free_diamonds_title": "Free Diamonds",
+  "free_diamonds_gameplay_title": "Regular Game Play",
+  "free_diamonds_gameplay_body": "Conservation Week (every ~9 weeks) can give diamonds for your personal ranking, the community's global ranking, and by completing certain quests. Clearing enormous debris in the Kujali Park savanna region may sometimes generate a free diamond. The game gives at least one diamond for reaching the next level; levels ending in 5 award 5 diamonds; levels ending in 0 award that value in diamonds (max 100). Daily logins give diamond rewards on a few days each month — logging in more than 25 days awards one or two diamonds each day. The Standard Season Pass tier is free to play and can give diamonds for certain levels. A diamond reward may accompany a discounted prize in a shell game. Quests sometimes award diamonds upon completion, especially the Zoo Title quests.",
+
+  "watching_ads_title": "Watching Ads",
+  "watching_ads_body": "Video Ads from the main zoo entrance billboard can generate up to 2 diamonds per day. Watching 10 ads generates one diamond. After watching 20 ads, you must wait 24 hours before watching another. Saving up 1,000 video ads then redeeming may also yield a premium animal. Saving 2,000 may yield two premium animals. 10,000 ads may give one VIP bonus option.",
+
+  "news_subscriptions_title": "News Subscriptions",
+  "news_subscriptions_body": "Upjers sometimes gives out promo codes for free diamonds on social media or in a newsletter. Codes can be personal one-time use or universal. Subscribe to Zoo 2 Facebook, Zoo 2 Instagram, Upjers WhatsApp, Upjers Telegram, and the Upjers/Zoo 2 newsletters to stay updated. By subscribing to Uppy Bot on Telegram, you can earn 1 diamond for every 10 news announcements. Get 10 diamonds for your initial subscription, then approximately 2 diamonds per month.",
+
+  "social_media_title": "Social Media Contests & Interactions",
+  "social_media_body": "Upjers Discord, Facebook, and Instagram have contests to win 20–100 diamonds. Discord contests are almost weekly. By joining the official Upjers Discord server, you can earn 1 diamond for every 10 thumbs-up reactions you give to their news posts, up to 2 diamonds per month.",
+
+  "upjers_portal_title": "Upjers Portal Interactions",
+  "upjers_portal_body": "From time to time, Upjers may host a community event where players open a calendar door to reveal a code or redeemable link for premium currency — typically up to 20 diamonds per event. The Upjers Forum occasionally holds contests. If you have an Upjers account at upjers.com, you can collect points with daily logins and exchange them for diamonds (every 200 points = 2 diamonds). Windows users can download Upjers Home for double points.",
+
+  "buying_diamonds_title": "Buying Diamonds",
+  "buying_diamonds_body": "See the Diamonds page for an outline of bonuses as well as tips on buying, saving, and spending diamonds.",
+
+  "tickets_title": "Tickets",
+  "tickets_body": "Tickets are a type of permanent specialty currency used to complete puzzle pieces. You can find your current ticket balance on the puzzle pieces screen. Tickets may be obtained from the monthly rewards calendar path, scrapping unwanted puzzle pieces, spinning the Prize Wheel, Season Pass level rewards from any tier, and rarely from a few specialty Quests and Zoo Title rewards.",
+
+  "keys_title": "Keys",
+  "keys_body": "Keys are used to open extra cards when opening chests. Each chest contains eight cards, but only the first four card reveals are included free. Each subsequent card reveal uses one Key. Keys may be obtained from the monthly rewards calendar path, Season Pass level rewards from any tier, purchases made for diamonds in the opened chest window, sometimes purchasable with feathers in the Season Pass Shop, and Shell Games often have keys as a free reward prize.",
+
+  "energy_title": "Energy",
+  "energy_body": "Energy is represented by the lightning bolt icon and is used to power the bulldozer and the terrain editor. Energy may be obtained from the monthly rewards calendar path, spinning the Prize Wheel, occasionally from Quests or Zoo Title rewards, and purchases made for diamonds in the Bulldozer or Terrain Editor windows.",
+
+  "feathers_title": "Feathers",
+  "feathers_body": "Feathers are exclusive to the Season Pass and allow you to change the enclosure ground color. Feathers may be obtained from Season Pass level rewards from any tier and purchases made for diamonds in the Season Pass Shop.",
+
+  "event_currency_title": "Event Currency",
+  "event_currency_body": "During Seasonal Events, special decorations are available for limited-time purchase using coins or diamonds. Events consist of a Collection Phase and a Redemption Phase. During the Collection Phase you buy special decorations and collect event currency. Once the Collection Phase ends, decorations finish their countdown and generate one final collection, then no new currency-generating decorations can be purchased. The Redemption Phase lasts seven days after the Collection Phase ends — you can still spend collected event currency, with an option to exchange diamonds for additional event currency. Important: Event Currency is NOT retained beyond the duration of the special event. Any unspent event currency disappears after the Redemption Phase is complete."
+}

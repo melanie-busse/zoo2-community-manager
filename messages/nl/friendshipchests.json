@@ -1,0 +1,23 @@
+{
+  "title": "Vriendschapskisten",
+  "intro": "Vriendschapskisten zijn roze kisten die worden gegeven voor het verzamelen van vriendschapspunten met andere spelers. Voor elke 10 vriendschapspunten die je verzamelt, ontvang je één Vriendschapskist. Je kunt maximaal 5 Vriendschapskisten tegelijk bewaren.",
+
+  "earning_title": "Vriendschapskisten verdienen",
+  "earning_body": "Vriendschapspunten worden verdiend door andere spelers hun dierentuinen te bezoeken en hen die van jou te laten bezoeken. Zodra je 10 vriendschapspunten bereikt, wordt automatisch een Vriendschapskist toegevoegd aan je inventaris. De kistenlimiet van 5 betekent dat je kisten regelmatig moet openen om nieuwe te blijven verdienen.",
+
+  "contents_title": "Kisteninhoud",
+  "contents_body": "Vriendschapskisten bevatten uitsluitend verblijfspuzzelstukken — ze bevatten geen kant-en-klare decoraties. Dit omvat puzzelstukken voor verblijfsdecoties en nutsbebouwen in alle bioomen. Sinds 17 februari 2022 bevatten Vriendschapskisten ook stukken voor de exclusieve Vriendschapsdieren, die via geen enkel ander kistentype kunnen worden verkregen.",
+
+  "animals_title": "Exclusieve vriendschapsdieren",
+  "animals_body": "De volgende dieren zijn exclusief voor Vriendschapskisten en kunnen via geen enkel ander kistentype worden verkregen:",
+
+  "animals_col_animal": "Dier",
+  "animals_col_rarity": "Zeldzaamheid",
+  "animals_col_biome": "Bioom",
+
+  "enclosures_title": "Verblijfspuzzelstukken",
+  "enclosures_body": "Vriendschapskisten bevatten puzzelstukken voor verblijfsdecoties en nutsbebouwen. Deze stukken zijn verspreid over alle bioomen en omvatten zowel decoratieve als functionele verblijfsitems.",
+
+  "tips_title": "Tips",
+  "tips_body": "Open je Vriendschapskisten regelmatig zodat je de limiet van 5 kisten niet bereikt en stopt met nieuwe verdienen. De meest efficiënte manier om vriendschapspunten te verdienen is een actieve vriendenlijst te hebben en dagelijks dierentuinen te bezoeken. Vriendschapsdieren zijn exclusief voor dit kistentype, waardoor het de enige bron is voor het voltooien van hun collecties."
+}

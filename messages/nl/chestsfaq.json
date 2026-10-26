@@ -1,0 +1,31 @@
+{
+  "title": "Kistenoverzicht",
+  "intro": "Schatkisten bieden spelers de mogelijkheid bijna alles te verkrijgen wat in de dierentuin gekocht kan worden. Bijna alle questrelateerde items met diamantenkosten zijn te vinden in Gewone Kisten die met munten gekocht worden. Betalen met diamanten gaat sneller, maar geduld wordt ook beloond!",
+
+  "overview_title": "Snel overzicht",
+  "overview_body": "Er zijn 6 soorten kisten beschikbaar in het spel. Legendarische, Retro- en Epische kisten hebben van tijd tot tijd verhoogde dieren in rotatie. Onafhankelijk van welke kist een verhoogd dier in zit, is zijn puzzelstuk paars (zeldzaam) of geel (legendarisch). Paarse stukken kosten 2.500 tickets om te voltooien met slechts één puzzelstuk. Gele stukken kosten 10.000 tickets met slechts één puzzelstuk. Soms kun je wachten op een kistenevenement om ze voor 15% minder te voltooien. Historisch gezien, als de populariteit van het dier 840 punten of meer is (84 diamanten), zal het een geel puzzelstuk zijn.",
+
+  "chest_types_title": "Kistensoorten",
+  "chest_friendship": "Vriendschapskisten (Roze) — Kosten: 10 harten. Bevatten dieren (geen gegarandeerd stuk). Alleen inwisselbaar via vriendschapsbeloningen, niet te koop. Limiet van 5 — dagelijks openen om beloningen niet te verliezen.",
+  "chest_normal": "Gewone Kisten (Blauw) — Kosten: munten (niveauafhankelijk). Bevatten alle verhaallijn dieren (geen gegarandeerd stuk). Geen aankooplimiet behalve de 100-kistenstapelregel.",
+  "chest_epic": "Epische Kisten (Paars) — Kosten: 29 diamanten. Bevatten dieren met 1 gegarandeerd puzzelstuk. Hebben roterend verhoogde dieren.",
+  "chest_retro": "Retrokisten (Rood) — Kosten: 39 diamanten. Bevatten dieren met 1 gegarandeerd puzzelstuk. Hebben roterend verhoogde dieren.",
+  "chest_legendary": "Legendarische Kisten (Goud) — Bevatten dieren met 1 gegarandeerd puzzelstuk. Hebben roterend verhoogde dieren.",
+  "chest_video": "Videokisten — Verdiend door video-advertenties te bekijken. Kunnen verder stapelen dan de 100-kistenlimiet.",
+
+  "forecasts_title": "Kistenvoorspellingen",
+  "forecasts_body": "Voor toekomstige kistenvoorspellingen, zie de Voorspellingspagina.",
+
+  "limits_title": "Aankooplimieten",
+  "limits_body": "Vriendschapskisten zijn alleen inwisselbaar via beloningen voor het helpen van vrienden en kunnen niet worden gekocht met munten of diamanten. Ze hebben een limiet van 5 — zodra je 5 kisten hebt gestapeld, gaan eventuele extra kistenbeloningen verloren. Het wordt aanbevolen ze dagelijks te openen. De bekende limiet voor te kopen kisten is 100. Nadat je 100 hebt verzameld, blijven ze stapelen maar kun je er geen meer kopen totdat je er genoeg hebt geopend om onder de 100 te komen. Kisten verzamelen via de kalender, evenementbeloningen of academiebeloningen zou verder dan de 100-limiet moeten kunnen stapelen.",
+
+  "keys_title": "Sleutels",
+  "keys_body": "Sleutels kunnen worden gekocht voor 5 diamanten per stuk, of ontvangen als onderdeel van de Dagelijkse Inlogbeloningen of de Season Pass. Op bepaalde gelegenheden kunnen ze worden gekocht in de Season Pass Shop. Shell Games bieden vaak sleutels aan als gratis prijs. Sleutels worden gebruikt om extra kaarten te onthullen bij het openen van kisten. Elke kist bevat acht kaarten, maar alleen de eerste vier kaartontsluitingen zijn inbegrepen. Elke extra kaartonthulling gebruikt één sleutel.",
+
+  "exceptions_title": "Wat niet in kisten te vinden is",
+  "exceptions_body": "Hoewel bijna alles in het spel in kisten gevonden kan worden, zijn een paar items niet beschikbaar:",
+  "exception_expansions": "Uitbreidingen — Er zijn geen kaarten voor verblijfs- of parkuitbreidingen. Deze zijn alleen te verkrijgen wanneer gekocht met munten of diamanten.",
+  "exception_upgrades": "Upgrades — Hoewel stukken voor de schuren zelf in kisten te vinden zijn, zijn ALLE upgrades alleen te verkrijgen wanneer gekocht met munten of diamanten. Dit geldt ook voor winkelupgrades. Bekijk Verkoopsevenementen voor kortingen van 25–50%!",
+  "exception_employees": "Dierentuinmedewerkers — Er zijn geen puzzelstukken voor medewerkers uit kisten. Alle drie medewerkervouchers worden echter weggegeven als onderdeel van de Dagelijkse Inlogbeloning. Puzzelstukken voor 7-daagse medewerkers worden gegeven in de Season Pass. Teammedewerkerpuzzelstukken worden gegeven als dagelijkse inlogbeloningen van de Zoo Academy zodra bepaalde Academieniveaus zijn ontgrendeld.",
+  "exception_other": "Speciale gast-NPC's, persoonlijke avatarartikelen, functiegebouwen, paden en vuilnisbakken zijn ook niet beschikbaar in kisten."
+}

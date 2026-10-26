@@ -1,0 +1,31 @@
+{
+  "title": "Truhen-Übersicht",
+  "intro": "Schatztruhen bieten Spielern eine Möglichkeit, fast alles zu erwerben, was für den Zoo gekauft werden kann. Fast alle Quest-bezogenen Gegenstände mit Diamantenkosten können in normalen Truhen gefunden werden, die Münzen kosten. Obwohl das Bezahlen mit Diamanten schneller geht, lohnt sich auch Geduld!",
+
+  "overview_title": "Kurzübersicht",
+  "overview_body": "Es gibt 6 Arten von Truhen im Spiel. Legendäre, Retro- und Epische Truhen wechseln von Zeit zu Zeit geboostete Tiere. Unabhängig davon, in welcher Truhe sich ein geboostetes Tier befindet, ist sein Puzzleteil entweder lila (selten) oder gelb (legendär). Lila Teile kosten 2.500 Tickets zum Vervollständigen mit nur einem Puzzleteil. Gelbe Teile kosten 10.000 Tickets mit nur einem Puzzleteil. Manchmal kann bei einem Truhenevent auf 15 % Rabatt gewartet werden, um sie zu vervollständigen. Historisch gesehen, wenn die Popularität des Tiers 840 Punkte oder mehr (84 Diamanten) beträgt, wird es ein gelbes Puzzleteil sein.",
+
+  "chest_types_title": "Truhentypen",
+  "chest_friendship": "Freundschaftstruhen (Rosa) – Kosten: 10 Herzen. Enthalten Tiere (kein garantiertes Teil). Nur durch Freundesbelohnungen einlösbar, nicht kaufbar. Limit von 5 – täglich öffnen, um keine Belohnungen zu verlieren.",
+  "chest_normal": "Normale Truhen (Blau) – Kosten: Münzen (levelabhängig). Enthalten alle Story-Tiere (kein garantiertes Teil). Kein Kauflimit über die 100-Truhen-Stapelregel hinaus.",
+  "chest_epic": "Epische Truhen (Lila) – Kosten: 29 Diamanten. Enthalten Tiere mit 1 garantiertem Puzzleteil. Bieten rotierende geboostete Tiere.",
+  "chest_retro": "Retro-Truhen (Rot) – Kosten: 39 Diamanten. Enthalten Tiere mit 1 garantiertem Puzzleteil. Bieten rotierende geboostete Tiere.",
+  "chest_legendary": "Legendäre Truhen (Gold) – Enthalten Tiere mit 1 garantiertem Puzzleteil. Bieten rotierende geboostete Tiere.",
+  "chest_video": "Video-Truhen – Durch Ansehen von Videowerbung verdient. Können über das 100-Truhen-Limit gestapelt werden.",
+
+  "forecasts_title": "Truhen-Prognosen",
+  "forecasts_body": "Für zukünftige Truhenvorhersagen, siehe die Prognosen-Seite.",
+
+  "limits_title": "Kauflimits",
+  "limits_body": "Freundschaftstruhen sind nur durch Belohnungen beim Helfen von Freunden einlösbar und können nicht mit Münzen oder Diamanten gekauft werden. Sie haben ein Limit von 5 – sobald 5 gestapelt sind, gehen weitere Truhenbelohnungen verloren. Es wird empfohlen, sie täglich zu öffnen. Das bekannte Limit für kaufbare Truhen beträgt 100. Nach dem Sammeln von 100 Truhen können sie weiter gestapelt werden, aber es können keine weiteren gekauft werden, bis genug geöffnet wurden, um unter 100 zu kommen. Truhen aus dem Kalender, Eventbelohnungen oder Akademiebelohnungen sollten weiterhin über das 100er-Limit hinaus stapelbar sein.",
+
+  "keys_title": "Schlüssel",
+  "keys_body": "Schlüssel können für 5 Diamanten pro Stück gekauft oder als Teil der täglichen Login-Belohnungen oder des Season Pass erhalten werden. Gelegentlich können sie im Season-Pass-Shop kaufbar sein. Shell Games bieten oft Schlüssel als kostenlosen Preis an. Schlüssel werden verwendet, um beim Öffnen von Truhen zusätzliche Karten aufzudecken. Jede Truhe enthält acht Karten, aber nur die ersten vier Kartenaufdeckungen sind inklusive. Jede weitere Kartenaufdeckung verwendet einen Schlüssel.",
+
+  "exceptions_title": "Was nicht in Truhen zu finden ist",
+  "exceptions_body": "Obwohl fast alles im Spiel in Truhen gefunden werden kann, sind einige Gegenstände nicht verfügbar:",
+  "exception_expansions": "Erweiterungen – Es gibt keine Karten für Gehege- oder Parkerweiterungen. Diese können nur erworben werden, wenn sie mit Münzen oder Diamanten gekauft werden.",
+  "exception_upgrades": "Upgrades – Obwohl Teile für die Tierunterkünfte selbst in Truhen gefunden werden können, können ALLE Upgrades nur beim Kauf mit Münzen oder Diamanten erhalten werden. Dies schließt Shop-Upgrades ein. Schau bei Sale-Events für 25–50 % Rabatt!",
+  "exception_employees": "Zooangestellte – Es gibt keine Puzzleteile für Angestellte aus Truhen. Jedoch werden alle drei Angestellten-Gutscheine als Teil der täglichen Login-Belohnung vergeben. Puzzleteile für 7-Tage-Angestellte werden im Season Pass gegeben. Team-Angestellten-Puzzleteile werden als tägliche Zoo-Akademie-Login-Belohnungen vergeben, sobald bestimmte Akademielevel freigeschaltet sind.",
+  "exception_other": "Special-Guest-NPCs, persönliche Avatargegenstände, Funktionsgebäude, Wege und Mülleimer sind ebenfalls nicht in Truhen verfügbar."
+}

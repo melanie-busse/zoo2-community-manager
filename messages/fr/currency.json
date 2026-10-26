@@ -1,0 +1,50 @@
+{
+  "title": "Monnaies",
+  "intro": "Zoo 2: Animal Park dispose de plusieurs types de monnaies : pièces, diamants, énergie, tickets, clés, plumes et monnaie d'événement saisonnier. Ces monnaies vous permettent d'acheter des objets et de lancer des améliorations dans votre zoo.",
+
+  "coins_title": "Pièces",
+  "coins_body": "Les pièces sont la monnaie de base gagnée et utilisée dans Zoo 2: Animal Park. Les pièces sont généralement faciles à obtenir et peuvent être utilisées pour acheter des animaux, des bâtiments, des décorations, la plupart des améliorations, des enclos, des extensions d'enclos, des coffres normaux et des extensions de parc (terrain).",
+
+  "generating_coins_title": "Générer des pièces",
+  "generating_coins_body": "Les boutiques et les guichets d'entrée génèrent des pièces grâce aux visiteurs — plus il y a de visiteurs, plus ils se remplissent vite. Les quêtes et les récompenses du Titre de zoo du Maire donnent presque toujours des pièces à la complétion. Les succès octroient des pièces à la complétion. Les chemins de récompenses mensuels donnent généralement des pièces la première fois que vous vous connectez pour le nouveau mois. Monter de niveau octroie des pièces. Les jeux de coquilles peuvent donner un prix en pièces. Les niveaux du Season Pass peuvent contenir des pièces. La vente de certains animaux en pièces est le meilleur moyen de générer des revenus : reproduisez des animaux à coût élevé en pièces et vendez ceux dont vous n'avez pas besoin. Le prix de vente commence à 20% du prix d'achat et augmente de 5% à mesure que vous montez en niveau l'espèce. Important : Même les objets en diamants peuvent être vendus contre des pièces, mais c'est un taux d'échange très mauvais. Échanger des diamants contre des pièces est généralement considéré comme la pire pratique. Vous ne pouvez pas échanger des pièces contre des diamants.",
+
+  "spending_coins_title": "Dépenser des pièces",
+  "spending_coins_body": "Presque tout ce qui est achetable avec des pièces dans le jeu est mis en vente. Les coffres normaux (coffres bleus en pièces), les collectes de fonds du club et les réparations d'équipements ne sont jamais en vente. Les dépensiers efficaces peuvent attendre une remise sur l'objet désiré s'ils sont suffisamment patients. Certains joueurs accumulent autant de pièces que possible pour les donner aux concours du club lorsque leur équipe joue avec un animal en pièces. D'autres utilisent des pièces pour la nourriture de fertilité afin d'augmenter leurs chances d'une reproduction réussie. Beaucoup économisent des pièces pour les événements afin d'obtenir tous les objets grâce à l'astuce Acheter-Collecter-Vendre.",
+
+  "diamonds_title": "Diamants",
+  "diamonds_body": "Les diamants sont la monnaie premium. Divers animaux, décorations, extensions de terrain, améliorations, emplacements de reproduction, clés de coffres, déverrouillages de région et certains bâtiments nécessitent des diamants. Les diamants sont bien plus difficiles à obtenir que les pièces, mais il existe plusieurs façons de gagner des diamants gratuits et quelques façons de les acheter avec de l'argent réel de manière judicieuse.",
+
+  "free_diamonds_title": "Diamants gratuits",
+  "free_diamonds_gameplay_title": "Jeu régulier",
+  "free_diamonds_gameplay_body": "La Semaine de la conservation (toutes les ~9 semaines) peut donner des diamants pour votre classement personnel, le classement mondial de la communauté et en accomplissant certaines quêtes. Dégager d'énormes débris dans la région savane de Kujali Park peut parfois générer un diamant gratuit. Le jeu donne au moins un diamant pour atteindre le niveau suivant ; les niveaux se terminant par 5 octroient 5 diamants ; les niveaux se terminant par 0 octroient cette valeur en diamants (max 100). Les connexions quotidiennes donnent des récompenses en diamants quelques jours par mois — se connecter plus de 25 jours octroie un ou deux diamants chaque jour. Le palier Standard du Season Pass est gratuit et peut donner des diamants pour certains niveaux. Une récompense en diamants peut accompagner un prix à prix réduit dans un jeu de coquilles. Les quêtes octroient parfois des diamants à la complétion, surtout les quêtes de Titre de zoo.",
+
+  "watching_ads_title": "Regarder des publicités",
+  "watching_ads_body": "Les publicités vidéo du panneau d'affichage à l'entrée principale du zoo peuvent générer jusqu'à 2 diamants par jour. Regarder 10 publicités génère un diamant. Après avoir regardé 20 publicités, vous devez attendre 24 heures avant d'en regarder une autre. Économiser jusqu'à 1 000 publicités vidéo avant de les échanger peut également vous donner un animal premium. En économiser 2 000 peut vous donner deux animaux premium. 10 000 publicités peuvent donner une option bonus VIP.",
+
+  "news_subscriptions_title": "Abonnements aux actualités",
+  "news_subscriptions_body": "Upjers distribue parfois des codes promotionnels pour des diamants gratuits sur les réseaux sociaux ou dans une newsletter. Les codes peuvent être à usage personnel unique ou universels. Abonnez-vous à Zoo 2 Facebook, Zoo 2 Instagram, Upjers WhatsApp, Upjers Telegram et aux newsletters Upjers/Zoo 2 pour rester informé. En vous abonnant à Uppy Bot sur Telegram, vous pouvez gagner 1 diamant pour chaque 10 annonces. Recevez 10 diamants pour votre abonnement initial, puis environ 2 diamants par mois.",
+
+  "social_media_title": "Concours et interactions sur les réseaux sociaux",
+  "social_media_body": "Discord, Facebook et Instagram d'Upjers organisent des concours pour gagner 20–100 diamants. Les concours Discord sont presque hebdomadaires. En rejoignant le serveur Discord officiel d'Upjers, vous pouvez gagner 1 diamant pour chaque 10 réactions \"pouces en l'air\" que vous donnez à leurs publications d'actualités, jusqu'à 2 diamants par mois.",
+
+  "upjers_portal_title": "Interactions avec le portail Upjers",
+  "upjers_portal_body": "De temps en temps, Upjers peut organiser un événement communautaire où les joueurs ouvrent une porte de calendrier pour révéler un code ou un lien échangeable pour de la monnaie premium — généralement jusqu'à 20 diamants par événement. Le Forum Upjers organise occasionnellement des concours. Si vous avez un compte Upjers sur upjers.com, vous pouvez collecter des points avec des connexions quotidiennes et les échanger contre des diamants (tous les 200 points = 2 diamants). Les utilisateurs Windows peuvent télécharger Upjers Home pour doubler les points.",
+
+  "buying_diamonds_title": "Acheter des diamants",
+  "buying_diamonds_body": "Consultez la page Diamants pour un aperçu des bonus ainsi que des conseils sur l'achat, l'économie et la dépense de diamants.",
+
+  "tickets_title": "Tickets",
+  "tickets_body": "Les tickets sont un type de monnaie spéciale permanente utilisée pour compléter des pièces de puzzle. Vous pouvez trouver votre solde de tickets sur l'écran des pièces de puzzle. Les tickets peuvent être obtenus depuis le chemin du calendrier de récompenses mensuel, en récupérant des pièces de puzzle indésirables, en faisant tourner la Roue des prix, depuis les récompenses de niveaux du Season Pass de tout palier, et rarement dans quelques quêtes spéciales et récompenses de Titre de zoo.",
+
+  "keys_title": "Clés",
+  "keys_body": "Les clés servent à ouvrir des cartes supplémentaires lors de l'ouverture de coffres. Chaque coffre contient huit cartes, mais seules les quatre premières révélations sont incluses gratuitement. Chaque révélation de carte suivante utilise une Clé. Les clés peuvent être obtenues depuis le chemin du calendrier de récompenses mensuel, depuis les récompenses de niveaux du Season Pass de tout palier, lors d'achats en diamants dans la fenêtre du coffre ouvert, parfois achetables avec des plumes à la Boutique du Season Pass, et les jeux de coquilles ont souvent des clés comme prix de récompense gratuit.",
+
+  "energy_title": "Énergie",
+  "energy_body": "L'énergie est représentée par l'icône d'éclair et est utilisée pour alimenter le bulldozer et l'éditeur de terrain. L'énergie peut être obtenue depuis le chemin du calendrier de récompenses mensuel, en faisant tourner la Roue des prix, occasionnellement dans les quêtes ou les récompenses de Titre de zoo, et lors d'achats en diamants dans les fenêtres du Bulldozer ou de l'Éditeur de terrain.",
+
+  "feathers_title": "Plumes",
+  "feathers_body": "Les plumes sont exclusives au Season Pass et permettent de changer la couleur du sol des enclos. Les plumes peuvent être obtenues depuis les récompenses de niveaux du Season Pass de tout palier et lors d'achats en diamants à la Boutique du Season Pass.",
+
+  "event_currency_title": "Monnaie d'événement",
+  "event_currency_body": "Lors des événements saisonniers, des décorations spéciales sont disponibles à l'achat à durée limitée avec des pièces ou des diamants. Les événements se composent d'une Phase de collecte et d'une Phase d'échange. Pendant la Phase de collecte, vous achetez des décorations spéciales et collectez de la monnaie d'événement. Une fois la Phase de collecte terminée, les décorations finissent leur décompte et génèrent une dernière collecte, puis aucune nouvelle décoration générant de la monnaie ne peut être achetée. La Phase d'échange dure sept jours après la fin de la Phase de collecte — vous pouvez toujours dépenser la monnaie d'événement collectée, avec une option pour échanger des diamants contre de la monnaie d'événement supplémentaire. Important : La monnaie d'événement N'est PAS conservée au-delà de la durée de l'événement spécial. Toute monnaie d'événement non dépensée disparaît après la fin de la Phase d'échange."
+}

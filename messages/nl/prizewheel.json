@@ -1,0 +1,29 @@
+{
+  "title": "Prize Wheel",
+  "intro": "The Prize Wheel is a special feature building that lets you spin a wheel to win various in-game rewards. It unlocks at player level 7.5 and can be spun repeatedly — each spin adds time to the reset timer.",
+
+  "how_it_works_title": "How It Works",
+  "how_it_works_body": "Each spin of the Prize Wheel adds 2 minutes to the reset timer, up to a maximum of 24 hours. Once the timer runs out, the wheel resets and you can spin again for free. You can reset the timer early by spending diamonds — the minimum reset cost is 10 diamonds when 59 minutes or less remain on the timer.",
+
+  "rewards_title": "Rewards",
+  "rewards_body": "The Prize Wheel can award a variety of prizes including coin chest puzzle pieces, tickets, energy, and coins. Special exclusive animals and decorations are also available as rare prizes on the wheel.",
+
+  "rewards_list_title": "Common Prize Wheel Rewards",
+  "reward_coin_chest": "Coin Chest puzzle pieces",
+  "reward_tickets": "100 Tickets",
+  "reward_energy": "500 Energy",
+  "reward_coins_small": "100 Coins",
+  "reward_coins_large": "500 Coins",
+  "reward_exclusive": "Exclusive animals and decorations (rare)",
+
+  "timer_title": "Spin Count & Timer Reference",
+  "timer_body": "Each spin adds exactly 2 minutes to the timer. The table below shows approximately how many spins it takes to reach various timer durations and the cumulative time added. This can help you plan how many spins you want to do before letting the timer run down.",
+  "timer_col_spins": "Spins",
+  "timer_col_timer": "Timer Added",
+
+  "reset_title": "Early Reset Cost",
+  "reset_body": "If you do not want to wait for the timer to count down, you can pay diamonds to reset early. The cost scales with how much time remains: the minimum is 10 diamonds when 59 minutes or less remain. Resetting early is generally not recommended unless you are close to the minimum cost threshold.",
+
+  "tips_title": "Tips",
+  "tips_body": "Spin until you reach a comfortable timer duration, then let it count down naturally to avoid spending diamonds. The Prize Wheel is one of the few sources of Tickets in the game, making it worth spinning regularly. Exclusive animals on the wheel rotate periodically, so check back if you are hunting a specific prize."
+}

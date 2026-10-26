@@ -1,0 +1,27 @@
+{
+  "title": "Julekalender",
+  "intro": "Hver december erstatter Julekalenderen det daglige login-belønningsspor. Åbn en ny låge hver dag for at samle særlige belønninger. Mistede låger kan låses op indtil den 7. januar for 3 diamanter hver.",
+
+  "how_it_works_title": "Sådan virker det",
+  "how_it_works_body": "I december kan du tappe på kalenderboblen i spillet for at finde dagens låge. Hver låge er kun åben i 24 timer, inden den låser. Du har tid til den 7. januar det følgende år til at låse op for mistede låger, til en pris af 3 diamanter pr. låge.",
+
+  "rewards_title": "Årlige belønningsoversigter",
+  "rewards_body": "Hvert års Julekalender indeholder unikke dyr og kister. Tabellerne nedenfor viser daglige belønninger for hvert år, fra nyeste til ældste.",
+
+  "col_day": "Dag",
+  "col_reward": "Belønning",
+
+  "year_2025": "2025",
+  "year_2024": "2024",
+  "year_2023": "2023",
+  "year_2022": "2022",
+  "year_2021": "2021",
+  "year_2020": "2020",
+  "year_2019": "2019",
+  "year_2018": "2018",
+
+  "summary_2025": "2025: 2x Pel's Fishing Owl, 1x Isbjørn, 1x Legendarisk kiste, 1x Retro-kiste, 1x Episk kiste, 1x Terraqua-kiste (dag 8 — kun synlig i Terrarium/Akvarium).",
+  "summary_2024": "2024: 2x Southern Muriqui, 1x Sneleopard, 2x Legendarisk kiste, 1x Retro-kiste, 1x Episk kiste.",
+  "summary_2023": "2023: 2x Stor kudu, 1x Rensdyr, 2x Legendarisk kiste, 1x Retro-kiste, 1x Sjælden/Episk kiste.",
+  "summary_2022": "2022: 2x Adélie-pingvin, 1x Poitou-æsel, 2x Legendarisk kiste, 1x Retro-kiste, 1x Sjælden kiste."
+}

@@ -1,0 +1,23 @@
+{
+  "title": "Epische Truhen",
+  "intro": "Epische Truhen sind Diamantentruhen, die je 29 Diamanten kosten (früher bekannt als Seltene Truhen). Sie garantieren bei jeder Öffnung sowohl ein lila Seltenheits-Puzzleteil als auch ein exklusives Tier-Puzzleteil.",
+
+  "obtaining_title": "Epische Truhen erhalten",
+  "obtaining_body": "Epische Truhen können aus verschiedenen Quellen erhalten werden: Quests, Level-Aufstiege, monatliche Login-Belohnungen und die Zoo-Akademie.",
+
+  "contents_title": "Truppeninhalt",
+  "contents_body": "Epische Truhen enthalten Puzzleteile aus Freundschafts- und Normalen Truhen, jedoch nicht die exklusiven Tiere dieser Truhen. Jede Epische Truhe garantiert mindestens ein lila Seltenheits-Puzzleteil und mindestens ein exklusives Tier-Puzzleteil.",
+
+  "drop_bonus_title": "Drop-Bonus",
+  "drop_bonus_body": "Epische Truhen bieten einen rotierenden Drop-Bonus, der die Chance erhöht, Puzzleteile eines bestimmten exklusiven Tieres zu erhalten. Das begünstigte Tier wechselt alle 6 Wochen und rotiert durch die Liste der exklusiven Tiere.",
+
+  "animals_title": "Exklusive Tiere in Epischen Truhen",
+  "animals_body": "Die folgenden Tiere sind exklusiv in Epischen Truhen erhältlich und können durch keinen anderen Truppentyp erworben werden:",
+
+  "animals_col_animal": "Tier",
+  "animals_col_rarity": "Seltenheit",
+  "animals_col_biome": "Biom",
+
+  "tips_title": "Tipps",
+  "tips_body": "Epische Truhen sind mit 29 Diamanten die günstigsten Diamantentruhen und bieten bei jeder Öffnung garantierte exklusive Tier-Puzzleteile. Der Drop-Bonus wechselt alle 6 Wochen – überprüfe das aktuelle Bonustier, wenn du an einer bestimmten Sammlung arbeitest. Zu diesem Preis sind Epische Truhen ein ausgezeichnetes Preis-Leistungs-Verhältnis für Spieler, die ihre exklusiven Tiersammlungen effizient vorantreiben möchten."
+}

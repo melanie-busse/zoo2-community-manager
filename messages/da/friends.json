@@ -1,0 +1,60 @@
+{
+  "title": "Venner",
+  "intro": "Spillere kan optjene belønninger fra to forskellige typer venner: nye rekrutter og venner i spillet. Nye rekrutter er inviterede brugere, der aldrig har spillet Zoo 2 før, mens venner i spillet er eksisterende spillere, hvis konti kan knyttes til din for interaktion i spillet.",
+
+  "recruited_title": "Rekrutterede venner",
+  "recruited_body": "Du kan optjene belønninger for at rekruttere nye spillere til Zoo 2 med dit personlige invitationslink. Klik på den lyserøde \"inviter\"-knap i dit Rekruttér venner-vindue og send linket til nye spillere. Den nye spiller skal bruge dit link til at downloade spillet og fuldføre op til 5 mål, for at du kan optjene Venskabsmønter. Bemærk: Denne funktion er ikke tilgængelig for Steam- eller Epic Games-spillere.",
+
+  "objectives_title": "Rekrutterede vens mål",
+  "objective_level": "Nå niveau 10",
+  "objective_animals": "Have 10 dyr i alt i deres zoo",
+  "objective_diamonds": "Køb diamanter",
+  "objective_academy": "Udvid Academy",
+  "objective_recruit": "Rekruttér en anden ven",
+
+  "objectives_note": "Hvert fuldført mål fra en rekrutteret ven giver dig 1 Venskabsmønt. Hvis én rekrutteret ven fuldfører det samme mål to gange, gives der ingen yderligere mønter.",
+
+  "rewards_title": "Belønninger for rekrutterede venner",
+
+  "ingame_title": "Venner i spillet",
+  "ingame_body": "Spillere kan have op til 16 venner i spillet. Da venner deler visse belønninger, kan det være ekstremt fordelagtigt at have aktive venner i spillet. Bemærk: Som del af en fair-play-regulering er det imod Upjers' servicevilkår at have venner i spillet, der bruger den samme internetkilde som dig.",
+
+  "adding_title": "Tilføjelse af venner",
+  "adding_body": "For at tilføje nye venner i spillet skal du acceptere en venneanmodning eller sende en venneanmodning til en eksisterende spiller. Tryk på venner-menuikonet og vælg en ledig venneplads for at se 12 foreslåede spillere tæt på dit niveau. For at tilføje en specifik spiller skal du bruge søgeværktøjet og indtaste deres Support ID fra deres Indstillinger. Lukning og genåbning af vinduet opdaterer forslagene.",
+
+  "removing_title": "Fjernelse af venner",
+  "removing_body": "For at frigøre en venneplads skal du vælge en ven og trykke på skraldespanden i deres informationspanel. Pladsen vil være låst i 24 timer, inden du kan invitere igen eller acceptere invitationer. Bemærk, at det er ret svært at opnå og beholde 16 aktive venner, og spillere bliver nødt til at ty til andre rekrutteringsmetoder såsom sociale netværk eller fora.",
+
+  "zoo_details_title": "Vens zoo-detaljer",
+  "zoo_details_body": "Tryk på en ven for at se oplysninger om deres zooframskridt: besiddede zootitler, antal parkudvidelser, antal forskellige placerede arter, antal dyr på niveau 10+, antal opnåede præstationer og antal placerede babydyr, der vokser i hoved-zooregionen.",
+
+  "helping_title": "Hjælp af venner",
+  "helping_body": "At hjælpe kræver, at du besøger din vens zoo. Tryk på hjertet i vennelisten eller knappen Hjælp ven. At hjælpe giver et venskabshjertepoint til både dig og din ven plus XP. For hver ven du hjælper, optjener du XP svarende til ti gange dit aktuelle spilniveau.",
+
+  "minigames_title": "Hjælpe-mini-spil",
+  "minigame_crows": "Jage krager: 5 krager er placeret i tilfældige indhegninger. Tryk på hver krage 3 gange for at jage den væk.",
+  "minigame_children": "Trøste børn: 5 grædende børn er tilfældigt placeret på stier. Giv hvert barn en ballon for at trøste dem.",
+  "minigame_animals": "Fange dyr: 10 dyr løber tilfældigt på zoostier. Svirp nettet over hvert af dem.",
+
+  "skip_title": "Spring mini-spil over",
+  "skip_body": "Du kan hjælpe én eller alle venner øjeblikkeligt ved at betale diamanter. \"Spring hjælp over\" koster 1 diamant pr. spiller. Knappen \"Hjælp alle\" koster 5 diamanter pr. tilbageværende uhjulpet spiller i alt. App-brugere kan også se en reklame for at springe over at hjælpe en ven (grænse 20 reklamer pr. 24t).",
+
+  "messaging_title": "Beskeder til venner",
+  "messaging_body": "Spillet tilbyder en privat chatboks til at sende beskeder til venner i spillet. Tryk på konvolutten ved siden af din ven for at sende en besked. Når en ny besked modtages, vises en notifikation ved venner-ikonet. Konvolut-ikonet skifter fra gråt til gult, når en ulæst besked vises. Det er ikke muligt at slette eller redigere en sendt besked.",
+
+  "deleting_title": "Sletning af venner",
+  "deleting_body": "For at slette en ven skal du klikke på spilleren og derefter klikke på det lille skraldespandsikon i nederste højre hjørne af venner-oversigtsvinduet. Sletning kan ikke fortrydes, og du kan ikke geninvitere den samme ven uden manuelt at indtaste deres Support ID igen. Venskabspladsen vil være blokeret de næste 24 timer efter sletning.",
+
+  "levelup_title": "Niveau-op-gaver",
+  "levelup_body": "Når du rykker op i niveau, modtager alle dine venner i spillet også den niveau-op-gave, du vælger. Du modtager også niveau-op-gaver fra dine venner. Du vælger én puzzlebrik fra et tilfældigt sæt på 3.",
+
+  "chests_title": "Venskabskister",
+  "chests_body": "Hver gang du hjælper en ven eller hjælpes af dem, får du et venskabspoint. Hvert 10. point belønner dig med en Venskabskiste, der indeholder puzzlebrikker til dekorationer, indhegninger og indhegningsgenstande samt eksklusive venskabsdyr. Det maksimale antal venskabspoints pr. dag er 32 med 16 aktive venner (3 kister pr. dag). Opbevaringsgrænsen er 5 kister.",
+
+  "troubleshooting_title": "Fejlfinding",
+  "troubleshooting_body": "Hvis dit spil lukker ned under hjælp til venner uden en fejlmeddelelse, kan din enhed have for lidt RAM. Indlæsning af store, fuldt animerede zooer kræver betydelig hukommelse. Prøv følgende løsninger:",
+
+  "fix_device": "Skift enhed: Prøv at hjælpe venner med en enhed, der har mere RAM, såsom en laptop eller desktop.",
+  "fix_friends": "Skift venner: Fjern venner med meget store zooer (over niveau 60) og erstat dem med lavere-niveau spillere, der har mindre zooer, der kræver mindre RAM.",
+  "fix_settings": "Skift spilindstillinger: Aktiver \"Reducerede animationer\", deaktiver \"Tillad udvidet zoom\", eller aktiver \"Begræns billedhastighed\" i den anden indstillingsfane for at reducere RAM-forbruget."
+}

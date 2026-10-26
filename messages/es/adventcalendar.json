@@ -1,0 +1,27 @@
+{
+  "title": "Calendario de Adviento",
+  "intro": "Cada diciembre, el Calendario de Adviento reemplaza el registro diario de recompensas de inicio de sesión. Abre una nueva puerta cada día para obtener recompensas especiales. Las puertas perdidas se pueden desbloquear hasta el 7 de enero por 3 diamantes cada una.",
+
+  "how_it_works_title": "Cómo Funciona",
+  "how_it_works_body": "Durante diciembre, toca la burbuja del calendario en el juego para encontrar la puerta del día. Cada puerta solo está abierta 24 horas antes de cerrarse. Tienes hasta el 7 de enero del año siguiente para desbloquear las puertas que hayas perdido, a un costo de 3 diamantes por puerta.",
+
+  "rewards_title": "Resúmenes Anuales de Recompensas",
+  "rewards_body": "El Calendario de Adviento de cada año presenta animales y cofres únicos. Las tablas a continuación muestran las recompensas diarias de cada año, del más reciente al más antiguo.",
+
+  "col_day": "Día",
+  "col_reward": "Recompensa",
+
+  "year_2025": "2025",
+  "year_2024": "2024",
+  "year_2023": "2023",
+  "year_2022": "2022",
+  "year_2021": "2021",
+  "year_2020": "2020",
+  "year_2019": "2019",
+  "year_2018": "2018",
+
+  "summary_2025": "2025: 2x Búho Pescador de Pel, 1x Oso Polar, 1x Legendary Chest, 1x Retro Chest, 1x Epic Chest, 1x Terraqua Chest (Día 8 — solo visible en Terrarium/Aquarium).",
+  "summary_2024": "2024: 2x Muriquí del Sur, 1x Leopardo de las Nieves, 2x Legendary Chest, 1x Retro Chest, 1x Epic Chest.",
+  "summary_2023": "2023: 2x Gran Kudu, 1x Reno, 2x Legendary Chest, 1x Retro Chest, 1x Rare/Epic Chest.",
+  "summary_2022": "2022: 2x Pingüino de Adélie, 1x Burro de Poitou, 2x Legendary Chest, 1x Retro Chest, 1x Rare Chest."
+}

@@ -1,0 +1,60 @@
+{
+  "title": "Vrienden",
+  "intro": "Spelers kunnen beloningen verdienen van twee verschillende soorten vrienden: nieuwe aanwervingen en in-spelvrienden. Nieuwe aanwervingen zijn uitgenodigde gebruikers die nog nooit Zoo 2 hebben gespeeld, terwijl in-spelvrienden bestaande spelers zijn wier accounts aan het jouwe kunnen worden gekoppeld voor in-spelinteractie.",
+
+  "recruited_title": "Aangeworven vrienden",
+  "recruited_body": "Je kunt beloningen verdienen voor het aanwerven van nieuwe spelers voor Zoo 2 met je persoonlijke uitnodigingslink. Klik op de roze \"uitnodigen\"-knop in je Vrienden aanwerven-venster en stuur de link naar nieuwe spelers. De nieuwe speler moet je link gebruiken om het spel te downloaden en maximaal 5 doelstellingen voltooien om jou Vriendschapsmunten te laten verdienen. Let op: Deze functie is niet beschikbaar voor Steam- of Epic Games-spelers.",
+
+  "objectives_title": "Doelstellingen voor aangeworven vrienden",
+  "objective_level": "Niveau 10 bereiken",
+  "objective_animals": "10 dieren in totaal in hun dierentuin hebben",
+  "objective_diamonds": "Diamanten kopen",
+  "objective_academy": "Academy uitbreiden",
+  "objective_recruit": "Een andere vriend aanwerven",
+
+  "objectives_note": "Elke voltooide doelstelling van een aangeworven vriend geeft je 1 Vriendschapsmunt. Als één aangeworven vriend dezelfde doelstelling tweemaal voltooit, worden er geen extra munten gegeven.",
+
+  "rewards_title": "Beloningen voor aangeworven vrienden",
+
+  "ingame_title": "In-spelvrienden",
+  "ingame_body": "Spelers kunnen tot 16 in-spelvrienden hebben. Omdat vrienden bepaalde beloningen delen, kan het hebben van actieve in-spelvrienden uiterst voordelig zijn. Let op: Als onderdeel van een fair-play-regeling is het in strijd met de gebruiksvoorwaarden van Upjers om in-spelvrienden te hebben die dezelfde internetverbinding als jij gebruiken.",
+
+  "adding_title": "Vrienden toevoegen",
+  "adding_body": "Om nieuwe in-spelvrienden toe te voegen, moet je een vriendschapsverzoek accepteren of een vriendschapsverzoek sturen naar een bestaande speler. Tik op het vriendenmenupictogram en selecteer een beschikbaar vriendslot om 12 voorgestelde spelers te zien die dicht bij jouw niveau zijn. Om een specifieke speler toe te voegen, gebruik je het zoekgereedschap en typ je hun support ID uit hun Instellingen. Het venster sluiten en opnieuw openen vernieuwt de suggesties.",
+
+  "removing_title": "Vrienden verwijderen",
+  "removing_body": "Om een vriendslot vrij te maken, selecteer je een vriend en tik je op de prullenbak in hun informatiepaneel. Het slot wordt 24 uur vergrendeld voordat je opnieuw kunt uitnodigen of uitnodigingen kunt accepteren. Let op dat het verkrijgen en behouden van 16 actieve vrienden vrij moeilijk is, en spelers zullen hun toevlucht moeten nemen tot andere wervingsmanieren zoals sociale netwerken of forums.",
+
+  "zoo_details_title": "Details van de dierentuin van de vriend",
+  "zoo_details_body": "Door op een vriend te tikken, zie je informatie over de voortgang van hun dierentuin: gehouden dierentuintitels, aantal parkuitbreidingen, aantal geplaatste verschillende soorten, aantal dieren op niveau 10+, aantal behaalde prestaties en het aantal geplaatste babydieren dat momenteel opgroeit in de hoofddierentuinregio.",
+
+  "helping_title": "Vrienden helpen",
+  "helping_body": "Helpen vereist dat je de dierentuin van je vriend bezoekt. Tik op het hart in de vriendenlijst of de knop Vriend helpen. Helpen geeft een vriendschapshart punt aan zowel jou als je vriend plus XP. Voor elke vriend die je helpt, verdien je XP gelijk aan tien keer je huidige spelerniveau.",
+
+  "minigames_title": "Help minispellen",
+  "minigame_crows": "Kraaien wegjagen: 5 kraaien bevinden zich in willekeurige verblijven. Tik elke kraai 3 keer om hem weg te jagen.",
+  "minigame_children": "Kinderen troosten: 5 huilende kinderen staan willekeurig op paden. Geef elk kind een ballon om hen te troosten.",
+  "minigame_animals": "Dieren vangen: 10 dieren rennen willekeurig op dierentuinpaden. Veeg het net over elk van hen.",
+
+  "skip_title": "Minispellen overslaan",
+  "skip_body": "Je kunt één of alle vrienden meteen helpen door diamanten te betalen. \"Hulp overslaan\" kost 1 diamant per speler. De knop \"Allen helpen\" kost 5 diamanten per resterende niet-geholpen speler in totaal. App-gebruikers kunnen ook een advertentie bekijken om het helpen van een vriend over te slaan (limiet 20 advertenties per 24u).",
+
+  "messaging_title": "Vrienden berichten",
+  "messaging_body": "Het spel biedt een privéberichtvenster om berichten te sturen naar in-spelvrienden. Tik op de envelop naast je vriend om een bericht te sturen. Wanneer een nieuw bericht wordt ontvangen, verschijnt een melding naast het vriendenipictogram. Het enveloppictogram gaat van grijs naar geel wanneer er een ongelezen bericht verschijnt. Het is niet mogelijk een verzonden bericht te verwijderen of te bewerken.",
+
+  "deleting_title": "Vrienden verwijderen",
+  "deleting_body": "Om een vriend te verwijderen, klik je op de speler en vervolgens op het kleine prullenbakpictogram in de rechterbenedenhoek van het vriendenoverviewvenster. Verwijdering kan niet ongedaan worden gemaakt, en je kunt dezelfde vriend niet opnieuw uitnodigen zonder hun Support ID handmatig opnieuw in te voeren. Het vriendschapsslot wordt 24 uur geblokkeerd na verwijdering.",
+
+  "levelup_title": "Niveau omhoog geschenken",
+  "levelup_body": "Wanneer je van niveau gaat, ontvangen al je in-spelvrienden ook het niveau omhoog geschenk dat jij kiest. Je ontvangt ook de niveau omhoog geschenken van je vrienden. Je kiest één puzzelstuk uit een willekeurige set van 3.",
+
+  "chests_title": "Vriendschapskisten",
+  "chests_body": "Elke keer dat je een vriend helpt of door hem wordt geholpen, krijg je een vriendschapspunt. Elke 10 punten geeft je een Vriendschapskist met puzzelstukken voor decoraties, verblijven en verblijfsitems, en exclusieve vriendschapsdieren. Het maximum aantal vriendschapspunten per dag is 32 met 16 actieve vrienden (3 kisten per dag). De opslaglimiet is 5 kisten.",
+
+  "troubleshooting_title": "Probleemoplossing",
+  "troubleshooting_body": "Als je spel stopt terwijl je vrienden helpt zonder een fout, heeft je apparaat mogelijk onvoldoende RAM. Het laden van grote, volledig geanimeerde dierentuinen vereist aanzienlijk geheugen. Probeer de volgende oplossingen:",
+
+  "fix_device": "Van apparaat wisselen: Probeer vrienden te helpen met een apparaat met meer RAM, zoals een laptop of desktop.",
+  "fix_friends": "Van vrienden wisselen: Verwijder vrienden met zeer grote dierentuinen (boven niveau 60) en vervang ze door spelers op een lager niveau met kleinere dierentuinen die minder RAM vereisen.",
+  "fix_settings": "Spelinstellingen wijzigen: Schakel \"Verminderde animaties\" in, schakel \"Uitgebreid zoomen toestaan\" uit, of schakel \"Framesnelheid beperken\" in op het tweede instellingentabblad om het RAM-gebruik te verminderen."
+}
