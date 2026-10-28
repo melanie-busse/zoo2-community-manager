@@ -29,5 +29,6 @@
   "no_results": "Keine Einträge gefunden",
   "validation_dates": "Enddatum muss nach dem Startdatum liegen",
   "validation_animal": "Bitte ein Tier auswählen",
-  "validation_chest_type": "Bitte eine Truhenart auswählen"
+  "validation_chest_type": "Bitte eine Truhenart auswählen",
+  "save_success": "Boost erfolgreich gespeichert"
 }

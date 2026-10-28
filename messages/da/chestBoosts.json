@@ -29,5 +29,6 @@
   "no_results": "Ingen poster fundet",
   "validation_dates": "Slutdato skal være efter startdato",
   "validation_animal": "Vælg venligst et dyr",
-  "validation_chest_type": "Vælg venligst en kistetype"
+  "validation_chest_type": "Vælg venligst en kistetype",
+  "save_success": "Boost gemt succesfuldt"
 }

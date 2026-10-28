@@ -29,5 +29,6 @@
   "no_results": "Aucune entrée trouvée",
   "validation_dates": "La date de fin doit être postérieure à la date de début",
   "validation_animal": "Veuillez sélectionner un animal",
-  "validation_chest_type": "Veuillez sélectionner un type de coffre"
+  "validation_chest_type": "Veuillez sélectionner un type de coffre",
+  "save_success": "Boost enregistré avec succès"
 }

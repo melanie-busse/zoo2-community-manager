@@ -29,5 +29,6 @@
   "no_results": "No entries found",
   "validation_dates": "End date must be after start date",
   "validation_animal": "Please select an animal",
-  "validation_chest_type": "Please select a chest type"
+  "validation_chest_type": "Please select a chest type",
+  "save_success": "Boost saved successfully"
 }

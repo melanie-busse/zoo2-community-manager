@@ -29,5 +29,6 @@
   "no_results": "No se encontraron entradas",
   "validation_dates": "La fecha de fin debe ser posterior a la de inicio",
   "validation_animal": "Por favor selecciona un animal",
-  "validation_chest_type": "Por favor selecciona un tipo de cofre"
+  "validation_chest_type": "Por favor selecciona un tipo de cofre",
+  "save_success": "Boost guardado correctamente"
 }

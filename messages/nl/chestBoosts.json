@@ -29,5 +29,6 @@
   "no_results": "Geen items gevonden",
   "validation_dates": "Einddatum moet na de startdatum liggen",
   "validation_animal": "Selecteer een dier",
-  "validation_chest_type": "Selecteer een kisttype"
+  "validation_chest_type": "Selecteer een kisttype",
+  "save_success": "Boost succesvol opgeslagen"
 }

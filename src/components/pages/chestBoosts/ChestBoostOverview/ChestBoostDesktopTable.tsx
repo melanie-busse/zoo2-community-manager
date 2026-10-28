@@ -11,7 +11,6 @@ import * as Styles from "@/components/page-structure/Table/Table.styles";
 import Table from "@/components/page-structure/Table/Table";
 import ActionGroupBadge from "@/components/ui/badges/ActionGroupBadge";
 
-import { useChestBoostStore } from "@/store/useChestBoostStore";
 import { hasMinimumRole, isMayor } from "@/utils/roleUtils";
 import { formatLocaleDate } from "@/utils/DateUtil";
 import type { ChestBoostListItem } from "@/types/chestBoost";
@@ -41,20 +40,20 @@ export default function ChestBoostDesktopTable({ items, onDelete }: Props) {
       <Table>
         <thead>
           <tr>
-            <Styles.TableHeader>{t("column_period")}</Styles.TableHeader>
-            <Styles.TableHeader>{t("column_animal")}</Styles.TableHeader>
-            <Styles.TableHeader>{t("column_chest_type")}</Styles.TableHeader>
+            <th>{t("column_period")}</th>
+            <th>{t("column_animal")}</th>
+            <th>{t("column_chest_type")}</th>
             {canEdit && <Styles.TableHeaderRight>{t("column_actions")}</Styles.TableHeaderRight>}
           </tr>
         </thead>
         <tbody>
           {items.map((boost) => (
             <tr key={boost.id}>
-              <Styles.TableCell>
+              <td>
                 {formatLocaleDate(boost.startDate, `${locale}-DE`)} –{" "}
                 {formatLocaleDate(boost.endDate, `${locale}-DE`)}
-              </Styles.TableCell>
-              <Styles.TableCell>
+              </td>
+              <td>
                 <AnimalCell>
                   <AnimalImageWrapper>
                     <Image
@@ -77,13 +76,13 @@ export default function ChestBoostDesktopTable({ items, onDelete }: Props) {
                     <BiomeName>{boost.animal.biome.name}</BiomeName>
                   </AnimalInfo>
                 </AnimalCell>
-              </Styles.TableCell>
-              <Styles.TableCell>
+              </td>
+              <td>
                 <ChestTypeWrapper>
                   {chestTypeLabel(boost.chestType)}
                   {boost.isEvent && <EventBadge>{t("event_badge")}</EventBadge>}
                 </ChestTypeWrapper>
-              </Styles.TableCell>
+              </td>
               {canEdit && (
                 <Styles.TableCellRight>
                   <ActionGroupBadge
