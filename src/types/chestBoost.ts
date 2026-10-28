@@ -7,6 +7,7 @@ export interface ChestBoostAnimal {
   biome: {
     id: number;
     name: string;
+    identifier: string;
   };
 }
 

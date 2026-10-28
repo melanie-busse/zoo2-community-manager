@@ -28,6 +28,7 @@ function mapToListItem(raw: any, locale: string): ChestBoostListItem {
       biome: {
         id: raw.animal.biome?.id ?? 0,
         name: biomeText?.biomeName ?? "",
+        identifier: raw.animal.biome?.identifier ?? "",
       },
     },
   };

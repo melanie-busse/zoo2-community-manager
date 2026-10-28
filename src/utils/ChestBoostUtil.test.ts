@@ -17,7 +17,7 @@ const makeBoost = (overrides: Partial<ChestBoostListItem> = {}): ChestBoostListI
     id: 1,
     name: "Kranich",
     identifier: "crane",
-    biome: { id: 1, name: "Savanne" },
+    biome: { id: 1, name: "Savanne", identifier: "savanne" },
   },
   ...overrides,
 });
@@ -34,11 +34,11 @@ describe("filterChestBoosts", () => {
     const items = [
       makeBoost({
         id: 1,
-        animal: { id: 1, name: "Kranich", identifier: null, biome: { id: 1, name: "x" } },
+        animal: { id: 1, name: "Kranich", identifier: null, biome: { id: 1, name: "x", identifier: "x" } },
       }),
       makeBoost({
         id: 2,
-        animal: { id: 2, name: "Löwe", identifier: null, biome: { id: 1, name: "x" } },
+        animal: { id: 2, name: "Löwe", identifier: null, biome: { id: 1, name: "x", identifier: "x" } },
       }),
     ];
     const result = filterChestBoosts(items, {
@@ -80,9 +80,9 @@ describe("filterChestBoosts", () => {
 
   test("kombiniert Suchbegriff und Truhenart", () => {
     const items = [
-      makeBoost({ id: 1, chestType: "EPIC", animal: { id: 1, name: "Adler", identifier: null, biome: { id: 1, name: "x" } } }),
-      makeBoost({ id: 2, chestType: "RETRO", animal: { id: 2, name: "Adler", identifier: null, biome: { id: 1, name: "x" } } }),
-      makeBoost({ id: 3, chestType: "EPIC", animal: { id: 3, name: "Löwe", identifier: null, biome: { id: 1, name: "x" } } }),
+      makeBoost({ id: 1, chestType: "EPIC", animal: { id: 1, name: "Adler", identifier: null, biome: { id: 1, name: "x", identifier: "x" } } }),
+      makeBoost({ id: 2, chestType: "RETRO", animal: { id: 2, name: "Adler", identifier: null, biome: { id: 1, name: "x", identifier: "x" } } }),
+      makeBoost({ id: 3, chestType: "EPIC", animal: { id: 3, name: "Löwe", identifier: null, biome: { id: 1, name: "x", identifier: "x" } } }),
     ];
     const result = filterChestBoosts(items, {
       searchTerm: "adler",
