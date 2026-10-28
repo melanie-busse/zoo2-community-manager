@@ -108,6 +108,7 @@ model Animal {
   collections            Collection[]
   collectionRequirements CollectionRequirement[]
   levelRewards           LevelAnimalReward[]
+  chestBoosts            ChestBoost[]
 
   @@index([biomeId], map: "animal_biomeId_fkey")
   @@index([priceTypeId], map: "animal_priceTypeId_fkey")
@@ -971,4 +972,23 @@ model LevelAnimalReward {
 
   @@index([animalId])
   @@map("levelanimalreward")
+}
+
+enum ChestType {
+  EPIC
+  RETRO
+  LEGENDARY
+}
+
+model ChestBoost {
+  id        Int       @id @default(autoincrement())
+  startDate DateTime
+  endDate   DateTime
+  chestType ChestType
+  isEvent   Boolean   @default(false)
+  animalId  Int
+  animal    Animal    @relation(fields: [animalId], references: [id])
+
+  @@index([animalId])
+  @@map("chestboost")
 }
