@@ -1,6 +1,10 @@
 import styled, { css } from "styled-components";
 import Link from "next/link";
 
+/* ==========================================================================
+   MOBILE NAVIGATION STYLES
+   ========================================================================== */
+
 export const Overlay = styled.nav<{ $isOpen: boolean }>`
   position: fixed;
   top: 0;
@@ -27,11 +31,8 @@ export const Overlay = styled.nav<{ $isOpen: boolean }>`
 
   /* Animation */
   transform: ${({ $isOpen }) => ($isOpen ? "translateX(0)" : "translateX(100%)")};
-
   transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-
   opacity: ${({ $isOpen }) => ($isOpen ? "1" : "0")};
-
   visibility: ${({ $isOpen }) => ($isOpen ? "visible" : "hidden")};
 `;
 
@@ -69,7 +70,7 @@ export const SubMenu = styled.div<{ $isOpen: boolean }>`
   flex-direction: column;
   align-items: center;
   overflow: hidden;
-  max-height: ${({ $isOpen }) => ($isOpen ? "300px" : "0")};
+  max-height: ${({ $isOpen }) => ($isOpen ? "1000px" : "0")};
   transition: all 0.3s ease-in-out;
   background: rgba(255, 255, 255, 0.05);
   width: 100%;
@@ -115,6 +116,10 @@ export const Divider = styled.div`
   margin: 1rem 0;
 `;
 
+/* ==========================================================================
+   DESKTOP NAVIGATION STYLES
+   ========================================================================== */
+
 export const NavContainer = styled.nav`
   display: flex;
   align-items: center;
@@ -127,7 +132,7 @@ export const NavContainer = styled.nav`
 export const NavList = styled.ul`
   display: flex;
   list-style: none;
-  gap: 1.5rem;
+  gap: 1rem;
   margin: 0;
   padding: 0;
 `;
@@ -135,6 +140,7 @@ export const NavList = styled.ul`
 export const NavItem = styled.li`
   position: relative;
 
+  /* Zeige das 1. Dropdown beim Hovern über den Hauptmenüpunkt */
   &:hover > ul {
     opacity: 1;
     visibility: visible;
@@ -196,7 +202,7 @@ export const NavLink = styled(Link)<{ $active: boolean }>`
 interface NavButtonProps {
   $active: boolean;
 }
-// 2. Übergib das Interface in spitzen Klammern <...>
+
 export const NavButton = styled.div<NavButtonProps>`
   ${NavElementStyles};
 
@@ -214,18 +220,22 @@ export const NavButton = styled.div<NavButtonProps>`
     font-size: 0.8rem;
   }
 `;
+
+/* --------------------------------------------------------------------------
+   DROPDOWN EBENE 1 (Unter dem Hauptmenüpunkt)
+   -------------------------------------------------------------------------- */
+
 export const Dropdown = styled.ul`
   position: absolute;
   top: 100%;
   left: 0;
-  min-width: 180px;
+  min-width: 200px;
 
   background: ${({ theme }) => theme.colors.header.bg};
   backdrop-filter: ${({ theme }) => theme.glass.blur};
   border: ${({ theme }) => theme.glass.border};
   border-radius: ${({ theme }) => theme.borderRadius.main};
   box-shadow: ${({ theme }) => theme.shadows.soft};
-  overflow: hidden;
 
   list-style: none;
   padding: 0.5rem 0;
@@ -239,7 +249,22 @@ export const Dropdown = styled.ul`
   transition: all 0.3s ease;
 `;
 
-export const DropdownLink = styled(Link)<{ $active: boolean }>`
+export const DropdownItem = styled.li`
+  position: relative;
+
+  /* Zeige das Sub-Dropdown (Ebene 2/3) beim Hovern über dieses Item */
+  &:hover > ul {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  &:hover .sub-arrow {
+    transform: rotate(-90deg);
+  }
+`;
+
+export const DropdownLink = styled(Link)<{ $active?: boolean }>`
   display: block;
   padding: 10px 20px;
   color: ${({ theme }) => theme.colors.primary["500"]};
@@ -256,9 +281,59 @@ export const DropdownLink = styled(Link)<{ $active: boolean }>`
 
   &:hover {
     background: ${({ theme }) => theme.colors.ui.glassWhiteRich || "#f5f5f5"};
-
     color: ${({ theme }) => theme.colors.ui.icon};
-
     padding-left: 25px;
   }
+`;
+
+/* --------------------------------------------------------------------------
+   DROPDOWN EBENE 2 / SUB-DROPDOWN (Flyout nach rechts)
+   -------------------------------------------------------------------------- */
+
+export const DropdownHeader = styled.div<{ $active?: boolean }>`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  color: ${({ theme }) => theme.colors.primary["500"]};
+  font-size: 0.9rem;
+  font-family: ${({ theme }) => theme.fonts.text};
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: ${({ theme }) => theme.colors.ui.glassWhiteRich || "#f5f5f5"};
+    color: ${({ theme }) => theme.colors.ui.icon};
+    padding-left: 25px;
+  }
+
+  .sub-arrow {
+    transition: transform 0.3s ease;
+    font-size: 0.85rem;
+  }
+`;
+
+export const SubDropdown = styled.ul`
+  position: absolute;
+  top: 0;
+  left: 100%;
+  min-width: 200px;
+
+  background: ${({ theme }) => theme.colors.header.bg};
+  backdrop-filter: ${({ theme }) => theme.glass.blur};
+  border: ${({ theme }) => theme.glass.border};
+  border-radius: ${({ theme }) => theme.borderRadius.main};
+  box-shadow: ${({ theme }) => theme.shadows.soft};
+
+  list-style: none;
+  padding: 0.5rem 0;
+  margin-left: 4px;
+
+  z-index: 2003;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
 `;

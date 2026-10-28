@@ -130,5 +130,31 @@
 
     "tips_title": "Tipps",
     "tips_body": "Überprüfe, welches exklusive Tier aktuell den Drop-Bonus hat, bevor du Diamanten für Legendäre Truhen ausgibst – wenn du dieses Tier brauchst, ist es ein guter Zeitpunkt, mehrere zu öffnen. Da Legendäre Truhen Teile aus den meisten anderen Truhen enthalten, sind sie eine effiziente All-in-One-Quelle, wenn du Diamanten übrig hast. Die Shop-Wagen-Dekorationen sind von Legendärer Seltenheit und nur hier erhältlich, was sie wertvoll für Sammlungen macht."
+  },
+  "terraqua": {
+    "title": "Terraqua-Truhen",
+    "intro": "Terraqua-Truhen können für 29 Diamanten gekauft werden. Sie wurden am 13. März 2023 eingeführt und enthalten Teile für Terrarium- und Aquarium-Häuser. Puzzleteile aus Terraqua-Truhen können auch am Glücksrad gefunden werden. Die Premium- und VIP-Pässe für Staffel 4 des Season Pass enthielten Terraqua-Truhen unter ihren Belohnungen. Es gibt KEINE Tiere in den Terraqua-Truhen.",
+    "release_label": "Release-Datum"
+  },
+  "noctavia": {
+    "title": "NoctAvia-Truhen",
+    "intro": "NoctAvia-Truhen können für 29 Diamanten gekauft werden. Sie wurden am 7. April 2026 eingeführt und enthalten Teile für die Noctarium- und Aviary-Regionen. Sie können nur innerhalb dieser beiden Regionen erworben werden. Puzzleteile aus NoctAvia-Truhen können auch am Glücksrad oder als Freundes-Level-Aufstiegs-Belohnungsoption gefunden werden. Aviary-exklusive Teile können in Aviary-Feder-Preisen gefunden werden. Es gibt KEINE Tiere in den NoctAvia-Truhen.",
+    "release_label": "Release-Datum"
+  },
+  "video": {
+    "title": "Videotruhen",
+    "intro": "Die Videotruhe ist ein Bonus-Truhenttyp, der einmal täglich durch das Ansehen von Videoanzeigen verfügbar ist. Wie jede andere Truhe können mehrere Videotruhen über die Zeit gesammelt werden, ohne sie zu öffnen.",
+
+    "content_title": "Inhalt",
+    "content_body": "Die Videotruhe enthält alle Gegenstände einer normalen (Münz-)Truhe, einschließlich Shop-Tiere und legendärer (gelber) Puzzleteile.",
+
+    "availability_title": "Verfügbarkeit",
+    "availability_body": "Die Videotruhe findest du unter dem Standard-Tab \"Truhe\" im rechten Ausklappmenü. Sie erscheint dort, sobald du Videoanzeigen in den Spieleinstellungen aktivierst, indem du das Häkchen bei \"Videoangebote nicht anzeigen\" entfernst. Achte darauf, die Option zum Ausblenden von Anzeigen beim Einsammeln von Münzen an den Eingangskassen nicht zu aktivieren, da dies die Einstellung deaktiviert.",
+
+    "limit_title": "Tageslimit und Speicher",
+    "limit_body": "Du kannst nur eine Videotruhe alle 24 Stunden erhalten. Da Videotruhen verdient statt gekauft werden, haben sie kein Speicherlimit.",
+
+    "platform_title": "Plattformverfügbarkeit",
+    "platform_body": "Videotruhen sind nur für Nutzer verfügbar, die das Spiel über die App auf Android oder iOS spielen. Sie sind nicht auf Geräten verfügbar, die keine Anzeigen unterstützen, oder auf bestimmten Plattformen wie Steam, Epic Games oder Amazon."
   }
 }

@@ -2,22 +2,17 @@
   "title": "Kisteoversigt",
   "intro": "Skattekister giver spillere mulighed for at anskaffe sig næsten alt, hvad der kan købes til Zooen. Næsten alle questreleaterede genstandskøb med diamanter kan findes i Normale kister, som koster mønter. Selvom det er hurtigere at betale med diamanter, belønnes tålmodighed også!",
 
-  "overview_title": "Hurtig oversigt",
-  "overview_body": "Der er 6 typer kister tilgængelige i spillet. Legendariske, Retro- og Episke kister roterer boostede dyr fra tid til anden. Uanset hvilken kiste et boostet dyr befinder sig i, er dets puzzlebrik enten lilla (sjælden) eller gul (legendarisk). Lilla brikker koster 2.500 billetter for at fuldende med kun én puzzlebrik. Gule brikker koster 10.000 billetter med kun én puzzlebrik. Indimellem kan du vente på et kisteevent for at fuldende dem for 15% mindre. Historisk set vil det være en gul puzzlebrik, hvis dyrets popularitet er 840 point eller derover (84 diamanter).",
-
   "chest_types_title": "Kistetyper",
-  "chest_friendship": "Venskabskister (lyserøde) — Pris: 10 hjerter. Indeholder dyr (ingen garanteret brik). Kan kun indløses via vennebelønninger, ikke købes. Grænse på 5 — åbn dagligt for ikke at miste belønninger.",
-  "chest_normal": "Normale kister (blå) — Pris: mønter (niveauafhængig). Indeholder alle storyline-dyr (ingen garanteret brik). Ingen købsgrænse udover reglen om 100-kistestak.",
-  "chest_epic": "Episke kister (lilla) — Pris: 29 diamanter. Indeholder dyr med 1 garanteret puzzlebrik. Har roterende boostede dyr.",
-  "chest_retro": "Retro-kister (røde) — Pris: 39 diamanter. Indeholder dyr med 1 garanteret puzzlebrik. Har roterende boostede dyr.",
-  "chest_legendary": "Legendariske kister (guld) — Indeholder dyr med 1 garanteret puzzlebrik. Har roterende boostede dyr.",
-  "chest_video": "Videokister — Optjenes ved at se videoreklamer. Kan stables ud over grænsen på 100 kister.",
-
-  "forecasts_title": "Kisteprognoser",
-  "forecasts_body": "For fremtidige kisteprognoser, se siden Prognoser.",
-
-  "limits_title": "Købsgrænser",
-  "limits_body": "Venskabskister kan kun indløses via belønninger fra hjælp til venner og kan ikke købes med mønter eller diamanter. De har en grænse på 5 — når du har stablet 5, mistes eventuelle yderligere kistebelønninger. Det anbefales at åbne dem dagligt. Den kendte grænse for købare kister er 100. Når du har samlet 100, fortsætter de med at stable sig, men du kan ikke købe flere, før du har åbnet nok til at komme under 100. Kister fra kalenderen, eventbelønninger eller Academy-belønninger bør fortsat kunne stables over 100-grænsen.",
+  "chest_friendship": " Omkostninger: 10 hjerter. Indeholder dyr (ingen garanteret brik). Kan kun indløses via vennebelønninger, ikke købes. Grænse på 5 — åbn dagligt for ikke at miste belønninger.",
+  "chest_normal": "Omkostninger: mønter (niveauafhængig). Indeholder alle storyline-dyr (ingen garanteret brik). Grænse 100.",
+  "title_epic": "Episke kister (Lilla)",
+  "chest_epic": "Omkostninger: 29 diamanter. Indeholder dyr med 1 garanteret puzzlebrik. Har roterende boostede dyr. Grænse 100.",
+  "title_retro": "Retro kister (Rød)",
+  "chest_retro": "Omkostninger: 39 diamanter. Indeholder dyr med 1 garanteret puzzlebrik. Har roterende boostede dyr. Grænse 100.",
+  "title_legendary": "Legendariske kister (Guld)",
+  "chest_legendary": " Indeholder dyr med 1 garanteret puzzlebrik. Har roterende boostede dyr. Grænse 100.",
+  "title_video": "Videokister",
+  "chest_video": "Optjenes ved at se videoreklamer. Kan stables ud over grænsen på 100 kister. Grænse 100.",
 
   "keys_title": "Nøgler",
   "keys_body": "Nøgler kan købes for 5 diamanter stykket, modtages som del af de daglige login-belønninger eller Sæsonpasset. Ved visse lejligheder kan de købes fra Sæsonpassbutikken. Shell-spil tilbyder ofte nøgler som en gratis præmie. Nøgler bruges til at afsløre ekstra kort ved åbning af kister. Hver kiste indeholder otte kort, men kun de første fire kortafsløringer er inkluderet. Hver yderligere kortafsløring bruger én nøgle.",
@@ -27,5 +22,139 @@
   "exception_expansions": "Udvidelser — Der er ingen kort til indhegnings- eller parkudvidelser. Disse kan kun skaffes, når de købes med mønter eller diamanter.",
   "exception_upgrades": "Opgraderinger — Selvom brikker til selve hytten kan findes i kister, kan ALLE opgraderinger kun skaffes, når de købes med mønter eller diamanter. Dette inkluderer butiksopgraderinger. Tjek salgseventene for rabatter på 25–50% af!",
   "exception_employees": "Zoomedarbejdere — Der er ingen puzzlebrikker til medarbejdere fra kister. Alle tre medarbejdervouchers gives dog som del af den daglige login-belønning. Puzzlebrikker til 7-dages medarbejdere gives i Sæsonpasset. Holdmedarbejderpuzzlebrikker gives som daglige login-belønninger i Zoo Academy, når visse Academy-niveauer er låst op.",
-  "exception_other": "Særlige gæste-NPC'er, personlige avataremner, funktionesbygninger, stier og skraldespande er heller ikke tilgængelige i kister."
+  "exception_other": "Særlige gæste-NPC'er, personlige avataremner, funktionesbygninger, stier og skraldespande er heller ikke tilgængelige i kister.",
+
+  "cost": "Omkostninger",
+  "limit": "Grænse",
+  "animal": "Dyr",
+  "rarity": "Sjældenhed",
+  "biome": "Biom",
+  "chests": "Kister",
+  "biomes": {
+    "grasslands": "Græsland",
+    "plains": "Steppe",
+    "forest": "Skov",
+    "mountains": "Bjerg",
+    "savanna": "Savanne",
+    "jungle": "Jungle",
+    "water": "Vand",
+    "ice": "Is"
+  },
+
+  "friendship": {
+    "title": "Venskabskister (Lyserød)",
+    "friendship_points": "Venskabspoint",
+    "intro": "Venskabspoint optjenes ved at besøge andre spilleres zooer og lade dem besøge din. Når du når 10 venskabspoint, tilføjes en Venskabskiste automatisk til dit inventar. Da du maksimalt kan have 5 kister, bør du åbne dem regelmæssigt for at blive ved med at modtage nye.",
+
+    "contents_title": "Kisteindhold",
+    "contents_body": "Venskabskister indeholder udelukkende indhegnings-puzzlebrikker — de indeholder ikke klar-til-placering dekorationer. Dette inkluderer puzzlebrikker til indhegningsdekorationer og nyttebygninger på tværs af alle biotoper. Siden den 17. februar 2022 indeholder Venskabskister også brikker til de eksklusive Venskabsdyr, som ikke kan fås fra nogen anden kistetype.",
+
+    "animals_title": "Eksklusive venskabsdyr",
+    "animals_body": "Følgende dyr er eksklusive for Venskabskister og kan ikke fås fra nogen anden kiste:",
+
+    "animals_col_animal": "Dyr",
+    "animals_col_rarity": "Sjældenhed",
+    "animals_col_biome": "Biom",
+    "crab-eating-raccoon": "Krabbespisende vaskebjørn",
+    "short-beaked-echidna": "Kortsnablet pindsvinedyr",
+    "sitatunga": "Sitatunga",
+    "dingo": "Dingo",
+    "steenbok": "Stenbok",
+
+    "enclosures_title": "Indhegnings-puzzlebrikker",
+    "enclosures_body": "Venskabskister indeholder puzzlebrikker til indhegningsdekorationer og nyttebygninger. Disse brikker er fordelt på tværs af alle biotoper og inkluderer både dekorative og funktionelle indhegningsgenstande.",
+
+    "tips_title": "Tips",
+    "tips_body": "Åbn dine Venskabskister regelmæssigt, så du ikke rammer grænsen på 5 kister og holder op med at optjene nye. Den mest effektive måde at optjene venskabspoint på er at have en aktiv venteliste og besøge zooer dagligt. Venskabsdyr er eksklusive for denne kistetype, hvilket gør den til den eneste kilde til at fuldende deres samlinger."
+  },
+  "normal": {
+    "title": "Normale kister (Blå)",
+    "intro": "Normale kister er blå møntkøbte kister, der er én af de mest tilgængelige kistetyper i spillet. De kan købes med mønter eller fås gratis via quests, niveau-op og daglige login-belønninger.",
+
+    "obtaining_title": "Anskaffelse af normale kister",
+    "obtaining_body": "Normale kister kan købes med mønter fra butikken. De gives også gratis ved fuldførelse af quests, ved at nå nye spillerniveauer og via daglige login-belønninger. Møntprisen for en Normal kiste stiger med dit spillerniveau.",
+
+    "cost_title": "Møntpris efter niveau",
+    "cost_body": "Prisen på en Normal kiste er dit aktuelle spillerniveau ganget med 250 mønter. For eksempel koster en kiste 250 mønter på niveau 1, 2.500 mønter på niveau 10 og 17.500 mønter på niveau 70.",
+    "cost_col_level": "Spillerniveau",
+    "cost_col_cost": "Kistepris",
+
+    "contents_title": "Kisteindhold",
+    "contents_body": "Normale kister indeholder to typer genstande: indhegnings-puzzlebrikker og klar-til-placering zoo-dekorationer. Dette gør dem unikke blandt de gratis-at-skaffe kistetyper, da de direkte kan give dekorationer til din zoo uden at kræve puzzleafslutning.",
+
+    "special_items_title": "Særlige diamantgenstande som puzzlebrikker",
+    "special_items_body": "Normale kister indeholder også puzzlebrikker til et lille antal genstande, der typisk kun er tilgængelige for diamanter. Disse kan samles gratis til genstanden ved at samle nok brikker:",
+
+    "animals_title": "Dyre-puzzlebrikker",
+    "animals_body": "Normale kister indeholder puzzlebrikker til de fleste almindelige Butiksdyr på tværs af alle biotoper, fra Almindelig til Legendarisk sjældenhed. Howleraben og alle dyr eksklusivt for diamantkister er ikke inkluderet.",
+
+    "tips_title": "Tips",
+    "tips_body": "Normale kister er en fremragende kilde til klar-til-placering zoo-dekorationer, hvilket gør dem gode til at udbygge din zoo. De særlige diamantgenstande tilgængelige som puzzlebrikker — herunder Dyrekarrusellen — repræsenterer betydelig værdi, så det er umagen værd at samle Normale kister konsekvent selv på højere niveauer."
+  },
+  "epic": {
+    "title": "Episke kister (Lilla)",
+    "intro": "Episke kister er diamantkister, der koster 29 diamanter stykket (tidligere kendt som Sjældne kister). De garanterer både en lilla-sjældenhed-puzzlebrik og en eksklusiv dyre-puzzlebrik ved hver åbning. Episke kister kan fås fra flere kilder: quests, niveau-op, månedlige login-belønninger og Zoo Academy.",
+
+    "contents_title": "Kisteindhold",
+    "contents_body": "Episke kister indeholder puzzlebrikker fra Venskabs- og Normale kister, men inkluderer ikke de eksklusive dyr fra disse kister. Hver Episk kiste garanterer mindst én lilla-sjældenhed-puzzlebrik og mindst én eksklusiv dyre-puzzlebrik.",
+
+    "drop_bonus_title": "Dropbonus",
+    "drop_bonus_body": "Episke kister har en roterende dropbonus, der øger chancen for at modtage puzzlebrikker til et bestemt eksklusivt dyr. Det boostede dyr skifter hvert 6. uge og roterer gennem listen over eksklusive dyr.",
+
+    "tips_title": "Tips",
+    "tips_body": "Episke kister er den mest overkommelige diamantkiste til 29 diamanter og tilbyder garanterede eksklusive dyre-puzzlebrikker ved hver åbning. Dropbonussen roterer hvert 6. uge — tjek det aktuelle bonusdyr, hvis du arbejder mod en specifik samling. Til denne pris er Episke kister fremragende valuta for spillere, der ønsker at komme effektivt frem med eksklusive dyrsamlinger."
+  },
+  "retro": {
+    "title": "Retro-kister (Rød)",
+    "intro": "Retro-kister er diamantkister, der koster 39 diamanter stykket. De indeholder puzzlebrikker fra Venskabs-, Normale og Episke kister (undtagen disse kisters eksklusive dyr) og har deres eget store udvalg af eksklusive dyr. Retro-kister kan fås fra flere kilder: quests, niveau-op, månedlige login-belønninger, Zoo Academy og Eventbutikken.",
+
+    "contents_title": "Kisteindhold",
+    "contents_body": "Retro-kister indeholder puzzlebrikker fra Venskabs-, Normale og Episke kister, men inkluderer ikke de eksklusive dyr fra disse kister. Hver Retro-kiste garanterer mindst én eksklusiv puzzlebrik.",
+
+    "drop_bonus_title": "Dropbonus",
+    "drop_bonus_body": "Retro-kister har en roterende dropbonus, der øger chancen for at modtage puzzlebrikker til et bestemt eksklusivt dyr. Det boostede dyr skifter hvert 4. uge og roterer gennem listen over eksklusive dyr. Dette system har været aktivt siden den 24. november 2022.",
+
+    "tips_title": "Tips",
+    "tips_body": "Retro-kister roterer deres dropbonus hvert 4. uge — tjek det aktuelle boostede dyr, inden du åbner kister, hvis du sigter mod et specifikt eksklusivt dyr. Til 39 diamanter er Retro-kister mere overkommelige end Legendariske kister og tilbyder et bredt udvalg af eksklusive dyr, hvilket gør dem til et godt valg for spillere fokuseret på at fuldende deres samlinger."
+  },
+  "legendary": {
+    "title": "Legendariske kister (Guld)",
+    "intro": "Legendariske kister er diamantkister, der koster 49 diamanter stykket. De er den mest omfattende kistetype og indeholder puzzlebrikker fra næsten alle andre kistetyper plus deres egne eksklusive dyr og den eneste kilde til butiksvogns-puzzlebrikker. Legendariske kister kan fås fra flere kilder: månedlige login-belønninger, niveau-op, Zoo Academy, Eventbutikken og som questbelønninger.",
+
+    "contents_title": "Kisteindhold",
+    "contents_body": "Legendariske kister indeholder puzzlebrikker fra alle andre kistetyper undtagen Venskabs-, Episke- og Retro-eksklusive dyr. De garanterer altid mindst én eksklusiv puzzlebrik pr. kiste.",
+    "shop_carts_body": "Legendariske kister er den eneste kilde til puzzlebrikker til følgende legendariske butiksdekorationer:",
+
+    "drop_bonus_title": "Dropbonus",
+    "drop_bonus_body": "Legendariske kister har en roterende dropbonus, der øger chancen for at modtage puzzlebrikker til et bestemt eksklusivt dyr. Det boostede dyr skifter hvert 8. uge og roterer gennem listen over eksklusive dyr. Dette system har været aktivt siden den 24. november 2022.",
+
+    "tips_title": "Tips",
+    "tips_body": "Tjek, hvilket eksklusivt dyr der i øjeblikket har dropbonussen, inden du bruger diamanter på Legendariske kister — hvis du har brug for det dyr, er det et godt tidspunkt at åbne flere. Da Legendariske kister indeholder brikker fra de fleste andre kister, er de en effektiv alt-i-én kilde, når du har diamanter tilovers. Butiksvogns-dekorationerne er legendarisk sjældenhed og kan kun fås her, hvilket gør dem værdifulde for samlinger."
+  },
+  "terraqua": {
+    "title": "Terraqua-kister",
+    "intro": "Terraqua-kister kan købes for 29 diamanter. De blev introduceret den 13. marts 2023 og indeholder dele til Terrarium- og Akvariehuse. Puslespilsdele fra Terraqua-kister kan også findes på lykkehjulet. Premium- og VIP-passene for sæson 4 af Season Pass indeholdt Terraqua-kister som belønninger. Der er INGEN dyr i Terraqua-kisterne.",
+    "release_label": "Udgivelsesdato"
+  },
+  "noctavia": {
+    "title": "NoctAvia-kister",
+    "intro": "NoctAvia-kister kan købes for 29 diamanter. De blev introduceret den 7. april 2026 og indeholder dele til Noctarium- og Aviaryregionerne. De kan kun erhverves inden for disse to regioner. Puslespilsdele fra NoctAvia-kister kan også findes på lykkehjulet eller som belønningsvalg for venners level-opnåelse. Aviary-eksklusive dele kan findes i Aviary-fjerpræmier. Der er INGEN dyr i NoctAvia-kisterne.",
+    "release_label": "Udgivelsesdato"
+  },
+  "video": {
+    "title": "Videokister",
+    "intro": "Videokisten er en bonuskistetype, der er tilgængeligt én gang om dagen ved at se Videoreklamer. Ligesom alle andre kister kan flere Videokister samles over tid uden at åbne dem.",
+
+    "content_title": "Indhold",
+    "content_body": "Videokisten indeholder alle de genstande, der findes i en Normal (mønt) kiste, herunder butiksdyr og legendariske (gule) puzzlebrikker.",
+
+    "availability_title": "Tilgængelighed",
+    "availability_body": "Du kan finde Videokisten under den standard \"Kiste\"-fane i rullemenuen til højre. Den vises der, når du aktiverer videoreklamer i Spilindstillinger ved at fjerne markeringen af \"Vis ikke videotilbud\". Sørg for ikke at markere indstillingen for at skjule reklamer, mens du samler mønter fra indgangsbodene, da dette vil deaktivere indstillingen.",
+
+    "limit_title": "Daglig grænse og opbevaring",
+    "limit_body": "Du kan kun modtage én Videokiste hvert 24. time. Da videokister optjenes frem for købes, har de ingen opbevaringsgrænse.",
+
+    "platform_title": "Platformtilgængelighed",
+    "platform_body": "Videokister er kun tilgængelige for brugere, der spiller spillet via appen på Android eller iOS. De er ikke tilgængelige på enheder, der ikke understøtter reklamer, eller på visse platforme såsom Steam, Epic Games eller Amazon."
+  }
 }

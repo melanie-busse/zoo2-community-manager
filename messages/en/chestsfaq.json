@@ -1,23 +1,18 @@
 {
   "title": "Chests Overview",
-  "intro": "Treasure Chests provide a way for players to acquire almost everything that can be purchased for the Zoo. Almost all Quest-related diamond-cost items can be found in Normal Chests, which cost coins. Though paying diamonds is quicker, patience is rewarded too!",
-
-  "overview_title": "Quick Overview",
-  "overview_body": "There are 6 types of chests available in the game. Legendary, Retro, and Epic chests rotate boosted animals from time to time. Independent of which chest a boosted animal is in, its puzzle piece is either purple (rare) or yellow (legendary). Purple pieces cost 2,500 tickets to complete with only one puzzle piece. Yellow pieces cost 10,000 tickets with only one puzzle piece. Sometimes you can wait for a chest event to complete them for 15% less. Historically, if the popularity of the animal is 840 points or more (84 diamonds), it will be a yellow puzzle piece.",
+  "intro": "Treasure Chests provide a way for players to acquire almost everything that can be purchased for the Zoo. There are 6 types of chests in the game. Legendary, Retro, and Epic chests rotate boosted animals from time to time. Independent of which chest a boosted animal is in, its puzzle piece is either purple (rare) or yellow (legendary). Purple pieces cost 2,500 tickets to complete with only one puzzle piece. Yellow pieces cost 10,000 tickets with only one puzzle piece. Sometimes you can wait for a chest event to complete them for 15% less.",
 
   "chest_types_title": "Chest Types",
-  "chest_friendship": "Friendship Chests (Pink) — Cost: 10 hearts. Contain animals (no guaranteed piece). Redeemable only through friend rewards, not purchasable. Limit of 5 — open daily to avoid losing rewards.",
-  "chest_normal": "Normal Chests (Blue) — Cost: coins (level dependent). Contain all story line animals (no guaranteed piece). No purchase limit beyond the 100-chest stack rule.",
-  "chest_epic": "Epic Chests (Purple) — Cost: 29 diamonds. Contain animals with 1 guaranteed puzzle piece. Feature rotating boosted animals.",
-  "chest_retro": "Retro Chests (Red) — Cost: 39 diamonds. Contain animals with 1 guaranteed puzzle piece. Feature rotating boosted animals.",
-  "chest_legendary": "Legendary Chests (Gold) — Contain animals with 1 guaranteed puzzle piece. Feature rotating boosted animals.",
-  "chest_video": "Video Chests — Earned by watching video ads. Can stack beyond the 100-chest limit.",
-
-  "forecasts_title": "Chest Forecasts",
-  "forecasts_body": "For future chest predictions, see the Forecasts page.",
-
-  "limits_title": "Purchase Limits",
-  "limits_body": "Friendship chests are only redeemable through rewards from helping friends and cannot be purchased with coins or diamonds. They have a limit of 5 — once you stack up 5, any additional chest rewards are lost. It is recommended to open them daily. The known limit for purchasable chests is 100. After you collect 100, they continue to stack but you cannot buy any more until you open enough to go below 100. Collecting chests from the calendar, event rewards, or academy rewards should continue to stack past the 100 limit.",
+  "chest_friendship": "Cost: 10 hearts. Contain animals (no guaranteed piece). Redeemable only through friend rewards, not purchasable. Limit of 5 — open daily to avoid losing rewards.",
+  "chest_normal": "Cost: coins (level dependent). Contain all story line animals (no guaranteed piece). Limit 100.",
+  "title_epic": "Epic Chests (Purple)",
+  "chest_epic": "Cost: 29 diamonds. Contain animals with 1 guaranteed puzzle piece. Feature rotating boosted animals. Limit 100.",
+  "title_retro": "Retro Chests (Red)",
+  "chest_retro": "Cost: 39 diamonds. Contain animals with 1 guaranteed puzzle piece. Feature rotating boosted animals. Limit 100.",
+  "title_legendary": "Legendary Chests (Gold)",
+  "chest_legendary": "Contain animals with 1 guaranteed puzzle piece. Feature rotating boosted animals. Limit 100.",
+  "title_video": "Video Chests",
+  "chest_video": "Earned by watching video ads. Can stack beyond the 100-chest limit. Limit 100.",
 
   "keys_title": "Keys",
   "keys_body": "Keys can be purchased for 5 diamonds each, or received as part of the Daily Login rewards or the Season Pass. On certain occasions they may be purchasable from the Season Pass Shop. Shell Games often offer keys as a free prize. Keys are used to reveal extra cards when opening chests. Each chest contains eight cards, but only the first four card reveals are included. Each additional card reveal uses one Key.",
@@ -27,5 +22,139 @@
   "exception_expansions": "Expansions — There are no cards for enclosure or park expansions. These can only be acquired when purchased with coins or diamonds.",
   "exception_upgrades": "Upgrades — While pieces for the shelters themselves can be found in chests, ALL upgrades can only be obtained when purchased with coins or diamonds. This includes Shop upgrades. Check Sale Events for discounts of 25–50% off!",
   "exception_employees": "Zoo Employees — There are no puzzle pieces for employees from chests. However, all three employee vouchers are given away as part of the Daily Login Reward. Puzzle pieces for 7-day employees are given in the Season Pass. Team employee puzzle pieces are given as Zoo Academy daily login rewards once certain Academy levels are unlocked.",
-  "exception_other": "Special Guest NPCs, personal avatar items, feature buildings, paths, and trash bins are also not available in chests."
+  "exception_other": "Special Guest NPCs, personal avatar items, feature buildings, paths, and trash bins are also not available in chests.",
+
+  "cost": "Cost",
+  "limit": "Limit",
+  "animal": "Animal",
+  "rarity": "Rarity",
+  "biome": "Biome",
+  "chests": "Chests",
+  "biomes": {
+    "grasslands": "Grasslands",
+    "plains": "Plains",
+    "forest": "Forest",
+    "mountains": "Mountains",
+    "savanna": "Savanna",
+    "jungle": "Jungle",
+    "water": "Water",
+    "ice": "Ice"
+  },
+
+  "friendship": {
+    "title": "Friendship Chests (Pink)",
+    "friendship_points": "Friendship Points",
+    "intro": "Friend points are earned by visiting other players' zoos and having them visit yours. Once you reach 10 friend points, a Friendship Chest is automatically added to your inventory. Since you can hold a maximum of 5 chests, you should open them regularly to keep earning new ones.",
+
+    "contents_title": "Chest Contents",
+    "contents_body": "Friendship Chests contain exclusively enclosure puzzle pieces — they do not contain ready-to-place decorations. This includes puzzle pieces for enclosure decorations and utility buildings across all biomes. Since February 17, 2022, Friendship Chests also contain pieces for the exclusive Friendship Animals, which cannot be obtained from any other chest type.",
+
+    "animals_title": "Exclusive Friendship Animals",
+    "animals_body": "The following animals are exclusive to Friendship Chests and cannot be obtained through any other chest type:",
+
+    "animals_col_animal": "Animal",
+    "animals_col_rarity": "Rarity",
+    "animals_col_biome": "Biome",
+    "crab-eating-raccoon": "Crab-Eating Raccoon",
+    "short-beaked-echidna": "Short-Beaked Echidna",
+    "sitatunga": "Sitatunga",
+    "dingo": "Dingo",
+    "steenbok": "Steenbok",
+
+    "enclosures_title": "Enclosure Puzzle Pieces",
+    "enclosures_body": "Friendship Chests contain puzzle pieces for enclosure decorations and utility buildings. These pieces are spread across all biomes and include both decorative and functional enclosure items.",
+
+    "tips_title": "Tips",
+    "tips_body": "Open your Friendship Chests regularly so you do not hit the 5-chest cap and stop earning new ones. The most efficient way to earn friend points is to have an active friends list and visit zoos daily. Friendship Animals are exclusive to this chest type, making it the only source for completing their collections."
+  },
+  "normal": {
+    "title": "Normal Chests (Blue)",
+    "intro": "Normal Chests are blue coin-purchased chests that are one of the most accessible chest types in the game. They can be bought with coins, or obtained for free through quests, leveling up, and daily login rewards.",
+
+    "obtaining_title": "Obtaining Normal Chests",
+    "obtaining_body": "Normal Chests can be purchased with coins from the shop. They are also awarded for free by completing quests, reaching new player levels, and through daily login rewards. The coin cost of a Normal Chest scales with your player level.",
+
+    "cost_title": "Coin Cost by Level",
+    "cost_body": "The cost of a Normal Chest is your current player level multiplied by 250 coins. For example, at level 1 a chest costs 250 coins, at level 10 it costs 2,500 coins, and at level 70 it costs 17,500 coins.",
+    "cost_col_level": "Player Level",
+    "cost_col_cost": "Chest Cost",
+
+    "contents_title": "Chest Contents",
+    "contents_body": "Normal Chests contain two types of items: enclosure puzzle pieces and ready-to-place zoo decorations. This makes them unique among the free-to-obtain chest types, as they can directly provide decorations for your zoo without requiring puzzle completion.",
+
+    "special_items_title": "Special Diamond Items as Puzzle Pieces",
+    "special_items_body": "Normal Chests also contain puzzle pieces for a small number of items that are typically only available for diamonds. These can be assembled into the item for free by collecting enough pieces:",
+
+    "animals_title": "Animal Puzzle Pieces",
+    "animals_body": "Normal Chests contain puzzle pieces for most regular Shop Animals across all biomes, spanning Common through Legendary rarity. The Howler Monkey and all animals exclusive to diamond chests are not included.",
+
+    "tips_title": "Tips",
+    "tips_body": "Normal Chests are an excellent source of ready-to-place zoo decorations, making them great for building out your zoo. The special diamond items available as puzzle pieces — including the Animal Carousel — represent significant value, so collecting Normal Chests consistently is worthwhile even at higher levels."
+  },
+  "epic": {
+    "title": "Epic Chests (Purple)",
+    "intro": "Epic Chests are diamond chests costing 29 diamonds each (formerly known as Rare Chests). They guarantee both a purple-rarity puzzle piece and an exclusive animal puzzle piece with every opening. Epic Chests can be obtained from several sources: quests, leveling up, monthly login rewards, and the Zoo Academy.",
+
+    "contents_title": "Chest Contents",
+    "contents_body": "Epic Chests contain puzzle pieces from Friendship and Normal Chests, but do not include the exclusive animals from those chests. Every Epic Chest guarantees at least one purple-rarity puzzle piece and at least one exclusive animal puzzle piece.",
+
+    "drop_bonus_title": "Drop Bonus Animal",
+    "drop_bonus_body": "Epic Chests feature a rotating drop bonus that boosts the chance of receiving a specific exclusive animal's puzzle pieces. The boosted animal changes every 6 weeks, rotating through the exclusive animal list.",
+
+    "tips_title": "Tips",
+    "tips_body": "Epic Chests are the most affordable diamond chest at 29 diamonds and offer guaranteed exclusive animal puzzle pieces with every opening. The drop bonus rotates every 6 weeks — check the current bonus animal if you are working toward a specific collection. At this price point, Epic Chests are excellent value for players who want to progress efficiently on exclusive animal collections."
+  },
+  "retro": {
+    "title": "Retro Chests (Red)",
+    "intro": "Retro Chests are diamond chests costing 39 diamonds each. They contain puzzle pieces from Friendship, Normal, and Epic Chests (excluding those chests' exclusive animals) and have their own large pool of exclusive animals. Retro Chests can be obtained from several sources: quests, leveling up, monthly login rewards, the Zoo Academy, and the Events Shop.",
+
+    "contents_title": "Chest Contents",
+    "contents_body": "Retro Chests contain puzzle pieces from Friendship, Normal, and Epic Chests, but do not include the exclusive animals from those chests. Every Retro Chest guarantees at least one exclusive puzzle piece.",
+
+    "drop_bonus_title": "Drop Bonus Animal",
+    "drop_bonus_body": "Retro Chests feature a rotating drop bonus that boosts the chance of receiving a specific exclusive animal's puzzle pieces. The boosted animal changes every 4 weeks, rotating through the exclusive animal list. This system has been active since November 24, 2022.",
+
+    "tips_title": "Tips",
+    "tips_body": "Retro Chests rotate their drop bonus every 4 weeks — check the current boosted animal before opening chests if you are targeting a specific exclusive. At 39 diamonds, Retro Chests are more affordable than Legendary Chests and offer a wide selection of exclusive animals, making them a good option for players focused on completing their collections."
+  },
+  "legendary": {
+    "title": "Legendary Chests (Gold)",
+    "intro": "Legendary Chests are diamond chests costing 49 diamonds each. They are the most comprehensive chest type, containing puzzle pieces from almost all other chest types plus their own exclusive animals and the only source of shop cart puzzle pieces. Legendary Chests can be obtained from several sources: monthly login rewards, leveling up, the Zoo Academy, the Events Shop, and as quest rewards.",
+
+    "contents_title": "Chest Contents",
+    "contents_body": "Legendary Chests contain puzzle pieces from all other chest types except Friendship and Epic/Retro-exclusive animals. They always guarantee at least one exclusive puzzle piece per chest.",
+    "shop_carts_body": "Legendary Chests are the only source of puzzle pieces for the following Legendary-rarity shop decorations:",
+
+    "drop_bonus_title": "Drop Bonus Animal",
+    "drop_bonus_body": "Legendary Chests feature a rotating drop bonus that boosts the chance of receiving a specific exclusive animal's puzzle pieces. The boosted animal changes every 8 weeks, rotating through the exclusive animal list. This system has been active since November 24, 2022.",
+
+    "tips_title": "Tips",
+    "tips_body": "Check which exclusive animal currently has the drop bonus before spending diamonds on Legendary Chests — if you need that animal, it is a good time to open several. Since Legendary Chests contain pieces from most other chests, they are an efficient all-in-one source when you have diamonds to spare. The Shop Cart decorations are Legendary-rarity and only obtainable here, making them valuable for collections."
+  },
+  "terraqua": {
+    "title": "Terraqua Chests",
+    "intro": "Terraqua Chests can be bought for 29 diamonds. They were introduced on March 13th, 2023 and contain pieces for Terrarium and Aquarium Houses. Puzzle pieces found in Terraqua Chests might also be found in the Prize Wheel. The Premium and VIP passes for Season 4 of the Season Pass included Terraqua Chests among their rewards. There are NO animals in the Terraqua Chests.",
+    "release_label": "Release Date"
+  },
+  "noctavia": {
+    "title": "NoctAvia Chests",
+    "intro": "NoctAvia Chests can be bought for 29 diamonds. They were introduced on April 7th, 2026 and contain pieces for the Noctarium and Aviary regions. They can only be purchased from inside these two regions. Puzzle pieces found in NoctAvia Chests might also be found in the Prize Wheel or as a friend level-up reward option. Aviary exclusive pieces can be found in Aviary Feather prizes. There are NO animals in the NoctAvia Chests.",
+    "release_label": "Release Date"
+  },
+  "video": {
+    "title": "Video Chests",
+    "intro": "The Video Chest is a bonus type of chest available once a day by watching Video Ads. Like any other chest, multiple Video Chests can be collected over time without opening them.",
+
+    "content_title": "Contents",
+    "content_body": "The Video Chest contains all the items found in a Normal (coin) chest, including shop animals and legendary (yellow) puzzle pieces.",
+
+    "availability_title": "Availability",
+    "availability_body": "You can find the Video Chest under the standard \"Chest\" tab in the right drop-down menu. It appears there once you enable video ads in the Game Settings by unticking the \"Don't show video offers\" checkbox. Make sure not to tick the option to hide ads while collecting coins from admission booths, as this will deactivate the setting.",
+
+    "limit_title": "Daily Limit and Storage",
+    "limit_body": "You can receive only one Video Chest every 24 hours. Since video chests are earned rather than purchased, they do not have a storage limit.",
+
+    "platform_title": "Platform Availability",
+    "platform_body": "Video Chests are available only to users playing the game through the app on Android or iOS. They are not available on devices that do not support ads or on certain platforms such as Steam, Epic Games, or Amazon."
+  }
 }

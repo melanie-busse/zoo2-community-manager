@@ -1,31 +1,41 @@
 import { useTranslations } from "next-intl";
+import styled from "styled-components";
+
+import WikiAccordeon from "../_elements/WikiAccordeon";
+
+const FRIENDSHIP_ANIMALS: [string, "rare" | "epic" | "legendary", string][] = [
+  ["crab-eating-raccoon", "rare", "jungle"],
+  ["short-beaked-echidna", "rare", "grasslands"],
+  ["sitatunga", "epic", "grasslands"],
+  ["dingo", "epic", "plains"],
+  ["steenbok", "epic", "plains"],
+];
 
 export default function FriendshipChest() {
-  const t = useTranslations("chestsfaq");
-  return (
-    <WikiAccordeon title={t("title_friendship")} image={"/images/wiki/chest.jpg"}>
-      <AccordionContentWrapper>
-        <IntroText>{t("earning_body")}</IntroText>
+  const t = useTranslations("chestsfaq.friendship");
+  const tChest = useTranslations("chestsfaq");
 
-        {/* Key Facts / Schnellanzeige */}
+  return (
+    <WikiAccordeon title={t("title")} image={"/images/wiki/friendship_chest.jpg"}>
+      <AccordionContentWrapper>
+        <IntroText>{t("intro")}</IntroText>
+
         <InfoGrid>
           <InfoCard>
-            <InfoLabel>{t("cost")}</InfoLabel>
+            <InfoLabel>{tChest("cost")}</InfoLabel>
             <InfoValue>❤️ 10 {t("friendship_points")}</InfoValue>
           </InfoCard>
           <InfoCard>
-            <InfoLabel>{t("limit")}</InfoLabel>
-            <InfoValue>📦 Max. 5 Truhen</InfoValue>
+            <InfoLabel>{tChest("limit")}</InfoLabel>
+            <InfoValue>📦 Max. 5 {tChest("chests")}</InfoValue>
           </InfoCard>
         </InfoGrid>
 
-        {/* Sektion: Inhalt */}
         <DetailSection>
           <SubTitle>{t("contents_title")}</SubTitle>
           <p>{t("contents_body")}</p>
         </DetailSection>
 
-        {/* Sektion: Exklusive Tiere mit eleganter Tabelle */}
         <DetailSection>
           <SubTitle>{t("animals_title")}</SubTitle>
           <p>{t("animals_body")}</p>
@@ -33,47 +43,23 @@ export default function FriendshipChest() {
           <StyledTable>
             <thead>
               <tr>
-                <th>{t("animal")}</th>
-                <th>{t("rarity")}</th>
-                <th>{t("biome")}</th>
+                <th>{tChest("animal")}</th>
+                <th>{tChest("rarity")}</th>
+                <th>{tChest("biome")}</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>{t("crab-eating-raccoon")} </td>
-                <td>
-                  <Badge rarity="rare">Rare</Badge>
-                </td>
-                <td>{t("jungle")}</td>
-              </tr>
-              <tr>
-                <td>{t("short-beaked-echidna")}</td>
-                <td>
-                  <Badge rarity="rare">Rare</Badge>
-                </td>
-                <td>{t("grasslands")}</td>
-              </tr>
-              <tr>
-                <td>{t("sitatunga")}</td>
-                <td>
-                  <Badge rarity="epic">Epic</Badge>
-                </td>
-                <td>{t("grasslands")}</td>
-              </tr>
-              <tr>
-                <td>{t("dingo")}</td>
-                <td>
-                  <Badge rarity="epic">Epic</Badge>
-                </td>
-                <td>{t("plains")}</td>
-              </tr>
-              <tr>
-                <td>{t("steenbok")}</td>
-                <td>
-                  <Badge rarity="epic">Epic</Badge>
-                </td>
-                <td>{t("plains")}</td>
-              </tr>
+              {FRIENDSHIP_ANIMALS.map(([animalKey, rarity, biomeKey]) => (
+                <tr key={animalKey}>
+                  <td>{t(animalKey)}</td>
+                  <td>
+                    <Badge rarity={rarity}>
+                      {rarity.charAt(0).toUpperCase() + rarity.slice(1)}
+                    </Badge>
+                  </td>
+                  <td>{tChest(`biomes.${biomeKey}`)}</td>
+                </tr>
+              ))}
             </tbody>
           </StyledTable>
         </DetailSection>
@@ -92,9 +78,7 @@ export default function FriendshipChest() {
   );
 }
 
-import styled from "styled-components";
-import WikiAccordeon from "../_elements/WikiAccordeon";
-
+// Styled Components bleiben unverändert
 export const AccordionContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -108,7 +92,6 @@ export const IntroText = styled.p`
   color: ${({ theme }) => theme.colors.ui.textMain};
 `;
 
-/* Kleine Info-Boxen oben im Akkordeon */
 export const InfoGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -139,7 +122,6 @@ export const InfoValue = styled.span`
   color: ${({ theme }) => theme.colors.ui.textMain};
 `;
 
-/* Sektionen & Titel */
 export const DetailSection = styled.div`
   display: flex;
   flex-direction: column;
@@ -161,7 +143,6 @@ export const SubTitle = styled.h3`
   border-bottom: 1.5px solid rgba(45, 90, 39, 0.2);
 `;
 
-/* Gestylte Tabelle für exklusive Tiere */
 export const StyledTable = styled.table`
   width: 100%;
   border-collapse: separate;
@@ -192,7 +173,6 @@ export const StyledTable = styled.table`
   }
 `;
 
-/* Seltenheits-Badges */
 export const Badge = styled.span<{ rarity: "rare" | "epic" | "legendary" }>`
   display: inline-block;
   padding: 2px 10px;

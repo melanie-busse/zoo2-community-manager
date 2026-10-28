@@ -55,6 +55,15 @@ page.tsx (SSR, fetches data via Service)
 - **Never do:** Do not install any new npm packages or dependencies without asking for explicit permission first.
 - **Convention:** Always use functional components with Styled Components for styling; do not mix in atomic CSS frameworks like Tailwind.
 
+## Data Storage & Database Rules
+
+- **SOURCE OF TRUTH**: MariaDB/MySQL via Prisma ORM is the sole source of truth for persistent application content.
+- **SERVICE LAYER**: All Prisma queries must live inside `src/service/`. Never write raw DB queries inside components or inline scripts.
+- **NO HARDCODED CONTENT**: Do not create hardcoded content pages or static data dumps (JSON, CSV, TS arrays) when content should be database-driven.
+- **SCHEMA CHECK**: Before implementing a new content feature, inspect `prisma/schema.prisma` and existing services. If a required database model is missing, propose a schema change/migration before implementing.
+- **MULTILINGUAL INTEGRATION**: Respect existing multilingual data structures and `languageCode` conventions in the schema.
+- **SAFETY**: Never execute destructive database operations (e.g. dropping tables, resetting DBs) without explicit user approval.
+
 ### i18n
 - Message files in `/messages/{locale}.json`
 - Server: `getTranslations('namespace')`

@@ -2,22 +2,17 @@
   "title": "Aperçu des coffres",
   "intro": "Les coffres au trésor permettent aux joueurs d'acquérir presque tout ce qui peut être acheté pour le zoo. Presque tous les objets liés aux quêtes qui coûtent des diamants se trouvent dans les Coffres normaux, qui coûtent des pièces. Bien que payer des diamants soit plus rapide, la patience est aussi récompensée !",
 
-  "overview_title": "Aperçu rapide",
-  "overview_body": "Il existe 6 types de coffres disponibles dans le jeu. Les coffres légendaires, rétro et épiques font tourner de temps en temps des animaux renforcés. Indépendamment du coffre dans lequel se trouve un animal renforcé, sa pièce de puzzle est soit violette (rare) soit jaune (légendaire). Les pièces violettes coûtent 2 500 tickets pour être complétées avec une seule pièce. Les pièces jaunes coûtent 10 000 tickets avec une seule pièce. Parfois, vous pouvez attendre un événement de coffre pour les compléter à 15% de moins. Historiquement, si la popularité de l'animal est de 840 points ou plus (84 diamants), ce sera une pièce de puzzle jaune.",
-
   "chest_types_title": "Types de coffres",
   "chest_friendship": "Coffres d'amitié (roses) — Coût : 10 cœurs. Contiennent des animaux (aucune pièce garantie). Échangeables uniquement via les récompenses d'amis, non achetables. Limite de 5 — ouvrez-les quotidiennement pour ne pas perdre de récompenses.",
   "chest_normal": "Coffres normaux (bleus) — Coût : pièces (selon le niveau). Contiennent tous les animaux de la trame principale (aucune pièce garantie). Pas de limite d'achat au-delà de la règle des 100 coffres.",
+  "title_epic": "Coffres Épiques (Violet)",
   "chest_epic": "Coffres épiques (violets) — Coût : 29 diamants. Contiennent des animaux avec 1 pièce de puzzle garantie. Proposent des animaux renforcés en rotation.",
+  "title_retro": "Coffres Rétro (Rouge)",
   "chest_retro": "Coffres rétro (rouges) — Coût : 39 diamants. Contiennent des animaux avec 1 pièce de puzzle garantie. Proposent des animaux renforcés en rotation.",
+  "title_legendary": "Coffres Légendaires (Or)",
   "chest_legendary": "Coffres légendaires (dorés) — Contiennent des animaux avec 1 pièce de puzzle garantie. Proposent des animaux renforcés en rotation.",
+  "title_video": "Coffres Vidéo",
   "chest_video": "Coffres vidéo — Gagnés en regardant des publicités vidéo. Peuvent dépasser la limite de 100 coffres.",
-
-  "forecasts_title": "Prévisions des coffres",
-  "forecasts_body": "Pour les prédictions futures des coffres, consultez la page Prévisions.",
-
-  "limits_title": "Limites d'achat",
-  "limits_body": "Les coffres d'amitié ne sont échangeables que via les récompenses obtenues en aidant des amis et ne peuvent pas être achetés avec des pièces ou des diamants. Ils ont une limite de 5 — une fois que vous en avez 5, toute récompense de coffre supplémentaire est perdue. Il est recommandé de les ouvrir quotidiennement. La limite connue pour les coffres achetables est de 100. Après en avoir collecté 100, ils continuent de s'empiler mais vous ne pouvez plus en acheter jusqu'à ce que vous en ouvriez suffisamment pour passer sous 100. Les coffres collectés via le calendrier, les récompenses d'événements ou les récompenses de l'académie devraient continuer à s'empiler au-delà de la limite de 100.",
 
   "keys_title": "Clés",
   "keys_body": "Les clés peuvent être achetées pour 5 diamants chacune, ou reçues dans le cadre des récompenses de connexion quotidiennes ou du Season Pass. Elles peuvent parfois être achetables à la Boutique du Season Pass. Les jeux de coquilles proposent souvent des clés comme prix gratuit. Les clés servent à révéler des cartes supplémentaires lors de l'ouverture de coffres. Chaque coffre contient huit cartes, mais seules les quatre premières révélations sont incluses. Chaque révélation de carte supplémentaire utilise une Clé.",
@@ -27,5 +22,146 @@
   "exception_expansions": "Extensions — Il n'y a pas de cartes pour les extensions d'enclos ou de parc. Celles-ci ne peuvent être obtenues que lors d'un achat avec des pièces ou des diamants.",
   "exception_upgrades": "Améliorations — Bien que les pièces pour les abris eux-mêmes se trouvent dans les coffres, TOUTES les améliorations ne peuvent être obtenues que lors d'un achat avec des pièces ou des diamants. Cela inclut les améliorations de la boutique. Consultez les Événements Soldes pour des remises de 25–50% !",
   "exception_employees": "Employés du zoo — Il n'y a pas de pièces de puzzle pour les employés dans les coffres. Cependant, les trois bons d'employés sont offerts dans le cadre des Récompenses de connexion quotidiennes. Les pièces de puzzle pour les employés 7 jours sont données dans le Season Pass. Les pièces de puzzle pour les employés d'équipe sont données comme récompenses de connexion quotidiennes de l'Académie du zoo une fois que certains niveaux de l'Académie sont débloqués.",
-  "exception_other": "Les PNJ invités spéciaux, les objets d'avatar personnel, les bâtiments de fonctionnalités, les allées et les poubelles ne sont également pas disponibles dans les coffres."
+  "exception_other": "Les PNJ invités spéciaux, les objets d'avatar personnel, les bâtiments de fonctionnalités, les allées et les poubelles ne sont également pas disponibles dans les coffres.",
+
+  "cost": "Coût",
+  "limit": "Limite",
+  "animal": "Animal",
+  "rarity": "Rareté",
+  "biome": "Biome",
+  "chests": "Coffres",
+  "biomes": {
+    "grasslands": "Prairies",
+    "plains": "Plaines",
+    "forest": "Forêt",
+    "mountains": "Montagnes",
+    "savanna": "Savane",
+    "jungle": "Jungle",
+    "water": "Eau",
+    "ice": "Glace"
+  },
+
+  "friendship": {
+    "title": "Coffres d'amitié (roses)",
+    "friendship_points": "Points d'amitié",
+    "intro": "Les points d'amitié sont gagnés en visitant les zoos d'autres joueurs et en les ayant vous rendre visite. Une fois que vous atteignez 10 points d'amitié, un Coffre d'amitié est automatiquement ajouté à votre inventaire. La limite de 5 coffres signifie que vous devriez ouvrir les coffres régulièrement pour continuer à en gagner de nouveaux.",
+
+    "contents_title": "Contenu des coffres",
+    "contents_body": "Les Coffres d'amitié contiennent exclusivement des pièces de puzzle d'enclos — ils ne contiennent pas de décorations prêtes à être placées. Cela inclut des pièces de puzzle pour les décorations d'enclos et les bâtiments utilitaires dans tous les biomes. Depuis le 17 février 2022, les Coffres d'amitié contiennent également des pièces pour les Animaux d'amitié exclusifs, qui ne peuvent être obtenus par aucun autre type de coffre.",
+
+    "animals_title": "Animaux d'amitié exclusifs",
+    "animals_body": "Les animaux suivants sont exclusifs aux Coffres d'amitié et ne peuvent être obtenus par aucun autre coffre :",
+
+    "animals_col_animal": "Animal",
+    "animals_col_rarity": "Rareté",
+    "animals_col_biome": "Biome",
+    "crab-eating-raccoon": "Raton laveur crabier",
+    "short-beaked-echidna": "Échidné à bec court",
+    "sitatunga": "Sitatunga",
+    "dingo": "Dingo",
+    "steenbok": "Steenbok",
+
+    "enclosures_title": "Pièces de puzzle d'enclos",
+    "enclosures_body": "Les Coffres d'amitié contiennent des pièces de puzzle pour les décorations d'enclos et les bâtiments utilitaires. Ces pièces sont réparties dans tous les biomes et comprennent à la fois des objets d'enclos décoratifs et fonctionnels.",
+
+    "tips_title": "Conseils",
+    "tips_body": "Ouvrez vos Coffres d'amitié régulièrement afin de ne pas atteindre la limite de 5 coffres et d'arrêter d'en gagner de nouveaux. Le moyen le plus efficace de gagner des points d'amitié est d'avoir une liste d'amis active et de visiter des zoos quotidiennement. Les Animaux d'amitié sont exclusifs à ce type de coffre, en faisant la seule source pour compléter leurs collections."
+  },
+
+  "normal": {
+    "title": "Coffres normaux (bleus)",
+    "intro": "Les Coffres normaux sont des coffres bleus achetables avec des pièces, l'un des types de coffres les plus accessibles du jeu. Ils peuvent être achetés avec des pièces, ou obtenus gratuitement via des quêtes, en montant de niveau et grâce aux récompenses de connexion quotidiennes.",
+
+    "obtaining_title": "Obtenir des Coffres normaux",
+    "obtaining_body": "Les Coffres normaux peuvent être achetés avec des pièces à la boutique. Ils sont également offerts gratuitement pour avoir accompli des quêtes, atteint de nouveaux niveaux et via les récompenses de connexion quotidiennes. Le coût en pièces d'un Coffre normal évolue avec votre niveau de joueur.",
+
+    "cost_title": "Coût en pièces par niveau",
+    "cost_body": "Le coût d'un Coffre normal est votre niveau de joueur actuel multiplié par 250 pièces. Par exemple, au niveau 1, un coffre coûte 250 pièces, au niveau 10, il coûte 2 500 pièces, et au niveau 70, il coûte 17 500 pièces.",
+    "cost_col_level": "Niveau du joueur",
+    "cost_col_cost": "Coût du coffre",
+
+    "contents_title": "Contenu des coffres",
+    "contents_body": "Les Coffres normaux contiennent deux types d'objets : des pièces de puzzle d'enclos et des décorations de zoo prêtes à être placées. Cela les rend uniques parmi les types de coffres obtenables gratuitement, car ils peuvent fournir directement des décorations pour votre zoo sans nécessiter de compléter des puzzles.",
+
+    "special_items_title": "Articles spéciaux en diamants comme pièces de puzzle",
+    "special_items_body": "Les coffres normaux contiennent également des pièces de puzzle pour un petit nombre d'articles normalement disponibles uniquement contre des diamants. Ceux-ci peuvent être assemblés gratuitement en collectant suffisamment de pièces :",
+
+    "animals_title": "Pièces de puzzle d'animaux",
+    "animals_body": "Les Coffres normaux contiennent des pièces de puzzle pour la plupart des Animaux de boutique normaux de tous les biomes, allant de la rareté Commune à Légendaire. Le Singe hurleur et tous les animaux exclusifs aux coffres à diamants ne sont pas inclus.",
+
+    "tips_title": "Conseils",
+    "tips_body": "Les Coffres normaux sont une excellente source de décorations de zoo prêtes à être placées, ce qui les rend très utiles pour développer votre zoo. Les objets en diamants spéciaux disponibles sous forme de pièces de puzzle — dont le Carrousel à animaux — représentent une valeur significative, donc collecter régulièrement des Coffres normaux vaut la peine même aux niveaux supérieurs."
+  },
+
+  "epic": {
+    "title": "Coffres épiques (violets)",
+    "intro": "Les Coffres épiques sont des coffres à diamants coûtant 29 diamants chacun (anciennement connus sous le nom de Coffres rares). Ils garantissent à la fois une pièce de puzzle de rareté violette et une pièce de puzzle d'animal exclusif à chaque ouverture.",
+
+    "contents_title": "Contenu des coffres",
+    "contents_body": "Les Coffres épiques contiennent des pièces de puzzle des Coffres d'amitié et Normaux, mais n'incluent pas les animaux exclusifs de ces coffres. Chaque Coffre épique garantit au moins une pièce de puzzle de rareté violette et au moins une pièce de puzzle d'animal exclusif.",
+
+    "drop_bonus_title": "Bonus de tirage",
+    "drop_bonus_body": "Les Coffres épiques proposent un bonus de tirage rotatif qui augmente les chances de recevoir les pièces de puzzle d'un animal exclusif spécifique. L'animal renforcé change toutes les 6 semaines, en rotation dans la liste des animaux exclusifs.",
+
+    "tips_title": "Conseils",
+    "tips_body": "Les Coffres épiques sont les coffres à diamants les plus abordables à 29 diamants et offrent des pièces de puzzle d'animaux exclusifs garanties à chaque ouverture. Le bonus de tirage change toutes les 6 semaines — vérifiez l'animal bonus actuel si vous travaillez vers une collection spécifique. À ce prix, les Coffres épiques représentent une excellente valeur pour les joueurs qui souhaitent progresser efficacement dans les collections d'animaux exclusifs."
+  },
+
+  "retro": {
+    "title": "Coffres rétro (rouges)",
+    "intro": "Les Coffres rétro sont des coffres à diamants coûtant 39 diamants chacun. Ils contiennent des pièces de puzzle des Coffres d'amitié, Normaux et Épiques (à l'exclusion des animaux exclusifs de ces coffres) et disposent de leur propre grand catalogue d'animaux exclusifs.",
+
+    "contents_title": "Contenu des coffres",
+    "contents_body": "Les Coffres rétro contiennent des pièces de puzzle des Coffres d'amitié, Normaux et Épiques, mais n'incluent pas les animaux exclusifs de ces coffres. Chaque Coffre rétro garantit au moins une pièce de puzzle exclusive.",
+
+    "drop_bonus_title": "Bonus de tirage",
+    "drop_bonus_body": "Les Coffres rétro proposent un bonus de tirage rotatif qui augmente les chances de recevoir les pièces de puzzle d'un animal exclusif spécifique. L'animal renforcé change toutes les 4 semaines, en rotation dans la liste des animaux exclusifs. Ce système est actif depuis le 24 novembre 2022.",
+
+    "tips_title": "Conseils",
+    "tips_body": "Les Coffres rétro changent leur bonus de tirage toutes les 4 semaines — vérifiez l'animal renforcé actuel avant d'ouvrir des coffres si vous ciblez un exclusif spécifique. À 39 diamants, les Coffres rétro sont plus abordables que les Coffres légendaires et offrent une large sélection d'animaux exclusifs, en faisant une bonne option pour les joueurs axés sur la complétion de leurs collections."
+  },
+
+  "legendary": {
+    "title": "Coffres légendaires (dorés)",
+    "intro": "Les Coffres légendaires sont des coffres à diamants coûtant 49 diamants chacun. Ce sont les coffres les plus complets, contenant des pièces de puzzle de presque tous les autres types de coffres, leurs propres animaux exclusifs et la seule source de pièces de puzzle pour les chariots de boutique.",
+
+    "contents_title": "Contenu des coffres",
+    "contents_body": "Les Coffres légendaires contiennent des pièces de puzzle de tous les autres types de coffres, à l'exception des animaux exclusifs des Coffres d'amitié et Épiques/Rétro. Ils garantissent toujours au moins une pièce de puzzle exclusive par coffre. Ils sont également le seul type de coffre à contenir des pièces de puzzle pour les quatre décorations Chariot de boutique.",
+    "shop_carts_body": "Les coffres légendaires sont la seule source de pièces de puzzle pour les décorations légendaires de la boutique suivantes :",
+
+    "drop_bonus_title": "Bonus de tirage",
+    "drop_bonus_body": "Les Coffres légendaires proposent un bonus de tirage rotatif qui augmente les chances de recevoir les pièces de puzzle d'un animal exclusif spécifique. L'animal renforcé change toutes les 8 semaines, en rotation dans la liste des animaux exclusifs. Ce système est actif depuis le 24 novembre 2022.",
+
+    "tips_title": "Conseils",
+    "tips_body": "Vérifiez quel animal exclusif bénéficie actuellement du bonus de tirage avant de dépenser des diamants sur des Coffres légendaires — si vous avez besoin de cet animal, c'est un bon moment pour en ouvrir plusieurs. Comme les Coffres légendaires contiennent des pièces de la plupart des autres coffres, ils sont une source complète et efficace lorsque vous avez des diamants à dépenser. Les décorations Chariot de boutique sont de rareté légendaire et uniquement disponibles ici, les rendant précieuses pour les collections."
+  },
+
+  "terraqua": {
+    "title": "Coffres Terraqua",
+    "intro": "Les coffres Terraqua peuvent être achetés pour 29 diamants. Ils ont été introduits le 13 mars 2023 et contiennent des pièces pour les maisons Terrarium et Aquarium. Les pièces de puzzle des coffres Terraqua peuvent également être trouvées à la roue de la chance. Les passes Premium et VIP de la saison 4 du Season Pass incluaient des coffres Terraqua parmi leurs récompenses. Il n'y a PAS d'animaux dans les coffres Terraqua.",
+    "release_label": "Date de sortie"
+  },
+
+  "noctavia": {
+    "title": "Coffres NoctAvia",
+    "intro": "Les coffres NoctAvia peuvent être achetés pour 29 diamants. Ils ont été introduits le 7 avril 2026 et contiennent des pièces pour les régions Noctarium et Volière. Ils ne peuvent être obtenus qu'au sein de ces deux régions. Les pièces de puzzle des coffres NoctAvia peuvent également être trouvées à la roue de la chance ou comme option de récompense lors de la montée de niveau d'un ami. Les pièces exclusives à la Volière peuvent être trouvées dans les prix de plumes de Volière. Il n'y a PAS d'animaux dans les coffres NoctAvia.",
+    "release_label": "Date de sortie"
+  },
+
+  "video": {
+    "title": "Coffres vidéo",
+    "intro": "Le Coffre vidéo est un type de coffre bonus disponible une fois par jour en regardant des Publicités vidéo. Comme tout autre coffre, plusieurs Coffres vidéo peuvent être accumulés au fil du temps sans les ouvrir.",
+
+    "content_title": "Contenu",
+    "content_body": "Le Coffre vidéo contient tous les objets trouvés dans un Coffre normal (en pièces), notamment les animaux de boutique et les pièces de puzzle légendaires (jaunes).",
+
+    "availability_title": "Disponibilité",
+    "availability_body": "Vous pouvez trouver le Coffre vidéo sous l'onglet standard \"Coffre\" dans le menu déroulant à droite. Il y apparaît une fois que vous activez les publicités vidéo dans les Paramètres du jeu en décochant la case \"Ne pas afficher les offres vidéo\". Assurez-vous de ne pas cocher l'option pour masquer les publicités lors de la collecte des pièces des guichets d'admission, car cela désactivera le paramètre.",
+
+    "limit_title": "Limite quotidienne et stockage",
+    "limit_body": "Vous ne pouvez recevoir qu'un seul Coffre vidéo toutes les 24 heures. Étant donné que les coffres vidéo sont gagnés plutôt qu'achetés, ils n'ont pas de limite de stockage.",
+
+    "platform_title": "Disponibilité par plateforme",
+    "platform_body": "Les Coffres vidéo ne sont disponibles que pour les utilisateurs jouant via l'application sur Android ou iOS. Ils ne sont pas disponibles sur les appareils ne prenant pas en charge les publicités ou sur certaines plateformes telles que Steam, Epic Games ou Amazon."
+  }
 }

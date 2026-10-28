@@ -114,7 +114,21 @@
       "Bash(echo \"=== $locale ===\")",
       "Read(//d/Entwicklung/zoo2-community-manager/messages/$locale/**)",
       "Bash(echo \"=== $locale line 31 ===\")",
-      "Bash(find D:/Entwicklung/zoo2-community-manager -name *.pdf)"
+      "Bash(find D:/Entwicklung/zoo2-community-manager -name *.pdf)",
+      "Bash(tree -L 2 /d/Entwicklung/zoo2-community-manager/src/app/[locale]/)",
+      "Bash(find /d/Entwicklung/zoo2-community-manager/src/app/[locale]/ -maxdepth 2 -type d)",
+      "Bash(bash \".claude/plugins/cache/claude-plugins-official/superpowers/6.4.2/skills/executing-plans/scripts/sdd-workspace\" \"docs/superpowers/plans/2026-10-28-chest-boosts.md\")",
+      "Bash(mkdir -p \"D:/Entwicklung/zoo2-community-manager/src/app/[locale]/game/chests/create\")",
+      "Bash(mkdir -p \"D:/Entwicklung/zoo2-community-manager/src/app/[locale]/game/chests/[id]/edit\")",
+      "Bash(cmd.exe /c \"dir C:\\\\Users\\\\micro\\\\Downloads\\\\*Boost* /b\" 2>&1)",
+      "Bash(cmd.exe /c \"dir C:\\\\Users\\\\micro\\\\Downloads\\\\*Chest* /b\")",
+      "Bash(cmd.exe /c \"dir C:\\\\Users\\\\micro\\\\Downloads\\\\*chest* /b\")",
+      "Bash(cmd.exe /c \"dir C:\\\\Users\\\\micro\\\\Downloads\\\\ /b\" 2>&1)",
+      "Bash(cmd.exe /c \"dir \\\\\"C:\\\\Users\\\\micro\\\\Downloads\\\\chests\\\\\" /b\" 2>&1)",
+      "Bash(cmd.exe /c \"dir C:\\\\Users\\\\micro\\\\Downloads\\\\chests /b 2>&1\")",
+      "Bash(cmd.exe /c \"echo %USERPROFILE% && dir \\\\\"%USERPROFILE%\\\\Downloads\\\\chests\\\\\" /b\")",
+      "Bash(cmd.exe /c \"echo %USERPROFILE%\")",
+      "Bash(powershell.exe -Command \"Get-ChildItem 'C:\\\\Users\\\\micro\\\\Downloads\\\\chests' | Select-Object Name\")"
     ]
   }
 }

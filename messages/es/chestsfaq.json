@@ -2,22 +2,17 @@
   "title": "Resumen de Cofres",
   "intro": "Los Cofres del Tesoro ofrecen una forma de obtener casi todo lo que se puede comprar para el Zoo. Casi todos los objetos relacionados con Misiones que cuestan diamantes se pueden encontrar en los Cofres Normales, que cuestan monedas. Aunque pagar diamantes es más rápido, ¡la paciencia también tiene su recompensa!",
 
-  "overview_title": "Resumen Rápido",
-  "overview_body": "Hay 6 tipos de cofres disponibles en el juego. Los cofres Legendario, Retro y Épico rotan animales con bonificación de vez en cuando. Independientemente de en qué cofre esté el animal bonificado, su pieza de puzle es morada (raro) o amarilla (legendario). Las piezas moradas cuestan 2.500 tickets para completar con solo una pieza de puzle. Las piezas amarillas cuestan 10.000 tickets con solo una pieza de puzle. A veces puedes esperar a un evento de cofre para completarlas con un 15% de descuento. Históricamente, si la popularidad del animal es de 840 puntos o más (84 diamantes), será una pieza de puzle amarilla.",
-
   "chest_types_title": "Tipos de Cofres",
   "chest_friendship": "Cofres de Amistad (Rosa) — Coste: 10 corazones. Contienen animales (sin pieza garantizada). Solo canjeables mediante recompensas de amigos, no se pueden comprar. Límite de 5 — ábrelos diariamente para no perder recompensas.",
   "chest_normal": "Cofres Normales (Azul) — Coste: monedas (según el nivel). Contienen todos los animales de la historia (sin pieza garantizada). Sin límite de compra más allá de la regla de apilamiento de 100 cofres.",
+  "title_epic": "Cofres Épicos (Morado)",
   "chest_epic": "Cofres Épicos (Morado) — Coste: 29 diamantes. Contienen animales con 1 pieza de puzle garantizada. Presentan animales rotatorios con bonificación.",
+  "title_retro": "Cofres Retro (Rojo)",
   "chest_retro": "Cofres Retro (Rojo) — Coste: 39 diamantes. Contienen animales con 1 pieza de puzle garantizada. Presentan animales rotatorios con bonificación.",
+  "title_legendary": "Cofres Legendarios (Dorado)",
   "chest_legendary": "Cofres Legendarios (Dorado) — Contienen animales con 1 pieza de puzle garantizada. Presentan animales rotatorios con bonificación.",
+  "title_video": "Cofres de Video",
   "chest_video": "Cofres de Video — Se obtienen viendo anuncios de video. Pueden apilarse más allá del límite de 100 cofres.",
-
-  "forecasts_title": "Previsiones de Cofres",
-  "forecasts_body": "Para futuras predicciones de cofres, consulta la página de Previsiones.",
-
-  "limits_title": "Límites de Compra",
-  "limits_body": "Los cofres de amistad solo son canjeables mediante recompensas de ayudar a amigos y no se pueden comprar con monedas ni diamantes. Tienen un límite de 5 — una vez que acumulas 5, se pierden las recompensas adicionales. Se recomienda abrirlos diariamente. El límite conocido para los cofres comprables es de 100. Después de recoger 100, siguen apilándose pero no puedes comprar más hasta que abras suficientes para bajar de 100. Los cofres del calendario, recompensas de eventos o recompensas de la academia deberían seguir apilándose más allá del límite de 100.",
 
   "keys_title": "Llaves",
   "keys_body": "Las llaves se pueden comprar por 5 diamantes cada una, o recibirlas como parte de las recompensas de Inicio de Sesión Diario o el Pase de Temporada. En ciertas ocasiones se pueden comprar en la Tienda del Pase de Temporada. Los Juegos de Conchas frecuentemente ofrecen llaves como premio gratuito. Las llaves se usan para revelar cartas adicionales al abrir cofres. Cada cofre contiene ocho cartas, pero solo las primeras cuatro revelaciones están incluidas. Cada revelación adicional usa una Llave.",
@@ -27,5 +22,139 @@
   "exception_expansions": "Expansiones — No hay cartas para expansiones de recintos o parques. Solo se pueden adquirir al comprarlas con monedas o diamantes.",
   "exception_upgrades": "Mejoras — Aunque las piezas para los refugios en sí se pueden encontrar en los cofres, TODAS las mejoras solo se pueden obtener al comprarlas con monedas o diamantes. Esto incluye las mejoras de la Tienda. ¡Consulta los Eventos de Oferta para descuentos del 25–50%!",
   "exception_employees": "Empleados del Zoo — No hay piezas de puzle para empleados en los cofres. Sin embargo, los tres vales de empleado se regalan como parte de la Recompensa de Inicio de Sesión Diario. Las piezas de puzle para empleados de 7 días se dan en el Pase de Temporada. Las piezas de puzle para empleados de equipo se dan como recompensas de inicio de sesión diario de Zoo Academy una vez que se desbloquean ciertos niveles de Academy.",
-  "exception_other": "Los NPCs Invitados Especiales, los artículos de avatar personal, los edificios de características, los caminos y las papeleras tampoco están disponibles en los cofres."
+  "exception_other": "Los NPCs Invitados Especiales, los artículos de avatar personal, los edificios de características, los caminos y las papeleras tampoco están disponibles en los cofres.",
+
+  "cost": "Costo",
+  "limit": "Límite",
+  "animal": "Animal",
+  "rarity": "Rareza",
+  "biome": "Bioma",
+  "chests": "Cofres",
+  "biomes": {
+    "grasslands": "Praderas",
+    "plains": "Llanuras",
+    "forest": "Bosque",
+    "mountains": "Montañas",
+    "savanna": "Sabana",
+    "jungle": "Selva",
+    "water": "Agua",
+    "ice": "Hielo"
+  },
+
+  "friendship": {
+    "title": "Cofres de Amistad (Rosa)",
+    "friendship_points": "Puntos de amistad",
+    "intro": "Los puntos de amistad se ganan visitando los zoos de otros jugadores y haciéndoles visitar el tuyo. Una vez que alcanzas 10 puntos de amistad, se añade automáticamente un Cofre de Amistad a tu inventario. Ya que puedes tener un máximo de 5 cofres, deberías abrirlos regularmente para seguir ganando nuevos.",
+
+    "contents_title": "Contenido del Cofre",
+    "contents_body": "Los Cofres de Amistad contienen exclusivamente piezas de puzle de recintos — no contienen decoraciones listas para colocar. Esto incluye piezas de puzle para decoraciones de recintos y edificios utilitarios de todos los biomas. Desde el 17 de febrero de 2022, los Cofres de Amistad también contienen piezas para los Animales de Amistad exclusivos, que no se pueden obtener de ningún otro tipo de cofre.",
+
+    "animals_title": "Animales de Amistad Exclusivos",
+    "animals_body": "Los siguientes animales son exclusivos de los Cofres de Amistad y no se pueden obtener a través de ningún otro cofre:",
+
+    "animals_col_animal": "Animal",
+    "animals_col_rarity": "Rareza",
+    "animals_col_biome": "Bioma",
+    "crab-eating-raccoon": "Mapache cangrejero",
+    "short-beaked-echidna": "Equidna de pico corto",
+    "sitatunga": "Sitatunga",
+    "dingo": "Dingo",
+    "steenbok": "Steenbok",
+
+    "enclosures_title": "Piezas de Puzle de Recintos",
+    "enclosures_body": "Los Cofres de Amistad contienen piezas de puzle para decoraciones de recintos y edificios utilitarios. Estas piezas se distribuyen por todos los biomas e incluyen tanto objetos decorativos como funcionales de los recintos.",
+
+    "tips_title": "Consejos",
+    "tips_body": "Abre tus Cofres de Amistad regularmente para no alcanzar el límite de 5 cofres y dejar de ganar nuevos. La forma más eficiente de ganar puntos de amistad es tener una lista de amigos activa y visitar zoos diariamente. Los Animales de Amistad son exclusivos de este tipo de cofre, lo que lo convierte en la única fuente para completar sus colecciones."
+  },
+  "normal": {
+    "title": "Cofres Normales (Azul)",
+    "intro": "Los Cofres Normales son cofres azules que se compran con monedas y son uno de los tipos de cofres más accesibles del juego. Se pueden comprar con monedas u obtener gratis mediante misiones, subiendo de nivel y con las recompensas de inicio de sesión diario.",
+
+    "obtaining_title": "Obtener Cofres Normales",
+    "obtaining_body": "Los Cofres Normales se pueden comprar con monedas en la tienda. También se otorgan gratuitamente al completar misiones, alcanzar nuevos niveles de jugador y mediante las recompensas de inicio de sesión diario. El coste en monedas de un Cofre Normal escala con tu nivel de jugador.",
+
+    "cost_title": "Coste en Monedas por Nivel",
+    "cost_body": "El coste de un Cofre Normal es tu nivel de jugador actual multiplicado por 250 monedas. Por ejemplo, en el nivel 1 un cofre cuesta 250 monedas, en el nivel 10 cuesta 2.500 monedas y en el nivel 70 cuesta 17.500 monedas.",
+    "cost_col_level": "Nivel del Jugador",
+    "cost_col_cost": "Coste del Cofre",
+
+    "contents_title": "Contenido del Cofre",
+    "contents_body": "Los Cofres Normales contienen dos tipos de objetos: piezas de puzle de recintos y decoraciones de zoo listas para colocar. Esto los hace únicos entre los tipos de cofres de obtención gratuita, ya que pueden proporcionar directamente decoraciones para tu zoo sin requerir la finalización de puzles.",
+
+    "special_items_title": "Artículos especiales de diamantes como piezas de rompecabezas",
+    "special_items_body": "Los cofres normales también contienen piezas de rompecabezas para un pequeño número de artículos normalmente disponibles solo con diamantes. Estos pueden ensamblarse gratis coleccionando suficientes piezas:",
+
+    "animals_title": "Piezas de Puzle de Animales",
+    "animals_body": "Los Cofres Normales contienen piezas de puzle para la mayoría de los Animales de Tienda regulares de todos los biomas, desde rareza Común hasta Legendaria. El Mono Aullador y todos los animales exclusivos de los cofres de diamantes no están incluidos.",
+
+    "tips_title": "Consejos",
+    "tips_body": "Los Cofres Normales son una excelente fuente de decoraciones de zoo listas para colocar, lo que los hace ideales para construir tu zoo. Los artículos de diamantes especiales disponibles como piezas de puzle — incluyendo el Carrusel de Animales — representan un valor significativo, por lo que recolectar Cofres Normales de forma constante vale la pena incluso en niveles más altos."
+  },
+  "epic": {
+    "title": "Cofres Épicos (Morado)",
+    "intro": "Los Cofres Épicos son cofres de diamantes que cuestan 29 diamantes cada uno (antes conocidos como Cofres Raros). Garantizan tanto una pieza de puzle de rareza morada como una pieza de puzle de animal exclusivo con cada apertura.",
+
+    "contents_title": "Contenido del Cofre",
+    "contents_body": "Los Cofres Épicos contienen piezas de puzle de los Cofres de Amistad y Normales, pero no incluyen los animales exclusivos de esos cofres. Cada Cofre Épico garantiza al menos una pieza de puzle de rareza morada y al menos una pieza de puzle de animal exclusivo.",
+
+    "drop_bonus_title": "Bonificación de Caída",
+    "drop_bonus_body": "Los Cofres Épicos tienen una bonificación de caída rotatoria que aumenta la probabilidad de recibir las piezas de puzle de un animal exclusivo específico. El animal bonificado cambia cada 6 semanas, rotando por la lista de animales exclusivos.",
+
+    "tips_title": "Consejos",
+    "tips_body": "Los Cofres Épicos son el cofre de diamantes más asequible a 29 diamantes y ofrecen piezas de puzle de animales exclusivos garantizadas con cada apertura. La bonificación de caída rota cada 6 semanas — comprueba el animal de bonificación actual si estás trabajando hacia una colección específica. A este precio, los Cofres Épicos son excelente valor para jugadores que quieren progresar eficientemente en las colecciones de animales exclusivos."
+  },
+  "retro": {
+    "title": "Cofres Retro (Rojo)",
+    "intro": "Los Cofres Retro son cofres de diamantes que cuestan 39 diamantes cada uno. Contienen piezas de puzle de los Cofres de Amistad, Normales y Épicos (excluyendo los animales exclusivos de esos cofres) y tienen su propio gran grupo de animales exclusivos.",
+
+    "contents_title": "Contenido del Cofre",
+    "contents_body": "Los Cofres Retro contienen piezas de puzle de los Cofres de Amistad, Normales y Épicos, pero no incluyen los animales exclusivos de esos cofres. Cada Cofre Retro garantiza al menos una pieza de puzle exclusiva.",
+
+    "drop_bonus_title": "Bonificación de Caída",
+    "drop_bonus_body": "Los Cofres Retro tienen una bonificación de caída rotatoria que aumenta la probabilidad de recibir las piezas de puzle de un animal exclusivo específico. El animal bonificado cambia cada 4 semanas, rotando por la lista de animales exclusivos. Este sistema está activo desde el 24 de noviembre de 2022.",
+
+    "tips_title": "Consejos",
+    "tips_body": "Los Cofres Retro rotan su bonificación de caída cada 4 semanas — comprueba el animal actualmente bonificado antes de abrir cofres si estás buscando un exclusivo específico. A 39 diamantes, los Cofres Retro son más asequibles que los Cofres Legendarios y ofrecen una amplia selección de animales exclusivos, lo que los convierte en una buena opción para jugadores centrados en completar sus colecciones."
+  },
+  "legendary": {
+    "title": "Cofres Legendarios (Dorado)",
+    "intro": "Los Cofres Legendarios son cofres de diamantes que cuestan 49 diamantes cada uno. Son el tipo de cofre más completo, ya que contienen piezas de puzle de casi todos los demás tipos de cofres, además de sus propios animales exclusivos y la única fuente de piezas de puzle de carros de tienda.",
+
+    "contents_title": "Contenido del Cofre",
+    "contents_body": "Los Cofres Legendarios contienen piezas de puzle de todos los demás tipos de cofres excepto los animales exclusivos de Amistad, Épico y Retro. Siempre garantizan al menos una pieza de puzle exclusiva por cofre.",
+    "shop_carts_body": "Los cofres legendarios son la única fuente de piezas de rompecabezas para las siguientes decoraciones legendarias de la tienda:",
+
+    "drop_bonus_title": "Bonificación de Caída",
+    "drop_bonus_body": "Los Cofres Legendarios tienen una bonificación de caída rotatoria que aumenta la probabilidad de recibir las piezas de puzle de un animal exclusivo específico. El animal bonificado cambia cada 8 semanas, rotando por la lista de animales exclusivos. Este sistema está activo desde el 24 de noviembre de 2022.",
+
+    "tips_title": "Consejos",
+    "tips_body": "Comprueba qué animal exclusivo tiene actualmente la bonificación de caída antes de gastar diamantes en Cofres Legendarios — si necesitas ese animal, es un buen momento para abrir varios. Como los Cofres Legendarios contienen piezas de la mayoría de los otros cofres, son una fuente eficiente de todo en uno cuando tienes diamantes de sobra. Las decoraciones de Carro de Tienda son de rareza Legendaria y solo se pueden obtener aquí, lo que las hace valiosas para las colecciones."
+  },
+  "terraqua": {
+    "title": "Cofres Terraqua",
+    "intro": "Los cofres Terraqua se pueden comprar por 29 diamantes. Fueron introducidos el 13 de marzo de 2023 y contienen piezas para casas de Terrario y Acuario. Las piezas de rompecabezas de los cofres Terraqua también se pueden encontrar en la rueda de la suerte. Los pases Premium y VIP de la temporada 4 del Season Pass incluían cofres Terraqua entre sus recompensas. NO hay animales en los cofres Terraqua.",
+    "release_label": "Fecha de lanzamiento"
+  },
+  "noctavia": {
+    "title": "Cofres NoctAvia",
+    "intro": "Los cofres NoctAvia se pueden comprar por 29 diamantes. Fueron introducidos el 7 de abril de 2026 y contienen piezas para las regiones Noctarium y Aviario. Solo pueden obtenerse dentro de estas dos regiones. Las piezas de rompecabezas de los cofres NoctAvia también se pueden encontrar en la rueda de la suerte o como opción de recompensa al subir de nivel un amigo. Las piezas exclusivas del Aviario se pueden encontrar en los premios de plumas del Aviario. NO hay animales en los cofres NoctAvia.",
+    "release_label": "Fecha de lanzamiento"
+  },
+  "video": {
+    "title": "Cofres de Video",
+    "intro": "El Cofre de Video es un tipo de cofre de bonificación disponible una vez al día viendo Anuncios de Video. Como cualquier otro cofre, se pueden recolectar múltiples Cofres de Video con el tiempo sin abrirlos.",
+
+    "content_title": "Contenido",
+    "content_body": "El Cofre de Video contiene todos los artículos que se encuentran en un cofre Normal (de monedas), incluidos los animales de tienda y las piezas de puzle legendarias (amarillas).",
+
+    "availability_title": "Disponibilidad",
+    "availability_body": "Puedes encontrar el Cofre de Video en la pestaña estándar de «Cofre» en el menú desplegable de la derecha. Aparece allí una vez que habilitas los anuncios de video en la Configuración del Juego desmarcando la casilla «No mostrar ofertas de video». Asegúrate de no marcar la opción de ocultar anuncios mientras recolectas monedas de las taquillas de admisión, ya que esto desactivará la configuración.",
+
+    "limit_title": "Límite Diario y Almacenamiento",
+    "limit_body": "Solo puedes recibir un Cofre de Video cada 24 horas. Como los cofres de video se ganan en lugar de comprarse, no tienen límite de almacenamiento.",
+
+    "platform_title": "Disponibilidad por Plataforma",
+    "platform_body": "Los Cofres de Video solo están disponibles para usuarios que juegan el juego a través de la app en Android o iOS. No están disponibles en dispositivos que no admiten anuncios ni en ciertas plataformas como Steam, Epic Games o Amazon."
+  }
 }

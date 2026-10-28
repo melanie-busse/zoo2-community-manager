@@ -32,7 +32,7 @@ export default function AnimalDetailContent({}) {
   if (!animal) {
     return <div>{tCommon("not_found")}</div>;
   }
-  console.log("animal", animal);
+
   const translation = animal.animaltext?.[0];
   const displayDescription = translation?.animalDescription;
 

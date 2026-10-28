@@ -17,13 +17,13 @@ describe("MobileNavigation", () => {
   test("rendert das mobile Menü im geöffneten Zustand", () => {
     render(<MobileNavigation isOpen={true} onClose={mockOnClose} />);
 
-    expect(screen.getByText(/Tiere/i)).toBeInTheDocument();
+    expect(screen.getAllByText("Tiere")[0]).toBeInTheDocument();
   });
 
   test("klappt Untermenü bei Klick auf", () => {
     render(<MobileNavigation isOpen={true} onClose={mockOnClose} />);
 
-    const menuHeader = screen.getByText(/Tiere/i);
+    const menuHeader = screen.getAllByText("Tiere")[0];
     fireEvent.click(menuHeader);
 
     expect(screen.getByText(/Tierübersicht/i)).toBeVisible();

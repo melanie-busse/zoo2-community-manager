@@ -65,7 +65,6 @@ export const Wrapper = styled.div`
   box-sizing: border-box;
 
   @media (max-width: 1023px) {
-    /* Hebelt das Padding des Elternelements radikal aus */
     margin-left: -16px;
     margin-right: -16px;
     width: calc(100% + 32px);

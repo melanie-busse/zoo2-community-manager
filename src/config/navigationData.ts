@@ -238,7 +238,7 @@ export const navConfig: NavItem[] = [
     basePath: "/wiki",
     requiresAuth: false,
     subMenu: [
-      { labelKey: "faq_game", href: "/faq/game", requiresAuth: false },
+      { labelKey: "wiki_game", href: "/wiki/game", requiresAuth: false },
       { labelKey: "faq_academy", href: "/faq/academy", requiresAuth: false },
       { labelKey: "faq_visitor", href: "/faq/visitor", requiresAuth: false },
       { labelKey: "faq_contest", href: "/faq/contest", requiresAuth: false },
@@ -255,7 +255,6 @@ export const navConfig: NavItem[] = [
       { labelKey: "wiki_ice_cream_vendor", href: "/wiki/ice-cream-vendor", requiresAuth: false },
       { labelKey: "wiki_kujali_park", href: "/wiki/kujali-park", requiresAuth: false },
       { labelKey: "wiki_login_rewards", href: "/wiki/login-rewards", requiresAuth: false },
-      { labelKey: "wiki_noctavia_chests", href: "/wiki/noctavia-chests", requiresAuth: false },
       { labelKey: "wiki_prize_wheel", href: "/wiki/prize-wheel", requiresAuth: false },
       { labelKey: "wiki_quests", href: "/wiki/quests", requiresAuth: false },
       { labelKey: "wiki_rescue_center", href: "/wiki/rescue-center", requiresAuth: false },
@@ -273,8 +272,6 @@ export const navConfig: NavItem[] = [
       },
       { labelKey: "wiki_sparkling_animals", href: "/wiki/sparkling-animals", requiresAuth: false },
       { labelKey: "wiki_terrain_editor", href: "/wiki/terrain-editor", requiresAuth: false },
-      { labelKey: "wiki_terraqua_chests", href: "/wiki/terraqua-chests", requiresAuth: false },
-      { labelKey: "wiki_video_chests", href: "/wiki/video-chests", requiresAuth: false },
     ],
   },
 ];

@@ -52,10 +52,6 @@ export default function ChestBoostOverviewFilter({ years }: ChestBoostOverviewFi
           </option>
         ))}
       </FilterSelect>
-
-      <ResetButton type="button" onClick={resetFilters}>
-        ✕
-      </ResetButton>
     </FilterCard>
   );
 }
@@ -84,19 +80,5 @@ const FilterSelect = styled.select`
 
   &:focus {
     outline: none;
-  }
-`;
-
-const ResetButton = styled.button`
-  padding: 8px 14px;
-  border: 1px solid ${({ theme }) => theme.colors.white[100]};
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.8);
-  cursor: pointer;
-  font-size: 0.9rem;
-  color: ${({ theme }) => theme.colors.grey[100]};
-
-  &:hover {
-    background: rgba(0, 0, 0, 0.05);
   }
 `;

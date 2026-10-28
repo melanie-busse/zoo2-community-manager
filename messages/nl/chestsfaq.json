@@ -2,22 +2,17 @@
   "title": "Kistenoverzicht",
   "intro": "Schatkisten bieden spelers de mogelijkheid bijna alles te verkrijgen wat in de dierentuin gekocht kan worden. Bijna alle questrelateerde items met diamantenkosten zijn te vinden in Gewone Kisten die met munten gekocht worden. Betalen met diamanten gaat sneller, maar geduld wordt ook beloond!",
 
-  "overview_title": "Snel overzicht",
-  "overview_body": "Er zijn 6 soorten kisten beschikbaar in het spel. Legendarische, Retro- en Epische kisten hebben van tijd tot tijd verhoogde dieren in rotatie. Onafhankelijk van welke kist een verhoogd dier in zit, is zijn puzzelstuk paars (zeldzaam) of geel (legendarisch). Paarse stukken kosten 2.500 tickets om te voltooien met slechts één puzzelstuk. Gele stukken kosten 10.000 tickets met slechts één puzzelstuk. Soms kun je wachten op een kistenevenement om ze voor 15% minder te voltooien. Historisch gezien, als de populariteit van het dier 840 punten of meer is (84 diamanten), zal het een geel puzzelstuk zijn.",
-
   "chest_types_title": "Kistensoorten",
   "chest_friendship": "Vriendschapskisten (Roze) — Kosten: 10 harten. Bevatten dieren (geen gegarandeerd stuk). Alleen inwisselbaar via vriendschapsbeloningen, niet te koop. Limiet van 5 — dagelijks openen om beloningen niet te verliezen.",
   "chest_normal": "Gewone Kisten (Blauw) — Kosten: munten (niveauafhankelijk). Bevatten alle verhaallijn dieren (geen gegarandeerd stuk). Geen aankooplimiet behalve de 100-kistenstapelregel.",
+  "title_epic": "Epische Kisten (Paars)",
   "chest_epic": "Epische Kisten (Paars) — Kosten: 29 diamanten. Bevatten dieren met 1 gegarandeerd puzzelstuk. Hebben roterend verhoogde dieren.",
+  "title_retro": "Retro Kisten (Rood)",
   "chest_retro": "Retrokisten (Rood) — Kosten: 39 diamanten. Bevatten dieren met 1 gegarandeerd puzzelstuk. Hebben roterend verhoogde dieren.",
+  "title_legendary": "Legendarische Kisten (Goud)",
   "chest_legendary": "Legendarische Kisten (Goud) — Bevatten dieren met 1 gegarandeerd puzzelstuk. Hebben roterend verhoogde dieren.",
+  "title_video": "Videokisten",
   "chest_video": "Videokisten — Verdiend door video-advertenties te bekijken. Kunnen verder stapelen dan de 100-kistenlimiet.",
-
-  "forecasts_title": "Kistenvoorspellingen",
-  "forecasts_body": "Voor toekomstige kistenvoorspellingen, zie de Voorspellingspagina.",
-
-  "limits_title": "Aankooplimieten",
-  "limits_body": "Vriendschapskisten zijn alleen inwisselbaar via beloningen voor het helpen van vrienden en kunnen niet worden gekocht met munten of diamanten. Ze hebben een limiet van 5 — zodra je 5 kisten hebt gestapeld, gaan eventuele extra kistenbeloningen verloren. Het wordt aanbevolen ze dagelijks te openen. De bekende limiet voor te kopen kisten is 100. Nadat je 100 hebt verzameld, blijven ze stapelen maar kun je er geen meer kopen totdat je er genoeg hebt geopend om onder de 100 te komen. Kisten verzamelen via de kalender, evenementbeloningen of academiebeloningen zou verder dan de 100-limiet moeten kunnen stapelen.",
 
   "keys_title": "Sleutels",
   "keys_body": "Sleutels kunnen worden gekocht voor 5 diamanten per stuk, of ontvangen als onderdeel van de Dagelijkse Inlogbeloningen of de Season Pass. Op bepaalde gelegenheden kunnen ze worden gekocht in de Season Pass Shop. Shell Games bieden vaak sleutels aan als gratis prijs. Sleutels worden gebruikt om extra kaarten te onthullen bij het openen van kisten. Elke kist bevat acht kaarten, maar alleen de eerste vier kaartontsluitingen zijn inbegrepen. Elke extra kaartonthulling gebruikt één sleutel.",
@@ -27,5 +22,146 @@
   "exception_expansions": "Uitbreidingen — Er zijn geen kaarten voor verblijfs- of parkuitbreidingen. Deze zijn alleen te verkrijgen wanneer gekocht met munten of diamanten.",
   "exception_upgrades": "Upgrades — Hoewel stukken voor de schuren zelf in kisten te vinden zijn, zijn ALLE upgrades alleen te verkrijgen wanneer gekocht met munten of diamanten. Dit geldt ook voor winkelupgrades. Bekijk Verkoopsevenementen voor kortingen van 25–50%!",
   "exception_employees": "Dierentuinmedewerkers — Er zijn geen puzzelstukken voor medewerkers uit kisten. Alle drie medewerkervouchers worden echter weggegeven als onderdeel van de Dagelijkse Inlogbeloning. Puzzelstukken voor 7-daagse medewerkers worden gegeven in de Season Pass. Teammedewerkerpuzzelstukken worden gegeven als dagelijkse inlogbeloningen van de Zoo Academy zodra bepaalde Academieniveaus zijn ontgrendeld.",
-  "exception_other": "Speciale gast-NPC's, persoonlijke avatarartikelen, functiegebouwen, paden en vuilnisbakken zijn ook niet beschikbaar in kisten."
+  "exception_other": "Speciale gast-NPC's, persoonlijke avatarartikelen, functiegebouwen, paden en vuilnisbakken zijn ook niet beschikbaar in kisten.",
+
+  "cost": "Kosten",
+  "limit": "Limiet",
+  "animal": "Dier",
+  "rarity": "Zeldzaamheid",
+  "biome": "Bioom",
+  "chests": "Kisten",
+  "biomes": {
+    "grasslands": "Graslanden",
+    "plains": "Vlaktes",
+    "forest": "Bos",
+    "mountains": "Bergen",
+    "savanna": "Savanne",
+    "jungle": "Jungle",
+    "water": "Water",
+    "ice": "IJs"
+  },
+
+  "friendship": {
+    "title": "Vriendschapskisten (Roze)",
+    "friendship_points": "Vriendschapspunten",
+    "intro": "Vriendschapspunten worden verdiend door andere spelers hun dierentuinen te bezoeken en hen die van jou te laten bezoeken. Zodra je 10 vriendschapspunten bereikt, wordt automatisch een Vriendschapskist toegevoegd aan je inventaris. Omdat je maximaal 5 kisten kunt bewaren, moet je ze regelmatig openen om nieuwe te blijven verdienen.",
+
+    "contents_title": "Kisteninhoud",
+    "contents_body": "Vriendschapskisten bevatten uitsluitend verblijfspuzzelstukken — ze bevatten geen kant-en-klare decoraties. Dit omvat puzzelstukken voor verblijfsdecoties en nutsbebouwen in alle bioomen. Sinds 17 februari 2022 bevatten Vriendschapskisten ook stukken voor de exclusieve Vriendschapsdieren, die via geen enkel ander kistentype kunnen worden verkregen.",
+
+    "animals_title": "Exclusieve vriendschapsdieren",
+    "animals_body": "De volgende dieren zijn exclusief voor Vriendschapskisten en kunnen via geen enkel ander kistentype worden verkregen:",
+
+    "animals_col_animal": "Dier",
+    "animals_col_rarity": "Zeldzaamheid",
+    "animals_col_biome": "Bioom",
+    "crab-eating-raccoon": "Krabetende wasbeer",
+    "short-beaked-echidna": "Kortbekstekelvarken",
+    "sitatunga": "Sitatunga",
+    "dingo": "Dingo",
+    "steenbok": "Steenbok",
+
+    "enclosures_title": "Verblijfspuzzelstukken",
+    "enclosures_body": "Vriendschapskisten bevatten puzzelstukken voor verblijfsdecoties en nutsbebouwen. Deze stukken zijn verspreid over alle bioomen en omvatten zowel decoratieve als functionele verblijfsitems.",
+
+    "tips_title": "Tips",
+    "tips_body": "Open je Vriendschapskisten regelmatig zodat je de limiet van 5 kisten niet bereikt en stopt met nieuwe verdienen. De meest efficiënte manier om vriendschapspunten te verdienen is een actieve vriendenlijst te hebben en dagelijks dierentuinen te bezoeken. Vriendschapsdieren zijn exclusief voor dit kistentype, waardoor het de enige bron is voor het voltooien van hun collecties."
+  },
+
+  "normal": {
+    "title": "Gewone Kisten (Blauw)",
+    "intro": "Gewone Kisten zijn blauwe kisten die met munten worden gekocht en behoren tot de meest toegankelijke kistentypen in het spel. Ze kunnen worden gekocht met munten of gratis worden verkregen via quests, omhooggaan in niveau en dagelijkse inlogbeloningen.",
+
+    "obtaining_title": "Gewone Kisten verkrijgen",
+    "obtaining_body": "Gewone Kisten kunnen worden gekocht met munten in de winkel. Ze worden ook gratis gegeven voor het voltooien van quests, het bereiken van nieuwe spelerniveaus en via dagelijkse inlogbeloningen. De muntenkosten van een Gewone Kist worden hoger naarmate je spelerniveau stijgt.",
+
+    "cost_title": "Muntenkosten per niveau",
+    "cost_body": "De kosten van een Gewone Kist zijn je huidige spelerniveau vermenigvuldigd met 250 munten. Bijvoorbeeld: op niveau 1 kost een kist 250 munten, op niveau 10 kost het 2.500 munten en op niveau 70 kost het 17.500 munten.",
+    "cost_col_level": "Spelerniveau",
+    "cost_col_cost": "Kistenkosten",
+
+    "contents_title": "Kisteninhoud",
+    "contents_body": "Gewone Kisten bevatten twee soorten items: verblijfspuzzelstukken en kant-en-klare dierentuindecoties. Dit maakt ze uniek onder de gratis te verkrijgen kistentypen, omdat ze rechtstreeks decoraties voor je dierentuin kunnen bieden zonder dat puzzelvoltooiing vereist is.",
+
+    "special_items_title": "Speciale Diamant-Artikelen als Puzzelstukken",
+    "special_items_body": "Normale kisten bevatten ook puzzelstukken voor een klein aantal artikelen die normaal alleen voor diamanten beschikbaar zijn. Deze kunnen gratis worden samengesteld door genoeg stukken te verzamelen:",
+
+    "animals_title": "Dierpuzzelstukken",
+    "animals_body": "Gewone Kisten bevatten puzzelstukken voor de meeste gewone Winkeldieren in alle bioomen, van Gewone tot Legendarische zeldzaamheid. De Brulaap en alle dieren exclusief voor diamantenkisten zijn niet inbegrepen.",
+
+    "tips_title": "Tips",
+    "tips_body": "Gewone Kisten zijn een uitstekende bron van kant-en-klare dierentuindecoties, waardoor ze ideaal zijn voor het opbouwen van je dierentuin. De speciale diamantitems beschikbaar als puzzelstukken — inclusief de Dierenkarrousel — vertegenwoordigen aanzienlijke waarde, dus het consistent verzamelen van Gewone Kisten is de moeite waard, zelfs op hogere niveaus."
+  },
+
+  "epic": {
+    "title": "Epische Kisten (Paars)",
+    "intro": "Epische Kisten zijn diamantenkisten die 29 diamanten per stuk kosten (voorheen bekend als Zeldzame Kisten). Ze garanderen bij elke opening zowel een puzzelstuk van paarse zeldzaamheid als een exclusief dierpuzzelstuk. Epische Kisten kunnen worden verkregen via verschillende bronnen: quests, omhooggaan in niveau, maandelijkse inlogbeloningen en de Zoo Academy.",
+
+    "contents_title": "Kisteninhoud",
+    "contents_body": "Epische Kisten bevatten puzzelstukken van Vriendschaps- en Gewone Kisten, maar omvatten niet de exclusieve dieren van die kisten. Elke Epische Kist garandeert ten minste één puzzelstuk van paarse zeldzaamheid en ten minste één exclusief dierpuzzelstuk.",
+
+    "drop_bonus_title": "Dropbonus",
+    "drop_bonus_body": "Epische Kisten hebben een roterende dropbonus die de kans vergroot op het ontvangen van puzzelstukken van een specifiek exclusief dier. Het verhoogde dier wisselt elke 6 weken en roteert door de lijst van exclusieve dieren.",
+
+    "tips_title": "Tips",
+    "tips_body": "Epische Kisten zijn de meest betaalbare diamantenkist voor 29 diamanten en bieden bij elke opening gegarandeerde exclusieve dierpuzzelstukken. De dropbonus roteert elke 6 weken — controleer het huidige bonusdier als je werkt aan een specifieke collectie. Voor deze prijs zijn Epische Kisten uitstekende waarde voor spelers die efficiënt vooruitgang willen boeken op exclusieve dierencollecties."
+  },
+
+  "retro": {
+    "title": "Retrokisten (Rood)",
+    "intro": "Retrokisten zijn diamantenkisten die 39 diamanten per stuk kosten. Ze bevatten puzzelstukken van Vriendschaps-, Gewone en Epische Kisten (exclusief de exclusieve dieren van die kisten) en hebben hun eigen grote pool exclusieve dieren. Retrokisten kunnen worden verkregen via verschillende bronnen: quests, omhooggaan in niveau, maandelijkse inlogbeloningen, de Zoo Academy en de Evenementenwinkel.",
+
+    "contents_title": "Kisteninhoud",
+    "contents_body": "Retrokisten bevatten puzzelstukken van Vriendschaps-, Gewone en Epische Kisten, maar omvatten niet de exclusieve dieren van die kisten. Elke Retrokist garandeert ten minste één exclusief puzzelstuk.",
+
+    "drop_bonus_title": "Dropbonus",
+    "drop_bonus_body": "Retrokisten hebben een roterende dropbonus die de kans vergroot op het ontvangen van puzzelstukken van een specifiek exclusief dier. Het verhoogde dier wisselt elke 4 weken en roteert door de lijst van exclusieve dieren. Dit systeem is actief sinds 24 november 2022.",
+
+    "tips_title": "Tips",
+    "tips_body": "Retrokisten roteren hun dropbonus elke 4 weken — controleer het huidige verhoogde dier voordat je kisten opent als je gericht bent op een specifieke exclusieve. Met 39 diamanten zijn Retrokisten betaalbaarder dan Legendarische Kisten en bieden ze een brede selectie van exclusieve dieren, waardoor ze een goede optie zijn voor spelers die gericht zijn op het voltooien van hun collecties."
+  },
+
+  "legendary": {
+    "title": "Legendarische Kisten (Goud)",
+    "intro": "Legendarische Kisten zijn diamantenkisten die 49 diamanten per stuk kosten. Ze zijn het meest uitgebreide kistentype, met puzzelstukken van bijna alle andere kistentypen plus hun eigen exclusieve dieren en de enige bron van winkelkarretjepuzzelstukken. Legendarische Kisten kunnen worden verkregen via verschillende bronnen: maandelijkse inlogbeloningen, omhooggaan in niveau, de Zoo Academy, de Evenementenwinkel en als questrebeloningen.",
+
+    "contents_title": "Kisteninhoud",
+    "contents_body": "Legendarische Kisten bevatten puzzelstukken van alle andere kistentypen behalve Vriendschaps- en Epische/Retro-exclusieve dieren. Ze garanderen altijd ten minste één exclusief puzzelstuk per kist.",
+    "shop_carts_body": "Legendarische kisten zijn de enige bron voor puzzelstukken van de volgende Legendarische Winkeldekoraties:",
+
+    "drop_bonus_title": "Dropbonus",
+    "drop_bonus_body": "Legendarische Kisten hebben een roterende dropbonus die de kans vergroot op het ontvangen van puzzelstukken van een specifiek exclusief dier. Het verhoogde dier wisselt elke 8 weken en roteert door de lijst van exclusieve dieren. Dit systeem is actief sinds 24 november 2022.",
+
+    "tips_title": "Tips",
+    "tips_body": "Controleer welk exclusief dier momenteel de dropbonus heeft voordat je diamanten uitgeeft aan Legendarische Kisten — als je dat dier nodig hebt, is het een goed moment om er meerdere te openen. Omdat Legendarische Kisten stukken van de meeste andere kisten bevatten, zijn ze een efficiënte alles-in-één bron wanneer je diamanten over hebt. De Winkelkarretjedecoties zijn Legendarische-zeldzaamheid en alleen hier verkrijgbaar, waardoor ze waardevol zijn voor collecties."
+  },
+
+  "terraqua": {
+    "title": "Terraqua Kisten",
+    "intro": "Terraqua-kisten kunnen worden gekocht voor 29 diamanten. Ze werden geïntroduceerd op 13 maart 2023 en bevatten onderdelen voor Terrarium- en Aquariumhuizen. Puzzelstukken uit Terraqua-kisten zijn ook te vinden op het gelukswiel. De Premium- en VIP-passen voor seizoen 4 van de Season Pass bevatten Terraqua-kisten als beloningen. Er zijn GEEN dieren in de Terraqua-kisten.",
+    "release_label": "Releasedatum"
+  },
+
+  "noctavia": {
+    "title": "NoctAvia Kisten",
+    "intro": "NoctAvia-kisten kunnen worden gekocht voor 29 diamanten. Ze werden geïntroduceerd op 7 april 2026 en bevatten onderdelen voor de Noctarium- en Aviaryregio's. Ze kunnen alleen worden verkregen binnen deze twee regio's. Puzzelstukken uit NoctAvia-kisten zijn ook te vinden op het gelukswiel of als beloningsoptie bij het omhoog gaan van het niveau van een vriend. Aviary-exclusieve onderdelen zijn te vinden in Aviary-veerbeloningen. Er zijn GEEN dieren in de NoctAvia-kisten.",
+    "release_label": "Releasedatum"
+  },
+
+  "video": {
+    "title": "Videokisten",
+    "intro": "De Videokist is een bonuskist die eenmaal per dag beschikbaar is door Video-advertenties te bekijken. Net als elke andere kist kunnen meerdere Videokisten in de loop der tijd worden verzameld zonder ze te openen.",
+
+    "content_title": "Inhoud",
+    "content_body": "De Videokist bevat alle items die in een Gewone (munten) kist te vinden zijn, inclusief winkel dieren en legendarische (gele) puzzelstukken.",
+
+    "availability_title": "Beschikbaarheid",
+    "availability_body": "Je kunt de Videokist vinden onder het standaard tabblad \"Kist\" in het rechteruitklapmenu. Het verschijnt daar zodra je video-advertenties inschakelt in de Spelinstellingen door het vinkje \"Geen videoadvertenties tonen\" uit te schakelen. Zorg ervoor dat je de optie om advertenties te verbergen bij het verzamelen van munten van entreebalies niet aanvinkt, want dit deactiveert de instelling.",
+
+    "limit_title": "Dagelijkse limiet en opslag",
+    "limit_body": "Je kunt slechts één Videokist ontvangen per 24 uur. Omdat videokisten worden verdiend en niet worden gekocht, hebben ze geen opslaglimiet.",
+
+    "platform_title": "Platformbeschikbaarheid",
+    "platform_body": "Videokisten zijn alleen beschikbaar voor gebruikers die het spel spelen via de app op Android of iOS. Ze zijn niet beschikbaar op apparaten die geen advertenties ondersteunen of op bepaalde platforms zoals Steam, Epic Games of Amazon."
+  }
 }

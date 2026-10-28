@@ -20,7 +20,7 @@ export interface ChestBoostListItem {
   animal: ChestBoostAnimal;
 }
 
-export interface ChestBoostDetail extends ChestBoostListItem {}
+export type ChestBoostDetail = ChestBoostListItem;
 
 export interface ChestBoostCreateInput {
   startDate: string;

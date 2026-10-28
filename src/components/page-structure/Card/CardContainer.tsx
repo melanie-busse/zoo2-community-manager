@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 interface CardContainerProps {
   children: ReactNode;
-  onClick?: () => void; // 💡 Macht den onClick-Handler als Prop verfügbar
+  onClick?: () => void;
 }
 
 export default function CardContainer({ children, onClick }: CardContainerProps) {

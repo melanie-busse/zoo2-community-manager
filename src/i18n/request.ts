@@ -26,7 +26,7 @@ const namespaces = [
   "contestfaq",
   "academyfaq",
   "visitorfaq",
-  "gamefaq",
+  "wiki_game",
   "clubfaq",
   "adventcalendar",
   "animaltrades",
@@ -40,7 +40,6 @@ const namespaces = [
   "icecreamvendor",
   "kujalipark",
   "loginrewards",
-  "noctaviachests",
   "prizewheel",
   "questsfaq",
   "rescuecenter",
@@ -54,8 +53,6 @@ const namespaces = [
   "seasonpasshistory",
   "sparklinganimals",
   "terraineditor",
-  "terraquachests",
-  "videochests",
   "chestBoosts",
 ] as const;
 
