@@ -98,7 +98,10 @@
     "wiki_terrain_editor": "Terrain Editor",
     "wiki_terraqua_chests": "Terraqua Chests",
     "wiki_video_chests": "Video Chests",
-    "wiki_epic_chests": "Epic Chests"
+    "wiki_epic_chests": "Epic Chests",
+    "chests": "Cofres",
+    "chests_overview": "Resumen",
+    "chests_create": "Añadir"
   },
   "inventory_collections": "Álbum de Colección"
 }

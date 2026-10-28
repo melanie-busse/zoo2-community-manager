@@ -1,23 +1,18 @@
 {
   "title": "Truhen-Übersicht",
-  "intro": "Schatztruhen bieten Spielern eine Möglichkeit, fast alles zu erwerben, was für den Zoo gekauft werden kann. Fast alle Quest-bezogenen Gegenstände mit Diamantenkosten können in normalen Truhen gefunden werden, die Münzen kosten. Obwohl das Bezahlen mit Diamanten schneller geht, lohnt sich auch Geduld!",
-
-  "overview_title": "Kurzübersicht",
-  "overview_body": "Es gibt 6 Arten von Truhen im Spiel. Legendäre, Retro- und Epische Truhen wechseln von Zeit zu Zeit geboostete Tiere. Unabhängig davon, in welcher Truhe sich ein geboostetes Tier befindet, ist sein Puzzleteil entweder lila (selten) oder gelb (legendär). Lila Teile kosten 2.500 Tickets zum Vervollständigen mit nur einem Puzzleteil. Gelbe Teile kosten 10.000 Tickets mit nur einem Puzzleteil. Manchmal kann bei einem Truhenevent auf 15 % Rabatt gewartet werden, um sie zu vervollständigen. Historisch gesehen, wenn die Popularität des Tiers 840 Punkte oder mehr (84 Diamanten) beträgt, wird es ein gelbes Puzzleteil sein.",
+  "intro": "Schatztruhen bieten Spielern eine Möglichkeit, fast alles zu erwerben, was für den Zoo gekauft werden kann. Es gibt 6 Arten von Truhen im Spiel. Legendäre, Retro- und Epische Truhen wechseln von Zeit zu Zeit geboostete Tiere. Unabhängig davon, in welcher Truhe sich ein geboostetes Tier befindet, ist sein Puzzleteil entweder lila (selten) oder gelb (legendär). Lila Teile kosten 2.500 Tickets zum Vervollständigen mit nur einem Puzzleteil. Gelbe Teile kosten 10.000 Tickets mit nur einem Puzzleteil. Manchmal kann bei einem Truhenevent auf 15 % Rabatt gewartet werden, um sie zu vervollständigen.",
 
   "chest_types_title": "Truhentypen",
-  "chest_friendship": "Freundschaftstruhen (Rosa) – Kosten: 10 Herzen. Enthalten Tiere (kein garantiertes Teil). Nur durch Freundesbelohnungen einlösbar, nicht kaufbar. Limit von 5 – täglich öffnen, um keine Belohnungen zu verlieren.",
-  "chest_normal": "Normale Truhen (Blau) – Kosten: Münzen (levelabhängig). Enthalten alle Story-Tiere (kein garantiertes Teil). Kein Kauflimit über die 100-Truhen-Stapelregel hinaus.",
-  "chest_epic": "Epische Truhen (Lila) – Kosten: 29 Diamanten. Enthalten Tiere mit 1 garantiertem Puzzleteil. Bieten rotierende geboostete Tiere.",
-  "chest_retro": "Retro-Truhen (Rot) – Kosten: 39 Diamanten. Enthalten Tiere mit 1 garantiertem Puzzleteil. Bieten rotierende geboostete Tiere.",
-  "chest_legendary": "Legendäre Truhen (Gold) – Enthalten Tiere mit 1 garantiertem Puzzleteil. Bieten rotierende geboostete Tiere.",
-  "chest_video": "Video-Truhen – Durch Ansehen von Videowerbung verdient. Können über das 100-Truhen-Limit gestapelt werden.",
-
-  "forecasts_title": "Truhen-Prognosen",
-  "forecasts_body": "Für zukünftige Truhenvorhersagen, siehe die Prognosen-Seite.",
-
-  "limits_title": "Kauflimits",
-  "limits_body": "Freundschaftstruhen sind nur durch Belohnungen beim Helfen von Freunden einlösbar und können nicht mit Münzen oder Diamanten gekauft werden. Sie haben ein Limit von 5 – sobald 5 gestapelt sind, gehen weitere Truhenbelohnungen verloren. Es wird empfohlen, sie täglich zu öffnen. Das bekannte Limit für kaufbare Truhen beträgt 100. Nach dem Sammeln von 100 Truhen können sie weiter gestapelt werden, aber es können keine weiteren gekauft werden, bis genug geöffnet wurden, um unter 100 zu kommen. Truhen aus dem Kalender, Eventbelohnungen oder Akademiebelohnungen sollten weiterhin über das 100er-Limit hinaus stapelbar sein.",
+  "chest_friendship": " Kosten: 10 Herzen. Enthalten Tiere (kein garantiertes Teil). Nur durch Freundesbelohnungen einlösbar, nicht kaufbar. Limit von 5 – täglich öffnen, um keine Belohnungen zu verlieren.",
+  "chest_normal": "Kosten: Münzen (levelabhängig). Enthalten alle Story-Tiere (kein garantiertes Teil). Limit 100.",
+  "title_epic": "Epische Truhen (Lila)",
+  "chest_epic": "Kosten: 29 Diamanten. Enthalten Tiere mit 1 garantiertem Puzzleteil. Bieten rotierende geboostete Tiere. Limit 100.",
+  "title_retro": "Retro-Truhen (Rot)",
+  "chest_retro": "Kosten: 39 Diamanten. Enthalten Tiere mit 1 garantiertem Puzzleteil. Bieten rotierende geboostete Tiere. Limit 100.",
+  "title_legendary": "Legendäre Truhen (Gold)",
+  "chest_legendary": " Enthalten Tiere mit 1 garantiertem Puzzleteil. Bieten rotierende geboostete Tiere. Limit 100.",
+  "title_video": "Video-Truhen ",
+  "chest_video": "Durch Ansehen von Videowerbung verdient. Können über das 100-Truhen-Limit gestapelt werden. Limit 100.",
 
   "keys_title": "Schlüssel",
   "keys_body": "Schlüssel können für 5 Diamanten pro Stück gekauft oder als Teil der täglichen Login-Belohnungen oder des Season Pass erhalten werden. Gelegentlich können sie im Season-Pass-Shop kaufbar sein. Shell Games bieten oft Schlüssel als kostenlosen Preis an. Schlüssel werden verwendet, um beim Öffnen von Truhen zusätzliche Karten aufzudecken. Jede Truhe enthält acht Karten, aber nur die ersten vier Kartenaufdeckungen sind inklusive. Jede weitere Kartenaufdeckung verwendet einen Schlüssel.",
@@ -27,5 +22,113 @@
   "exception_expansions": "Erweiterungen – Es gibt keine Karten für Gehege- oder Parkerweiterungen. Diese können nur erworben werden, wenn sie mit Münzen oder Diamanten gekauft werden.",
   "exception_upgrades": "Upgrades – Obwohl Teile für die Tierunterkünfte selbst in Truhen gefunden werden können, können ALLE Upgrades nur beim Kauf mit Münzen oder Diamanten erhalten werden. Dies schließt Shop-Upgrades ein. Schau bei Sale-Events für 25–50 % Rabatt!",
   "exception_employees": "Zooangestellte – Es gibt keine Puzzleteile für Angestellte aus Truhen. Jedoch werden alle drei Angestellten-Gutscheine als Teil der täglichen Login-Belohnung vergeben. Puzzleteile für 7-Tage-Angestellte werden im Season Pass gegeben. Team-Angestellten-Puzzleteile werden als tägliche Zoo-Akademie-Login-Belohnungen vergeben, sobald bestimmte Akademielevel freigeschaltet sind.",
-  "exception_other": "Special-Guest-NPCs, persönliche Avatargegenstände, Funktionsgebäude, Wege und Mülleimer sind ebenfalls nicht in Truhen verfügbar."
+  "exception_other": "Special-Guest-NPCs, persönliche Avatargegenstände, Funktionsgebäude, Wege und Mülleimer sind ebenfalls nicht in Truhen verfügbar.",
+
+  "cost": "Kosten",
+  "limit": "Limit",
+  "animal": "Tier",
+  "rarity": "Seltenheit",
+  "biome": "Biom",
+  "chests": "Truhen",
+  "biomes": {
+    "grasslands": "Gras",
+    "plains": "Steppe",
+    "forest": "Wald",
+    "mountains": "Berg",
+    "savanna": "Savanne",
+    "jungle": "Dschungel",
+    "water": "Wasser",
+    "ice": "Eis"
+  },
+
+  "friendship": {
+    "title": "Freundschaftstruhen (Rosa)",
+    "friendship_points": "Freundschaftspunkte",
+    "intro": "Freundschaftspunkte werden verdient, indem du die Zoos anderer Spieler besuchst und sie deinen Zoo besuchen. Sobald du 10 Freundschaftspunkte erreicht hast, wird automatisch eine Freundschafts-Truhe zu deinem Inventar hinzugefügt. Da du maximal 5 Truhen besitzen kannst, solltest du sie regelmäßig öffnen, damit du weiterhin neue erhalten kannst.",
+
+    "contents_title": "Truheninhalt",
+    "contents_body": "Freundschafts-Truhen enthalten ausschließlich Gehege-Puzzleteile – keine fertig platzierbaren Dekorationen. Dazu gehören Puzzleteile für Gehegedekorationen und Nutzgebäude in allen Biomen. Seit dem 17. Februar 2022 enthalten Freundschafts-Truhen außerdem Teile für die exklusiven Freundschafts-Tiere, die aus keiner anderen Truhenart erhältlich sind.",
+
+    "animals_title": "Exklusive Freundschafts-Tiere",
+    "animals_body": "Die folgenden Tiere sind exklusiv in Freundschafts-Truhen erhältlich und können durch keinen anderen Truppentyp erworben werden:",
+
+    "animals_col_animal": "Tier",
+    "animals_col_rarity": "Seltenheit",
+    "animals_col_biome": "Biom",
+    "crab-eating-raccoon": "Krabbenwaschbär",
+    "short-beaked-echidna": "Kurzschnabeligel",
+    "sitatunga": "Wasserkudu",
+    "dingo": "Dingo",
+    "steenbok": "Steinböckchen",
+
+    "enclosures_title": "Gehege-Puzzleteile",
+    "enclosures_body": "Freundschafts-Truhen enthalten Puzzleteile für Gehegedekorationen und Nutzgebäude. Diese Teile sind über alle Biome verteilt und umfassen sowohl dekorative als auch funktionale Gehegeobjekte.",
+
+    "tips_title": "Tipps",
+    "tips_body": "Öffne deine Freundschafts-Truhen regelmäßig, damit du nicht das Limit von 5 Truhen erreichst und aufhörst, neue zu erhalten. Am effizientesten sammelst du Freundschaftspunkte mit einer aktiven Freundesliste und täglichen Zoobesuchen. Freundschafts-Tiere sind exklusiv in diesem Truppentyp erhältlich, was ihn zur einzigen Quelle für deren Sammlungsvervollständigung macht."
+  },
+  "normal": {
+    "title": "Normale Truhen (Blau)",
+    "intro": "Normale Truhen sind mit Münzen kaufbare Truhen und gehören zu den zugänglichsten Truhenarten im Spiel. Sie können mit Münzen gekauft oder kostenlos durch Quests, Level-Aufstiege und tägliche Login-Belohnungen erhalten werden.",
+
+    "obtaining_title": "Normale Truhen erhalten",
+    "obtaining_body": "Normale Truhen können im Shop für Münzen gekauft werden. Sie werden auch kostenlos vergeben für das Abschließen von Quests, das Erreichen neuer Spielerlevel und durch tägliche Login-Belohnungen. Die Münzkosten einer normalen Truhe richten sich nach deinem aktuellen Spielerlevel.",
+
+    "cost_title": "Münzkosten nach Level",
+    "cost_body": "Die Kosten einer normalen Truhe betragen dein aktuelles Spielerlevel multipliziert mit 250 Münzen. Beispielsweise kostet eine Truhe auf Level 1 250 Münzen, auf Level 10 kostet sie 2.500 Münzen und auf Level 70 kostet sie 17.500 Münzen.",
+    "cost_col_level": "Spielerlevel",
+    "cost_col_cost": "Truhenkosten",
+
+    "contents_title": "Truheninhalt",
+    "contents_body": "Normale Truhen enthalten zwei Arten von Gegenständen: Gehege-Puzzleteile und direkt platzierbare Zoo-Dekorationen. Das macht sie einzigartig unter den kostenlos erhältlichen Truhenarten, da sie direkt Dekorationen für deinen Zoo bereitstellen können, ohne dass Puzzles vervollständigt werden müssen.",
+
+    "special_items_title": "Besondere Diamanten-Artikel als Puzzleteile",
+    "special_items_body": "Normale Truhen enthalten auch Puzzleteile für eine kleine Anzahl von Artikeln, die normalerweise nur für Diamanten erhältlich sind. Diese können durch Sammeln von genügend Teilen kostenlos zusammengebaut werden:",
+
+    "animals_title": "Tier-Puzzleteile",
+    "animals_body": "Normale Truhen enthalten Puzzleteile für die meisten regulären Shop-Tiere aller Biome, von Gewöhnlich bis Legendär. Der Brüllaffe und alle Tiere, die exklusiv in Diamanten-Truhen erhältlich sind, sind nicht enthalten.",
+
+    "tips_title": "Tipps",
+    "tips_body": "Normale Truhen sind eine hervorragende Quelle für direkt platzierbare Zoo-Dekorationen und daher ideal, um deinen Zoo auszubauen. Die besonderen Diamanten-Artikel, die als Puzzleteile erhältlich sind – darunter das Tierkarussell – stellen einen erheblichen Wert dar, daher lohnt es sich, Normale Truhen auch auf höheren Leveln regelmäßig zu sammeln."
+  },
+  "epic": {
+    "title": "Epische Truhen (Lila)",
+    "intro": "Epische Truhen sind Diamantentruhen, die je 29 Diamanten kosten (früher bekannt als Seltene Truhen). Sie garantieren bei jeder Öffnung sowohl ein lila Seltenheits-Puzzleteil als auch ein exklusives Tier-Puzzleteil. Epische Truhen können aus verschiedenen Quellen erhalten werden: Quests, Level-Aufstiege, monatliche Login-Belohnungen und die Zoo-Akademie.",
+
+    "contents_title": "Truheninhalt",
+    "contents_body": "Epische Truhen enthalten Puzzleteile aus Freundschafts- und Normalen Truhen, jedoch nicht die exklusiven Tiere dieser Truhen. Jede Epische Truhe garantiert mindestens ein lila Seltenheits-Puzzleteil und mindestens ein exklusives Tier-Puzzleteil.",
+
+    "drop_bonus_title": "Boost-Tier-Bonus",
+    "drop_bonus_body": "Epische Truhen bieten einen rotierenden Boost-Tier-Bonus, der die Chance erhöht, Puzzleteile eines bestimmten exklusiven Tieres zu erhalten. Das begünstigte Tier wechselt alle 6 Wochen und rotiert durch die Liste der exklusiven Tiere.",
+
+    "tips_title": "Tipps",
+    "tips_body": "Epische Truhen sind mit 29 Diamanten die günstigsten Diamantentruhen und bieten bei jeder Öffnung garantierte exklusive Tier-Puzzleteile. Der Boost-Tier-Bonus wechselt alle 6 Wochen – überprüfe das aktuelle Bonustier, wenn du an einer bestimmten Sammlung arbeitest. Zu diesem Preis sind Epische Truhen ein ausgezeichnetes Preis-Leistungs-Verhältnis für Spieler, die ihre exklusiven Tiersammlungen effizient vorantreiben möchten."
+  },
+  "retro": {
+    "title": "Retro-Truhen (Rot)",
+    "intro": "Retro-Truhen sind Diamantentruhen, die je 39 Diamanten kosten. Sie enthalten Puzzleteile aus Freundschafts-, Normalen und Epischen Truhen (ohne die exklusiven Tiere dieser Truhen) und haben einen eigenen großen Pool exklusiver Tiere. Retro-Truhen können aus verschiedenen Quellen erhalten werden: Quests, Level-Aufstiege, monatliche Login-Belohnungen, die Zoo-Akademie und der Events-Shop.",
+
+    "contents_title": "Truppeninhalt",
+    "contents_body": "Retro-Truhen enthalten Puzzleteile aus Freundschafts-, Normalen und Epischen Truhen, jedoch nicht die exklusiven Tiere dieser Truhen. Jede Retro-Truhe garantiert mindestens ein exklusives Puzzleteil.",
+
+    "drop_bonus_title": "Boost-Tier-Bonus",
+    "drop_bonus_body": "Retro-Truhen bieten einen rotierenden Boost-Tier-Bonus, der die Chance erhöht, Puzzleteile eines bestimmten exklusiven Tieres zu erhalten. Das begünstigte Tier wechselt alle 4 Wochen und rotiert durch die Liste der exklusiven Tiere. Dieses System ist seit dem 24. November 2022 aktiv.",
+
+    "tips_title": "Tipps",
+    "tips_body": "Retro-Truhen wechseln ihren Drop-Bonus alle 4 Wochen – überprüfe das aktuell begünstigte Tier, bevor du Truhen öffnest, wenn du auf ein bestimmtes Exklusivtier abzielst. Mit 39 Diamanten sind Retro-Truhen günstiger als Legendäre Truhen und bieten eine große Auswahl exklusiver Tiere, was sie zu einer guten Wahl für Spieler macht, die ihre Sammlungen vervollständigen möchten."
+  },
+  "legendary": {
+    "title": "Legendäre Truhen (Gold)",
+    "intro": "Legendäre Truhen sind Diamantentruhen, die je 49 Diamanten kosten. Sie sind der umfassendste Truhentyp und enthalten Puzzleteile aus fast allen anderen Truhenarten sowie exklusive eigene Tiere und sind die einzige Quelle für Shop-Wagen-Puzzleteile. Legendäre Truhen können aus verschiedenen Quellen erhalten werden: monatliche Login-Belohnungen, Level-Aufstiege, die Zoo-Akademie, der Events-Shop und als Quest-Belohnungen.",
+
+    "contents_title": "Truheninhalt",
+    "contents_body": "Legendäre Truhen enthalten Puzzleteile aus allen anderen Truhenarten außer Freundschafts-,  Epischen- und Retro-exklusiven Tieren. Sie garantieren immer mindestens ein exklusives Puzzleteil pro Truhe.",
+    "shop_carts_body": "Legendäre Truhen sind die einzige Quelle für Puzzleteile der folgenden Legendären Shop-Dekorationen:",
+
+    "drop_bonus_title": "Boost-Tier-Bonus",
+    "drop_bonus_body": "Legendäre Truhen bieten einen rotierenden Boost-Tier-Bonus, der die Chance erhöht, Puzzleteile eines bestimmten exklusiven Tieres zu erhalten. Das begünstigte Tier wechselt alle 8 Wochen und rotiert durch die Liste der exklusiven Tiere. Dieses System ist seit dem 24. November 2022 aktiv.",
+
+    "tips_title": "Tipps",
+    "tips_body": "Überprüfe, welches exklusive Tier aktuell den Drop-Bonus hat, bevor du Diamanten für Legendäre Truhen ausgibst – wenn du dieses Tier brauchst, ist es ein guter Zeitpunkt, mehrere zu öffnen. Da Legendäre Truhen Teile aus den meisten anderen Truhen enthalten, sind sie eine effiziente All-in-One-Quelle, wenn du Diamanten übrig hast. Die Shop-Wagen-Dekorationen sind von Legendärer Seltenheit und nur hier erhältlich, was sie wertvoll für Sammlungen macht."
+  }
 }

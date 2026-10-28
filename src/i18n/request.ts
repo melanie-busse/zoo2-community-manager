@@ -37,13 +37,10 @@ const namespaces = [
   "currency",
   "fashionboutique",
   "friends",
-  "friendshipchests",
   "icecreamvendor",
   "kujalipark",
-  "legendarychests",
   "loginrewards",
   "noctaviachests",
-  "normalchests",
   "prizewheel",
   "questsfaq",
   "rescuecenter",
@@ -54,13 +51,12 @@ const namespaces = [
   "diamonds",
   "rainforestpark",
   "videoads",
-  "retrochests",
   "seasonpasshistory",
   "sparklinganimals",
   "terraineditor",
   "terraquachests",
   "videochests",
-  "epicchests",
+  "chestBoosts",
 ] as const;
 
 export default getRequestConfig(async ({ requestLocale }) => {
