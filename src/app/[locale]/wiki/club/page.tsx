@@ -1,12 +1,12 @@
 import PageWrapper from "@/components/page-structure/page/PageWrapper";
 import ContentWrapper from "@/components/page-structure/page/ContentWrapper";
-import WikiAcademyContent from "@/components/pages/wiki/academy/WikiAcademyContent";
+import WikiClubContent from "@/components/pages/wiki/club/WikiClubContent";
 
-export default async function WikiAcademyPage() {
+export default async function WikiClubPage() {
   return (
     <PageWrapper>
       <ContentWrapper>
-        <WikiAcademyContent />
+        <WikiClubContent />
       </ContentWrapper>
     </PageWrapper>
   );

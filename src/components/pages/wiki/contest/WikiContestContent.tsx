@@ -1,34 +1,14 @@
 "use client";
 
-import styled from "styled-components";
+import { useTranslations } from "next-intl";
+import React from "react";
 
-interface Props {
-  intro: string;
-  descriptionTitle: string;
-  descriptionP1: string;
-  descriptionP2: string;
-  descriptionP3: string;
-  descriptionP4: string;
-  newMembersTitle: string;
-  newMembersBody: string;
-  donationTitle: string;
-  donationIntro: string;
-  contestPointsTitle: string;
-  contestPointsBody: string;
-  memberPointsTitle: string;
-  memberPointsBody: string;
-  rankBonusTitle: string;
-  rankBonusIntro: string;
-  rewardsTitle: string;
-  rewardsBody: string;
-  statueRewardsTitle: string;
-  specialCoatRewardsTitle: string;
-  colRank: string;
-  colMultiplier: string;
-  colGuildExp: string;
-  colPuzzlePct: string;
-  colAnimalPurchases: string;
-}
+import WikiContainer from "@/components/pages/wiki/_elements/WikiContainer";
+import WikiHeader from "@/components/pages/wiki/_elements/WikiHeader";
+import WikiCard from "@/components/pages/wiki/_elements/WikiCard";
+import { WikiTable } from "@/components/pages/wiki/_elements/WikiTable";
+import WikiSubSectionTitle from "@/components/pages/wiki/_elements/WikiSubSectionTitle";
+import WikiTableWrapper from "@/components/pages/wiki/_elements/WikiTableWrapper";
 
 const STATUE_REWARDS: [string, number, number][] = [
   ["1", 10000, 100],
@@ -83,191 +63,111 @@ const SPECIAL_COAT_REWARDS: [string, number, number][] = [
   ["1501+", 550, 1],
 ];
 
-export default function ContestFaqContent({
-  intro,
-  descriptionTitle,
-  descriptionP1,
-  descriptionP2,
-  descriptionP3,
-  descriptionP4,
-  newMembersTitle,
-  newMembersBody,
-  donationTitle,
-  donationIntro,
-  contestPointsTitle,
-  contestPointsBody,
-  memberPointsTitle,
-  memberPointsBody,
-  rankBonusTitle,
-  rankBonusIntro,
-  rewardsTitle,
-  rewardsBody,
-  statueRewardsTitle,
-  specialCoatRewardsTitle,
-  colRank,
-  colMultiplier,
-  colGuildExp,
-  colPuzzlePct,
-  colAnimalPurchases,
-}: Props) {
+export default function WikiContestContent() {
+  const t = useTranslations("wiki_contest");
+
   return (
-    <>
-      <IntroParagraph>{intro}</IntroParagraph>
+    <WikiContainer>
+      <WikiHeader title={t("title")} introParagraph={t("intro")} />
 
-      <Section>
-        <SectionTitle>{descriptionTitle}</SectionTitle>
-        <p>{descriptionP1}</p>
-        <p>{descriptionP2}</p>
-        <p>{descriptionP3}</p>
-        <p>{descriptionP4}</p>
-      </Section>
+      <WikiCard title={t("description_title")}>
+        <p>{t("description_p1")}</p>
+        <p>{t("description_p2")}</p>
+        <p>{t("description_p3")}</p>
+        <p>{t("description_p4")}</p>
+      </WikiCard>
 
-      <Section>
-        <SectionTitle>{newMembersTitle}</SectionTitle>
-        <p>{newMembersBody}</p>
-      </Section>
+      <WikiCard title={t("new_members_title")}>
+        <p>{t("new_members_body")}</p>
+      </WikiCard>
 
-      <Section>
-        <SectionTitle>{donationTitle}</SectionTitle>
-        <p>{donationIntro}</p>
-        <SubSectionTitle>{contestPointsTitle}</SubSectionTitle>
-        <p>{contestPointsBody}</p>
-        <SubSectionTitle>{memberPointsTitle}</SubSectionTitle>
-        <p>{memberPointsBody}</p>
-      </Section>
+      <WikiCard title={t("donation_title")}>
+        <p>{t("donation_intro")}</p>
 
-      <Section>
-        <SectionTitle>{rankBonusTitle}</SectionTitle>
-        <p>{rankBonusIntro}</p>
-        <TableWrapper>
-          <StyledTable>
+        <WikiSubSectionTitle>{t("contest_points_title")}</WikiSubSectionTitle>
+        <p>{t("contest_points_body")}</p>
+
+        <WikiSubSectionTitle>{t("member_points_title")}</WikiSubSectionTitle>
+        <p>{t("member_points_body")}</p>
+      </WikiCard>
+
+      <WikiCard title={t("rank_bonus_title")}>
+        <p>{t("rank_bonus_intro")}</p>
+        <WikiTableWrapper>
+          <WikiTable>
             <thead>
               <tr>
-                <th>{colRank}</th>
-                <th>{colMultiplier}</th>
+                <th>{t("col_rank")}</th>
+                <th>{t("col_multiplier")}</th>
               </tr>
             </thead>
             <tbody>
-              <tr><td>1</td><td>×4</td></tr>
-              <tr><td>2</td><td>×3</td></tr>
-              <tr><td>3</td><td>×2</td></tr>
-              <tr><td>4+</td><td>×1</td></tr>
-            </tbody>
-          </StyledTable>
-        </TableWrapper>
-      </Section>
-
-      <Section>
-        <SectionTitle>{rewardsTitle}</SectionTitle>
-        <p>{rewardsBody}</p>
-
-        <SubSectionTitle>{statueRewardsTitle}</SubSectionTitle>
-        <TableWrapper>
-          <StyledTable>
-            <thead>
               <tr>
-                <th>{colRank}</th>
-                <th>{colGuildExp}</th>
-                <th>{colPuzzlePct}</th>
+                <td>1</td>
+                <td>×4</td>
               </tr>
-            </thead>
-            <tbody>
-              {STATUE_REWARDS.map(([rank, exp, puzzle]) => (
-                <tr key={rank}>
-                  <td>{rank}</td>
-                  <td>{exp.toLocaleString()}</td>
-                  <td>{puzzle}%</td>
-                </tr>
-              ))}
-            </tbody>
-          </StyledTable>
-        </TableWrapper>
-
-        <SubSectionTitle>{specialCoatRewardsTitle}</SubSectionTitle>
-        <TableWrapper>
-          <StyledTable>
-            <thead>
               <tr>
-                <th>{colRank}</th>
-                <th>{colGuildExp}</th>
-                <th>{colAnimalPurchases}</th>
+                <td>2</td>
+                <td>×3</td>
               </tr>
-            </thead>
-            <tbody>
-              {SPECIAL_COAT_REWARDS.map(([rank, exp, purchases]) => (
-                <tr key={rank}>
-                  <td>{rank}</td>
-                  <td>{exp.toLocaleString()}</td>
-                  <td>{purchases}</td>
-                </tr>
-              ))}
+              <tr>
+                <td>3</td>
+                <td>×2</td>
+              </tr>
+              <tr>
+                <td>4+</td>
+                <td>×1</td>
+              </tr>
             </tbody>
-          </StyledTable>
-        </TableWrapper>
-      </Section>
-    </>
+          </WikiTable>
+        </WikiTableWrapper>
+      </WikiCard>
+
+      <WikiCard title={t("rewards_title")}>
+        <p>{t("rewards_body")}</p>
+
+        <WikiSubSectionTitle>{t("statue_rewards_title")}</WikiSubSectionTitle>
+
+        <WikiTable>
+          <thead>
+            <tr>
+              <th>{t("col_rank")}</th>
+              <th>{t("col_guild_exp")}</th>
+              <th>{t("col_puzzle_pct")}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {STATUE_REWARDS.map(([rank, exp, puzzle]) => (
+              <tr key={rank}>
+                <td>{rank}</td>
+                <td>{exp.toLocaleString()}</td>
+                <td>{puzzle}%</td>
+              </tr>
+            ))}
+          </tbody>
+        </WikiTable>
+
+        <WikiSubSectionTitle>{t("special_coat_rewards_title")}</WikiSubSectionTitle>
+
+        <WikiTable>
+          <thead>
+            <tr>
+              <th>{t("col_rank")}</th>
+              <th>{t("col_guild_exp")}</th>
+              <th>{t("col_animal_purchases")}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {SPECIAL_COAT_REWARDS.map(([rank, exp, purchases]) => (
+              <tr key={rank}>
+                <td>{rank}</td>
+                <td>{exp.toLocaleString()}</td>
+                <td>{purchases}</td>
+              </tr>
+            ))}
+          </tbody>
+        </WikiTable>
+      </WikiCard>
+    </WikiContainer>
   );
 }
-
-const IntroParagraph = styled.p`
-  font-size: 1rem;
-  color: ${({ theme }) => theme.colors.ui.textMain};
-  margin-bottom: ${({ theme }) => theme.spacing(3)};
-  line-height: 1.6;
-`;
-
-const Section = styled.section`
-  margin-bottom: ${({ theme }) => theme.spacing(5)};
-
-  p {
-    margin-bottom: ${({ theme }) => theme.spacing(2)};
-    line-height: 1.6;
-    color: ${({ theme }) => theme.colors.ui.textMain};
-  }
-`;
-
-const SectionTitle = styled.h2`
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: ${({ theme }) => theme.colors.primary[500]};
-  margin-bottom: ${({ theme }) => theme.spacing(2)};
-  padding-bottom: ${({ theme }) => theme.spacing(1)};
-  border-bottom: 2px solid ${({ theme }) => theme.colors.primary[500]};
-`;
-
-const SubSectionTitle = styled.h3`
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: ${({ theme }) => theme.colors.ui.textMain};
-  margin-top: ${({ theme }) => theme.spacing(3)};
-  margin-bottom: ${({ theme }) => theme.spacing(1)};
-`;
-
-const TableWrapper = styled.div`
-  overflow-x: auto;
-  margin-bottom: ${({ theme }) => theme.spacing(3)};
-`;
-
-const StyledTable = styled.table`
-  border-collapse: collapse;
-  width: 100%;
-  max-width: 500px;
-  font-size: 0.9rem;
-
-  th,
-  td {
-    padding: ${({ theme }) => theme.spacing(1)} ${({ theme }) => theme.spacing(2)};
-    text-align: left;
-    border: 1px solid ${({ theme }) => theme.colors.ui.border};
-  }
-
-  th {
-    background: ${({ theme }) => theme.colors.primary[500]};
-    color: #fff;
-    font-weight: 600;
-  }
-
-  tr:nth-child(even) td {
-    background: rgba(0, 0, 0, 0.03);
-  }
-`;

@@ -84,5 +84,27 @@
   "joining_invitation": "If you already know a club leader, provide your Support ID for them to send you a direct invitation. Give the exact case-sensitive alpha-numeric ID from your settings. You cannot receive invitations while already in a club, so leave first.",
 
   "finding_title": "Finding an Active Club",
-  "finding_body": "Search social media for Zoo 2 communities to connect with club leaders, or use the Past Contests section (1-2-3 icon, the fifth icon from the left in the clubhouse) to see which teams were recently active and how well they placed in contest rankings."
+  "finding_body": "Search social media for Zoo 2 communities to connect with club leaders, or use the Past Contests section (1-2-3 icon, the fifth icon from the left in the clubhouse) to see which teams were recently active and how well they placed in contest rankings.",
+  "rank_titles": [
+    "Small Bunny",
+    "Clever Fox",
+    "Mischievous Monkey",
+    "Mighty Bear",
+    "Proud Lion",
+    "Elegant Swan",
+    "Bold Eagle",
+    "Tireless Panda",
+    "Lively Mandrill",
+    "Rugged Reindeer",
+    "Tough Wild Dog",
+    "Strong Bison",
+    "Fearless Cheetah",
+    "Brainy Dolphin",
+    "Determined Komodo Dragon",
+    "Easygoing Elephant",
+    "Heroic Emperor Penguin",
+    "Indispensable Bengal Tiger",
+    "Legendary White Tiger",
+    "Mythical Maltese Tiger"
+  ]
 }

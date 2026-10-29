@@ -84,5 +84,27 @@
   "joining_invitation": "Wenn du bereits einen Klubleiter kennst, gib deine Support-ID an, damit er dir eine direkte Einladung senden kann. Gib die exakte Groß-/Kleinschreibung beachtende alphanumerische ID aus deinen Einstellungen an. Du kannst keine Einladungen empfangen, wenn du bereits in einem Klub bist, also verlasse ihn zuerst.",
 
   "finding_title": "Einen aktiven Klub finden",
-  "finding_body": "Suche in sozialen Medien nach Zoo 2-Communitys, um dich mit Klubführern zu verbinden, oder nutze den Bereich 'Vergangene Wettbewerbe' (1-2-3-Symbol, das fünfte Symbol von links im Klubhaus), um zu sehen, welche Teams zuletzt aktiv waren und wie gut sie in den Wettbewerbsranglisten abgeschnitten haben."
+  "finding_body": "Suche in sozialen Medien nach Zoo 2-Communitys, um dich mit Klubführern zu verbinden, oder nutze den Bereich 'Vergangene Wettbewerbe' (1-2-3-Symbol, das fünfte Symbol von links im Klubhaus), um zu sehen, welche Teams zuletzt aktiv waren und wie gut sie in den Wettbewerbsranglisten abgeschnitten haben.",
+  "rank_titles": [
+    "Kleine Hase",
+    "Schlauer Fuchs",
+    "Frecher Affe",
+    "Mächtiger Bär",
+    "Stolzer Löwe",
+    "Eleganter Schwan",
+    "Kühner Adler",
+    "Unermüdlicher Panda",
+    "Lebhafter Mandrill",
+    "Robustes Rentier",
+    "Zäher Wildhund",
+    "Starker Bison",
+    "Furchtloser Gepard",
+    "Schlauer Delfin",
+    "Entschlossener Komodowaran",
+    "Gelassener Elefant",
+    "Heldenthafter Kaiserpinguin",
+    "Unentbehrlicher Bengaltiger",
+    "Legendärer Weißer Tiger",
+    "Mythischer Maltesertiger"
+  ]
 }
