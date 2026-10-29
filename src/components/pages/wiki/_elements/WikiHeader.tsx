@@ -8,16 +8,18 @@ import { Image } from "@/types/image";
 interface WikiHeaderProps {
   title: string;
   introParagraph: string;
-  image: Image;
+  image?: Image;
 }
 
 export default function WikiHeader({ title, introParagraph, image }: WikiHeaderProps) {
   return (
     <CardContainer>
       <HeaderWrapper>
-        <ImageWrapper>
-          <GameBadge image={image} size={150} />{" "}
-        </ImageWrapper>
+        {image && (
+          <ImageWrapper>
+            <GameBadge image={image} size={150} />
+          </ImageWrapper>
+        )}
 
         <InfoSection>
           <TitleContent>

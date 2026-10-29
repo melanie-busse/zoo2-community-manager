@@ -1,281 +1,164 @@
 "use client";
 
-import styled from "styled-components";
+import { useTranslations } from "next-intl";
+import React from "react";
 
-interface Props {
-  intro: string;
-  summaryTitle: string;
-  summaryBody: string;
-  freeStuffTitle: string;
-  freeStuffBody: string;
-  levelupTitle: string;
-  levelupBody: string;
-  focusTitle: string;
-  focusIntro: string;
-  focusTip1: string;
-  focusTip2: string;
-  focusTip3: string;
-  focusTip4: string;
-  focusTip5: string;
-  coinsTitle: string;
-  coinsBody: string;
-  diamondsTitle: string;
-  diamondsBody: string;
-  spendingTitle: string;
-  spendingIntro: string;
-  spendingNoSaleDiamonds: string;
-  spendingNoSaleCoins: string;
-  spendingAvoid: string;
-  salesTitle: string;
-  salesBody: string;
-  landTitle: string;
-  landBody: string;
-  seasonalTitle: string;
-  seasonalBody: string;
-  seasonPassTitle: string;
-  seasonPassBody: string;
-  conservationTitle: string;
-  conservationBody: string;
-  calendarTitle: string;
-  calendarBody: string;
-  friendsTitle: string;
-  friendsBody: string;
-  animalsTitle: string;
-  animalsBody: string;
-  freeMateTitle: string;
-  freeMateBody: string;
-  breedingTitle: string;
-  breedingBody: string;
-  oceansideTitle: string;
-  oceansideBody: string;
-  pettingTitle: string;
-  pettingBody: string;
-  enclosureResizeTitle: string;
-  enclosureResizeBody: string;
-  clubsTitle: string;
-  clubsBody: string;
-  puzzlesTitle: string;
-  puzzlesBody: string;
-  scrapTitle: string;
-  scrapBody: string;
-  noScrapTitle: string;
-  noScrapIntro: string;
-  noScrapDecos: string;
-  noScrapAnimalsIntro: string;
-  noScrapAnimals: string;
-  noScrapWheel: string;
-  ticketsTitle: string;
-  ticketsBody: string;
-  academyTipsTitle: string;
-  academyTipsBody: string;
-  hideQuestsTitle: string;
-  hideQuestsBody: string;
-  rocksTitle: string;
-  rocksBody: string;
-  steamTitle: string;
-  steamBody: string;
-}
+import { WikiBulletList } from "@/components/pages/wiki/_elements/WikiBulletList";
+import WikiContainer from "@/components/pages/wiki/_elements/WikiContainer";
+import WikiHeader from "@/components/pages/wiki/_elements/WikiHeader";
+import WikiCard from "@/components/pages/wiki/_elements/WikiCard";
 
-export default function WikiGameContent(p: Props) {
+export default function WikiGameContent() {
+  const t = useTranslations("wiki_game");
+
   return (
-    <>
-      <IntroParagraph>{p.intro}</IntroParagraph>
+    <WikiContainer>
+      <WikiHeader title={t("title")} introParagraph={t("intro")} />
 
-      <Section>
-        <SectionTitle>{p.summaryTitle}</SectionTitle>
-        <p>{p.summaryBody}</p>
-      </Section>
+      <WikiCard title={t("summary_title")}>
+        <p>{t("summary_body")}</p>
+      </WikiCard>
 
-      <Section>
-        <SectionTitle>{p.freeStuffTitle}</SectionTitle>
-        <p>{p.freeStuffBody}</p>
-      </Section>
+      <WikiCard title={t("free_stuff_title")}>
+        <p>{t("free_stuff_body")}</p>
+      </WikiCard>
 
-      <Section>
-        <SectionTitle>{p.levelupTitle}</SectionTitle>
-        <p>{p.levelupBody}</p>
-      </Section>
+      <WikiCard title={t("levelup_title")}>
+        <p>{t("levelup_body")}</p>
+      </WikiCard>
 
-      <Section>
-        <SectionTitle>{p.focusTitle}</SectionTitle>
-        <p>{p.focusIntro}</p>
-        <TipList>
-          <li>{p.focusTip1}</li>
-          <li>{p.focusTip2}</li>
-          <li>{p.focusTip3}</li>
-          <li>{p.focusTip4}</li>
-          <li>{p.focusTip5}</li>
-        </TipList>
-      </Section>
+      <WikiCard title={t("focus_title")}>
+        <p>{t("focus_intro")}</p>
+        <WikiBulletList>
+          <li>{t("focus_tip_1")}</li>
+          <li>{t("focus_tip_2")}</li>
+          <li>{t("focus_tip_3")}</li>
+          <li>{t("focus_tip_4")}</li>
+          <li>{t("focus_tip_5")}</li>
+        </WikiBulletList>
+      </WikiCard>
 
-      <Section>
-        <SectionTitle>{p.coinsTitle}</SectionTitle>
-        <p>{p.coinsBody}</p>
-      </Section>
+      <WikiCard title={t("coins_title")}>
+        <p>{t("coins_body")}</p>
+      </WikiCard>
 
-      <Section>
-        <SectionTitle>{p.diamondsTitle}</SectionTitle>
-        <p>{p.diamondsBody}</p>
-      </Section>
+      <WikiCard title={t("diamonds_title")}>
+        <p>{t("diamonds_body")}</p>
+      </WikiCard>
 
-      <Section>
-        <SectionTitle>{p.spendingTitle}</SectionTitle>
-        <p>{p.spendingIntro}</p>
-        <p>{p.spendingNoSaleDiamonds}</p>
-        <p>{p.spendingNoSaleCoins}</p>
-        <p>{p.spendingAvoid}</p>
-      </Section>
+      <WikiCard title={t("spending_title")}>
+        <p>{t("spending_intro")}</p>
+        <p>{t("spending_no_sale_diamonds")}</p>
+        <p>{t("spending_no_sale_coins")}</p>
+        <p>{t("spending_avoid")}</p>
+      </WikiCard>
 
-      <Section>
-        <SectionTitle>{p.salesTitle}</SectionTitle>
-        <p>{p.salesBody}</p>
-      </Section>
+      <WikiCard title={t("sales_title")}>
+        <p>{t("sales_body")}</p>
+      </WikiCard>
 
-      <Section>
-        <SectionTitle>{p.landTitle}</SectionTitle>
-        <p>{p.landBody}</p>
-      </Section>
+      <WikiCard title={t("land_title")}>
+        <p>{t("land_body")}</p>
+      </WikiCard>
 
-      <Section>
-        <SectionTitle>{p.seasonalTitle}</SectionTitle>
-        <p>{p.seasonalBody}</p>
-      </Section>
+      <WikiCard title={t("seasonal_title")}>
+        <p>{t("seasonal_body")}</p>
+      </WikiCard>
 
-      <Section>
-        <SectionTitle>{p.seasonPassTitle}</SectionTitle>
-        <p>{p.seasonPassBody}</p>
-      </Section>
+      <WikiCard title={t("season_pass_title")}>
+        <p>{t("season_pass_body")}</p>
+      </WikiCard>
 
-      <Section>
-        <SectionTitle>{p.conservationTitle}</SectionTitle>
-        <p>{p.conservationBody}</p>
-      </Section>
+      <WikiCard title={t("conservation_title")}>
+        <p>{t("conservation_body")}</p>
+      </WikiCard>
 
-      <Section>
-        <SectionTitle>{p.calendarTitle}</SectionTitle>
-        <p>{p.calendarBody}</p>
-      </Section>
+      <WikiCard title={t("calendar_title")}>
+        <p>{t("calendar_body")}</p>
+      </WikiCard>
 
-      <Section>
-        <SectionTitle>{p.friendsTitle}</SectionTitle>
-        <p>{p.friendsBody}</p>
-      </Section>
+      <WikiCard title={t("friends_title")}>
+        <p>{t("friends_body")}</p>
+      </WikiCard>
 
-      <Section>
-        <SectionTitle>{p.animalsTitle}</SectionTitle>
-        <p>{p.animalsBody}</p>
-      </Section>
+      <WikiCard title={t("animals_title")}>
+        <p>{t("animals_body")}</p>
+      </WikiCard>
 
-      <Section>
-        <SectionTitle>{p.freeMateTitle}</SectionTitle>
-        <p>{p.freeMateBody}</p>
-      </Section>
+      <WikiCard title={t("free_mate_title")}>
+        <p>{t("free_mate_body")}</p>
+      </WikiCard>
 
-      <Section>
-        <SectionTitle>{p.breedingTitle}</SectionTitle>
-        <p>{p.breedingBody}</p>
-      </Section>
+      <WikiCard title={t("breeding_title")}>
+        <p>{t("breeding_body")}</p>
+      </WikiCard>
 
-      <Section>
-        <SectionTitle>{p.oceansideTitle}</SectionTitle>
-        <p>{p.oceansideBody}</p>
-      </Section>
+      <WikiCard title={t("oceanside_title")}>
+        <p>{t("oceanside_body")}</p>
+      </WikiCard>
 
-      <Section>
-        <SectionTitle>{p.pettingTitle}</SectionTitle>
-        <p>{p.pettingBody}</p>
-      </Section>
+      <WikiCard title={t("petting_title")}>
+        <p>{t("petting_body")}</p>
+      </WikiCard>
 
-      <Section>
-        <SectionTitle>{p.enclosureResizeTitle}</SectionTitle>
-        <p>{p.enclosureResizeBody}</p>
-      </Section>
+      <WikiCard title={t("enclosure_resize_title")}>
+        <p>{t("enclosure_resize_body")}</p>
+      </WikiCard>
 
-      <Section>
-        <SectionTitle>{p.clubsTitle}</SectionTitle>
-        <p>{p.clubsBody}</p>
-      </Section>
+      <WikiCard title={t("clubs_title")}>
+        <p>{t("clubs_body")}</p>
+      </WikiCard>
 
-      <Section>
-        <SectionTitle>{p.puzzlesTitle}</SectionTitle>
-        <p>{p.puzzlesBody}</p>
-      </Section>
+      <WikiCard title={t("puzzles_title")}>
+        <p>{t("puzzles_body")}</p>
+      </WikiCard>
 
-      <Section>
-        <SectionTitle>{p.scrapTitle}</SectionTitle>
-        <p>{p.scrapBody}</p>
-      </Section>
+      <WikiCard title={t("scrap_title")}>
+        <p>{t("scrap_body")}</p>
+      </WikiCard>
 
-      <Section>
-        <SectionTitle>{p.noScrapTitle}</SectionTitle>
-        <p>{p.noScrapIntro}</p>
-        <p>{p.noScrapDecos}</p>
-        <p>{p.noScrapAnimalsIntro}</p>
-        <p>{p.noScrapAnimals}</p>
-        <p>{p.noScrapWheel}</p>
-      </Section>
+      <WikiCard title={t("no_scrap_title")}>
+        <p>{t("no_scrap_intro")}</p>
+        <WikiBulletList>
+          {(t.raw("no_scrap_decos") as string[]).map((deco, index) => (
+            <li key={`deco-${index}`}>{deco}</li>
+          ))}
+        </WikiBulletList>
 
-      <Section>
-        <SectionTitle>{p.ticketsTitle}</SectionTitle>
-        <p>{p.ticketsBody}</p>
-      </Section>
+        <p style={{ marginTop: "16px" }}>{t("no_scrap_animals_intro")}</p>
+        <WikiBulletList>
+          {(t.raw("no_scrap_animals") as string[]).map((animal, index) => (
+            <li key={`animal-${index}`}>{animal}</li>
+          ))}
+        </WikiBulletList>
 
-      <Section>
-        <SectionTitle>{p.academyTipsTitle}</SectionTitle>
-        <p>{p.academyTipsBody}</p>
-      </Section>
+        <p style={{ marginTop: "16px" }}>{t("no_scrap_wheel_intro")}</p>
+        <WikiBulletList>
+          {(t.raw("no_scrap_wheel") as string[]).map((wheelAnimal, index) => (
+            <li key={`wheel-${index}`}>{wheelAnimal}</li>
+          ))}
+        </WikiBulletList>
+      </WikiCard>
 
-      <Section>
-        <SectionTitle>{p.hideQuestsTitle}</SectionTitle>
-        <p>{p.hideQuestsBody}</p>
-      </Section>
+      <WikiCard title={t("tickets_title")}>
+        <p>{t("tickets_body")}</p>
+      </WikiCard>
 
-      <Section>
-        <SectionTitle>{p.rocksTitle}</SectionTitle>
-        <p>{p.rocksBody}</p>
-      </Section>
+      <WikiCard title={t("academy_tips_title")}>
+        <p>{t("academy_tips_body")}</p>
+      </WikiCard>
 
-      <Section>
-        <SectionTitle>{p.steamTitle}</SectionTitle>
-        <p>{p.steamBody}</p>
-      </Section>
-    </>
+      <WikiCard title={t("hide_quests_title")}>
+        <p>{t("hide_quests_body")}</p>
+      </WikiCard>
+
+      <WikiCard title={t("rocks_title")}>
+        <p>{t("rocks_body")}</p>
+      </WikiCard>
+
+      <WikiCard title={t("steam_title")}>
+        <p>{t("steam_body")}</p>
+      </WikiCard>
+    </WikiContainer>
   );
 }
-
-const IntroParagraph = styled.p`
-  font-size: 1rem;
-  font-style: italic;
-  color: ${({ theme }) => theme.colors.ui.textMain};
-  margin-bottom: ${({ theme }) => theme.spacing(3)};
-  line-height: 1.6;
-`;
-
-const Section = styled.section`
-  margin-bottom: ${({ theme }) => theme.spacing(4)};
-
-  p {
-    margin-bottom: ${({ theme }) => theme.spacing(2)};
-    line-height: 1.6;
-    color: ${({ theme }) => theme.colors.ui.textMain};
-  }
-`;
-
-const SectionTitle = styled.h2`
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: ${({ theme }) => theme.colors.primary[500]};
-  margin-bottom: ${({ theme }) => theme.spacing(2)};
-  padding-bottom: ${({ theme }) => theme.spacing(1)};
-  border-bottom: 2px solid ${({ theme }) => theme.colors.primary[500]};
-`;
-
-const TipList = styled.ul`
-  padding-left: ${({ theme }) => theme.spacing(3)};
-
-  li {
-    margin-bottom: ${({ theme }) => theme.spacing(1)};
-    line-height: 1.6;
-    color: ${({ theme }) => theme.colors.ui.textMain};
-  }
-`;

@@ -6,7 +6,7 @@ import NextImage from "next/image";
 
 interface WikiHeaderProps {
   title: string;
-  image: string;
+  image?: string;
   children?: React.ReactNode;
 }
 
@@ -15,8 +15,8 @@ export default function WikiCard({ title, image, children }: WikiHeaderProps) {
     <CardContainer>
       <HeaderWrapper>
         <InfoSection>
-          <TitleContent>
-            <NextImage src={image} alt={title} width={50} height={50} />
+          <TitleContent $hasImage={Boolean(image)}>
+            {image && <NextImage src={image} alt={title} width={50} height={50} />}
             <h1>{title}</h1>
           </TitleContent>
           {children}
@@ -46,17 +46,17 @@ export const InfoSection = styled.div`
   width: 100%;
 `;
 
-export const TitleContent = styled.div`
+export const TitleContent = styled.div<{ $hasImage?: boolean }>`
   display: flex;
   width: 100%;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
   margin-bottom: 12px;
 
   h1 {
     color: #2d5a27;
     margin: 0;
-    padding-left: 10px;
+    padding-left: ${({ $hasImage }) => ($hasImage ? "10px" : "0")}; // Kein Padding, wenn kein Bild da ist
     font-size: 1.5rem;
     font-weight: bold;
     line-height: 1.2;
@@ -64,11 +64,14 @@ export const TitleContent = styled.div`
     @media (max-width: 768px) {
       font-size: 1.8rem;
       text-align: center;
+      padding-left: 0; // Mobil zentriert sowieso
     }
   }
 
   @media (max-width: 768px) {
     justify-content: center;
     text-align: center;
+    flex-direction: column;
+    gap: 8px;
   }
 `;
