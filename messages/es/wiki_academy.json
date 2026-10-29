@@ -1,0 +1,31 @@
+{
+  "title": "Preguntas frecuentes sobre la Academia",
+  "intro": "Zoo Academy es una función de cuenta premium que te permite desbloquear regalos y bonificaciones diarias para tu zoo cuando se activa con diamantes. Algunos beneficios incluyen obtener experiencia adicional por cuidar animales, recolectar más monedas de tiendas y taquillas, recoger regalos diarios de piezas de cofre del tesoro, e incluso bonificaciones en varios aspectos de la cría. Cuando alcances el nivel 10, Madame Yu, la directora de Zoo Academy, se presentará y te ofrecerá las primeras misiones de Maestría.",
+
+  "membership_title": "Niveles de membresía",
+  "membership_body": "Hay cuatro niveles de membresía: Bronze, Silver, Gold y Platinum. A medida que subes de nivel en la Academia, puedes desbloquear los beneficios de cada nivel adquiriendo la membresía correspondiente. Una membresía Bronze te otorga todos los beneficios desbloqueados del nivel Bronze. Una membresía Silver te otorga todos los beneficios desbloqueados de los niveles Silver y Bronze. Una membresía Gold te otorga todos los beneficios desbloqueados de los niveles Gold, Silver y Bronze. Una membresía Platinum otorga todos los beneficios desbloqueados de los niveles Platinum, Gold, Silver y Bronze. Sin embargo, si no has desbloqueado ningún beneficio de un nivel en particular, no podrás adquirir la membresía de ese nivel hasta que desbloquees al menos un pergamino en dicho nivel.",
+
+  "stamps_title": "Sellos",
+  "stamps_body": "Al renovar una membresía puedes obtener sellos. Con 10 sellos recibirás 1 Moneda VIP. Si tu suscripción venció y compras una nueva, ¡no obtendrás sellos! Una forma sencilla de evitarlo es comprar 1 día de Bronze y luego extender con una suscripción que otorgue sellos. Al completar una tarjeta de sellos a partir del 19 de junio de 2023, recibirás Monedas VIP, lo que te permitirá acumularlas y elegir una recompensa más adelante. Cada nivel de suscripción ofrece opciones de animales exclusivas. Cuando tu tarjeta de sellos esté completa, podrás canjear un animal de tu nivel de suscripción actual o de uno inferior.",
+
+  "mastery_title": "Niveles de Maestría",
+  "mastery_body": "Puedes completar tareas regulares para ganar Puntos de Maestría (representados como pergaminos en las recompensas de misiones) y avanzar en el Nivel de Maestría del zoo. Los primeros niveles requieren solo unos pocos pergaminos, pero la cantidad necesaria para subir de nivel aumenta a medida que progresas. Con una membresía activa, también tienes la opción de saltar al siguiente nivel a cambio de diamantes. Avanzar al siguiente nivel costará 5 diamantes por cada pergamino no recolectado. Sin embargo, saltar al siguiente nivel no te exime de completar el resto de tareas del nivel omitido.",
+
+  "tasks_title": "Tareas",
+  "tasks_body": "Madame Yu te asignará tareas cada 6 horas. Las tareas consisten en mantener tu zoo: limpiar recintos, alimentar animales, recoger basura, regar plantas, recolectar insignias de XP, etc. Deberías poder completar las tareas fácilmente jugando normalmente y haciendo lo que habitualmente harías. Tras completarlas, aparecerá un temporizador debajo de Madame Yu que contará el tiempo hasta que comience tu nuevo conjunto de tareas.",
+
+  "tips_title": "Consejos",
+  "tips_intro": "Algunos consejos para sacar el máximo partido a Zoo Academy:",
+  "tip_1": "Al completar tareas, haz clic en la burbuja de tarea en la barra lateral izquierda si tienes dificultades para localizar un elemento que completar.",
+  "tip_2": "Al adquirir una nueva suscripción, compra siempre 1 día de Bronze y luego extiéndela a la suscripción que realmente deseas. De esta manera obtienes el mayor descuento y los sellos. ¡Solo obtienes sellos al extender!",
+  "tip_3": "Aunque la academia nunca está en oferta, puedes aprovechar los eventos Cashback para recuperar un porcentaje de diamantes si esperas hasta entonces para cargar meses de academia. Dado que los eventos Cashback suelen estar separados por 2 meses (a veces 3), lo mejor es hacer acopio para no tener interrupciones. Marzo y noviembre pueden ser momentos clave para acumular 6 o más meses gastando 2000 diamantes y recuperar el 25% completo de diamantes.",
+  "tip_4": "Al cambiar de membresía, la membresía activa se utiliza como descuento en la membresía mejorada. Asegúrate de no desperdiciar diamantes actualizando a una membresía en la que no puedas aprovechar el descuento completo.",
+  "tip_5": "A veces el juego tardará unos segundos extra en calcular tu nueva tarea de Madame Yu al abrirlo. Aprovecha esta oportunidad para ir directamente a tu región más pequeña, de modo que las tareas se calculen en función del zoo más pequeño en lugar de tu zoo principal más grande. Alternativamente, puedes asegurarte de entrar al juego un par de minutos antes de que aparezca la nueva tarea y dirigirte a tu región más pequeña antes de que se genere.",
+
+  "col_membership": "Membresía",
+  "col_duration": "Duración",
+  "col_startup": "Coste inicial",
+  "col_extend": "Coste de extensión",
+  "col_stamps": "Sellos",
+  "col_cost_per_stamp": "Coste por sello"
+}

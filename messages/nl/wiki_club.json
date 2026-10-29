@@ -1,0 +1,110 @@
+{
+  "title": "Club FAQ",
+  "intro": "Clubs zijn in-game gemeenschappen voor dierentuinspelers die je kunnen helpen meer content en beloningen te ontgrendelen. Teams van maximaal 18 leden strijden tegen elkaar om populaire beelden met hoge waarde en exclusieve dierkleurvarianten te verdienen die nodig zijn voor Collections. Teamgenoten kunnen groepschatten, elkaars hoofddierentuinen bezoeken, deelnemen aan clubbrede fok- of XP-boostende evenementen, en zelfs het clubembleem van hun team tonen op speciale clubdecoraties.",
+
+  "roles_title": "Rollen van Clubleden",
+  "roles_body": "Er zijn drie verschillende rollen: President, Minister en Clublid. De President is eigenaar van de club en heeft de meeste administratieve bevoegdheden. Ministers kunnen bijna alles doen wat de president kan, maar kunnen de clubomschrijving niet wijzigen of de President verwijderen. Clubleden kunnen doneren en chatten. Nieuwe leden moeten zeven dagen wachten voordat ze de mogelijkheid krijgen om te doneren aan wedstrijden of fondsenwervingen — alle andere voordelen en mogelijkheden zijn onmiddellijk beschikbaar.",
+
+  "roles_table_ability": "Mogelijkheid",
+  "roles_table_president": "President",
+  "roles_table_minister": "Minister",
+  "roles_table_member": "Clublid",
+
+  "roles_ability_description": "Omschrijving of standaardtaal wijzigen",
+  "roles_ability_manage_members": "Nieuwe leden uitnodigen, leden verwijderen, of nieuwe ledenanvragen accepteren/weigeren",
+  "roles_ability_retract_invitation": "Een uitnodiging voor een nieuw lid intrekken",
+  "roles_ability_assign_president": "Rol van president toewijzen",
+  "roles_ability_assign_role": "Rol van minister of clublid toewijzen",
+  "roles_ability_fundraiser": "Een fondswerving starten of innen",
+  "roles_ability_contest": "Een wedstrijd starten",
+  "roles_ability_donate_fundraiser": "Doneren aan een fondswerving*",
+  "roles_ability_benefits": "Voordelen ontvangen van een fondswerving",
+  "roles_ability_donate_contest": "Doneren aan een wedstrijd*",
+  "roles_ability_chat": "Clubhuis-chat gebruiken",
+  "roles_ability_emblem": "Clubembleem wijzigen",
+  "roles_footnote": "*Nieuwe leden moeten zeven dagen wachten voordat ze de mogelijkheid krijgen om te doneren aan wedstrijden of fondsenwervingen. Alle andere voordelen en mogelijkheden zijn onmiddellijk beschikbaar bij het toetreden of het toewijzen van de rol.",
+
+  "assigning_title": "Rollen Toewijzen",
+  "assigning_body": "De President en ministers kunnen rollen toewijzen via het tabblad Clubleden in het clubhuis. Klik op de naam van de speler en selecteer de groene knop \"Rol Wijzigen\". Je kunt de speler minister maken, een gewoon clublid, of het eigendom van de hele club overdragen aan een lid door hem of haar president te maken.",
+
+  "adding_title": "Leden Toevoegen",
+  "adding_applicants": "De president en ministers worden op de hoogte gesteld wanneer de club nieuwe aanvragers heeft. Via het tabblad Aanvragen kunnen beheerders de dierentuin van de aanvrager bezoeken, hun statistieken bekijken en hun bericht lezen. Zodra een aanvraag is geaccepteerd, worden alle andere aanvragen van de aanvrager ingetrokken en kan het nieuwe lid beginnen met chatten. Alle nieuwe leden moeten 7 dagen wachten voordat ze kunnen doneren aan fondsenwervingen of wedstrijden.",
+  "adding_invitations": "Als je het alfanumerieke Support-ID van de speler al kent, kan een president of minister een directe uitnodiging sturen via het tabblad Aanvragen. Let op: Alleen de president kan een uitnodiging intrekken als deze naar de verkeerde speler is gestuurd.",
+
+  "removing_title": "Leden Verwijderen",
+  "removing_body": "De president en ministers kunnen spelers verwijderen door naar het tabblad Clubleden te gaan, de naam van de speler te selecteren en op \"Rol Wijzigen\" en vervolgens op \"verwijderen\" te klikken. Na verwijdering wordt de persoonlijke clubranglijst van de speler teruggezet naar nul, de clubwinkel wordt onmiddellijk vergrendeld, en eventuele wedstrijddonaties van die week gaan verloren uit de score van de club. Sommige spelers stellen een waarschuwing op prijs voordat ze worden verwijderd.",
+
+  "turnover_title": "Tips voor Leiders om Hoog Verloop te Voorkomen",
+  "turnover_body": "Communiceer je verwachtingen aan spelers voordat ze lid worden (of onmiddellijk daarna als het in-game aanvragers zijn). Communiceren via sociale media helpt bij het sturen van het team en het delen van clubdoelen. Je kunt een proefperiode instellen waarin nieuwe leden en jijzelf de samenwerking kunnen beoordelen voordat je een langetermijnverbintenis aangaat. Als je de verwachtingen voor het hele team wijzigt, laat het ze dan van tevoren weten zodat ze zich kunnen voorbereiden. Geef bij het verwijderen van leden indien mogelijk een waarschuwing en een uitleg, en verwijs ze naar sociale-mediasites waar andere clubs op zoek zijn naar leden.",
+
+  "rank_title": "Ledensrang",
+  "rank_body": "Elke teamgenoot heeft een persoonlijke Ledensrang binnen de club die stijgt naarmate de speler meer Reputatiepunten verdient. Punten worden verdiend door bij te dragen aan wedstrijden en fondsenwervingen: voor elke 1.000 munten die worden bijgedragen aan een fondswerving, verdient het lid 10 reputatiepunten; elke gedoneerde diamant geeft 5 reputatiepunten; voor elk dier dat wordt gedoneerd aan een wedstrijd verdient de speler de helft van de populariteit van het dier in reputatiepunten (baby's geven dubbel). Elk rangniveau ontgrendelt nieuwe te kopen content in de Clubwinkel.",
+
+  "rank_col_rank": "Rang",
+  "rank_col_title": "Titel",
+  "rank_col_points": "Punten tot Volgend Niveau",
+  "rank_col_cumulative": "Cumulatieve Punten",
+
+  "shop_title": "Clubwinkel",
+  "shop_body": "De Clubwinkel stelt clubleden in staat decoraties en dieren van vroegere evenementen te kopen. Clubartikelen worden ontgrendeld naarmate spelers hun persoonlijke Ledensrang verhogen. Sommige artikelen zijn nodig voor Collections. Eerdere evenementartikelen zijn gegroepeerd per seizoen. Sommige decoraties tonen je Clubembleem.",
+
+  "shop_animals_title": "Dieren in de Clubwinkel",
+  "shop_col_rank": "Ledensrang",
+  "shop_col_animal": "Dier",
+  "shop_col_cost": "Kosten",
+  "shop_col_popularity": "Populariteit",
+  "shop_col_max": "Maximale Hoeveelheid",
+
+  "club_level_title": "Overzicht Clubniveau",
+  "club_level_body": "Elke club kan van niveau stijgen om meer ledencapaciteit, speciale artikelen of mogelijkheden voor evenementfondsenwervingen te ontgrendelen. Het maximale clubniveau is 20, maar clubs ontgrendelen hun maximale ledencapaciteit van 18 al op niveau 8. Clubs verdienen XP door deel te nemen aan wedstrijden.",
+  "club_level_col_level": "Clubniveau",
+  "club_level_col_members": "Max. Leden",
+  "club_level_col_xp": "XP tot Volgend Niveau",
+
+  "fundraisers_title": "Fondsenwervingen",
+  "fundraisers_body": "Fondsenwervingen bieden voordelen aan alle clubleden wanneer ze geactiveerd worden. Sommige fondsenwervingen zijn voor permanente artikelen, terwijl andere tijdelijke herhaalbare boosts zijn. Alleen een president of minister kan een fondswerving starten. Elk clublid kan munten of diamanten doneren. Zodra een fondswervingsdoel is bereikt, kan een president of minister de fondswerving activeren en het voordeel geldt voor alle leden. Hoe hoger het clubniveau, hoe meer fondswervingsopties worden ontgrendeld.",
+
+  "fundraiser_types_title": "Soorten Fondsenwervingen",
+  "fundraiser_type_capacity": "Ledencapaciteit (+1 Nieuw Lid): Vergroot het toegestane aantal leden. De helft van de 18 ledenplaatsen vereist diamanten, de rest vereist alleen munten of is al ontgrendeld.",
+  "fundraiser_type_stickers": "Stickers: Leden kunnen nieuwe stickers gebruiken in de groepschat in het clubhuis.",
+  "fundraiser_type_emblems": "Emblemen: Ontgrendel nieuwe opties voor je clubembleem door deze fondsenwervingen te voltooien.",
+  "fundraiser_type_boosters": "Boosterevenementen: Clubbrede evenementen van 48 uur die herhaaldelijk geactiveerd kunnen worden wanneer er genoeg fondsen zijn ingezameld. Er kan slechts één enkel evenement van 48 uur tegelijk actief zijn. Beschikbare boosters: XP-boost (verhoogde XP bij het schoonmaken, voeren en spelen met dieren) en Fokboost (verhoogde kans op succesvolle fokpogingen).",
+
+  "contests_title": "Wedstrijden",
+  "contests_body": "Clubs kunnen deelnemen aan wekelijkse wedstrijden die leden exclusieve beloningen geven en het clubniveau verhogen. Zie de Contest FAQ voor volledige details over hoe wedstrijden werken.",
+
+  "leaving_title": "Een Club Verlaten",
+  "leaving_body": "Om een club te verlaten, zorg ervoor dat je niet de president van de club bent. Ga naar het tabblad Clubleden, selecteer je naam en klik op de rode knop \"club verlaten\". Als je de president bent, moet je ofwel het presidentschap overdragen aan een ander lid, ofwel eerst alle leden verwijderen. Als je het enige lid bent, zal het verlaten van de club deze verwijderen.",
+
+  "leaving_tips_title": "Beste Werkwijzen bij het Verlaten van een Club",
+  "leaving_tips_body": "Koop voor het verlaten alle Clubwinkelartikelen die je wilt — je verliest toegang tot de Clubwinkel totdat je je ledensrang in een andere club hebt herkregen. Jenkin's verjaardag op 1 juli staat bekend als de beste Clubuitverkoop van het jaar. Je kunt berekenen hoeveel munten nodig zijn om een rangniveau te herwinnen door de cumulatieve punten voor dat niveau te delen door 100. Als je president bent en je club niet wilt laten verdwijnen, laat dan een vertrouwd familielid een account aanmaken en het presidentschap waarnemen terwijl jij een andere club uitprobeert.",
+
+  "joining_title": "Lid Worden van een Club",
+  "joining_applying": "Zoek naar clubs door het Clubzoekers-icoon te selecteren (icoon met drie huizen), het derde icoon van links in het clubhuis. Selecteer je voorkeurstaal en filter vervolgens de zoekinstellingen om een club te vinden die bij jouw wensen past.",
+  "joining_invitation": "Als je een clubleider al kent, geef hem of haar dan je Support-ID zodat ze je een directe uitnodiging kunnen sturen. Geef het exacte hoofdlettergevoelige alfanumerieke ID uit je instellingen. Je kunt geen uitnodigingen ontvangen terwijl je al in een club zit, dus verlaat eerst je huidige club.",
+
+  "finding_title": "Een Actieve Club Vinden",
+  "finding_body": "Zoek op sociale media naar Zoo 2-gemeenschappen om in contact te komen met clubleiders, of gebruik de sectie Vorige Wedstrijden (icoon 1-2-3, het vijfde icoon van links in het clubhuis) om te zien welke teams recentelijk actief waren en hoe goed ze geplaatst stonden in de wedstrijdranglijsten.",
+  "rank_titles": [
+    "Klein Konijntje",
+    "Slimme Vos",
+    "Ondeugende Aap",
+    "Machtige Beer",
+    "Trotse Leeuw",
+    "Elegante Zwaan",
+    "Gedurfde Adelaar",
+    "Onvermoeibare Panda",
+    "Levendige Mandril",
+    "Stoere Rendier",
+    "Taaie Wilde Hond",
+    "Sterke Bizon",
+    "Onverschrokken Cheetah",
+    "Slimme Dolfijn",
+    "Vastberaden Komodovaraan",
+    "Ontspannen Olifant",
+    "Heldhaftige Keizerspinguin",
+    "Onmisbare Bengaalse Tijger",
+    "Legendarische Witte Tijger",
+    "Mythische Maltese Tijger"
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "title": "Laug FAQ",
+  "intro": "Laug er in-game zoo-spillerfællesskaber, der kan hjælpe dig med at låse op for mere indhold og belønninger. Hold på op til 18 medlemmer konkurrerer mod hinanden for at optjene statuer med høj popularitet og eksklusive dyre-farvevarianter, som er nødvendige til Collections. Holdkammerater kan gruppechat, besøge hinandens hoved-zoologiske haver, deltage i laugsomfattende avls- eller XP-boostbegivenheder og endda vise deres holds laugsemblem på specielle laugsdekorationer.",
+
+  "roles_title": "Laugsmedlemsroller",
+  "roles_body": "Der er tre forskellige roller: Præsident, Minister og Laugsmedlem. Præsidenten ejer lauget og har den største administrative myndighed. Ministre kan gøre næsten alt, hvad præsidenten kan, men kan ikke ændre laugsbeskrivelsen eller fjerne præsidenten. Laugsmedlemmer kan donere og chatte. Nye medlemmer skal vente syv dage, inden de får mulighed for at donere til konkurrencer eller indsamlinger — alle andre fordele og muligheder er tilgængelige med det samme.",
+
+  "roles_table_ability": "Mulighed",
+  "roles_table_president": "Præsident",
+  "roles_table_minister": "Minister",
+  "roles_table_member": "Laugsmedlem",
+
+  "roles_ability_description": "Ændre beskrivelse eller standardsprog",
+  "roles_ability_manage_members": "Invitere nye medlemmer, fjerne medlemmer eller acceptere/afvise ansøgninger fra nye medlemmer",
+  "roles_ability_retract_invitation": "Trække en invitation til et nyt medlem tilbage",
+  "roles_ability_assign_president": "Tildele rollen som præsident",
+  "roles_ability_assign_role": "Tildele rollen som minister eller laugsmedlem",
+  "roles_ability_fundraiser": "Starte eller indsamle en indsamling",
+  "roles_ability_contest": "Starte en konkurrence",
+  "roles_ability_donate_fundraiser": "Donere til en indsamling*",
+  "roles_ability_benefits": "Modtage fordele fra en indsamling",
+  "roles_ability_donate_contest": "Donere til en konkurrence*",
+  "roles_ability_chat": "Bruge laugshuschatten",
+  "roles_ability_emblem": "Ændre laugsemblem",
+  "roles_footnote": "*Nye medlemmer skal vente syv dage, inden de får mulighed for at donere til konkurrencer eller indsamlinger. Alle andre fordele og muligheder er tilgængelige med det samme efter tilmelding eller tildeling af rollen.",
+
+  "assigning_title": "Tildeling af roller",
+  "assigning_body": "Præsidenten og ministre kan tildele roller under fanen Laugsmedlemmer inde i laugshuset. Klik på spillerens navn og vælg den grønne knap \"Skift rolle\". Du kan gøre spilleren til minister, et almindeligt laugsmedlem eller overdrage ejerskabet af hele lauget til et medlem ved at gøre dem til præsident.",
+
+  "adding_title": "Tilføjelse af medlemmer",
+  "adding_applicants": "Præsidenten og ministre får besked, når lauget har nye ansøgere. Fanen Ansøgninger giver administratorer mulighed for at se ansøgerens zoo, se deres statistikker og læse deres besked. Når en ansøger er accepteret, trækkes alle ansøgerens andre ansøgninger tilbage, og det nye medlem kan begynde at chatte. Alle nye medlemmer skal vente 7 dage, inden de kan donere til indsamlinger eller konkurrencer.",
+  "adding_invitations": "Hvis du allerede kender spillerens alfanumeriske Support-ID, kan en præsident eller minister sende en invitation direkte via fanen Ansøgninger. Bemærk: Kun præsidenten kan trække en invitation tilbage, hvis den er sendt til den forkerte spiller.",
+
+  "removing_title": "Fjernelse af medlemmer",
+  "removing_body": "Præsidenten og ministre kan fjerne spillere ved at gå til fanen Laugsmedlemmer, vælge spillerens navn og klikke på \"Skift rolle\" og derefter \"slet\". Når spilleren er fjernet, nulstilles vedkommendes personlige laugsrangering til nul, laugsbutikken låses øjeblikkeligt, og eventuelle konkurrencedonationer den pågældende uge går tabt fra laugets score. Nogle spillere sætter pris på en advarsel inden fjernelsen.",
+
+  "turnover_title": "Ledertips til at forebygge høj udskiftning",
+  "turnover_body": "Kommuniker dine forventninger til spillere, inden de melder sig ind (eller umiddelbart efter, hvis de er ansøgere i spillet). Kommunikation på sociale medier hjælper med at styre holdet og dele laugsmål. Du kan indføre en prøveperiode, hvor nye medlemmer og du kan vurdere, om der er et godt match, inden I forpligter jer på lang sigt. Hvis du ændrer forventningerne for hele holdet, så lad dem vide det, så de kan forberede sig. Når du fjerner medlemmer, giv en advarsel og en forklaring, når det er muligt, og henvis dem til sociale mediesider, hvor andre laug søger medlemmer.",
+
+  "rank_title": "Medlemsrang",
+  "rank_body": "Hver holdkammerat har en personlig Medlemsrang inden for lauget, der stiger i niveau, efterhånden som spilleren optjener flere Omdømmepunkter. Point optjenes ved at bidrage til konkurrencer og indsamlinger: for hver 1.000 mønter doneret til en indsamling optjener medlemmet 10 omdømmepunkter; hvert doneret diamant giver 5 omdømmepunkter; for hvert dyr doneret til en konkurrence optjener spilleren halvdelen af dyrets popularitet i omdømmepunkter (unger giver det dobbelte). Hvert rangniveau låser nyt indhold op til køb i Laugsbutikken.",
+
+  "rank_col_rank": "Rang",
+  "rank_col_title": "Titel",
+  "rank_col_points": "Point til næste niveau",
+  "rank_col_cumulative": "Akkumulerede point",
+
+  "shop_title": "Laugsbutik",
+  "shop_body": "Laugsbutikken giver laugsmedlemmer mulighed for at købe dekorationer og dyr fra tidligere begivenheder. Laugsgenstande låses op, efterhånden som spillere øger deres personlige Medlemsrang. Nogle genstande er nødvendige til Collections. Tidligere begivenhedsgenstande er grupperet efter sæson. Nogle dekorationer viser dit Laugsemblem.",
+
+  "shop_animals_title": "Laugsbutikkens dyr",
+  "shop_col_rank": "Medlemsrang",
+  "shop_col_animal": "Dyr",
+  "shop_col_cost": "Pris",
+  "shop_col_popularity": "Popularitet",
+  "shop_col_max": "Maks. antal",
+
+  "club_level_title": "Oversigt over laugsniveau",
+  "club_level_body": "Hvert laug kan stige i niveau for at låse op for større medlemskapacitet, særlige genstande eller indsamlingsmuligheder for begivenheder. Det maksimale laugsniveau er 20, men laug låser op for deres maksimale medlemskapacitet på 18 ved niveau 8. Laug optjener XP ved at deltage i konkurrencer.",
+  "club_level_col_level": "Laugsniveau",
+  "club_level_col_members": "Maks. medlemmer",
+  "club_level_col_xp": "XP til næste niveau",
+
+  "fundraisers_title": "Indsamlinger",
+  "fundraisers_body": "Indsamlinger giver fordele til alle laugsmedlemmer, når de aktiveres. Nogle indsamlinger er til permanente genstande, mens andre er midlertidige, gentagelige boosts. Kun en præsident eller minister kan starte en indsamling. Ethvert laugsmedlem kan donere mønter eller diamanter. Når et indsamlingsmål er nået, kan en præsident eller minister aktivere indsamlingen, og fordelen gælder for alle medlemmer. Jo højere laugsniveauet er, jo flere indsamlingsmuligheder låses op.",
+
+  "fundraiser_types_title": "Typer af indsamlinger",
+  "fundraiser_type_capacity": "Medlemskapacitet (+1 nyt medlem): Udvid antallet af tilladte medlemmer. Halvdelen af de 18 medlemspladser kræver diamanter, resten kræver kun mønter eller er allerede låst op.",
+  "fundraiser_type_stickers": "Klistermærker: Medlemmer kan bruge nye klistermærker i gruppechatten inde i laugshuset.",
+  "fundraiser_type_emblems": "Emblemer: Lås nye muligheder op til dit laugsemblem ved at gennemføre disse indsamlinger.",
+  "fundraiser_type_boosters": "Boostbegivenheder: 48-timers laugsomfattende begivenheder, der kan aktiveres gentagne gange, når der er indsamlet nok midler. Kun én 48-timers begivenhed kan være aktiv ad gangen. Tilgængelige boosts: XP-boost (øget XP ved rengøring, fodring og leg med dyr) og Avlsboost (øget chance for vellykkede avlninger).",
+
+  "contests_title": "Konkurrencer",
+  "contests_body": "Laug kan deltage i ugentlige konkurrencer, der giver medlemmerne eksklusive belønninger samt øger laugsniveauet. Se Contest FAQ for alle detaljer om, hvordan konkurrencer fungerer.",
+
+  "leaving_title": "Forlad et laug",
+  "leaving_body": "For at forlade et laug skal du sikre dig, at du ikke er laugets præsident. Gå til fanen Laugsmedlemmer, vælg dit navn og klik på den røde knap \"Forlad laug\". Hvis du er præsident, skal du enten tildele præsidentskabet til et andet medlem eller fjerne alle medlemmer først. Hvis du er det eneste medlem, vil det slette lauget at forlade det.",
+
+  "leaving_tips_title": "Bedste praksis ved forladen af et laug",
+  "leaving_tips_body": "Inden du forlader, skal du købe de Laugsbutiks-genstande, du ønsker — du mister adgangen til Laugsbutikken, indtil du genopretter din Medlemsrang i et andet laug. Jenkins' fødselsdag den 1. juli er kendt for at være årets bedste laugsudsalg. Du kan beregne de nødvendige mønter for at genoprette et rangniveau ved at dividere de akkumulerede point for det pågældende niveau med 100. Hvis du er præsident og ikke ønsker, at dit laug forsvinder, kan du bede et betroet familiemedlem om at oprette en konto og holde præsidentskabet, mens du prøver et andet laug.",
+
+  "joining_title": "Tilmelding til et laug",
+  "joining_applying": "Søg efter laug ved at vælge laugssøgningsikonet (tre huse-ikon), det tredje ikon fra venstre i laugshuset. Vælg dit foretrukne sprog, og filtrer derefter søgeindstillingerne for at finde et laug, der passer til dine behov.",
+  "joining_invitation": "Hvis du allerede kender en laugsleder, kan du opgive dit Support-ID, så de kan sende dig en direkte invitation. Giv det nøjagtige store og små bogstaver-følsomme alfanumeriske ID fra dine indstillinger. Du kan ikke modtage invitationer, mens du allerede er i et laug, så forlad det først.",
+
+  "finding_title": "Find et aktivt laug",
+  "finding_body": "Søg på sociale medier efter Zoo 2-fællesskaber for at komme i kontakt med laugsledere, eller brug afsnittet Tidligere konkurrencer (1-2-3-ikonet, det femte ikon fra venstre i laugshuset) for at se, hvilke hold der for nylig var aktive, og hvordan de placerede sig i konkurrencerankingerne.",
+  "rank_titles": [
+    "Lille Kanin",
+    "Klog Ræv",
+    "Skælmsk Abe",
+    "Mighty Bjørn",
+    "Stolt Løve",
+    "Elegant Svane",
+    "Dristig Ørn",
+    "Utrættelig Panda",
+    "Livlig Mandril",
+    "Hårdfør Rensdyr",
+    "Sej Vildhund",
+    "Stærk Bison",
+    "Frygtløs Gepard",
+    "Kløgtig Delfin",
+    "Beslutsom Komodovaraan",
+    "Afslappet Elefant",
+    "Heroisk Kejserpingvin",
+    "Uundværlig Bengalsk Tiger",
+    "Legendarisk Hvid Tiger",
+    "Mytisk Maltesisk Tiger"
+  ]
+}

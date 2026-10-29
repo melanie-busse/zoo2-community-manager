@@ -1,0 +1,110 @@
+{
+  "title": "FAQ Club",
+  "intro": "Les clubs sont des communautés de joueurs de zoo en jeu qui vous permettent de débloquer davantage de contenus et de récompenses. Des équipes pouvant compter jusqu'à 18 membres s'affrontent pour remporter des statues de haute popularité et des variantes de couleur d'animaux exclusives nécessaires aux Collections. Les coéquipiers peuvent discuter en groupe, visiter les zoos principaux des autres, participer à des événements d'élevage ou de boost XP à l'échelle du club, et même afficher l'emblème de leur équipe sur des décorations de club spéciales.",
+
+  "roles_title": "Rôles des membres du club",
+  "roles_body": "Il existe trois rôles différents : Président, Ministre et Membre du club. Le Président est propriétaire du club et dispose de la plus grande autorité administrative. Les Ministres peuvent faire presque tout ce que le président peut faire, mais ne peuvent pas modifier la description du club ni révoquer le Président. Les Membres du club peuvent faire des dons et discuter. Les nouveaux membres doivent attendre sept jours avant d'obtenir la possibilité de faire des dons aux concours ou aux collectes de fonds — tous les autres avantages et capacités sont disponibles immédiatement.",
+
+  "roles_table_ability": "Capacité",
+  "roles_table_president": "Président",
+  "roles_table_minister": "Ministre",
+  "roles_table_member": "Membre du club",
+
+  "roles_ability_description": "Modifier la description ou la langue par défaut",
+  "roles_ability_manage_members": "Inviter de nouveaux membres, supprimer des membres ou accepter/refuser des candidatures",
+  "roles_ability_retract_invitation": "Retirer une invitation à un nouveau membre",
+  "roles_ability_assign_president": "Attribuer le rôle de président",
+  "roles_ability_assign_role": "Attribuer le rôle de ministre ou de membre du club",
+  "roles_ability_fundraiser": "Lancer ou collecter une collecte de fonds",
+  "roles_ability_contest": "Lancer un concours",
+  "roles_ability_donate_fundraiser": "Faire un don à une collecte de fonds*",
+  "roles_ability_benefits": "Recevoir les avantages d'une collecte de fonds",
+  "roles_ability_donate_contest": "Faire un don à un concours*",
+  "roles_ability_chat": "Utiliser le chat du clubhouse",
+  "roles_ability_emblem": "Modifier l'emblème du club",
+  "roles_footnote": "*Les nouveaux membres doivent attendre sept jours avant d'obtenir la possibilité de faire des dons aux concours ou aux collectes de fonds. Tous les autres avantages et capacités sont disponibles immédiatement après avoir rejoint le club ou s'être vu attribuer le rôle.",
+
+  "assigning_title": "Attribution des rôles",
+  "assigning_body": "Le Président et les ministres peuvent attribuer des rôles dans l'onglet Membres du club à l'intérieur du clubhouse. Cliquez sur le nom du joueur et sélectionnez le bouton vert « Changer de rôle ». Vous pouvez faire du joueur un ministre, un membre ordinaire du club, ou lui transmettre la propriété de l'ensemble du club en le nommant Président.",
+
+  "adding_title": "Ajouter des membres",
+  "adding_applicants": "Le président et les ministres sont notifiés lorsque le club reçoit de nouveaux candidats. L'onglet Candidatures permet aux administrateurs de visiter le zoo du candidat, de consulter ses statistiques et de lire son message. Une fois accepté, toutes les autres candidatures du postulant sont annulées et le nouveau membre peut commencer à discuter. Tous les nouveaux membres doivent attendre 7 jours avant de pouvoir faire des dons aux collectes de fonds ou aux concours.",
+  "adding_invitations": "Si vous connaissez déjà l'identifiant d'assistance alphanumérique du joueur, un président ou un ministre peut envoyer une invitation directement via l'onglet Candidatures. Remarque : Seul le président peut retirer une invitation si elle a été envoyée au mauvais joueur.",
+
+  "removing_title": "Supprimer des membres",
+  "removing_body": "Le président et les ministres peuvent supprimer des joueurs en accédant à l'onglet Membres du club, en sélectionnant le nom du joueur, puis en cliquant sur « Changer de rôle » puis « supprimer ». Une fois supprimé, le classement personnel du joueur dans le club est réinitialisé à zéro, la boutique du club est immédiatement verrouillée et tous les dons au concours de cette semaine sont perdus du score du club. Certains joueurs apprécient d'être avertis avant leur suppression.",
+
+  "turnover_title": "Conseils aux leaders pour éviter un fort turnover",
+  "turnover_body": "Communiquez vos attentes aux joueurs avant qu'ils rejoignent le club (ou immédiatement après s'ils sont des candidats en jeu). Communiquer sur les réseaux sociaux aide à orienter l'équipe et à partager les objectifs du club. Vous pouvez instaurer une période d'essai pendant laquelle les nouveaux membres et vous-même pouvez évaluer la compatibilité avant de vous engager sur le long terme. Si vous modifiez les attentes pour toute l'équipe, prévenez-les afin qu'ils puissent se préparer. Lorsque vous supprimez des membres, donnez un avertissement et une explication si possible, et orientez-les vers les réseaux sociaux où d'autres clubs cherchent des membres.",
+
+  "rank_title": "Rang de membre",
+  "rank_body": "Chaque coéquipier possède un Rang de membre personnel au sein du club qui évolue à mesure que le joueur accumule des Points de réputation. Ces points sont gagnés en contribuant aux concours et aux collectes de fonds : pour chaque tranche de 1 000 pièces données à une collecte de fonds, le membre gagne 10 points de réputation ; chaque diamant donné rapporte 5 points de réputation ; pour chaque animal donné à un concours, le joueur gagne la moitié de la popularité de l'animal en points de réputation (les bébés rapportent le double). Chaque niveau de rang débloque de nouveaux contenus achetables dans la Boutique du club.",
+
+  "rank_col_rank": "Rang",
+  "rank_col_title": "Titre",
+  "rank_col_points": "Points jusqu'au niveau suivant",
+  "rank_col_cumulative": "Points cumulés",
+
+  "shop_title": "Boutique du club",
+  "shop_body": "La Boutique du club permet aux membres du club d'acheter des décorations et des animaux issus d'événements passés. Les articles du club se débloquent à mesure que les joueurs augmentent leur Rang de membre personnel. Certains articles sont nécessaires pour les Collections. Les articles des événements précédents sont regroupés par saison. Certaines décorations affichent votre emblème de club.",
+
+  "shop_animals_title": "Animaux de la boutique du club",
+  "shop_col_rank": "Rang de membre",
+  "shop_col_animal": "Animal",
+  "shop_col_cost": "Coût",
+  "shop_col_popularity": "Popularité",
+  "shop_col_max": "Quantité maximale",
+
+  "club_level_title": "Aperçu du niveau du club",
+  "club_level_body": "Chaque club peut évoluer pour débloquer une plus grande capacité de membres, des objets spéciaux ou des capacités de collecte de fonds lors des événements. Le niveau maximum du club est 20, mais les clubs débloquent leur capacité maximale de 18 membres au niveau 8. Les clubs gagnent de l'XP en participant aux concours.",
+  "club_level_col_level": "Niveau du club",
+  "club_level_col_members": "Membres maximum",
+  "club_level_col_xp": "XP jusqu'au niveau suivant",
+
+  "fundraisers_title": "Collectes de fonds",
+  "fundraisers_body": "Les collectes de fonds offrent des avantages à tous les membres du club lorsqu'elles sont activées. Certaines collectes de fonds concernent des objets permanents tandis que d'autres sont des boosts temporaires répétables. Seul un président ou un ministre peut lancer une collecte de fonds. Tout membre du club peut faire des dons en pièces ou en diamants. Une fois l'objectif de la collecte de fonds atteint, un président ou un ministre peut l'activer et l'avantage s'applique à tous les membres. Plus le niveau du club est élevé, plus de nouvelles options de collecte de fonds se débloquent.",
+
+  "fundraiser_types_title": "Types de collectes de fonds",
+  "fundraiser_type_capacity": "Capacité de membres (+1 nouveau membre) : Augmentez le nombre de membres autorisés. La moitié des 18 emplacements de membres nécessitent des diamants, le reste ne nécessite que des pièces ou est déjà débloqué.",
+  "fundraiser_type_stickers": "Autocollants : Les membres peuvent utiliser de nouveaux autocollants dans le chat de groupe à l'intérieur du clubhouse.",
+  "fundraiser_type_emblems": "Emblèmes : Débloquez de nouvelles options pour l'emblème de votre club en complétant ces collectes de fonds.",
+  "fundraiser_type_boosters": "Événements booster : Événements de 48 heures à l'échelle du club pouvant être activés de manière répétée lorsque des fonds suffisants sont réunis. Un seul événement de 48 heures peut être actif à la fois. Boosters disponibles : Boost XP (XP accru lors du nettoyage, de l'alimentation et du jeu avec les animaux) et Boost d'élevage (probabilité accrue d'élevages réussis).",
+
+  "contests_title": "Concours",
+  "contests_body": "Les clubs peuvent participer à des concours hebdomadaires qui offrent aux membres des récompenses exclusives et augmentent le niveau du club. Consultez le Contest FAQ pour tous les détails sur le fonctionnement des concours.",
+
+  "leaving_title": "Quitter un club",
+  "leaving_body": "Pour quitter un club, assurez-vous de ne pas être le président du club. Accédez à l'onglet Membres du club, sélectionnez votre nom et cliquez sur le bouton rouge « Quitter le club ». Si vous êtes le président, vous devez soit confier la présidence à un autre membre, soit supprimer tous les membres au préalable. Si vous êtes le seul membre, quitter le club le supprimera.",
+
+  "leaving_tips_title": "Bonnes pratiques avant de quitter un club",
+  "leaving_tips_body": "Avant de partir, achetez tous les articles de la Boutique du club que vous souhaitez — vous perdez l'accès à la boutique jusqu'à ce que vous retrouviez votre rang de membre dans un autre club. L'anniversaire de Jenkins le 1er juillet est réputé être la meilleure vente du club de l'année. Vous pouvez calculer les pièces nécessaires pour retrouver un niveau de rang en divisant les points cumulés de ce niveau par 100. Si vous êtes le président et ne voulez pas que votre club disparaisse, demandez à un membre de confiance de votre famille de créer un compte et de tenir la présidence pendant que vous essayez un autre club.",
+
+  "joining_title": "Rejoindre un club",
+  "joining_applying": "Recherchez des clubs en sélectionnant l'icône de recherche de club (icône de trois maisons), la troisième icône à partir de la gauche dans le clubhouse. Sélectionnez votre langue préférée, puis filtrez les paramètres de recherche pour trouver un club adapté à vos besoins.",
+  "joining_invitation": "Si vous connaissez déjà un leader de club, communiquez-lui votre identifiant d'assistance pour qu'il vous envoie une invitation directe. Donnez l'identifiant alphanumérique exact (sensible à la casse) depuis vos paramètres. Vous ne pouvez pas recevoir d'invitations si vous êtes déjà dans un club, quittez-le d'abord.",
+
+  "finding_title": "Trouver un club actif",
+  "finding_body": "Recherchez des communautés Zoo 2 sur les réseaux sociaux pour entrer en contact avec des leaders de club, ou utilisez la section Concours passés (icône 1-2-3, la cinquième icône à partir de la gauche dans le clubhouse) pour voir quelles équipes ont été récemment actives et comment elles se sont classées dans les concours.",
+  "rank_titles": [
+    "Petit Lapin",
+    "Renard Rusé",
+    "Singe Espiègle",
+    "Ours Puissant",
+    "Lion Fier",
+    "Cygne Élégant",
+    "Aigle Courageux",
+    "Panda Infatigable",
+    "Mandrill Animé",
+    "Renne Robuste",
+    "Chien Sauvage Coriace",
+    "Bison Fort",
+    "Guépard Intrépide",
+    "Dauphin Ingénieux",
+    "Dragon de Komodo Déterminé",
+    "Éléphant Décontracté",
+    "Manchot Empereur Héroïque",
+    "Tigre du Bengale Indispensable",
+    "Tigre Blanc Légendaire",
+    "Tigre de Malte Mythique"
+  ]
+}

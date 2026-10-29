@@ -1,0 +1,31 @@
+{
+  "title": "Academy FAQ",
+  "intro": "De Zoo Academy is een premiumaccountfunctie waarmee je dagelijkse geschenken en bonussen voor je dierentuin kunt ontgrendelen wanneer deze wordt geactiveerd met diamanten. Enkele voordelen zijn onder andere extra ervaring opdoen bij het verzorgen van dieren, meer munten verzamelen bij winkels en toegangspoortjes, dagelijkse geschenken van schatkiststukjes verzamelen en zelfs bonussen voor verschillende aspecten van het fokken. Wanneer je level 10 bereikt, stelt Madame Yu, de directeur van de Zoo Academy, zichzelf voor en presenteert ze je de eerste Meesterlijkheid-quests.",
+
+  "membership_title": "Lidmaatschapsniveaus",
+  "membership_body": "Er zijn vier lidmaatschapsniveaus: Bronze, Silver, Gold en Platinum. Naarmate je hoger komt in de Academy, kun je de voordelen van elk niveau ontgrendelen door het bijbehorende lidmaatschapsniveau aan te schaffen. Een Bronze-lidmaatschap geeft je alle ontgrendelde Bronze-voordelen. Een Silver-lidmaatschap geeft je alle ontgrendelde Silver- en Bronze-voordelen. Een Gold-lidmaatschap geeft je alle ontgrendelde Gold-, Silver- en Bronze-voordelen. Een Platinum-lidmaatschap geeft alle ontgrendelde voordelen van Platinum, Gold, Silver en Bronze. Als je echter geen enkel voordeel van een bepaald niveau hebt ontgrendeld, kun je dat niveau pas aanschaffen zodra je minimaal één boekrol in dat niveau hebt ontgrendeld.",
+
+  "stamps_title": "Zegels",
+  "stamps_body": "Wanneer je een lidmaatschap verlengt, kun je zegels verzamelen. Met 10 zegels ontvang je 1 VIP-munt. Als je abonnement is verlopen en je een nieuw abonnement koopt, krijg je geen zegels! Een eenvoudige oplossing is om 1 dag Bronze te kopen en het daarna te verlengen met een abonnement dat zegels oplevert. Wanneer je vanaf 19 juni 2023 een zegelkaart invult, ontvang je VIP-munten, zodat je ze kunt sparen en op een later tijdstip een beloning kunt kiezen. Elk abonnementsniveau biedt exclusieve dierkeuzes. Wanneer je zegelkaart vol is, kun je een dier inwisselen van je huidige abonnementsniveau of lager.",
+
+  "mastery_title": "Meesterlijkheidsniveaus",
+  "mastery_body": "Je kunt reguliere taken voltooien om Meesterlijkheidspunten te verdienen (weergegeven als boekrollen in questrewards) voor een Dierentuinmeesterlijkheidsniveau. De eerste niveaus vereisen slechts een paar boekrollen, maar het aantal benodigde boekrollen om een niveau te stijgen neemt toe naarmate je vordert. Met een actief lidmaatschap heb je ook de optie om naar het volgende niveau te springen voor diamanten. Doorgaan naar het volgende niveau kost 5 diamanten per niet-verzamelde boekrol. Het overslaan naar het volgende niveau ontslaat je echter niet van het voltooien van de resterende taken van het overgeslagen niveau.",
+
+  "tasks_title": "Taken",
+  "tasks_body": "Madame Yu geeft je elke 6 uur taken. De taken zijn bedoeld om je dierentuin te onderhouden, zoals verblijven schoonmaken, dieren voeren, afval oprapen, planten water geven, XP-penningen ophalen, enzovoort. Je zou de taken gemakkelijk moeten kunnen voltooien door het spel te spelen en te doen wat je normaal gesproken zou doen. Na voltooiing verschijnt er een timer onder Madame Yu die aftelt tot je volgende reeks taken begint.",
+
+  "tips_title": "Tips",
+  "tips_intro": "Een paar tips om het meeste uit de Zoo Academy te halen:",
+  "tip_1": "Klik bij het voltooien van taken op de taakballon aan de linkerkant als je moeite hebt met het vinden van een item om te voltooien.",
+  "tip_2": "Koop bij het aanschaffen van een nieuw abonnement altijd eerst 1 dag Bronze en verleng daarna naar het abonnement dat je daadwerkelijk wilt. Zo krijg je de grootste korting en zegels. Je krijgt alleen zegels bij het verlengen!",
+  "tip_3": "Hoewel de Academy nooit in de aanbieding gaat, kun je de Cashback-evenementen gebruiken om een percentage van de diamanten terug te krijgen als je wacht tot dan om academy-maanden in te slaan. Omdat de Cashback-evenementen doorgaans 2 maanden (soms 3 maanden) uit elkaar liggen, is het het beste om voorraad in te slaan zodat je geen onderbreking hebt. Maart en november kunnen belangrijke momenten zijn om 6 of meer maanden in te slaan door 2000 diamanten uit te geven en de volledige 25% diamanten terug te krijgen.",
+  "tip_4": "Bij het wisselen tussen lidmaatschappen wordt het actieve lidmaatschap gebruikt als korting op je geüpgradede lidmaatschap. Zorg ervoor dat je geen diamanten verspilt door te upgraden naar een lidmaatschap waarbij de volledige korting niet kan worden gebruikt.",
+  "tip_5": "Soms heeft het spel een paar extra seconden nodig om je nieuwe Madame Yu-taak te berekenen bij het openen van het spel. Gebruik deze gelegenheid om direct naar je kleinste regio te gaan, zodat de taken worden berekend op basis van de kleinere dierentuin in plaats van je grotere hoofddierentuin. Je kunt er ook voor zorgen dat je het spel een paar minuten voor de nieuwe taak opent en naar je kleinste regio gaat voordat de nieuwe taak verschijnt.",
+
+  "col_membership": "Lidmaatschap",
+  "col_duration": "Duur",
+  "col_startup": "Startkosten",
+  "col_extend": "Kosten voor verlenging",
+  "col_stamps": "Zegels",
+  "col_cost_per_stamp": "Kosten per zegel"
+}

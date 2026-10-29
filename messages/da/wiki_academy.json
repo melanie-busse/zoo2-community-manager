@@ -1,0 +1,31 @@
+{
+  "title": "Academy FAQ",
+  "intro": "Zoo Academy er en premium-kontofunktion, der giver dig mulighed for at låse op for daglige gaver og bonusser til din zoo, når den aktiveres med diamanter. Nogle fordele inkluderer at høste ekstra erfaring for at passe dyr, indsamle flere mønter fra butikker og entréboder, indsamle daglige gaver i form af skattekistestykker og endda bonusser til forskellige aspekter af avl. Når du når niveau 10, vil Madame Yu, direktøren for Zoo Academy, præsentere sig selv og give dig de første mesterskabsopgaver.",
+
+  "membership_title": "Medlemskabsniveauer",
+  "membership_body": "Der er fire medlemskabsniveauer: Bronze, Silver, Gold og Platinum. Efterhånden som du stiger i niveau i Academy, kan du låse op for fordelene ved hvert niveau ved at købe det passende medlemskab. Et Bronze-medlemskab giver dig alle oplåste Bronze-niveaufordele. Et Silver-medlemskab giver dig alle oplåste Silver- og Bronze-niveaufordele. Et Gold-medlemskab giver dig alle oplåste Gold-, Silver- og Bronze-niveaufordele. Et Platinum-medlemskab giver alle oplåste fordele fra Platinum-, Gold-, Silver- og Bronze-niveauer. Hvis du dog ikke har låst nogen fordele op på et bestemt niveau, kan du ikke købe det niveaus medlemskab, før du låser mindst ét ​​sæt op på niveauet.",
+
+  "stamps_title": "Frimærker",
+  "stamps_body": "Når du forlænger et medlemskab, kan du optjene frimærker. 10 frimærker giver dig 1 VIP-mønt. Hvis dit abonnement er udløbet, og du køber et nyt abonnement, får du ikke frimærker! En nem løsning er at købe 1 dag Bronze og derefter forlænge med et abonnement, der giver frimærker. Når du udfylder et frimærkekort fra den 19. juni 2023, får du VIP-mønter, så du kan spare dem op og vælge en belønning på et senere tidspunkt. Hvert abonnementsniveau tilbyder eksklusive dyrevalg. Når dit frimærkekort er fuldt, kan du indløse et dyr fra dit nuværende abonnementsniveau eller derunder.",
+
+  "mastery_title": "Mesterskabsniveauer",
+  "mastery_body": "Du kan fuldføre regelmæssige opgaver for at optjene mesterskabspoint (vist som ruller i opgavebelønninger) mod et Zoo-mesterskabsniveau. De første niveauer kræver kun få ruller, men antallet af ruller, der er nødvendigt for at stige i niveau, stiger i takt med din fremgang. Med et aktivt medlemskab har du også mulighed for at springe til næste niveau mod diamanter. Det koster 5 diamanter pr. uindsamlet rulle at gå til næste niveau. At springe til næste niveau fritager dig dog ikke fra at fuldføre de resterende opgaver på det springede niveau.",
+
+  "tasks_title": "Opgaver",
+  "tasks_body": "Madame Yu giver dig opgaver hver 6. time. Opgaverne handler om at vedligeholde din zoo, f.eks. rengøre indhegninger, fodre dyr, samle affald op, vande planter, indsamle XP-pins osv. Du bør nemt kunne fuldføre opgaverne ved at spille spillet og gøre, hvad du normalt ville gøre. Efter afslutningen vises en nedtælling under Madame Yu, der tæller ned, indtil dit nye sæt opgaver begynder.",
+
+  "tips_title": "Tips",
+  "tips_intro": "Et par tips til at få mest muligt ud af Zoo Academy:",
+  "tip_1": "Når du udfører opgaver, skal du klikke på opgaveboblen i venstre sidemenu, hvis du har svært ved at finde et element, der skal fuldføres.",
+  "tip_2": "Når du køber et nyt abonnement, skal du altid købe 1 dag Bronze og derefter forlænge til det abonnement, du egentlig ønsker. På den måde får du den største rabat og frimærker. Du får kun frimærker ved forlængelse!",
+  "tip_3": "Selvom Academy aldrig er på udsalg, kan du bruge Cashback-begivenhederne til at få en procentdel af diamanterne tilbage, hvis du venter med at fylde op på Academy-måneder til da. Da Cashback-begivenhederne typisk er 2 måneder (nogle gange 3 måneder) fra hinanden, er det bedst at købe ind, så du ikke har et afbrud. Marts og november kan være vigtige tidspunkter at fylde op med 6+ måneder ved at bruge 2000 diamanter for at få de fulde 25 % af diamanterne tilbage.",
+  "tip_4": "Når du skifter mellem medlemskaber, bruges det aktive medlemskab som rabat på dit opgraderede medlemskab. Sørg for ikke at spilde diamanter ved at opgradere til et medlemskab, hvor den fulde rabat ikke kan bruges.",
+  "tip_5": "Nogle gange tager spillet et par ekstra sekunder på at beregne din nye Madame Yu-opgave, når du åbner spillet. Brug denne mulighed til at gå direkte til din mindste region, så opgaverne beregnes ud fra den mindre zoo i stedet for din større hoved-zoo. Alternativt kan du sørge for at gå ind i spillet et par minutter før den nye opgave og gå til din mindste region, inden den genererer den nye opgave.",
+
+  "col_membership": "Medlemskab",
+  "col_duration": "Varighed",
+  "col_startup": "Startomkostning",
+  "col_extend": "Pris for forlængelse",
+  "col_stamps": "Frimærker",
+  "col_cost_per_stamp": "Pris pr. frimærke"
+}

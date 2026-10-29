@@ -1,0 +1,31 @@
+{
+  "title": "FAQ de l'Académie",
+  "intro": "La Zoo Academy est une fonctionnalité de compte premium qui vous permet de débloquer des cadeaux et des bonus quotidiens pour votre zoo lorsqu'elle est activée avec des diamants. Parmi les avantages, citons l'obtention d'expérience supplémentaire lors des soins aux animaux, la collecte de plus de pièces dans les boutiques et les guichets d'entrée, la réception de cadeaux quotidiens sous forme de pièces de coffres au trésor, et même des bonus pour divers aspects de l'élevage. Lorsque vous atteignez le niveau 10, Madame Yu, la directrice de la Zoo Academy, se présente et vous soumet les premières quêtes de Maîtrise.",
+
+  "membership_title": "Niveaux d'abonnement",
+  "membership_body": "Il existe quatre niveaux d'abonnement : Bronze, Silver, Gold et Platinum. En progressant dans l'Académie, vous pouvez débloquer les avantages de chaque niveau en souscrivant à l'abonnement correspondant. Un abonnement Bronze vous donne accès à tous les avantages Bronze débloqués. Un abonnement Silver vous donne accès à tous les avantages Silver et Bronze débloqués. Un abonnement Gold vous donne accès à tous les avantages Gold, Silver et Bronze débloqués. Un abonnement Platinum vous donne accès à tous les avantages Platinum, Gold, Silver et Bronze débloqués. Cependant, si vous n'avez débloqué aucun avantage d'un niveau particulier, vous ne pouvez pas souscrire à l'abonnement de ce niveau tant que vous n'avez pas débloqué au moins un parchemin dans ce niveau.",
+
+  "stamps_title": "Tampons",
+  "stamps_body": "Lorsque vous prolongez un abonnement, vous pouvez acquérir des tampons. 10 tampons vous rapportent 1 Pièce VIP. Si votre abonnement a expiré et que vous en souscrivez un nouveau, vous ne recevrez pas de tampons ! Une astuce simple consiste à acheter 1 jour de Bronze, puis à prolonger avec un abonnement qui génère des tampons. À partir du 19 juin 2023, en complétant une carte de tampons, vous obtenez des Pièces VIP, ce qui vous permet de les accumuler et de choisir une récompense ultérieurement. Chaque niveau d'abonnement propose des animaux exclusifs. Lorsque votre carte de tampons est complète, vous pouvez échanger un animal correspondant à votre niveau d'abonnement actuel ou à un niveau inférieur.",
+
+  "mastery_title": "Niveaux de Maîtrise",
+  "mastery_body": "Vous pouvez accomplir des tâches régulières pour gagner des Points de Maîtrise (représentés par des parchemins dans les récompenses de quêtes) et progresser dans les Niveaux de Maîtrise du Zoo. Les premiers niveaux ne nécessitent que quelques parchemins, mais le nombre de parchemins requis pour passer au niveau suivant augmente au fil de votre progression. Avec un abonnement actif, vous avez également la possibilité de passer directement au niveau suivant contre des diamants. Passer au niveau suivant coûte 5 diamants par parchemin non collecté. Cependant, sauter un niveau ne vous dispense pas d'accomplir les tâches restantes du niveau ignoré.",
+
+  "tasks_title": "Tâches",
+  "tasks_body": "Madame Yu vous confie des tâches toutes les 6 heures. Ces tâches consistent à entretenir votre zoo : nettoyer les enclos, nourrir les animaux, ramasser les déchets, arroser les plantes, collecter les épingles XP, etc. Vous devriez pouvoir accomplir ces tâches facilement en jouant normalement. Une fois les tâches terminées, un minuteur s'affiche sous Madame Yu et décompte le temps jusqu'au prochain ensemble de tâches.",
+
+  "tips_title": "Conseils",
+  "tips_intro": "Quelques conseils pour tirer le meilleur parti de la Zoo Academy :",
+  "tip_1": "Lors de l'accomplissement des tâches, cliquez sur la bulle de tâche dans la barre latérale gauche si vous avez du mal à localiser un élément à compléter.",
+  "tip_2": "Lorsque vous souscrivez un nouvel abonnement, achetez toujours 1 jour de Bronze, puis prolongez avec l'abonnement que vous souhaitez réellement. Vous bénéficiez ainsi de la plus grande remise et obtenez des tampons. Vous ne recevez des tampons qu'en prolongeant !",
+  "tip_3": "Bien que l'académie ne soit jamais en promotion, vous pouvez profiter des événements Cashback pour récupérer un pourcentage de diamants si vous attendez ces périodes pour vous approvisionner en mois d'académie. Les événements Cashback étant généralement espacés de 2 mois (parfois 3 mois), il est préférable de faire des réserves pour éviter toute interruption. Les mois de mars et novembre peuvent être des moments clés pour vous approvisionner en 6 mois ou plus en dépensant 2 000 diamants afin d'obtenir le remboursement maximal de 25 % de diamants.",
+  "tip_4": "Lors d'un changement d'abonnement, l'abonnement actif est utilisé comme remise sur votre abonnement amélioré. Veillez à ne pas gaspiller de diamants en passant à un abonnement pour lequel la remise complète ne peut pas être utilisée.",
+  "tip_5": "Parfois, le jeu mettra quelques secondes supplémentaires à calculer votre nouvelle tâche de Madame Yu à l'ouverture. Profitez-en pour vous rendre directement dans votre plus petite région afin que les tâches soient calculées en fonction de ce zoo plus petit plutôt que de votre zoo principal plus grand. Vous pouvez également vous assurer d'entrer dans le jeu quelques minutes avant la nouvelle tâche et rejoindre votre plus petite région avant qu'elle ne se génère.",
+
+  "col_membership": "Abonnement",
+  "col_duration": "Durée",
+  "col_startup": "Coût de démarrage",
+  "col_extend": "Coût de prolongation",
+  "col_stamps": "Tampons",
+  "col_cost_per_stamp": "Coût par tampon"
+}
