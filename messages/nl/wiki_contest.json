@@ -1,0 +1,36 @@
+{
+  "title": "Wedstrijd FAQ",
+  "intro": "Wekelijkse clubwedstrijden werden geïntroduceerd op 29 mei 2019, waardoor clubs kunnen strijden voor exclusieve standbeeldversieringen. Speciale vacht-competities werden geïntroduceerd in februari 2021 als tweewekelijkse wedstrijden en zijn in mei 2026 overgegaan naar wekelijkse wedstrijden. Een nieuwe wedstrijdweek begint elke woensdag rond 10:25 uur CEST.",
+
+  "description_title": "Beschrijving",
+  "description_p1": "Elke woensdag genereert het spel een nieuwe selectie van 4 wedstrijdopties: drie standbeeldwedstrijden en één speciale vachtwedstrijd.",
+  "description_p2": "Presidenten en ministers mogen gedurende de week op elk moment een wedstrijd openen. Een gilde mag slechts aan één wedstrijd per week deelnemen. Zodra een wedstrijd is geselecteerd, kan deze keuze niet ongedaan worden gemaakt, dus kies zorgvuldig.",
+  "description_p3": "Clubleden kunnen deelnemen aan de gekozen wedstrijd door het wedstrijdtabblad te openen in het clubhuisscherm. Tik op \"Kaarten doneren\" om het donatiescherm te openen. Leden kunnen bijbehorende dierkaarten uit hun inventaris doneren (indien aanwezig) of niveau 1-dierkaarten kopen met munten of diamanten (afhankelijk van het dier) via het donatiescherm. Dierkaarten kunnen worden verkregen door te fokken of meer van het dier te kopen. Er is geen donatielimiet.",
+  "description_p4": "Clubleden kunnen een dier van elk niveau, elke leeftijd, elk geslacht of elke kleur doneren, zolang het overeenkomt met de huidige wedstrijdsoort. Kleur en geslacht hebben geen invloed op de punten.",
+
+  "new_members_title": "Nieuwe Leden",
+  "new_members_body": "Vanaf november 2023 moeten nieuwe clubleden zeven dagen wachten voordat ze kunnen doneren aan inzamelingen en wedstrijden, maar ze kunnen wel onmiddellijk profiteren van geactiveerde clubinzamelingen en wedstrijdbeloningen. Deze maatregel werd sterk gevraagd door de gemeenschap om bepaalde vormen van valsspelen te voorkomen.",
+
+  "donation_title": "Donatiepunten",
+  "donation_intro": "Het doneren van dierkaarten levert twee soorten punten op: wedstrijdpunten en lidmaatschapservaringspunten.",
+
+  "contest_points_title": "Wedstrijdpunten",
+  "contest_points_body": "Wedstrijdpunten dragen bij aan de totale clubscore voor de eindscore van de wekelijkse wedstrijd. Alleen het niveau van het dier telt — de kleur en rijpheid van het dier hebben geen invloed op de berekening van wedstrijdpunten. Niveau 1 (gekocht of uit inventaris) is 10 punten waard voor de wekelijkse wedstrijd.",
+
+  "member_points_title": "Lidmaatschapservaringspunten",
+  "member_points_body": "Ledenpunten worden opgeteld bij de persoonlijke clublidmaatschapsrangpunten van de speler, waarmee items te koop worden aangeboden in de clubwinkel en de speler een nieuwe rangtitel krijgt. De verdiensten aan ledenpunten zijn gelijk aan de helft van de populariteitspunten van het gedoneerde dier (naar beneden afgerond op het dichtstbijzijnde gehele getal). Let op: baby's zijn twee keer zo populair als volwassenen, wat betekent dat baby's twee keer zoveel persoonlijke ledenpunten opleveren als volwassenen.",
+
+  "rank_bonus_title": "Rangbonusvermenigvuldiger",
+  "rank_bonus_intro": "Er is een bonusvermenigvuldiger op basis van de rangschikking van het lid op grond van donaties aan de wedstrijd die week. Deze rangschikking wordt bepaald door de totale wekelijkse bijdrage van elke speler. De totale wekelijkse gildescore wordt berekend door de punten van elke speler te vermenigvuldigen met hun rangbonus en deze totalen vervolgens op te tellen.",
+
+  "rewards_title": "Beloningen",
+  "rewards_body": "Elke club die deelneemt aan een wekelijkse wedstrijd ontvangt beloningen op basis van hun eindklassering in de gekozen wedstrijd. De club zelf ontvangt ranggebaseerde ervaringspunten en elk clublid ontvangt puzzelstukjes, ongeacht hun deelnameniveau.",
+  "statue_rewards_title": "Standbeeldwedstrijd Beloningen",
+  "special_coat_rewards_title": "Speciale Vachtwedstrijd Beloningen",
+
+  "col_rank": "Gilderang",
+  "col_multiplier": "Vermenigvuldiger",
+  "col_guild_exp": "Gilde Exp.",
+  "col_puzzle_pct": "Puzzelstukjes",
+  "col_animal_purchases": "Dieraankopen"
+}

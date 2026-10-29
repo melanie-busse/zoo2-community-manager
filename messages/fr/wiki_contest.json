@@ -1,0 +1,36 @@
+{
+  "title": "FAQ Concours",
+  "intro": "Les concours hebdomadaires de club ont été introduits le 29 mai 2019, permettant aux clubs de s'affronter pour des décorations de statues exclusives. Les concours de robes spéciales ont été introduits en février 2021 comme concours bihebdomadaires, puis sont devenus des concours hebdomadaires en mai 2026. Une nouvelle semaine de concours commence chaque mercredi vers 10h25 CEST.",
+
+  "description_title": "Description",
+  "description_p1": "Chaque mercredi, le jeu génère une nouvelle sélection de 4 options de concours : trois concours de statues et un concours de Robe Spéciale.",
+  "description_p2": "Les présidents et les ministres peuvent ouvrir un concours à n'importe quel moment de la semaine. Un club ne peut participer qu'à un seul concours par semaine. Une fois qu'un concours a été sélectionné, il n'est plus possible d'annuler l'action, alors choisissez avec soin.",
+  "description_p3": "Les membres du club peuvent participer au concours choisi en ouvrant l'onglet concours dans l'écran du clubhouse. Appuyez sur « Donner des cartes » pour ouvrir l'écran de don. Les membres peuvent donner leurs cartes d'animaux correspondantes depuis leur inventaire (le cas échéant) ou acheter des cartes d'animaux de niveau 1 avec des pièces ou des diamants (selon l'animal) sur l'écran de don. Les cartes d'animaux peuvent être obtenues en reproduisant ou en achetant davantage de cet animal. Il n'y a pas de limite de don.",
+  "description_p4": "Les membres du club peuvent donner un animal de n'importe quel niveau, âge, sexe ou couleur, tant qu'il correspond à l'espèce du concours en cours. La couleur et le sexe n'ont aucun effet sur les points.",
+
+  "new_members_title": "Nouveaux Membres",
+  "new_members_body": "Depuis novembre 2023, les nouveaux membres du club doivent attendre sept jours avant de pouvoir faire des dons aux collectes de fonds et aux concours, mais ils peuvent immédiatement bénéficier des collectes de fonds de club activées et des récompenses de concours. Cette mesure a été très demandée par la communauté pour prévenir certaines formes de triche.",
+
+  "donation_title": "Points de Don",
+  "donation_intro": "Donner des cartes d'animaux rapporte deux types de points : des Points de Concours et des Points d'Expérience de Membre.",
+
+  "contest_points_title": "Points de Concours",
+  "contest_points_body": "Les points de concours contribuent au score global du club pour le score final du concours hebdomadaire. Seul le niveau de l'animal compte — la couleur et la maturité de l'animal n'influencent pas le calcul des points de concours. Le niveau 1 (qu'il soit acheté ou issu de l'inventaire) vaut 10 points pour le concours hebdomadaire.",
+
+  "member_points_title": "Points d'Expérience de Membre",
+  "member_points_body": "Les points de membre s'ajoutent aux points de rang d'adhésion personnels du joueur au sein du club, qui débloquent des articles à acheter dans la Boutique du Club et attribuent un nouveau titre de rang au membre. Les gains de points de membre sont équivalents à la moitié des points de popularité de l'animal donné (arrondi à l'entier inférieur). À noter que les bébés sont deux fois plus populaires que les adultes, ce qui signifie que les bébés rapportent deux fois plus de points de membre personnels que les adultes.",
+
+  "rank_bonus_title": "Multiplicateur de Bonus de Rang",
+  "rank_bonus_intro": "Il existe un multiplicateur de bonus selon le classement du membre par rapport aux dons au concours de la semaine. Ce classement est déterminé par la contribution hebdomadaire totale de chaque joueur. Le Score Hebdomadaire Global du Club est calculé en multipliant les points de chaque joueur par leur bonus de rang, puis en additionnant ces totaux.",
+
+  "rewards_title": "Récompenses",
+  "rewards_body": "Chaque club participant à un concours hebdomadaire reçoit des récompenses en fonction de sa position finale dans le classement du concours sélectionné. Le club lui-même reçoit des points d'expérience en fonction de son rang, et chaque membre du club reçoit des pièces de puzzle quel que soit son niveau de participation.",
+  "statue_rewards_title": "Récompenses du Concours de Statues",
+  "special_coat_rewards_title": "Récompenses du Concours de Robes Spéciales",
+
+  "col_rank": "Rang du Club",
+  "col_multiplier": "Multiplicateur",
+  "col_guild_exp": "Exp. du Club",
+  "col_puzzle_pct": "Pièces de Puzzle",
+  "col_animal_purchases": "Achats d'Animaux"
+}

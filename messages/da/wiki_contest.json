@@ -1,0 +1,36 @@
+{
+  "title": "Konkurrence FAQ",
+  "intro": "Ugentlige klubkonkurrencer blev introduceret den 29. maj 2019, hvilket giver klubber mulighed for at konkurrere om eksklusive statuedekoreringer. Særlige pelsekonkurrencer blev introduceret i februar 2021 som konkurrencer hver anden uge og skiftede til ugentlige konkurrencer i maj 2026. En ny konkurrenceuge begynder hver onsdag omkring kl. 10:25 CEST.",
+
+  "description_title": "Beskrivelse",
+  "description_p1": "Hver onsdag genererer spillet et nyt udvalg af 4 konkurrencemuligheder: tre statuekonkurrencer og én særlig pelsekonkurrence.",
+  "description_p2": "Præsidenter og ministre kan åbne en konkurrence når som helst i løbet af ugen. Et guild kan kun deltage i én konkurrence om ugen. Når en konkurrence er valgt, er der ingen mulighed for at fortryde handlingen, så vælg omhyggeligt.",
+  "description_p3": "Klubmedlemmer kan deltage i den valgte konkurrence ved at åbne konkurrencefanen inde på klubhus-skærmen. Tryk på \"Doner kort\" for at åbne donationsskærmen. Medlemmer kan donere de tilsvarende dyrekort fra lageret (hvis der er nogen) eller købe dyrekort på niveau 1 med mønter eller diamanter (afhængigt af dyret) på donationsskærmen. Dyrekort kan fås ved avl eller ved at købe flere af dyret. Der er ingen donationsgrænse.",
+  "description_p4": "Klubmedlemmer kan donere ethvert niveau, alder, køn eller farve af dyr, så længe det passer til den aktuelle konkurrenceart. Farve og køn har ingen indflydelse på point.",
+
+  "new_members_title": "Nye Medlemmer",
+  "new_members_body": "Fra november 2023 skal nye klubmedlemmer vente syv dage for at kunne donere til indsamlinger og konkurrencer, men de kan stadig straks drage fordel af aktiverede klubindsamlinger og konkurrencepræmier. Denne foranstaltning var meget efterspurgt af fællesskabet for at forhindre visse former for snyd.",
+
+  "donation_title": "Donationspoint",
+  "donation_intro": "Donation af dyrekort giver to typer point: Konkurrencepoint og Medlemsskabspoint.",
+
+  "contest_points_title": "Konkurrencepoint",
+  "contest_points_body": "Konkurrencepoint bidrager til klubbens samlede score i den ugentlige konkurrences endelige resultat. Kun dyrets niveau har betydning — dyrets farve og modenhed påvirker ikke beregningen af konkurrencepoint. Niveau 1 (uanset om det er købt eller fra lageret) er 10 point værd i den ugentlige konkurrence.",
+
+  "member_points_title": "Medlemsskabspoint",
+  "member_points_body": "Medlemspoint lægges til spillerens personlige klubmedlemsskabsrangspoint, som låser op for genstande til køb i klubbutikken og giver medlemmet en ny rangtitel. Optjening af medlemspoint svarer til halvdelen af det donerede dyrs popularitetspoint (afrundet ned til nærmeste hele tal). Bemærk, at babyer er dobbelt så populære som voksne, hvilket betyder, at babyer giver dobbelt så mange personlige medlemspoint som voksne.",
+
+  "rank_bonus_title": "Rangbonusmultiplikator",
+  "rank_bonus_intro": "Der er en bonusmultiplikator afhængigt af medlemmets rangering fra donationer til konkurrencen den pågældende uge. Denne rangering bestemmes af hver spillers samlede ugentlige bidrag. Den samlede ugentlige guildscore beregnes ved at multiplicere hver spillers point med deres rangbonus og derefter lægge disse totaler sammen.",
+
+  "rewards_title": "Præmier",
+  "rewards_body": "Hver klub, der deltager i en ugentlig konkurrence, modtager præmier baseret på deres endelige placeringposition i deres valgte konkurrence. Selve klubben modtager rangsbaserede erfaringspoint, og hvert klubmedlem modtager puslespilsbrikker uanset deres deltagelsesniveau.",
+  "statue_rewards_title": "Statuekonkurrencepræmier",
+  "special_coat_rewards_title": "Særlig Pelse-konkurrencepræmier",
+
+  "col_rank": "Guild-rang",
+  "col_multiplier": "Multiplikator",
+  "col_guild_exp": "Guild-exp.",
+  "col_puzzle_pct": "Puslespilsbrikker",
+  "col_animal_purchases": "Dyrekøb"
+}

@@ -2,7 +2,7 @@ import { getTranslations } from "next-intl/server";
 import PageWrapper from "@/components/page-structure/page/PageWrapper";
 import ContentWrapper from "@/components/page-structure/page/ContentWrapper";
 import PageHeader from "@/components/page-structure/page/PageHeader";
-import ContestFaqContent from "@/components/pages/contests/faq/ContestFaqContent";
+import WikiContestContent from "@/components/pages/wiki/contest/WikiContestContent";
 
 export default async function ContestFaqPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -12,7 +12,7 @@ export default async function ContestFaqPage({ params }: { params: Promise<{ loc
     <PageWrapper>
       <ContentWrapper>
         <PageHeader text={t("title")} />
-        <ContestFaqContent
+        <WikiContestContent
           intro={t("intro")}
           descriptionTitle={t("description_title")}
           descriptionP1={t("description_p1")}

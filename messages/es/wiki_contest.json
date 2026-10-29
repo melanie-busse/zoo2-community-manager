@@ -1,0 +1,36 @@
+{
+  "title": "Preguntas frecuentes sobre el concurso",
+  "intro": "Los concursos semanales de club se introdujeron el 29 de mayo de 2019, permitiendo a los clubs competir por exclusivas decoraciones de estatuas. Las competiciones de pelajes especiales se introdujeron en febrero de 2021 como concursos quincenales y pasaron a ser semanales en mayo de 2026. Una nueva semana de concurso comienza cada miércoles alrededor de las 10:25 CEST.",
+
+  "description_title": "Descripción",
+  "description_p1": "Cada miércoles, el juego genera una nueva selección de 4 opciones de concurso: tres concursos de estatuas y un concurso de Pelaje Especial.",
+  "description_p2": "Los presidentes y ministros pueden abrir un concurso en cualquier momento durante la semana. Un gremio solo puede participar en un concurso por semana. Una vez seleccionado un concurso, no es posible deshacer la acción, así que elige con cuidado.",
+  "description_p3": "Los miembros del club pueden participar en el concurso elegido abriendo la pestaña de concurso en la pantalla del club. Toca \"Donar cartas\" para abrir la pantalla de donación. Los miembros pueden donar sus cartas de animales correspondientes del inventario (si las tienen) o comprar cartas de animales de nivel 1 con monedas o diamantes (según el animal) en la pantalla de donación. Las cartas de animales se pueden obtener mediante la cría o comprando más del animal. No hay límite de donación.",
+  "description_p4": "Los miembros del club pueden donar animales de cualquier nivel, edad, género o color, siempre que corresponda a la especie del concurso actual. El color y el género no tienen efecto en los puntos.",
+
+  "new_members_title": "Nuevos Miembros",
+  "new_members_body": "A partir de noviembre de 2023, los nuevos miembros del club deben esperar siete días para poder donar a recaudaciones y concursos, pero aún pueden beneficiarse inmediatamente de las recaudaciones del club activadas y de las recompensas del concurso. Esta medida fue muy solicitada por la comunidad para evitar ciertas trampas.",
+
+  "donation_title": "Puntos de Donación",
+  "donation_intro": "Donar cartas de animales otorga dos tipos de puntos: Puntos de Concurso y Puntos de Experiencia de Membresía.",
+
+  "contest_points_title": "Puntos de Concurso",
+  "contest_points_body": "Los puntos de concurso contribuyen a la puntuación general del club para la puntuación final del concurso semanal. Solo importa el nivel del animal — el color y la madurez del animal no afectan el cálculo de los puntos de concurso. El nivel 1 (ya sea comprado o del inventario) vale 10 puntos para el concurso semanal.",
+
+  "member_points_title": "Puntos de Experiencia de Membresía",
+  "member_points_body": "Los puntos de miembro se suman a los puntos de rango de membresía personal del jugador en el club, que desbloquean artículos para comprar en la Tienda del Club y otorgan al miembro un nuevo título de rango. Las ganancias de puntos de miembro equivalen a la mitad de los puntos de popularidad del animal donado (redondeados hacia abajo al número entero más cercano). Ten en cuenta que las crías son dos veces más populares que los adultos, lo que significa que las crías otorgan el doble de puntos personales de miembro que los adultos.",
+
+  "rank_bonus_title": "Multiplicador de Bonificación por Rango",
+  "rank_bonus_intro": "Existe un multiplicador de bonificación según el rango del miembro en las donaciones al concurso de esa semana. Este ranking se determina por la contribución semanal total de cada jugador. La Puntuación Semanal General del Gremio se calcula multiplicando los puntos de cada jugador por su bonificación de rango y sumando esos totales.",
+
+  "rewards_title": "Recompensas",
+  "rewards_body": "Cada club que participa en un concurso semanal recibe recompensas según su posición final en el concurso seleccionado. El club en sí recibe puntos de experiencia basados en el rango, y cada miembro del club recibe piezas de puzle independientemente de su nivel de participación.",
+  "statue_rewards_title": "Recompensas del Concurso de Estatuas",
+  "special_coat_rewards_title": "Recompensas del Concurso de Pelaje Especial",
+
+  "col_rank": "Rango del Gremio",
+  "col_multiplier": "Multiplicador",
+  "col_guild_exp": "Exp. del Gremio",
+  "col_puzzle_pct": "Piezas de Puzle",
+  "col_animal_purchases": "Compras de Animales"
+}
