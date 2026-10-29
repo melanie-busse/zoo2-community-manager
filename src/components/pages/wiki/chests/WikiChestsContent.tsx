@@ -1,13 +1,11 @@
 "use client";
 
-import styled from "styled-components";
 import { useTranslations } from "next-intl";
 import React from "react";
 
 import WikiHeader from "@/components/pages/wiki/_elements/WikiHeader";
 import WikiContainer from "@/components/pages/wiki/_elements/WikiContainer";
 import { Image } from "@/types/image";
-import WikiAccordeon from "@/components/pages/wiki/_elements/WikiAccordeon";
 import WikiCard from "@/components/pages/wiki/_elements/WikiCard";
 import FriendshipChest from "@/components/pages/wiki/chests/FriendshipChest";
 import NormalChest from "@/components/pages/wiki/chests/NormalChest";
@@ -17,6 +15,7 @@ import LegendaryChest from "@/components/pages/wiki/chests/LegendaryChest";
 import TerraquaChest from "@/components/pages/wiki/chests/TerraquaChest";
 import NoctaviaChest from "@/components/pages/wiki/chests/NoctaviaChest";
 import VideoChest from "@/components/pages/wiki/chests/VideoChest";
+import { WikiBulletList } from "@/components/pages/wiki/_elements/WikiBulletList";
 
 export default function WikiChestsContent() {
   const t = useTranslations("chestsfaq");
@@ -46,23 +45,14 @@ export default function WikiChestsContent() {
 
       <WikiCard title={t("exceptions_title")} image={"/images/wiki/no_chest.jpg"}>
         <p>{t("exceptions_body")}</p>
-        <BulletList>
+
+        <WikiBulletList>
           <li>{t("exception_expansions")}</li>
           <li>{t("exception_upgrades")}</li>
           <li>{t("exception_employees")}</li>
           <li>{t("exception_other")}</li>
-        </BulletList>
+        </WikiBulletList>
       </WikiCard>
     </WikiContainer>
   );
 }
-
-const BulletList = styled.ul`
-  margin: 0;
-  padding-left: ${({ theme }) => theme.spacing(3)};
-  color: ${({ theme }) => theme.colors.ui.textMain};
-  li {
-    margin-bottom: ${({ theme }) => theme.spacing(1)};
-    line-height: 1.6;
-  }
-`;

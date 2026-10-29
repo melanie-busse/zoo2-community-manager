@@ -129,7 +129,13 @@
     "drop_bonus_body": "Legendariske kister har en roterende dropbonus, der øger chancen for at modtage puzzlebrikker til et bestemt eksklusivt dyr. Det boostede dyr skifter hvert 8. uge og roterer gennem listen over eksklusive dyr. Dette system har været aktivt siden den 24. november 2022.",
 
     "tips_title": "Tips",
-    "tips_body": "Tjek, hvilket eksklusivt dyr der i øjeblikket har dropbonussen, inden du bruger diamanter på Legendariske kister — hvis du har brug for det dyr, er det et godt tidspunkt at åbne flere. Da Legendariske kister indeholder brikker fra de fleste andre kister, er de en effektiv alt-i-én kilde, når du har diamanter tilovers. Butiksvogns-dekorationerne er legendarisk sjældenhed og kan kun fås her, hvilket gør dem værdifulde for samlinger."
+    "tips_body": "Tjek, hvilket eksklusivt dyr der i øjeblikket har dropbonussen, inden du bruger diamanter på Legendariske kister — hvis du har brug for det dyr, er det et godt tidspunkt at åbne flere. Da Legendariske kister indeholder brikker fra de fleste andre kister, er de en effektiv alt-i-én kilde, når du har diamanter tilovers. Butiksvogns-dekorationerne er legendarisk sjældenhed og kan kun fås her, hvilket gør dem værdifulde for samlinger.",
+    "carts": {
+      "ice-cream-cart": "Isstand",
+      "drink-cart": "Drikkevarestand",
+      "snack-cart": "Snackstand",
+      "souvenir-cart": "Souvenirstand"
+    }
   },
   "terraqua": {
     "title": "Terraqua-kister",

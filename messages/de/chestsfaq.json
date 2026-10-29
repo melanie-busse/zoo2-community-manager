@@ -129,7 +129,13 @@
     "drop_bonus_body": "Legendäre Truhen bieten einen rotierenden Boost-Tier-Bonus, der die Chance erhöht, Puzzleteile eines bestimmten exklusiven Tieres zu erhalten. Das begünstigte Tier wechselt alle 8 Wochen und rotiert durch die Liste der exklusiven Tiere. Dieses System ist seit dem 24. November 2022 aktiv.",
 
     "tips_title": "Tipps",
-    "tips_body": "Überprüfe, welches exklusive Tier aktuell den Drop-Bonus hat, bevor du Diamanten für Legendäre Truhen ausgibst – wenn du dieses Tier brauchst, ist es ein guter Zeitpunkt, mehrere zu öffnen. Da Legendäre Truhen Teile aus den meisten anderen Truhen enthalten, sind sie eine effiziente All-in-One-Quelle, wenn du Diamanten übrig hast. Die Shop-Wagen-Dekorationen sind von Legendärer Seltenheit und nur hier erhältlich, was sie wertvoll für Sammlungen macht."
+    "tips_body": "Überprüfe, welches exklusive Tier aktuell den Drop-Bonus hat, bevor du Diamanten für Legendäre Truhen ausgibst – wenn du dieses Tier brauchst, ist es ein guter Zeitpunkt, mehrere zu öffnen. Da Legendäre Truhen Teile aus den meisten anderen Truhen enthalten, sind sie eine effiziente All-in-One-Quelle, wenn du Diamanten übrig hast. Die Shop-Wagen-Dekorationen sind von Legendärer Seltenheit und nur hier erhältlich, was sie wertvoll für Sammlungen macht.",
+    "carts": {
+      "ice-cream-cart": "Eisstand",
+      "drink-cart": "Getränkestand",
+      "snack-cart": "Snackstand",
+      "souvenir-cart": "Souvenirstand"
+    }
   },
   "terraqua": {
     "title": "Terraqua-Truhen",

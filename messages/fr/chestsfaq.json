@@ -133,7 +133,13 @@
     "drop_bonus_body": "Les Coffres légendaires proposent un bonus de tirage rotatif qui augmente les chances de recevoir les pièces de puzzle d'un animal exclusif spécifique. L'animal renforcé change toutes les 8 semaines, en rotation dans la liste des animaux exclusifs. Ce système est actif depuis le 24 novembre 2022.",
 
     "tips_title": "Conseils",
-    "tips_body": "Vérifiez quel animal exclusif bénéficie actuellement du bonus de tirage avant de dépenser des diamants sur des Coffres légendaires — si vous avez besoin de cet animal, c'est un bon moment pour en ouvrir plusieurs. Comme les Coffres légendaires contiennent des pièces de la plupart des autres coffres, ils sont une source complète et efficace lorsque vous avez des diamants à dépenser. Les décorations Chariot de boutique sont de rareté légendaire et uniquement disponibles ici, les rendant précieuses pour les collections."
+    "tips_body": "Vérifiez quel animal exclusif bénéficie actuellement du bonus de tirage avant de dépenser des diamants sur des Coffres légendaires — si vous avez besoin de cet animal, c'est un bon moment pour en ouvrir plusieurs. Comme les Coffres légendaires contiennent des pièces de la plupart des autres coffres, ils sont une source complète et efficace lorsque vous avez des diamants à dépenser. Les décorations Chariot de boutique sont de rareté légendaire et uniquement disponibles ici, les rendant précieuses pour les collections.",
+    "carts": {
+      "ice-cream-cart": "Stand de glaces",
+      "drink-cart": "Stand de boissons",
+      "snack-cart": "Stand de snacks",
+      "souvenir-cart": "Stand de souvenirs"
+    }
   },
 
   "terraqua": {

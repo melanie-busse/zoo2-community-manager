@@ -129,7 +129,13 @@
     "drop_bonus_body": "Los Cofres Legendarios tienen una bonificación de caída rotatoria que aumenta la probabilidad de recibir las piezas de puzle de un animal exclusivo específico. El animal bonificado cambia cada 8 semanas, rotando por la lista de animales exclusivos. Este sistema está activo desde el 24 de noviembre de 2022.",
 
     "tips_title": "Consejos",
-    "tips_body": "Comprueba qué animal exclusivo tiene actualmente la bonificación de caída antes de gastar diamantes en Cofres Legendarios — si necesitas ese animal, es un buen momento para abrir varios. Como los Cofres Legendarios contienen piezas de la mayoría de los otros cofres, son una fuente eficiente de todo en uno cuando tienes diamantes de sobra. Las decoraciones de Carro de Tienda son de rareza Legendaria y solo se pueden obtener aquí, lo que las hace valiosas para las colecciones."
+    "tips_body": "Comprueba qué animal exclusivo tiene actualmente la bonificación de caída antes de gastar diamantes en Cofres Legendarios — si necesitas ese animal, es un buen momento para abrir varios. Como los Cofres Legendarios contienen piezas de la mayoría de los otros cofres, son una fuente eficiente de todo en uno cuando tienes diamantes de sobra. Las decoraciones de Carro de Tienda son de rareza Legendaria y solo se pueden obtener aquí, lo que las hace valiosas para las colecciones.",
+    "carts": {
+      "ice-cream-cart": "Puesto de helados",
+      "drink-cart": "Puesto de bebidas",
+      "snack-cart": "Puesto de snacks",
+      "souvenir-cart": "Puesto de recuerdos"
+    }
   },
   "terraqua": {
     "title": "Cofres Terraqua",

@@ -1,17 +1,15 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import styled from "styled-components";
 import NextImage from "next/image";
 import React from "react";
 
 import WikiAccordeon from "../_elements/WikiAccordeon";
-import {
-  InfoCard,
-  InfoGrid,
-  InfoLabel,
-  InfoValue,
-} from "@/components/pages/wiki/chests/FriendshipChest";
+import WikiAccordionContentWrapper from "@/components/pages/wiki/_elements/WikiAccordionContentWrapper";
+import WikiIntroText from "@/components/pages/wiki/_elements/WikiIntroText";
+import WikiInfoGrid from "@/components/pages/wiki/_elements/WikiInfoGrid";
+import WikiInfoCard from "@/components/pages/wiki/_elements/WikiInfoCard";
+import WikiTitelParagraph from "@/components/pages/wiki/_elements/WikiTitelParagraph";
 
 export default function RetroChest() {
   const t = useTranslations("chestsfaq.retro");
@@ -19,80 +17,31 @@ export default function RetroChest() {
 
   return (
     <WikiAccordeon title={t("title")} image={"/images/wiki/retro_chest.jpg"}>
-      <AccordionContentWrapper>
-        <IntroText>{t("intro")}</IntroText>
+      <WikiAccordionContentWrapper>
+        <WikiIntroText>{t("intro")}</WikiIntroText>
 
-        <InfoGrid>
-          <InfoCard>
-            <InfoLabel>{tChest("cost")}</InfoLabel>
-            <InfoValue>
-              39{" "}
-              <NextImage
-                src={"/images/currency/diamant.webp"}
-                alt={"Diamant"}
-                width={20}
-                height={20}
-              />
-            </InfoValue>
-          </InfoCard>
-          <InfoCard>
-            <InfoLabel>{tChest("limit")}</InfoLabel>
-            <InfoValue>📦 Max. 100 {tChest("chests")}</InfoValue>
-          </InfoCard>
-        </InfoGrid>
+        <WikiInfoGrid>
+          <WikiInfoCard
+            label={tChest("cost")}
+            value={
+              <span style={{ display: "inline-flex", alignItems: "center", gap: "4px" }}>
+                39
+                <NextImage
+                  src={"/images/currency/diamant.webp"}
+                  alt={"Diamant"}
+                  width={20}
+                  height={20}
+                />
+              </span>
+            }
+          />
+          <WikiInfoCard label={tChest("limit")} value={`📦 Max. 100 ${tChest("chests")}`} />
+        </WikiInfoGrid>
 
-        {/* Sektion: Inhalt */}
-        <DetailSection>
-          <SubTitle>{t("contents_title")}</SubTitle>
-          <p>{t("contents_body")}</p>
-        </DetailSection>
-
-        {/* Sektion: Drop-Bonus */}
-        <DetailSection>
-          <SubTitle>{t("drop_bonus_title")}</SubTitle>
-          <p>{t("drop_bonus_body")}</p>
-        </DetailSection>
-
-        {/* Sektion: Tipps */}
-        <DetailSection>
-          <SubTitle>{t("tips_title")}</SubTitle>
-          <p>{t("tips_body")}</p>
-        </DetailSection>
-      </AccordionContentWrapper>
+        <WikiTitelParagraph title={t("contents_title")} paragraph={t("contents_body")} />
+        <WikiTitelParagraph title={t("drop_bonus_title")} paragraph={t("drop_bonus_body")} />
+        <WikiTitelParagraph title={t("tips_title")} paragraph={t("tips_body")} />
+      </WikiAccordionContentWrapper>
     </WikiAccordeon>
   );
 }
-
-const AccordionContentWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: ${({ theme }) => theme.spacing(3)};
-  padding-top: ${({ theme }) => theme.spacing(2)};
-`;
-
-const IntroText = styled.p`
-  font-size: 1rem;
-  line-height: 1.6;
-  color: ${({ theme }) => theme.colors.ui.textMain};
-`;
-
-const DetailSection = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-
-  p {
-    margin: 0;
-    line-height: 1.6;
-    color: ${({ theme }) => theme.colors.ui.textMain};
-  }
-`;
-
-const SubTitle = styled.h3`
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: #2d5a27;
-  margin: 12px 0 4px 0;
-  padding-bottom: 4px;
-  border-bottom: 1.5px solid rgba(45, 90, 39, 0.2);
-`;

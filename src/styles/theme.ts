@@ -62,6 +62,14 @@ export const theme = {
       lime: "#d6efc0",
       honeydew: "#e8f5d7",
     },
+    background: {
+      infocard: "rgba(45, 90, 39, 0.05)",
+    },
+    rarity: {
+      rare: "#2b6cb0",
+      epic: "#805ad5",
+      legendary: "#d69e2e",
+    },
     // UI Elemente & Overlays
     ui: {
       white: "#ffffff",
@@ -83,6 +91,7 @@ export const theme = {
       overlayDark: "rgba(0, 0, 0, 0.2)", // black
       overlayLight: "rgba(0, 0, 0, 0.05)", // dropdownLink
     },
+
     // Semantische Statusfarben
     status: {
       successBg: "#e6f4ea",
@@ -102,6 +111,10 @@ export const theme = {
     main: {
       title: "#68B300",
     },
+  },
+  border: {
+    infocard: "1px solid rgba(45, 90, 39, 0.15)",
+    subtitle: "1.5px solid rgba(45, 90, 39, 0.2)",
   },
   shadows: {
     soft: "0 8px 32px rgba(0, 0, 0, 0.2)",

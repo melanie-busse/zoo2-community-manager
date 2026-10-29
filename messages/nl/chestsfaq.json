@@ -133,7 +133,13 @@
     "drop_bonus_body": "Legendarische Kisten hebben een roterende dropbonus die de kans vergroot op het ontvangen van puzzelstukken van een specifiek exclusief dier. Het verhoogde dier wisselt elke 8 weken en roteert door de lijst van exclusieve dieren. Dit systeem is actief sinds 24 november 2022.",
 
     "tips_title": "Tips",
-    "tips_body": "Controleer welk exclusief dier momenteel de dropbonus heeft voordat je diamanten uitgeeft aan Legendarische Kisten — als je dat dier nodig hebt, is het een goed moment om er meerdere te openen. Omdat Legendarische Kisten stukken van de meeste andere kisten bevatten, zijn ze een efficiënte alles-in-één bron wanneer je diamanten over hebt. De Winkelkarretjedecoties zijn Legendarische-zeldzaamheid en alleen hier verkrijgbaar, waardoor ze waardevol zijn voor collecties."
+    "tips_body": "Controleer welk exclusief dier momenteel de dropbonus heeft voordat je diamanten uitgeeft aan Legendarische Kisten — als je dat dier nodig hebt, is het een goed moment om er meerdere te openen. Omdat Legendarische Kisten stukken van de meeste andere kisten bevatten, zijn ze een efficiënte alles-in-één bron wanneer je diamanten over hebt. De Winkelkarretjedecoties zijn Legendarische-zeldzaamheid en alleen hier verkrijgbaar, waardoor ze waardevol zijn voor collecties.",
+    "carts": {
+      "ice-cream-cart": "IJskarretje",
+      "drink-cart": "Drankkarretje",
+      "snack-cart": "Snackkarretje",
+      "souvenir-cart": "Souvenirkarretje"
+    }
   },
 
   "terraqua": {

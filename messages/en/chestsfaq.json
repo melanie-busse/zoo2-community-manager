@@ -129,7 +129,13 @@
     "drop_bonus_body": "Legendary Chests feature a rotating drop bonus that boosts the chance of receiving a specific exclusive animal's puzzle pieces. The boosted animal changes every 8 weeks, rotating through the exclusive animal list. This system has been active since November 24, 2022.",
 
     "tips_title": "Tips",
-    "tips_body": "Check which exclusive animal currently has the drop bonus before spending diamonds on Legendary Chests — if you need that animal, it is a good time to open several. Since Legendary Chests contain pieces from most other chests, they are an efficient all-in-one source when you have diamonds to spare. The Shop Cart decorations are Legendary-rarity and only obtainable here, making them valuable for collections."
+    "tips_body": "Check which exclusive animal currently has the drop bonus before spending diamonds on Legendary Chests — if you need that animal, it is a good time to open several. Since Legendary Chests contain pieces from most other chests, they are an efficient all-in-one source when you have diamonds to spare. The Shop Cart decorations are Legendary-rarity and only obtainable here, making them valuable for collections.",
+    "carts": {
+      "ice-cream-cart": "Ice Cream Cart",
+      "drink-cart": "Drink Cart",
+      "snack-cart": "Snack Cart",
+      "souvenir-cart": "Souvenir Cart"
+    }
   },
   "terraqua": {
     "title": "Terraqua Chests",
