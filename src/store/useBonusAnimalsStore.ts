@@ -12,6 +12,7 @@ interface BonusAnimalsState {
   page: number;
   pageSize: number;
   isLoading: boolean;
+  fetchError: string | null;
 
   initializeFromSSR: (data: BonusAnimalsResponse & { type: "PREMIUM" | "VIP" }) => void;
   setAnimalNameFilter: (name: string) => void;
@@ -30,6 +31,7 @@ export const useBonusAnimalsStore = create<BonusAnimalsState>((set, get) => ({
   page: 1,
   pageSize: 25,
   isLoading: false,
+  fetchError: null,
 
   initializeFromSSR: (data) => {
     set({
@@ -41,6 +43,7 @@ export const useBonusAnimalsStore = create<BonusAnimalsState>((set, get) => ({
       animalNameFilter: "",
       yearFilter: null,
       isLoading: false,
+      fetchError: null,
     });
   },
 
@@ -61,7 +64,7 @@ export const useBonusAnimalsStore = create<BonusAnimalsState>((set, get) => ({
 
   fetchEntries: async () => {
     const { type, animalNameFilter, yearFilter, page, pageSize } = get();
-    set({ isLoading: true });
+    set({ isLoading: true, fetchError: null });
     try {
       const result = await fetchBonusAnimals(type, {
         animalName: animalNameFilter || undefined,
@@ -70,8 +73,9 @@ export const useBonusAnimalsStore = create<BonusAnimalsState>((set, get) => ({
         pageSize,
       });
       set({ entries: result.entries, total: result.total, availableYears: result.availableYears, isLoading: false });
-    } catch {
-      set({ isLoading: false });
+    } catch (e: unknown) {
+      const message = e instanceof Error ? e.message : "Failed to load data";
+      set({ isLoading: false, fetchError: message });
     }
   },
 }));

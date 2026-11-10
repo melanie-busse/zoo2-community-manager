@@ -29,6 +29,7 @@ export default function BonusAnimalsContent({ type, initialData }: Props) {
   const page = useBonusAnimalsStore((state) => state.page);
   const pageSize = useBonusAnimalsStore((state) => state.pageSize);
   const isLoading = useBonusAnimalsStore((state) => state.isLoading);
+  const fetchError = useBonusAnimalsStore((state) => state.fetchError);
   const setAnimalNameFilter = useBonusAnimalsStore((state) => state.setAnimalNameFilter);
   const setYearFilter = useBonusAnimalsStore((state) => state.setYearFilter);
   const setPage = useBonusAnimalsStore((state) => state.setPage);
@@ -42,6 +43,11 @@ export default function BonusAnimalsContent({ type, initialData }: Props) {
   }, []);
 
   const debounceTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  useEffect(() => {
+    return () => {
+      if (debounceTimer.current) clearTimeout(debounceTimer.current);
+    };
+  }, []);
   const handleAnimalNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     if (debounceTimer.current) clearTimeout(debounceTimer.current);
@@ -71,6 +77,8 @@ export default function BonusAnimalsContent({ type, initialData }: Props) {
           ))}
         </FilterSelect>
       </FilterCard>
+
+      {fetchError && <ErrorMessage>{fetchError}</ErrorMessage>}
 
       <TableWrapper $loading={isLoading}>
         <BonusAnimalsTable
@@ -119,6 +127,13 @@ const FilterSelect = styled.select`
   &:focus {
     outline: none;
   }
+`;
+
+const ErrorMessage = styled.p`
+  color: ${({ theme }) => theme.colors.error ?? "#c0392b"};
+  padding: ${({ theme }) => theme.spacing(1)} ${({ theme }) => theme.spacing(2)};
+  margin: 0 0 ${({ theme }) => theme.spacing(1)};
+  font-size: 0.9rem;
 `;
 
 const TableWrapper = styled.div<{ $loading: boolean }>`
