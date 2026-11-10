@@ -109,6 +109,7 @@ model Animal {
   collectionRequirements CollectionRequirement[]
   levelRewards           LevelAnimalReward[]
   chestBoosts            ChestBoost[]
+  premiumVipEntries      PremiumVipAnimalEntry[]
 
   @@index([biomeId], map: "animal_biomeId_fkey")
   @@index([priceTypeId], map: "animal_priceTypeId_fkey")
@@ -991,4 +992,26 @@ model ChestBoost {
 
   @@index([animalId])
   @@map("chestboost")
+}
+
+enum PremiumVipType {
+  PREMIUM
+  VIP
+}
+
+model PremiumVipAnimalEntry {
+  id         Int            @id @default(autoincrement())
+  type       PremiumVipType
+  year       Int
+  startDate  DateTime?
+  endDate    DateTime?
+  dateLabel  String
+  animalId   Int?
+  animal     Animal?        @relation(fields: [animalId], references: [id])
+  animalName String
+  isNpc      Boolean        @default(false)
+
+  @@index([type, year])
+  @@index([animalId])
+  @@map("premiumvipanimalentry")
 }
