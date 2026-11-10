@@ -138,6 +138,13 @@ export const navConfig: NavItem[] = [
           },
         ],
       },
+      {
+        labelKey: "premium_vip_animals",
+        subMenu: [
+          { labelKey: "premium_animals", href: "/animals/premium-animals", requiresAuth: false },
+          { labelKey: "vip_animals", href: "/animals/vip-animals", requiresAuth: false },
+        ],
+      },
       { labelKey: "import-animals", href: "/admin/import-animals", requiresAuth: true },
     ],
   },
@@ -245,27 +252,20 @@ export const navConfig: NavItem[] = [
       { labelKey: "wiki_club", href: "/wiki/club", requiresAuth: false },
       { labelKey: "wiki_contest", href: "/wiki/contest", requiresAuth: false },
       { labelKey: "wiki_academy", href: "/wiki/academy", requiresAuth: false },
+
       { labelKey: "faq_visitor", href: "/contest/visitor", requiresAuth: false },
 
       { labelKey: "wiki_advent_calendar", href: "/wiki/advent-calendar", requiresAuth: false },
-      { labelKey: "wiki_animal_trades", href: "/wiki/animal-package-trades", requiresAuth: false },
-      { labelKey: "wiki_breeding", href: "/wiki/breeding", requiresAuth: false },
+      { labelKey: "wiki_animal", href: "/wiki/animal", requiresAuth: false },
       { labelKey: "wiki_bulldozer", href: "/wiki/bulldozer", requiresAuth: false },
       { labelKey: "wiki_conservation_week", href: "/wiki/conservation-week", requiresAuth: false },
-      { labelKey: "wiki_fashion_boutique", href: "/wiki/fashion-boutique", requiresAuth: false },
       { labelKey: "wiki_friends", href: "/wiki/friends", requiresAuth: false },
       { labelKey: "wiki_ice_cream_vendor", href: "/wiki/ice-cream-vendor", requiresAuth: false },
-      { labelKey: "wiki_kujali_park", href: "/wiki/kujali-park", requiresAuth: false },
       { labelKey: "wiki_login_rewards", href: "/wiki/login-rewards", requiresAuth: false },
-      { labelKey: "wiki_prize_wheel", href: "/wiki/prize-wheel", requiresAuth: false },
 
-      { labelKey: "wiki_rescue_center", href: "/wiki/rescue-center", requiresAuth: false },
       { labelKey: "wiki_season_pass", href: "/wiki/season-pass", requiresAuth: false },
       { labelKey: "wiki_super_deals", href: "/wiki/super-deals", requiresAuth: false },
       { labelKey: "wiki_vip_animals", href: "/wiki/vip-animals", requiresAuth: false },
-      { labelKey: "wiki_collections", href: "/wiki/collections", requiresAuth: false },
-      { labelKey: "wiki_diamonds", href: "/wiki/diamonds", requiresAuth: false },
-      { labelKey: "wiki_rainforest_park", href: "/wiki/rainforest-park", requiresAuth: false },
       { labelKey: "wiki_video_ads", href: "/wiki/video-ads", requiresAuth: false },
       {
         labelKey: "wiki_season_pass_history",
