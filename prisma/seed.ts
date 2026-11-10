@@ -1,4 +1,5 @@
 import { PrismaClient, RequirementType } from "@prisma/client";
+import { rawEntries } from "./seed-data/premium-vip-animals";
 
 const prisma = new PrismaClient();
 
@@ -1119,7 +1120,53 @@ const collections: CollectionInput[] = [
   },
 ];
 
+function slugify(name: string): string {
+  return name
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/['']/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
+async function seedPremiumVipAnimals() {
+  console.log("Seeding premium/vip animal entries...");
+
+  await prisma.premiumVipAnimalEntry.deleteMany({});
+
+  const animals = await prisma.animal.findMany({ select: { id: true, identifier: true } });
+  const slugMap = new Map<string, number>();
+  for (const a of animals) {
+    if (a.identifier) slugMap.set(a.identifier, a.id);
+  }
+
+  let count = 0;
+  for (const entry of rawEntries) {
+    for (const animal of entry.animals) {
+      const slug = slugify(animal.name.replace(/ NPC$/, ""));
+      const animalId = animal.isNpc ? null : (slugMap.get(slug) ?? null);
+      await prisma.premiumVipAnimalEntry.create({
+        data: {
+          type: entry.type,
+          year: entry.year,
+          dateLabel: entry.dateLabel,
+          startDate: entry.startDate ? new Date(entry.startDate) : null,
+          endDate: entry.endDate ? new Date(entry.endDate) : null,
+          animalId,
+          animalName: animal.name,
+          isNpc: animal.isNpc,
+        },
+      });
+      count++;
+    }
+  }
+
+  console.log(`Done. Seeded ${count} premium/vip animal entries.`);
+}
+
 async function main() {
+  await seedPremiumVipAnimals();
   console.log("Seeding collections...");
 
   for (const col of collections) {
