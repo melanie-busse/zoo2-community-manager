@@ -1,27 +1,85 @@
 {
-  "title": "Tierpaket-Tausch",
-  "intro": "Der Kauf von Diamantpaketen beinhaltet oft exklusive Bonustiere. Spieler erhalten ein oder zwei Premium-Bonustiere beim Kauf von 100+ Diamanten. Beim teuersten Diamantpaket wird ein exklusives VIP-Bonustier oder ein Paar Premium-Bonustiere verschenkt.",
+  "title": "Tiere",
+  "intro": "Tiere sind natürlich der Grund, warum es einen Zoo gibt. Die Spieler beginnen mit einigen wenigen Haustieren, und im Laufe des Spiels werden weitere Tiere verfügbar. Die meisten Tiere können mit Münzen oder Diamanten gekauft werden. \nBevor ein neues Tier angesiedelt werden kann, müssen die Spieler das entsprechende Gehege bauen. Jedes Tier benötigt ein artspezifisches Gehege und eine bestimmte Menge an Gehegefläche, wobei die maximale Anzahl an Tieren pro Gehege nicht überschritten werden darf. \nDurch das Hinzufügen eines Futtertrogs, einer Tränke und von Spielgeräten zum Gehege erhöht sich der XP-Ertrag um 5 %.\n",
+  "animal_package": {
+    "title_package": "Tierpaket-Tausch",
+    "intro_package": "Der Kauf von Diamantpaketen beinhaltet oft exklusive Bonustiere. Spieler erhalten ein oder zwei Premium-Bonustiere beim Kauf von 100+ Diamanten. Beim teuersten Diamantpaket wird ein exklusives VIP-Bonustier oder ein Paar Premium-Bonustiere verschenkt.",
 
-  "bonus_title": "Bonustiere",
-  "bonus_body": "Die Premium-Bonustiere wechseln alle zwei Wochen und die VIP-Bonustiere alle 8 Wochen. Überprüfe Prognosen für aktuelle Mustervorhersagen, wann die Bonustiere wechseln sollten und welche Tiere voraussichtlich aus Truhen-Rotationen übersprungen werden. Einige frühere Tiere werden manchmal erneut angeboten. Upjers ermöglicht es Spielern auch, ein aktuelles Bonustier gegen eine ausgewählte Liste zuvor angebotener Bonustiere zu tauschen.",
+    "bonus_title": "Bonustiere",
+    "bonus_body": "Die Premium-Bonustiere wechseln alle zwei Wochen und die VIP-Bonustiere alle 8 Wochen. Überprüfe Prognosen für aktuelle Mustervorhersagen, wann die Bonustiere wechseln sollten und welche Tiere voraussichtlich aus Truhen-Rotationen übersprungen werden. Einige frühere Tiere werden manchmal erneut angeboten. Upjers ermöglicht es Spielern auch, ein aktuelles Bonustier gegen eine ausgewählte Liste zuvor angebotener Bonustiere zu tauschen.",
 
-  "how_title": "Wie man Bonustiere tauscht",
-  "how_step1": "Kaufe ein Diamantpaket, das Bonustiere beinhaltet.",
-  "how_step2": "Lass die Tiere nach dem Kauf in der Seitenleiste im Inventar. Platziere sie NICHT in deinem Zoo. Wenn du tauschen möchtest, wähle nicht den NPC aus, da dies für den Support mehr Arbeit bedeutet.",
-  "how_step3": "Öffne ein Support-Ticket bei Upjers unter support.upjers.com. Erkläre, dass du ein Paket gekauft hast und die Tiere tauschen möchtest. Gib unbedingt deine Support-ID (Benutzer-ID), deinen Benutzernamen und die gewünschten Tiere an. Die Tiere müssen das aktuelle Premium- oder VIP-Angebot sein, also tausche sie vor dem nächsten Wechsel.",
-  "how_step4": "Upjers tauscht die Tiere in der Regel innerhalb von ein bis zwei Werktagen aus.",
+    "how_title": "Wie man Bonustiere tauscht",
+    "how_step1": "Kaufe ein Diamantpaket, das Bonustiere beinhaltet.",
+    "how_step2": "Lass die Tiere nach dem Kauf in der Seitenleiste im Inventar. Platziere sie NICHT in deinem Zoo. Wenn du tauschen möchtest, wähle nicht den NPC aus, da dies für den Support mehr Arbeit bedeutet.",
+    "how_step3": "Öffne ein Support-Ticket bei Upjers unter support.upjers.com. Erkläre, dass du ein Paket gekauft hast und die Tiere tauschen möchtest. Gib unbedingt deine Support-ID (Benutzer-ID), deinen Benutzernamen und die gewünschten Tiere an. Die Tiere müssen das aktuelle Premium- oder VIP-Angebot sein, also tausche sie vor dem nächsten Wechsel.",
+    "how_step4": "Upjers tauscht die Tiere in der Regel innerhalb von ein bis zwei Werktagen aus.",
 
-  "exclusions_title": "Ausnahmen",
-  "exclusions_body": "Der Tausch von Bonustieren ist ein Kulanzservice und kein offizielles Spielmerkmal, daher kann Upjers jederzeit entscheiden, den Tiertausch nicht fortzusetzen.",
+    "exclusions_title": "Ausnahmen",
+    "exclusions_body": "Der Tausch von Bonustieren ist ein Kulanzservice und kein offizielles Spielmerkmal, daher kann Upjers jederzeit entscheiden, den Tiertausch nicht fortzusetzen.",
 
-  "exclusions_rules_title": "Tauschregeln",
-  "exclusion_premium": "Premium-Bonustiere können nur gegen Premium getauscht werden, VIP kann jedoch gegen ein VIP oder ein Paar Premium getauscht werden.",
-  "exclusion_pairs": "In Paaren erhaltene Tiere können nur paarweise getauscht werden.",
-  "exclusion_list": "Du kannst nur gegen eine bestimmte Liste von Tieren tauschen.",
-  "exclusion_enclosure": "Der Support tauscht nur die Tiere, nicht das Gehege. Wenn das Gehege des angeforderten Tauschertieres sich von dem unterscheidet, das mit dem Paket verschenkt wurde, sind die Spieler selbst dafür verantwortlich, das richtige Gehege zu besorgen.",
+    "exclusions_rules_title": "Tauschregeln",
+    "exclusion_premium": "Premium-Bonustiere können nur gegen Premium getauscht werden, VIP kann jedoch gegen ein VIP oder ein Paar Premium getauscht werden.",
+    "exclusion_pairs": "In Paaren erhaltene Tiere können nur paarweise getauscht werden.",
+    "exclusion_list": "Du kannst nur gegen eine bestimmte Liste von Tieren tauschen.",
+    "exclusion_enclosure": "Der Support tauscht nur die Tiere, nicht das Gehege. Wenn das Gehege des angeforderten Tauschertieres sich von dem unterscheidet, das mit dem Paket verschenkt wurde, sind die Spieler selbst dafür verantwortlich, das richtige Gehege zu besorgen.",
 
-  "tradelist_title": "Tauschlist",
-  "tradelist_body": "Derzeit kannst du nur gegen eine begrenzte Auswahl an Tieren tauschen. Die offizielle Tausch-Kulanzliste kann beim Upjers-Support angefragt werden. Die Tierseite zeigt ein blaues Diamantsymbol mit einem P (Premium) oder V (VIP), das anzeigt, welche Tiere bekanntermaßen auf der aktuellen Liste stehen. Ein graues Diamantsymbol bedeutet, das Tier ist nicht mehr auf der Tauschlist, war aber früher ein Premium- oder VIP-Tier.",
+    "tradelist_title": "Tauschlist",
+    "tradelist_body": "Derzeit kannst du nur gegen eine begrenzte Auswahl an Tieren tauschen. Die offizielle Tausch-Kulanzliste kann beim Upjers-Support angefragt werden. Die Tierseite zeigt ein blaues Diamantsymbol mit einem P (Premium) oder V (VIP), das anzeigt, welche Tiere bekanntermaßen auf der aktuellen Liste stehen. Ein graues Diamantsymbol bedeutet, das Tier ist nicht mehr auf der Tauschlist, war aber früher ein Premium- oder VIP-Tier.",
 
-  "tradelist_tip": "Du solltest die Truhen-Prognosen überprüfen, um zu sehen, ob das Tier voraussichtlich bald in Truhen erscheint, wo du es kostenlos erhalten könntest. Sieh dir auch Übersprungene Tiere an, die voraussichtlich nicht in Truhen erscheinen. Einige Tiere werden auch selten als Super Deal angeboten."
+    "tradelist_tip": "Tipp:",
+    "tradelist_tip_body": "Du solltest die Truhen-Prognosen überprüfen, um zu sehen, ob das Tier voraussichtlich bald in Truhen erscheint, wo du es kostenlos erhalten könntest. Sieh dir auch Übersprungene Tiere an, die voraussichtlich nicht in Truhen erscheinen. Einige Tiere werden auch selten als Super Deal angeboten."
+  },
+  "animal_breeding": {
+    "title": "Zucht",
+    "intro": "Die Zucht ermöglicht es dir, Babytiere in deinem Zoo zu produzieren. Mit der richtigen Einrichtung, Boni und dem richtigen Timing kannst du deine Chancen auf besondere Fellfarben maximieren und deinen Zuchtplan optimieren.",
+
+    "requirements_title": "Voraussetzungen",
+    "requirements_body": "Für die Zucht benötigst du: ein erwachsenes Männchen und Weibchen der gleichen Art, einen Zuchtunterstand auf der erforderlichen Stufe, genug Münzen für den Start der Zucht und einen freien Zuchtplatz.",
+
+    "how_to_breed_title": "Wie man züchtet",
+    "how_to_breed_body": "Tippe auf einen Zuchtunterstand oder einen Zuchtzentrumsplatz und wähle dann das Tier aus. Du kannst optional Fruchtbarkeitsfutter hinzufügen, um die Chancen auf besondere Fellfarben zu verbessern. Wenn der Timer abläuft, sammelst du das Baby. Nach dem Einsammeln folgt eine 8-stündige Ruhepause, bevor der Unterstand wieder genutzt werden kann. Die Tragezeiten reichen je nach Art von 2 bis 16 Stunden. Die genaue Zeit für jede Art wird im Zuchtzentrum angezeigt.",
+
+    "simultaneous_title": "Gleichzeitige Zucht",
+    "simultaneous_body": "Du kannst gleichzeitig in mehreren Gehegen züchten. Die Reihenfolge, in der du Babys einsammelst, beeinflusst den Fehlzucht-Bonus — eine Fehlzucht fügt deinem nächsten Versuch einen Bonusprozentsatz hinzu. Das Ergebnis wird in dem Moment bestimmt, in dem du zum Einsammeln tippst.",
+
+    "twins_title": "Zwillinge & Drillinge",
+    "twins_body": "Zwillinge und Drillinge sind während Zuchtwoche-Events garantiert. Außerhalb von Events gibt ein Zoo-Akademie-Abonnement eine Chance auf Zwillinge oder Drillinge. Beachte, dass die Zucht während des Event-Fensters BEGINNEN muss, um für die garantierten Zwillinge/Drillinge zu qualifizieren.",
+
+    "growing_up_title": "Aufwachsen",
+    "growing_up_body": "Babys brauchen 7 Tage, um zu Erwachsenen heranzuwachsen. Du kannst das Altern pausieren, indem du ein Baby in dein Inventar bewegst. Babys geben das Doppelte der Popularität von Erwachsenen. Das Aufwachsen gibt eine kleine Menge XP.",
+
+    "power_growth_title": "Schnellwachstum",
+    "power_growth_body": "Du kannst ein Tier sofort wachsen lassen, indem du Diamanten verwendest (Schnellwachstums-Formel). Dies wird oft während der Zuchtwoche vergünstigt.",
+
+    "reducing_time_title": "Zuchtzeit reduzieren",
+    "reducing_time_body": "Mehrere Methoden reduzieren die Zuchtzeit: Diamanten bezahlen (5 pro verbleibende Stunde), eine Werbung ansehen (10 % Reduktion, nur in der App), eine Geschwindigkeits-Fruchtbarkeitsfutter-Tasche verwenden (20 % Reduktion, während der Naturschutzwoche verdient, stapelbar) oder das Zoo-Akademie-Abonnement (bis zu 80 % Reduktion).",
+
+    "reducing_rest_title": "Ruhezeit reduzieren",
+    "reducing_rest_body": "Die 8-stündige Ruhezeit nach dem Einsammeln kann durch Zahlung von 1 Diamant pro verbleibender Stunde verkürzt werden. App-Benutzer können eine Werbung für eine Reduktion von 10 % ansehen.",
+
+    "bonuses_title": "Zuchtboni",
+    "bonuses_body": "Mehrere Boni stapeln sich, um deine Chance auf besondere Fellfarben zu erhöhen.",
+
+    "bonus_types_title": "Arten von Boni",
+    "bonus_club": "Klub-Boost: 2–10 % Bonus, aktiv während 48-stündiger Klub-Events. Muss VOR dem Start der Zucht aktiviert werden.",
+    "bonus_academy": "Zoo-Akademie: Erhöhter Basis-Prozentsatz nach Biom. Variiert je nach Art.",
+    "bonus_fertility": "Fruchtbarkeitsfutter: Standard gibt Basis-%; Premium gibt 4x Basis-% (stapelbar); Videowerbung gibt Basis-% (Limit 1 pro Zucht, bis zu 20 Werbungen pro 24 Stunden).",
+    "bonus_failed": "Fehlzucht: Fügt Basis-% oder 10 % (je nachdem, welcher Wert niedriger ist) pro Fehlversuch hinzu. Maximum 75 % Bonus. Wird über Regionen und Plätze hinweg übertragen.",
+    "bonus_region": "Regions-Bonus: +50 % Basisrate in der passenden Region (Tannenwald=Wald, Kujali-Park=Ebenen & Savanne, Küstenzoo=Wasser, Polarpark=Eis, Regenwaldpark=Dschungel).",
+
+    "special_coats_title": "Besondere Fellfarben",
+    "special_coats_body": "Tippe auf den blauen Info-Button an einem Zuchtunterstand, um die Chancen auf besondere Fellfarben für diese Art zu sehen. Die Chancen werden während besonderer Events erhöht. Die Farben der Eltern beeinflussen, welche Farboptionen für das Baby verfügbar sind.",
+
+    "animal_levels_title": "Baby-Tierstufen",
+    "animal_levels_body": "Babystufe = Abrunden((Mutter-Stufe + Vater-Stufe) / 2) + 1. Die maximale Stufe ist 20 (funkelende Tiere gehen bis Stufe 40). Jede Stufe fügt 5 % zur Basis-Popularität des Tieres hinzu. Babys geben immer die doppelte Popularität.",
+
+    "animal_xp_title": "Tier-XP",
+    "animal_xp_body": "Die Tier-XP ist auf jeder Stufe gleich, außer wenn das Tier aus dem Rettungszentrum stammt — diese Tiere geben doppelte XP.",
+
+    "region_bonus_title": "Regions-Boni",
+    "region_bonus_body": "Das Züchten in der passenden Region für eine Art gibt +50 % auf die Basis-Spezialfellrate.",
+
+    "col_region": "Region",
+    "col_biome": "Biom"
+  }
 }

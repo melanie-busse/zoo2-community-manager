@@ -1,5 +1,5 @@
 {
-  "title": "Klub FAQ",
+  "title": "Klubs",
   "intro": "Klubs sind spielinterne Zoo-Spielergemeinschaften, die dir helfen können, mehr Inhalte und Belohnungen freizuschalten. Teams von bis zu 18 Mitgliedern treten gegeneinander an, um begehrte Popularitätsstatuen und exklusive Tierfarbvarianten zu gewinnen, die für Sammlungen benötigt werden. Teammitglieder können im Gruppen-Chat kommunizieren, die Hauptzoos voneinander besuchen, an klubweiten Zucht- oder XP-Boost-Events teilnehmen und das Klubemblem auf speziellen Klubdekorationen präsentieren.",
 
   "roles_title": "Klubmitglieder-Rollen",
@@ -106,5 +106,8 @@
     "Unentbehrlicher Bengaltiger",
     "Legendärer Weißer Tiger",
     "Mythischer Maltesertiger"
-  ]
+  ],
+
+  "clubs_title": "Tipps",
+  "clubs_body": "Es gibt viele aktive Klubs, die nach Mitgliedern suchen. Obwohl du deinen eigenen Klub für 10 Diamanten gründen kannst, ist es am besten, zuerst soziale Medien zu nutzen, um andere Klubs kennenzulernen. Nur die Top 300–400 Klubs erhalten wöchentlich eine anständige Menge an Puzzlestück-Preisen. Grundlegende Klub-Tipps: Züchte alle Wettbewerbstiere auf Level 20 und priorisiere Diamanten für mehr Zuchtplätze. Top 75 zu erreichen gibt deinem Klub 50 Statuen-Puzzlestücke. Top 300 zu erreichen gibt 50 Varianten-Puzzlestücke. Wenn dein Klub wahrscheinlich keine Top-100-Platzierung schafft, ist es am besten, ein einzelnes Tier zu spenden, Klub-XP zu ernten und es beim nächsten Mal zu versuchen."
 }

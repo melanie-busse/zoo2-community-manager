@@ -1,6 +1,7 @@
 {
   "title": "Sammelalbum",
   "inventory_title": "Mein Sammelalbuminventar",
+  "description": "Sammlungen sind eine Reihe von Errungenschaften, die dich dafür belohnen, bestimmte Kombinationen von Tieren und Gegenständen gleichzeitig in deinem Zoo zu platzieren. Jede Sammlung erfordert, dass du einen bestimmten Satz von Tieren (und manchmal Dekorationen oder Gebäuden) gleichzeitig in deinem Zoo platziert hast. Die erforderlichen Tiere müssen Mindestanforderungen an die Stufe erfüllen und in einigen Fällen eine bestimmte Fellfarbe haben. Alle erforderlichen Gegenstände müssen gleichzeitig in deinem Zoo vorhanden sein — es reicht nicht aus, sie früher einmal besessen zu haben. Beim Anzeigen einer Sammlung zeigt jedes erforderliche Tier oder Element seine Mindeststufe und eventuelle Fellfarbanforderungen. Wenn eine bestimmte Fellfarbe angegeben ist, musst du genau diese Farbe in deinem Zoo platziert haben.",
   "area": {
     "MAIN_ZOO": "Hauptzoo",
     "TERRARIUM": "Terrarienhaus",

@@ -101,7 +101,10 @@
     "wiki_epic_chests": "Epic Chests",
     "chests": "Kisten",
     "chests_overview": "Overzicht",
-    "chests_create": "Toevoegen"
+    "chests_create": "Toevoegen",
+    "premium_vip_animals": "Premium- en VIP-dieren",
+    "premium_animals": "Premium-dieren",
+    "vip_animals": "VIP-dieren"
   },
   "inventory_collections": "Verzamelalbum"
 }

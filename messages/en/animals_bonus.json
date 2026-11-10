@@ -1,0 +1,15 @@
+{
+  "premium_title": "Premium Animals",
+  "premium_intro": "Premium bonus animals are exclusive animals received when purchasing diamond packages of 100+ diamonds. The bonus animal changes every other Tuesday.",
+  "vip_title": "VIP Animals",
+  "vip_intro": "VIP bonus animals are exclusive animals received with most 1000+ diamond packages. The VIP animal changes every 8 weeks on a Tuesday.",
+  "filter_animal_name": "Animal name",
+  "filter_year": "Year",
+  "filter_all_years": "All years",
+  "col_period": "Period",
+  "col_animal": "Animal",
+  "col_actions": "Actions",
+  "action_view": "View animal",
+  "npc_badge": "NPC",
+  "no_results": "No entries found."
+}

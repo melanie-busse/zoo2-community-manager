@@ -1,6 +1,7 @@
 {
   "title": "Collections",
   "inventory_title": "My Collection Album Inventory",
+  "description": "Collections are a series of achievements that reward you for having specific combinations of animals and items placed in your zoo at the same time. Each collection requires you to have a specific set of animals (and sometimes decorations or buildings) placed in your zoo simultaneously. The required animals must meet minimum level requirements and, in some cases, have a specific coat color. All required items must be present in your zoo at the same time — it is not enough to have owned them in the past. When viewing a collection, each required animal or item shows its minimum level and any coat color requirements. If a specific coat color is specified, you must have that exact color placed in your zoo.",
   "area": {
     "MAIN_ZOO": "Main Zoo",
     "TERRARIUM": "Terrarium",

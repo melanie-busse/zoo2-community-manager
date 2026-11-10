@@ -1,6 +1,7 @@
 {
   "title": "Álbum de colección",
   "inventory_title": "Mi Inventario de Álbum de Colección",
+  "description": "Las colecciones son una serie de logros que te recompensan por tener combinaciones específicas de animales y objetos colocados en tu zoológico al mismo tiempo. Cada colección requiere que tengas un conjunto específico de animales (y a veces decoraciones o edificios) colocados en tu zoológico simultáneamente. Los animales requeridos deben cumplir con los requisitos de nivel mínimo y, en algunos casos, tener un color de pelaje específico. Todos los objetos requeridos deben estar presentes en tu zoológico al mismo tiempo; no basta con haberlos poseído en el pasado. Al ver una colección, cada animal o elemento requerido muestra su nivel mínimo y cualquier requisito de color de pelaje. Si se especifica un color de pelaje determinado, debes tener exactamente ese color colocado en tu zoológico.",
   "area": {
     "MAIN_ZOO": "Zoo Principal",
     "TERRARIUM": "Terrario",

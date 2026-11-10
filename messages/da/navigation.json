@@ -101,7 +101,10 @@
     "wiki_epic_chests": "Epic Chests",
     "chests": "Kister",
     "chests_overview": "Oversigt",
-    "chests_create": "Tilføj"
+    "chests_create": "Tilføj",
+    "premium_vip_animals": "Premium- & VIP-dyr",
+    "premium_animals": "Premium-dyr",
+    "vip_animals": "VIP-dyr"
   },
   "inventory_collections": "Samlealbum"
 }

@@ -1,6 +1,7 @@
 {
   "title": "Album de collection",
   "inventory_title": "Mon Inventaire d'Album de Collection",
+  "description": "Les collections sont une série de succès qui vous récompensent pour avoir placé simultanément des combinaisons spécifiques d'animaux et d'objets dans votre zoo. Chaque collection exige que vous ayez un ensemble spécifique d'animaux (et parfois des décorations ou des bâtiments) placés dans votre zoo en même temps. Les animaux requis doivent répondre à des exigences de niveau minimum et, dans certains cas, avoir une couleur de pelage spécifique. Tous les objets requis doivent être présents dans votre zoo en même temps — il ne suffit pas de les avoir possédés par le passé. Lors de l'affichage d'une collection, chaque animal ou élément requis indique son niveau minimum et les éventuelles exigences de couleur de pelage. Si une couleur de pelage spécifique est indiquée, vous devez avoir placé exactement cette couleur dans votre zoo.",
   "area": {
     "MAIN_ZOO": "Zoo Principal",
     "TERRARIUM": "Terrarium",

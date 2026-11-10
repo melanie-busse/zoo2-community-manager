@@ -1,0 +1,15 @@
+{
+  "premium_title": "Premium-Tiere",
+  "premium_intro": "Premium-Bonustiere werden beim Kauf von Diamantpaketen ab 100 Diamanten vergeben. Das Bonustier wechselt jeden zweiten Dienstag.",
+  "vip_title": "VIP-Tiere",
+  "vip_intro": "VIP-Bonustiere werden mit den meisten Diamantpaketen ab 1000 Diamanten vergeben. Das VIP-Tier wechselt alle 8 Wochen dienstags.",
+  "filter_animal_name": "Tiername",
+  "filter_year": "Jahr",
+  "filter_all_years": "Alle Jahre",
+  "col_period": "Zeitraum",
+  "col_animal": "Tier",
+  "col_actions": "Aktionen",
+  "action_view": "Zum Tier",
+  "npc_badge": "NPC",
+  "no_results": "Keine Einträge gefunden."
+}

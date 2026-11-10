@@ -1,0 +1,15 @@
+{
+  "premium_title": "Premium-dyr",
+  "premium_intro": "Premium-bonusdyr gives ved køb af diamantpakker på 100+ diamanter. Bonusdyret skifter hver anden tirsdag.",
+  "vip_title": "VIP-dyr",
+  "vip_intro": "VIP-bonusdyr gives med de fleste diamantpakker på 1000+ diamanter. VIP-dyret skifter hver 8. uge på en tirsdag.",
+  "filter_animal_name": "Dyrenavn",
+  "filter_year": "År",
+  "filter_all_years": "Alle år",
+  "col_period": "Periode",
+  "col_animal": "Dyr",
+  "col_actions": "Handlinger",
+  "action_view": "Se dyr",
+  "npc_badge": "NPC",
+  "no_results": "Ingen resultater fundet."
+}

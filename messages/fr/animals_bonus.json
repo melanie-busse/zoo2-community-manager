@@ -1,0 +1,15 @@
+{
+  "premium_title": "Animaux Premium",
+  "premium_intro": "Les animaux bonus premium sont des animaux exclusifs reçus lors de l'achat de paquets de diamants de 100+ diamants. L'animal bonus change tous les deux mardis.",
+  "vip_title": "Animaux VIP",
+  "vip_intro": "Les animaux bonus VIP sont des animaux exclusifs reçus avec la plupart des paquets de 1000+ diamants. L'animal VIP change toutes les 8 semaines un mardi.",
+  "filter_animal_name": "Nom de l'animal",
+  "filter_year": "Année",
+  "filter_all_years": "Toutes les années",
+  "col_period": "Période",
+  "col_animal": "Animal",
+  "col_actions": "Actions",
+  "action_view": "Voir l'animal",
+  "npc_badge": "NPC",
+  "no_results": "Aucun résultat trouvé."
+}

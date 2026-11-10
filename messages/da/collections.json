@@ -1,6 +1,7 @@
 {
   "title": "Samlealbum",
   "inventory_title": "Mit Samlealbuminventar",
+  "description": "Samlinger er en række præstationer, der belønner dig for at have specifikke kombinationer af dyr og genstande placeret i din zoo på samme tid. Hver samling kræver, at du har et bestemt sæt dyr (og nogle gange dekorationer eller bygninger) placeret i din zoo samtidigt. De krævede dyr skal opfylde minimumskrav til niveau og i nogle tilfælde have en specifik pelsspecifikation/pelsfarve. Alle krævede genstande skal være til stede i din zoo på samme tid — det er ikke nok at have ejet dem tidligere. Når du ser en samling, viser hvert krævet dyr eller element sit minimumniveau og eventuelle pelsfarvekrav. Hvis der er angivet en bestemt pelsfarve, skal du have præcis den farve placeret i din zoo.",
   "area": {
     "MAIN_ZOO": "Hoved Zoo",
     "TERRARIUM": "Terrarium",

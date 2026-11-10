@@ -1,6 +1,7 @@
 {
   "title": "Verzamelalbum",
   "inventory_title": "Mijn Verzamelalbuminventaris",
+  "description": "Collecties zijn een reeks prestaties die je belonen voor het tegelijkertijd in je zoo plaatsen van specifieke combinaties van dieren en voorwerpen. Elke collectie vereist dat je een specifieke set dieren (en soms decoraties of gebouwen) tegelijkertijd in je zoo hebt geplaatst. De vereiste dieren moeten aan minimumvelvereisten voldoen en in sommige gevallen een specifieke vachtkleur hebben. Alle vereiste voorwerpen moeten gelijktijdig in je zoo aanwezig zijn — het is niet voldoende om ze in het verleden te hebben bezeten. Bij het bekijken van een collectie toont elk vereist dier of item het minimumniveau en eventuele vachtkleurvereisten. Als er een specifieke vachtkleur is opgegeven, moet je precies die kleur in je zoo hebben geplaatst.",
   "area": {
     "MAIN_ZOO": "Hoofddierentuin",
     "TERRARIUM": "Terrarium",

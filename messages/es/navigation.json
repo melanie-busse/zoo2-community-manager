@@ -101,7 +101,10 @@
     "wiki_epic_chests": "Epic Chests",
     "chests": "Cofres",
     "chests_overview": "Resumen",
-    "chests_create": "Añadir"
+    "chests_create": "Añadir",
+    "premium_vip_animals": "Animales Premium y VIP",
+    "premium_animals": "Animales Premium",
+    "vip_animals": "Animales VIP"
   },
   "inventory_collections": "Álbum de Colección"
 }
