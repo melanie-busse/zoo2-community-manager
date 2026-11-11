@@ -6,6 +6,21 @@ export type PremiumVipAnimalEntryWithAnimal = PremiumVipAnimalEntry & {
   animal: Pick<Animal, "id" | "identifier"> | null;
 };
 
+export type BonusAnimalFormAnimal = { id: number; name: string; identifier: string | null };
+
+export type BonusAnimalCreateInput = {
+  type: PremiumVipType;
+  year: number;
+  dateLabel: string;
+  startDate: string | null;
+  endDate: string | null;
+  animalName: string;
+  animalId: number | null;
+  isNpc: boolean;
+};
+
+export type BonusAnimalUpdateInput = BonusAnimalCreateInput;
+
 export async function getPremiumVipAnimals(
   type: PremiumVipType,
   options: {
@@ -48,4 +63,68 @@ export async function getAvailableYears(type: PremiumVipType): Promise<number[]>
     orderBy: { year: "desc" },
   });
   return rows.map((r) => r.year);
+}
+
+export async function getEntryById(id: number): Promise<PremiumVipAnimalEntryWithAnimal | null> {
+  const entry = await prisma.premiumVipAnimalEntry.findUnique({
+    where: { id },
+    include: { animal: { select: { id: true, identifier: true } } },
+  });
+  return entry as PremiumVipAnimalEntryWithAnimal | null;
+}
+
+export async function getAllAnimalsForBonusForm(
+  locale: string,
+): Promise<BonusAnimalFormAnimal[]> {
+  const animals = await prisma.animal.findMany({
+    include: { animaltext: { where: { languageCode: locale } } },
+    orderBy: { id: "asc" },
+  });
+  return animals
+    .map((a) => ({
+      id: a.id,
+      name: a.animaltext[0]?.animalName ?? "",
+      identifier: a.identifier ?? null,
+    }))
+    .sort((a, b) => a.name.localeCompare(b.name));
+}
+
+export async function createEntry(data: BonusAnimalCreateInput): Promise<{ id: number }> {
+  const row = await prisma.premiumVipAnimalEntry.create({
+    data: {
+      type: data.type,
+      year: data.year,
+      dateLabel: data.dateLabel,
+      startDate: data.startDate ? new Date(data.startDate) : null,
+      endDate: data.endDate ? new Date(data.endDate) : null,
+      animalName: data.animalName,
+      animalId: data.animalId,
+      isNpc: data.isNpc,
+    },
+  });
+  return { id: row.id };
+}
+
+export async function updateEntry(
+  id: number,
+  data: BonusAnimalUpdateInput,
+): Promise<{ id: number }> {
+  const row = await prisma.premiumVipAnimalEntry.update({
+    where: { id },
+    data: {
+      type: data.type,
+      year: data.year,
+      dateLabel: data.dateLabel,
+      startDate: data.startDate ? new Date(data.startDate) : null,
+      endDate: data.endDate ? new Date(data.endDate) : null,
+      animalName: data.animalName,
+      animalId: data.animalId,
+      isNpc: data.isNpc,
+    },
+  });
+  return { id: row.id };
+}
+
+export async function deleteEntry(id: number): Promise<void> {
+  await prisma.premiumVipAnimalEntry.delete({ where: { id } });
 }

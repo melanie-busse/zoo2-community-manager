@@ -1,4 +1,4 @@
-import type { PremiumVipAnimalEntryWithAnimal } from "@/service/PremiumVipAnimalService";
+import type { PremiumVipAnimalEntryWithAnimal, BonusAnimalCreateInput } from "@/service/PremiumVipAnimalService";
 
 export type BonusAnimalsResponse = {
   entries: PremiumVipAnimalEntryWithAnimal[];
@@ -27,4 +27,40 @@ export async function fetchBonusAnimals(
   }
 
   return result;
+}
+
+async function throwIfNotOk(response: Response): Promise<void> {
+  if (!response.ok) {
+    const result = await response.json().catch(() => ({}));
+    const error: any = new Error(result.message || "Request failed");
+    error.status = response.status;
+    throw error;
+  }
+}
+
+export async function createBonusAnimal(data: BonusAnimalCreateInput): Promise<{ id: number }> {
+  const response = await fetch("/api/premium-vip-animals", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  });
+  await throwIfNotOk(response);
+  return response.json();
+}
+
+export async function updateBonusAnimal(id: number, data: BonusAnimalCreateInput): Promise<{ id: number }> {
+  const response = await fetch(`/api/premium-vip-animals?id=${id}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  });
+  await throwIfNotOk(response);
+  return response.json();
+}
+
+export async function deleteBonusAnimal(id: number): Promise<void> {
+  const response = await fetch(`/api/premium-vip-animals?id=${id}`, {
+    method: "DELETE",
+  });
+  await throwIfNotOk(response);
 }

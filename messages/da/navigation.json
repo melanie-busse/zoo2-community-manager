@@ -104,7 +104,9 @@
     "chests_create": "Tilføj",
     "premium_vip_animals": "Premium- & VIP-dyr",
     "premium_animals": "Premium-dyr",
-    "vip_animals": "VIP-dyr"
+    "premium_animals_create": "Tilføj",
+    "vip_animals": "VIP-dyr",
+    "vip_animals_create": "Tilføj"
   },
   "inventory_collections": "Samlealbum"
 }

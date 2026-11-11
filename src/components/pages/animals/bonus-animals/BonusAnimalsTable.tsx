@@ -4,11 +4,14 @@ import React from "react";
 import styled from "styled-components";
 import Link from "next/link";
 import { useTranslations, useLocale } from "next-intl";
+import { useSession } from "next-auth/react";
+import { hasMinimumRole, isMayor } from "@/utils/roleUtils";
 import type { PremiumVipAnimalEntryWithAnimal } from "@/service/PremiumVipAnimalService";
 
 interface Props {
   entries: PremiumVipAnimalEntryWithAnimal[];
   onRowClick: (entry: PremiumVipAnimalEntryWithAnimal) => void;
+  editBasePath: string;
 }
 
 const TableWrapper = styled.div`
@@ -113,9 +116,13 @@ const EmptyTd = styled.td`
   color: ${({ theme }) => theme.colors.textSecondary ?? "#666"};
 `;
 
-export default function BonusAnimalsTable({ entries, onRowClick }: Props) {
+export default function BonusAnimalsTable({ entries, onRowClick, editBasePath }: Props) {
   const t = useTranslations("animals_bonus");
   const locale = useLocale();
+  const { data: session } = useSession();
+  const canEdit = hasMinimumRole(session, "Director") && !isMayor(session);
+
+  const colSpan = canEdit ? 4 : 3;
 
   if (entries.length === 0) {
     return (
@@ -126,11 +133,12 @@ export default function BonusAnimalsTable({ entries, onRowClick }: Props) {
               <Th>{t("col_period")}</Th>
               <Th>{t("col_animal")}</Th>
               <Th>{t("col_actions")}</Th>
+              {canEdit && <Th />}
             </tr>
           </thead>
           <tbody>
             <EmptyRow>
-              <EmptyTd colSpan={3}>{t("no_results")}</EmptyTd>
+              <EmptyTd colSpan={colSpan}>{t("no_results")}</EmptyTd>
             </EmptyRow>
           </tbody>
         </StyledTable>
@@ -146,6 +154,7 @@ export default function BonusAnimalsTable({ entries, onRowClick }: Props) {
             <Th>{t("col_period")}</Th>
             <Th>{t("col_animal")}</Th>
             <Th>{t("col_actions")}</Th>
+            {canEdit && <Th />}
           </tr>
         </thead>
         <tbody>
@@ -195,6 +204,17 @@ export default function BonusAnimalsTable({ entries, onRowClick }: Props) {
                     <ActionButton $disabled>{t("action_view")}</ActionButton>
                   )}
                 </Td>
+                {canEdit && (
+                  <Td>
+                    <ActionButton
+                      as={Link}
+                      href={`/${locale}${editBasePath}/${entry.id}/edit`}
+                      onClick={(e: React.MouseEvent) => e.stopPropagation()}
+                    >
+                      {t("action_edit")}
+                    </ActionButton>
+                  </Td>
+                )}
               </Tr>
             );
           })}

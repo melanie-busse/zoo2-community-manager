@@ -104,7 +104,9 @@
     "chests_create": "Toevoegen",
     "premium_vip_animals": "Premium- en VIP-dieren",
     "premium_animals": "Premium-dieren",
-    "vip_animals": "VIP-dieren"
+    "premium_animals_create": "Toevoegen",
+    "vip_animals": "VIP-dieren",
+    "vip_animals_create": "Toevoegen"
   },
   "inventory_collections": "Verzamelalbum"
 }

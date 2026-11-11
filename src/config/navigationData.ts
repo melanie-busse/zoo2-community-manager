@@ -142,7 +142,19 @@ export const navConfig: NavItem[] = [
         labelKey: "premium_vip_animals",
         subMenu: [
           { labelKey: "premium_animals", href: "/animals/premium-animals", requiresAuth: false },
+          {
+            labelKey: "premium_animals_create",
+            href: "/animals/premium-animals/create",
+            requiresAuth: true,
+            minimumRole: "Director",
+          },
           { labelKey: "vip_animals", href: "/animals/vip-animals", requiresAuth: false },
+          {
+            labelKey: "vip_animals_create",
+            href: "/animals/vip-animals/create",
+            requiresAuth: true,
+            minimumRole: "Director",
+          },
         ],
       },
       { labelKey: "import-animals", href: "/admin/import-animals", requiresAuth: true },

@@ -108,7 +108,9 @@
     "chests_create": "Add",
     "premium_vip_animals": "Premium & VIP Animals",
     "premium_animals": "Premium Animals",
-    "vip_animals": "VIP Animals"
+    "premium_animals_create": "Add",
+    "vip_animals": "VIP Animals",
+    "vip_animals_create": "Add"
   },
   "inventory_collections": "Collection Album"
 }

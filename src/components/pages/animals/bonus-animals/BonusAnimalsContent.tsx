@@ -83,6 +83,7 @@ export default function BonusAnimalsContent({ type, initialData }: Props) {
       <TableWrapper $loading={isLoading}>
         <BonusAnimalsTable
           entries={entries}
+          editBasePath={type === "PREMIUM" ? "/animals/premium-animals" : "/animals/vip-animals"}
           onRowClick={(entry) => {
             if (entry.animalId !== null) {
               router.push(`/animals/${entry.animalId}`);

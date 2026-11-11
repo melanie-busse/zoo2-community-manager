@@ -95,7 +95,9 @@
     "chests_create": "Hinzufügen",
     "premium_vip_animals": "Premium- & VIP-Tiere",
     "premium_animals": "Premium-Tiere",
-    "vip_animals": "VIP-Tiere"
+    "premium_animals_create": "Anlegen",
+    "vip_animals": "VIP-Tiere",
+    "vip_animals_create": "Anlegen"
   },
   "inventory_collections": "Sammelalbum"
 }
