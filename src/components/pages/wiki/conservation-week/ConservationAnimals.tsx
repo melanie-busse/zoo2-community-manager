@@ -9,7 +9,7 @@ export default function ConservationAnimals() {
   const t = useTranslations("wiki_conservation");
 
   return (
-    <WikiAccordeon title={t("animal_list_title")} image={"/images/wiki/conservation_animals.png"}>
+    <WikiAccordeon title={t("animal_list_title")} image={"/images/wiki/paw.png"}>
       <WikiAccordionContentWrapper>
         <WikiIntroText>{t("animal_list_body")}</WikiIntroText>
       </WikiAccordionContentWrapper>

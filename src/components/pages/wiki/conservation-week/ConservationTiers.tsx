@@ -10,7 +10,7 @@ export default function ConservationTiers() {
   const t = useTranslations("wiki_conservation");
 
   return (
-    <WikiAccordeon title={t("tiers_title")} image={"/images/wiki/conservation_tiers.png"}>
+    <WikiAccordeon title={t("tiers_title")} image={"/images/wiki/expert_icon.webp"}>
       <WikiAccordionContentWrapper>
         <WikiIntroText>{t("tiers_body")}</WikiIntroText>
         <WikiBulletList>

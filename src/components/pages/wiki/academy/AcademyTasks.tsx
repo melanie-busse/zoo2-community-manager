@@ -9,7 +9,7 @@ export default function AcademyTasks() {
   const t = useTranslations("wiki_academy");
 
   return (
-    <WikiAccordeon title={t("tasks_title")} image={"/images/wiki/academy_tasks.png"}>
+    <WikiAccordeon title={t("tasks_title")} image={"/images/wiki/madame_yu.png"}>
       <WikiAccordionContentWrapper>
         <WikiIntroText>{t("tasks_body")}</WikiIntroText>
       </WikiAccordionContentWrapper>

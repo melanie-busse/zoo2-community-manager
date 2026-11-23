@@ -110,7 +110,7 @@ export default function AcademyStamps() {
   const t = useTranslations("wiki_academy");
 
   return (
-    <WikiAccordeon title={t("stamps_title")} image={"/images/wiki/academy_stamps.png"}>
+    <WikiAccordeon title={t("stamps_title")} image={"/images/wiki/academy_stamp.png"}>
       <WikiAccordionContentWrapper>
         <WikiIntroText>{t("stamps_body")}</WikiIntroText>
       </WikiAccordionContentWrapper>

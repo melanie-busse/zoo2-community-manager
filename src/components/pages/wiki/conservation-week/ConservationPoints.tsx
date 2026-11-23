@@ -9,7 +9,7 @@ export default function ConservationPoints() {
   const t = useTranslations("wiki_conservation");
 
   return (
-    <WikiAccordeon title={t("points_title")} image={"/images/wiki/conservation_points.png"}>
+    <WikiAccordeon title={t("points_title")} image={"/images/wiki/green_leaf.webp"}>
       <WikiAccordionContentWrapper>
         <WikiIntroText>{t("points_body")}</WikiIntroText>
       </WikiAccordionContentWrapper>

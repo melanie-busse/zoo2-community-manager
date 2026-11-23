@@ -9,7 +9,7 @@ export default function ConservationTips() {
   const t = useTranslations("wiki_conservation");
 
   return (
-    <WikiAccordeon title={t("tips_title")} image={"/images/wiki/conservation_tips.png"}>
+    <WikiAccordeon title={t("tips_title")} image={"/images/wiki/tip.png"}>
       <WikiAccordionContentWrapper>
         <WikiIntroText>{t("tips_body")}</WikiIntroText>
       </WikiAccordionContentWrapper>

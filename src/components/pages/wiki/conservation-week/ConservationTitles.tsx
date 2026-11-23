@@ -9,7 +9,7 @@ export default function ConservationTitles() {
   const t = useTranslations("wiki_conservation");
 
   return (
-    <WikiAccordeon title={t("titles_title")} image={"/images/wiki/conservation_titles.png"}>
+    <WikiAccordeon title={t("titles_title")} image={"/images/wiki/conservation_ranking.png"}>
       <WikiAccordionContentWrapper>
         <WikiIntroText>{t("titles_body")}</WikiIntroText>
       </WikiAccordionContentWrapper>

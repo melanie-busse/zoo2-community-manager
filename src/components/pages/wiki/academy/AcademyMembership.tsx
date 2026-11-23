@@ -9,7 +9,7 @@ export default function AcademyMembership() {
   const t = useTranslations("wiki_academy");
 
   return (
-    <WikiAccordeon title={t("membership_title")} image={"/images/wiki/academy_membership.png"}>
+    <WikiAccordeon title={t("membership_title")} image={"/images/wiki/academyrank.png"}>
       <WikiAccordionContentWrapper>
         <WikiIntroText>{t("membership_body")}</WikiIntroText>
       </WikiAccordionContentWrapper>
