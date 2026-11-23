@@ -5,7 +5,9 @@
     "invalid_id": "ID no válido",
     "unauthorized": "No autorizado",
     "not_found": "No encontrado",
-    "server_error": "Se ha producido un error en el servidor"
+    "server_error": "Se ha producido un error en el servidor",
+    "save_error": "Error al guardar",
+    "required_fields": "Faltan campos obligatorios"
   },
   "animal": {
     "required_fields": "El nombre (DE) y el tipo de recinto son campos obligatorios.",

@@ -13,5 +13,6 @@
   "enclosure_trough": "Trug",
   "enclosure_waterhole": "Vandingssted",
   "enclosure_shelter": "Skjul",
-  "col_xp_to_next": "XP til næste niveau"
+  "col_xp_to_next": "XP til næste niveau",
+  "description": "Spillerniveauet stiger takket være erfaringspoint (XP). Fuldførelse af quests og præstationer, pleje af dyr, indsamling af affald, vanding af planter, avl, hjælp til venner og placering af nye genstande giver erfaringspoint. Når spillere øger deres spillerniveau, modtager de forskellige belønninger som f.eks. mønter eller diamanter, kister, dekorationer eller endda dyr."
 }

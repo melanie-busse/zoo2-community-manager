@@ -72,11 +72,18 @@
   "deal_55_body": "A frequent offer with various promotion names, such as Spring Bonus, Midsommar, Buzzing Bonus, Autumn Bonus, and Shimmering Skies.",
   "deal_60_title": "7. Up to 60% More",
   "deal_60_body": "A frequent offer with various promotion names, such as Summer Bonus, Happy Hearts, and Winter Bonus. The loyalty package available only in the browser is also the same offer for 200, 500, and 1,000 packages.",
+  "spending_no_sale_diamonds_title": "Tips",
+  "spending_no_sale_diamonds": "Diamond items that do not go on sale: Admissions Booth Entrance Upgrades, Breeding Slots*, Keys (for chests), Prize Wheel Timer Resets, Zoo Academy Subscriptions, Season Pass Feathers. (*Note: The breeding center itself has been known to go on sale, but the locked slots inside have never been directly discounted.)",
+  "spending_avoid": "Purchases to avoid spending diamonds on: 3× diamond food bucket (use coins on 2× feed instead); keeping animals as babies instead of growing up (place babies in inventory to keep them from growing up).",
 
   "tickets_title": "Tickets",
   "tickets_body": "Tickets are a permanent special currency used to complete puzzle pieces. The current ticket balance is visible on the puzzle pieces screen. Tickets can be obtained from the monthly reward calendar path, by scrapping unwanted puzzle pieces, by spinning the lucky wheel, from season pass level rewards at any tier, and rarely from some special quests and zoo title rewards.",
   "tickets_sale_title": "Treasure Chest Sale",
   "tickets_sale_body": "When the treasure chest sale is available, tickets have an active 15% bonus – this causes a 15% increase when disassembling tickets and a 15% discount when completing missing puzzle pieces.",
+  "tickets_tips_title": "Tips",
+  "tickets_tips_body": "If you are short on tickets, wait for a Chest Sale where completing an item is 15% off. You can also reset the prize wheel for 10 diamonds (recommended during a bi-monthly Cashback sale) or open many regular blue chests until you have enough scrappable material. If you are trying to complete a club statue without all puzzle pieces, consider waiting for a Chest Sale — with 90 puzzle pieces you can complete it immediately for 10 diamonds or at the sale for 7 diamonds.",
+  "puzzles_body": "If possible, wait for a Chest Sale before scrapping puzzle pieces or completing items. It is generally best practice to complete the first diamond animal puzzle piece with tickets so that the second piece can be used for a second animal. App users: enabling Bonus Offer Ads provides the option of completing puzzles for a 10% discount by watching an ad. For players at level 90+, the Aviary region is a good investment for tickets — each day after the login calendar resets, 20 feathers drop from the sky and each feather has a chance to give an aviary puzzle piece.",
+  "spending_no_sale_coins": "Coin items that do not go on sale: Regular blue chests, Terrain Editor, Bulldozer.",
 
   "keys_title": "Keys",
   "keys_body": "Keys are used to reveal additional cards when opening chests. Each chest contains eight cards, but only the first four card reveals are free. Each additional card reveal uses one key. Keys can be obtained from the monthly reward calendar path, season pass level rewards at any tier, purchases for diamonds in the open chest window, sometimes purchasable with feathers in the season pass shop, and often from shell games as a free reward prize.",

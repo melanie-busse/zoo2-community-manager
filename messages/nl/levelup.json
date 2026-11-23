@@ -13,5 +13,6 @@
   "enclosure_trough": "Drinkbak",
   "enclosure_waterhole": "Drinkplaats",
   "enclosure_shelter": "Schuilplaats",
-  "col_xp_to_next": "XP tot volgend niveau"
+  "col_xp_to_next": "XP tot volgend niveau",
+  "description": "Het spelerniveau stijgt dankzij ervaringspunten (XP). Het voltooien van quests en prestaties, het verzorgen van dieren, het verzamelen van afval, het water geven van planten, het fokken, het helpen van vrienden en het plaatsen van nieuwe items leveren ervaringspunten op. Wanneer spelers hun spelerniveau verhogen, ontvangen ze verschillende beloningen, zoals munten of diamanten, kisten, decoraties of zelfs dieren."
 }

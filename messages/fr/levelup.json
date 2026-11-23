@@ -13,5 +13,6 @@
   "enclosure_trough": "Abreuvoir",
   "enclosure_waterhole": "Point d eau",
   "enclosure_shelter": "Abri",
-  "col_xp_to_next": "XP jusqu'au niveau suivant"
+  "col_xp_to_next": "XP jusqu'au niveau suivant",
+  "description": "Le niveau du joueur augmente grâce aux points d'expérience (XP). Accomplir des quêtes et des succès, soigner les animaux, ramasser les déchets, arroser les plantes, élever des animaux, aider des amis et placer de nouveaux objets rapportent des points d'expérience. Lorsque les joueurs augmentent leur niveau, ils reçoivent diverses récompenses telles que des pièces ou des diamants, des coffres, des décorations ou même des animaux."
 }

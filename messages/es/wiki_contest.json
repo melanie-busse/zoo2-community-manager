@@ -1,12 +1,7 @@
 {
-  "title": "Preguntas frecuentes sobre el concurso",
-  "intro": "Los concursos semanales de club se introdujeron el 29 de mayo de 2019, permitiendo a los clubs competir por exclusivas decoraciones de estatuas. Las competiciones de pelajes especiales se introdujeron en febrero de 2021 como concursos quincenales y pasaron a ser semanales en mayo de 2026. Una nueva semana de concurso comienza cada miércoles alrededor de las 10:25 CEST.",
+  "title": "Concursos",
+  "intro": "Cada miércoles, el juego genera una nueva selección de 6 opciones de concurso: cinco concursos de estatuas y un concurso de variante de color.\n\nLos presidentes y ministros pueden abrir un concurso en cualquier momento durante la semana. Un gremio solo puede participar en un concurso por semana. Una vez seleccionado un concurso, no es posible deshacer la acción, así que elige con cuidado.\n\nLos miembros del club pueden participar en el concurso elegido abriendo la pestaña de concurso en la pantalla del club. Toca «Donar cartas» para abrir la pantalla de donación. Los miembros pueden donar sus cartas de animales correspondientes del inventario (si las tienen) o comprar cartas de animales de nivel 1 con monedas o diamantes (según el animal) en la pantalla de donación. Las cartas de animales se pueden obtener mediante la cría o comprando más del animal. No hay límite de donación.\n\nLos miembros del club pueden donar animales de cualquier nivel, edad, género o color, siempre que corresponda a la especie del concurso actual. El color y el género no tienen efecto en los puntos.",
 
-  "description_title": "Descripción",
-  "description_p1": "Cada miércoles, el juego genera una nueva selección de 4 opciones de concurso: tres concursos de estatuas y un concurso de Pelaje Especial.",
-  "description_p2": "Los presidentes y ministros pueden abrir un concurso en cualquier momento durante la semana. Un gremio solo puede participar en un concurso por semana. Una vez seleccionado un concurso, no es posible deshacer la acción, así que elige con cuidado.",
-  "description_p3": "Los miembros del club pueden participar en el concurso elegido abriendo la pestaña de concurso en la pantalla del club. Toca \"Donar cartas\" para abrir la pantalla de donación. Los miembros pueden donar sus cartas de animales correspondientes del inventario (si las tienen) o comprar cartas de animales de nivel 1 con monedas o diamantes (según el animal) en la pantalla de donación. Las cartas de animales se pueden obtener mediante la cría o comprando más del animal. No hay límite de donación.",
-  "description_p4": "Los miembros del club pueden donar animales de cualquier nivel, edad, género o color, siempre que corresponda a la especie del concurso actual. El color y el género no tienen efecto en los puntos.",
 
   "new_members_title": "Nuevos Miembros",
   "new_members_body": "A partir de noviembre de 2023, los nuevos miembros del club deben esperar siete días para poder donar a recaudaciones y concursos, pero aún pueden beneficiarse inmediatamente de las recaudaciones del club activadas y de las recompensas del concurso. Esta medida fue muy solicitada por la comunidad para evitar ciertas trampas.",
@@ -26,7 +21,7 @@
   "rewards_title": "Recompensas",
   "rewards_body": "Cada club que participa en un concurso semanal recibe recompensas según su posición final en el concurso seleccionado. El club en sí recibe puntos de experiencia basados en el rango, y cada miembro del club recibe piezas de puzle independientemente de su nivel de participación.",
   "statue_rewards_title": "Recompensas del Concurso de Estatuas",
-  "special_coat_rewards_title": "Recompensas del Concurso de Pelaje Especial",
+  "special_coat_rewards_title": "Recompensas del Concurso de Variante de Color",
 
   "col_rank": "Rango del Gremio",
   "col_multiplier": "Multiplicador",

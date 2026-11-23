@@ -5,6 +5,7 @@
   "roles_title": "Rollen van Clubleden",
   "roles_body": "Er zijn drie verschillende rollen: President, Minister en Clublid. De President is eigenaar van de club en heeft de meeste administratieve bevoegdheden. Ministers kunnen bijna alles doen wat de president kan, maar kunnen de clubomschrijving niet wijzigen of de President verwijderen. Clubleden kunnen doneren en chatten. Nieuwe leden moeten zeven dagen wachten voordat ze de mogelijkheid krijgen om te doneren aan wedstrijden of fondsenwervingen — alle andere voordelen en mogelijkheden zijn onmiddellijk beschikbaar.",
 
+  "admin_title": "Ledenadministratie",
   "roles_table_ability": "Mogelijkheid",
   "roles_table_president": "President",
   "roles_table_minister": "Minister",
@@ -73,12 +74,15 @@
   "contests_title": "Wedstrijden",
   "contests_body": "Clubs kunnen deelnemen aan wekelijkse wedstrijden die leden exclusieve beloningen geven en het clubniveau verhogen. Zie de Contest FAQ voor volledige details over hoe wedstrijden werken.",
 
+  "club_membership_title": "Een club verlaten/toetreden",
   "leaving_title": "Een Club Verlaten",
   "leaving_body": "Om een club te verlaten, zorg ervoor dat je niet de president van de club bent. Ga naar het tabblad Clubleden, selecteer je naam en klik op de rode knop \"club verlaten\". Als je de president bent, moet je ofwel het presidentschap overdragen aan een ander lid, ofwel eerst alle leden verwijderen. Als je het enige lid bent, zal het verlaten van de club deze verwijderen.",
 
   "leaving_tips_title": "Beste Werkwijzen bij het Verlaten van een Club",
   "leaving_tips_body": "Koop voor het verlaten alle Clubwinkelartikelen die je wilt — je verliest toegang tot de Clubwinkel totdat je je ledensrang in een andere club hebt herkregen. Jenkin's verjaardag op 1 juli staat bekend als de beste Clubuitverkoop van het jaar. Je kunt berekenen hoeveel munten nodig zijn om een rangniveau te herwinnen door de cumulatieve punten voor dat niveau te delen door 100. Als je president bent en je club niet wilt laten verdwijnen, laat dan een vertrouwd familielid een account aanmaken en het presidentschap waarnemen terwijl jij een andere club uitprobeert.",
 
+  "leaving_tips_title": "Beste werkwijzen bij het verlaten van een club",
+  "leaving_tips_body": "Koop voor het verlaten alle Clubwinkelartikelen die je wilt — je verliest toegang tot de Clubwinkel totdat je je ledensrang in een andere club hebt herkregen. Jenkin's verjaardag op 1 juli staat bekend als de beste Clubuitverkoop van het jaar. Je kunt berekenen hoeveel munten nodig zijn om een rangniveau te herwinnen door de cumulatieve punten voor dat niveau te delen door 100. Als je president bent en je club niet wilt laten verdwijnen, laat dan een vertrouwd familielid een account aanmaken en het presidentschap waarnemen terwijl jij een andere club uitprobeert.",
   "joining_title": "Lid Worden van een Club",
   "joining_applying": "Zoek naar clubs door het Clubzoekers-icoon te selecteren (icoon met drie huizen), het derde icoon van links in het clubhuis. Selecteer je voorkeurstaal en filter vervolgens de zoekinstellingen om een club te vinden die bij jouw wensen past.",
   "joining_invitation": "Als je een clubleider al kent, geef hem of haar dan je Support-ID zodat ze je een directe uitnodiging kunnen sturen. Geef het exacte hoofdlettergevoelige alfanumerieke ID uit je instellingen. Je kunt geen uitnodigingen ontvangen terwijl je al in een club zit, dus verlaat eerst je huidige club.",

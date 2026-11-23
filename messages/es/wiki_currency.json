@@ -29,6 +29,10 @@
   "spending_coins_title": "Gastar monedas",
   "spending_coins_body": "Casi todo en el juego que se puede comprar con monedas eventualmente estará en oferta. Los cofres normales (cofres de monedas azules), las campañas de donación del club y las reparaciones de equipos nunca están en oferta. Los jugadores pacientes pueden esperar un descuento en el objeto deseado. Algunos jugadores acumulan tantas monedas como sea posible para donarlas en competiciones del club cuando su equipo juega un animal de monedas. Otros usan monedas para alimento de fertilidad para aumentar las posibilidades de una cría exitosa. Muchos ahorran monedas para eventos para obtener todos los objetos con el truco de comprar-recopilar-vender.",
 
+  "coins_tip_title": "Consejos",
+  "coins_tip_body": "Asegúrate de colocar y mejorar de inmediato todas las tiendas comprables con monedas. Los jugadores han descubierto que las tiendas se llenan más rápido cuando el juego está cerrado. Inicia sesión cada hora o dos para recoger monedas. Cuantos más puntos de popularidad tengas, más visitantes comprarán en tus tiendas. Guarda tus monedas para un evento o una venta. Espera a que las tiendas estén en oferta antes de comprar o mejorar tiendas de diamantes. Algunos jugadores crían y venden animales de monedas de alto valor como el Northern Bald Ibis o el Royal Blue Tang para obtener ganancias en monedas — se prefiere cualquier animal comprable con monedas por 100.000 monedas o más. Los animales de diamantes no son rentables para vender por monedas.",
+  "spending_no_sale_coins": "Artículos de monedas que no salen a la venta: Cofres azules normales, Editor de Terreno, Bulldozer.",
+
   "diamonds_title": "Diamantes",
   "diamonds_body": "Los diamantes son la moneda premium de Zoo 2 y se pueden ganar a través del juego y sorteos, o comprar con dinero real. Varios animales, decoraciones, ampliaciones de terrenos, lugares de cría, llaves de cofres, desbloqueos de áreas y ciertos edificios requieren diamantes. Esta moneda es mucho más difícil de obtener que las monedas, pero hay varias formas de ganar diamantes gratuitos y algunas oportunidades para comprarlos inteligentemente con dinero real.",
   "free_diamonds_title": "Diamantes gratuitos",
@@ -73,10 +77,16 @@
   "deal_60_title": "7. Hasta un 60% más",
   "deal_60_body": "Una oferta frecuente con varios nombres de promoción, como Bono de verano, Happy Hearts y Bono de invierno. El paquete de fidelidad disponible solo en el navegador también es la misma oferta para paquetes de 200, 500 y 1.000.",
 
+  "spending_avoid": "Compras en las que evitar gastar diamantes: cubo de comida de 3× diamantes (usa monedas en comida 2× en su lugar); mantener animales como bebés en lugar de dejarlos crecer (coloca a los bebés en el inventario para evitar que crezcan).",
+
   "tickets_title": "Tickets",
   "tickets_body": "Los tickets son una moneda especial permanente que se usa para completar piezas de rompecabezas. El saldo actual de tickets es visible en la pantalla de piezas de rompecabezas. Los tickets se pueden obtener de la ruta del calendario de recompensas mensuales, desguazando piezas de rompecabezas no deseadas, girando la rueda de la suerte, de las recompensas de nivel del pase de temporada en cualquier nivel y raramente de algunas misiones especiales y recompensas de títulos de zoo.",
   "tickets_sale_title": "Venta del cofre del tesoro",
   "tickets_sale_body": "Cuando la venta del cofre del tesoro está disponible, los tickets tienen un bono activo del 15%: esto provoca un aumento del 15% al desmontar tickets y un descuento del 15% al completar piezas de rompecabezas faltantes.",
+
+  "tickets_tips_title": "Consejos",
+  "tickets_tips_body": "Si te faltan tickets, espera una venta de cofres donde completar un artículo tiene un 15 % de descuento. También puedes reiniciar la rueda de premios por 10 diamantes (recomendado durante una venta de reembolso bimestral) o abrir muchos cofres azules normales hasta tener suficiente material para desechar. Si intentas completar una estatua del club sin todas las piezas de puzle, considera esperar una venta de cofres — con 90 piezas de puzle puedes completarla de inmediato por 10 diamantes o en la venta por 7 diamantes.",
+  "puzzles_body": "Si es posible, espera una venta de cofres antes de desechar piezas de puzle o completar artículos. En general es una buena práctica completar la primera pieza de puzle del animal de diamantes que obtengas con tickets, para que la segunda pieza pueda usarse para un segundo animal. Usuarios de la app: activar los anuncios de oferta bonus ofrece la opción de completar puzles con un 10 % de descuento viendo un anuncio. Para jugadores en el nivel 90+, la región Aviario es una buena inversión para tickets — cada día después del reinicio del calendario de inicio de sesión, 20 plumas caen del cielo y cada pluma tiene la posibilidad de dar una pieza de puzle del aviario.",
 
   "keys_title": "Llaves",
   "keys_body": "Las llaves se usan para revelar cartas adicionales al abrir cofres. Cada cofre contiene ocho cartas, pero solo las primeras cuatro revelaciones de cartas son gratuitas. Cada revelación de carta adicional usa una llave. Las llaves se pueden obtener de la ruta del calendario de recompensas mensuales, recompensas de nivel del pase de temporada en cualquier nivel, compras de diamantes en la ventana del cofre abierto, a veces comprables con plumas en la tienda del pase de temporada y a menudo de shell games como premio de recompensa gratuito.",

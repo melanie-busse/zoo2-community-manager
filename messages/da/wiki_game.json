@@ -1,159 +1,260 @@
 {
-  "title": "Spil FAQ",
-  "intro": "Guide til nye spillere: Professionelle tips fra erfarne Zoo 2-spillere.",
-
-  "summary_title": "Oversigt over spillet",
-  "summary_body": "Selvom der er mange forskellige spillestile, drejer spillet sig primært om at samle og avle dyr og tage sig af din zoo. Du kan også designe og dekorere undervejs og nyde de mange specielle begivenheder og præmier hver måned. Du kan forbinde dig med andre spillere og danne et hold med dem i et laug for at optjene belønninger. Der er masser af opgaver at fuldføre og genstande at samle, men mange spillere er enige om, at tålmodighed er vejen til at spille dette spil på lang sigt.",
-
-  "free_stuff_title": "Optjen gratis genstande",
-  "free_stuff_body": "Dette spil kræver ikke, at spillere bruger rigtige penge for at komme videre eller nyde det, men det er en valgfri mulighed, hvis du ønsker ekstra fordele og vil opnå ting hurtigere. Upjers giver masser af dyr og valuta gratis til engagerede spillere. Hvis du gerne vil samle alt ved udgivelsen, komme hurtigere fremad, eller bare vil forkæle dig selv med et par specielle dyr, du virkelig elsker, så sørg for at læse tips om køb og brug af diamanter. App-brugere kan også aktivere bonustilbudsannoncer (valgfrit) for at optjene bonusser, rabatter eller timereduktioner uden at bruge penge.",
+  "title": "Spil",
+  "summary_body": "Selvom der er mange forskellige spillestile, drejer spillet sig primært om at samle og avle dyr og tage sig af din zoo. Du kan også designe og dekorere undervejs og nyde de mange specielle begivenheder og præmier hver måned. Du kan forbinde dig med andre spillere og samarbejde i et laug for at optjene belønninger. Der er masser af quests at fuldføre og genstande at samle, men mange spillere er enige om, at tålmodighed er den rigtige vej til at spille dette spil på lang sigt. Dette spil kræver ikke rigtige penge for at komme videre eller nyde det, men det er en valgfri mulighed, hvis du ønsker ekstra fordele eller vil opnå ting hurtigere. Upjers gør mange dyr og valutaer tilgængelige gratis for engagerede spillere. App-brugere kan også aktivere valgfrie bonusreklamer for at optjene bonusser, rabatter eller tidsreduktioner uden at bruge penge.",
 
   "levelup_title": "Stigning i niveau",
-  "levelup_body": "Du kan stige i niveau ved at optjene XP (erfaringspoint). Du modtager XP ved at rengøre din zoo, hjælpe dine venner, avle, fuldføre præstationer og opgaver samt placere nye dekorationer, indhegninger eller dyr. At stige i niveau giver belønninger, der ofte hjælper dig med at fuldføre en opgave. For at stige hurtigere i niveau, placer mange dyr, der genererer høj XP, i din zoo. Du kan fodre dem med mønter på blåt foder for at modtage dobbelt XP. Aktiver en laug-fundraiser XP-bonus på op til 10% afhængigt af lauget. Hvis du spiller på mobilappen, kan du se en reklame for at aktivere en en-times 10% XP-boost så ofte som hver 24. time — den gælder for al XP genereret, herunder hjælp til venner, avl og placering af nye genstande. Da placering af nye genstande giver XP, kan køb af genstande og/eller fuldførelse af puzzlestykker og placering af dem give mere XP.",
+  "levelup_body": "Du kan stige i niveau ved at optjene XP (erfaringspoint). Du modtager XP ved at rengøre din zoo, hjælpe venner, avle, fuldføre præstationer og quests samt placere nye dekorationer, indhegninger eller dyr. At stige i niveau giver belønninger, der ofte hjælper med at fuldføre quests. For at stige hurtigere i niveau, placer mange dyr med høj XP-generering i din zoo. Du kan fodre dem med blåt foder for mønter for at modtage dobbelt XP. Aktiver en laug-fundraiser XP-bonus på op til 10 %. App-brugere kan se en reklame for at aktivere en en-times 10 % XP-boost én gang hvert 24. time — den gælder for al genereret XP.",
 
-  "focus_title": "Fokustips",
-  "focus_intro": "Nogle fremtidige opgaver at overveje at arbejde hen imod:",
+  "focus_title": "Fokus-tips",
+  "focus_intro": "Nogle fremtidige opgaver du bør arbejde hen imod:",
   "focus_tip_1": "Prioriter at avle dine pandaer til niveau 10.",
-  "focus_tip_2": "Fuldfør straks alle lyserøde hibiscusbuskadser fra et enkelt puzzlestykke, så snart du får det. Lad det ligge i din beholdning og placer det ikke i din zoo, før du har modtaget opgaven om at placere 10 lyserøde hibiscusbuskadser.",
-  "focus_tip_3": "Hvis du gerne vil maksimere den gratis Zoo Academy-voucher, du modtager på niveau 10, skal du prioritere at fuldføre Madame Yu-opgaver hver 6. time for at nå niveau 14 i akademiet og maksimere dit Bronze-medlemskab, inden du indløser voucheren.",
-  "focus_tip_4": "Hvis du stadig kun har én eller to regioner ved niveau 93, kan du overveje at stoppe skraldeindsamling (og fyre skraldemænd) ca. 24 timer, før du stiger til niveau 94 for at sikre, at du har nok skrald til en tidsbegrænset opgave, der giver 5 diamanter.",
-  "focus_tip_5": "Efter niveau 100 låser du en opgave op, der kræver, at du åbner 50 retro- og 50 legendære kister fra det tidspunkt, du modtager opgaven. Du kan samle gratis kister fra kalenderen, og hvis du har nok mønter under en begivenhed, kan du samle alle begivenhedskisterne.",
+  "focus_tip_2": "Fuldfør øjeblikkeligt alle lyserøde hibiskusbuskadser fra et enkelt puzzlestykke, så snart du får det. Lad det ligge i dit inventar og placer det ikke i din zoo, før du har modtaget opgaven om at placere 10 lyserøde hibiskusbuskadser.",
+  "focus_tip_3": "Hvis du gerne vil maksimere den gratis Zoo Akademi-voucher, du modtager på niveau 10, skal du prioritere at fuldføre Madame Yu-opgaver hver 6. time for at nå akademiniveau 14, inden du indløser voucheren.",
+  "focus_tip_4": "Hvis du stadig kun har én eller to regioner ved niveau 93, kan du overveje at stoppe skraldeindsamling ca. 24 timer, før du stiger til niveau 94 for at sikre, at du har nok skrald til en tidsbegrænset opgave, der giver 5 diamanter.",
+  "focus_tip_5": "Efter niveau 100 låser du en opgave op, der kræver, at du åbner 50 retro- og 50 legendariske kister fra det tidspunkt, du modtager opgaven. Du kan samle gratis kister fra kalenderen og under et event købe alle eventkisterne.",
 
-  "coins_title": "Mønter",
-  "coins_body": "Sørg for at placere og opgradere alle dine mønt-købbare butikker med det samme. Spillere har opdaget, at butikkerne fyldes hurtigst, når spillet er lukket. Log ind hver time eller to for at samle mønter. Jo flere popularitetspoint du har, jo flere besøgende køber fra dine butikker. Gem dine mønter til en begivenhed eller et udsalg. Vent til butikkerne er på udsalg, før du køber eller opgraderer nogen diamant-butikker. Nogle spillere avler og sælger højtværdige møntdyr som Northern Bald Ibis eller Royal Blue Tang for at opnå møntfortjeneste — ethvert mønt-købbart dyr, der kan købes for 100.000 mønter eller mere, foretrækkes. Diamantdyr er ikke profitable at sælge for mønter.",
+  "scrap_title": "Sælg",
+  "scrap_title2": "Sælg",
+  "scrap_body": "Når du sælger, er det generelt bedste praksis på lavere niveauer kun at sælge møntgenstande. Undtagelser er Bjerggorillaen (ikke tilgængelig i butikken) og nogle dyr, der kun låses op på meget høje niveauer, såsom Afrikansk Bøffel eller Argali. Prøv ikke at åbne en diamantkiste, medmindre du har nok nøgler (4) til at garantere det nødvendige dyr.",
 
-  "diamonds_title": "Diamanter",
-  "diamonds_body": "Diamanter betragtes som premium-valuta. Nogle opgaver kræver diamanter for at blive fuldført. Hvis du er tålmodig, kan mange af disse diamantgenstande findes inde i spillet gratis. Du kan skjule disse opgaver om nødvendigt. Du kan optjene diamanter gratis eller købe dem fra butikken for rigtige penge.",
-
-  "spending_title": "Forbrug",
-  "spending_intro": "Næsten alt i spillet kommer på udsalg. Hvis du er tålmodig, kan du maksimere dit forbrugsbudget. Det er bedst at vente på en Cashback-begivenhed for at købe de fleste ting, herunder genstande, der er kendte for aldrig at blive sat ned.",
-  "spending_no_sale_diamonds": "Diamantgenstande, der ikke sættes på udsalg: Opgraderinger til indgangsbilletkontorer, Avlspladser*, Nøgler (til kister), Nulstillinger af præmiehjul-timer, Zoo Academy-abonnementer, Season Pass-fjer. (*Bemærk: Avlscenteret selv har været på udsalg, men de låste pladser indeni har aldrig været direkte nedsat.)",
-  "spending_no_sale_coins": "Møntgenstande, der ikke sættes på udsalg: Almindelige blå kister, Terræn-editor, Bulldozer.",
-  "spending_avoid": "Køb at undgå at bruge diamanter på: 3× diamant-foderspand (brug mønter på 2× foder i stedet); at beholde dyr som babyer i stedet for at lade dem vokse op (placer babyer i beholdningen for at forhindre dem i at vokse op).",
-
-  "sales_title": "Udsalgsbegivenheder",
-  "sales_body": "Zoo 2 har regelmæssigt udsalg på shelters/opgraderinger, butikker/opgraderinger, dekorationer, indhegninger, diamantkister og landudvidelser. Nogle gange er butikssdyr i forskellige biomer på udsalg. Sjældnere er der udsalg på laug-butiksartikler, skraldespande/toiletter og bygninger/regionoplåsninger. Udsalg er generelt 30–50% rabat.",
-
-  "land_title": "Køb af land",
-  "land_body": "Vent på landudsalg for at få 33–50% rabat på køb af landstykker. Prioriter at købe møntland og planlæg fremad for de få diamantgrunde, du skal bruge til at forbinde. Kun butikker og indhegninger behøver at være på en forbundet sti. Indhegninger med dyr indeni kan flyttes fra en sti til en ikke-forbundet landgrund og stadig producere XP for rengøring/fodring/leg — men du får ingen popularitetspoint for ikke-forbundne indhegninger. Oplåsning af visse regioner kan give dig mere møntland til køb. Du kan købe Oceanside Zoo for mere land til enhver hoved-zoo-indhegning samt vandindhegninger (du skal først låse terræn-editoren op for at ændre jorden til blå fliser).",
-
-  "seasonal_title": "Sæsonbegivenheder",
-  "seasonal_body": "Gem dine mønter til sæsonbegivenheder, så du kan få alle præmierne uden at bruge diamanter. Køb-Saml-Sælg-tricket giver begivenhedsvaluta i bytte for dine mønter.",
-
-  "season_pass_title": "Season Pass",
-  "season_pass_body": "Tag den daglige quiz ved at klikke på pingvinen øverst til venstre på skærmen og derefter \"Quiz.\" Besvar 5 spørgsmål korrekt for at optjene op til 350 Season Pass XP hver dag for at stige i niveau på Season Pass-stien og samle belønningerne. Hvis du vil tænke mindre, skal du klikke på et svar gentagne gange uden at læse spørgsmålet og indsende, indtil du har besvaret 5 korrekt — der er ingen straf for forkerte svar. Fuldfør de ugentlige opgaver for at optjene mere XP. De nulstilles hver torsdag.",
-
-  "conservation_title": "Conservation Week",
-  "conservation_body": "Avl og frigiv visse begivenhedsmarkerede dyr hele ugen for en chance for at vinde bevaringsstatus-dekorationer, profiltitler og vigtigst af alt diamanter! Fuldfør opgaver for at optjene flere point og præmier. Hele Zoo 2-fællesskabet kan også optjene ekstra præmier, herunder diamanter, ved kollektivt at optjene point.",
-
-  "calendar_title": "Kalender",
-  "calendar_body": "En login-belønningskalender giver daglige præmier. Hvis du ønsker et avlningspar af de belønrede dyr, skal du tjekke, hvor mange puzzlestykker af dyret du får for måneden. Fuldfør dit første dyr med billetter, inden du får dit sidste puzzlestykke, så du kan fuldføre det andet dyr ved et kistudsalg, når det er billigere at fuldføre puslespil. Decemberkalenderen fungerer lidt anderledes — du skal manuelt klikke på dørpræmien hver dag for at samle login-belønningen.",
-
-  "friends_title": "Hjælp venner",
-  "friends_body": "Du kan klikke på \"hop til\"-genvejsknappen nederst på din hjælp-venner-skærm for straks at finde den næste krage, det næste barn eller det næste dyr uden at søge gennem hele zoo'en. Brug sociale medier til at finde aktive daglige hjælpere for at optjene flere venskabskister, herunder venskabsdyr. Alt de behøver er dit Support-ID (fundet i indstillinger) for at tilføje dig til deres venneliste. App-brugere kan også se en reklame eller betale en diamant for at hjælpe en ven i stedet for at spille minilegespillet.",
-
-  "animals_title": "Dyr",
-  "animals_body": "Der er hundredvis af dyrearter inde i spillet. Nogle er nødvendige til samlinger, nogle til konkurrencer og nogle til opgaver. Andre er begivenhedsdyr, premium-dyr, VIP-dyr og kistefacil-dyr, der er rare at have. Du kan få nogle dyr fra puzzlestykker i kister, kalenderen, en begivenhed eller præmiehjulet gratis. Andre kan du købe fra et lynudsalg eller is-manden. De fleste dyr vil komme til spillet gratis, hvis du har nok tålmodighed — bonusdyr tilbudt med et rigtigt pengediamant-køb tager generelt op til tre år om at indgå i en gratis tilgængelighedscyklus.",
-
-  "free_mate_title": "Få det andet dyr gratis",
-  "free_mate_body": "Når du køber eller på anden måde anskaffer dyr fra Dyrebutikken, kommer et par med en gratis partner som en opgavebelønning efter at have placeret det første dyr. Kendte eksempler (listen er muligvis ikke udtømmende): Okapi, Common Ostrich, Reticulated Giraffe, American Bison, Plains Zebra, Goldfish (Akvarium), Emperor Scorpion (Terrarium), Reef Manta Ray (Oceanside).",
-
-  "breeding_title": "Avl",
-  "breeding_body": "Du kan avle dyr ved at placere en han og en hun i en indhegning med det nødvendige opgraderede shelter og en tilgængelig avlsplads. To niveau 1-dyr laver en niveau 2-baby. Når babyen er placeret i en indhegning, tager det en uge at vokse op. Du kan ændre et dyrs køn ved at klikke på det og vælge køn-ikonet. Du kan avle den samme art i flere indhegninger på samme tid i enhver region. Der er en meget sjælden chance for at springe niveauer over ved at avle et funklende dyr. For at stige hurtigere i niveau med dyr skal du forberede dem til tvilling/trillings-avlsbegivenheder ved at opbygge avlssuccesprocenten til omkring 20% og derefter stoppe. For at øge avlssucces, bliv medlem af et laug med en aktiv avlsbonus (op til 10%), mønt-fod inde i avlscenteret og flyt dyr til deres tilsvarende region for gældende biom-bonusser.",
-
-  "oceanside_title": "Oceanside-avl",
-  "oceanside_body": "Du kan avle alle biomer i Oceanside Zoo! Brug terræn-editoren til at ændre jorden til blå fliser for at placere græsland-, sletter-, skov-, bjerg-, savanne-, is- og jungleindhegninger i Oceanside. Du kan avle alle biomer i denne region, ikke kun vand.",
-
-  "petting_title": "Kærtegn af dyr",
-  "petting_body": "Nogle opgaver kræver, at du kærtegner et dyr. Klik eller tryk på dyret og hold nede, indtil kameraet zoomer ind, og små hjerter flyder op fra dyret. Tips: Slå \"Reducerede animationer\" til i Indstillinger, så dine dyr ikke bevæger sig. Hvis opgaven ikke angiver, hvilket dyr der skal kærtegnes, vælg et større dyr. Zoom ind, så dyrene er større, og du har et større mål at klikke på.",
-
-  "enclosure_resize_title": "Ændring af indhegningers størrelse",
-  "enclosure_resize_body": "Du kan ændre størrelsen og formen på enhver indhegning af pladsmæssige årsager eller for at gøre den til en dekoration. Nogle spillere skærer endda huller i midten for mere dekoreringsplads eller omformer indhegninger til at stave ord.",
-
-  "clubs_title": "Laug",
-  "clubs_body": "Der er mange aktive laug, der søger medlemmer. Selvom du kan oprette dit eget laug for 10 diamanter, er det bedst at bruge sociale medier til først at forbinde med andre laug for at få mest mulig gavn og forstå, hvordan det fungerer. Kun de top 300–400 laug får en anstændig mængde puzzlestykke-præmier hver uge. Nogle grundlæggende laug-tips: avl alle konkurrencedyr til niveau 20 og prioriter dine diamanter til at åbne flere avlspladser, når det er muligt. At sigte efter top 75 giver dit laug 50 statue-puzzlestykker. At sigte efter top 300 giver dit laug 50 variant-puzzlestykker. Hvis dit laug er usandsynligt at vinde top 100, er det bedst at donere et enkelt dyr, høste laug-XP og prøve igen næste gang.",
-
-  "puzzles_title": "Puzzlestykker",
-  "puzzles_body": "Vent om muligt på et kistudsalg, inden du skrotter puzzlestykker eller fuldfører genstande. Det er generelt bedste praksis på lavere niveauer at fuldføre det første diamantdyr-puzzlestykke, du får, med billetter, så dit andet stykke kan bruges til et andet dyr. App-brugere: aktivering af bonustilbudsannoncer giver mulighed for at fuldføre puslespil med 10% rabat ved at se en reklame. For spillere på niveau 90+, er Aviary-regionen en god investering for billetter — hver dag efter login-kalenderen nulstilles, falder 20 fjer fra himlen, og hver fjer har en chance for at give et Aviary-puzzlestykke.",
-
-  "scrap_title": "Hvad der skal skrottes",
-  "scrap_body": "Når du skrotter genstande, er det generelt bedste praksis på lavere niveauer kun at skrotte møntgenstande. Undtagelser inkluderer Mountain Gorilla (ikke tilgængelig i butikken) og nogle dyr, der kun låses op på meget høje niveauer, såsom African Buffalo eller Argali. Prøv ikke at åbne en diamantkiste, medmindre du har nok nøgler (4) til at få det garanterede dyr, du har brug for, hvis du mangler kister.",
-
-  "no_scrap_title": "Hvad der IKKE skal skrottes",
-  "no_scrap_intro": "Genstande, der er nødvendige til opgaver, som du bør overveje at gemme i stedet for at skrotte:",
+  "no_scrap_title": "SÆLG IKKE",
+  "no_scrap_intro": "Genstande, der er nødvendige til quests, og som du bør beholde i stedet:",
   "no_scrap_decos": [
-    "1 Plains Lantern",
-    "1 Savanna Lantern",
-    "1 Ice Lantern",
-    "1 Water Playground",
-    "1 Rose Arch",
-    "4 Pink Rose Bushes",
-    "5 Bushes (sletter)",
-    "2 Forest Lanterns",
-    "2 Hollylocks",
-    "1 Forest Fountain",
-    "1 Play Wheel (Leafy Thicket)",
-    "2 Berry Bush (skov)",
-    "1 Tree Stump (skov)",
-    "10 Pink Hibiscus",
-    "1 Trough (klippeørken)",
-    "1 Fire Coral (saltvand)",
-    "1 Signpost",
-    "1 Plains Signpost",
-    "1 Forest Signpost",
-    "1 Jungle Signpost",
-    "1 Water Signpost",
-    "3 Ice Benches"
+    "1 Sletter-lygte",
+    "1 Savanne-lygte",
+    "1 Is-lygte",
+    "1 Vandlegeplads",
+    "1 Rosenbue",
+    "4 Lyserøde rosebuskadser",
+    "5 Buske (Sletter)",
+    "2 Skov-lygter",
+    "2 Stokroser",
+    "1 Skovbrønd",
+    "1 Legehjul (Løvtykt)",
+    "2 Bærbusk (Skov)",
+    "1 Træstub (Skov)",
+    "10 Lyserøde hibiskus",
+    "1 Fodertrold (Klippeørken)",
+    "1 Ildkoral (Saltvand)",
+    "1 Vejskilt",
+    "1 Sletter-vejskilt",
+    "1 Skov-vejskilt",
+    "1 Jungle-vejskilt",
+    "1 Vand-vejskilt",
+    "3 Is-bænke"
   ],
   "no_scrap_animals_intro": "Opgave-diamantdyr (ikke tilbudt som niveau-op-belønninger eller opgavebelønninger før niveau 106):",
   "no_scrap_animals": [
-    "Komodo Dragons",
-    "Aardvarks",
-    "Ocelots",
-    "African Elephants",
-    "Mandrills",
-    "Snowy Owls",
-    "Walruses",
-    "Spotted Skunks",
-    "Fishing Cats",
-    "Sea Otters",
-    "Emperor Penguins",
-    "Harpy Eagles",
-    "Jaguarundis",
-    "Irrawaddy Dolphins (kun præmiehjul)",
-    "Giant Otter Shrew (kun præmiehjul)",
-    "American Black Bears",
-    "Eastern Grey Kangaroos",
-    "Black-Backed Jackals (kun præmiehjul)",
-    "2. Polar Bear",
-    "2. Green Anaconda",
-    "2. Scarlet Macaw",
-    "2. Moon Bear",
+    "Komodovaraner",
+    "Jordsvin",
+    "Ocelotter",
+    "Afrikanske elefanter",
+    "Mandriller",
+    "Sneugler",
+    "Hvalrosser",
+    "Plettede stinkdyr",
+    "Fiskekatte",
+    "Havottere",
+    "Kejserpingviner",
+    "Harpyieørne",
+    "Jaguarundier",
+    "Irrawaddy-delfiner (kun præmiehjul)",
+    "Kæmpeodderspidsmus (kun præmiehjul)",
+    "Amerikanske sorte bjørne",
+    "Østlige grå kænguruer",
+    "Sortryggede sjakaler (kun præmiehjul)",
+    "2. Isbjørn",
+    "2. Grøn anakonda",
+    "2. Scharlakensara",
+    "2. Månebøjle",
     "2. Tapir",
     "1. Okapi"
   ],
-  "no_scrap_wheel_intro": "Dyr, der ikke er knyttet til opgaver, men som er i præmiehjulet og kan være nødvendige til samlinger:",
+  "no_scrap_wheel_intro": "Dyr, der ikke er knyttet til opgaver, men som er i præmiehjulet. Disse kan være nødvendige til samlinger.",
   "no_scrap_wheel": [
-    "Llama",
-    "Ribbon Seal",
-    "White-Faced Owl",
-    "Spot-Bellied Eagle-Owl",
-    "Squirrel Monkey",
-    "Indian Giant Squirrel"
+    "Lama",
+    "Båndssæl",
+    "Hvidmaskeugle",
+    "Pletbuget ørne-ugle",
+    "Egernabe",
+    "Indisk kæmpeegern"
   ],
 
-  "tickets_title": "Få flere billetter",
-  "tickets_body": "Hvis du mangler billetter, kan du vente på et kistudsalg, hvor det er 15% billigere at fuldføre en genstand. Du kan også nulstille præmiehjulet for 10 diamanter (anbefales under et to-månedligt Cashback-udsalg) eller åbne mange almindelige blå kister, indtil du har nok skrottbart materiale. Hvis du prøver at fuldføre en laug-statue uden alle puzzlestykker, kan du overveje at vente på et kistudsalg og bruge diamanter til at fuldføre de sidste par stykker — hvis du har 90 puzzlestykker af en statue, kan du fuldføre den med 10 diamanter med det samme eller vente på udsalget og få den for 7 diamanter.",
+  "bulldozer": {
+    "title": "Bulldozer",
+    "intro": "Bulldozeren er et dekorationsvalgsværktøj, der er tilgængeligt til køb fra niveau 25. Det kan låses op for 50 diamanter eller 500.000 mønter og kræver energi til drift. Værktøjet kan vælge op til 500 dekorationer på én gang for at lægge dem tilbage i inventaret eller flytte dem i deres bevarede form hen over din aktuelle zoo-region.",
 
-  "academy_tips_title": "Zoo Academy-tips",
-  "academy_tips_body": "For premium-spillere giver Zoo Academy mange fordele, herunder eksklusive dyr, kortere avlstider, flere mønter og mere XP. Det er bedst at aktivere akademiet under et Cashback-udsalg. Hvis du ikke har et aktivt abonnement, køb 1-dags Bronze for 8 diamanter for at aktivere fornyelsesrabatten — fornyelse er meget billigere end at genstarte. Vigtigt tidligt tip: du bør modtage en gratis Zoo Academy-voucher til et 7-dages Bronze-abonnement, når du når niveau 10 i spillet. For at høste de fulde fordele skal du vente, til du når Madame Yu-rulleniveau 14, inden du aktiverer voucheren — på denne måde vil du have alle 14 niveauer af Bronze-akademifordelene for ugen.",
+    "overview_title": "Oversigt",
+    "overview_body": "Når genstande lægges tilbage i inventaret, bevarer de ikke deres grupperede form, men stables som individuelle genstande. Bulldozeren kan kun samle genstande, der er klassificeret som dekorationer, såsom planter, statuer, toiletter osv. Den kan ikke samle skraldespande, stier, bygninger, indhegninger, indhegningsdekorationer, NPC'er eller terrænstykker.",
 
-  "hide_quests_title": "Skjul opgaver",
-  "hide_quests_body": "Klik på Bedstefar øverst til venstre på skærmen. Vælg bog-ikonet for at se aktive og fuldførte opgaver. Rul til den ufuldstændige opgave, du vil skjule. Fjern markeringen i boksen nederst til højre for at skjule opgaven.",
+    "event_title": "Sæsonevent-dekorationer",
+    "event_body": "Under et sæsonevent kan event-dekorationerne, der genererer valuta, først vælges med bulldozeren efter at hele eventet er fuldstændigt afsluttet.",
 
-  "rocks_title": "Knuse sten",
-  "rocks_body": "Kujali Park, en savanne-tema-region, der passer til overflydende dyr af alle biomer fra hoved-zoo'en, indeholder ekstra land, der kan låses op for diamanter eller mønter. Møntlandet i denne region kræver ekstra mønter for at knuse sten til specielle præmier — puzzlestykker til regionspecifikke dekorationer, stier, mønter, XP eller diamanter er alle mulige præmier.",
+    "energy_title": "Energi",
+    "energy_body": "Energi kan fås med diamanter, som questbelønninger, som gratis gave fra den månedlige login-belønningssti eller med præmiehjulet."
+  },
+  "visitors": {
+    "title": "Besøgsniveau",
+    "intro": "Besøgsniveauet er med stor sandsynlighed det vigtigste aspekt af spillet. En zoos besøgsniveau angiver, hvor mange besøgende der aktuelt kommer til din zoo. Jo højere tallet er, desto flere besøgende — hvilket naturligvis betyder flere mønter, der ikke kun indsamles ved indgangen, men også i alle dine butikker. Dit aktuelle besøgsniveau vises til højre for dit Zoo-niveau øverst til venstre på skærmen. Når du trykker på besøgsniveau-visningen, vises et popup, der viser dit niveau, de nødvendige besøgspoint til næste niveau samt forslag til, hvad dine besøgende gerne vil se i din zoo.",
 
-  "steam_title": "Bemærkning til Steam- og Epic-spillere",
-  "steam_body": "Det er fantastisk, at Steam eller Epic Games introducerede dig til Zoo 2! Der er nogle begrænsninger at være opmærksom på — hvis du har til hensigt at spille dette spil på lang sigt og endnu ikke har brugt mange penge på det, så tjek Platforme-siden på Zoo 2 Wiki for råd om, hvorvidt du skal fortsætte med Steam eller Epic."
+    "modifiers_title": "Besøgsniveau-modifikatorer",
+    "modifiers_intro": "Der er mange faktorer, der påvirker besøgsniveauet. I modsætning til erfaringsniveauet er din zoos besøgsniveau dynamisk og svingende. Mens de fleste effekter er positive, er der også negative modifikatorer, der kan sænke dit besøgsniveau.",
+
+    "animals_title": "Dyr",
+    "animals_body": "Dyr har stor positiv indflydelse. Generelt gælder: jo dyrere dyret er, desto flere besøgspoint får du. Der er ingen forskel mellem hun- og handyr. Babydyr har dog en dobbelt besøgspoint-bonus (denne falder til den normale voksenværdi, når babyen vokser op efter 7 dage). Et dyrs besøgspoint falder ved utilfredshed. Dyr uden mad, uden tilstrækkelig legetid eller i en beskidt indhegning har reducerede besøgspoint. Fodring, leg og rengøring af indhegningen gendanner besøgspointsene fuldt ud. Der er også særlige bygninger og dyrepasseren, der automatisk holder dyr på 100 % lykke.",
+
+    "decorations_title": "Dekorationer",
+    "decorations_intro": "Dekorationer er din vigtigste mulighed for at tilføje og øge besøgspoint. De behøver ikke at placeres på stier. Jo dyrere dekoration, desto flere point tilføjes generelt (undtagelse: Klubbutik-dekorationer koster mere, men giver færre besøgspoint samlet set). Der er forskellige typer dekorationer:",
+
+    "plants_title": "Planter",
+    "plants_body": "Planter findes i mange varianter, men fungerer ens for besøgsniveauet. Planter giver en bonus for hvert plantet objekt. Som dyr skal de dog plejes — planter visner til sidst og deres besøgspoint falder. Vanding af planterne gendanner deres fulde pointværdi. Der er en gartner for ædelstene, der automatisk vander et bestemt antal planter.",
+
+    "enclosure_deco_title": "Indhegningsdekorationer",
+    "enclosure_deco_body": "Indhegningsdekorationer placeres inden i dyrindhegninger. De påvirker ikke dyrets lykke, men leverer popularitetspoint til besøgende. I modsætning til planter uden for indhegninger visner indhegnings-plantedekorationer ikke. Indhegningen skal være forbundet med en sti, for at dens indhold (dyr og indhegningsdekorationer) bidrager til dine popularitetspoint. Ikke-forbundne indhegninger bidrager ikke med popularitetspoint.",
+
+    "object_deco_title": "Objekt-dekorationer",
+    "object_deco_body": "Dekorationer uden for indhegninger inkluderer alt fra bænke over brønde til skilte og legepladser. De behøver hverken vedligeholdelse eller forbindelse til en sti for at levere popularitetspoint.",
+
+    "bathrooms_title": "Toiletter",
+    "bathrooms_body": "Toiletter behøver ikke at placeres på stier for at have effekt og kræver ingen vedligeholdelse.",
+
+    "trash_title": "Affald og skraldespande",
+    "trash_body": "Affald smides i din zoo, når der ikke er nok skraldespande, som besøgende kan nå via stier. Skraldespande giver ingen direkte positiv besøgsbonus, men giver besøgende mulighed for at smide affald der i stedet for på stierne. Affald på stierne får dine besøgende til at forlade zooen hurtigere, men påvirker ikke popularitetspoint direkte. Der er en skraldemand for ædelstene, der automatisk indsamler en begrænset mængde affald for dig.",
+
+    "npcs_title": "Særlige gæster (NPC'er)",
+    "npcs_body": "Særlige gæster (NPC'er) vandrer på stierne i din zoo. De fylder ikke plads, påvirker ikke dyrets lykke, kræver ingen vedligeholdelse og leverer udelukkende popularitetspoint til besøgende."
+  },
+  "friends": {
+    "title": "Venner",
+    "intro": "Spillere kan optjene belønninger fra to forskellige typer venner: hvervede venner og spilvenner. Hvervede venner er inviterede brugere, der aldrig har spillet Zoo 2, mens spilvenner er eksisterende spillere, hvis konti kan forbindes med din.",
+
+    "recruited_title": "Hvervede venner",
+    "recruited_body": "Du kan optjene belønninger for at hverve nye spillere til Zoo 2 med dit personlige invitationslink. Klik på den lyserøde \"Inviter\"-knap i dit Hverv-en-ven-vindue og send linket til nye spillere. Den nye spiller skal bruge dit link til at downloade spillet og fuldføre op til 5 mål, for at du kan optjene venskabsmønter. Bemærk: Denne funktion er ikke tilgængelig for Steam- eller Epic Games-spillere.",
+
+    "objectives_title": "Mål for hvervede venner",
+    "objective_level": "Nå niveau 10",
+    "objective_animals": "Have 10 dyr i alt i zooen",
+    "objective_diamonds": "Købe diamanter",
+    "objective_academy": "Udvide Akademiet",
+    "objective_recruit": "Hverve endnu en ven",
+
+    "objectives_note": "Hvert fuldført mål fra en hvervet ven giver dig 1 venskabsmønt. Hvis en hvervet ven fuldfører det samme mål to gange, gives der ingen yderligere mønter.",
+
+    "rewards_title": "Belønninger for hvervede venner",
+
+    "ingame_body": "Spillere kan have op til 16 spilvenner. Da venner deler visse belønninger, er det meget fordelagtigt at have aktive spilvenner. Bemærk: Som en del af en fair-play-regel er det et brud på Upjers' brugsbetingelser at have spilvenner, der bruger den samme internetforbindelse.",
+
+    "adding_title": "Tilføj venner",
+    "adding_body": "For at tilføje nye spilvenner skal du acceptere en venskabsanmodning eller sende en til en eksisterende spiller. Tryk på ven-menusymbolet og vælg et ledigt venskabsslot for at se 12 foreslåede spillere på lignende niveau. For at tilføje en bestemt spiller skal du bruge søgeværktøjet og indtaste vedkommendes Support-ID.",
+
+    "removing_title": "Fjern venner",
+    "removing_body": "For at frigøre et venskabsslot skal du vælge en ven og trykke på papirkurven i vedkommendes informationsarea. Pladsen låses i 24 timer, inden du kan invitere igen eller acceptere invitationer. At få og beholde 16 aktive venner er svært, og spillere er ofte nødt til at ty til andre kanaler, f.eks. sociale netværk eller fora.",
+
+    "zoo_details_title": "Vens zoo-detaljer",
+    "zoo_details_body": "Når du trykker på en ven, ser du oplysninger om vedkommendes zoofremskridt: opnåede zoo-titler, antal parkudvidelser, antal forskellige dyrearter, antal dyr fra niveau 10, antal præstationer og antallet af placerede babydyr, der i øjeblikket vokser op i hoved-zooen.",
+
+    "helping_title": "Hjælp venner",
+    "helping_body": "Hjælp kræver et besøg i din vens zoo. Tryk på hjertet i vennelisten eller knappen Hjælp-en-ven. Hjælp giver begge en venskabshjertepoint plus XP. For hver hjulpet ven modtager du XP svarende til ti gange dit aktuelle spillerniveau. Du kan klikke på \"Hop til\"-genvejsknappen nederst i dit hjælp-venner-spil for straks at finde den næste krage, det næste barn eller det næste dyr. Brug sociale medier til at finde aktive daglige hjælpere og modtage flere venskabskister. De behøver kun dit Support-ID (fundet i indstillinger). App-brugere kan også se en reklame eller betale en diamant for at hjælpe en ven i stedet for at spille minilegespillet.",
+
+    "minigames_title": "Hjælps-minilegespil",
+    "minigame_crows": "Jag krager væk: 5 krager sidder i tilfældige indhegninger. Tryk på hver krage 3 gange for at jage dem væk.",
+    "minigame_children": "Trøst børn: 5 grædende børn er placeret tilfældigt på stier. Giv hvert barn en ballon for at trøste dem.",
+    "minigame_animals": "Fang dyr: 10 dyr løber tilfældigt på zoo-stierne. Gled nettet hen over hvert af dem.",
+
+    "skip_title": "Spring minilegespil over",
+    "skip_body": "Du kan hjælpe én eller alle venner øjeblikkeligt ved at betale diamanter. \"Spring hjælp over\" koster 1 diamant pr. spiller. Knappen \"Hjælp alle\" koster 5 diamanter pr. resterende uhjulpen spiller. App-brugere kan også se en reklame for at hjælpe en ven (grænse 20 reklamer pr. 24t).",
+
+    "messaging_title": "Beskeder til venner",
+    "messaging_body": "Spillet tilbyder en privat chatboks til at skrive beskeder til spilvenner. Tryk på brevkonvolutten ved siden af din ven. Når en ny besked ankommer, vises en notifikation ved ven-symbolet. Konvolutten skifter fra grå til gul ved ulæste beskeder. Sendte beskeder kan ikke slettes eller redigeres.",
+
+    "levelup_title": "Niveau-op-gaver",
+    "levelup_body": "Når du stiger et niveau, modtager alle dine spilvenner også den niveau-op-gave, du vælger. Du modtager også dine venners niveau-op-gaver. Du vælger et puzzlestykke fra et tilfældigt sæt på 3.",
+
+    "chests_title": "Venskabskister",
+    "chests_body": "Hver gang du hjælper en ven eller hjælpes af dem, modtager du et venskabspoint. Hvert 10. point belønner dig med en venskabskiste, der indeholder puzzlestykker til dekorationer, indhegninger og indhegningsudstyr samt eksklusive venskabsdyr. Maksimum er 32 point pr. dag med 16 aktive venner (3 kister pr. dag). Opbevaringsgrænsen er 5 kister.",
+
+    "troubleshooting_title": "Fejlfinding",
+    "troubleshooting_body": "Hvis dit spil går ned ved hjælp af venner uden fejlmeddelelse, kan din enhed have for lidt RAM. Indlæsning af store, fuldt animerede zooer kræver betydelig hukommelse. Prøv følgende løsninger:",
+
+    "fix_device": "Skift enhed: Prøv at hjælpe venner med en enhed med mere RAM, f.eks. en laptop eller stationær computer.",
+    "fix_friends": "Skift venner: Fjern venner med meget store zooer (over niveau 60) og erstat dem med spillere på lavere niveau med mindre zooer, der kræver mindre RAM.",
+    "fix_settings": "Juster spilindstillinger: Aktiver \"Reducerede animationer\", deaktiver \"Avanceret zoom\" eller aktiver \"Begræns billedrate\" under den anden indstillingsfane for at reducere RAM-forbruget."
+  },
+  "terraineditor": {
+    "title": "Terræneditor",
+    "intro": "Terrænredigeringsværktøjet er et underlagsredigeringsværktøj, der ændrer det generelle landskab (underlaget) i dine zoo-regioner uden for indhegninger. Det kan låses op fra spillerniveau 25 for et engangsgebyr på 500.000 mønter eller 50 diamanter.",
+
+    "overview_title": "Oversigt",
+    "overview_body": "For at betjene terrænredigeringsværktøjet har du brug for energi, som du kan få fra præmiehjulet eller nogle gange fra login-belønningskalenderen. Du kan også købe energi for diamanter. Selv om editoren ikke er strengt nødvendig for spilfremdriften, tilbyder en introduktionsquest en lille belønning. Spillere på højt niveau har brug for dette værktøj til borgmester-questen \"Landskabsarkitekt-zoo\", der låses op på spillerniveau 110.",
+
+    "access_title": "Adgang til terrænredigeringsværktøjet",
+    "access_body": "Terrænredigeringsværktøjet tilgås ved at klikke på pensel-symbolet i venstre side af inventar-sidesøjlen. Der er to landskabsændrings-funktioner: terrænredigeringsværktøjet (til brug uden for indhegninger) og indhegnings-underlags-editoren (til brug inden i indhegninger).",
+
+    "visuals_title": "Terrænvisualiseringer",
+    "visuals_body": "Hver terræntype er designet til bestemte biomer eller temaer: Sne passer til Is-biomer, Sand til Savanne-områder, Sten til Bjerg-biomer, Jord giver et naturligt udseende, Efterårsblade passer til Sæsons- eller Sletter-biomer, Vand skaber naturlige søer og Skov giver en skovbund."
+  },
+  "video": {
+    "title": "Videoreklamer",
+    "intro": "Zoo 2 tilbyder to typer videoreklamer til mobile app-brugere: Plakat-reklamer, der optjener diamanter, og Bonustilbuds-reklamer, der tilbyder forskellige bonusser, rabatter eller tidsreduktioner. Browser-reklamer er kun tilgængelige i begrænsede regioner.",
+
+    "billboard_title": "Plakat-reklamer",
+    "billboard_body": "Et plakat til venstre for hovedindgangen giver visse platforme mulighed for at se korte videoreklamer mod diamanter. At se 10 reklamer genererer 1 diamant med en maksimal tilgængelighed på 20 reklamer i en 24-timers periode. Tilgængelighed af reklamer kan være begrænset af region, platform og andre faktorer.",
+
+    "redeeming_title": "Indløs diamanter",
+    "redeeming_body": "Du kan indløse diamanter, når du har nået 10 reklamer. Hvis du dog sparer 1.000 reklamer, inden du indløser, giver spillet dig et 100-diamant-pakke-bonusdyr. 2.000+ reklamer giver et par Premium-dyr med din 200-diamant-indløsning. Indløsning af 10.000+ reklamer giver 1.000 diamanter og et enkelt VIP-dyr eller et andet aktuelt VIP-tilbudsvalg. Denne bonusdyr-funktion er ikke garanteret af Upjers, og tidlige indløsninger kan ikke fortrydes.",
+
+    "availability_title": "Reklametilgængelighed",
+    "availability_body": "Plakat-reklamer er begrænset til 20 pr. 24-timers periode. Hver reklame starter sin egen 24-timers timer. Når daggrænsen er nået, viser en timer, hvornår der er flere reklamer tilgængelige. Enheder, der kan downloade appen fra Google Play Butik, bør generelt tilbyde reklamer.",
+
+    "age_title": "Aldersverifikation",
+    "age_body": "Spillet spørger om spillerens alder i forbindelse med reklamernes privatlivspolitik. Indtastning af en alder på 12 eller yngre låser spillet på enheden med en besked om, at spillet ikke er beregnet til børn. Geninstallation af spillet bør stille spørgsmålet igen.",
+
+    "tips_title": "Tips til aktivering af reklametilgængelighed",
+    "tips_intro": "Tilgængelighed af reklamer hænger oftest sammen med reklamesporing-identiteten. Vigtigt: Plakat-reklamer er i øjeblikket koblet til indstillingen for Bonustilbuds-reklamer — sørg for at fjerne markeringen af \"Vis ikke videotilbud\" i indstillingerne for at aktivere alle reklamefunktioner.",
+    "tip_delay": "FORSINKELSE: Vent 5 sekunder mellem reklamer, inden du prøver at se en til.",
+    "tip_restart": "GENSTART: Blot at genstarte spillet øger indimellem reklametilgængeligheden.",
+    "tip_internet": "SKIFT INTERNET: Prøv at bruge en anden internetforbindelse eller mobildata for at se, om reklamer bliver tilgængelige.",
+    "tip_device": "SKIFT ENHED: Prøv at se reklamer på en anden enhed, der er knyttet til dit Support-ID.",
+    "tip_tracking": "NULSTIL SPORING: For Android, nulstil Google Ads-ID. For iOS, nulstil ved at slå sporing fra og til.",
+
+    "ios_tracking_title": "iOS: Tillad sporing",
+    "ios_tracking_body": "Gå til Indstillinger > Privatliv og sikkerhed > Sporing. Aktiver \"Tillad apps at bede om sporing\", aktiver derefter appen \"Zoo 2\". Genstart spillet. Hvis dette er første gang siden geninstallation, klik på den grønne \"Aktiver\"-knap, når du klikker for at se reklamer.",
+
+    "ios_reset_title": "iOS: Nulstil sporing",
+    "ios_reset_body": "Gå til Indstillinger > Privatliv og sikkerhed > Sporing. Deaktiver \"Tillad apps at bede om sporing\" og bekræft \"Bed annoncer om at stoppe sporing\". Aktiver det derefter igen og aktiver også appen \"Zoo 2\". Genstart spillet. Du skal muligvis gøre dette igen, hver gang reklamer holder op med at være tilgængelige.",
+
+    "android_reset_title": "Android: Nulstil Google-reklame-ID",
+    "android_reset_body": "Gå til Indstillinger > Google > Reklamer. Tryk på \"Nulstil reklame-ID\" og derefter OK. Genstart spillet. Du skal muligvis gøre dette igen, hver gang reklamer holder op med at være tilgængelige.",
+
+    "bonus_title": "Bonustilbuds-reklamer",
+    "bonus_body": "Til mobile app-platforme kan spillere aktivere video-bonustilbud i spilindstillingerne ved at fjerne markeringen af \"Vis ikke videotilbud\". Vigtigt: Hvis du klikker på \"Vis ikke videotilbud\" ved indsamling af mønter ved kasser, deaktiveres alle bonus-reklamer igen. Bonustilbud har deres egen grænse på op til 20 reklamer hvert 24. time.",
+
+    "col_type": "Type",
+    "col_offer": "Tilbud",
+    "col_limit": "Grænse",
+    "col_details": "Detaljer",
+
+    "bonus_notes_title": "Bemærkninger til bonusser",
+    "xp_bonus_title": "10 % XP-bonus",
+    "xp_bonus_body": "Denne funktion låses op 24 timer efter den forrige aktivering. I øjeblikket kobler et konfigurationsproblem denne bonus til plakat-reklame-timeren, så nogle spillere muligvis skal vente, til deres plakat-nedtællings-timer udløber. Problemet er planlagt løst i en fremtidig opdatering.",
+    "xp_sources_title": "XP-kilder",
+    "xp_sources_body": "Rengøring af indhegninger, leg med dyr, fodring af dyr, fuldførelse af quests, placering af nye genstande eller dyr, frigivelse af dyr, hjælp til venner, vanding af planter, indsamling af affald, mislykket avl, lad babyer vokse op eller indsaml XP fra arbejdere.",
+    "fertility_title": "Frugtbarhedsbonus",
+    "fertility_body": "Denne avlsboost kan kun anvendes på aktive avlsforsøg. Sørg for at have tid nok til at se videoen færdig, inden avlen er afsluttet, da bonussen ellers ikke anvendes, og reklamen ikke tæller mod din grænse.",
+    "video_chests_title": "Videokister",
+    "video_chests_body": "Denne funktion låses op 24 timer efter den forrige aktivering. Du skal også have nok af dit 20-reklame-bonusgrænse tilbage efter den 24-timers ventetid.",
+
+    "limits_title": "Reklamegrænser",
+    "limits_body": "Grænserne for bonustilbuds-reklamer er adskilt fra din plakat-reklame-grænse. Inden for en 24-timers periode kan du se op til 20 bonustilbuds-reklamer. Hver reklame starter sin egen 24-timers timer. Hvis du ikke afslutter en reklame, anvendes bonussen ikke, og reklamen tæller ikke mod din grænse."
+  },
+  "calendar": {
+    "title": "Kalender",
+    "intro": "Log ind hver dag for at indsamle daglige belønninger. Log ind 25 dage i en måned for at modtage to særlige puzzlestykke-dyr. På dagene 26–31 er der 1–2 diamanter hver. I december erstatter adventskalenderen de daglige loginbelønninger.",
+
+    "how_it_works_title": "Sådan fungerer det",
+    "how_it_works_body": "Hver dag du åbner spillet, indsamler du en daglig loginbelønning. Belønningerne gennemgår en månedlig sti. Hvis du logger ind 25 dage i måneden, modtager du begge puzzlestykke-dyr for den pågældende måned. På dagene 26 til 31 er der bonusdiamanter. Belønningsstien nulstilles ved starten af en ny måned. Hver måned er der to særlige dyr (optjent som puzzlestykker over 25 logindage) og bonuskister, der uddeles undervejs.",
+
+    "advent_title": "December og adventskalenderen",
+    "advent_body": "Hvert december erstatter adventskalenderen den daglige loginbelønningssti. Åbn en ny dør hver dag for at indsamle særlige belønninger. Mistede døre kan låses op frem til den 7. januar for 3 diamanter pr. styk. I december trykker du på kalenderbobblen i spillet for at finde dagens dør. Hver dør er kun åben i 24 timer, inden den lukker. Du har frem til den 7. januar det følgende år til at låse mistede døre op for 3 diamanter pr. dør."
+  }
 }

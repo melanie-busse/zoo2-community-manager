@@ -1,0 +1,139 @@
+{
+  "title": "Dyr",
+  "intro": "Dyr er naturligvis grunden til, at en zoo eksisterer. Spillere starter med nogle få tamme dyr, og efterhånden som spillet skrider frem, bliver flere dyr tilgængelige. De fleste dyr kan købes med mønter eller diamanter. \nInden et nyt dyr kan indsættes, skal spillerne bygge den tilsvarende indhegning. Hvert dyr kræver en artsspecifik indhegning og en bestemt mængde indhegningsplads, og det maksimale antal dyr pr. indhegning må ikke overskrides. \nVed at tilføje en fodertrold, et vandhul og legeudstyr til indhegningen øges XP-udbyttet med 5 %.\n",
+  "animal_package": {
+    "title_package": "Bonusdyr",
+    "intro_package": "Køb af diamantpakker inkluderer ofte eksklusive bonusdyr. Spillere modtager et eller to Premium-bonusdyr ved køb af 100+ diamanter. Ved den dyreste diamantpakke gives et eksklusivt VIP-bonusdyr eller et par Premium-bonusdyr. Premium-bonusdyrene skifter hver anden uge og VIP-bonusdyrene hver 8. uge. Tjek prognoser for aktuelle mønsterprognoser for, hvornår bonusdyrene forventes at skifte, og hvilke dyr der forventes at blive sprunget over i kisterotationer. Nogle tidligere dyr tilbydes indimellem igen. Upjers giver også spillere mulighed for at bytte et aktuelt bonusdyr mod en udvalgt liste over tidligere tilbudte bonusdyr.",
+
+    "how_title": "Sådan bytter du bonusdyr",
+    "how_step1": "Køb en diamantpakke, der inkluderer bonusdyr.",
+    "how_step2": "Lad dyrene blive i sidesøjlen i inventaret efter købet. Placer dem IKKE i din zoo. Hvis du vil bytte, skal du ikke vælge NPC'en, da det giver support mere arbejde.",
+    "how_step3": "Åbn en supportbillet hos Upjers på support.upjers.com. Forklar, at du har købt en pakke og gerne vil bytte dyrene. Husk at opgive dit Support-ID (Bruger-ID), dit brugernavn og de ønskede dyr. Dyrene skal være det aktuelle Premium- eller VIP-tilbud, så byt dem inden næste skift.",
+    "how_step4": "Upjers bytter normalt dyrene inden for en til to hverdage.",
+
+    "exclusions_title": "Undtagelser",
+    "exclusions_body": "Bytte af bonusdyr er en goodwill-service og ikke en officiel spilfunktion, derfor kan Upjers til enhver tid beslutte ikke at fortsætte dyreskiftet.",
+
+    "exclusions_rules_title": "Bytteregler",
+    "exclusion_premium": "Premium-bonusdyr kan kun byttes med Premium, mens VIP kan byttes med enten et VIP eller et par Premium.",
+    "exclusion_pairs": "Dyr modtaget i par kan kun byttes parvis.",
+    "exclusion_list": "Du kan kun bytte mod en bestemt liste over dyr.",
+    "exclusion_enclosure": "Support bytter kun dyrene, ikke indhegningen. Hvis indhegningen til det ønskede byttedyr adskiller sig fra den, der fulgte med pakken, er spillerne selv ansvarlige for at skaffe den rigtige indhegning.",
+
+    "tradelist_title": "Bytteliste",
+    "tradelist_body": "I øjeblikket kan du kun bytte mod et begrænset udvalg af dyr. Den officielle goodwill-bytteliste kan anmodes hos Upjers Support. Dyresiden viser et blåt diamantikon med et P (Premium) eller V (VIP), der angiver, hvilke dyr der er kendt for at stå på den aktuelle liste. Et gråt diamantikon betyder, at dyret ikke længere er på byttelisten, men tidligere var et Premium- eller VIP-dyr.",
+
+    "tradelist_tip": "Tip:",
+    "tradelist_tip_body": "Du bør tjekke kisteprognoserne for at se, om dyret forventes snart at dukke op i kister, hvor du måske kan få det gratis. Se også på Sprunget Over-dyr, der forventes ikke at dukke op i kister. Nogle dyr tilbydes også sjældent som Super Deal."
+  },
+  "animal_breeding": {
+    "title": "Avl",
+    "intro": "Avl giver dig mulighed for at producere babydyr i din zoo. Med den rette opsætning, bonusser og timing kan du maksimere dine chancer for særlige pelsfarver og optimere din avlsplan. Du kan avle alle biomer i Oceanside Zoo! Brug terrænredigeringsværktøjet til at ændre underlaget til blå fliser for at placere græsland-, sletter-, skov-, bjerg-, savanne-, is- og jungleindhegninger i Oceanside Zoo. Du kan avle alle biomer i denne region, ikke kun vand.",
+
+    "requirements_title": "Forudsætninger",
+    "requirements_body": "Til avl har du brug for: en voksen han og hun af samme art, et avlsskjul på det påkrævede niveau, nok mønter til at starte avlen og en ledig avlsplads.",
+
+    "how_to_breed_title": "Sådan avler du",
+    "how_to_breed_body": "Tryk på et avlsskjul eller en avlscenterplads og vælg derefter dyret. Du kan valgfrit tilføje frugtbarhedsfoder for at forbedre chancerne for særlige pelsfarver. Når timeren løber ud, indsamler du babyen. Efter indsamling følger en 8-timers hvileperiode, før skjulet kan bruges igen. Drægtigheder varierer fra 2 til 16 timer afhængigt af arten. Den nøjagtige tid for hver art vises i avlscenteret.",
+
+    "simultaneous_title": "Samtidig avl",
+    "simultaneous_body": "Du kan avle i flere indhegninger på samme tid. Den rækkefølge, du indsamler babyer i, påvirker Mislykket Avl-bonussen — en mislykket avl tilføjer en bonusprocent til dit næste forsøg. Resultatet bestemmes i det øjeblik, du trykker for at indsamle.",
+
+    "twins_title": "Tvillinger og trillinger",
+    "twins_body": "Tvillinger og trillinger er garanteret under Avlsuge-events. Uden for events giver et Zoo Akademi-abonnement en chance for tvillinger eller trillinger. Bemærk, at avlen skal STARTE inden for event-vinduet for at kvalificere sig til de garanterede tvillinger/trillinger.",
+
+    "growing_up_title": "Vokse op",
+    "growing_up_body": "Babyer tager 7 dage om at vokse til voksne. Du kan sætte aldringen på pause ved at flytte en baby til dit inventar. Babyer giver dobbelt popularitet sammenlignet med voksne. At vokse op giver en lille mængde XP.",
+
+    "power_growth_title": "Hurtigvækst",
+    "power_growth_body": "Du kan få et dyr til at vokse øjeblikkeligt ved at bruge diamanter (Hurtigvækst-formel). Dette er ofte nedsat under Avlsugen.",
+
+    "reducing_time_title": "Reducer avlstiden",
+    "reducing_time_body": "Flere metoder reducerer avlstiden: betale diamanter (5 pr. resterende time), se en reklame (10 % reduktion, kun i app), bruge en Hurtig-frugtbarhedsfoderpose (20 % reduktion, optjent under Artsbeskyttelsesugen, kan stables) eller Zoo Akademi-abonnementet (op til 80 % reduktion).",
+
+    "reducing_rest_title": "Reducer hvileperioden",
+    "reducing_rest_body": "Den 8-timers hvileperiode efter indsamling kan forkortes ved at betale 1 diamant pr. resterende time. App-brugere kan se en reklame for en 10 % reduktion.",
+
+    "bonuses_title": "Avlsbonusser",
+    "bonuses_body": "Flere bonusser stables for at øge din chance for særlige pelsfarver.",
+
+    "bonus_types_title": "Typer af bonusser",
+    "bonus_club": "Laug-boost: 2–10 % bonus, aktiv under 48-timers laug-events. Skal aktiveres FØR avlen starter.",
+    "bonus_academy": "Zoo Akademi: Øget basisprocent efter biom. Varierer afhængigt af arten.",
+    "bonus_fertility": "Frugtbarhedsfoder: Standard giver basis-%; Premium giver 4x basis-% (kan stables); Videoreklame giver basis-% (grænse 1 pr. avl, op til 20 reklamer pr. 24 timer).",
+    "bonus_failed": "Mislykket avl: Tilføjer basis-% eller 10 % (afhængigt af hvilken der er lavest) pr. mislykket forsøg. Maksimum 75 % bonus. Overføres på tværs af regioner og pladser.",
+    "bonus_region": "Regionsbonус: +50 % basisrate i den matchende region (Grantræslunden=Skov, Kujali Park=Sletter & Savanne, Oceanside=Vand, Polarpark=Is, Regnskovspark=Jungle).",
+
+    "special_coats_title": "Særlige pelsfarver",
+    "special_coats_body": "Tryk på den blå info-knap på et avlsskjul for at se chancerne for særlige pelsfarver for den pågældende art. Chancerne øges under særlige events. Forældrenes farver påvirker, hvilke farvevalg der er tilgængelige for babyen.",
+
+    "animal_levels_title": "Babydyreniveauer",
+    "animal_levels_body": "Babyniveau = Afrund ned((Mors niveau + Fars niveau) / 2) + 1. Det maksimale niveau er 20 (funklende dyr går op til niveau 40). Hvert niveau tilføjer 5 % til dyrets basispopularitet. Babyer giver altid dobbelt popularitet.",
+
+    "animal_xp_title": "Dyre-XP",
+    "animal_xp_body": "Dyre-XP er ens på hvert niveau, medmindre dyret stammer fra Redningscenteret — disse dyr giver dobbelt XP.",
+
+    "region_bonus_title": "Regionsbonusser",
+    "region_bonus_body": "Avl i den matchende region for en art giver +50 % på basisraten for særlige pelsfarver.",
+
+    "col_region": "Region",
+    "col_biome": "Biom"
+  },
+  "super_deals": {
+    "title": "Super-tilbud",
+    "intro": "Super-tilbud (også kaldet Top-tilbud eller Flash-salg) er tidsbegrænsede rabattilbud i Zoo 2-butikken. De varer typisk 24–72 timer og skifter ved middagstid i Tyskland.",
+    "how_it_works_body": "Super-tilbud vises i butikken i en begrænset periode. Den hyppigste type bundter et dyrepar med en indhegning, et vandhul og indhegningsgenstande med en rabat på 39–84 %. Rabatterne beregnes inklusive mønt-til-diamant-omregningskursen på 1 diamant pr. 250 mønter.",
+
+    "types_title": "Typer af Super-tilbud",
+    "types_body": "Super-tilbud findes i forskellige former. Den hyppigste type kombinerer to dyr med en indhegningspakke. Mindre hyppige typer inkluderer farvevariant-dyr til fuld diamantpris, nedsatte event-dekorationer og dyr fra VIP-, Legendariske eller Venskabskister.",
+
+    "discontinued_title": "Udgåede tilbudstyper",
+    "discontinued_body": "Safari-restauranter og Zoo-butikker var tidligere tilgængelige som Super-tilbud, men er blevet udfaset. Deres ubegrænsede købspotentiale forårsagede en møntubalance i spilkonomien. Disse genstande er nu tilgængelige via Sæsonpas-belønninger, Shell-spillet, Sæsonevents og nye spilegioner."
+  },
+  "animal_sparkling": {
+    "title": "Funklende dyr",
+    "intro": "En vellykket avl af en hvilken som helst art eller variant kan tilfældigt resultere i et særligt funklende dyr af samme art. Funklende dyr lyser i et funklende, violet-glødende skær på grund af deres fremragende sundhed og indeholder høj popularitet. Funklende dyr kan kun fås via almindelig avl og er ekstremt sjældne.",
+
+    "overview_title": "Oversigt",
+    "overview_body": "Hvert funklende dyr fødes på niveau 40, uanset forældrenes niveau. Funklende dyr er de eneste dyr, der kan nå så højt et niveau i din zoo. Alle ikke-funklende dyr når deres maksimale niveau ved niveau 20.",
+
+    "streak_title": "Avlsserie",
+    "streak_body": "Chancen for at få et funklende dyr bestemmes af din Avlsserie — antallet af på hinanden følgende vellykkede avlninger pr. art. Når en avlning mislykkes, nulstilles serien for den pågældende art til nul. Hver art har sin egen Avlsserie, der vises nede til højre i avlsdialogboksen. Uanset om resultatet er en enkelt, tvillinger eller trillinger, tæller sessionen som ét enkelt forsøg.",
+
+    "chances_title": "Funklende chancer",
+    "chances_body": "Jo højere antallet af på hinanden følgende vellykkede avlninger for en art er, desto større er dine chancer for at få et funklende dyr ved næste avlsforsøg. Chancerne starter ved 0,1% ved en Avlsserie på nul og stiger til maksimalt 1,1% ved en Avlsserie på 10 eller mere. Hvert enkelt baby i et tvillingepar eller trillingesæt har sin egen chance for at blive født som et funklende dyr.",
+
+    "col_streak": "Avlsserie",
+    "col_odds": "Chance som forhold",
+    "col_chance": "Chance som procent",
+
+    "breeding_with_title": "Avl med et funklende dyr",
+    "breeding_with_body": "Når et funklende dyr er vokset op, kan det bruges til at avle niveau-20-babyer, hvilket giver dig mulighed for at springe niveauer over. Uanset niveauet eller den funklende egenskab hos den anden forælder, bør babyer producere et normalt niveau 20, med en ultra-sjælden chance for endnu et funklende niveau-40-dyr. Funklende dyr opfylder også øjeblikkeligt alle samlingsmål for samme art og farve, da de fødes på niveau 40.",
+
+    "donating_title": "Donere et funklende dyr",
+    "donating_body": "Når du donerer et niveau-40-funklende dyr til en klubkonkurrence, giver dyret de samme point som dets niveau: 400 klubpoint, som vist på medlemsdonationsskærmen. Det svarer til at donere to niveau-20-dyr.",
+
+    "glow_title": "Slå funklende glød fra",
+    "glow_body": "Hvis du ikke kan lide de funklende effekter, kan du deaktivere funkle-funktionen i spilindstillingerne. Klik på tandhjulsikonet nede til højre på din spilskærm, klik på den anden indstillingsfane, rul ned og sæt et flueben ved \"Vis funklende dyr som normale dyr\". Dette fjerner enhver funklende effekt fra dine niveau-40-dyr."
+  },
+  "animal_petting": {
+    "petting_title": "Kæle med dyr",
+    "petting_body": "Nogle opgaver kræver, at du kæler med et dyr. Klik på dyret og hold nede, indtil kameraet zoomer ind, og små hjerter stiger op fra dyret. Tips: Aktiver \"Reducerede animationer\" i indstillingerne, så dine dyr ikke bevæger sig. Vælg et større dyr, hvis opgaven ikke angiver et bestemt dyr. Zoom ind, så dyrene er større og giver et større mål."
+  },
+  "ice_cream_vendor": {
+    "title": "Isvandreren",
+    "intro": "Isvandreren (ICV) er en særlig NPC, der regelmæssigt besøger din zoo og tilbyder nedsatte dyr fra sin vogn. Han er en af de bedste måder at få sjældne dyr til en reduceret pris på.",
+
+    "how_it_works_title": "Sådan fungerer det",
+    "how_it_works_body": "Isvandreren besøger din zoo ca. hvert 44. time. Ved ankomst tilbyder han op til 3 dyr med en rabat på 14–40 % på normalprisen. Du har 1 time til at foretage dine køb, inden han rejser igen. Sælgeren tjekker, hvilke dyr du allerede har placeret i din zoo, og tilbyder dig ikke dyr, du allerede ejer.",
+
+    "deals_title": "Tilbud og rabatter",
+    "deals_body": "Ved hvert besøg tilbydes 1 til 3 dyr fra hans pulje. Rabatterne spænder fra 14 % til 40 % på den ordinære købspris. Den nedsatte pris vises direkte på sælgerens vogn. Du kan købe alle de tilbudte dyr inden for 1-times-vinduet.",
+
+    "obtaining_title": "Skaffe dyr",
+    "obtaining_body": "De dyr, der er tilgængelige hos Isvandreren, kan også skaffes fra andre kilder, f.eks. Hoved-Zoo-butikken, specielle kister, Klubbutikken, Super-tilbud eller Redningscenteret. Følgende tabel viser dyrene i hans pulje sammen med deres alternative kilder.",
+
+    "npc_title": "Om Isvandreren",
+    "npc_body": "Isvandreren er en venlig NPC-karakter, der skubber sin vogn gennem din zoo. Han vises som en notifikation, når han ankommer. Tryk på hans vogn for at se det aktuelle udvalg. Hvis du går glip af ham, skal du vente ca. 44 timer på hans næste besøg."
+  }
+}

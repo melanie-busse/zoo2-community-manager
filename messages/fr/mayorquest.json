@@ -7,5 +7,6 @@
   "col_quest_name": "Nom de la quête",
   "objectives_title": "Objectifs",
   "section_objectives": "Objectifs",
-  "section_rewards": "Récompenses"
+  "section_rewards": "Récompenses",
+  "description": "En plus du niveau général du zoo du joueur, le Maire décerne des titres spéciaux lorsque vous atteignez différents succès dans votre zoo !"
 }

@@ -7,5 +7,6 @@
   "col_quest_name": "Nombre de la misión",
   "objectives_title": "Objetivos",
   "section_objectives": "Objetivos",
-  "section_rewards": "Recompensas"
+  "section_rewards": "Recompensas",
+  "description": "Además del nivel general del zoo del jugador, el alcalde otorga títulos especiales cuando logras diferentes éxitos en tu zoo."
 }

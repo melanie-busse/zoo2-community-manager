@@ -34,27 +34,27 @@
     "STATUE": "Statue"
   },
   "form": {
-    "create_title": "Sammelalbum anlegen",
-    "edit_title": "Sammelalbum bearbeiten",
-    "save": "Speichern",
-    "region": "Region",
-    "reward_animal": "Belohnungs-Tier",
-    "reward_variant": "Farbvariante",
-    "stars": "Sterne",
-    "translations": "Übersetzungen",
-    "requirements": "Anforderungen",
-    "type": "Typ",
-    "animal": "Tier",
-    "statue": "Statue",
-    "level": "Level",
+    "create_title": "Verzamelalbum toevoegen",
+    "edit_title": "Verzamelalbum bewerken",
+    "save": "Opslaan",
+    "region": "Regio",
+    "reward_animal": "Beloningsdier",
+    "reward_variant": "Kleurvariant",
+    "stars": "Sterren",
+    "translations": "Vertalingen",
+    "requirements": "Vereisten",
+    "type": "Type",
+    "animal": "Dier",
+    "statue": "Standbeeld",
+    "level": "Niveau",
     "messages": {
-      "createSuccess": "Sammelalbum wurde angelegt",
-      "editSuccess": "Sammelalbum wurde aktualisiert",
-      "deleteSuccess": "Sammelalbum wurde gelöscht",
-      "confirmDelete": "Sammelalbum wirklich löschen?",
-      "deleteTitle": "Sammelalbum löschen",
-      "requiredName": "Mindestens ein Name ist erforderlich",
-      "requiredRegion": "Bitte eine Region auswählen"
+      "createSuccess": "Verzamelalbum is aangemaakt",
+      "editSuccess": "Verzamelalbum is bijgewerkt",
+      "deleteSuccess": "Verzamelalbum is verwijderd",
+      "confirmDelete": "Verzamelalbum echt verwijderen?",
+      "deleteTitle": "Verzamelalbum verwijderen",
+      "requiredName": "Minimaal één naam is vereist",
+      "requiredRegion": "Selecteer een regio"
     }
   }
 }

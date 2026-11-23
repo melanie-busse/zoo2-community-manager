@@ -1,0 +1,139 @@
+{
+  "title": "Animales",
+  "intro": "Los animales son, por supuesto, la razón de ser de un zoo. Los jugadores comienzan con algunas mascotas y, a medida que avanza el juego, se van desbloqueando más animales. La mayoría de los animales pueden comprarse con monedas o diamantes. \nAntes de poder acoger a un nuevo animal, los jugadores deben construir el recinto correspondiente. Cada animal necesita un recinto específico para su especie y una cantidad determinada de espacio de recinto, sin superar el número máximo de animales por recinto. \nAñadir un comedero, bebedero y elementos de enriquecimiento al recinto aumenta el rendimiento de XP en un 5 %.\n",
+  "animal_package": {
+    "title_package": "Animales bonus",
+    "intro_package": "La compra de paquetes de diamantes suele incluir animales bonus exclusivos. Los jugadores reciben uno o dos animales bonus Premium al comprar 100 o más diamantes. Con el paquete de diamantes más caro se regala un animal bonus VIP exclusivo o un par de animales bonus Premium. Los animales bonus Premium cambian cada dos semanas y los VIP cada 8 semanas. Consulta las predicciones para ver las previsiones actuales sobre cuándo deberían cambiar los animales bonus y qué animales podrían saltarse de las rotaciones de cofres. Algunos animales anteriores se ofrecen de nuevo en ocasiones. Upjers también permite a los jugadores canjear un animal bonus actual por una lista seleccionada de animales bonus ofrecidos anteriormente.",
+
+    "how_title": "Cómo canjear animales bonus",
+    "how_step1": "Compra un paquete de diamantes que incluya animales bonus.",
+    "how_step2": "Deja los animales en la barra lateral del inventario después de la compra. NO los coloques en tu zoo. Si quieres canjearlos, no selecciones el NPC, ya que eso supone más trabajo para el soporte.",
+    "how_step3": "Abre un ticket de soporte en Upjers en support.upjers.com. Explica que has comprado un paquete y quieres canjear los animales. Asegúrate de indicar tu ID de soporte (ID de usuario), tu nombre de usuario y los animales deseados. Los animales deben ser la oferta Premium o VIP actual, así que canjéalos antes del próximo cambio.",
+    "how_step4": "Upjers suele realizar el canje en uno o dos días laborables.",
+
+    "exclusions_title": "Excepciones",
+    "exclusions_body": "El canje de animales bonus es un servicio de cortesía y no una función oficial del juego, por lo que Upjers puede decidir en cualquier momento no continuar con el canje de animales.",
+
+    "exclusions_rules_title": "Reglas de canje",
+    "exclusion_premium": "Los animales bonus Premium solo pueden canjearse por Premium; sin embargo, el VIP puede canjearse por un VIP o un par de Premium.",
+    "exclusion_pairs": "Los animales recibidos en pares solo pueden canjearse en pares.",
+    "exclusion_list": "Solo puedes canjear por una lista específica de animales.",
+    "exclusion_enclosure": "El soporte solo canjea los animales, no el recinto. Si el recinto del animal de canje solicitado difiere del que se regaló con el paquete, los jugadores son responsables de conseguir el recinto correcto por su cuenta.",
+
+    "tradelist_title": "Lista de canje",
+    "tradelist_body": "Actualmente solo puedes canjear por una selección limitada de animales. La lista oficial de cortesía de canje puede solicitarse al soporte de Upjers. La página del animal muestra un símbolo de diamante azul con una P (Premium) o V (VIP), que indica qué animales se sabe que están en la lista actual. Un símbolo de diamante gris significa que el animal ya no está en la lista de canje, pero fue un animal Premium o VIP anteriormente.",
+
+    "tradelist_tip": "Consejo:",
+    "tradelist_tip_body": "Deberías consultar las predicciones de cofres para ver si se espera que el animal aparezca pronto en cofres, donde podrías obtenerlo gratis. Consulta también los Animales Saltados, que probablemente no aparecerán en cofres. Algunos animales también se ofrecen ocasionalmente como Super Oferta."
+  },
+  "animal_breeding": {
+    "title": "Cría",
+    "intro": "La cría te permite producir animales bebé en tu zoo. Con la configuración, los bonificadores y el momento adecuados, puedes maximizar tus posibilidades de obtener colores de pelaje especiales y optimizar tu plan de cría. ¡Puedes criar todos los biomas en Oceanside Zoo! Usa el editor de terreno para cambiar el suelo a losetas azules y poder colocar recintos de pradera, llanuras, bosque, montaña, sabana, hielo y jungla en Oceanside. Puedes criar todos los biomas en esta región, no solo el acuático.",
+
+    "requirements_title": "Requisitos",
+    "requirements_body": "Para criar necesitas: un macho y una hembra adultos de la misma especie, un refugio de cría en el nivel requerido, suficientes monedas para iniciar la cría y un espacio de cría libre.",
+
+    "how_to_breed_title": "Cómo criar",
+    "how_to_breed_body": "Toca un refugio de cría o un espacio del centro de cría y luego selecciona el animal. Opcionalmente puedes añadir alimento de fertilidad para mejorar las posibilidades de colores de pelaje especiales. Cuando el temporizador expire, recoge el bebé. Tras la recogida hay un período de descanso de 8 horas antes de que el refugio pueda volver a usarse. Los períodos de gestación varían entre 2 y 16 horas según la especie. El tiempo exacto para cada especie se muestra en el centro de cría.",
+
+    "simultaneous_title": "Cría simultánea",
+    "simultaneous_body": "Puedes criar en varios recintos al mismo tiempo. El orden en que recoges los bebés afecta al bonificador de fallo de cría: un fallo añade un porcentaje de bonificación a tu siguiente intento. El resultado se determina en el momento en que tocas para recoger.",
+
+    "twins_title": "Gemelos y trillizos",
+    "twins_body": "Los gemelos y trillizos están garantizados durante los eventos de semana de cría. Fuera de los eventos, una suscripción a Zoo Academy da posibilidades de gemelos o trillizos. Ten en cuenta que la cría debe COMENZAR dentro del período del evento para poder optar a los gemelos/trillizos garantizados.",
+
+    "growing_up_title": "Crecimiento",
+    "growing_up_body": "Los bebés tardan 7 días en crecer hasta ser adultos. Puedes pausar el crecimiento moviendo un bebé a tu inventario. Los bebés dan el doble de popularidad que los adultos. El crecimiento otorga una pequeña cantidad de XP.",
+
+    "power_growth_title": "Crecimiento rápido",
+    "power_growth_body": "Puedes hacer crecer a un animal de forma instantánea usando diamantes (fórmula de crecimiento rápido). Esto suele estar en oferta durante la semana de cría.",
+
+    "reducing_time_title": "Reducir el tiempo de cría",
+    "reducing_time_body": "Varios métodos reducen el tiempo de cría: pagar diamantes (5 por hora restante), ver un anuncio (reducción del 10 %, solo en la app), usar una bolsa de alimento de fertilidad rápido (reducción del 20 %, ganada durante la semana de conservación, acumulable) o la suscripción a Zoo Academy (hasta un 80 % de reducción).",
+
+    "reducing_rest_title": "Reducir el tiempo de descanso",
+    "reducing_rest_body": "El período de descanso de 8 horas tras la recogida puede reducirse pagando 1 diamante por hora restante. Los usuarios de la app pueden ver un anuncio para una reducción del 10 %.",
+
+    "bonuses_title": "Bonificadores de cría",
+    "bonuses_body": "Varios bonificadores se acumulan para aumentar tus posibilidades de obtener colores de pelaje especiales.",
+
+    "bonus_types_title": "Tipos de bonificadores",
+    "bonus_club": "Boost del club: 2–10 % de bonificación, activo durante eventos del club de 48 horas. Debe activarse ANTES de iniciar la cría.",
+    "bonus_academy": "Zoo Academy: porcentaje base aumentado por bioma. Varía según la especie.",
+    "bonus_fertility": "Alimento de fertilidad: Estándar da el % base; Premium da 4× el % base (acumulable); el anuncio de vídeo da el % base (límite 1 por cría, hasta 20 anuncios por 24 horas).",
+    "bonus_failed": "Fallo de cría: añade el % base o el 10 % (el que sea menor) por intento fallido. Máximo 75 % de bonificación. Se transfiere entre regiones y espacios.",
+    "bonus_region": "Bonificación de región: +50 % de tasa base en la región correspondiente (Tannenwald=bosque, Kujali Park=llanuras y sabana, Oceanside=agua, Polar Park=hielo, Rainforest Park=jungla).",
+
+    "special_coats_title": "Colores de pelaje especiales",
+    "special_coats_body": "Toca el botón de información azul en un refugio de cría para ver las posibilidades de colores de pelaje especiales para esa especie. Las posibilidades aumentan durante eventos especiales. El color de los padres influye en las opciones de color disponibles para el bebé.",
+
+    "animal_levels_title": "Niveles de animales bebé",
+    "animal_levels_body": "Nivel del bebé = Redondear hacia abajo((Nivel de la madre + Nivel del padre) / 2) + 1. El nivel máximo es 20 (los animales brillantes llegan hasta el nivel 40). Cada nivel añade un 5 % a la popularidad base del animal. Los bebés siempre dan el doble de popularidad.",
+
+    "animal_xp_title": "XP del animal",
+    "animal_xp_body": "El XP del animal es el mismo en cada nivel, excepto si el animal proviene del centro de rescate, donde esos animales dan el doble de XP.",
+
+    "region_bonus_title": "Bonificaciones de región",
+    "region_bonus_body": "Criar en la región correspondiente para una especie da +50 % en la tasa de pelaje especial base.",
+
+    "col_region": "Región",
+    "col_biome": "Bioma"
+  },
+  "super_deals": {
+    "title": "Super Ofertas",
+    "intro": "Las Super Ofertas (también conocidas como Mejores Ofertas o Ventas Relámpago) son ofertas de descuento por tiempo limitado en la tienda de Zoo 2. Suelen durar 24–72 horas y cambian al mediodía en Alemania.",
+    "how_it_works_body": "Las Super Ofertas aparecen durante un tiempo limitado en la tienda. El tipo más habitual combina un par de animales con un recinto, un bebedero y objetos de recinto con un descuento del 39–84 %. Los descuentos se calculan incluyendo el tipo de cambio de monedas a diamantes de 1 diamante por 250 monedas.",
+
+    "types_title": "Tipos de Super Ofertas",
+    "types_body": "Las Super Ofertas se presentan en diversas formas. El tipo más habitual combina dos animales con un paquete de recinto. Los tipos menos frecuentes incluyen animales con variante de color al precio completo en diamantes, decoraciones de eventos con descuento y animales de cofres VIP, Legendarios o de Amistad.",
+
+    "discontinued_title": "Tipos de ofertas discontinuados",
+    "discontinued_body": "Los restaurantes safari y las tiendas de zoo estaban disponibles anteriormente como Super Ofertas, pero se discontinuaron. Su potencial de compra ilimitado causó un desequilibrio de monedas en la economía del juego. Estos artículos están ahora disponibles a través de las recompensas del pase de temporada, el juego de conchas, los eventos de temporada y las nuevas regiones del juego."
+  },
+  "animal_sparkling": {
+    "title": "Animales brillantes",
+    "intro": "Una cría exitosa de cualquier especie o variante puede dar aleatoriamente como resultado un animal brillante especial de la misma especie. Los animales brillantes resplandecen con un brillo reluciente de color violeta debido a su extraordinaria salud y tienen una popularidad elevada. Los animales brillantes solo se pueden obtener mediante la cría regular y son extremadamente raros.",
+
+    "overview_title": "Resumen",
+    "overview_body": "Cada animal brillante nace en el nivel 40, independientemente del nivel de sus padres. Los animales brillantes son los únicos animales que pueden alcanzar un nivel tan alto en tu zoo. Todos los animales no brillantes alcanzan su nivel máximo en el nivel 20.",
+
+    "streak_title": "Racha de cría",
+    "streak_body": "La posibilidad de obtener un animal brillante está determinada por tu racha de cría: el número de crías exitosas consecutivas por especie. Una vez que falla una cría, la racha de esa especie se reinicia a cero. Cada especie tiene su propia racha de cría, que se muestra en la parte inferior derecha del diálogo de cría. Tanto si el resultado es individual, gemelar o trillar, la sesión cuenta como un único intento.",
+
+    "chances_title": "Posibilidades de brillante",
+    "chances_body": "Cuanto mayor sea el número de crías exitosas consecutivas para una especie, mayores serán tus posibilidades de obtener un animal brillante en el siguiente intento de cría. Las posibilidades comienzan en el 0,1 % con una racha de cero y aumentan hasta un máximo del 1,1 % con una racha de 10 o más. Cada bebé individual en un par de gemelos o trillizos tiene su propia probabilidad de nacer como animal brillante.",
+
+    "col_streak": "Racha de cría",
+    "col_odds": "Probabilidad como ratio",
+    "col_chance": "Probabilidad en porcentaje",
+
+    "breeding_with_title": "Criar con un animal brillante",
+    "breeding_with_body": "Una vez que un animal brillante ha crecido, puede usarse para criar bebés de nivel 20, lo que te permite saltarte niveles. Independientemente del nivel o la condición de brillante del otro progenitor, los bebés deberían producir un nivel 20 normal, con una posibilidad ultrarara de obtener otro brillante de nivel 40. Los animales brillantes también completan de inmediato todos los objetivos de colección para la misma especie y color, ya que nacen en el nivel 40.",
+
+    "donating_title": "Donar un animal brillante",
+    "donating_body": "Al donar un animal brillante de nivel 40 para un concurso del club, el animal otorga los mismos puntos que su nivel: 400 puntos del club, como se muestra en la pantalla de donación del miembro. Equivale a donar dos animales de nivel 20.",
+
+    "glow_title": "Desactivar el brillo brillante",
+    "glow_body": "Si no te gustan los efectos brillantes, puedes desactivar la función de brillante en la configuración del juego. Haz clic en el icono de engranaje en la parte inferior derecha de la pantalla del juego, haz clic en la segunda pestaña de configuración, desplázate hacia abajo y marca la casilla «Mostrar animales brillantes como animales normales». Esto elimina cualquier efecto brillante de tus animales de nivel 40."
+  },
+  "animal_petting": {
+    "petting_title": "Acariciar animales",
+    "petting_body": "Algunas tareas requieren que acaricies un animal. Haz clic o mantén presionado el animal hasta que la cámara haga zoom y pequeños corazones floten desde el animal. Consejos: Activa «Animaciones reducidas» en la Configuración para que tus animales no se muevan. Si la tarea no especifica qué animal acariciar, elige un animal más grande. Haz zoom para que los animales sean más grandes y tengas un objetivo más grande en el que hacer clic."
+  },
+  "ice_cream_vendor": {
+    "title": "Heladero",
+    "intro": "El Heladero (ICV) es un NPC especial que visita tu zoo periódicamente y ofrece animales con descuento desde su carrito. Es una de las mejores formas de obtener animales raros a un precio reducido.",
+
+    "how_it_works_title": "Cómo funciona",
+    "how_it_works_body": "El Heladero visita tu zoo aproximadamente cada 44 horas. A su llegada, ofrece hasta 3 animales con un descuento del 14–40 % sobre el precio normal. Tienes 1 hora para realizar tus compras antes de que se marche. El vendedor comprueba qué animales ya tienes colocados en tu zoo y no te ofrece animales que ya posees.",
+
+    "deals_title": "Ofertas y descuentos",
+    "deals_body": "En cada visita se ofrecen entre 1 y 3 animales de su reserva. Los descuentos oscilan entre el 14 % y el 40 % sobre el precio de compra regular. El precio con descuento se muestra directamente en el carrito del vendedor. Puedes comprar todos los animales ofrecidos dentro del período de 1 hora.",
+
+    "obtaining_title": "Obtener animales",
+    "obtaining_body": "Los animales disponibles en el Heladero también pueden obtenerse a través de otras fuentes, como la tienda del zoo principal, cofres especiales, la tienda del club, Super Ofertas o el centro de rescate. La siguiente tabla muestra los animales de su reserva junto con sus fuentes alternativas.",
+
+    "npc_title": "Sobre el Heladero",
+    "npc_body": "El Heladero es un personaje NPC amigable que empuja su carrito por tu zoo. Aparece como notificación cuando llega. Toca su carrito para ver la selección actual. Si lo pierdes, tendrás que esperar unas 44 horas hasta su próxima visita."
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "title": "Animaux",
+  "intro": "Les animaux sont bien sûr la raison d'être d'un zoo. Les joueurs commencent avec quelques animaux domestiques, et d'autres animaux deviennent disponibles au fil du jeu. La plupart des animaux peuvent être achetés avec des pièces ou des diamants. \nAvant de pouvoir accueillir un nouvel animal, les joueurs doivent construire l'enclos correspondant. Chaque animal nécessite un enclos spécifique à son espèce et une certaine superficie d'enclos, sans dépasser le nombre maximum d'animaux par enclos. \nL'ajout d'une auge, d'un point d'eau et d'éléments d'enrichissement à l'enclos augmente le rendement en XP de 5 %.\n",
+  "animal_package": {
+    "title_package": "Animaux bonus",
+    "intro_package": "L'achat de paquets de diamants inclut souvent des animaux bonus exclusifs. Les joueurs reçoivent un ou deux animaux bonus Premium lors de l'achat de 100+ diamants. Le paquet de diamants le plus cher offre un animal bonus VIP exclusif ou une paire d'animaux bonus Premium. Les animaux bonus Premium changent toutes les deux semaines et les animaux bonus VIP toutes les 8 semaines. Consultez les prévisions pour les prédictions actuelles sur quand les animaux bonus devraient changer et quels animaux devraient être ignorés dans les rotations de coffres. Certains animaux antérieurs sont parfois proposés à nouveau. Upjers permet également aux joueurs d'échanger un animal bonus actuel contre une liste sélectionnée d'animaux bonus précédemment proposés.",
+
+    "how_title": "Comment échanger des animaux bonus",
+    "how_step1": "Achetez un paquet de diamants qui inclut des animaux bonus.",
+    "how_step2": "Laissez les animaux dans la barre latérale de l'inventaire après l'achat. Ne les placez PAS dans votre zoo. Si vous souhaitez échanger, ne sélectionnez pas le PNJ, car cela représente plus de travail pour le support.",
+    "how_step3": "Ouvrez un ticket de support chez Upjers sur support.upjers.com. Expliquez que vous avez acheté un paquet et souhaitez échanger les animaux. Assurez-vous d'indiquer votre ID de support (ID utilisateur), votre nom d'utilisateur et les animaux souhaités. Les animaux doivent correspondre à l'offre Premium ou VIP actuelle, donc échangez-les avant le prochain changement.",
+    "how_step4": "Upjers procède généralement à l'échange des animaux dans un à deux jours ouvrables.",
+
+    "exclusions_title": "Exceptions",
+    "exclusions_body": "L'échange d'animaux bonus est un service de bonne volonté et non une fonctionnalité officielle du jeu, donc Upjers peut décider à tout moment de ne pas poursuivre l'échange d'animaux.",
+
+    "exclusions_rules_title": "Règles d'échange",
+    "exclusion_premium": "Les animaux bonus Premium ne peuvent être échangés que contre des Premium, mais les VIP peuvent être échangés contre un VIP ou une paire de Premium.",
+    "exclusion_pairs": "Les animaux reçus en paires ne peuvent être échangés qu'en paires.",
+    "exclusion_list": "Vous ne pouvez échanger que contre une liste spécifique d'animaux.",
+    "exclusion_enclosure": "Le support n'échange que les animaux, pas l'enclos. Si l'enclos de l'animal d'échange demandé diffère de celui offert avec le paquet, les joueurs sont eux-mêmes responsables d'obtenir le bon enclos.",
+
+    "tradelist_title": "Liste d'échange",
+    "tradelist_body": "Actuellement, vous ne pouvez échanger que contre une sélection limitée d'animaux. La liste officielle de bonne volonté pour les échanges peut être demandée au support Upjers. La page animaux affiche un symbole de diamant bleu avec un P (Premium) ou V (VIP), indiquant quels animaux sont connus pour figurer sur la liste actuelle. Un symbole de diamant gris signifie que l'animal n'est plus sur la liste d'échange, mais était autrefois un animal Premium ou VIP.",
+
+    "tradelist_tip": "Conseil :",
+    "tradelist_tip_body": "Vous devriez consulter les prévisions de coffres pour voir si l'animal devrait bientôt apparaître dans des coffres, où vous pourriez l'obtenir gratuitement. Regardez également les animaux ignorés qui ne devraient pas apparaître dans les coffres. Certains animaux sont également rarement proposés comme Super Offre."
+  },
+  "animal_breeding": {
+    "title": "Élevage",
+    "intro": "L'élevage vous permet de produire des bébés animaux dans votre zoo. Avec la bonne installation, les bons bonus et le bon timing, vous pouvez maximiser vos chances d'obtenir des couleurs de pelage spéciales et optimiser votre plan d'élevage. Vous pouvez élever tous les biomes dans le Zoo côtier ! Utilisez l'éditeur de terrain pour changer le sol en dalles bleues afin de placer des enclos de prairie, de plaine, de forêt, de montagne, de savane, de glace et de jungle dans le Zoo côtier. Vous pouvez élever tous les biomes dans cette région, pas seulement l'eau.",
+
+    "requirements_title": "Prérequis",
+    "requirements_body": "Pour l'élevage, vous avez besoin de : un mâle et une femelle adultes de la même espèce, un abri d'élevage au niveau requis, suffisamment de pièces pour démarrer l'élevage et un emplacement d'élevage libre.",
+
+    "how_to_breed_title": "Comment élever",
+    "how_to_breed_body": "Appuyez sur un abri d'élevage ou un emplacement de centre d'élevage, puis sélectionnez l'animal. Vous pouvez optionnellement ajouter de la nourriture de fertilité pour améliorer les chances d'obtenir des couleurs de pelage spéciales. Lorsque le minuteur se termine, vous récupérez le bébé. Après la collecte, il y a une période de repos de 8 heures avant que l'abri puisse être réutilisé. Les durées de gestation vont de 2 à 16 heures selon l'espèce. Le temps exact pour chaque espèce est affiché dans le centre d'élevage.",
+
+    "simultaneous_title": "Élevage simultané",
+    "simultaneous_body": "Vous pouvez élever dans plusieurs enclos simultanément. L'ordre dans lequel vous récupérez les bébés influence le bonus d'élevage raté — un élevage raté ajoute un pourcentage bonus à votre prochain essai. Le résultat est déterminé au moment où vous appuyez pour récupérer.",
+
+    "twins_title": "Jumeaux et triplés",
+    "twins_body": "Les jumeaux et triplés sont garantis lors des événements de semaine d'élevage. En dehors des événements, un abonnement à la Zoo Academy donne une chance d'avoir des jumeaux ou des triplés. Notez que l'élevage doit COMMENCER pendant la fenêtre de l'événement pour être éligible aux jumeaux/triplés garantis.",
+
+    "growing_up_title": "Grandir",
+    "growing_up_body": "Les bébés ont besoin de 7 jours pour devenir adultes. Vous pouvez mettre en pause le vieillissement en déplaçant un bébé dans votre inventaire. Les bébés donnent le double de la popularité des adultes. Grandir donne une petite quantité d'XP.",
+
+    "power_growth_title": "Croissance accélérée",
+    "power_growth_body": "Vous pouvez faire grandir un animal instantanément en utilisant des diamants (formule de croissance accélérée). C'est souvent remisé pendant la semaine d'élevage.",
+
+    "reducing_time_title": "Réduire le temps d'élevage",
+    "reducing_time_body": "Plusieurs méthodes réduisent le temps d'élevage : payer des diamants (5 par heure restante), regarder une publicité (réduction de 10 %, uniquement dans l'application), utiliser un sachet de nourriture de fertilité rapide (réduction de 20 %, gagné pendant la Semaine de conservation, cumulable) ou l'abonnement Zoo Academy (jusqu'à 80 % de réduction).",
+
+    "reducing_rest_title": "Réduire le temps de repos",
+    "reducing_rest_body": "Le temps de repos de 8 heures après la collecte peut être réduit en payant 1 diamant par heure restante. Les utilisateurs de l'application peuvent regarder une publicité pour une réduction de 10 %.",
+
+    "bonuses_title": "Bonus d'élevage",
+    "bonuses_body": "Plusieurs bonus se cumulent pour augmenter vos chances d'obtenir des couleurs de pelage spéciales.",
+
+    "bonus_types_title": "Types de bonus",
+    "bonus_club": "Boost du club : bonus de 2–10 %, actif pendant les événements de club de 48 heures. Doit être activé AVANT le début de l'élevage.",
+    "bonus_academy": "Zoo Academy : pourcentage de base augmenté selon le biome. Varie selon l'espèce.",
+    "bonus_fertility": "Nourriture de fertilité : Standard donne le % de base ; Premium donne 4× le % de base (cumulable) ; Publicité vidéo donne le % de base (limite 1 par élevage, jusqu'à 20 publicités par 24 heures).",
+    "bonus_failed": "Élevage raté : ajoute le % de base ou 10 % (selon la valeur la plus basse) par tentative ratée. Maximum 75 % de bonus. Transmis entre régions et emplacements.",
+    "bonus_region": "Bonus de région : +50 % du taux de base dans la région correspondante (Tannenwald=Forêt, Kujali Park=Plaines & Savane, Zoo côtier=Eau, Parc polaire=Glace, Parc de la forêt tropicale=Jungle).",
+
+    "special_coats_title": "Couleurs de pelage spéciales",
+    "special_coats_body": "Appuyez sur le bouton d'information bleu sur un abri d'élevage pour voir les chances d'obtenir des couleurs de pelage spéciales pour cette espèce. Les chances sont augmentées lors d'événements spéciaux. Les couleurs des parents influencent les options de couleur disponibles pour le bébé.",
+
+    "animal_levels_title": "Niveaux des bébés animaux",
+    "animal_levels_body": "Niveau du bébé = Arrondi inférieur((Niveau de la mère + Niveau du père) / 2) + 1. Le niveau maximum est 20 (les animaux étincelants vont jusqu'au niveau 40). Chaque niveau ajoute 5 % à la popularité de base de l'animal. Les bébés donnent toujours le double de la popularité.",
+
+    "animal_xp_title": "XP des animaux",
+    "animal_xp_body": "L'XP des animaux est identique à chaque niveau, sauf si l'animal provient du centre de sauvetage — ces animaux donnent le double d'XP.",
+
+    "region_bonus_title": "Bonus de région",
+    "region_bonus_body": "Élever dans la région correspondante pour une espèce donne +50 % sur le taux de pelage spécial de base.",
+
+    "col_region": "Région",
+    "col_biome": "Biome"
+  },
+  "super_deals": {
+    "title": "Super Offres",
+    "intro": "Les Super Offres (également appelées Meilleures Offres ou Ventes Flash) sont des offres à durée limitée dans la boutique Zoo 2. Elles durent généralement 24 à 72 heures et changent à l'heure du midi en Allemagne.",
+    "how_it_works_body": "Les Super Offres apparaissent pour une durée limitée dans la boutique. Le type le plus courant regroupe une paire d'animaux avec un enclos, un point d'eau et des objets d'enclos avec une remise de 39 à 84 %. Les remises sont calculées en incluant le taux de conversion pièces-diamants de 1 diamant pour 250 pièces.",
+
+    "types_title": "Types de Super Offres",
+    "types_body": "Les Super Offres se présentent sous différentes formes. Le type le plus courant combine deux animaux avec un pack d'enclos. Les types moins courants comprennent des animaux en variantes de couleur au prix plein en diamants, des décorations d'événements remisées et des animaux provenant de coffres VIP, Légendaires ou d'Amitié.",
+
+    "discontinued_title": "Types d'offres abandonnés",
+    "discontinued_body": "Les restaurants safari et les boutiques de zoo étaient autrefois disponibles comme Super Offres, mais ont été abandonnés. Leur potentiel d'achat illimité causait un déséquilibre de pièces dans l'économie du jeu. Ces articles sont maintenant disponibles via les récompenses du Season Pass, le jeu de coquilles, les événements saisonniers et les nouvelles régions du jeu."
+  },
+  "animal_sparkling": {
+    "title": "Animaux étincelants",
+    "intro": "Un élevage réussi de n'importe quelle espèce ou variante peut produire aléatoirement un animal spécial étincelant de la même espèce. Les animaux étincelants brillent d'un éclat scintillant violet-lumineux grâce à leur santé exceptionnelle et contiennent une popularité élevée. Les animaux étincelants ne peuvent être obtenus que par l'élevage régulier et sont extrêmement rares.",
+
+    "overview_title": "Vue d'ensemble",
+    "overview_body": "Chaque animal étincelant naît au niveau 40, indépendamment du niveau de ses parents. Les animaux étincelants sont les seuls animaux pouvant atteindre un niveau aussi élevé dans votre zoo. Tous les animaux non étincelants atteignent leur niveau maximum au niveau 20.",
+
+    "streak_title": "Série d'élevage",
+    "streak_body": "La chance d'obtenir un animal étincelant est déterminée par votre série d'élevage — le nombre d'élevages réussis consécutifs par espèce. Dès qu'un élevage échoue, la série pour cette espèce est remise à zéro. Chaque espèce a sa propre série d'élevage, affichée en bas à droite de la fenêtre de dialogue d'élevage. Qu'il s'agisse d'un résultat simple, de jumeaux ou de triplés, la session compte comme une seule tentative.",
+
+    "chances_title": "Chances d'obtenir un animal étincelant",
+    "chances_body": "Plus le nombre d'élevages réussis consécutifs pour une espèce est élevé, plus vos chances d'obtenir un animal étincelant lors de la prochaine tentative sont grandes. Les chances commencent à 0,1 % avec une série de zéro et augmentent jusqu'à un maximum de 1,1 % avec une série de 10 ou plus. Chaque bébé individuel dans une paire de jumeaux ou de triplés a sa propre chance de naître étincelant.",
+
+    "col_streak": "Série d'élevage",
+    "col_odds": "Chance en rapport",
+    "col_chance": "Chance en pourcentage",
+
+    "breeding_with_title": "Élevage avec un animal étincelant",
+    "breeding_with_body": "Une fois qu'un animal étincelant a grandi, il peut être utilisé pour l'élevage de bébés de niveau 20, vous permettant de sauter des niveaux. Indépendamment du niveau ou de la propriété étincelante de l'autre parent, les bébés devraient produire un niveau 20 normal, avec une chance ultra-rare d'obtenir un autre animal étincelant de niveau 40. Les animaux étincelants remplissent également immédiatement tous les objectifs de collection pour la même espèce et couleur, car ils naissent au niveau 40.",
+
+    "donating_title": "Donner un animal étincelant",
+    "donating_body": "Si vous donnez un animal étincelant de niveau 40 pour un concours de club, l'animal donne les mêmes points que son niveau : 400 points de club, comme affiché sur l'écran de don du membre. C'est l'équivalent de donner deux animaux de niveau 20.",
+
+    "glow_title": "Désactiver l'éclat étincelant",
+    "glow_body": "Si vous n'aimez pas les effets étincelants, vous pouvez désactiver la fonctionnalité étincelante dans les paramètres du jeu. Cliquez sur l'icône d'engrenage en bas à droite de votre écran de jeu, cliquez sur le deuxième onglet des paramètres, faites défiler vers le bas et cochez « Afficher les animaux étincelants comme des animaux normaux ». Cela supprime tout effet scintillant de vos animaux de niveau 40."
+  },
+  "animal_petting": {
+    "petting_title": "Caresser les animaux",
+    "petting_body": "Certaines tâches nécessitent de caresser un animal. Cliquez sur l'animal et maintenez jusqu'à ce que la caméra zoome et que de petits cœurs s'élèvent de l'animal. Conseils : Activez « Animations réduites » dans les paramètres pour que vos animaux ne bougent pas. Choisissez un animal plus grand si la tâche ne précise pas d'animal particulier. Zoomez pour que les animaux soient plus grands et que vous ayez une cible plus grande."
+  },
+  "ice_cream_vendor": {
+    "title": "Marchand de glaces",
+    "intro": "Le Marchand de glaces (MG) est un PNJ spécial qui visite régulièrement votre zoo et propose des animaux à prix réduit depuis son chariot. C'est l'une des meilleures façons d'obtenir des animaux rares à un prix réduit.",
+
+    "how_it_works_title": "Comment ça marche",
+    "how_it_works_body": "Le Marchand de glaces visite votre zoo environ toutes les 44 heures. À son arrivée, il propose jusqu'à 3 animaux avec une remise de 14 à 40 % sur le prix normal. Vous avez 1 heure pour effectuer vos achats avant qu'il repart. Le vendeur vérifie quels animaux vous avez déjà placés dans votre zoo et ne vous proposera pas d'animaux que vous possédez déjà.",
+
+    "deals_title": "Offres et remises",
+    "deals_body": "À chaque visite, 1 à 3 animaux de son pool sont proposés. Les remises vont de 14 % à 40 % sur le prix d'achat régulier. Le prix remisé est affiché directement sur le chariot du vendeur. Vous pouvez acheter tous les animaux proposés dans le délai d'1 heure.",
+
+    "obtaining_title": "Obtenir des animaux",
+    "obtaining_body": "Les animaux disponibles chez le Marchand de glaces peuvent également être obtenus via d'autres sources, comme la boutique principale du zoo, des coffres spéciaux, la boutique du club, les Super Offres ou le centre de sauvetage. Le tableau suivant liste les animaux de son pool ainsi que leurs sources alternatives.",
+
+    "npc_title": "À propos du Marchand de glaces",
+    "npc_body": "Le Marchand de glaces est un personnage PNJ sympathique qui pousse son chariot à travers votre zoo. Il apparaît sous forme de notification à son arrivée. Appuyez sur son chariot pour voir la sélection actuelle. Si vous le manquez, vous devrez attendre environ 44 heures pour sa prochaine visite."
+  }
+}

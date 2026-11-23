@@ -34,27 +34,27 @@
     "STATUE": "Statue"
   },
   "form": {
-    "create_title": "Sammelalbum anlegen",
-    "edit_title": "Sammelalbum bearbeiten",
-    "save": "Speichern",
-    "region": "Region",
-    "reward_animal": "Belohnungs-Tier",
-    "reward_variant": "Farbvariante",
-    "stars": "Sterne",
-    "translations": "Übersetzungen",
-    "requirements": "Anforderungen",
-    "type": "Typ",
-    "animal": "Tier",
-    "statue": "Statue",
-    "level": "Level",
+    "create_title": "Crear álbum de colección",
+    "edit_title": "Editar álbum de colección",
+    "save": "Guardar",
+    "region": "Región",
+    "reward_animal": "Animal de recompensa",
+    "reward_variant": "Variante de color",
+    "stars": "Estrellas",
+    "translations": "Traducciones",
+    "requirements": "Requisitos",
+    "type": "Tipo",
+    "animal": "Animal",
+    "statue": "Estatua",
+    "level": "Nivel",
     "messages": {
-      "createSuccess": "Sammelalbum wurde angelegt",
-      "editSuccess": "Sammelalbum wurde aktualisiert",
-      "deleteSuccess": "Sammelalbum wurde gelöscht",
-      "confirmDelete": "Sammelalbum wirklich löschen?",
-      "deleteTitle": "Sammelalbum löschen",
-      "requiredName": "Mindestens ein Name ist erforderlich",
-      "requiredRegion": "Bitte eine Region auswählen"
+      "createSuccess": "Álbum de colección creado",
+      "editSuccess": "Álbum de colección actualizado",
+      "deleteSuccess": "Álbum de colección eliminado",
+      "confirmDelete": "¿Realmente eliminar el álbum de colección?",
+      "deleteTitle": "Eliminar álbum de colección",
+      "requiredName": "Se requiere al menos un nombre",
+      "requiredRegion": "Por favor selecciona una región"
     }
   }
 }

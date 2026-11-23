@@ -5,6 +5,7 @@
   "roles_title": "Laugsmedlemsroller",
   "roles_body": "Der er tre forskellige roller: Præsident, Minister og Laugsmedlem. Præsidenten ejer lauget og har den største administrative myndighed. Ministre kan gøre næsten alt, hvad præsidenten kan, men kan ikke ændre laugsbeskrivelsen eller fjerne præsidenten. Laugsmedlemmer kan donere og chatte. Nye medlemmer skal vente syv dage, inden de får mulighed for at donere til konkurrencer eller indsamlinger — alle andre fordele og muligheder er tilgængelige med det samme.",
 
+  "admin_title": "Medlemsadministration",
   "roles_table_ability": "Mulighed",
   "roles_table_president": "Præsident",
   "roles_table_minister": "Minister",
@@ -73,6 +74,7 @@
   "contests_title": "Konkurrencer",
   "contests_body": "Laug kan deltage i ugentlige konkurrencer, der giver medlemmerne eksklusive belønninger samt øger laugsniveauet. Se Contest FAQ for alle detaljer om, hvordan konkurrencer fungerer.",
 
+  "club_membership_title": "Meld dig ind i / forlad et laug",
   "leaving_title": "Forlad et laug",
   "leaving_body": "For at forlade et laug skal du sikre dig, at du ikke er laugets præsident. Gå til fanen Laugsmedlemmer, vælg dit navn og klik på den røde knap \"Forlad laug\". Hvis du er præsident, skal du enten tildele præsidentskabet til et andet medlem eller fjerne alle medlemmer først. Hvis du er det eneste medlem, vil det slette lauget at forlade det.",
 

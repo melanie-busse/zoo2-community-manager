@@ -34,5 +34,8 @@
   "tips_title_diamonds": "Diamond Costs",
   "tips_body_diamonds": "Certain quests require spending diamonds to complete, such as unlocking a new region or purchasing a specific building. Review the requirements before accepting a quest to plan your diamond spending accordingly.",
   "tips_title_puzzles": "Puzzle Pieces",
-  "tips_body_puzzles": "Some quests reward puzzle pieces that are used to unlock special animals or decorations. Collect the required number of puzzle pieces to assemble the reward item."
+  "tips_body_puzzles": "Some quests reward puzzle pieces that are used to unlock special animals or decorations. Collect the required number of puzzle pieces to assemble the reward item.",
+
+  "hide_quests_title": "Hiding Quests",
+  "hide_quests_body": "Click Grandpa in the top left corner of the screen. Select the book icon to see active and completed quests. Scroll to the incomplete quest you want to hide. Uncheck the bottom right box to hide the quest."
 }

@@ -1,0 +1,139 @@
+{
+  "title": "Dieren",
+  "intro": "Dieren zijn uiteraard de reden waarom een dierentuin bestaat. Spelers beginnen met een paar huisdieren en naarmate het spel vordert, worden er meer dieren beschikbaar. De meeste dieren kunnen worden gekocht met munten of diamanten. \nVoordat een nieuw dier kan worden geplaatst, moeten spelers het bijbehorende verblijf bouwen. Elk dier heeft een soortspecifiek verblijf nodig en een bepaalde hoeveelheid verblijfsruimte, waarbij het maximale aantal dieren per verblijf niet mag worden overschreden. \nDoor een voederbak, drinkplaats en verrijkingsitems aan het verblijf toe te voegen, stijgt de XP-opbrengst met 5%.\n",
+  "animal_package": {
+    "title_package": "Bonusdieren",
+    "intro_package": "Het kopen van diamantenpakketten omvat vaak exclusieve bonusdieren. Spelers ontvangen één of twee Premium-bonusdieren bij de aankoop van 100+ diamanten. Bij het duurste diamantenpakket wordt een exclusief VIP-bonusdier of een paar Premium-bonusdieren weggegeven. De Premium-bonusdieren wisselen elke twee weken en de VIP-bonusdieren elke 8 weken. Bekijk de prognoses voor actuele voorspellingen over wanneer de bonusdieren zouden moeten wisselen en welke dieren naar verwachting worden overgeslagen in kistenrotaties. Sommige eerdere dieren worden soms opnieuw aangeboden. Upjers stelt spelers ook in staat om een huidig bonusdier te ruilen tegen een geselecteerde lijst van eerder aangeboden bonusdieren.",
+
+    "how_title": "Hoe bonusdieren te ruilen",
+    "how_step1": "Koop een diamantenpakket met bonusdieren.",
+    "how_step2": "Laat de dieren na aankoop in de zijbalk in het inventaris. Plaats ze NIET in je dierentuin. Als je wilt ruilen, selecteer dan de NPC niet, want dit betekent meer werk voor de support.",
+    "how_step3": "Open een supportticket bij Upjers via support.upjers.com. Leg uit dat je een pakket hebt gekocht en de dieren wilt ruilen. Zorg ervoor dat je je support-ID (gebruikers-ID), gebruikersnaam en de gewenste dieren vermeldt. De dieren moeten het huidige Premium- of VIP-aanbod zijn, dus wissel ze in voor de volgende wisseling.",
+    "how_step4": "Upjers wisselt de dieren doorgaans binnen één tot twee werkdagen.",
+
+    "exclusions_title": "Uitzonderingen",
+    "exclusions_body": "Het ruilen van bonusdieren is een service uit welwillendheid en geen officieel spelmerkmal, daarom kan Upjers op elk moment beslissen om het ruilen van dieren niet voort te zetten.",
+
+    "exclusions_rules_title": "Ruilregels",
+    "exclusion_premium": "Premium-bonusdieren kunnen alleen worden geruild voor Premium; VIP kan worden geruild voor een VIP of een paar Premium.",
+    "exclusion_pairs": "Dieren die in paren worden ontvangen, kunnen alleen in paren worden geruild.",
+    "exclusion_list": "Je kunt alleen ruilen tegen een bepaalde lijst van dieren.",
+    "exclusion_enclosure": "Support ruilt alleen de dieren, niet het verblijf. Als het verblijf van het gevraagde ruildier verschilt van het verblijf dat bij het pakket werd weggegeven, zijn spelers zelf verantwoordelijk voor het verkrijgen van het juiste verblijf.",
+
+    "tradelist_title": "Ruillijst",
+    "tradelist_body": "Momenteel kun je alleen ruilen tegen een beperkte selectie dieren. De officiële welwillendheidsruillijst kan worden aangevraagd bij de Upjers-support. De dierpagina toont een blauw diamantsymbool met een P (Premium) of V (VIP), wat aangeeft welke dieren bekend staan als op de huidige lijst. Een grijs diamantsymbool betekent dat het dier niet meer op de ruillijst staat, maar eerder een Premium- of VIP-dier was.",
+
+    "tradelist_tip": "Tip:",
+    "tradelist_tip_body": "Je kunt de kistenprognoses raadplegen om te zien of het dier binnenkort naar verwachting in kisten verschijnt, waar je het gratis zou kunnen krijgen. Bekijk ook overgeslagen dieren die naar verwachting niet in kisten verschijnen. Sommige dieren worden ook zelden aangeboden als Super Deal."
+  },
+  "animal_breeding": {
+    "title": "Fokken",
+    "intro": "Fokken stelt je in staat om babydieren in je dierentuin te produceren. Met de juiste inrichting, bonussen en timing kun je je kansen op speciale vachtkleuren maximaliseren en je fokplan optimaliseren. Je kunt alle biotopen fokken in Oceanside Zoo! Gebruik de terreinbewerker om de grond in blauwe tegels te veranderen om weiland-, vlakten-, bos-, berg-, savanne-, ijs- en jungleverblijven in Oceanside te plaatsen. Je kunt alle biotopen in deze regio fokken, niet alleen water.",
+
+    "requirements_title": "Vereisten",
+    "requirements_body": "Voor fokken heb je nodig: een volwassen mannetje en vrouwtje van dezelfde soort, een fokschuilplaats op het vereiste niveau, genoeg munten om het fokken te starten en een vrij fokslot.",
+
+    "how_to_breed_title": "Hoe te fokken",
+    "how_to_breed_body": "Tik op een fokschuilplaats of fokcentrumslot en kies vervolgens het dier. Je kunt optioneel vruchtbaarheidsvoer toevoegen om de kansen op speciale vachtkleuren te verbeteren. Wanneer de timer afloopt, verzamel je de baby. Na het verzamelen volgt een rustperiode van 8 uur voordat de schuilplaats opnieuw kan worden gebruikt. De draagtijden variëren per soort van 2 tot 16 uur. De exacte tijd voor elke soort wordt weergegeven in het fokcentrum.",
+
+    "simultaneous_title": "Gelijktijdig fokken",
+    "simultaneous_body": "Je kunt gelijktijdig in meerdere verblijven fokken. De volgorde waarin je baby's verzamelt beïnvloedt de mislukte-fok-bonus — een mislukte fok voegt een bonuspercentage toe aan je volgende poging. Het resultaat wordt bepaald op het moment dat je tikt om te verzamelen.",
+
+    "twins_title": "Tweelingen & drielingen",
+    "twins_body": "Tweelingen en drielingen zijn gegarandeerd tijdens fok-week-evenementen. Buiten evenementen geeft een Zoo Academie-abonnement een kans op tweelingen of drielingen. Let op dat het fokken MOET BEGINNEN tijdens het evenementvenster om in aanmerking te komen voor de gegarandeerde tweelingen/drielingen.",
+
+    "growing_up_title": "Opgroeien",
+    "growing_up_body": "Baby's hebben 7 dagen nodig om op te groeien tot volwassenen. Je kunt het ouder worden pauzeren door een baby naar je inventaris te verplaatsen. Baby's geven het dubbele aan populariteit van volwassenen. Opgroeien geeft een kleine hoeveelheid XP.",
+
+    "power_growth_title": "Versneld opgroeien",
+    "power_growth_body": "Je kunt een dier onmiddellijk laten groeien met behulp van diamanten (formule voor versneld groeien). Dit is vaak met korting tijdens fok-week.",
+
+    "reducing_time_title": "Foktijd verkorten",
+    "reducing_time_body": "Meerdere methoden verkorten de foktijd: diamanten betalen (5 per resterende uur), een advertentie bekijken (10% reductie, alleen in de app), een snelheidsvruchtbaarheidsvoerzakje gebruiken (20% reductie, verdiend tijdens Conservation Week, stapelbaar) of het Zoo Academie-abonnement (tot 80% reductie).",
+
+    "reducing_rest_title": "Rusttijd verkorten",
+    "reducing_rest_body": "De rusttijd van 8 uur na het verzamelen kan worden verkort door 1 diamant per resterende uur te betalen. App-gebruikers kunnen een advertentie bekijken voor een reductie van 10%.",
+
+    "bonuses_title": "Fokbonussen",
+    "bonuses_body": "Meerdere bonussen stapelen zich op om je kans op speciale vachtkleuren te vergroten.",
+
+    "bonus_types_title": "Soorten bonussen",
+    "bonus_club": "Club-boost: 2–10% bonus, actief tijdens 48-uurs club-evenementen. Moet worden geactiveerd VOORDAT het fokken begint.",
+    "bonus_academy": "Zoo Academie: verhoogd basispercentage per biotoop. Varieert per soort.",
+    "bonus_fertility": "Vruchtbaarheidsvoer: Standaard geeft basis-%; Premium geeft 4× basis-% (stapelbaar); Videoadvertentie geeft basis-% (limiet 1 per fok, tot 20 advertenties per 24 uur).",
+    "bonus_failed": "Mislukte fok: voegt basis-% of 10% toe (afhankelijk van welke lager is) per mislukte poging. Maximum 75% bonus. Wordt overgedragen over regio's en sloten.",
+    "bonus_region": "Regio-bonus: +50% basisrate in de overeenkomstige regio (Tannenwald=Bos, Kujali Park=Vlakten & Savanne, Oceanside=Water, Polar Park=IJs, Regenwoud Park=Jungle).",
+
+    "special_coats_title": "Speciale vachtkleuren",
+    "special_coats_body": "Tik op de blauwe info-knop bij een fokschuilplaats om de kansen op speciale vachtkleuren voor die soort te zien. De kansen worden verhoogd tijdens speciale evenementen. De kleuren van de ouders beïnvloeden welke kleuropties beschikbaar zijn voor de baby.",
+
+    "animal_levels_title": "Baby-dier niveaus",
+    "animal_levels_body": "Babyniveau = Afronden naar beneden((Moederniveau + Vaderniveau) / 2) + 1. Het maximale niveau is 20 (sprankelende dieren gaan tot niveau 40). Elk niveau voegt 5% toe aan de basisPopulariteit van het dier. Baby's geven altijd dubbele populariteit.",
+
+    "animal_xp_title": "Dier-XP",
+    "animal_xp_body": "De dier-XP is op elk niveau gelijk, behalve wanneer het dier afkomstig is uit het reddingscentrum — deze dieren geven dubbele XP.",
+
+    "region_bonus_title": "Regio-bonussen",
+    "region_bonus_body": "Fokken in de overeenkomstige regio voor een soort geeft +50% op de basisrate voor speciale vachten.",
+
+    "col_region": "Regio",
+    "col_biome": "Biotoop"
+  },
+  "super_deals": {
+    "title": "Super Deals",
+    "intro": "Super Deals (ook bekend als Top Deals of Flash Sales) zijn tijdgebonden kortingsaanbiedingen in de Zoo 2-winkel. Ze duren doorgaans 24–72 uur en wisselen rond het middaguur (Midden-Europese tijd).",
+    "how_it_works_body": "Super Deals verschijnen voor beperkte tijd in de winkel. Het meest voorkomende type bundelt een dierpaar met een verblijf, een drinkplaats en verblijfsitems met een korting van 39–84%. De kortingen worden berekend inclusief de munten-naar-diamanten-wisselkoers van 1 diamant per 250 munten.",
+
+    "types_title": "Soorten Super Deals",
+    "types_body": "Super Deals komen in verschillende vormen voor. Het meest voorkomende type combineert twee dieren met een verblijfspakket. Minder voorkomende typen omvatten kleurvariante-dieren voor de volledige diamantprijs, gedisconteerde evenementdekoraties en dieren uit VIP-, Legendarische of Vriendschapskisten.",
+
+    "discontinued_title": "Stopgezette aanbiedingstypes",
+    "discontinued_body": "Safari-restaurants en diertuinwinkels waren eerder beschikbaar als Super Deals, maar zijn stopgezet. Hun onbeperkt aankooppotentieel veroorzaakte een munten-onevenwicht in de speleconomie. Deze items zijn nu beschikbaar via Season Pass-beloningen, het schelpenspel, seizoenszeven en nieuwe spelregio's."
+  },
+  "animal_sparkling": {
+    "title": "Sprankelende dieren",
+    "intro": "Een succesvolle fok van een willekeurige soort of variant kan willekeurig resulteren in een speciaal, sprankelend dier van dezelfde soort. Sprankelende dieren stralen in een glinsterende, paars gloeiende gloed vanwege hun uitzonderlijke gezondheid en bevatten een hoge populariteit. Sprankelende dieren kunnen alleen worden verkregen door regulier fokken en zijn uiterst zeldzaam.",
+
+    "overview_title": "Overzicht",
+    "overview_body": "Elk sprankelend dier wordt geboren op niveau 40, ongeacht het niveau van de ouders. Sprankelende dieren zijn de enige dieren die zo'n hoog niveau kunnen bereiken in je dierentuin. Alle niet-sprankelende dieren bereiken hun maximale niveau op niveau 20.",
+
+    "streak_title": "Fokreeks",
+    "streak_body": "De kans om een sprankelend dier te krijgen wordt bepaald door je fokreeks — het aantal opeenvolgende succesvolle foksessies per soort. Zodra een fok mislukt, wordt de reeks voor die soort gereset naar nul. Elke soort heeft zijn eigen fokreeks, die rechtsonder in het fokdialoogvenster wordt weergegeven. Of het resultaat een enkel, tweeling- of drielingresultaat is, de sessie telt als één enkele poging.",
+
+    "chances_title": "Sprankelkansen",
+    "chances_body": "Hoe hoger het aantal opeenvolgende succesvolle foksessies voor een soort, hoe groter je kansen om bij de volgende fokpoging een sprankelend dier te krijgen. De kansen beginnen bij 0,1% bij een fokreeks van nul en stijgen tot maximaal 1,1% bij een fokreeks van 10 of meer. Elk afzonderlijk dier in een tweeling- of drielingpaar heeft zijn eigen kans om als sprankelend dier geboren te worden.",
+
+    "col_streak": "Fokreeks",
+    "col_odds": "Kans als verhouding",
+    "col_chance": "Kans als percentage",
+
+    "breeding_with_title": "Fokken met een sprankelend dier",
+    "breeding_with_body": "Zodra een sprankelend dier is opgegroeid, kan het worden gebruikt voor het fokken van niveau-20-baby's, waardoor je niveaus kunt overslaan. Ongeacht het niveau of de sprankelende eigenschap van de andere ouder, zouden baby's een normaal niveau 20 moeten produceren, met een ultrazeldame kans op een ander sprankelend niveau-40-dier. Sprankelende dieren voldoen ook onmiddellijk aan alle collectiedoelstellingen voor dezelfde soort en kleur, omdat ze op niveau 40 worden geboren.",
+
+    "donating_title": "Een sprankelend dier doneren",
+    "donating_body": "Als je een niveau-40-sprankelend dier doneert aan een clubwedstrijd, geeft het dier dezelfde punten als zijn niveau: 400 clubpunten, zoals weergegeven op het donatievenster van het lid. Dit komt overeen met het doneren van twee niveau-20-dieren.",
+
+    "glow_title": "Sprankelende gloed uitschakelen",
+    "glow_body": "Als je de sprankeleffecten niet leuk vindt, kun je de sprankelende functie uitschakelen in de spelinstellingen. Klik op het tandwielpictogram rechtsonder op je spelscherm, klik op het tweede instellingentabblad, scroll naar beneden en vink \"Sprankelende dieren weergeven als normale dieren\" aan. Dit verwijdert elk sprankeleffect van je niveau-40-dieren."
+  },
+  "animal_petting": {
+    "petting_title": "Dieren aaien",
+    "petting_body": "Sommige taken vereisen dat je een dier aait. Klik op het dier en houd vast totdat de camera inzoomt en kleine hartjes van het dier omhoog zweven. Tips: Zet \"Verminderde animaties\" aan in de instellingen zodat je dieren niet bewegen. Kies een groter dier als de taak geen specifiek dier aangeeft. Zoom in zodat de dieren groter zijn en je een groter doelwit hebt."
+  },
+  "ice_cream_vendor": {
+    "title": "IJsverkoper",
+    "intro": "De IJsverkoper (ICV) is een speciale NPC die je dierentuin regelmatig bezoekt en gedisconteerde dieren aanbiedt vanuit zijn wagen. Hij is een van de beste manieren om zeldzame dieren tegen een gereduceerde prijs te verkrijgen.",
+
+    "how_it_works_title": "Hoe het werkt",
+    "how_it_works_body": "De IJsverkoper bezoekt je dierentuin ongeveer elke 44 uur. Bij aankomst biedt hij tot 3 dieren aan met een korting van 14–40% op de normale prijs. Je hebt 1 uur de tijd om je aankopen te doen voordat hij weer vertrekt. De verkoper controleert welke dieren je al in je dierentuin hebt geplaatst en biedt geen dieren aan die je al bezit.",
+
+    "deals_title": "Aanbiedingen en kortingen",
+    "deals_body": "Bij elk bezoek worden 1 tot 3 dieren uit zijn pool aangeboden. De kortingen variëren van 14% tot 40% op de reguliere aankoopprijs. De gedisconteerde prijs wordt direct weergegeven bij de wagen van de verkoper. Je kunt alle aangeboden dieren kopen binnen het 1-uurs venster.",
+
+    "obtaining_title": "Dieren verkrijgen",
+    "obtaining_body": "De dieren die beschikbaar zijn bij de IJsverkoper kunnen ook via andere bronnen worden verkregen, zoals de hoofddierentuinwinkel, speciale kisten, de clubwinkel, Super Deals of het reddingscentrum. De onderstaande tabel vermeldt de dieren in zijn pool samen met hun alternatieve bronnen.",
+
+    "npc_title": "Over de IJsverkoper",
+    "npc_body": "De IJsverkoper is een vriendelijke NPC-figuur die zijn wagen door je dierentuin rijdt. Hij verschijnt als een melding wanneer hij aankomt. Tik op zijn wagen om het huidige aanbod te zien. Als je hem mist, moet je ongeveer 44 uur wachten op zijn volgende bezoek."
+  }
+}

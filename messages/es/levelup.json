@@ -13,5 +13,6 @@
   "enclosure_trough": "Comedero",
   "enclosure_waterhole": "Abrevadero",
   "enclosure_shelter": "Refugio",
-  "col_xp_to_next": "XP hasta siguiente nivel"
+  "col_xp_to_next": "XP hasta siguiente nivel",
+  "description": "El nivel del jugador sube gracias a los puntos de experiencia (XP). Completar misiones y logros, cuidar animales, recoger basura, regar plantas, criar, ayudar a amigos y colocar nuevos objetos otorgan puntos de experiencia. Cuando los jugadores suben su nivel, reciben varias recompensas, como monedas o diamantes, cofres, decoraciones o incluso animales."
 }

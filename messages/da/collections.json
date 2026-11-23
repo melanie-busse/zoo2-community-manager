@@ -34,27 +34,27 @@
     "STATUE": "Statue"
   },
   "form": {
-    "create_title": "Sammelalbum anlegen",
-    "edit_title": "Sammelalbum bearbeiten",
-    "save": "Speichern",
+    "create_title": "Opret samlealbum",
+    "edit_title": "Rediger samlealbum",
+    "save": "Gem",
     "region": "Region",
-    "reward_animal": "Belohnungs-Tier",
-    "reward_variant": "Farbvariante",
-    "stars": "Sterne",
-    "translations": "Übersetzungen",
-    "requirements": "Anforderungen",
-    "type": "Typ",
-    "animal": "Tier",
+    "reward_animal": "Belønningsdyr",
+    "reward_variant": "Farvevariant",
+    "stars": "Stjerner",
+    "translations": "Oversættelser",
+    "requirements": "Krav",
+    "type": "Type",
+    "animal": "Dyr",
     "statue": "Statue",
-    "level": "Level",
+    "level": "Niveau",
     "messages": {
-      "createSuccess": "Sammelalbum wurde angelegt",
-      "editSuccess": "Sammelalbum wurde aktualisiert",
-      "deleteSuccess": "Sammelalbum wurde gelöscht",
-      "confirmDelete": "Sammelalbum wirklich löschen?",
-      "deleteTitle": "Sammelalbum löschen",
-      "requiredName": "Mindestens ein Name ist erforderlich",
-      "requiredRegion": "Bitte eine Region auswählen"
+      "createSuccess": "Samlealbum oprettet",
+      "editSuccess": "Samlealbum opdateret",
+      "deleteSuccess": "Samlealbum slettet",
+      "confirmDelete": "Vil du virkelig slette samlealbummet?",
+      "deleteTitle": "Slet samlealbum",
+      "requiredName": "Mindst ét navn er påkrævet",
+      "requiredRegion": "Vælg venligst en region"
     }
   }
 }

@@ -5,7 +5,9 @@
     "invalid_id": "ID invalide",
     "unauthorized": "Non autorisé",
     "not_found": "Non trouvé",
-    "server_error": "Une erreur serveur s'est produite"
+    "server_error": "Une erreur serveur s'est produite",
+    "save_error": "Erreur lors de l'enregistrement",
+    "required_fields": "Champs obligatoires manquants"
   },
   "animal": {
     "required_fields": "Le nom (DE) et le type d'enclos sont des champs obligatoires.",

@@ -2,9 +2,14 @@
 
 import React from "react";
 import styled from "styled-components";
-import Link from "next/link";
 import { useTranslations, useLocale } from "next-intl";
 import { useSession } from "next-auth/react";
+import { useRouter } from "@/i18n/routing";
+
+import * as Styles from "@/components/page-structure/Table/Table.styles";
+import Table from "@/components/page-structure/Table/Table";
+import ActionGroupBadge from "@/components/ui/badges/ActionGroupBadge";
+
 import { hasMinimumRole, isMayor } from "@/utils/roleUtils";
 import type { PremiumVipAnimalEntryWithAnimal } from "@/service/PremiumVipAnimalService";
 
@@ -12,214 +17,171 @@ interface Props {
   entries: PremiumVipAnimalEntryWithAnimal[];
   onRowClick: (entry: PremiumVipAnimalEntryWithAnimal) => void;
   editBasePath: string;
+  onDelete?: (id: number) => void;
 }
 
-const TableWrapper = styled.div`
-  width: 100%;
-  overflow-x: auto;
-`;
+export default function BonusAnimalsTable({ entries, onRowClick, editBasePath, onDelete }: Props) {
+  const t = useTranslations("animals_bonus");
+  const locale = useLocale();
+  const router = useRouter();
+  const { data: session } = useSession();
 
-const StyledTable = styled.table`
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.9rem;
-`;
+  const canEdit = hasMinimumRole(session, "Director") && !isMayor(session);
 
-const Th = styled.th`
-  text-align: left;
-  padding: ${({ theme }) => theme.spacing(1)} ${({ theme }) => theme.spacing(2)};
-  border-bottom: 2px solid ${({ theme }) => theme.colors.ui.border};
-  color: ${({ theme }) => theme.colors.grey[100]};
-  font-weight: 600;
-  white-space: nowrap;
-`;
+  const getImageSrc = (entry: PremiumVipAnimalEntryWithAnimal) => {
+    const identifier = entry.animal?.identifier;
+    const biomeIdentifier = entry.animal?.biome?.identifier;
 
-interface TrProps {
-  $clickable: boolean;
+    if (identifier && biomeIdentifier) {
+      return `/images/animals/${biomeIdentifier}/${identifier}/image.jpg`;
+    }
+    if (identifier) {
+      return `/images/animals/${identifier}.webp`;
+    }
+    return "/images/placeholder.png";
+  };
+
+  return (
+    <Styles.DesktopView>
+      <Table>
+        <thead>
+          <tr>
+            <th>{t("col_period")}</th>
+            <th>{t("col_animal")}</th>
+            {canEdit && <Styles.TableHeaderRight>{t("col_actions")}</Styles.TableHeaderRight>}
+          </tr>
+        </thead>
+        <tbody>
+          {entries.length === 0 ? (
+            <tr>
+              <EmptyTd colSpan={canEdit ? 3 : 2}>{t("no_results")}</EmptyTd>
+            </tr>
+          ) : (
+            entries.map((entry) => {
+              const isClickable = entry.animalId !== null && !entry.isNpc;
+              const labelIncludesYear = entry.dateLabel.includes(String(entry.year));
+              const periodText = labelIncludesYear
+                ? entry.dateLabel
+                : `${entry.dateLabel} ${entry.year}`;
+
+              const displayName = entry.animalName;
+
+              return (
+                <ClickableRow
+                  key={entry.id}
+                  $clickable={isClickable}
+                  onClick={() => isClickable && onRowClick(entry)}
+                >
+                  <td>
+                    <PeriodText>{periodText}</PeriodText>
+                  </td>
+                  <td>
+                    <AnimalCell>
+                      <AnimalImageWrapper>
+                        <AnimalImage
+                          src={getImageSrc(entry)}
+                          alt={displayName}
+                          onError={(e) => {
+                            const img = e.currentTarget as HTMLImageElement;
+                            if (!img.src.endsWith("/images/placeholder.png")) {
+                              img.src = "/images/placeholder.png";
+                            }
+                          }}
+                        />
+                      </AnimalImageWrapper>
+                      <AnimalInfo>
+                        <AnimalNameRow>
+                          <AnimalName>{displayName}</AnimalName>
+                          {entry.isNpc && <NpcBadge>{t("npc_badge")}</NpcBadge>}
+                        </AnimalNameRow>
+                      </AnimalInfo>
+                    </AnimalCell>
+                  </td>
+                  {canEdit && (
+                    <Styles.TableCellRight onClick={(e) => e.stopPropagation()}>
+                      <ActionGroupBadge
+                        id={entry.id}
+                        onEdit={() =>
+                          router.push(`/${locale}${editBasePath}/${entry.id}/edit` as any)
+                        }
+                        onDelete={() => onDelete?.(entry.id)}
+                      />
+                    </Styles.TableCellRight>
+                  )}
+                </ClickableRow>
+              );
+            })
+          )}
+        </tbody>
+      </Table>
+    </Styles.DesktopView>
+  );
 }
 
-const Tr = styled.tr<TrProps>`
+const ClickableRow = styled.tr<{ $clickable: boolean }>`
   cursor: ${({ $clickable }) => ($clickable ? "pointer" : "default")};
-  transition: background-color 0.15s;
-
-  &:hover {
-    background-color: ${({ $clickable, theme }) =>
-      $clickable ? theme.colors.ui.overlayLight : "transparent"};
-  }
-
-  &:not(:last-child) td {
-    border-bottom: 1px solid ${({ theme }) => theme.colors.ui.border};
-  }
 `;
 
-const Td = styled.td`
-  padding: ${({ theme }) => theme.spacing(1)} ${({ theme }) => theme.spacing(2)};
-  vertical-align: middle;
+const PeriodText = styled.span`
+  white-space: nowrap;
 `;
 
 const AnimalCell = styled.div`
   display: flex;
   align-items: center;
-  gap: ${({ theme }) => theme.spacing(1)};
+  gap: 10px;
+`;
+
+const AnimalImageWrapper = styled.div`
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.05);
 `;
 
 const AnimalImage = styled.img`
   width: 40px;
   height: 40px;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 4px;
-  flex-shrink: 0;
+  display: block;
 `;
 
-const AnimalImagePlaceholder = styled.div`
-  width: 40px;
-  height: 40px;
-  border-radius: 4px;
-  background: ${({ theme }) => theme.colors.ui.border};
-  flex-shrink: 0;
+const AnimalInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const AnimalNameRow = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 6px;
+`;
+
+const AnimalName = styled.span`
+  font-weight: 600;
+  font-size: 0.9rem;
+`;
+
+const BiomeName = styled.span`
+  font-size: 0.78rem;
+  color: ${({ theme }) => theme.colors.grey[100]};
 `;
 
 const NpcBadge = styled.span`
-  font-size: 0.7rem;
-  padding: 2px 6px;
-  border-radius: 4px;
-  background: ${({ theme }) => theme.colors.primary[500]};
-  color: white;
-  margin-left: ${({ theme }) => theme.spacing(0.5)};
-  vertical-align: middle;
-`;
-
-const ActionButton = styled.a<{ $disabled?: boolean }>`
   display: inline-block;
-  padding: 4px 12px;
-  border-radius: 4px;
-  font-size: 0.85rem;
-  text-decoration: none;
-  border: 1px solid ${({ theme, $disabled }) =>
-    $disabled ? theme.colors.ui.border : theme.colors.primary[500]};
-  color: ${({ theme, $disabled }) =>
-    $disabled ? theme.colors.grey[100] : theme.colors.primary[500]};
-  pointer-events: ${({ $disabled }) => ($disabled ? "none" : "auto")};
-  opacity: ${({ $disabled }) => ($disabled ? 0.5 : 1)};
-  cursor: ${({ $disabled }) => ($disabled ? "default" : "pointer")};
-  white-space: nowrap;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  background: ${({ theme }) => theme.colors.accent.main};
+  color: white;
 `;
 
-const PeriodCell = styled.div`
-  white-space: nowrap;
-`;
-
-const EmptyRow = styled.tr``;
 const EmptyTd = styled.td`
   padding: ${({ theme }) => theme.spacing(3)};
   text-align: center;
   color: ${({ theme }) => theme.colors.grey[100]};
 `;
-
-export default function BonusAnimalsTable({ entries, onRowClick, editBasePath }: Props) {
-  const t = useTranslations("animals_bonus");
-  const locale = useLocale();
-  const { data: session } = useSession();
-  const canEdit = hasMinimumRole(session, "Director") && !isMayor(session);
-
-  const colSpan = canEdit ? 4 : 3;
-
-  if (entries.length === 0) {
-    return (
-      <TableWrapper>
-        <StyledTable>
-          <thead>
-            <tr>
-              <Th>{t("col_period")}</Th>
-              <Th>{t("col_animal")}</Th>
-              <Th>{t("col_actions")}</Th>
-              {canEdit && <Th />}
-            </tr>
-          </thead>
-          <tbody>
-            <EmptyRow>
-              <EmptyTd colSpan={colSpan}>{t("no_results")}</EmptyTd>
-            </EmptyRow>
-          </tbody>
-        </StyledTable>
-      </TableWrapper>
-    );
-  }
-
-  return (
-    <TableWrapper>
-      <StyledTable>
-        <thead>
-          <tr>
-            <Th>{t("col_period")}</Th>
-            <Th>{t("col_animal")}</Th>
-            <Th>{t("col_actions")}</Th>
-            {canEdit && <Th />}
-          </tr>
-        </thead>
-        <tbody>
-          {entries.map((entry) => {
-            const isClickable = entry.animalId !== null && !entry.isNpc;
-            const labelIncludesYear = entry.dateLabel.includes(String(entry.year));
-            const periodText = labelIncludesYear
-              ? entry.dateLabel
-              : `${entry.dateLabel} ${entry.year}`;
-
-            return (
-              <Tr
-                key={entry.id}
-                $clickable={isClickable}
-                onClick={() => isClickable && onRowClick(entry)}
-              >
-                <Td>
-                  <PeriodCell>{periodText}</PeriodCell>
-                </Td>
-                <Td>
-                  <AnimalCell>
-                    {entry.animal?.identifier ? (
-                      <AnimalImage
-                        src={`/images/animals/${entry.animal.identifier}.webp`}
-                        alt={entry.animalName}
-                        onError={(e) => {
-                          (e.currentTarget as HTMLImageElement).style.display = "none";
-                        }}
-                      />
-                    ) : (
-                      <AnimalImagePlaceholder />
-                    )}
-                    {entry.animalName}
-                    {entry.isNpc && <NpcBadge>{t("npc_badge")}</NpcBadge>}
-                  </AnimalCell>
-                </Td>
-                <Td>
-                  {isClickable ? (
-                    <ActionButton
-                      as={Link}
-                      href={`/${locale}/animals/${entry.animalId}`}
-                      onClick={(e: React.MouseEvent) => e.stopPropagation()}
-                    >
-                      {t("action_view")}
-                    </ActionButton>
-                  ) : (
-                    <ActionButton $disabled>{t("action_view")}</ActionButton>
-                  )}
-                </Td>
-                {canEdit && (
-                  <Td>
-                    <ActionButton
-                      as={Link}
-                      href={`/${locale}${editBasePath}/${entry.id}/edit`}
-                      onClick={(e: React.MouseEvent) => e.stopPropagation()}
-                    >
-                      {t("action_edit")}
-                    </ActionButton>
-                  </Td>
-                )}
-              </Tr>
-            );
-          })}
-        </tbody>
-      </StyledTable>
-    </TableWrapper>
-  );
-}

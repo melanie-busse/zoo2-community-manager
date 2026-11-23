@@ -34,5 +34,8 @@
   "tips_title_diamonds": "Diamantenkosten",
   "tips_body_diamonds": "Bepaalde quests vereisen het uitgeven van diamanten om te voltooien, zoals het ontgrendelen van een nieuwe regio of het kopen van een specifiek gebouw. Bekijk de vereisten voordat je een quest accepteert om je diamantuitgaven dienovereenkomstig te plannen.",
   "tips_title_puzzles": "Puzzelstukken",
-  "tips_body_puzzles": "Sommige quests belonen met puzzelstukken die worden gebruikt om speciale dieren of decoraties te ontgrendelen. Verzamel het vereiste aantal puzzelstukken om het beloningsitem samen te stellen."
+  "tips_body_puzzles": "Sommige quests belonen met puzzelstukken die worden gebruikt om speciale dieren of decoraties te ontgrendelen. Verzamel het vereiste aantal puzzelstukken om het beloningsitem samen te stellen.",
+
+  "hide_quests_title": "Quests verbergen",
+  "hide_quests_body": "Klik op Opa linksboven op het scherm. Selecteer het boekpictogram om actieve en voltooide quests te zien. Scroll naar de onvoltooide quest die je wilt verbergen. Verwijder het vinkje rechtsonder om de quest te verbergen."
 }

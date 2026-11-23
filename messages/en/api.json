@@ -5,7 +5,9 @@
     "invalid_id": "Invalid ID",
     "unauthorized": "Unauthorized",
     "not_found": "Not found",
-    "server_error": "A server error occurred"
+    "server_error": "A server error occurred",
+    "save_error": "Error saving",
+    "required_fields": "Required fields are missing"
   },
   "animal": {
     "required_fields": "Name (DE) and enclosure type are required fields.",

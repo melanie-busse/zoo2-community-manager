@@ -33,6 +33,7 @@ export default function BonusAnimalsContent({ type, initialData }: Props) {
   const setAnimalNameFilter = useBonusAnimalsStore((state) => state.setAnimalNameFilter);
   const setYearFilter = useBonusAnimalsStore((state) => state.setYearFilter);
   const setPage = useBonusAnimalsStore((state) => state.setPage);
+  const deleteEntry = useBonusAnimalsStore((state) => (state as any).deleteEntry);
 
   const initialized = useRef(false);
   useEffect(() => {
@@ -40,7 +41,7 @@ export default function BonusAnimalsContent({ type, initialData }: Props) {
       initialized.current = true;
       initializeFromSSR({ ...initialData, type });
     }
-  }, []);
+  }, [initializeFromSSR, initialData, type]);
 
   const debounceTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   useEffect(() => {
@@ -48,6 +49,7 @@ export default function BonusAnimalsContent({ type, initialData }: Props) {
       if (debounceTimer.current) clearTimeout(debounceTimer.current);
     };
   }, []);
+
   const handleAnimalNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     if (debounceTimer.current) clearTimeout(debounceTimer.current);
@@ -55,6 +57,15 @@ export default function BonusAnimalsContent({ type, initialData }: Props) {
       setAnimalNameFilter(value);
     }, 300);
   };
+
+  const handleDelete = async (id: number) => {
+    if (!window.confirm(t("confirm_delete"))) return;
+    if (typeof deleteEntry === "function") {
+      await deleteEntry(id);
+    }
+  };
+
+  const displayedCount = entries.length;
 
   return (
     <>
@@ -78,15 +89,24 @@ export default function BonusAnimalsContent({ type, initialData }: Props) {
         </FilterSelect>
       </FilterCard>
 
+      <ResultsCount>
+        {t.rich("results_count", {
+          shown: displayedCount,
+          total,
+          b: (chunks) => <strong>{chunks}</strong>,
+        })}
+      </ResultsCount>
+
       {fetchError && <ErrorMessage>{fetchError}</ErrorMessage>}
 
       <TableWrapper $loading={isLoading}>
         <BonusAnimalsTable
           entries={entries}
           editBasePath={type === "PREMIUM" ? "/animals/premium-animals" : "/animals/vip-animals"}
+          onDelete={typeof deleteEntry === "function" ? handleDelete : undefined}
           onRowClick={(entry) => {
             if (entry.animalId !== null) {
-              router.push(`/animals/${entry.animalId}`);
+              router.push(`/animals/${entry.animalId}` as any);
             }
           }}
         />
@@ -127,6 +147,18 @@ const FilterSelect = styled.select`
 
   &:focus {
     outline: none;
+  }
+`;
+
+const ResultsCount = styled.p`
+  text-align: center;
+  font-size: 0.9rem;
+  color: ${({ theme }) => theme.colors.grey[100]};
+  margin: ${({ theme }) => theme.spacing(2)} 0;
+
+  strong {
+    color: ${({ theme }) => theme.colors.primary[500]};
+    font-weight: 700;
   }
 `;
 

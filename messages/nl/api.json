@@ -5,7 +5,9 @@
     "invalid_id": "Ongeldig ID",
     "unauthorized": "Niet geautoriseerd",
     "not_found": "Niet gevonden",
-    "server_error": "Er is een serverfout opgetreden"
+    "server_error": "Er is een serverfout opgetreden",
+    "save_error": "Fout bij het opslaan",
+    "required_fields": "Verplichte velden ontbreken"
   },
   "animal": {
     "required_fields": "Naam (DE) en verblijfstype zijn verplichte velden.",

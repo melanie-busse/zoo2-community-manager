@@ -5,6 +5,7 @@
   "roles_title": "Club Member Roles",
   "roles_body": "There are three different roles: President, Minister, and Club Member. The President has ownership of the club and has the most administrative authority. Ministers can do almost everything the president can, but cannot change the club description or remove the President. Club Members can donate and chat. New members must wait seven days before being granted the ability to donate to contests or fundraisers — all other benefits and abilities are available immediately.",
 
+  "admin_title": "Member Administration",
   "roles_table_ability": "Ability",
   "roles_table_president": "President",
   "roles_table_minister": "Minister",
@@ -73,6 +74,7 @@
   "contests_title": "Contests",
   "contests_body": "Clubs are able to participate in weekly contests which give members exclusive rewards as well as increase the club level. See the Contest FAQ for full details on how contests work.",
 
+  "club_membership_title": "Joining / Leaving a Club",
   "leaving_title": "Leaving a Club",
   "leaving_body": "To leave a club, make sure you are not the club's president. Go to the Club Members tab, select your name, and click the red \"leave club\" button. If you are the president, you must either assign the presidency to another member or remove all members first. If you are the only member, leaving will delete the club.",
 
@@ -106,5 +108,8 @@
     "Indispensable Bengal Tiger",
     "Legendary White Tiger",
     "Mythical Maltese Tiger"
-  ]
+  ],
+
+  "clubs_title": "Tips",
+  "clubs_body": "There are many active clubs looking for members. Although you can create your own club for 10 diamonds, it is best to use social media first to get to know other clubs. Only the top 300–400 clubs receive a decent amount of puzzle piece prizes each week. Basic club tips: breed all contest animals to level 20 and prioritize diamonds for more breeding slots. Reaching top 75 gives your club 50 statue puzzle pieces. Reaching top 300 gives 50 variant puzzle pieces. If your club is unlikely to reach a top 100 placement, it is best to donate a single animal, earn club XP, and try again next time."
 }

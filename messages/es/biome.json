@@ -62,5 +62,6 @@
     "water_hole": "Charca",
     "shelter_level": "Nivel de refugio {level}",
     "games": "Elementos de enriquecimiento"
-  }
+  },
+  "description": "En el zoo te esperan muchos tipos diferentes de recintos. Además, puedes desbloquear áreas especiales para especies animales concretas. Para ofrecer a tus animales las mejores condiciones de vida posibles, dispones de una amplia variedad de posibilidades.\nCada especie animal necesita un recinto que se corresponda con su entorno natural. Todos tienen en común que cada tipo de recinto puede albergar elementos de decoración similares y adecuados al recinto. Estos son comederos, bebederos, refugios, elementos de enriquecimiento y decoraciones."
 }

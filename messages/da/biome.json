@@ -62,5 +62,6 @@
     "water_hole": "Vandhul",
     "shelter_level": "Stalds niveau {level}",
     "games": "Legeudstyr"
-  }
+  },
+  "description": "I zooen venter mange forskellige typer indhegninger på dig. Derudover kan du låse op for helt særlige arealer til specifikke dyrearter. For at give dine dyr de bedst mulige levevilkår råder du over en bred vifte af muligheder.\nHver dyreart kræver en indhegning, der svarer til dens naturlige omgivelser. Fælles for dem alle er, at alle indhegningstyper kan rumme lignende, indhegningspassende inventargenstande. Det er troge, vandhuller, stalde, legemuligheder og dekorationer."
 }

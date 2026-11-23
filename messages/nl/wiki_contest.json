@@ -1,14 +1,8 @@
 {
-  "title": "Wedstrijd FAQ",
-  "intro": "Wekelijkse clubwedstrijden werden geïntroduceerd op 29 mei 2019, waardoor clubs kunnen strijden voor exclusieve standbeeldversieringen. Speciale vacht-competities werden geïntroduceerd in februari 2021 als tweewekelijkse wedstrijden en zijn in mei 2026 overgegaan naar wekelijkse wedstrijden. Een nieuwe wedstrijdweek begint elke woensdag rond 10:25 uur CEST.",
+  "title": "Wedstrijden",
+  "intro": "Elke woensdag genereert het spel een nieuwe selectie van 6 wedstrijdopties: vijf standbeeldwedstrijden en één speciale vachtwedstrijd.\n\nPresidenten en ministers mogen gedurende de week op elk moment een wedstrijd openen. Een gilde mag slechts aan één wedstrijd per week deelnemen. Zodra een wedstrijd is geselecteerd, kan deze keuze niet ongedaan worden gemaakt — kies dus zorgvuldig.\n\nClubleden kunnen deelnemen aan de gekozen wedstrijd door het wedstrijdtabblad te openen in het clubhuis. Tik op \"Kaarten doneren\" om het donatiescherm te openen. Leden kunnen bijbehorende dierkaarten uit hun inventaris doneren (indien aanwezig) of niveau 1-dierkaarten kopen met munten of diamanten (afhankelijk van het dier) via het donatiescherm. Dierkaarten kunnen worden verkregen door te fokken of meer van het dier te kopen. Er is geen donatielimiet.\n\nClubleden kunnen een dier van elk niveau, elke leeftijd, elk geslacht of elke kleur doneren, zolang het overeenkomt met de huidige wedstrijdsoort. Kleur en geslacht hebben geen invloed op de punten.",
 
-  "description_title": "Beschrijving",
-  "description_p1": "Elke woensdag genereert het spel een nieuwe selectie van 4 wedstrijdopties: drie standbeeldwedstrijden en één speciale vachtwedstrijd.",
-  "description_p2": "Presidenten en ministers mogen gedurende de week op elk moment een wedstrijd openen. Een gilde mag slechts aan één wedstrijd per week deelnemen. Zodra een wedstrijd is geselecteerd, kan deze keuze niet ongedaan worden gemaakt, dus kies zorgvuldig.",
-  "description_p3": "Clubleden kunnen deelnemen aan de gekozen wedstrijd door het wedstrijdtabblad te openen in het clubhuisscherm. Tik op \"Kaarten doneren\" om het donatiescherm te openen. Leden kunnen bijbehorende dierkaarten uit hun inventaris doneren (indien aanwezig) of niveau 1-dierkaarten kopen met munten of diamanten (afhankelijk van het dier) via het donatiescherm. Dierkaarten kunnen worden verkregen door te fokken of meer van het dier te kopen. Er is geen donatielimiet.",
-  "description_p4": "Clubleden kunnen een dier van elk niveau, elke leeftijd, elk geslacht of elke kleur doneren, zolang het overeenkomt met de huidige wedstrijdsoort. Kleur en geslacht hebben geen invloed op de punten.",
-
-  "new_members_title": "Nieuwe Leden",
+  "new_members_title": "Nieuwe leden",
   "new_members_body": "Vanaf november 2023 moeten nieuwe clubleden zeven dagen wachten voordat ze kunnen doneren aan inzamelingen en wedstrijden, maar ze kunnen wel onmiddellijk profiteren van geactiveerde clubinzamelingen en wedstrijdbeloningen. Deze maatregel werd sterk gevraagd door de gemeenschap om bepaalde vormen van valsspelen te voorkomen.",
 
   "donation_title": "Donatiepunten",

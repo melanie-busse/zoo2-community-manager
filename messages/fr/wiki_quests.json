@@ -34,5 +34,8 @@
   "tips_title_diamonds": "Coûts en diamants",
   "tips_body_diamonds": "Certaines quêtes nécessitent de dépenser des diamants pour être accomplies, comme déverrouiller une nouvelle région ou acheter un bâtiment spécifique. Examinez les conditions avant d'accepter une quête pour planifier votre dépense de diamants en conséquence.",
   "tips_title_puzzles": "Pièces de puzzle",
-  "tips_body_puzzles": "Certaines quêtes récompensent des pièces de puzzle utilisées pour débloquer des animaux ou des décorations spéciaux. Collectez le nombre requis de pièces de puzzle pour assembler l'objet récompense."
+  "tips_body_puzzles": "Certaines quêtes récompensent des pièces de puzzle utilisées pour débloquer des animaux ou des décorations spéciaux. Collectez le nombre requis de pièces de puzzle pour assembler l'objet récompense.",
+
+  "hide_quests_title": "Masquer les quêtes",
+  "hide_quests_body": "Appuyez sur Grand-père en haut à gauche de l'écran. Sélectionnez l'icône de livre pour voir les quêtes actives et terminées. Faites défiler jusqu'à la quête incomplète que vous souhaitez masquer. Désactivez la case à cocher en bas à droite pour masquer la quête."
 }

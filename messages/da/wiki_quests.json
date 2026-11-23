@@ -34,5 +34,8 @@
   "tips_title_diamonds": "Diamantomkostninger",
   "tips_body_diamonds": "Visse quests kræver at bruge diamanter for at fuldføre, såsom oplåsning af en ny region eller køb af en bestemt bygning. Gennemse kravene inden du accepterer en quest for at planlægge dit diamantforbrug i overensstemmelse hermed.",
   "tips_title_puzzles": "Puzzlebrikker",
-  "tips_body_puzzles": "Nogle quests belønner puzzlebrikker, der bruges til at låse op for særlige dyr eller dekorationer. Saml det nødvendige antal puzzlebrikker for at samle belønningsgenstanden."
+  "tips_body_puzzles": "Nogle quests belønner puzzlebrikker, der bruges til at låse op for særlige dyr eller dekorationer. Saml det nødvendige antal puzzlebrikker for at samle belønningsgenstanden.",
+
+  "hide_quests_title": "Skjul quests",
+  "hide_quests_body": "Klik på Farfar øverst til venstre på skærmen. Vælg bogen for at se aktive og afsluttede quests. Scroll til den ufuldstændige quest, du vil skjule. Fjern markeringen i afkrydsningsfeltet nederst til højre for at skjule questen."
 }

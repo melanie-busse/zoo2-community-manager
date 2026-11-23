@@ -34,5 +34,8 @@
   "tips_title_diamonds": "Costes de Diamantes",
   "tips_body_diamonds": "Ciertas misiones requieren gastar diamantes para completarse, como desbloquear una nueva región o comprar un edificio específico. Revisa los requisitos antes de aceptar una misión para planificar tu gasto de diamantes en consecuencia.",
   "tips_title_puzzles": "Piezas de Puzle",
-  "tips_body_puzzles": "Algunas misiones recompensan con piezas de puzle que se usan para desbloquear animales o decoraciones especiales. Recolecta el número requerido de piezas de puzle para ensamblar el artículo de recompensa."
+  "tips_body_puzzles": "Algunas misiones recompensan con piezas de puzle que se usan para desbloquear animales o decoraciones especiales. Recolecta el número requerido de piezas de puzle para ensamblar el artículo de recompensa.",
+
+  "hide_quests_title": "Ocultar misiones",
+  "hide_quests_body": "Haz clic en el Abuelo en la esquina superior izquierda de la pantalla. Selecciona el icono del libro para ver las misiones activas y completadas. Desplázate hasta la misión incompleta que deseas ocultar. Desmarca la casilla inferior derecha para ocultar la misión."
 }

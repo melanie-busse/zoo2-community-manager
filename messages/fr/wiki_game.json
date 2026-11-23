@@ -1,86 +1,24 @@
 {
-  "title": "FAQ du jeu",
-  "intro": "Guide du nouveau joueur : Conseils de pro de joueurs Zoo 2 expérimentés de longue date.",
-
-  "summary_title": "Résumé du jeu",
-  "summary_body": "Bien qu'il existe de nombreux styles de jeu différents, le jeu tourne principalement autour de la collecte et de l'élevage d'animaux et de l'entretien de votre zoo. Vous pouvez également décorer et aménager au fil du temps, et profiter des nombreux événements spéciaux et prix chaque mois. Vous pouvez vous connecter avec d'autres joueurs et former une équipe dans une guilde pour gagner des récompenses. Il y a beaucoup de quêtes à accomplir et d'objets à collecter, mais de nombreux joueurs s'accordent à dire que la patience est la clé pour jouer à ce jeu sur le long terme.",
-
-  "free_stuff_title": "Obtenir des objets gratuits",
-  "free_stuff_body": "Ce jeu ne nécessite pas que les joueurs dépensent de l'argent réel pour progresser ou en profiter, mais c'est une option si vous aimez avoir des avantages supplémentaires et avancer plus vite. Upjers met de nombreux animaux et monnaies à disposition gratuitement pour les joueurs engagés. Si vous aimez tout collecter dès sa sortie, progresser plus rapidement, ou simplement vous faire plaisir avec quelques animaux spéciaux que vous aimez vraiment, lisez nos conseils sur l'achat et la dépense de diamants. Les utilisateurs de l'application peuvent également activer les annonces de bonus (optionnel) pour gagner des bonus, des remises ou des réductions de minuterie sans dépenser d'argent.",
+  "title": "Jeu",
+  "summary_body": "Bien qu'il existe de nombreux styles de jeu différents, le jeu tourne principalement autour de la collecte et de l'élevage d'animaux et de l'entretien de votre zoo. Vous pouvez également décorer et aménager au fil du temps, et profiter des nombreux événements spéciaux et prix chaque mois. Vous pouvez vous connecter avec d'autres joueurs et former une équipe dans une guilde pour gagner des récompenses. Il y a beaucoup de quêtes à accomplir et d'objets à collecter, mais de nombreux joueurs s'accordent à dire que la patience est la clé pour jouer à ce jeu sur le long terme. Ce jeu ne nécessite pas de dépenser de l'argent réel pour progresser ou en profiter, mais c'est une option si vous souhaitez des avantages supplémentaires ou souhaitez avancer plus vite. Upjers met de nombreux animaux et monnaies à disposition gratuitement pour les joueurs engagés. Les utilisateurs de l'application peuvent également activer des annonces de bonus optionnelles pour gagner des bonus, des remises ou des réductions de minuterie sans dépenser d'argent.",
 
   "levelup_title": "Monter de niveau",
-  "levelup_body": "Vous pouvez monter de niveau en gagnant de l'XP (points d'expérience). Vous recevez de l'XP en nettoyant votre zoo, en aidant vos amis, en élevant des animaux, en accomplissant des succès et des quêtes, et en plaçant de nouvelles décorations, enclos ou animaux. Monter de niveau donne des récompenses qui vous aident souvent à accomplir une quête. Pour monter de niveau plus vite, placez de nombreux animaux générant beaucoup d'XP dans votre zoo. Vous pouvez les nourrir avec de la nourriture bleue pour recevoir le double d'XP. Activez un bonus d'XP de collecte de fonds du club allant jusqu'à 10 % selon le club. Si vous jouez sur l'application mobile, regardez une publicité pour activer un boost d'XP de 10 % pendant une heure toutes les 24 heures — cela s'applique à toutes les XP générées, y compris l'aide aux amis, l'élevage et le placement de nouveaux objets. Étant donné que le placement de nouveaux objets donne de l'XP, acheter des objets et/ou compléter des pièces de puzzle et les placer peut fournir davantage d'XP.",
+  "levelup_body": "Vous pouvez monter de niveau en gagnant de l'XP (points d'expérience). Vous recevez de l'XP en nettoyant votre zoo, en aidant vos amis, en élevant des animaux, en accomplissant des succès et des quêtes, et en plaçant de nouvelles décorations, enclos ou animaux. Monter de niveau donne des récompenses qui vous aident souvent à accomplir une quête. Pour monter de niveau plus vite, placez de nombreux animaux générant beaucoup d'XP dans votre zoo. Vous pouvez les nourrir avec de la nourriture bleue contre des pièces pour recevoir le double d'XP. Activez un bonus d'XP de collecte de fonds du club allant jusqu'à 10 %. Les utilisateurs de l'application peuvent regarder une publicité pour activer un boost d'XP de 10 % pendant une heure toutes les 24 heures — cela s'applique à toutes les XP générées.",
 
   "focus_title": "Conseils de priorité",
   "focus_intro": "Quelques objectifs futurs à envisager :",
   "focus_tip_1": "Donnez la priorité à l'élevage de vos pandas jusqu'au niveau 10.",
-  "focus_tip_2": "Complétez immédiatement tout buisson d'hibiscus rose à partir d'une seule pièce de puzzle dès que vous l'obtenez. Laissez-le dans votre inventaire et ne le placez pas dans votre zoo avant d'avoir reçu la quête de placement de 10 buissons d'hibiscus roses.",
-  "focus_tip_3": "Si vous souhaitez maximiser le bon gratuit de Zoo Academy que vous recevez au niveau 10, donnez la priorité à l'accomplissement des tâches de Madame Yu toutes les 6 heures pour atteindre le niveau 14 de l'académie et maximiser votre abonnement Bronze avant d'utiliser le bon.",
-  "focus_tip_4": "Si vous n'avez toujours qu'une ou deux régions au niveau 93, envisagez d'arrêter la collecte des déchets (et de licencier les éboueurs) environ 24 heures avant de monter au niveau 94 pour vous assurer d'avoir suffisamment de déchets pour une tâche chronométrée qui donne 5 diamants.",
-  "focus_tip_5": "Après le niveau 100, vous débloquez une quête vous demandant d'ouvrir 50 coffres rétro et 50 coffres légendaires à partir du moment où vous recevez la quête. Vous pouvez collecter des coffres gratuits depuis le calendrier et, si vous avez suffisamment de pièces lors d'un événement, récupérer tous les coffres de l'événement.",
+  "focus_tip_2": "Complétez immédiatement tout buisson d'hibiscus rose à partir d'une seule pièce de puzzle dès que vous l'obtenez. Laissez-le dans votre inventaire et ne le placez pas avant d'avoir reçu la quête de placement de 10 buissons d'hibiscus roses.",
+  "focus_tip_3": "Si vous souhaitez maximiser le bon gratuit de Zoo Academy que vous recevez au niveau 10, donnez la priorité à l'accomplissement des tâches de Madame Yu toutes les 6 heures pour atteindre le niveau 14 de l'académie avant d'utiliser le bon.",
+  "focus_tip_4": "Si vous n'avez toujours qu'une ou deux régions au niveau 93, envisagez d'arrêter la collecte des déchets environ 24 heures avant de monter au niveau 94 pour avoir suffisamment de déchets pour une tâche chronométrée qui donne 5 diamants.",
+  "focus_tip_5": "Après le niveau 100, vous débloquez une quête vous demandant d'ouvrir 50 coffres rétro et 50 coffres légendaires à partir du moment où vous recevez la quête. Vous pouvez collecter des coffres gratuits depuis le calendrier et lors d'un événement acheter tous les coffres de l'événement.",
 
-  "coins_title": "Pièces",
-  "coins_body": "Veillez à placer et améliorer immédiatement toutes vos boutiques achetables avec des pièces. Les joueurs ont constaté que les boutiques se remplissent le plus vite quand le jeu est fermé. Connectez-vous toutes les heures ou deux pour collecter des pièces. Plus vous avez de points de popularité, plus les visiteurs achètent dans vos boutiques. Économisez vos pièces pour un événement ou une vente. Attendez que les boutiques soient en solde avant d'acheter ou d'améliorer des boutiques de diamants. Certains joueurs élèvent et vendent des animaux de grande valeur en pièces tels que le Northern Bald Ibis ou le Royal Blue Tang pour gagner des pièces — tout animal achetable en pièces pouvant être acheté pour 100 000 pièces ou plus est préférable. Les animaux diamant ne sont pas rentables à vendre contre des pièces.",
+  "scrap_title": "Vendre",
+  "scrap_title2": "Vendre",
+  "scrap_body": "Lors de la vente d'objets, il est généralement conseillé aux joueurs de bas niveau de ne vendre que les articles en pièces. Les exceptions incluent le Gorille des montagnes (non disponible en boutique) et certains animaux qui ne se débloquent qu'à des niveaux très élevés, comme le Buffle africain ou l'Argali. Essayez de ne pas ouvrir un coffre en diamants sauf si vous avez suffisamment de clés (4) pour garantir l'animal dont vous avez besoin.",
 
-  "diamonds_title": "Diamants",
-  "diamonds_body": "Les diamants sont considérés comme une monnaie premium. Certaines quêtes nécessitent des diamants pour être accomplies. Si vous êtes patient, beaucoup de ces objets en diamants peuvent être trouvés gratuitement dans le jeu. Vous pouvez masquer ces quêtes si nécessaire. Vous pouvez gagner des diamants gratuitement ou les acheter dans la boutique contre de l'argent réel.",
-
-  "spending_title": "Dépenses",
-  "spending_intro": "Presque tout dans le jeu est mis en vente. Si vous êtes patient, vous pouvez maximiser votre budget de dépenses. Il est préférable d'attendre un événement Cashback pour acheter la plupart des choses, y compris les articles qui ne sont généralement jamais remisés.",
-  "spending_no_sale_diamonds": "Objets en diamants qui ne sont pas mis en vente : Améliorations de l'entrée du guichet, Emplacements d'élevage*, Clés (pour les coffres), Réinitialisations du minuteur de la roue des prix, Abonnements Zoo Academy, Plumes du Season Pass. (*Remarque : Le centre d'élevage lui-même a déjà été mis en vente, mais les emplacements verrouillés à l'intérieur n'ont jamais été directement remisés.)",
-  "spending_no_sale_coins": "Objets en pièces qui ne sont pas mis en vente : Coffres bleus ordinaires, Éditeur de terrain, Bulldozer.",
-  "spending_avoid": "Achats à éviter de dépenser en diamants : seau de nourriture 3× en diamants (utilisez plutôt des pièces pour la nourriture 2×) ; garder des animaux bébés au lieu de les laisser grandir (placez les bébés dans l'inventaire pour les empêcher de grandir).",
-
-  "sales_title": "Événements de vente",
-  "sales_body": "Zoo 2 organise régulièrement des ventes sur les abris/améliorations, les boutiques/améliorations, les décorations, les enclos, les coffres de diamants et les extensions de terrain. Parfois, les animaux des boutiques dans divers biomes sont remisés. Moins fréquemment, il y a des ventes sur les articles de boutique du club, les poubelles/toilettes et les bâtiments/déblocages de régions. Les ventes varient généralement de 30 à 50 % de réduction.",
-
-  "land_title": "Acheter du terrain",
-  "land_body": "Attendez les ventes de terrains pour obtenir 33 à 50 % de réduction sur l'achat de parcelles. Donnez la priorité à l'achat de terrains en pièces et planifiez à l'avance les quelques parcelles en diamants dont vous avez besoin pour les relier. Seules les boutiques et les enclos doivent se trouver sur un chemin connecté. Les enclos avec des animaux à l'intérieur peuvent être déplacés d'un chemin vers une parcelle non connectée et produire quand même de l'XP pour le nettoyage/nourrissage/jeu — mais vous n'obtiendrez aucun point de popularité pour les enclos déconnectés. Débloquer certaines régions peut vous donner plus de terrain en pièces à acheter. Vous pouvez acheter Oceanside Zoo pour obtenir plus de terrain pour tout enclos du zoo principal ainsi que des enclos aquatiques (vous devrez d'abord déverrouiller l'éditeur de terrain pour changer le sol en dalles bleues).",
-
-  "seasonal_title": "Événements saisonniers",
-  "seasonal_body": "Économisez vos pièces pour les événements saisonniers afin de pouvoir obtenir tous les prix sans dépenser de diamants. L'astuce Acheter-Collecter-Vendre donne de la monnaie d'événement en échange de vos pièces.",
-
-  "season_pass_title": "Season Pass",
-  "season_pass_body": "Faites le quiz quotidien en cliquant sur le pingouin en haut à gauche de votre écran, puis sur « Quiz ». Répondez correctement à 5 questions pour gagner jusqu'à 350 XP de Season Pass chaque jour afin de monter de niveau sur le parcours du Season Pass et de collecter les récompenses. Si vous voulez moins réfléchir, cliquez sur une réponse à plusieurs reprises sans lire la question et soumettez jusqu'à avoir répondu correctement à 5 — il n'y a pas de pénalité pour les mauvaises réponses. Accomplissez les tâches hebdomadaires pour gagner plus d'XP. Elles se réinitialisent chaque jeudi.",
-
-  "conservation_title": "Conservation Week",
-  "conservation_body": "Élevez et relâchez certains animaux mis en avant par l'événement toute la semaine pour avoir une chance de gagner des décorations de statues de conservation, des titres de profil, et surtout des diamants ! Accomplissez des quêtes pour gagner plus de points et de prix. L'ensemble de la communauté Zoo 2 peut également gagner des prix supplémentaires, notamment des diamants, en accumulant collectivement des points.",
-
-  "calendar_title": "Calendrier",
-  "calendar_body": "Un calendrier de récompenses de connexion donne des prix quotidiens. Si vous voulez une paire reproductrice des animaux récompensés, vérifiez combien de pièces de puzzle de l'animal vous obtenez pour le mois. Complétez votre premier animal avec des tickets avant d'obtenir votre dernière pièce de puzzle afin de pouvoir compléter le deuxième animal lors d'une vente de coffres lorsque la complétion de puzzles est remisée. Le calendrier de décembre fonctionne légèrement différemment — vous devez cliquer manuellement sur le prix de la porte chaque jour pour collecter la récompense de connexion.",
-
-  "friends_title": "Aider les amis",
-  "friends_body": "Vous pouvez cliquer sur le bouton de raccourci « sauter vers » en bas de votre écran d'aide aux amis pour trouver instantanément le prochain corbeau, enfant ou animal sans chercher dans tout le zoo. Utilisez les réseaux sociaux pour trouver des assistants quotidiens actifs afin de gagner plus de coffres d'amitié, y compris des animaux d'amitié. Tout ce dont ils ont besoin est votre ID de support (trouvé dans les paramètres) pour vous ajouter à leur liste d'amis. Les utilisateurs de l'application peuvent également regarder une publicité ou payer un diamant pour aider un ami au lieu de jouer au mini-jeu.",
-
-  "animals_title": "Animaux",
-  "animals_body": "Il y a des centaines d'espèces animales dans le jeu. Certains sont nécessaires pour les collections, d'autres pour les concours, et d'autres encore pour les quêtes. D'autres sont des animaux d'événement, des animaux premium, des animaux VIP et des animaux de coffres qui sont agréables à avoir. Vous pouvez obtenir certains animaux à partir de pièces de puzzle dans des coffres, le calendrier, un événement, ou la roue des prix gratuitement. D'autres peuvent être achetés lors d'une vente flash ou auprès du marchand de glaces. La plupart des animaux viendront dans le jeu gratuitement si vous avez suffisamment de patience — les animaux bonus offerts avec un achat de diamants en argent réel mettent généralement jusqu'à trois ans à entrer dans un cycle d'obtention gratuite.",
-
-  "free_mate_title": "Obtenir un deuxième animal gratuitement",
-  "free_mate_body": "Lors de l'achat ou de l'obtention d'animaux de la Boutique d'animaux, quelques-uns viennent avec un compagnon gratuit en récompense de quête après avoir placé le premier animal. Liste connue (peut ne pas être exhaustive) : Okapi, Common Ostrich, Reticulated Giraffe, American Bison, Plains Zebra, Goldfish (Aquarium), Emperor Scorpion (Terrarium), Reef Manta Ray (Oceanside).",
-
-  "breeding_title": "Élevage",
-  "breeding_body": "Vous pouvez élever des animaux en plaçant un mâle et une femelle dans un enclos avec l'abri amélioré requis et un emplacement d'élevage disponible. Deux animaux de niveau 1 font un bébé de niveau 2. Une fois placé dans un enclos, le bébé met une semaine à grandir. Vous pouvez changer le sexe d'un animal en cliquant dessus et en sélectionnant l'icône de genre. Vous pouvez élever la même espèce dans plusieurs enclos en même temps dans n'importe quelle région. Il y a une très rare chance de sauter des niveaux en élevant un animal étincelant. Pour monter les animaux de niveau plus rapidement, préparez-les pour des événements d'élevage de jumeaux/triplés en augmentant la probabilité de succès d'élevage à environ 20 % puis en vous arrêtant. Pour augmenter le succès de l'élevage, rejoignez un club avec un bonus d'élevage actif (jusqu'à 10 %), nourrissez avec des pièces dans le centre d'élevage, et déplacez les animaux dans leur région correspondante pour les bonus de biome applicables.",
-
-  "oceanside_title": "Élevage à Oceanside",
-  "oceanside_body": "Vous pouvez élever tous les biomes dans Oceanside Zoo ! Utilisez l'éditeur de terrain pour changer le sol en dalles bleues afin de placer des enclos de prairie, de plaine, de forêt, de montagne, de savane, de glace et de jungle à Oceanside. Vous pouvez élever tous les biomes dans cette région, pas seulement l'eau.",
-
-  "petting_title": "Caresser les animaux",
-  "petting_body": "Certaines tâches vous demandent de caresser un animal. Cliquez ou appuyez sur l'animal et maintenez jusqu'à ce que la caméra zoome et que de petits cœurs flottent depuis l'animal. Conseils : Activez « Animations réduites » dans les Paramètres pour que vos animaux ne bougent pas. Si la tâche ne précise pas quel animal caresser, choisissez un animal plus grand. Zoomez pour que les animaux soient plus grands et que vous ayez une cible plus grande sur laquelle cliquer.",
-
-  "enclosure_resize_title": "Redimensionner les enclos",
-  "enclosure_resize_body": "Vous pouvez changer la taille et la forme de n'importe quel enclos à des fins d'espace ou pour le transformer en décoration. Certains joueurs découpent même des trous au centre pour plus d'espace de décoration ou remodèlent les enclos pour former des mots.",
-
-  "clubs_title": "Clubs",
-  "clubs_body": "De nombreux clubs actifs recherchent des membres. Bien que vous puissiez créer votre propre guilde pour 10 diamants, il est préférable d'utiliser les réseaux sociaux pour entrer en contact avec d'autres clubs en premier afin d'en tirer le meilleur parti et de comprendre son fonctionnement. Seuls les 300 à 400 meilleurs clubs obtiennent une bonne quantité de pièces de puzzle de prix chaque semaine. Quelques conseils de base sur les clubs : élevez tous les animaux de concours jusqu'au niveau 20 et donnez la priorité à vos diamants pour ouvrir plus d'emplacements d'élevage si possible. Viser le top 75 donnera à votre club 50 pièces de puzzle de statues. Viser le top 300 donnera à votre club 50 pièces de puzzle de variantes. Si votre club est peu susceptible de gagner le top 100, il est préférable de donner un seul animal, de récolter l'XP du club, et de réessayer la prochaine fois.",
-
-  "puzzles_title": "Pièces de puzzle",
-  "puzzles_body": "Si possible, attendez une vente de coffres avant de recycler des pièces de puzzle ou de compléter des objets. Il est généralement conseillé aux joueurs de bas niveau de compléter la première pièce de puzzle d'animal en diamant avec des tickets afin que votre deuxième pièce puisse être utilisée pour un deuxième animal. Utilisateurs de l'application : l'activation des annonces de bonus offre la possibilité de compléter des puzzles avec une réduction de 10 % en regardant une publicité. Pour les joueurs de niveau 90 et plus, la région Aviary est un bon investissement en tickets — chaque jour après la réinitialisation du calendrier de connexion, 20 plumes tombent du ciel et chaque plume a une chance de donner une pièce de puzzle d'Aviary.",
-
-  "scrap_title": "Que recycler",
-  "scrap_body": "Lors du recyclage d'objets, il est généralement conseillé aux joueurs de bas niveau de ne recycler que les objets en pièces. Les exceptions incluent le Mountain Gorilla (non disponible dans la boutique) et certains animaux qui ne se débloquent qu'à des niveaux très élevés, comme l'African Buffalo ou l'Argali. Essayez de ne pas ouvrir un coffre en diamants sauf si vous avez suffisamment de clés (4) pour obtenir l'animal garanti dont vous avez besoin si vous manquez de coffres.",
-
-  "no_scrap_title": "Que NE PAS recycler",
-  "no_scrap_intro": "Objets nécessaires pour des quêtes que vous devriez envisager de conserver plutôt que de recycler :",
+  "no_scrap_title": "NE PAS vendre",
+  "no_scrap_intro": "Objets nécessaires pour des quêtes que vous devriez conserver plutôt que vendre :",
   "no_scrap_decos": [
     "1 Lanterne des plaines",
     "1 Lanterne de savane",
@@ -107,53 +45,216 @@
   ],
   "no_scrap_animals_intro": "Animaux en diamants de quête (non proposés comme récompenses de montée de niveau ou récompenses de quête avant le niveau 106) :",
   "no_scrap_animals": [
-    "Komodo Dragons",
-    "Aardvarks",
+    "Varans de Komodo",
+    "Oryctéropes",
     "Ocelots",
-    "African Elephants",
+    "Éléphants d'Afrique",
     "Mandrills",
-    "Snowy Owls",
-    "Walruses",
-    "Spotted Skunks",
-    "Fishing Cats",
-    "Sea Otters",
-    "Emperor Penguins",
-    "Harpy Eagles",
+    "Chouettes des neiges",
+    "Morses",
+    "Mouffettes tachetées",
+    "Chats pêcheurs",
+    "Loutres de mer",
+    "Manchots empereurs",
+    "Harpies féroces",
     "Jaguarundis",
-    "Irrawaddy Dolphins (roue des prix uniquement)",
-    "Giant Otter Shrew (roue des prix uniquement)",
-    "American Black Bears",
-    "Eastern Grey Kangaroos",
-    "Black-Backed Jackals (roue des prix uniquement)",
-    "2e Polar Bear",
-    "2e Green Anaconda",
-    "2e Scarlet Macaw",
-    "2e Moon Bear",
+    "Dauphins de l'Irrawaddy (roue des prix uniquement)",
+    "Musaraignes loutres géantes (roue des prix uniquement)",
+    "Ours noirs américains",
+    "Kangourous gris de l'Est",
+    "Chacals à dos noir (roue des prix uniquement)",
+    "2e Ours polaire",
+    "2e Anaconda vert",
+    "2e Ara écarlate",
+    "2e Ours à collier",
     "2e Tapir",
     "1er Okapi"
   ],
-  "no_scrap_wheel_intro": "Animaux non liés aux quêtes mais présents dans la roue des prix qui peuvent être nécessaires pour des collections :",
+  "no_scrap_wheel_intro": "Animaux non liés aux quêtes mais présents dans la roue des prix pouvant être nécessaires pour des collections :",
   "no_scrap_wheel": [
-    "Llama",
-    "Ribbon Seal",
-    "White-Faced Owl",
-    "Spot-Bellied Eagle-Owl",
-    "Squirrel Monkey",
-    "Indian Giant Squirrel"
+    "Lama",
+    "Phoque ruban",
+    "Chouette à face blanche",
+    "Grand-duc tacheté",
+    "Singe écureuil",
+    "Grand écureuil de l'Inde"
   ],
 
-  "tickets_title": "Obtenir plus de tickets",
-  "tickets_body": "Si vous manquez de tickets, attendez une vente de coffres où la complétion d'un objet est à 15 % de réduction. Vous pouvez également réinitialiser la roue des prix pour 10 diamants (recommandé lors d'une vente Cashback bimestrielle) ou ouvrir de nombreux coffres bleus ordinaires jusqu'à avoir suffisamment de matériel recyclable. Si vous essayez de compléter une statue de club sans toutes les pièces de puzzle, envisagez d'attendre une vente de coffres et d'utiliser des diamants pour compléter les dernières pièces — si vous avez 90 pièces de puzzle d'une statue, vous pouvez la compléter avec 10 diamants immédiatement ou attendre la vente et l'obtenir pour 7 diamants.",
+  "bulldozer": {
+    "title": "Bulldozer",
+    "intro": "Le Bulldozer est un outil de sélection de décorations disponible à l'achat à partir du niveau 25. Il peut être débloqué pour 50 diamants ou 500 000 pièces et nécessite de l'énergie pour fonctionner. L'outil peut sélectionner jusqu'à 500 décorations à la fois pour les remettre dans l'inventaire ou les déplacer dans leur forme groupée à travers votre région de zoo actuelle.",
 
-  "academy_tips_title": "Conseils pour Zoo Academy",
-  "academy_tips_body": "Pour les joueurs premium, la Zoo Academy offre de nombreux avantages, notamment des animaux exclusifs, des temps d'élevage plus courts, plus de pièces et plus d'XP. Il est préférable d'activer l'académie lors d'une vente Cashback. Si vous n'avez pas d'abonnement actif, achetez 1 jour Bronze pour 8 diamants pour activer la remise de renouvellement — le renouvellement est beaucoup moins cher que le redémarrage. Conseil important en début de jeu : vous devriez recevoir un bon gratuit de Zoo Academy pour un abonnement Bronze de 7 jours une fois que vous atteignez le niveau 10 du jeu. Afin d'en tirer le meilleur parti, attendez d'atteindre le niveau 14 du parchemin de Madame Yu avant d'activer le bon — de cette façon, vous bénéficierez de tous les 14 niveaux des avantages de l'académie Bronze pendant la semaine.",
+    "overview_title": "Vue d'ensemble",
+    "overview_body": "Lorsque les objets sont remis dans l'inventaire, ils ne conservent pas leur forme groupée mais sont empilés comme des objets individuels. Le Bulldozer ne peut ramasser que les objets classés comme décorations, tels que les plantes, les statues, les toilettes, etc. Il ne peut pas ramasser les poubelles, les chemins, les bâtiments, les enclos, les décorations d'enclos, les PNJ ou les éléments de terrain.",
 
-  "hide_quests_title": "Masquer les quêtes",
-  "hide_quests_body": "Cliquez sur Grand-père dans le coin supérieur gauche de l'écran. Sélectionnez l'icône du livre pour voir les quêtes actives et terminées. Faites défiler jusqu'à la quête incomplète que vous souhaitez masquer. Décochez la case en bas à droite pour masquer la quête.",
+    "event_title": "Décorations d'événements saisonniers",
+    "event_body": "Pendant un événement saisonnier, les décorations d'événement qui génèrent de la monnaie ne peuvent être sélectionnées avec le Bulldozer qu'après la fin complète de l'événement.",
 
-  "rocks_title": "Casser des rochers",
-  "rocks_body": "Kujali Park, une région à thème savane qui accueille les animaux en surplus de tous les biomes du zoo principal, contient des terres supplémentaires pouvant être débloquées contre des diamants ou des pièces. Les terres en pièces dans cette région nécessitent des pièces supplémentaires pour casser des rochers afin d'obtenir des prix spéciaux — des pièces de puzzle pour des décorations spécifiques à la région, des chemins, des pièces, de l'XP ou des diamants sont tous des prix possibles.",
+    "energy_title": "Énergie",
+    "energy_body": "L'énergie peut être obtenue avec des diamants, comme récompenses de quêtes, comme cadeau gratuit du calendrier de récompenses de connexion mensuel ou avec la roue des prix."
+  },
+  "visitors": {
+    "title": "Niveau de visiteurs",
+    "intro": "Le niveau de visiteurs est très probablement l'aspect le plus important du jeu. Le niveau de visiteurs d'un zoo indique le nombre de visiteurs qui viennent actuellement dans votre zoo. Plus le nombre est élevé, plus il y a de visiteurs — ce qui signifie naturellement plus de pièces collectées non seulement à l'entrée mais aussi dans toutes vos boutiques. Votre niveau de visiteurs actuel est affiché à droite de votre niveau de zoo en haut à gauche de l'écran. En appuyant sur l'indicateur de niveau de visiteurs, une fenêtre contextuelle apparaît montrant votre niveau, les points de visiteurs nécessaires pour le niveau suivant ainsi que des suggestions sur ce que vos visiteurs aimeraient voir dans votre zoo.",
 
-  "steam_title": "Note pour les joueurs Steam et Epic",
-  "steam_body": "C'est formidable que Steam ou Epic Games vous ait fait découvrir Zoo 2 ! Il y a quelques limitations à connaître — si vous avez l'intention de jouer à ce jeu sur le long terme et n'avez pas encore dépensé beaucoup d'argent dessus, consultez la page Plateformes sur le Wiki de Zoo 2 pour savoir s'il vaut mieux continuer avec Steam ou Epic."
+    "modifiers_title": "Modificateurs du niveau de visiteurs",
+    "modifiers_intro": "De nombreux facteurs influencent le niveau de visiteurs. Contrairement au niveau d'expérience, le niveau de visiteurs de votre zoo est dynamique et fluctuant. Bien que la plupart des effets soient positifs, il existe également des modificateurs négatifs qui réduisent votre niveau de visiteurs.",
+
+    "animals_title": "Animaux",
+    "animals_body": "Les animaux ont un grand impact positif. En général, plus l'animal est cher, plus vous obtenez de points de visiteurs. Il n'y a pas de différence entre les animaux femelles et mâles. Cependant, les bébés animaux ont un double bonus de points de visiteurs (ce bonus diminue jusqu'à la valeur adulte normale lorsque le bébé grandit après 7 jours). Les points de visiteurs d'un animal diminuent en raison de l'insatisfaction. Les animaux sans nourriture, sans temps de jeu suffisant ou dans un enclos sale ont des points de visiteurs réduits. Nourrir, jouer et nettoyer l'enclos restaure pleinement les points de visiteurs. Il existe également des bâtiments spéciaux et le soigneur d'animaux qui maintiennent les animaux automatiquement à 100 % de bonheur.",
+
+    "decorations_title": "Décorations",
+    "decorations_intro": "Les décorations sont votre principale façon d'ajouter et d'augmenter les points de visiteurs. Elles n'ont pas besoin d'être placées sur des chemins. En général, plus la décoration est chère, plus elle ajoute de points (exception : les décorations de la boutique du club coûtent plus cher mais donnent globalement moins de points de visiteurs). Il existe différents types de décorations :",
+
+    "plants_title": "Plantes",
+    "plants_body": "Les plantes existent en différentes variantes mais fonctionnent de la même façon pour le niveau de visiteurs. Les plantes donnent un bonus pour chaque objet planté. Cependant, comme les animaux, elles doivent être entretenues — les plantes se fanent éventuellement et leurs points de visiteurs diminuent. Arroser les plantes restaure leur pleine valeur en points. Il existe un jardinier en gemmes qui arrose automatiquement un certain nombre de plantes.",
+
+    "enclosure_deco_title": "Décorations d'enclos",
+    "enclosure_deco_body": "Les décorations d'enclos sont placées à l'intérieur des enclos d'animaux. Elles n'affectent pas le bonheur de l'animal mais fournissent des points de popularité pour les visiteurs. Contrairement aux plantes hors des enclos, les décorations végétales d'enclos ne se fanent pas. L'enclos doit être connecté à un chemin pour que son contenu (animaux et décorations d'enclos) contribue à vos points de popularité. Les enclos non connectés ne contribuent aucun point de popularité.",
+
+    "object_deco_title": "Décorations objets",
+    "object_deco_body": "Les décorations hors des enclos comprennent tout, des bancs aux fontaines en passant par les panneaux et les aires de jeux. Elles n'ont pas besoin d'être entretenues ni connectées à un chemin pour fournir des points de popularité.",
+
+    "bathrooms_title": "Toilettes",
+    "bathrooms_body": "Les toilettes n'ont pas besoin d'être placées sur des chemins pour avoir un effet et n'ont pas besoin d'entretien.",
+
+    "trash_title": "Déchets et poubelles",
+    "trash_body": "Des déchets sont déposés dans votre zoo lorsqu'il n'y a pas assez de poubelles que les visiteurs peuvent atteindre sur les chemins. Les poubelles ne donnent pas de bonus de visiteurs direct mais permettent aux visiteurs d'y déposer leurs déchets plutôt que de les jeter sur les chemins. Les déchets sur les chemins font partir vos visiteurs plus vite mais n'affectent pas directement les points de popularité. Il existe un éboueur en gemmes qui collecte automatiquement une quantité limitée de déchets pour vous.",
+
+    "npcs_title": "Invités spéciaux (PNJ)",
+    "npcs_body": "Les invités spéciaux (PNJ) se promènent sur les chemins de votre zoo. Ils ne prennent pas de place, n'affectent pas le bonheur des animaux, n'ont pas besoin d'entretien et fournissent exclusivement des points de popularité pour les visiteurs."
+  },
+  "friends": {
+    "title": "Amis",
+    "intro": "Les joueurs peuvent gagner des récompenses de deux types d'amis différents : les amis recrutés et les amis de jeu. Les amis recrutés sont des utilisateurs invités qui n'ont jamais joué à Zoo 2, tandis que les amis de jeu sont des joueurs existants dont les comptes peuvent être liés au vôtre.",
+
+    "recruited_title": "Amis recrutés",
+    "recruited_body": "Vous pouvez gagner des récompenses pour avoir recruté de nouveaux joueurs dans Zoo 2 avec votre lien d'invitation personnel. Cliquez sur le bouton rose « Inviter » dans votre fenêtre de recrutement d'amis et envoyez le lien à de nouveaux joueurs. Le nouveau joueur doit utiliser votre lien pour télécharger le jeu et accomplir jusqu'à 5 objectifs pour que vous gagniez des pièces d'amitié. Remarque : cette fonctionnalité n'est pas disponible pour les joueurs Steam ou Epic Games.",
+
+    "objectives_title": "Objectifs pour les amis recrutés",
+    "objective_level": "Atteindre le niveau 10",
+    "objective_animals": "Avoir 10 animaux au total dans le zoo",
+    "objective_diamonds": "Acheter des diamants",
+    "objective_academy": "Élargir l'académie",
+    "objective_recruit": "Recruter un autre ami",
+
+    "objectives_note": "Chaque objectif accompli par un ami recruté vous donne 1 pièce d'amitié. Si un ami recruté accomplit le même objectif deux fois, il n'y a pas de pièces supplémentaires.",
+
+    "rewards_title": "Récompenses pour les amis recrutés",
+
+    "ingame_body": "Les joueurs peuvent avoir jusqu'à 16 amis de jeu. Comme les amis partagent certaines récompenses, il est très avantageux d'avoir des amis de jeu actifs. Remarque : dans le cadre d'une règle de fair-play, avoir des amis de jeu utilisant la même connexion Internet est contraire aux conditions d'utilisation d'Upjers.",
+
+    "adding_title": "Ajouter des amis",
+    "adding_body": "Pour ajouter de nouveaux amis de jeu, vous devez accepter une demande d'amitié ou en envoyer une à un joueur existant. Appuyez sur l'icône du menu Amis et sélectionnez un emplacement d'amitié libre pour voir 12 joueurs suggérés à un niveau similaire. Pour ajouter un joueur spécifique, utilisez l'outil de recherche et entrez son ID de support.",
+
+    "removing_title": "Supprimer des amis",
+    "removing_body": "Pour libérer un emplacement d'amitié, sélectionnez un ami et appuyez sur la corbeille dans sa zone d'information. L'emplacement sera bloqué pendant 24 heures avant que vous puissiez à nouveau inviter ou accepter des invitations. Obtenir et conserver 16 amis actifs est difficile, et les joueurs doivent souvent recourir à d'autres moyens, comme les réseaux sociaux ou les forums.",
+
+    "zoo_details_title": "Détails du zoo de l'ami",
+    "zoo_details_body": "En appuyant sur un ami, vous voyez des informations sur sa progression dans le zoo : titres de zoo obtenus, nombre d'extensions de parc, nombre d'espèces animales différentes, nombre d'animaux à partir du niveau 10, nombre de succès et nombre de bébés animaux placés en train de grandir dans le zoo principal.",
+
+    "helping_title": "Aider les amis",
+    "helping_body": "Aider nécessite une visite dans le zoo de votre ami. Appuyez sur le cœur dans la liste d'amis ou sur le bouton Aider un ami. Aider donne à tous les deux un point de cœur d'amitié plus de l'XP. Pour chaque ami aidé, vous recevez de l'XP égale à dix fois votre niveau de joueur actuel. Vous pouvez cliquer sur le bouton de raccourci « Sauter vers » en bas de votre jeu d'aide aux amis pour trouver instantanément le prochain corbeau, enfant ou animal. Utilisez les réseaux sociaux pour trouver des assistants quotidiens actifs et obtenir plus de coffres d'amitié. Ils n'ont besoin que de votre ID de support (trouvé dans les paramètres). Les utilisateurs de l'application peuvent également regarder une publicité ou payer un diamant pour aider un ami au lieu de jouer au mini-jeu.",
+
+    "minigames_title": "Mini-jeux d'aide",
+    "minigame_crows": "Chasser les corbeaux : 5 corbeaux se trouvent dans des enclos aléatoires. Appuyez sur chaque corbeau 3 fois pour le chasser.",
+    "minigame_children": "Consoler les enfants : 5 enfants qui pleurent sont placés aléatoirement sur les chemins. Donnez un ballon à chaque enfant pour le consoler.",
+    "minigame_animals": "Attraper des animaux : 10 animaux courent aléatoirement sur les chemins du zoo. Passez le filet sur chacun d'eux.",
+
+    "skip_title": "Passer les mini-jeux",
+    "skip_body": "Vous pouvez aider un ou tous les amis instantanément en payant des diamants. « Passer l'aide » coûte 1 diamant par joueur. Le bouton « Aider tout le monde » coûte 5 diamants par joueur restant non aidé. Les utilisateurs de l'application peuvent également regarder une publicité pour aider un ami (limite 20 publicités par 24h).",
+
+    "messaging_title": "Envoyer des messages aux amis",
+    "messaging_body": "Le jeu propose une boîte de chat privée pour écrire des messages à vos amis de jeu. Appuyez sur l'enveloppe à côté de votre ami. Lorsqu'un nouveau message arrive, une notification apparaît à côté de l'icône des amis. L'enveloppe passe du gris au jaune pour les messages non lus. Les messages envoyés ne peuvent pas être supprimés ou modifiés.",
+
+    "levelup_title": "Cadeaux de montée de niveau",
+    "levelup_body": "Lorsque vous montez de niveau, tous vos amis de jeu reçoivent également le cadeau de montée de niveau que vous choisissez. Vous recevez également les cadeaux de montée de niveau de vos amis. Vous choisissez une pièce de puzzle parmi un ensemble aléatoire de 3.",
+
+    "chests_title": "Coffres d'amitié",
+    "chests_body": "Chaque fois que vous aidez un ami ou qu'il vous aide, vous recevez un point d'amitié. Tous les 10 points vous récompensent d'un Coffre d'amitié contenant des pièces de puzzle pour des décorations, des enclos et des équipements d'enclos ainsi que des animaux d'amitié exclusifs. Le maximum est de 32 points par jour avec 16 amis actifs (3 coffres par jour). La limite de stockage est de 5 coffres.",
+
+    "troubleshooting_title": "Dépannage",
+    "troubleshooting_body": "Si votre jeu plante lors de l'aide aux amis sans message d'erreur, votre appareil pourrait manquer de RAM. Le chargement de grands zoos entièrement animés nécessite une mémoire vive considérable. Essayez les solutions suivantes :",
+
+    "fix_device": "Changer d'appareil : essayez d'aider les amis avec un appareil avec plus de RAM, comme un ordinateur portable ou de bureau.",
+    "fix_friends": "Changer d'amis : supprimez les amis avec de très grands zoos (au-dessus du niveau 60) et remplacez-les par des joueurs de niveau inférieur avec des zoos plus petits qui nécessitent moins de RAM.",
+    "fix_settings": "Ajuster les paramètres du jeu : activez « Animations réduites », désactivez « Zoom avancé » ou activez « Limiter le taux d'images » dans le deuxième onglet des paramètres pour réduire la consommation de RAM."
+  },
+  "terraineditor": {
+    "title": "Éditeur de terrain",
+    "intro": "L'éditeur de terrain est un outil de modification du sol qui change le paysage général (le sol) de vos régions de zoo en dehors des enclos. Il peut être débloqué à partir du niveau 25 du joueur pour un frais unique de 500 000 pièces ou 50 diamants.",
+
+    "overview_title": "Vue d'ensemble",
+    "overview_body": "Pour faire fonctionner l'éditeur de terrain, vous avez besoin d'énergie, que vous pouvez obtenir de la roue des prix ou parfois du calendrier de récompenses de connexion. Vous pouvez également acheter de l'énergie contre des diamants. Bien que l'éditeur ne soit pas indispensable à la progression du jeu, une quête introductive offre une petite récompense. Les joueurs de haut niveau ont besoin de cet outil pour la quête du Maire « Architecte paysagiste du zoo », qui se débloque à partir du niveau 110 du joueur.",
+
+    "access_title": "Accès à l'éditeur de terrain",
+    "access_body": "L'éditeur de terrain est accessible en cliquant sur l'icône pinceau à gauche de la barre latérale d'inventaire. Il y a deux fonctionnalités de modification du paysage : l'éditeur de terrain (pour l'extérieur des enclos) et l'éditeur de sol d'enclos (pour l'intérieur des enclos).",
+
+    "visuals_title": "Visualisations du terrain",
+    "visuals_body": "Chaque type de terrain est conçu pour des biomes ou des thèmes spécifiques : la neige convient aux biomes de glace, le sable aux zones de savane, la pierre aux biomes de montagne, la terre offre un aspect naturel, les feuilles d'automne conviennent aux biomes saisonniers ou de plaines, l'eau crée des étangs naturels et la forêt offre un revêtement de sol forestier."
+  },
+  "video": {
+    "title": "Publicités vidéo",
+    "intro": "Zoo 2 propose deux types de publicités vidéo pour les utilisateurs d'applications mobiles : les publicités de panneau d'affichage qui rapportent des diamants et les publicités d'offres bonus qui offrent divers bonus, remises ou réductions de minuterie. Les publicités sur navigateur ne sont disponibles que dans des régions limitées.",
+
+    "billboard_title": "Publicités sur panneau d'affichage",
+    "billboard_body": "Un panneau d'affichage à gauche de l'entrée principale permet à certaines plateformes de regarder de courtes publicités vidéo en échange de diamants. Regarder 10 publicités génère 1 diamant avec une disponibilité maximale de 20 publicités dans une période de 24 heures. La disponibilité des publicités peut être limitée par la région, la plateforme et d'autres facteurs.",
+
+    "redeeming_title": "Échanger des diamants",
+    "redeeming_body": "Vous pouvez échanger des diamants dès que vous avez regardé 10 publicités. Cependant, si vous économisez 1 000 publicités avant d'échanger, le jeu vous donne un animal bonus du paquet de 100 diamants. 2 000+ publicités rapportent une paire d'animaux Premium avec votre échange de 200 diamants. L'échange de 10 000+ publicités donne 1 000 diamants et un seul animal VIP ou un autre choix d'offre VIP actuelle. Cette fonctionnalité d'animal bonus n'est pas garantie par Upjers et les échanges anticipés ne peuvent pas être annulés.",
+
+    "availability_title": "Disponibilité des publicités",
+    "availability_body": "Les publicités sur panneau d'affichage sont limitées à 20 par période de 24 heures. Chaque publicité démarre son propre minuteur de 24 heures. Une fois la limite quotidienne atteinte, un minuteur indique quand d'autres publicités sont disponibles. Les appareils pouvant télécharger l'application depuis le Google Play Store devraient généralement proposer des publicités.",
+
+    "age_title": "Vérification d'âge",
+    "age_body": "Le jeu demande l'âge du joueur en relation avec les politiques de confidentialité publicitaire. Entrer un âge de 12 ans ou moins bloque le jeu sur l'appareil avec un message indiquant que le jeu n'est pas conçu pour les enfants. Réinstaller le jeu devrait reposer la question.",
+
+    "tips_title": "Conseils pour débloquer la disponibilité des publicités",
+    "tips_intro": "La disponibilité des publicités est le plus souvent liée à l'identité de suivi des publicités. Important : actuellement, les publicités sur panneau d'affichage sont liées au paramètre des publicités d'offres bonus — assurez-vous de décocher « Ne pas afficher les offres vidéo » dans les paramètres pour activer toutes les fonctionnalités de publicités.",
+    "tip_delay": "DÉLAI : Attendez 5 secondes entre les publicités avant d'essayer d'en regarder une autre.",
+    "tip_restart": "REDÉMARRER : Parfois, simplement redémarrer le jeu augmente la disponibilité des publicités.",
+    "tip_internet": "CHANGER D'INTERNET : Essayez d'utiliser une autre connexion Internet ou des données mobiles pour voir si des publicités deviennent disponibles.",
+    "tip_device": "CHANGER D'APPAREIL : Essayez de regarder des publicités sur un autre appareil lié à votre ID de support.",
+    "tip_tracking": "RÉINITIALISER LE SUIVI : Pour Android, réinitialisez l'ID Google Ads. Pour iOS, réinitialisez en désactivant et réactivant le suivi.",
+
+    "ios_tracking_title": "iOS : Autoriser le suivi",
+    "ios_tracking_body": "Allez dans Paramètres > Confidentialité & Sécurité > Suivi. Activez « Autoriser les applications à demander le suivi », puis activez l'application « Zoo 2 ». Redémarrez le jeu. Si vous faites cela pour la première fois depuis la réinstallation, cliquez sur le bouton vert « Activer » lors du clic pour regarder des publicités.",
+
+    "ios_reset_title": "iOS : Réinitialiser le suivi",
+    "ios_reset_body": "Allez dans Paramètres > Confidentialité & Sécurité > Suivi. Désactivez « Autoriser les applications à demander le suivi » et confirmez « Demander aux publicités d'arrêter le suivi ». Puis réactivez-le et activez également l'application « Zoo 2 ». Redémarrez le jeu. Vous devrez peut-être répéter cela chaque fois que les publicités ne sont plus disponibles.",
+
+    "android_reset_title": "Android : Réinitialiser l'ID de publicité Google",
+    "android_reset_body": "Allez dans Paramètres > Google > Publicités. Appuyez sur « Réinitialiser l'ID de publicité » puis OK. Redémarrez le jeu. Vous devrez peut-être répéter cela chaque fois que les publicités ne sont plus disponibles.",
+
+    "bonus_title": "Publicités d'offres bonus",
+    "bonus_body": "Pour les plateformes d'applications mobiles, les joueurs peuvent activer les offres vidéo bonus dans les paramètres du jeu en décochant « Ne pas afficher les offres vidéo ». Important : si vous cliquez sur « Ne pas afficher les offres vidéo » lors de la collecte de pièces aux caisses, toutes les publicités bonus seront à nouveau désactivées. Les offres bonus ont leur propre limite pouvant aller jusqu'à 20 publicités toutes les 24 heures.",
+
+    "col_type": "Type",
+    "col_offer": "Offre",
+    "col_limit": "Limite",
+    "col_details": "Détails",
+
+    "bonus_notes_title": "Notes sur les bonus",
+    "xp_bonus_title": "Bonus XP de 10 %",
+    "xp_bonus_body": "Cette fonctionnalité se débloque 24 heures après l'activation précédente. Actuellement, un problème de configuration lie ce bonus au minuteur des publicités sur panneau d'affichage, de sorte que certains joueurs devront peut-être attendre que leur minuteur de panneau d'affichage se termine. Le problème devrait être résolu dans une future mise à jour.",
+    "xp_sources_title": "Sources d'XP",
+    "xp_sources_body": "Nettoyer les enclos, jouer avec les animaux, nourrir les animaux, accomplir des quêtes, placer de nouveaux objets ou animaux, relâcher des animaux, aider des amis, arroser des plantes, ramasser des déchets, élevage raté, laisser grandir les bébés ou collecter l'XP des travailleurs.",
+    "fertility_title": "Bonus de fertilité",
+    "fertility_body": "Ce boost d'élevage ne peut être appliqué qu'aux tentatives d'élevage actives. Assurez-vous d'avoir suffisamment de temps pour regarder la vidéo entièrement avant la fin de l'élevage, sinon le bonus ne sera pas appliqué et la publicité ne sera pas comptée dans votre limite.",
+    "video_chests_title": "Coffres vidéo",
+    "video_chests_body": "Cette fonctionnalité se débloque 24 heures après l'activation précédente. Vous devez également avoir suffisamment de votre limite de 20 publicités bonus restante après le délai d'attente de 24 heures.",
+
+    "limits_title": "Limites des publicités",
+    "limits_body": "Les limites des publicités d'offres bonus sont séparées de votre limite de publicités sur panneau d'affichage. Dans une période de 24 heures, vous pouvez regarder jusqu'à 20 publicités d'offres bonus. Chaque publicité démarre son propre minuteur de 24 heures. Si vous ne terminez pas une publicité, le bonus n'est pas appliqué et la publicité n'est pas comptée dans votre limite."
+  },
+  "calendar": {
+    "title": "Calendrier",
+    "intro": "Connectez-vous chaque jour pour collecter des récompenses quotidiennes. Connectez-vous 25 jours dans un mois pour recevoir deux animaux spéciaux en pièces de puzzle. Aux jours 26–31, il y a respectivement 1–2 diamants. En décembre, le calendrier de l'Avent remplace les récompenses de connexion quotidiennes.",
+
+    "how_it_works_title": "Comment ça marche",
+    "how_it_works_body": "Chaque jour où vous ouvrez le jeu, vous collectez une récompense de connexion quotidienne. Les récompenses suivent un parcours mensuel. Si vous vous connectez 25 jours dans le mois, vous recevez les deux animaux en pièces de puzzle pour ce mois. Aux jours 26 à 31, il y a des diamants bonus. Le parcours de récompenses se réinitialise au début d'un nouveau mois. Chaque mois, il y a deux animaux spéciaux (gagnés sous forme de pièces de puzzle sur 25 jours de connexion) et des coffres bonus distribués en cours de route.",
+
+    "advent_title": "Décembre & Calendrier de l'Avent",
+    "advent_body": "Chaque décembre, le Calendrier de l'Avent remplace le parcours de récompenses de connexion quotidiennes. Ouvrez une nouvelle porte chaque jour pour collecter des récompenses spéciales. Les portes manquées peuvent être débloquées jusqu'au 7 janvier pour 3 diamants chacune. En décembre, appuyez sur la bulle du calendrier dans le jeu pour trouver la porte du jour. Chaque porte n'est ouverte que 24 heures avant de se fermer. Vous avez jusqu'au 7 janvier de l'année suivante pour débloquer les portes manquées à 3 diamants par porte."
+  }
 }

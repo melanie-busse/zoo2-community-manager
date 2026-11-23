@@ -3,7 +3,9 @@ import prisma from "@/lib/prisma";
 import { PremiumVipType, type PremiumVipAnimalEntry, type Animal } from "@prisma/client";
 
 export type PremiumVipAnimalEntryWithAnimal = PremiumVipAnimalEntry & {
-  animal: Pick<Animal, "id" | "identifier"> | null;
+  animal: (Pick<Animal, "id" | "identifier"> & {
+    biome: { identifier: string } | null;
+  }) | null;
 };
 
 export type BonusAnimalFormAnimal = { id: number; name: string; identifier: string | null };
@@ -46,7 +48,7 @@ export async function getPremiumVipAnimals(
     prisma.premiumVipAnimalEntry.findMany({
       where,
       orderBy: [{ year: "desc" }, { startDate: "desc" }],
-      include: { animal: { select: { id: true, identifier: true } } },
+      include: { animal: { select: { id: true, identifier: true, biome: { select: { identifier: true } } } } },
       skip,
       take: pageSize,
     }),
@@ -68,7 +70,7 @@ export async function getAvailableYears(type: PremiumVipType): Promise<number[]>
 export async function getEntryById(id: number): Promise<PremiumVipAnimalEntryWithAnimal | null> {
   const entry = await prisma.premiumVipAnimalEntry.findUnique({
     where: { id },
-    include: { animal: { select: { id: true, identifier: true } } },
+    include: { animal: { select: { id: true, identifier: true, biome: { select: { identifier: true } } } } },
   });
   return entry as PremiumVipAnimalEntryWithAnimal | null;
 }

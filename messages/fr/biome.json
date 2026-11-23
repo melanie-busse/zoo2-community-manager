@@ -62,5 +62,6 @@
     "water_hole": "Point d'eau",
     "shelter_level": "Niveau d'abri {level}",
     "games": "Éléments d'enrichissement"
-  }
+  },
+  "description": "Dans le zoo, vous trouverez de nombreux types d'enclos différents. Vous pouvez également débloquer des zones spéciales pour des espèces animales particulières. Pour offrir à vos animaux les meilleures conditions de vie possibles, vous disposez d'un large éventail de possibilités.\nChaque espèce animale nécessite un enclos correspondant à son environnement naturel. Tous ont en commun que chaque type d'enclos peut accueillir des éléments d'aménagement similaires adaptés à l'enclos. Il s'agit des auges, des points d'eau, des abris, des éléments d'enrichissement et des décorations."
 }

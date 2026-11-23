@@ -1,12 +1,6 @@
 {
-  "title": "Preguntas frecuentes del juego",
-  "intro": "Guía para nuevos jugadores: consejos profesionales de jugadores veteranos de Zoo 2.",
-
-  "summary_title": "Resumen del juego",
-  "summary_body": "Aunque existen muchos estilos de juego diferentes, el juego gira principalmente en torno a coleccionar y criar animales y cuidar tu zoo. También puedes diseñar y decorar a lo largo del camino y disfrutar de los muchos eventos especiales y premios cada mes. Puedes conectarte con otros jugadores y unirte a ellos en un gremio para ganar recompensas. Hay muchas misiones que completar y objetos que coleccionar, pero muchos jugadores coinciden en que la paciencia es la clave para jugar a largo plazo.",
-
-  "free_stuff_title": "Conseguir cosas gratis",
-  "free_stuff_body": "Este juego no requiere que los jugadores gasten dinero real para progresar o disfrutarlo, pero es una opción si deseas ventajas adicionales y quieres avanzar más rápido. Upjers pone muchos animales y moneda a disposición de los jugadores activos de forma gratuita. Si te gusta coleccionar todo en su lanzamiento, progresar más rápidamente, o simplemente quieres darte el capricho de algunos animales especiales que realmente te gusten, asegúrate de leer los consejos sobre cómo comprar y gastar diamantes. Los usuarios de la aplicación también pueden activar los Anuncios de Oferta Bonus (opcional) para ganar bonificaciones, descuentos o reducciones de temporizador sin gastar dinero.",
+  "title": "Juego",
+  "summary_body": "Aunque existen muchos estilos de juego diferentes, el juego gira principalmente en torno a coleccionar y criar animales y cuidar tu zoo. También puedes diseñar y decorar a lo largo del camino y disfrutar de los muchos eventos especiales y premios cada mes. Puedes conectarte con otros jugadores y unirte a ellos en un gremio para ganar recompensas. Hay muchas misiones que completar y objetos que coleccionar, pero muchos jugadores coinciden en que la paciencia es la clave para jugar a largo plazo. Este juego no requiere que los jugadores gasten dinero real para progresar o disfrutarlo, pero es una opción si deseas ventajas adicionales y quieres avanzar más rápido. Upjers pone muchos animales y moneda a disposición de los jugadores activos de forma gratuita. Los usuarios de la app también pueden activar los Anuncios de Oferta Bonus (opcional) para ganar bonificaciones, descuentos o reducciones de temporizador sin gastar dinero.",
 
   "levelup_title": "Subir de nivel",
   "levelup_body": "Puedes subir de nivel ganando XP (puntos de experiencia). Recibes XP al limpiar tu zoo, ayudar a tus amigos, criar, completar logros y misiones, y colocar nuevas decoraciones, recintos o animales. Subir de nivel otorga recompensas que a menudo te ayudan a completar una misión. Para subir de nivel más rápido, coloca muchos animales que generen mucho XP en tu zoo. Puedes alimentarlos con comida azul de monedas para recibir el doble de XP. Activa un bono de XP de recaudación de fondos del club de hasta el 10% según el club. Si juegas en la aplicación móvil, mira un anuncio para activar un aumento de XP del 10% durante una hora hasta cada 24 horas — se aplica a todo el XP generado, incluyendo ayudar a amigos, criar y colocar nuevos objetos. Como colocar nuevos objetos da XP, comprar objetos y/o completar piezas de rompecabezas y colocarlas puede proporcionar más XP.",
@@ -76,7 +70,8 @@
   "puzzles_title": "Piezas de rompecabezas",
   "puzzles_body": "Si es posible, espera una Venta de Cofres antes de desechar piezas de rompecabezas o completar artículos. En general, es una buena práctica en niveles bajos completar la primera pieza de rompecabezas del animal de diamantes que obtengas con tickets para que tu segunda pieza pueda usarse para un segundo animal. Usuarios de la aplicación: activar los Anuncios de Oferta Bonus ofrece la opción de completar rompecabezas con un 10% de descuento viendo un anuncio. Para jugadores en el nivel 90+, la región Aviary es una buena inversión para tickets — cada día después de que se reinicia el calendario de inicio de sesión, 20 plumas caen del cielo y cada pluma tiene la posibilidad de dar una pieza de rompecabezas del aviario.",
 
-  "scrap_title": "Qué desechar",
+  "scrap_title": "Vender",
+  "scrap_title2": "Vender",
   "scrap_body": "Al desechar artículos, en general es una buena práctica en niveles bajos desechar solo artículos de monedas. Las excepciones incluyen el Mountain Gorilla (no disponible en la tienda) y algunos animales que solo se desbloquean en niveles muy altos, como el African Buffalo o el Argali. Intenta no abrir un cofre de diamantes a menos que tengas suficientes llaves (4) para obtener el animal garantizado que necesitas si tienes pocos cofres.",
 
   "no_scrap_title": "Qué NO desechar",

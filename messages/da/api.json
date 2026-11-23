@@ -5,7 +5,9 @@
     "invalid_id": "Ugyldigt ID",
     "unauthorized": "Ikke autoriseret",
     "not_found": "Ikke fundet",
-    "server_error": "Der opstod en serverfejl"
+    "server_error": "Der opstod en serverfejl",
+    "save_error": "Fejl ved gemning",
+    "required_fields": "Påkrævede felter mangler"
   },
   "animal": {
     "required_fields": "Navn (DE) og indhegningstype er obligatoriske felter.",

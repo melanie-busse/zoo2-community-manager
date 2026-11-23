@@ -62,5 +62,6 @@
     "water_hole": "Waterpoel",
     "shelter_level": "Stalsniveau {level}",
     "games": "Verrijkingsitems"
-  }
+  },
+  "description": "In de dierentuin tref je vele verschillende verblijfstypes aan. Daarnaast kun je speciale gebieden ontgrendelen voor bepaalde diersoorten. Om je dieren de best mogelijke leefomstandigheden te bieden, beschik je over een brede keuze aan mogelijkheden.\nElke diersoort heeft een verblijf nodig dat overeenkomt met zijn natuurlijke omgeving. Gemeenschappelijk is dat elk verblijfstype vergelijkbare, bij het verblijf passende inrichtingsobjecten kan bevatten. Dit zijn voederbakken, drinkplaatsen, schuilplaatsen, speelgelegenheid en decoraties."
 }

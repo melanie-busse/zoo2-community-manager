@@ -5,6 +5,7 @@
   "roles_title": "Rôles des membres du club",
   "roles_body": "Il existe trois rôles différents : Président, Ministre et Membre du club. Le Président est propriétaire du club et dispose de la plus grande autorité administrative. Les Ministres peuvent faire presque tout ce que le président peut faire, mais ne peuvent pas modifier la description du club ni révoquer le Président. Les Membres du club peuvent faire des dons et discuter. Les nouveaux membres doivent attendre sept jours avant d'obtenir la possibilité de faire des dons aux concours ou aux collectes de fonds — tous les autres avantages et capacités sont disponibles immédiatement.",
 
+  "admin_title": "Administration des membres",
   "roles_table_ability": "Capacité",
   "roles_table_president": "Président",
   "roles_table_minister": "Ministre",
@@ -73,6 +74,7 @@
   "contests_title": "Concours",
   "contests_body": "Les clubs peuvent participer à des concours hebdomadaires qui offrent aux membres des récompenses exclusives et augmentent le niveau du club. Consultez le Contest FAQ pour tous les détails sur le fonctionnement des concours.",
 
+  "club_membership_title": "Rejoindre / quitter un club",
   "leaving_title": "Quitter un club",
   "leaving_body": "Pour quitter un club, assurez-vous de ne pas être le président du club. Accédez à l'onglet Membres du club, sélectionnez votre nom et cliquez sur le bouton rouge « Quitter le club ». Si vous êtes le président, vous devez soit confier la présidence à un autre membre, soit supprimer tous les membres au préalable. Si vous êtes le seul membre, quitter le club le supprimera.",
 
