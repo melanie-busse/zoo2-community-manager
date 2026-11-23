@@ -72,32 +72,20 @@
     "wiki_contest": "Wettbewerbe",
     "wiki_academy": "Akademie",
 
-    "faq_visitor": "Besucher FAQ",
-    "wiki_advent_calendar": "Adventskalender",
     "wiki_animal": "Tiere",
-    "wiki_bulldozer": "Bulldozer",
     "wiki_conservation_week": "Tierschutzwoche",
 
-    "wiki_friends": "Freunde",
-    "wiki_ice_cream_vendor": "Eiswagen",
-    "wiki_login_rewards": "Tägliche Belohnungen",
     "wiki_quests": "Quests",
     "wiki_season_pass": "Saisonpass",
-    "wiki_super_deals": "Super Deals",
-    "wiki_vip_animals": "VIP- & Premium-Tiere",
-    "wiki_video_ads": "Video-Anzeigen",
     "wiki_retro_chests": "Retro-Truhen",
-    "wiki_season_pass_history": "Saisonpass-Verlauf",
-    "wiki_sparkling_animals": "Glitzertiere",
-    "wiki_terrain_editor": "Gelände-Editor",
     "chests": "Truhen",
     "chests_overview": "Übersicht",
     "chests_create": "Hinzufügen",
-    "premium_vip_animals": "Premium- & VIP-Tiere",
     "premium_animals": "Premium-Tiere",
     "premium_animals_create": "Anlegen",
     "vip_animals": "VIP-Tiere",
-    "vip_animals_create": "Anlegen"
+    "vip_animals_create": "Anlegen",
+    "premium_vip_animals": "Premium-VIP-Tiere"
   },
   "inventory_collections": "Sammelalbum"
 }

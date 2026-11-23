@@ -258,34 +258,16 @@ export const navConfig: NavItem[] = [
     requiresAuth: false,
     subMenu: [
       { labelKey: "wiki_game", href: "/wiki/game", requiresAuth: false },
+      { labelKey: "wiki_animal", href: "/wiki/animal", requiresAuth: false },
+      { labelKey: "wiki_club", href: "/wiki/club", requiresAuth: false },
+      { labelKey: "wiki_contest", href: "/wiki/contest", requiresAuth: false },
       { labelKey: "wiki_currency", href: "/wiki/currency", requiresAuth: false },
       { labelKey: "wiki_chests", href: "/wiki/chests", requiresAuth: false },
       { labelKey: "wiki_quests", href: "/wiki/quests", requiresAuth: false },
-      { labelKey: "wiki_club", href: "/wiki/club", requiresAuth: false },
-      { labelKey: "wiki_contest", href: "/wiki/contest", requiresAuth: false },
       { labelKey: "wiki_academy", href: "/wiki/academy", requiresAuth: false },
 
-      { labelKey: "faq_visitor", href: "/contest/visitor", requiresAuth: false },
-
-      { labelKey: "wiki_advent_calendar", href: "/wiki/advent-calendar", requiresAuth: false },
-      { labelKey: "wiki_animal", href: "/wiki/animal", requiresAuth: false },
-      { labelKey: "wiki_bulldozer", href: "/wiki/bulldozer", requiresAuth: false },
       { labelKey: "wiki_conservation_week", href: "/wiki/conservation-week", requiresAuth: false },
-      { labelKey: "wiki_friends", href: "/wiki/friends", requiresAuth: false },
-      { labelKey: "wiki_ice_cream_vendor", href: "/wiki/ice-cream-vendor", requiresAuth: false },
-      { labelKey: "wiki_login_rewards", href: "/wiki/login-rewards", requiresAuth: false },
-
       { labelKey: "wiki_season_pass", href: "/wiki/season-pass", requiresAuth: false },
-      { labelKey: "wiki_super_deals", href: "/wiki/super-deals", requiresAuth: false },
-      { labelKey: "wiki_vip_animals", href: "/wiki/vip-animals", requiresAuth: false },
-      { labelKey: "wiki_video_ads", href: "/wiki/video-ads", requiresAuth: false },
-      {
-        labelKey: "wiki_season_pass_history",
-        href: "/wiki/season-pass-history",
-        requiresAuth: false,
-      },
-      { labelKey: "wiki_sparkling_animals", href: "/wiki/sparkling-animals", requiresAuth: false },
-      { labelKey: "wiki_terrain_editor", href: "/wiki/terrain-editor", requiresAuth: false },
     ],
   },
 ];

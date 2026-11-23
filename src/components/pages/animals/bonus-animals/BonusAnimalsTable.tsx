@@ -28,8 +28,8 @@ const StyledTable = styled.table`
 const Th = styled.th`
   text-align: left;
   padding: ${({ theme }) => theme.spacing(1)} ${({ theme }) => theme.spacing(2)};
-  border-bottom: 2px solid ${({ theme }) => theme.colors.border ?? "#e0e0e0"};
-  color: ${({ theme }) => theme.colors.textSecondary ?? "#666"};
+  border-bottom: 2px solid ${({ theme }) => theme.colors.ui.border};
+  color: ${({ theme }) => theme.colors.grey[100]};
   font-weight: 600;
   white-space: nowrap;
 `;
@@ -44,11 +44,11 @@ const Tr = styled.tr<TrProps>`
 
   &:hover {
     background-color: ${({ $clickable, theme }) =>
-      $clickable ? (theme.colors.hoverBackground ?? "rgba(0,0,0,0.04)") : "transparent"};
+      $clickable ? theme.colors.ui.overlayLight : "transparent"};
   }
 
   &:not(:last-child) td {
-    border-bottom: 1px solid ${({ theme }) => theme.colors.border ?? "#e0e0e0"};
+    border-bottom: 1px solid ${({ theme }) => theme.colors.ui.border};
   }
 `;
 
@@ -75,7 +75,7 @@ const AnimalImagePlaceholder = styled.div`
   width: 40px;
   height: 40px;
   border-radius: 4px;
-  background: ${({ theme }) => theme.colors.border ?? "#e0e0e0"};
+  background: ${({ theme }) => theme.colors.ui.border};
   flex-shrink: 0;
 `;
 
@@ -83,7 +83,7 @@ const NpcBadge = styled.span`
   font-size: 0.7rem;
   padding: 2px 6px;
   border-radius: 4px;
-  background: ${({ theme }) => theme.colors.primary ?? "#6c757d"};
+  background: ${({ theme }) => theme.colors.primary[500]};
   color: white;
   margin-left: ${({ theme }) => theme.spacing(0.5)};
   vertical-align: middle;
@@ -96,9 +96,9 @@ const ActionButton = styled.a<{ $disabled?: boolean }>`
   font-size: 0.85rem;
   text-decoration: none;
   border: 1px solid ${({ theme, $disabled }) =>
-    $disabled ? (theme.colors.border ?? "#e0e0e0") : (theme.colors.primary ?? "#0070f3")};
+    $disabled ? theme.colors.ui.border : theme.colors.primary[500]};
   color: ${({ theme, $disabled }) =>
-    $disabled ? (theme.colors.textSecondary ?? "#999") : (theme.colors.primary ?? "#0070f3")};
+    $disabled ? theme.colors.grey[100] : theme.colors.primary[500]};
   pointer-events: ${({ $disabled }) => ($disabled ? "none" : "auto")};
   opacity: ${({ $disabled }) => ($disabled ? 0.5 : 1)};
   cursor: ${({ $disabled }) => ($disabled ? "default" : "pointer")};
@@ -113,7 +113,7 @@ const EmptyRow = styled.tr``;
 const EmptyTd = styled.td`
   padding: ${({ theme }) => theme.spacing(3)};
   text-align: center;
-  color: ${({ theme }) => theme.colors.textSecondary ?? "#666"};
+  color: ${({ theme }) => theme.colors.grey[100]};
 `;
 
 export default function BonusAnimalsTable({ entries, onRowClick, editBasePath }: Props) {

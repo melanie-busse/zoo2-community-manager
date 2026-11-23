@@ -318,15 +318,15 @@ const CancelButton = styled.button`
 
 const DeleteButton = styled.button`
   padding: 12px 20px;
-  border: 2px solid ${({ theme }) => theme.colors.error ?? "#c0392b"};
+  border: 2px solid ${({ theme }) => theme.colors.status.errorText};
   border-radius: 10px;
   background: transparent;
   font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
-  color: ${({ theme }) => theme.colors.error ?? "#c0392b"};
+  color: ${({ theme }) => theme.colors.status.errorText};
   &:hover {
-    background: ${({ theme }) => theme.colors.error ?? "#c0392b"};
+    background: ${({ theme }) => theme.colors.status.errorText};
     color: white;
   }
   &:disabled {

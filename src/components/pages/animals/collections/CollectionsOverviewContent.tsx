@@ -69,11 +69,12 @@ export default function CollectionsOverviewContent({
       const inRequirements = c.requirements.some(
         (r) =>
           r.animal?.name?.toLowerCase().includes(term) ||
-          r.specialCoat?.specialcoatstext?.[0]?.name?.toLowerCase().includes(term)
+          r.specialCoat?.specialcoatstext?.[0]?.name?.toLowerCase().includes(term),
       );
       if (!inReward && !inRequirements) return false;
     }
-    if (onlyWithStatue && !c.requirements.some((r) => r.type === "DECORATION" && r.animal)) return false;
+    if (onlyWithStatue && !c.requirements.some((r) => r.type === "DECORATION" && r.animal))
+      return false;
     if (onlyWithDecoration && !c.requirements.some((r) => r.decoration)) return false;
     return true;
   });
@@ -97,6 +98,7 @@ export default function CollectionsOverviewContent({
 
   return (
     <>
+      <DescriptionCard>{t("description")}</DescriptionCard>
       <CollectionsOverviewFilter
         regions={regions}
         selectedRegionId={selectedRegionId}
@@ -128,3 +130,25 @@ export default function CollectionsOverviewContent({
     </>
   );
 }
+
+const DescriptionCard = styled.p`
+  width: 100%;
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e0e0e0;
+  box-sizing: border-box;
+  margin: 0;
+  margin-bottom: 24px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #333;
+  white-space: pre-line;
+
+  @media (max-width: 1023px) {
+    width: calc(100% - 16px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+`;

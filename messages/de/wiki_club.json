@@ -2,9 +2,10 @@
   "title": "Klubs",
   "intro": "Klubs sind spielinterne Zoo-Spielergemeinschaften, die dir helfen können, mehr Inhalte und Belohnungen freizuschalten. Teams von bis zu 18 Mitgliedern treten gegeneinander an, um begehrte Popularitätsstatuen und exklusive Tierfarbvarianten zu gewinnen, die für Sammlungen benötigt werden. Teammitglieder können im Gruppen-Chat kommunizieren, die Hauptzoos voneinander besuchen, an klubweiten Zucht- oder XP-Boost-Events teilnehmen und das Klubemblem auf speziellen Klubdekorationen präsentieren.",
 
-  "roles_title": "Klubmitglieder-Rollen",
+  "roles_title": "Mitgliederrollen",
   "roles_body": "Es gibt drei verschiedene Rollen: Präsident, Minister und Klubmitglied. Der Präsident ist Eigentümer des Klubs und hat die meisten Verwaltungsbefugnisse. Minister können fast alles tun, was der Präsident kann, aber sie können weder die Klubbeschreibung ändern noch den Präsidenten entfernen. Klubmitglieder können spenden und chatten. Neue Mitglieder müssen sieben Tage warten, bevor sie die Möglichkeit erhalten, zu Wettbewerben oder Spendenaktionen beizutragen - alle anderen Vorteile und Funktionen sind sofort verfügbar.",
 
+  "admin_title": "Mitgliederverwaltung",
   "roles_table_ability": "Fähigkeit",
   "roles_table_president": "Präsident",
   "roles_table_minister": "Minister",
@@ -55,7 +56,7 @@
   "shop_col_popularity": "Popularität",
   "shop_col_max": "Maximale Anzahl",
 
-  "club_level_title": "Klubstufen-Übersicht",
+  "club_level_title": "Klubstufen",
   "club_level_body": "Jeder Klub kann aufsteigen, um mehr Mitgliederkapazität, besondere Artikel oder Event-Spendenaktionsfähigkeiten freizuschalten. Die maximale Klubstufe ist 20, aber Klubs schalten ihre maximale Mitgliederkapazität von 18 bei Stufe 8 frei. Klubs verdienen XP durch Teilnahme an Wettbewerben.",
   "club_level_col_level": "Klubstufe",
   "club_level_col_members": "Max. Mitglieder",
@@ -73,6 +74,7 @@
   "contests_title": "Wettbewerbe",
   "contests_body": "Klubs können an wöchentlichen Wettbewerben teilnehmen, die Mitgliedern exklusive Belohnungen geben und die Klubstufe erhöhen. Weitere Informationen zur Funktionsweise von Wettbewerben findest du in der Wettbewerbs-FAQ.",
 
+  "club_membership_title": "Klub bei- /austreten",
   "leaving_title": "Einen Klub verlassen",
   "leaving_body": "Um einen Klub zu verlassen, stelle sicher, dass du nicht der Präsident des Klubs bist. Gehe zum Tab 'Klubmitglieder', wähle deinen Namen und klicke auf die rote Schaltfläche 'Klub verlassen'. Wenn du der Präsident bist, musst du entweder die Präsidentschaft einem anderen Mitglied übertragen oder zuerst alle Mitglieder entfernen. Wenn du das einzige Mitglied bist, wird das Verlassen den Klub löschen.",
 

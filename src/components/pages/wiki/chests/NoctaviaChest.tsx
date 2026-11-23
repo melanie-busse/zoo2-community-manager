@@ -12,8 +12,8 @@ import WikiInfoCard from "@/components/pages/wiki/_elements/WikiInfoCard";
 import WikiTitelParagraph from "@/components/pages/wiki/_elements/WikiTitelParagraph";
 
 export default function NoctaviaChest() {
-  const t = useTranslations("chestsfaq.noctavia");
-  const tChest = useTranslations("chestsfaq");
+  const t = useTranslations("wiki_chests.noctavia");
+  const tChest = useTranslations("wiki_chests");
 
   return (
     <WikiAccordeon title={t("title")} image={"/images/wiki/noctavia_chest.jpg"}>

@@ -19,7 +19,7 @@
   "form_type_vip": "VIP",
   "form_year": "Jahr",
   "form_date_label": "Zeitraum-Bezeichnung",
-  "form_date_label_hint": "z.B. „Januar 2024" oder „1.–15. März 2024"",
+  "form_date_label_hint": "z.B. Januar 2024 oder 1.–15. März 2024",
   "form_start_date": "Startdatum (optional)",
   "form_end_date": "Enddatum (optional)",
   "form_animal_name": "Tiername (wie in der PDF)",

@@ -128,7 +128,18 @@
       "Bash(cmd.exe /c \"dir C:\\\\Users\\\\micro\\\\Downloads\\\\chests /b 2>&1\")",
       "Bash(cmd.exe /c \"echo %USERPROFILE% && dir \\\\\"%USERPROFILE%\\\\Downloads\\\\chests\\\\\" /b\")",
       "Bash(cmd.exe /c \"echo %USERPROFILE%\")",
-      "Bash(powershell.exe -Command \"Get-ChildItem 'C:\\\\Users\\\\micro\\\\Downloads\\\\chests' | Select-Object Name\")"
+      "Bash(powershell.exe -Command \"Get-ChildItem 'C:\\\\Users\\\\micro\\\\Downloads\\\\chests' | Select-Object Name\")",
+      "Bash(find D:Entwicklungzoo2-community-manager -type f -path */wiki/* -name *chest* -o -type f -path */wiki/* -name *boost*)",
+      "Bash(find D:Entwicklungzoo2-community-manager/src -type f -name *nav* -o -name *config*)",
+      "Bash(bash C:/Users/micro/.claude/plugins/cache/claude-plugins-official/superpowers/6.4.2/skills/subagent-driven-development/scripts/sdd-workspace docs/superpowers/plans/2026-11-10-premium-vip-animals.md)",
+      "Bash(bash C:/Users/micro/.claude/plugins/cache/claude-plugins-official/superpowers/6.4.2/skills/subagent-driven-development/scripts/task-start docs/superpowers/plans/2026-11-10-premium-vip-animals.md 1)",
+      "Bash(/c/xampp/mysql/bin/mysql.exe -u root zoo2-community-manager -e \"\nCREATE TABLE IF NOT EXISTS \\\\`premiumvipanimalentry\\\\` \\(\n  \\\\`id\\\\` INT NOT NULL AUTO_INCREMENT,\n  \\\\`type\\\\` ENUM\\('PREMIUM', 'VIP'\\) NOT NULL,\n  \\\\`year\\\\` INT NOT NULL,\n  \\\\`startDate\\\\` DATETIME\\(3\\) NULL,\n  \\\\`endDate\\\\` DATETIME\\(3\\) NULL,\n  \\\\`dateLabel\\\\` VARCHAR\\(191\\) NOT NULL,\n  \\\\`animalId\\\\` INT NULL,\n  \\\\`animalName\\\\` VARCHAR\\(191\\) NOT NULL,\n  \\\\`isNpc\\\\` BOOLEAN NOT NULL DEFAULT false,\n  PRIMARY KEY \\(\\\\`id\\\\`\\),\n  INDEX \\\\`premiumvipanimalentry_type_year_idx\\\\` \\(\\\\`type\\\\`, \\\\`year\\\\`\\),\n  INDEX \\\\`premiumvipanimalentry_animalId_idx\\\\` \\(\\\\`animalId\\\\`\\),\n  CONSTRAINT \\\\`premiumvipanimalentry_animalId_fkey\\\\`\n    FOREIGN KEY \\(\\\\`animalId\\\\`\\) REFERENCES \\\\`animal\\\\`\\(\\\\`id\\\\`\\)\n    ON DELETE SET NULL ON UPDATE CASCADE\n\\) DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;\n\" 2>&1)",
+      "Bash(/c/xampp/mysql/bin/mysql.exe -u root zoo2-community-manager -e \"SHOW TABLES LIKE 'premiumvipanimalentry';\" 2>&1)",
+      "Bash(D:/Entwicklung/zoo2-community-manager/.superpowers/sdd/2026-11-10-premium-vip-animals/progress.md:*)",
+      "Bash(/c/xampp/mysql/bin/mysql.exe -u root zoo2-community-manager -e \"SELECT type, COUNT\\(*\\) as total, SUM\\(animalId IS NOT NULL\\) as matched, SUM\\(isNpc=1\\) as npcs FROM premiumvipanimalentry GROUP BY type;\" 2>&1)",
+      "Bash(echo \"--- $locale ---\")",
+      "Bash(find D:/Entwicklung/zoo2-community-manager/src -name *boost* -o -name *Boost*)",
+      "Bash(bash .superpowers/sdd/scripts/review-package docs/superpowers/plans/2026-11-10-premium-vip-animals.md f388206104e546990a2d802b239337e03d2d420e HEAD)"
     ]
   }
 }

@@ -34,5 +34,8 @@
   "tips_title_diamonds": "Diamantenkosten",
   "tips_body_diamonds": "Bestimmte Quests erfordern das Ausgeben von Diamanten zum Abschließen, wie das Freischalten einer neuen Region oder den Kauf eines bestimmten Gebäudes. Überprüfe die Anforderungen, bevor du eine Quest annimmst, um deine Diamantenausgaben entsprechend zu planen.",
   "tips_title_puzzles": "Puzzleteile",
-  "tips_body_puzzles": "Einige Quests belohnen Puzzleteile, die verwendet werden, um besondere Tiere oder Dekorationen freizuschalten. Sammle die erforderliche Anzahl von Puzzleteilen, um den Belohnungsgegenstand zusammenzusetzen."
+  "tips_body_puzzles": "Einige Quests belohnen Puzzleteile, die verwendet werden, um besondere Tiere oder Dekorationen freizuschalten. Sammle die erforderliche Anzahl von Puzzleteilen, um den Belohnungsgegenstand zusammenzusetzen.",
+
+  "hide_quests_title": "Quests ausblenden",
+  "hide_quests_body": "Klicke auf Opa oben links auf dem Bildschirm. Wähle das Buchsymbol, um aktive und abgeschlossene Quests zu sehen. Scrolle zur unvollständigen Quest, die du ausblenden möchtest. Deaktiviere das Kontrollkästchen unten rechts, um die Quest auszublenden."
 }

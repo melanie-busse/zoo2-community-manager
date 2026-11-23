@@ -18,7 +18,7 @@ import VideoChest from "@/components/pages/wiki/chests/VideoChest";
 import { WikiBulletList } from "@/components/pages/wiki/_elements/WikiBulletList";
 
 export default function WikiChestsContent() {
-  const t = useTranslations("chestsfaq");
+  const t = useTranslations("wiki_chests");
 
   const chestImage: Image = {
     name: "Chest Icon",

@@ -9,7 +9,7 @@ interface WikiAccordeonProps {
 }
 export default function WikiAccordeon({ title, image, children }: WikiAccordeonProps) {
   return (
-    <InfoAccordion title={title} icon={image} iconSize={50}>
+    <InfoAccordion title={title} icon={image} iconSize={65}>
       {children}
     </InfoAccordion>
   );

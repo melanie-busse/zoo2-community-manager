@@ -15,8 +15,8 @@ import { WikiBulletList } from "@/components/pages/wiki/_elements/WikiBulletList
 const SHOP_CARTS: string[] = ["ice-cream-cart", "drink-cart", "snack-cart", "souvenir-cart"];
 
 export default function LegendaryChest() {
-  const t = useTranslations("chestsfaq.legendary");
-  const tChest = useTranslations("chestsfaq");
+  const t = useTranslations("wiki_chests.legendary");
+  const tChest = useTranslations("wiki_chests");
 
   return (
     <WikiAccordeon title={t("title")} image={"/images/wiki/legendary_chest.jpg"}>
@@ -45,9 +45,7 @@ export default function LegendaryChest() {
           <p>{t("shop_carts_body")}</p>
           <WikiBulletList>
             {SHOP_CARTS.map((cartKey) => (
-              <li key={cartKey}>
-                {t(`carts.${cartKey}`)}
-              </li>
+              <li key={cartKey}>{t(`carts.${cartKey}`)}</li>
             ))}
           </WikiBulletList>
         </WikiTitelParagraph>

@@ -28,8 +28,8 @@ const COST_LEVELS: [number, string][] = [
 ];
 
 export default function NormalChest() {
-  const t = useTranslations("chestsfaq.normal");
-  const tChest = useTranslations("chestsfaq");
+  const t = useTranslations("wiki_chests.normal");
+  const tChest = useTranslations("wiki_chests");
 
   return (
     <WikiAccordeon title={t("title")} image={"/images/wiki/normal_chest.jpg"}>

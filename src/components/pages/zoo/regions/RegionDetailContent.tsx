@@ -204,10 +204,7 @@ export default function RegionDetailContent({ region }: RegionDetailContentProps
       )}
 
       {region.shops.length > 0 && (
-        <RegionShopSection
-          regionIdentifier={region.identifier}
-          shops={region.shops}
-        />
+        <RegionShopSection regionIdentifier={region.identifier} shops={region.shops} />
       )}
     </Wrapper>
   );
@@ -250,6 +247,7 @@ const DescriptionCard = styled.p`
   font-size: 0.95rem;
   line-height: 1.6;
   color: #333;
+  white-space: pre-line;
 
   @media (max-width: 1023px) {
     width: calc(100% - 16px);

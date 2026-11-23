@@ -9,7 +9,7 @@ import WikiIntroText from "@/components/pages/wiki/_elements/WikiIntroText";
 import WikiTitelParagraph from "@/components/pages/wiki/_elements/WikiTitelParagraph";
 
 export default function VideoChest() {
-  const t = useTranslations("chestsfaq.video");
+  const t = useTranslations("wiki_chests.video");
 
   return (
     <WikiAccordeon title={t("title")} image={"/images/wiki/video_chest.jpg"}>

@@ -2,11 +2,8 @@
   "title": "Tiere",
   "intro": "Tiere sind natürlich der Grund, warum es einen Zoo gibt. Die Spieler beginnen mit einigen wenigen Haustieren, und im Laufe des Spiels werden weitere Tiere verfügbar. Die meisten Tiere können mit Münzen oder Diamanten gekauft werden. \nBevor ein neues Tier angesiedelt werden kann, müssen die Spieler das entsprechende Gehege bauen. Jedes Tier benötigt ein artspezifisches Gehege und eine bestimmte Menge an Gehegefläche, wobei die maximale Anzahl an Tieren pro Gehege nicht überschritten werden darf. \nDurch das Hinzufügen eines Futtertrogs, einer Tränke und von Spielgeräten zum Gehege erhöht sich der XP-Ertrag um 5 %.\n",
   "animal_package": {
-    "title_package": "Tierpaket-Tausch",
-    "intro_package": "Der Kauf von Diamantpaketen beinhaltet oft exklusive Bonustiere. Spieler erhalten ein oder zwei Premium-Bonustiere beim Kauf von 100+ Diamanten. Beim teuersten Diamantpaket wird ein exklusives VIP-Bonustier oder ein Paar Premium-Bonustiere verschenkt.",
-
-    "bonus_title": "Bonustiere",
-    "bonus_body": "Die Premium-Bonustiere wechseln alle zwei Wochen und die VIP-Bonustiere alle 8 Wochen. Überprüfe Prognosen für aktuelle Mustervorhersagen, wann die Bonustiere wechseln sollten und welche Tiere voraussichtlich aus Truhen-Rotationen übersprungen werden. Einige frühere Tiere werden manchmal erneut angeboten. Upjers ermöglicht es Spielern auch, ein aktuelles Bonustier gegen eine ausgewählte Liste zuvor angebotener Bonustiere zu tauschen.",
+    "title_package": "Bonustiere",
+    "intro_package": "Der Kauf von Diamantpaketen beinhaltet oft exklusive Bonustiere. Spieler erhalten ein oder zwei Premium-Bonustiere beim Kauf von 100+ Diamanten. Beim teuersten Diamantpaket wird ein exklusives VIP-Bonustier oder ein Paar Premium-Bonustiere verschenkt. Die Premium-Bonustiere wechseln alle zwei Wochen und die VIP-Bonustiere alle 8 Wochen. Überprüfe Prognosen für aktuelle Mustervorhersagen, wann die Bonustiere wechseln sollten und welche Tiere voraussichtlich aus Truhen-Rotationen übersprungen werden. Einige frühere Tiere werden manchmal erneut angeboten. Upjers ermöglicht es Spielern auch, ein aktuelles Bonustier gegen eine ausgewählte Liste zuvor angebotener Bonustiere zu tauschen.",
 
     "how_title": "Wie man Bonustiere tauscht",
     "how_step1": "Kaufe ein Diamantpaket, das Bonustiere beinhaltet.",
@@ -31,7 +28,7 @@
   },
   "animal_breeding": {
     "title": "Zucht",
-    "intro": "Die Zucht ermöglicht es dir, Babytiere in deinem Zoo zu produzieren. Mit der richtigen Einrichtung, Boni und dem richtigen Timing kannst du deine Chancen auf besondere Fellfarben maximieren und deinen Zuchtplan optimieren.",
+    "intro": "Die Zucht ermöglicht es dir, Babytiere in deinem Zoo zu produzieren. Mit der richtigen Einrichtung, Boni und dem richtigen Timing kannst du deine Chancen auf besondere Fellfarben maximieren und deinen Zuchtplan optimieren. Du kannst alle Biome im Küsten-Zoo züchten! Nutze den Geländebearbeiter, um den Boden in blaue Kacheln zu ändern, um Grasland-, Ebenen-, Wald-, Berg-, Savanna-, Eis- und Dschungelgehege im Küsten-Zoo zu platzieren. Du kannst alle Biome in dieser Region züchten, nicht nur Wasser.",
 
     "requirements_title": "Voraussetzungen",
     "requirements_body": "Für die Zucht benötigst du: ein erwachsenes Männchen und Weibchen der gleichen Art, einen Zuchtunterstand auf der erforderlichen Stufe, genug Münzen für den Start der Zucht und einen freien Zuchtplatz.",
@@ -81,5 +78,62 @@
 
     "col_region": "Region",
     "col_biome": "Biom"
+  },
+  "super_deals": {
+    "title": "Super-Angebote",
+    "intro": "Super-Angebote (auch als Top-Angebote oder Flash-Sales bezeichnet) sind zeitlich begrenzte Rabattangebote im Zoo 2 Shop. Sie dauern typischerweise 24–72 Stunden und wechseln um die Mittagszeit in Deutschland.",
+    "how_it_works_body": "Super-Angebote erscheinen für eine begrenzte Zeit im Shop. Der häufigste Typ bündelt ein Tierpaar mit einem Gehege, einem Wasserloch und Gehegeobjekten mit einem Rabatt von 39–84 %. Die Rabatte werden einschließlich des Münzen-zu-Diamanten-Umrechnungskurses von 1 Diamant pro 250 Münzen berechnet.",
+
+    "types_title": "Arten von Super-Angeboten",
+    "types_body": "Super-Angebote gibt es in verschiedenen Formen. Der häufigste Typ kombiniert zwei Tiere mit einem Gehege-Paket. Weniger häufige Typen umfassen Farbvarianten-Tiere zum vollen Diamantenpreis, vergünstigte Event-Dekorationen und Tiere aus VIP-, Legendären oder Freundschafts-Truhen.",
+
+    "discontinued_title": "Eingestellte Angebotstypen",
+    "discontinued_body": "Safari-Restaurants und Zoo-Läden waren früher als Super-Angebote verfügbar, wurden jedoch eingestellt. Ihr unbegrenztes Kaufpotenzial verursachte ein Münzenungleichgewicht in der Spielwirtschaft. Diese Artikel sind jetzt über Saisonpass-Belohnungen, das Muschelspiel, Saisonevents und neue Spielregionen verfügbar."
+  },
+  "animal_sparkling": {
+    "title": "Glitzertiere",
+    "intro": "Eine erfolgreiche Zucht einer beliebigen Art oder Variante kann zufällig ein besonderes, glitzerndes Tier derselben Art ergeben. Glitzertiere leuchten in einem glitzernden, violett-glühenden Schein aufgrund ihrer außergewöhnlichen Gesundheit und enthalten eine hohe Popularität. Glitzertiere können nur durch reguläre Zucht erhalten werden und sind äußerst selten.",
+
+    "overview_title": "Übersicht",
+    "overview_body": "Jedes Glitzertier wird auf Level 40 geboren, unabhängig vom Level seiner Eltern. Glitzertiere sind die einzigen Tiere, die ein so hohes Level in deinem Zoo erreichen können. Alle nicht-glitzernden Tiere erreichen ihr maximales Level bei Level 20.",
+
+    "streak_title": "Zucht-Serie",
+    "streak_body": "Die Chance, ein Glitzertier zu erhalten, wird durch deine Zucht-Serie bestimmt — die Anzahl aufeinanderfolgender erfolgreicher Zuchten pro Art. Sobald eine Zucht fehlschlägt, wird die Serie für diese Art auf null zurückgesetzt. Jede Art hat ihre eigene Zucht-Serie, die unten rechts im Zucht-Dialogfeld angezeigt wird. Ob es sich um ein Einzel-, Zwillings- oder Drillingsergebnis handelt, die Sitzung zählt als ein einzelner Versuch.",
+
+    "chances_title": "Glitzer-Chancen",
+    "chances_body": "Je höher die Anzahl aufeinanderfolgender erfolgreicher Zuchten für eine Art, desto größer sind deine Chancen, beim nächsten Zuchtversuch ein Glitzertier zu erhalten. Die Chancen beginnen bei 0,1% bei einer Zucht-Serie von null und steigen auf maximal 1,1% bei einer Zucht-Serie von 10 oder mehr. Jedes einzelne Baby in einem Zwillings- oder Drillingspaar hat seine eigene Chance, als Glitzertier geboren zu werden.",
+
+    "col_streak": "Zucht-Serie",
+    "col_odds": "Chance als Verhältnis",
+    "col_chance": "Chance als Prozent",
+
+    "breeding_with_title": "Zucht mit einem Glitzertier",
+    "breeding_with_body": "Sobald ein Glitzertier aufgewachsen ist, kann es für die Zucht von Level-20-Babys verwendet werden, was dir ermöglicht, Level zu überspringen. Unabhängig vom Level oder der Glitzer-Eigenschaft des anderen Elternteils sollten Babys ein normales Level 20 produzieren, mit einer ultra-seltenen Chance, ein weiteres Glitzer-Level-40-Tier zu erhalten. Glitzertiere erfüllen auch sofort alle Sammlungsziele für die gleiche Art und Farbe, da sie auf Level 40 geboren werden.",
+
+    "donating_title": "Ein Glitzertier spenden",
+    "donating_body": "Wenn du ein Level-40-Glitzertier für einen Klubwettbewerb spendest, gibt das Tier die gleichen Punkte wie sein Level: 400 Klubpunkte, wie auf dem Mitglied-Spendebildschirm angezeigt. Das entspricht dem Spenden von zwei Level-20-Tieren.",
+
+    "glow_title": "Glitzer-Leuchten ausschalten",
+    "glow_body": "Wenn dir die Glitzer-Effekte nicht gefallen, kannst du die Glitzerfunktion in den Spieleinstellungen deaktivieren. Klicke auf das Zahnrad-Symbol unten rechts auf deinem Spielbildschirm, klicke auf den zweiten Einstellungs-Tab, scrolle nach unten und setze ein Häkchen bei \"Glitzertiere als normale Tiere anzeigen\". Dies entfernt jeden Glitzereffekt von deinen Level-40-Tieren."
+  },
+  "animal_petting": {
+    "petting_title": "Tiere streicheln",
+    "petting_body": "Einige Aufgaben erfordern das Streicheln eines Tieres. Klicke auf das Tier und halte es gedrückt, bis die Kamera heranzoomt und kleine Herzen aus dem Tier aufsteigen. Tipps: Aktiviere in den Einstellungen \"Reduzierte Animationen\", damit deine Tiere sich nicht bewegen. Wähle ein größeres Tier, falls die Aufgabe kein bestimmtes Tier angibt. Zoome herein, damit die Tiere größer sind und du ein größeres Ziel hast."
+  },
+  "ice_cream_vendor": {
+    "title": "Eisverkäufer",
+    "intro": "Der Eisverkäufer (ICV) ist ein besonderer NPC, der deinen Zoo regelmäßig besucht und vergünstigte Tiere aus seinem Wagen anbietet. Er ist eine der besten Möglichkeiten, seltene Tiere zu einem reduzierten Preis zu erhalten.",
+
+    "how_it_works_title": "So funktioniert es",
+    "how_it_works_body": "Der Eisverkäufer besucht deinen Zoo ungefähr alle 44 Stunden. Bei seiner Ankunft bietet er bis zu 3 Tiere mit einem Rabatt von 14–40 % auf den normalen Preis an. Du hast 1 Stunde Zeit, deine Einkäufe zu tätigen, bevor er wieder abreist. Der Verkäufer überprüft, welche Tiere du bereits in deinem Zoo platziert hast, und bietet dir keine Tiere an, die du bereits besitzt.",
+
+    "deals_title": "Angebote und Rabatte",
+    "deals_body": "Bei jedem Besuch werden 1 bis 3 Tiere aus seinem Pool angeboten. Die Rabatte reichen von 14 % bis 40 % auf den regulären Kaufpreis. Der rabattierte Preis wird direkt am Wagen des Verkäufers angezeigt. Du kannst alle angebotenen Tiere innerhalb des 1-Stunden-Fensters kaufen.",
+
+    "obtaining_title": "Tiere erhalten",
+    "obtaining_body": "Die beim Eisverkäufer erhältlichen Tiere können auch über andere Quellen bezogen werden, z. B. den Hauptzoo-Shop, spezielle Truhen, den Klubshop, Super-Deals oder das Rettungszentrum. Die folgende Tabelle listet die Tiere in seinem Pool zusammen mit ihren alternativen Quellen auf.",
+
+    "npc_title": "Über den Eisverkäufer",
+    "npc_body": "Der Eisverkäufer ist ein freundlicher NPC-Charakter, der seinen Wagen durch deinen Zoo schiebt. Er erscheint als Benachrichtigung, wenn er ankommt. Tippe auf seinen Wagen, um die aktuelle Auswahl zu sehen. Wenn du ihn verpasst, musst du ungefähr 44 Stunden auf seinen nächsten Besuch warten."
   }
 }

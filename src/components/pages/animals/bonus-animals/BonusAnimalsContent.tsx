@@ -131,7 +131,7 @@ const FilterSelect = styled.select`
 `;
 
 const ErrorMessage = styled.p`
-  color: ${({ theme }) => theme.colors.error ?? "#c0392b"};
+  color: ${({ theme }) => theme.colors.status.errorText};
   padding: ${({ theme }) => theme.spacing(1)} ${({ theme }) => theme.spacing(2)};
   margin: 0 0 ${({ theme }) => theme.spacing(1)};
   font-size: 0.9rem;

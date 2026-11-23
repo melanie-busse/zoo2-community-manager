@@ -1,12 +1,6 @@
 {
-  "title": "Spiel FAQ",
-  "intro": "Einsteiger-Guide: Profi-Tipps von langjährigen Zoo-2-Spielern.",
-
-  "summary_title": "Zusammenfassung des Spiels",
-  "summary_body": "Obwohl es viele verschiedene Spielstile gibt, dreht sich das Spiel hauptsächlich darum, Tiere zu sammeln und zu züchten und deinen Zoo zu pflegen. Du kannst dabei auch gestalten und dekorieren und die vielen Sonderevents und Preise jeden Monat genießen. Du kannst dich mit anderen Spielern verbinden und in einer Gilde zusammenarbeiten, um Belohnungen zu verdienen. Es gibt viele Quests zu erfüllen und Gegenstände zu sammeln, aber viele Spieler sind sich einig, dass Geduld der richtige Weg ist, um dieses Spiel langfristig zu spielen.",
-
-  "free_stuff_title": "Kostenlose Sachen verdienen",
-  "free_stuff_body": "Dieses Spiel erfordert kein echtes Geld, um voranzukommen oder es zu genießen, aber es ist eine optionale Möglichkeit, wenn du extra Vorteile möchtest oder Dinge schneller erreichen willst. Upjers macht viele Tiere und Währungen für engagierte Spieler kostenlos verfügbar. App-Nutzer können auch optionale Bonus-Anzeigen aktivieren, um Boni, Rabatte oder Zeitreduktionen zu verdienen, ohne Geld auszugeben.",
+  "title": "Spiel",
+  "summary_body": "Obwohl es viele verschiedene Spielstile gibt, dreht sich das Spiel hauptsächlich darum, Tiere zu sammeln und zu züchten und deinen Zoo zu pflegen. Du kannst dabei auch gestalten und dekorieren und die vielen Sonderevents und Preise jeden Monat genießen. Du kannst dich mit anderen Spielern verbinden und in einer Gilde zusammenarbeiten, um Belohnungen zu verdienen. Es gibt viele Quests zu erfüllen und Gegenstände zu sammeln, aber viele Spieler sind sich einig, dass Geduld der richtige Weg ist, um dieses Spiel langfristig zu spielen. Dieses Spiel erfordert kein echtes Geld, um voranzukommen oder es zu genießen, aber es ist eine optionale Möglichkeit, wenn du extra Vorteile möchtest oder Dinge schneller erreichen willst. Upjers macht viele Tiere und Währungen für engagierte Spieler kostenlos verfügbar. App-Nutzer können auch optionale Bonus-Anzeigen aktivieren, um Boni, Rabatte oder Zeitreduktionen zu verdienen, ohne Geld auszugeben.",
 
   "levelup_title": "Leveln",
   "levelup_body": "Du kannst aufsteigen, indem du XP (Erfahrungspunkte) sammelst. Du erhältst XP durch das Reinigen deines Zoos, das Helfen von Freunden, Züchten, das Erfüllen von Erfolgen und Quests sowie das Platzieren neuer Dekorationen, Gehege oder Tiere. Das Aufsteigen gibt Belohnungen, die oft beim Erfüllen von Quests helfen. Um schneller aufzusteigen, platziere viele Tiere mit hoher XP-Generierung in deinem Zoo. Du kannst ihnen blaues Futter gegen Münzen geben, um doppelte XP zu erhalten. Aktiviere einen Klub-Sammelaktions-XP-Bonus von bis zu 10 %. App-Nutzer können eine Anzeige ansehen, um einmal alle 24 Stunden einen einstündigen 10%-XP-Boost zu aktivieren — er gilt für alle generierten XP.",
@@ -19,49 +13,11 @@
   "focus_tip_4": "Wenn du bei Level 93 noch nur eine oder zwei Regionen hast, erwäge, etwa 24 Stunden vor dem Aufstieg auf Level 94 das Müllsammeln zu stoppen, um genug Müll für eine zeitlich begrenzte Aufgabe zu haben, die 5 Diamanten gibt.",
   "focus_tip_5": "Nach Level 100 schaltest du eine Quest frei, die erfordert, 50 Retro- und 50 Legendäre Truhen zu öffnen, ab dem Zeitpunkt, an dem du die Quest erhältst. Du kannst kostenlose Truhen aus dem Kalender sammeln und während eines Events alle Event-Truhen kaufen.",
 
-  "sales_title": "Verkaufsereignisse",
-  "sales_body": "Zoo 2 hat regelmäßig Angebote auf Unterkünfte/Upgrades, Shops/Upgrades, Dekorationen, Gehege, Diamantentruhen und Landerweiterungen. Manchmal werden Showtiere in verschiedenen Biomen rabattiert. Seltener gibt es Angebote auf Klub-Shop-Artikel, Mülleimer/Toiletten und Gebäude/Regionsfreischaltungen. Angebote reichen generell von 30–50 % Rabatt.",
+  "scrap_title": "Verkaufen",
+  "scrap_title2": "Verkaufen",
+  "scrap_body": "Beim Verkaufen ist es generell beste Praxis auf niedrigeren Levels, nur Münzartikel zu verkaufen. Ausnahmen sind der Berggorilla (nicht im Shop erhältlich) und einige Tiere, die nur auf sehr hohen Levels freischaltbar sind, wie der Afrikanische Büffel oder der Argali. Versuche, keine Diamantentruhe zu öffnen, außer du hast genug Schlüssel (4), um das benötigte Tier zu garantieren.",
 
-  "land_title": "Land kaufen",
-  "land_body": "Warte auf Landverkäufe, um 33–50 % Rabatt beim Kauf von Grundstücken zu erhalten. Priorisiere den Kauf von Münzland und plane für die wenigen Diamantengrundstücke, die du zum Verbinden benötigst. Nur Shops und Gehege müssen auf einem verbundenen Weg liegen. Gehege mit Tieren können von einem Weg auf ein nicht verbundenes Grundstück verschoben werden und erzeugen weiterhin XP — aber du erhältst keine Beliebtheitspunkte für nicht verbundene Gehege. Das Freischalten bestimmter Regionen kann dir mehr Münzland zum Kauf bieten. Du kannst den Küsten-Zoo kaufen, um mehr Land für alle Zoo-Gehege sowie Wassergehege zu erhalten (du benötigst zuerst den Geländebearbeiter, um den Boden in blaue Kacheln zu ändern).",
-
-  "seasonal_title": "Saisonale Events",
-  "seasonal_body": "Spare deine Münzen für saisonale Events, damit du alle Preise ohne Diamantenausgaben erhältst. Der Kaufen-Sammeln-Verkaufen-Trick gibt Event-Währung im Austausch für deine Münzen.",
-
-  "season_pass_title": "Season Pass",
-  "season_pass_body": "Mache das tägliche Quiz, indem du auf den Pinguin oben links auf deinem Bildschirm klickst und dann \"Quiz\" auswählst. Beantworte 5 Fragen richtig, um täglich bis zu 350 Season-Pass-XP zu verdienen. Es gibt keine Strafe für falsche Antworten. Erfülle die wöchentlichen Aufgaben für mehr XP. Sie werden jeden Donnerstag zurückgesetzt.",
-
-  "conservation_title": "Conservation Week",
-  "conservation_body": "Züchte und entlasse bestimmte Event-Tiere die ganze Woche lang für die Chance, Konservierungsstatuen-Dekorationen, Profilitel und vor allem Diamanten zu gewinnen! Erfülle Quests für mehr Punkte und Preise. Die gesamte Zoo-2-Gemeinschaft kann auch extra Preise einschließlich Diamanten verdienen, indem sie gemeinsam Punkte sammelt.",
-
-  "calendar_title": "Kalender",
-  "calendar_body": "Ein Anmeldebelohnungskalender gibt tägliche Preise. Wenn du ein Zuchtpaar der belohnten Tiere möchtest, prüfe, wie viele Puzzleteile des Tieres du für den Monat bekommst. Vervollständige dein erstes Tier mit Tickets, bevor du dein letztes Puzzlestück erhältst, damit du das zweite Tier bei einem Truhenverkauf vervollständigen kannst. Der Dezemberkalender funktioniert etwas anders — du musst jeden Tag manuell auf die Türpreis-Tür klicken.",
-
-  "friends_title": "Freunden helfen",
-  "friends_body": "Du kannst auf den \"Springe zu\"-Schnellzugriffsbutton unten in deinem Freundeshilfe-Spiel klicken, um die nächste Krähe, das nächste Kind oder das nächste Tier sofort zu finden. Nutze soziale Medien, um aktive tägliche Helfer zu finden und mehr Freundschaftstruhen zu erhalten. Sie brauchen nur deine Support-ID (in den Einstellungen zu finden). App-Nutzer können auch eine Anzeige ansehen oder einen Diamanten bezahlen, um einem Freund zu helfen, anstatt das Mini-Spiel zu spielen.",
-
-  "animals_title": "Tiere",
-  "animals_body": "Es gibt Hunderte von Tierarten im Spiel. Einige werden für Sammlungen, Wettbewerbe und Quests benötigt. Andere sind Event-Tiere, Premium-Tiere, VIP-Tiere und Truhen-Tiere. Du kannst einige Tiere aus Puzzleteilen in Truhen, dem Kalender, einem Event oder dem Preisrad kostenlos bekommen. Die meisten Tiere werden mit genug Geduld kostenlos im Spiel verfügbar — Bonus-Tiere, die mit einem Echtgeld-Diamantenkauf angeboten werden, brauchen in der Regel bis zu drei Jahre, um in einen kostenlosen Erhältlichkeits-Zyklus zu gelangen.",
-
-  "free_mate_title": "Zweites Tier kostenlos erhalten",
-  "free_mate_body": "Beim Kauf oder anderweitigen Erhalten von Tieren aus dem Tiershop liefern einige ein kostenloses Gegenstück als Quest-Belohnung nach dem Platzieren des ersten Tieres. Bekannte Liste (möglicherweise nicht vollständig): Okapi, Gewöhnlicher Strauß, Netzgiraffe, Amerikanischer Bison, Steppenzebra, Goldfisch (Aquarium), Kaiserskorpion (Terrarium), Riffmanta (Küsten-Zoo).",
-
-  "breeding_title": "Zucht",
-  "breeding_body": "Du kannst Tiere züchten, indem du ein Männchen und ein Weibchen in ein Gehege mit der erforderlichen aufgerüsteten Unterkunft und einem verfügbaren Zuchtplatz stellst. Zwei Level-1-Tiere ergeben ein Level-2-Baby. Nach dem Platzieren in einem Gehege braucht das Baby eine Woche, um aufzuwachsen. Du kannst das Geschlecht eines Tieres ändern, indem du darauf klickst und das Geschlechtssymbol auswählst. Du kannst dieselbe Art gleichzeitig in mehreren Gehegen in jeder Region züchten. Es gibt eine sehr seltene Chance, durch die Zucht eines funkelnden Tieres Level zu überspringen. Um Tiere schneller aufzuleveln, bereite sie für Zwillings-/Drillinge-Zucht-Events vor, indem du die Zuchterfolgswahrscheinlichkeit auf ca. 20 % aufbaust und dann stopps. Um die Zuchterfolgschancen zu erhöhen, tritt einem Klub mit aktivem Zuchtbonus bei (bis zu 10 %), gib im Zuchtzentrum Münzfutter und versetze Tiere in ihre entsprechende Region für Biom-Boni.",
-
-  "oceanside_title": "Küsten-Zoo-Zucht",
-  "oceanside_body": "Du kannst alle Biome im Küsten-Zoo züchten! Nutze den Geländebearbeiter, um den Boden in blaue Kacheln zu ändern, um Grasland-, Ebenen-, Wald-, Berg-, Savanna-, Eis- und Dschungelgehege im Küsten-Zoo zu platzieren. Du kannst alle Biome in dieser Region züchten, nicht nur Wasser.",
-
-  "petting_title": "Tiere streicheln",
-  "petting_body": "Einige Aufgaben erfordern das Streicheln eines Tieres. Klicke auf das Tier und halte es gedrückt, bis die Kamera heranzoomt und kleine Herzen aus dem Tier aufsteigen. Tipps: Aktiviere in den Einstellungen \"Reduzierte Animationen\", damit deine Tiere sich nicht bewegen. Wähle ein größeres Tier, falls die Aufgabe kein bestimmtes Tier angibt. Zoome herein, damit die Tiere größer sind und du ein größeres Ziel hast.",
-
-  "enclosure_resize_title": "Gehegegröße ändern",
-  "enclosure_resize_body": "Du kannst die Größe und Form jedes Geheges für Platzzwecke ändern oder es in eine Dekoration verwandeln. Einige Spieler schneiden sogar Löcher in die Mitte für mehr Dekorationsfläche oder formen Gehege so, dass sie Wörter buchstabieren.",
-
-  "scrap_title": "Was verschrotten",
-  "scrap_body": "Beim Verschrotten ist es generell beste Praxis auf niedrigeren Levels, nur Münzartikel zu verschrotten. Ausnahmen sind der Berggorilla (nicht im Shop erhältlich) und einige Tiere, die nur auf sehr hohen Levels freischaltbar sind, wie der Afrikanische Büffel oder der Argali. Versuche, keine Diamantentruhe zu öffnen, außer du hast genug Schlüssel (4), um das benötigte Tier zu garantieren.",
-
-  "no_scrap_title": "Was NICHT verschrotten",
+  "no_scrap_title": "NICHT Verkaufen",
   "no_scrap_intro": "Gegenstände, die für Quests benötigt werden und die du stattdessen aufbewahren solltest:",
   "no_scrap_decos": [
     "1 Ebenen-Laterne",
@@ -124,12 +80,181 @@
     "Indisches Riesenhörnchen"
   ],
 
-  "academy_tips_title": "Zoo-Akademie-Tipps",
-  "academy_tips_body": "Für Premium-Spieler bietet die Zoo-Akademie viele Vorteile, darunter exklusive Tiere, kürzere Zuchtzeiten, mehr Münzen und mehr XP. Am besten aktivierst du die Akademie während eines Cashback-Verkaufs. Wenn du kein aktives Abonnement hast, kaufe 1 Tag Bronze für 8 Diamanten, um den Verlängerungsrabatt zu aktivieren — verlängern ist viel günstiger als neu zu starten. Wichtiger Frühspieler-Tipp: Du erhältst einen kostenlosen Akademie-Gutschein für ein 7-Tage-Bronze-Abonnement, sobald du Level 10 des Spiels erreichst. Um den vollen Nutzen zu erzielen, warte bis du Madame-Yu-Schriftrollen-Level 14 erreichst, bevor du den Gutschein einlöst.",
+  "bulldozer": {
+    "title": "Bulldozer",
+    "intro": "Der Bulldozer ist ein Dekorations-Auswahlwerkzeug, das ab Level 25 zum Kauf verfügbar ist. Er kann für 50 Diamanten oder 500.000 Münzen freigeschaltet werden und benötigt Energie zum Betrieb. Das Werkzeug kann bis zu 500 Dekorationen auf einmal auswählen, um sie ins Inventar zurückzulegen oder in ihrer beibehaltenen Form über deine aktuelle Zoo-Region zu verschieben.",
 
-  "hide_quests_title": "Quests ausblenden",
-  "hide_quests_body": "Klicke auf Opa oben links auf dem Bildschirm. Wähle das Buchsymbol, um aktive und abgeschlossene Quests zu sehen. Scrolle zur unvollständigen Quest, die du ausblenden möchtest. Deaktiviere das Kontrollkästchen unten rechts, um die Quest auszublenden.",
+    "overview_title": "Übersicht",
+    "overview_body": "Wenn Gegenstände ins Inventar zurückgelegt werden, behalten sie ihre gruppierte Form nicht bei, sondern werden als einzelne Gegenstände gestapelt. Der Bulldozer kann nur Gegenstände aufnehmen, die als Dekorationen klassifiziert sind, wie Pflanzen, Statuen, Toiletten usw. Er kann keine Mülleimer, Wege, Gebäude, Gehege, Gehegedekorationen, NPCs oder Geländeteile aufnehmen.",
 
-  "rocks_title": "Felsen sprengen",
-  "rocks_body": "Der Kujali-Park, eine Savanna-thematische Region für überschüssige Tiere aller Biome aus dem Hauptzoo, enthält zusätzliches Land, das für Diamanten oder Münzen freigeschaltet werden kann. Das Münzland in dieser Region erfordert extra Münzen zum Sprengen von Felsen für spezielle Preise — Puzzleteile für regionsspezifische Dekorationen, Wege, Münzen, XP oder Diamanten sind alle möglichen Preise."
+    "event_title": "Saisonale Event-Dekorationen",
+    "event_body": "Während eines saisonalen Events können die Event-Dekorationen, die Währung generieren, erst nach dem vollständigen Abschluss des gesamten Events mit dem Bulldozer ausgewählt werden.",
+
+    "energy_title": "Energie",
+    "energy_body": "Energie kann mit Diamanten, als Questbelohnungen, als kostenloses Geschenk vom monatlichen Login-Belohnungspfad oder mit dem Glücksrad erhalten werden."
+  },
+  "visitors": {
+    "title": "Besucherlevel",
+    "intro": "Der Besucherlevel ist mit großer Wahrscheinlichkeit der wichtigste Aspekt des Spiels. Der Besucherlevel eines Zoos gibt an, wie viele Besucher gerade in deinen Zoo kommen. Je höher die Zahl, desto mehr Besucher — was natürlich mehr Münzen bedeutet, die nicht nur am Eingangstor, sondern auch in all deinen Shops gesammelt werden. Dein aktueller Besucherlevel wird rechts neben deinem Zoo-Level oben links auf dem Bildschirm angezeigt. Wenn du auf die Besucherlevel-Anzeige tippst, erscheint ein Popup, das deinen Level, die benötigten Besucherpunkte für den nächsten Level sowie Vorschläge zeigt, was deine Besucher gerne in deinem Zoo sehen würden.",
+
+    "modifiers_title": "Besucherlevel-Modifikatoren",
+    "modifiers_intro": "Es gibt viele Faktoren, die den Besucherlevel beeinflussen. Im Gegensatz zum Erfahrungslevel ist der Besucherlevel deines Zoos dynamisch und schwankend. Während die meisten Auswirkungen positiv sind, gibt es auch negative Modifikatoren, die deinen Besucherlevel verringern.",
+
+    "animals_title": "Tiere",
+    "animals_body": "Tiere haben einen großen positiven Einfluss. Im Allgemeinen gilt: Je teurer das Tier, desto mehr Besucherpunkte erhältst du. Es gibt keinen Unterschied zwischen weiblichen und männlichen Tieren. Babytiere haben jedoch einen doppelten Besucherpunkte-Bonus (dieser sinkt auf den normalen Erwachsenen-Wert, wenn das Baby nach 7 Tagen aufwächst). Die Besucherpunkte eines Tieres sinken durch Unzufriedenheit. Tiere ohne Futter, ohne ausreichende Spielzeit oder in einem schmutzigen Gehege haben reduzierte Besucherpunkte. Füttern, Spielen und das Säubern des Geheges stellt die Besucherpunkte wieder vollständig her. Es gibt auch spezielle Gebäude und den Tierpfleger, die Tiere automatisch bei 100 % Glück halten.",
+
+    "decorations_title": "Dekorationen",
+    "decorations_intro": "Dekorationen sind deine wichtigste Möglichkeit, Besucherpunkte hinzuzufügen und zu steigern. Sie müssen nicht auf Wegen platziert werden. Je teurer die Dekoration, desto mehr Punkte werden im Allgemeinen hinzugefügt (Ausnahme: Klub-Shop-Dekorationen kosten mehr, geben aber insgesamt weniger Besucherpunkte). Es gibt verschiedene Arten von Dekorationen:",
+
+    "plants_title": "Pflanzen",
+    "plants_body": "Pflanzen gibt es in verschiedenen Varianten, funktionieren aber für den Besucherlevel gleich. Pflanzen geben für jedes gepflanzte Objekt einen Bonus. Wie Tiere müssen sie jedoch gepflegt werden — Pflanzen verwelken schließlich und ihre Besucherpunkte sinken. Das Gießen der Pflanzen stellt ihren vollen Punktewert wieder her. Es gibt einen Gärtner für Edelsteine, der automatisch eine bestimmte Anzahl von Pflanzen gießt.",
+
+    "enclosure_deco_title": "Gehege-Dekorationen",
+    "enclosure_deco_body": "Gehege-Dekorationen werden innerhalb von Tiergehegen platziert. Sie beeinflussen nicht das Glück des Tieres, liefern aber Beliebtheitspunkte für Besucher. Im Gegensatz zu Pflanzen außerhalb von Gehegen verwelken Gehege-Pflanzdekorationen nicht. Das Gehege muss mit einem Weg verbunden sein, damit sein Inhalt (Tiere und Gehege-Dekorationen) zu deinen Beliebtheitspunkten beiträgt. Nicht verbundene Gehege tragen keine Beliebtheitspunkte bei.",
+
+    "object_deco_title": "Objekt-Dekorationen",
+    "object_deco_body": "Dekorationen außerhalb von Gehegen umfassen alles von Bänken über Brunnen bis hin zu Schildern und Spielplätzen. Sie müssen weder gewartet noch mit einem Weg verbunden werden, um Beliebtheitspunkte zu liefern.",
+
+    "bathrooms_title": "Toiletten",
+    "bathrooms_body": "Toiletten müssen nicht auf Wegen platziert werden, um eine Wirkung zu haben, und müssen nicht gewartet werden.",
+
+    "trash_title": "Müll und Mülleimer",
+    "trash_body": "Müll wird in deinem Zoo abgelegt, wenn es nicht genug Mülleimer gibt, die Besucher auf Wegen erreichen können. Mülleimer geben keinen direkten positiven Besucherbonus, ermöglichen es Besuchern jedoch, Müll dort abzulegen, anstatt ihn auf die Wege zu werfen. Müll auf den Wegen lässt deine Besucher den Zoo schneller verlassen, beeinflusst die Beliebtheitspunkte aber nicht direkt. Es gibt einen Müllmann für Edelsteine, der automatisch eine begrenzte Menge Müll für dich sammelt.",
+
+    "npcs_title": "Besondere Gäste (NPCs)",
+    "npcs_body": "Besondere Gäste (NPCs) laufen auf den Wegen deines Zoos herum. Sie nehmen keinen Platz ein, beeinflussen das Glück der Tiere nicht, müssen nicht gewartet werden und liefern ausschließlich Beliebtheitspunkte für Besucher."
+  },
+  "friends": {
+    "title": "Freunde",
+    "intro": "Spieler können Belohnungen von zwei verschiedenen Arten von Freunden verdienen: neu geworbene Freunde und Spielfreunde. Neu geworbene Freunde sind eingeladene Nutzer, die Zoo 2 noch nie gespielt haben, während Spielfreunde bestehende Spieler sind, deren Konten mit deinem verknüpft werden können.",
+
+    "recruited_title": "Geworbene Freunde",
+    "recruited_body": "Du kannst Belohnungen für das Anwerben neuer Spieler in Zoo 2 mit deinem persönlichen Einladungslink verdienen. Klicke auf den rosa \"Einladen\"-Button in deinem Freunde-werben-Fenster und sende den Link an neue Spieler. Der neue Spieler muss deinen Link verwenden, um das Spiel herunterzuladen und bis zu 5 Ziele zu erfüllen, damit du Freundschaftsmünzen verdienst. Hinweis: Diese Funktion ist für Steam- oder Epic Games-Spieler nicht verfügbar.",
+
+    "objectives_title": "Ziele für geworbene Freunde",
+    "objective_level": "Level 10 erreichen",
+    "objective_animals": "10 Tiere insgesamt im Zoo haben",
+    "objective_diamonds": "Diamanten kaufen",
+    "objective_academy": "Akademie erweitern",
+    "objective_recruit": "Einen weiteren Freund werben",
+
+    "objectives_note": "Jedes abgeschlossene Ziel eines geworbenen Freundes gibt dir 1 Freundschaftsmünze. Wenn ein geworbener Freund dasselbe Ziel zweimal erfüllt, gibt es keine weiteren Münzen.",
+
+    "rewards_title": "Belohnungen für geworbene Freunde",
+
+    "ingame_body": "Spieler können bis zu 16 Spielfreunde haben. Da Freunde bestimmte Belohnungen teilen, ist es sehr vorteilhaft, aktive Spielfreunde zu haben. Hinweis: Als Teil einer Fair-Play-Regelung verstößt es gegen die Upjers-Nutzungsbedingungen, Spielfreunde zu haben, die dieselbe Internetverbindung nutzen.",
+
+    "adding_title": "Freunde hinzufügen",
+    "adding_body": "Um neue Spielfreunde hinzuzufügen, musst du eine Freundschaftsanfrage annehmen oder eine an einen bestehenden Spieler senden. Tippe auf das Freunde-Menü-Symbol und wähle einen freien Freundschaftsplatz, um 12 vorgeschlagene Spieler auf ähnlichem Level zu sehen. Um einen bestimmten Spieler hinzuzufügen, verwende das Suchwerkzeug und gib dessen Support-ID ein.",
+
+    "removing_title": "Freunde entfernen",
+    "removing_body": "Um einen Freundschaftsplatz freizumachen, wähle einen Freund aus und tippe auf den Papierkorb in seinem Informationsbereich. Der Platz wird für 24 Stunden gesperrt, bevor du wieder einladen oder Einladungen annehmen kannst. 16 aktive Freunde zu bekommen und zu halten ist schwierig, und Spieler müssen oft auf andere Wege zurückgreifen, z.B. soziale Netzwerke oder Foren.",
+
+    "zoo_details_title": "Zoo-Details des Freundes",
+    "zoo_details_body": "Wenn du auf einen Freund tippst, siehst du Informationen über seinen Zoofortschritt: gehaltene Zoo-Titel, Anzahl der Parkerweiterungen, Anzahl verschiedener Tierarten, Anzahl der Tiere ab Level 10, Anzahl der Errungenschaften und die Anzahl der platzierten Babytiere, die gerade im Hauptzoo aufwachsen.",
+
+    "helping_title": "Freunden helfen",
+    "helping_body": "Helfen erfordert einen Besuch im Zoo deines Freundes. Tippe auf das Herz in der Freundesliste oder den Hilf-einem-Freund-Button. Helfen schenkt beiden einen Freundschaftsherzpunkt plus XP. Pro gehelfenem Freund erhältst du XP entsprechend dem Zehnfachen deines aktuellen Spiellevels. Du kannst auf den \"Springe zu\"-Schnellzugriffsbutton unten in deinem Freundeshilfe-Spiel klicken, um die nächste Krähe, das nächste Kind oder das nächste Tier sofort zu finden. Nutze soziale Medien, um aktive tägliche Helfer zu finden und mehr Freundschaftstruhen zu erhalten. Sie brauchen nur deine Support-ID (in den Einstellungen zu finden). App-Nutzer können auch eine Anzeige ansehen oder einen Diamanten bezahlen, um einem Freund zu helfen, anstatt das Mini-Spiel zu spielen.",
+
+    "minigames_title": "Hilfs-Minispiele",
+    "minigame_crows": "Krähen vertreiben: 5 Krähen befinden sich in zufälligen Gehegen. Tippe jede Krähe 3 Mal an, um sie zu vertreiben.",
+    "minigame_children": "Kinder trösten: 5 weinende Kinder sind zufällig auf Wegen platziert. Gib jedem Kind einen Luftballon, um es zu trösten.",
+    "minigame_animals": "Tiere einfangen: 10 Tiere laufen zufällig auf den Zoo-Wegen. Fahre mit dem Netz über jedes von ihnen.",
+
+    "skip_title": "Minispiele überspringen",
+    "skip_body": "Du kannst einem oder allen Freunden sofort helfen, indem du Diamanten bezahlst. \"Hilfe überspringen\" kostet 1 Diamant pro Spieler. Die Schaltfläche \"Allen helfen\" kostet 5 Diamanten pro verbliebenem ungehelftem Spieler. App-Nutzer können auch eine Anzeige anschauen, um einem Freund zu helfen (Limit 20 Anzeigen pro 24h).",
+
+    "messaging_title": "Freunde benachrichtigen",
+    "messaging_body": "Das Spiel bietet eine private Chatbox zum Schreiben von Nachrichten an Spielfreunde. Tippe auf den Briefumschlag neben deinem Freund. Wenn eine neue Nachricht eingeht, erscheint eine Benachrichtigung neben dem Freundesymbol. Der Briefumschlag wechselt von grau zu gelb bei ungelesenen Nachrichten. Gesendete Nachrichten können nicht gelöscht oder bearbeitet werden.",
+
+    "levelup_title": "Level-Up-Geschenke",
+    "levelup_body": "Wenn du ein Level aufsteigst, erhalten alle deine Spielfreunde auch das Level-Up-Geschenk, das du auswählst. Du erhältst auch die Level-Up-Geschenke deiner Freunde. Du wählst ein Puzzleteil aus einem zufälligen Satz von 3 aus.",
+
+    "chests_title": "Freundschaftstruhen",
+    "chests_body": "Jedes Mal, wenn du einem Freund hilfst oder von ihm geholfen wirst, erhältst du einen Freundschaftspunkt. Alle 10 Punkte belohnen dich mit einer Freundschaftstruhe, die Puzzleteile für Dekorationen, Gehege und Gehegeausstattung sowie exklusive Freundschaftstiere enthält. Das Maximum sind 32 Punkte pro Tag mit 16 aktiven Freunden (3 Truhen pro Tag). Das Speicherlimit beträgt 5 Truhen.",
+
+    "troubleshooting_title": "Fehlerbehebung",
+    "troubleshooting_body": "Wenn dein Spiel beim Helfen von Freunden ohne Fehlermeldung abbricht, könnte dein Gerät zu wenig RAM haben. Das Laden großer, vollständig animierter Zoos erfordert erheblich Arbeitsspeicher. Versuche folgende Lösungen:",
+
+    "fix_device": "Gerät wechseln: Versuche, Freunden mit einem Gerät mit mehr RAM zu helfen, z.B. einem Laptop oder Desktop-Computer.",
+    "fix_friends": "Freunde wechseln: Entferne Freunde mit sehr großen Zoos (über Level 60) und ersetze sie durch Spieler mit niedrigerem Level und kleineren Zoos, die weniger RAM benötigen.",
+    "fix_settings": "Spieleinstellungen anpassen: Aktiviere \"Reduzierte Animationen\", deaktiviere \"Erweitertes Zoomen\" oder aktiviere \"Bildrate begrenzen\" im zweiten Einstellungs-Tab, um den RAM-Verbrauch zu reduzieren."
+  },
+  "terraineditor": {
+    "title": "Geländeeditor",
+    "intro": "Der Geländeeditor ist ein Bodenbearbeitungswerkzeug, das die allgemeine Landschaft (den Boden) deiner Zooregionen außerhalb von Gehegen verändert. Er kann ab Spiellevel 25 für eine einmalige Gebühr von 500.000 Münzen oder 50 Diamanten freigeschaltet werden.",
+
+    "overview_title": "Übersicht",
+    "overview_body": "Um den Geländeeditor zu betreiben, benötigst du Energie, die du vom Glücksrad oder manchmal vom Login-Belohnungskalender erhalten kannst. Du kannst Energie auch für Diamanten kaufen. Obwohl der Editor für den Spielfortschritt nicht zwingend erforderlich ist, bietet eine einführende Quest eine kleine Belohnung. Spieler auf hohem Level benötigen dieses Werkzeug für die Bürgermeister-Quest \"Landschaftsarchitekt-Zoo\", die ab Spiellevel 110 freigeschaltet wird.",
+
+    "access_title": "Zugang zum Geländeeditor",
+    "access_body": "Der Geländeeditor wird durch Klicken auf das Pinsel-Symbol auf der linken Seite der Inventar-Seitenleiste aufgerufen. Es gibt zwei Landschaftsänderungs-Features: den Geländeeditor (für außerhalb von Gehegen) und den Gehege-Boden-Editor (für innerhalb von Gehegen).",
+
+    "visuals_title": "Gelände-Visualisierungen",
+    "visuals_body": "Jeder Geländetyp ist für bestimmte Biome oder Themen gestaltet: Schnee passt zu Eis-Biomen, Sand zu Savannenbereichen, Stein zu Gebirgs-Biomen, Erde bietet ein natürliches Aussehen, Herbstlaub passt zu Saison- oder Plains-Biomen, Wasser schafft natürliche Teiche und Wald bietet einen Waldbodenbelag."
+  },
+  "video": {
+    "title": "Videoanzeigen",
+    "intro": "Zoo 2 bietet zwei Arten von Videoanzeigen für mobile App-Nutzer: Plakatwand-Anzeigen, die Diamanten verdienen, und Bonusangebots-Anzeigen, die verschiedene Boni, Rabatte oder Timer-Reduzierungen bieten. Browser-Anzeigen sind nur in begrenzten Regionen verfügbar.",
+
+    "billboard_title": "Plakatwand-Anzeigen",
+    "billboard_body": "Eine Plakatwand links vom Haupteingang ermöglicht es einigen Plattformen, kurze Videoanzeigen gegen Diamanten anzusehen. Das Ansehen von 10 Anzeigen erzeugt 1 Diamant bei einer maximalen Verfügbarkeit von 20 Anzeigen in einem 24-Stunden-Zeitraum. Die Verfügbarkeit von Anzeigen kann durch Region, Plattform und andere Faktoren begrenzt sein.",
+
+    "redeeming_title": "Diamanten einlösen",
+    "redeeming_body": "Du kannst Diamanten einlösen, sobald du 10 Anzeigen erreicht hast. Wenn du jedoch 1.000 Anzeigen sparst, bevor du einlöst, gibt das Spiel dir ein 100-Diamanten-Paket-Bonustier. 2.000+ Anzeigen verdienen ein Paar Premium-Tiere mit deiner 200-Diamanten-Einlösung. Das Einlösen von 10.000+ Anzeigen gibt 1.000 Diamanten und ein einzelnes VIP-Tier oder eine andere aktuelle VIP-Angebotswahl. Dieses Bonustier-Feature ist nicht von Upjers garantiert, und vorzeitige Einlösungen können nicht rückgängig gemacht werden.",
+
+    "availability_title": "Anzeigenverfügbarkeit",
+    "availability_body": "Plakatwand-Anzeigen sind auf 20 pro 24-Stunden-Zeitraum begrenzt. Jede Anzeige startet ihren eigenen 24-Stunden-Timer. Sobald das Tageslimit erreicht ist, zeigt ein Timer an, wann weitere Anzeigen verfügbar sind. Geräte, die die App aus dem Google Play Store herunterladen können, sollten generell Anzeigen anbieten.",
+
+    "age_title": "Altersverifikation",
+    "age_body": "Das Spiel fragt nach dem Alter des Spielers, bezogen auf Datenschutzrichtlinien für Werbung. Die Eingabe eines Alters von 12 oder jünger sperrt das Spiel auf dem Gerät mit der Meldung, dass das Spiel nicht für Kinder konzipiert ist. Die Neuinstallation des Spiels sollte die Frage erneut stellen.",
+
+    "tips_title": "Tipps zur Freischaltung der Anzeigenverfügbarkeit",
+    "tips_intro": "Die Verfügbarkeit von Anzeigen hängt am häufigsten mit der Anzeigen-Tracking-Identität zusammen. Wichtig: Derzeit sind Plakatwand-Anzeigen mit der Einstellung für Bonusangebots-Anzeigen verknüpft — stelle sicher, dass du \"Videoangebote nicht anzeigen\" in den Einstellungen entfernst, um alle Anzeigenfunktionen zu aktivieren.",
+    "tip_delay": "VERZÖGERUNG: Warte 5 Sekunden zwischen Anzeigen, bevor du versuchst, eine weitere anzusehen.",
+    "tip_restart": "NEU STARTEN: Manchmal erhöht das einfache Neustarten des Spiels die Anzeigenverfügbarkeit.",
+    "tip_internet": "INTERNET WECHSELN: Versuche, eine andere Internetverbindung oder mobile Daten zu verwenden, um zu sehen, ob Anzeigen verfügbar werden.",
+    "tip_device": "GERÄT WECHSELN: Versuche, Anzeigen auf einem anderen Gerät anzusehen, das mit deiner Support-ID verknüpft ist.",
+    "tip_tracking": "TRACKING ZURÜCKSETZEN: Für Android, Google Ads-ID zurücksetzen. Für iOS, durch Aus- und Einschalten des Trackings zurücksetzen.",
+
+    "ios_tracking_title": "iOS: Tracking erlauben",
+    "ios_tracking_body": "Gehe zu Einstellungen > Datenschutz & Sicherheit > Tracking. Aktiviere \"Apps erlauben, Tracking zu beantragen\", dann aktiviere die App \"Zoo 2\". Starte das Spiel neu. Wenn du dies zum ersten Mal seit der Neuinstallation tust, klicke auf den grünen \"Aktivieren\"-Button beim Anklicken zum Ansehen von Anzeigen.",
+
+    "ios_reset_title": "iOS: Tracking zurücksetzen",
+    "ios_reset_body": "Gehe zu Einstellungen > Datenschutz & Sicherheit > Tracking. Deaktiviere \"Apps erlauben, Tracking zu beantragen\" und bestätige \"Anzeigen auffordern, Tracking zu stoppen\". Aktiviere es dann wieder und aktiviere auch die App \"Zoo 2\". Starte das Spiel neu. Du musst dies möglicherweise jedes Mal wiederholen, wenn Anzeigen nicht mehr verfügbar sind.",
+
+    "android_reset_title": "Android: Google-Werbe-ID zurücksetzen",
+    "android_reset_body": "Gehe zu Einstellungen > Google > Anzeigen. Tippe auf \"Werbe-ID zurücksetzen\" und dann OK. Starte das Spiel neu. Du musst dies möglicherweise jedes Mal wiederholen, wenn Anzeigen nicht mehr verfügbar sind.",
+
+    "bonus_title": "Bonusangebots-Anzeigen",
+    "bonus_body": "Für mobile App-Plattformen können Spieler Video-Bonusangebote in den Spieleinstellungen aktivieren, indem sie das Häkchen bei \"Videoangebote nicht anzeigen\" entfernen. Wichtig: Wenn du beim Einsammeln von Münzen an Kassen auf \"Videoangebote nicht anzeigen\" klickst, werden alle Bonus-Anzeigen wieder deaktiviert. Bonusangebote haben ihr eigenes Limit von bis zu 20 Anzeigen alle 24 Stunden.",
+
+    "col_type": "Typ",
+    "col_offer": "Angebot",
+    "col_limit": "Limit",
+    "col_details": "Details",
+
+    "bonus_notes_title": "Hinweise zu Boni",
+    "xp_bonus_title": "10% XP-Bonus",
+    "xp_bonus_body": "Dieses Feature schaltet 24 Stunden nach der vorherigen Aktivierung frei. Derzeit verknüpft ein Konfigurationsproblem diesen Bonus mit dem Plakatwand-Anzeigen-Timer, sodass einige Spieler möglicherweise warten müssen, bis ihr Plakatwand-Countdown-Timer endet. Das Problem soll in einem zukünftigen Update behoben werden.",
+    "xp_sources_title": "XP-Quellen",
+    "xp_sources_body": "Gehege reinigen, mit Tieren spielen, Tiere füttern, Quests abschließen, neue Gegenstände oder Tiere platzieren, Tiere freilassen, Freunden helfen, Pflanzen gießen, Müll einsammeln, erfolglose Zucht, Babys aufwachsen lassen oder XP von Arbeitern einsammeln.",
+    "fertility_title": "Fruchtbarkeitsbonus",
+    "fertility_body": "Dieser Zucht-Boost kann nur auf aktive Zuchtversuche angewendet werden. Stelle sicher, dass du genug Zeit hast, das Video vollständig anzusehen, bevor die Zucht abgeschlossen ist, da der Bonus sonst nicht angewendet wird und die Anzeige nicht auf dein Limit angerechnet wird.",
+    "video_chests_title": "Videotruhen",
+    "video_chests_body": "Dieses Feature schaltet 24 Stunden nach der vorherigen Aktivierung frei. Du musst außerdem noch genug von deinem 20-Anzeigen-Bonuslimit nach Ablauf der 24-Stunden-Wartezeit übrig haben.",
+
+    "limits_title": "Anzeigenlimits",
+    "limits_body": "Die Limits für Bonusangebots-Anzeigen sind von deinem Plakatwand-Anzeigen-Limit getrennt. Innerhalb eines 24-Stunden-Zeitraums kannst du bis zu 20 Bonusangebots-Anzeigen ansehen. Jede Anzeige startet ihren eigenen 24-Stunden-Timer. Wenn du eine Anzeige nicht abschließt, wird der Bonus nicht angewendet und die Anzeige wird nicht auf dein Limit angerechnet."
+  },
+  "calendar": {
+    "title": "Kalender",
+    "intro": "Melde dich jeden Tag an, um tägliche Belohnungen zu sammeln. Melde dich 25 Tage in einem Monat an, um zwei besondere Puzzleteil-Tiere zu erhalten. An den Tagen 26–31 gibt es jeweils 1–2 Diamanten. Im Dezember ersetzt der Adventskalender die täglichen Anmeldebelohnungen.",
+
+    "how_it_works_title": "So funktioniert es",
+    "how_it_works_body": "Jeden Tag, an dem du das Spiel öffnest, sammelst du eine tägliche Anmeldebelohnung. Die Belohnungen durchlaufen eine monatliche Spur. Wenn du dich 25 Tage im Monat anmeldest, erhältst du beide Puzzleteil-Tiere für diesen Monat. An den Tagen 26 bis 31 gibt es Bonus-Diamanten. Die Belohnungsspur setzt sich zu Beginn eines neuen Monats zurück. Jeden Monat gibt es zwei besondere Tiere (die als Puzzleteile über 25 Anmeldetage verdient werden) und Bonus-Truhen, die unterwegs vergeben werden. ",
+
+    "advent_title": "Dezember & Adventskalender",
+    "advent_body": "Jeden Dezember ersetzt der Adventskalender die tägliche Anmeldebelohnungsspur. Öffne jeden Tag eine neue Tür, um besondere Belohnungen zu sammeln. Verpasste Türen können bis zum 7. Januar für je 3 Diamanten freigeschaltet werden. Im Dezember tippst du auf die Kalenderblase im Spiel, um die Tür des Tages zu finden. Jede Tür ist nur 24 Stunden lang geöffnet, bevor sie sich verschließt. Du hast bis zum 7. Januar des Folgejahres Zeit, verpasste Türen für 3 Diamanten pro Tür freizuschalten."
+  }
 }

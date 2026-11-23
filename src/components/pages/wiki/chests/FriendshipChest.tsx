@@ -18,8 +18,8 @@ const FRIENDSHIP_ANIMALS: [string, "rare" | "epic" | "legendary", string][] = [
 ];
 
 export default function FriendshipChest() {
-  const t = useTranslations("chestsfaq.friendship");
-  const tChest = useTranslations("chestsfaq");
+  const t = useTranslations("wiki_chests.friendship");
+  const tChest = useTranslations("wiki_chests");
 
   return (
     <WikiAccordeon title={t("title")} image={"/images/wiki/friendship_chest.jpg"}>

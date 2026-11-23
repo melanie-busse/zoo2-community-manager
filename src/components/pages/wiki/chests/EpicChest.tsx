@@ -10,8 +10,8 @@ import WikiInfoCard from "@/components/pages/wiki/_elements/WikiInfoCard";
 import WikiTitelParagraph from "@/components/pages/wiki/_elements/WikiTitelParagraph";
 
 export default function EpicChest() {
-  const t = useTranslations("chestsfaq.epic");
-  const tChest = useTranslations("chestsfaq");
+  const t = useTranslations("wiki_chests.epic");
+  const tChest = useTranslations("wiki_chests");
 
   return (
     <WikiAccordeon title={t("title")} image={"/images/wiki/epic_chest.jpg"}>
