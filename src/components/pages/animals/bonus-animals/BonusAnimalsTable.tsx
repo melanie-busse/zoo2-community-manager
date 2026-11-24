@@ -20,6 +20,48 @@ interface Props {
   onDelete?: (id: number) => void;
 }
 
+function formatPeriod(
+  startDate: Date | string | null,
+  endDate: Date | string | null,
+  locale: string,
+): string {
+  if (!startDate) return "–";
+
+  const start = new Date(startDate);
+  if (Number.isNaN(start.getTime())) return "–";
+
+  const dateFormatter = new Intl.DateTimeFormat(locale, {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+  });
+
+  if (!endDate) {
+    return dateFormatter.format(start);
+  }
+
+  const end = new Date(endDate);
+  if (Number.isNaN(end.getTime())) {
+    return dateFormatter.format(start);
+  }
+
+  // Falls startDate und endDate denselben Tag betreffen, nur ein Datum anzeigen
+  if (start.toDateString() === end.toDateString()) {
+    return dateFormatter.format(start);
+  }
+
+  // Falls beide Daten im selben Jahr liegen, das Jahr erst am Ende ausgeben
+  if (start.getUTCFullYear() === end.getUTCFullYear()) {
+    const dayMonthFormatter = new Intl.DateTimeFormat(locale, {
+      day: "2-digit",
+      month: "2-digit",
+    });
+    return `${dayMonthFormatter.format(start)} – ${dateFormatter.format(end)}`;
+  }
+
+  return `${dateFormatter.format(start)} – ${dateFormatter.format(end)}`;
+}
+
 export default function BonusAnimalsTable({ entries, onRowClick, editBasePath, onDelete }: Props) {
   const t = useTranslations("animals_bonus");
   const locale = useLocale();
@@ -59,12 +101,9 @@ export default function BonusAnimalsTable({ entries, onRowClick, editBasePath, o
           ) : (
             entries.map((entry) => {
               const isClickable = entry.animalId !== null && !entry.isNpc;
-              const labelIncludesYear = entry.dateLabel.includes(String(entry.year));
-              const periodText = labelIncludesYear
-                ? entry.dateLabel
-                : `${entry.dateLabel} ${entry.year}`;
-
-              const displayName = entry.animalName;
+              const periodText = formatPeriod(entry.startDate, entry.endDate, locale);
+              const displayName = entry.animal?.localeName || entry.identifier;
+              const biomeName = entry.animal?.biome?.localeName;
 
               return (
                 <ClickableRow
@@ -94,6 +133,7 @@ export default function BonusAnimalsTable({ entries, onRowClick, editBasePath, o
                           <AnimalName>{displayName}</AnimalName>
                           {entry.isNpc && <NpcBadge>{t("npc_badge")}</NpcBadge>}
                         </AnimalNameRow>
+                        {biomeName && <BiomeName>{biomeName}</BiomeName>}
                       </AnimalInfo>
                     </AnimalCell>
                   </td>

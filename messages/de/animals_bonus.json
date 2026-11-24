@@ -4,6 +4,8 @@
   "vip_title": "VIP-Tiere",
   "vip_intro": "VIP-Bonustiere werden mit den meisten Diamantpaketen ab 1000 Diamanten vergeben. Das VIP-Tier wechselt alle 8 Wochen dienstags.",
   "filter_animal_name": "Tiername",
+  "filter_identifier": "Bezeichnung",
+  "form_identifier": "Bezeichnung (interne Kennung)",
   "filter_year": "Jahr",
   "filter_all_years": "Alle Jahre",
   "col_period": "Zeitraum",
@@ -37,5 +39,7 @@
   "validation_year": "Bitte ein gültiges Jahr eingeben.",
   "validation_required": "Bitte alle Pflichtfelder ausfüllen.",
   "action_edit": "Bearbeiten",
-  "nav_create": "Anlegen"
+  "nav_create": "Anlegen",
+  "results_count": "<b>{shown}</b> von <b>{total}</b> Einträgen",
+  "confirm_delete": "Eintrag wirklich löschen?"
 }

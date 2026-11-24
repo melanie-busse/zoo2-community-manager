@@ -4,6 +4,7 @@
   "vip_title": "Animaux VIP",
   "vip_intro": "Les animaux bonus VIP sont des animaux exclusifs reçus avec la plupart des paquets de 1000+ diamants. L'animal VIP change toutes les 8 semaines un mardi.",
   "filter_animal_name": "Nom de l'animal",
+  "filter_identifier": "Identifiant",
   "filter_year": "Année",
   "filter_all_years": "Toutes les années",
   "col_period": "Période",
@@ -17,6 +18,7 @@
   "form_type": "Type",
   "form_type_premium": "Premium",
   "form_type_vip": "VIP",
+  "form_identifier": "Identifiant (étiquette interne)",
   "form_year": "Année",
   "form_date_label": "Libellé de période",
   "form_date_label_hint": "p. ex. \"Janvier 2024\" ou \"1–15 mars 2024\"",
@@ -37,5 +39,7 @@
   "validation_year": "Veuillez entrer une année valide.",
   "validation_required": "Veuillez remplir tous les champs obligatoires.",
   "action_edit": "Modifier",
-  "nav_create": "Ajouter"
+  "nav_create": "Ajouter",
+  "results_count": "<b>{shown}</b> sur <b>{total}</b> entrées",
+  "confirm_delete": "Vraiment supprimer cette entrée ?"
 }

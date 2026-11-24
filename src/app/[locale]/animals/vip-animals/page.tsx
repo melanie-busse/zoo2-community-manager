@@ -16,7 +16,7 @@ export default async function VipAnimalsPage({
 
   const [t, { entries, total }, availableYears] = await Promise.all([
     getTranslations({ locale, namespace: "animals_bonus" }),
-    getPremiumVipAnimals(PremiumVipType.VIP, { page: 1, pageSize: 25 }),
+    getPremiumVipAnimals(PremiumVipType.VIP, { page: 1, pageSize: 25 }, locale),
     getAvailableYears(PremiumVipType.VIP),
   ]);
 

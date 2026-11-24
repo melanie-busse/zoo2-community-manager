@@ -4,6 +4,7 @@
   "vip_title": "VIP-dyr",
   "vip_intro": "VIP-bonusdyr gives med de fleste diamantpakker på 1000+ diamanter. VIP-dyret skifter hver 8. uge på en tirsdag.",
   "filter_animal_name": "Dyrenavn",
+  "filter_identifier": "Betegnelse",
   "filter_year": "År",
   "filter_all_years": "Alle år",
   "col_period": "Periode",
@@ -17,6 +18,7 @@
   "form_type": "Type",
   "form_type_premium": "Premium",
   "form_type_vip": "VIP",
+  "form_identifier": "Betegnelse (intern etiket)",
   "form_year": "År",
   "form_date_label": "Periodemærkat",
   "form_date_label_hint": "f.eks. \"Januar 2024\" eller \"1.–15. marts 2024\"",
@@ -37,5 +39,7 @@
   "validation_year": "Indtast venligst et gyldigt år.",
   "validation_required": "Udfyld venligst alle påkrævede felter.",
   "action_edit": "Rediger",
-  "nav_create": "Tilføj"
+  "nav_create": "Tilføj",
+  "results_count": "<b>{shown}</b> af <b>{total}</b> poster",
+  "confirm_delete": "Vil du virkelig slette denne post?"
 }

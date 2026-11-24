@@ -25,6 +25,7 @@ export async function GET(request: Request) {
   }
 
   const type = typeParam as PremiumVipType;
+  const locale = searchParams.get("locale") || "de";
   const animalName = searchParams.get("animalName") || undefined;
   const yearParam = searchParams.get("year");
   const year = yearParam ? parseInt(yearParam, 10) : undefined;
@@ -33,7 +34,7 @@ export async function GET(request: Request) {
 
   try {
     const [result, availableYears] = await Promise.all([
-      getPremiumVipAnimals(type, { animalName, year, page, pageSize }),
+      getPremiumVipAnimals(type, { animalName, year, page, pageSize }, locale),
       getAvailableYears(type),
     ]);
 
@@ -64,17 +65,15 @@ export async function POST(request: Request) {
     }
 
     const body = await request.json();
-    if (!body.type || !VALID_TYPES.includes(body.type) || !body.year || !body.dateLabel || !body.animalName) {
+    if (!body.type || !VALID_TYPES.includes(body.type) || !body.identifier) {
       return NextResponse.json({ message: t("errors.required_fields") }, { status: 400 });
     }
 
     const result = await createEntry({
       type: body.type,
-      year: parseInt(body.year, 10),
-      dateLabel: body.dateLabel,
+      identifier: body.identifier,
       startDate: body.startDate ?? null,
       endDate: body.endDate ?? null,
-      animalName: body.animalName,
       animalId: body.animalId ?? null,
       isNpc: body.isNpc ?? false,
     });
@@ -110,17 +109,15 @@ export async function PUT(request: Request) {
     if (isNaN(id)) {
       return NextResponse.json({ message: t("errors.required_fields") }, { status: 400 });
     }
-    if (!body.type || !VALID_TYPES.includes(body.type) || !body.year || !body.dateLabel || !body.animalName) {
+    if (!body.type || !VALID_TYPES.includes(body.type) || !body.identifier) {
       return NextResponse.json({ message: t("errors.required_fields") }, { status: 400 });
     }
 
     const result = await updateEntry(id, {
       type: body.type,
-      year: parseInt(body.year, 10),
-      dateLabel: body.dateLabel,
+      identifier: body.identifier,
       startDate: body.startDate ?? null,
       endDate: body.endDate ?? null,
-      animalName: body.animalName,
       animalId: body.animalId ?? null,
       isNpc: body.isNpc ?? false,
     });

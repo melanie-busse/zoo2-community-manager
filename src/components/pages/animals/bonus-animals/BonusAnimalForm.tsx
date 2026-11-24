@@ -37,11 +37,9 @@ export default function BonusAnimalForm({ animals, initialData, defaultType, mod
   const [type, setType] = useState<"PREMIUM" | "VIP">(
     (initialData?.type as "PREMIUM" | "VIP") ?? defaultType,
   );
-  const [year, setYear] = useState(String(initialData?.year ?? new Date().getFullYear()));
-  const [dateLabel, setDateLabel] = useState(initialData?.dateLabel ?? "");
+  const [identifier, setIdentifier] = useState(initialData?.identifier ?? "");
   const [startDate, setStartDate] = useState(toDateInput(initialData?.startDate));
   const [endDate, setEndDate] = useState(toDateInput(initialData?.endDate));
-  const [animalName, setAnimalName] = useState(initialData?.animalName ?? "");
   const [animalId, setAnimalId] = useState<string>(
     initialData?.animalId != null ? String(initialData.animalId) : "",
   );
@@ -60,12 +58,7 @@ export default function BonusAnimalForm({ animals, initialData, defaultType, mod
     e.preventDefault();
     if (isSubmitting) return;
 
-    const yearNum = parseInt(year, 10);
-    if (isNaN(yearNum) || yearNum < 2000 || yearNum > 2100) {
-      toast.warn(t("validation_year"));
-      return;
-    }
-    if (!dateLabel.trim() || !animalName.trim()) {
+    if (!identifier.trim()) {
       toast.warn(t("validation_required"));
       return;
     }
@@ -74,11 +67,9 @@ export default function BonusAnimalForm({ animals, initialData, defaultType, mod
     try {
       const data = {
         type,
-        year: yearNum,
-        dateLabel: dateLabel.trim(),
+        identifier: identifier.trim(),
         startDate: startDate || null,
         endDate: endDate || null,
-        animalName: animalName.trim(),
         animalId: animalId ? parseInt(animalId, 10) : null,
         isNpc,
       };
@@ -132,24 +123,11 @@ export default function BonusAnimalForm({ animals, initialData, defaultType, mod
         </FieldGroup>
 
         <FieldGroup>
-          <Label>{t("form_year")} *</Label>
-          <StyledInput
-            type="number"
-            value={year}
-            onChange={(e) => setYear(e.target.value)}
-            min={2000}
-            max={2100}
-            required
-          />
-        </FieldGroup>
-
-        <FieldGroup>
-          <Label>{t("form_date_label")} *</Label>
+          <Label>{t("form_identifier")} *</Label>
           <StyledInput
             type="text"
-            value={dateLabel}
-            onChange={(e) => setDateLabel(e.target.value)}
-            placeholder={t("form_date_label_hint")}
+            value={identifier}
+            onChange={(e) => setIdentifier(e.target.value)}
             required
           />
         </FieldGroup>
@@ -172,16 +150,6 @@ export default function BonusAnimalForm({ animals, initialData, defaultType, mod
             />
           </FieldGroup>
         </TwoColumns>
-
-        <FieldGroup>
-          <Label>{t("form_animal_name")} *</Label>
-          <StyledInput
-            type="text"
-            value={animalName}
-            onChange={(e) => setAnimalName(e.target.value)}
-            required
-          />
-        </FieldGroup>
 
         <FieldGroup>
           <Label>{t("form_animal_link")}</Label>

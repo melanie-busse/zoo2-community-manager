@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import { useRouter } from "@/i18n/routing";
 
 import { useBonusAnimalsStore } from "@/store/useBonusAnimalsStore";
@@ -18,19 +18,20 @@ interface Props {
 
 export default function BonusAnimalsContent({ type, initialData }: Props) {
   const t = useTranslations("animals_bonus");
+  const locale = useLocale();
   const router = useRouter();
 
   const initializeFromSSR = useBonusAnimalsStore((state) => state.initializeFromSSR);
   const entries = useBonusAnimalsStore((state) => state.entries);
   const total = useBonusAnimalsStore((state) => state.total);
   const availableYears = useBonusAnimalsStore((state) => state.availableYears);
-  const animalNameFilter = useBonusAnimalsStore((state) => state.animalNameFilter);
+  const identifierFilter = useBonusAnimalsStore((state) => state.identifierFilter);
   const yearFilter = useBonusAnimalsStore((state) => state.yearFilter);
   const page = useBonusAnimalsStore((state) => state.page);
   const pageSize = useBonusAnimalsStore((state) => state.pageSize);
   const isLoading = useBonusAnimalsStore((state) => state.isLoading);
   const fetchError = useBonusAnimalsStore((state) => state.fetchError);
-  const setAnimalNameFilter = useBonusAnimalsStore((state) => state.setAnimalNameFilter);
+  const setIdentifierFilter = useBonusAnimalsStore((state) => state.setIdentifierFilter);
   const setYearFilter = useBonusAnimalsStore((state) => state.setYearFilter);
   const setPage = useBonusAnimalsStore((state) => state.setPage);
   const deleteEntry = useBonusAnimalsStore((state) => (state as any).deleteEntry);
@@ -39,7 +40,7 @@ export default function BonusAnimalsContent({ type, initialData }: Props) {
   useEffect(() => {
     if (!initialized.current) {
       initialized.current = true;
-      initializeFromSSR({ ...initialData, type });
+      initializeFromSSR({ ...initialData, type, locale });
     }
   }, [initializeFromSSR, initialData, type]);
 
@@ -50,11 +51,11 @@ export default function BonusAnimalsContent({ type, initialData }: Props) {
     };
   }, []);
 
-  const handleAnimalNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleIdentifierChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     if (debounceTimer.current) clearTimeout(debounceTimer.current);
     debounceTimer.current = setTimeout(() => {
-      setAnimalNameFilter(value);
+      setIdentifierFilter(value);
     }, 300);
   };
 
@@ -72,9 +73,9 @@ export default function BonusAnimalsContent({ type, initialData }: Props) {
       <FilterCard>
         <FilterInput
           type="text"
-          defaultValue={animalNameFilter}
-          onChange={handleAnimalNameChange}
-          placeholder={t("filter_animal_name")}
+          defaultValue={identifierFilter}
+          onChange={handleIdentifierChange}
+          placeholder={t("filter_identifier")}
         />
         <FilterSelect
           value={yearFilter ?? ""}

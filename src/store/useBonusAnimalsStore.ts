@@ -4,18 +4,19 @@ import type { PremiumVipAnimalEntryWithAnimal } from "@/service/PremiumVipAnimal
 
 interface BonusAnimalsState {
   type: "PREMIUM" | "VIP";
+  locale: string;
   entries: PremiumVipAnimalEntryWithAnimal[];
   total: number;
   availableYears: number[];
-  animalNameFilter: string;
+  identifierFilter: string;
   yearFilter: number | null;
   page: number;
   pageSize: number;
   isLoading: boolean;
   fetchError: string | null;
 
-  initializeFromSSR: (data: BonusAnimalsResponse & { type: "PREMIUM" | "VIP" }) => void;
-  setAnimalNameFilter: (name: string) => void;
+  initializeFromSSR: (data: BonusAnimalsResponse & { type: "PREMIUM" | "VIP"; locale: string }) => void;
+  setIdentifierFilter: (value: string) => void;
   setYearFilter: (year: number | null) => void;
   setPage: (page: number) => void;
   fetchEntries: () => Promise<void>;
@@ -23,10 +24,11 @@ interface BonusAnimalsState {
 
 export const useBonusAnimalsStore = create<BonusAnimalsState>((set, get) => ({
   type: "PREMIUM",
+  locale: "de",
   entries: [],
   total: 0,
   availableYears: [],
-  animalNameFilter: "",
+  identifierFilter: "",
   yearFilter: null,
   page: 1,
   pageSize: 25,
@@ -36,19 +38,20 @@ export const useBonusAnimalsStore = create<BonusAnimalsState>((set, get) => ({
   initializeFromSSR: (data) => {
     set({
       type: data.type,
+      locale: data.locale,
       entries: data.entries,
       total: data.total,
       availableYears: data.availableYears,
       page: 1,
-      animalNameFilter: "",
+      identifierFilter: "",
       yearFilter: null,
       isLoading: false,
       fetchError: null,
     });
   },
 
-  setAnimalNameFilter: (name) => {
-    set({ animalNameFilter: name, page: 1 });
+  setIdentifierFilter: (value) => {
+    set({ identifierFilter: value, page: 1 });
     get().fetchEntries();
   },
 
@@ -63,14 +66,15 @@ export const useBonusAnimalsStore = create<BonusAnimalsState>((set, get) => ({
   },
 
   fetchEntries: async () => {
-    const { type, animalNameFilter, yearFilter, page, pageSize } = get();
+    const { type, locale, identifierFilter, yearFilter, page, pageSize } = get();
     set({ isLoading: true, fetchError: null });
     try {
       const result = await fetchBonusAnimals(type, {
-        animalName: animalNameFilter || undefined,
+        identifier: identifierFilter || undefined,
         year: yearFilter ?? undefined,
         page,
         pageSize,
+        locale,
       });
       set({ entries: result.entries, total: result.total, availableYears: result.availableYears, isLoading: false });
     } catch (e: unknown) {

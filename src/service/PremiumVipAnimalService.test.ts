@@ -6,7 +6,6 @@ vi.mock("@/lib/prisma", () => ({
     premiumVipAnimalEntry: {
       findMany: vi.fn(),
       count: vi.fn(),
-      groupBy: vi.fn(),
     },
   },
 }));
@@ -15,7 +14,6 @@ import prisma from "@/lib/prisma";
 
 const mockFindMany = prisma.premiumVipAnimalEntry.findMany as ReturnType<typeof vi.fn>;
 const mockCount = prisma.premiumVipAnimalEntry.count as ReturnType<typeof vi.fn>;
-const mockGroupBy = prisma.premiumVipAnimalEntry.groupBy as ReturnType<typeof vi.fn>;
 
 beforeEach(() => {
   vi.clearAllMocks();
@@ -24,7 +22,7 @@ beforeEach(() => {
 describe("getPremiumVipAnimals", () => {
   test("returns paginated entries for PREMIUM type", async () => {
     mockFindMany.mockResolvedValue([
-      { id: 1, type: "PREMIUM", year: 2026, dateLabel: "Nov 3–17", animal: null, animalName: "Fossa", isNpc: false },
+      { id: 1, type: "PREMIUM", startDate: null, endDate: null, animal: null, animalName: "Fossa", isNpc: false },
     ]);
     mockCount.mockResolvedValue(1);
 
@@ -37,7 +35,7 @@ describe("getPremiumVipAnimals", () => {
     );
   });
 
-  test("filters by animalName (case-insensitive LIKE)", async () => {
+  test("filters by animalName", async () => {
     mockFindMany.mockResolvedValue([]);
     mockCount.mockResolvedValue(0);
 
@@ -46,20 +44,27 @@ describe("getPremiumVipAnimals", () => {
     expect(mockFindMany).toHaveBeenCalledWith(
       expect.objectContaining({
         where: expect.objectContaining({
-          animalName: { contains: "Fox", mode: "insensitive" },
+          animalName: { contains: "Fox" },
         }),
       })
     );
   });
 
-  test("filters by year when provided", async () => {
+  test("filters by year via startDate range", async () => {
     mockFindMany.mockResolvedValue([]);
     mockCount.mockResolvedValue(0);
 
     await getPremiumVipAnimals("VIP", { year: 2024, page: 1, pageSize: 25 });
 
     expect(mockFindMany).toHaveBeenCalledWith(
-      expect.objectContaining({ where: expect.objectContaining({ year: 2024 }) })
+      expect.objectContaining({
+        where: expect.objectContaining({
+          startDate: {
+            gte: new Date(Date.UTC(2024, 0, 1)),
+            lt: new Date(Date.UTC(2025, 0, 1)),
+          },
+        }),
+      })
     );
   });
 
@@ -87,7 +92,11 @@ describe("getPremiumVipAnimals", () => {
 
 describe("getAvailableYears", () => {
   test("returns distinct years descending for given type", async () => {
-    mockGroupBy.mockResolvedValue([{ year: 2026 }, { year: 2025 }, { year: 2024 }]);
+    mockFindMany.mockResolvedValue([
+      { startDate: new Date("2026-03-01") },
+      { startDate: new Date("2025-06-15") },
+      { startDate: new Date("2024-11-20") },
+    ]);
 
     const years = await getAvailableYears("PREMIUM");
     expect(years).toEqual([2026, 2025, 2024]);

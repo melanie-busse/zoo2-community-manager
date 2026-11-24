@@ -139,7 +139,9 @@
       "Bash(/c/xampp/mysql/bin/mysql.exe -u root zoo2-community-manager -e \"SELECT type, COUNT\\(*\\) as total, SUM\\(animalId IS NOT NULL\\) as matched, SUM\\(isNpc=1\\) as npcs FROM premiumvipanimalentry GROUP BY type;\" 2>&1)",
       "Bash(echo \"--- $locale ---\")",
       "Bash(find D:/Entwicklung/zoo2-community-manager/src -name *boost* -o -name *Boost*)",
-      "Bash(bash .superpowers/sdd/scripts/review-package docs/superpowers/plans/2026-11-10-premium-vip-animals.md f388206104e546990a2d802b239337e03d2d420e HEAD)"
+      "Bash(bash .superpowers/sdd/scripts/review-package docs/superpowers/plans/2026-11-10-premium-vip-animals.md f388206104e546990a2d802b239337e03d2d420e HEAD)",
+      "Read(//c/Users/micro/**)",
+      "Bash(grep -E \"^.*\\(error\\).*$\")"
     ]
   }
 }

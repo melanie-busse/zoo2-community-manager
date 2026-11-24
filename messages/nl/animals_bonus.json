@@ -4,6 +4,7 @@
   "vip_title": "VIP-dieren",
   "vip_intro": "VIP-bonusdieren zijn exclusieve dieren die worden ontvangen bij de meeste diamantpakketten van 1000+ diamanten. Het VIP-dier wisselt elke 8 weken op een dinsdag.",
   "filter_animal_name": "Diernaam",
+  "filter_identifier": "Aanduiding",
   "filter_year": "Jaar",
   "filter_all_years": "Alle jaren",
   "col_period": "Periode",
@@ -17,6 +18,7 @@
   "form_type": "Type",
   "form_type_premium": "Premium",
   "form_type_vip": "VIP",
+  "form_identifier": "Aanduiding (intern label)",
   "form_year": "Jaar",
   "form_date_label": "Periodelabel",
   "form_date_label_hint": "bijv. \"Januari 2024\" of \"1–15 maart 2024\"",
@@ -37,5 +39,7 @@
   "validation_year": "Voer een geldig jaar in.",
   "validation_required": "Vul alle verplichte velden in.",
   "action_edit": "Bewerken",
-  "nav_create": "Toevoegen"
+  "nav_create": "Toevoegen",
+  "results_count": "<b>{shown}</b> van <b>{total}</b> vermeldingen",
+  "confirm_delete": "Weet je zeker dat je deze vermelding wilt verwijderen?"
 }

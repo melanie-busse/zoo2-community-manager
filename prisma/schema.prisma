@@ -1002,16 +1002,14 @@ enum PremiumVipType {
 model PremiumVipAnimalEntry {
   id         Int            @id @default(autoincrement())
   type       PremiumVipType
-  year       Int
   startDate  DateTime?
   endDate    DateTime?
-  dateLabel  String
   animalId   Int?
   animal     Animal?        @relation(fields: [animalId], references: [id])
-  animalName String
+  identifier String
   isNpc      Boolean        @default(false)
 
-  @@index([type, year])
+  @@index([type])
   @@index([animalId])
   @@map("premiumvipanimalentry")
 }

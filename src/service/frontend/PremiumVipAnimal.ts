@@ -8,13 +8,14 @@ export type BonusAnimalsResponse = {
 
 export async function fetchBonusAnimals(
   type: "PREMIUM" | "VIP",
-  params: { animalName?: string; year?: number; page: number; pageSize: number }
+  params: { identifier?: string; year?: number; page: number; pageSize: number; locale?: string }
 ): Promise<BonusAnimalsResponse> {
   const searchParams = new URLSearchParams();
   searchParams.set("type", type);
   searchParams.set("page", String(params.page));
   searchParams.set("pageSize", String(params.pageSize));
-  if (params.animalName) searchParams.set("animalName", params.animalName);
+  if (params.locale) searchParams.set("locale", params.locale);
+  if (params.identifier) searchParams.set("animalName", params.identifier);
   if (params.year !== undefined) searchParams.set("year", String(params.year));
 
   const response = await fetch(`/api/premium-vip-animals?${searchParams.toString()}`);

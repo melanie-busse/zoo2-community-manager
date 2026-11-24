@@ -4,6 +4,8 @@
   "vip_title": "VIP Animals",
   "vip_intro": "VIP bonus animals are exclusive animals received with most 1000+ diamond packages. The VIP animal changes every 8 weeks on a Tuesday.",
   "filter_animal_name": "Animal name",
+  "filter_identifier": "Identifier",
+  "form_identifier": "Identifier (internal label)",
   "filter_year": "Year",
   "filter_all_years": "All years",
   "col_period": "Period",
@@ -37,5 +39,7 @@
   "validation_year": "Please enter a valid year.",
   "validation_required": "Please fill in all required fields.",
   "action_edit": "Edit",
-  "nav_create": "Add"
+  "nav_create": "Add",
+  "results_count": "<b>{shown}</b> of <b>{total}</b> entries",
+  "confirm_delete": "Really delete this entry?"
 }

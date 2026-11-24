@@ -1149,12 +1149,10 @@ async function seedPremiumVipAnimals() {
       await prisma.premiumVipAnimalEntry.create({
         data: {
           type: entry.type,
-          year: entry.year,
-          dateLabel: entry.dateLabel,
+          identifier: `${entry.dateLabel} ${entry.year} – ${animal.name}`,
           startDate: entry.startDate ? new Date(entry.startDate) : null,
           endDate: entry.endDate ? new Date(entry.endDate) : null,
           animalId,
-          animalName: animal.name,
           isNpc: animal.isNpc,
         },
       });
