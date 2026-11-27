@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import styled from "styled-components";
 import { useTranslations } from "next-intl";
 import { useSession } from "next-auth/react";
 import { hasMinimumRole, isMayor } from "@/utils/roleUtils";

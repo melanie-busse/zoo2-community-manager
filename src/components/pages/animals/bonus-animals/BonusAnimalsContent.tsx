@@ -4,12 +4,14 @@ import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 import { useTranslations, useLocale } from "next-intl";
 import { useRouter } from "@/i18n/routing";
+import { toast } from "react-toastify";
 
 import { useBonusAnimalsStore } from "@/store/useBonusAnimalsStore";
 import type { BonusAnimalsResponse } from "@/service/frontend/PremiumVipAnimal";
 import FilterCard from "@/components/elements/Filter/FilterCard";
 import Pagination from "@/components/elements/Pagination/Pagination";
 import BonusAnimalsTable from "./BonusAnimalsTable";
+import { confirmDeleteDialog } from "@/utils/alerts";
 
 interface Props {
   type: "PREMIUM" | "VIP";
@@ -34,7 +36,7 @@ export default function BonusAnimalsContent({ type, initialData }: Props) {
   const setIdentifierFilter = useBonusAnimalsStore((state) => state.setIdentifierFilter);
   const setYearFilter = useBonusAnimalsStore((state) => state.setYearFilter);
   const setPage = useBonusAnimalsStore((state) => state.setPage);
-  const deleteEntry = useBonusAnimalsStore((state) => (state as any).deleteEntry);
+  const deleteEntry = useBonusAnimalsStore((state) => state.deleteEntry);
 
   const initialized = useRef(false);
   useEffect(() => {
@@ -60,9 +62,18 @@ export default function BonusAnimalsContent({ type, initialData }: Props) {
   };
 
   const handleDelete = async (id: number) => {
-    if (!window.confirm(t("confirm_delete"))) return;
-    if (typeof deleteEntry === "function") {
+    const confirmed = await confirmDeleteDialog({
+      title: t("delete_confirm_title"),
+      text: t("delete_confirm_text"),
+      confirmButtonText: t("delete"),
+      cancelButtonText: t("cancel"),
+    });
+    if (!confirmed) return;
+    try {
       await deleteEntry(id);
+      toast.success(t("delete_success"));
+    } catch (e: any) {
+      toast.error(e.message);
     }
   };
 
@@ -104,7 +115,7 @@ export default function BonusAnimalsContent({ type, initialData }: Props) {
         <BonusAnimalsTable
           entries={entries}
           editBasePath={type === "PREMIUM" ? "/animals/premium-animals" : "/animals/vip-animals"}
-          onDelete={typeof deleteEntry === "function" ? handleDelete : undefined}
+          onDelete={handleDelete}
           onRowClick={(entry) => {
             if (entry.animalId !== null) {
               router.push(`/animals/${entry.animalId}` as any);

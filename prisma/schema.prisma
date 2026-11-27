@@ -1013,3 +1013,23 @@ model PremiumVipAnimalEntry {
   @@index([animalId])
   @@map("premiumvipanimalentry")
 }
+
+model Npc {
+  id           Int       @id @default(autoincrement())
+  identifier   String
+  optainedFrom String
+  popularity   Int
+  texts        NpcText[]
+
+  @@map("npc")
+}
+
+model NpcText {
+  id          Int    @id @default(autoincrement())
+  npcId       Int
+  name        String
+  description String
+  npc         Npc    @relation(fields: [npcId], references: [id])
+
+  @@map("npctext")
+}

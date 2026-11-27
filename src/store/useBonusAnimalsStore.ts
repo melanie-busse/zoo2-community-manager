@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { fetchBonusAnimals, type BonusAnimalsResponse } from "@/service/frontend/PremiumVipAnimal";
+import { fetchBonusAnimals, deleteBonusAnimal, type BonusAnimalsResponse } from "@/service/frontend/PremiumVipAnimal";
 import type { PremiumVipAnimalEntryWithAnimal } from "@/service/PremiumVipAnimalService";
 
 interface BonusAnimalsState {
@@ -20,6 +20,7 @@ interface BonusAnimalsState {
   setYearFilter: (year: number | null) => void;
   setPage: (page: number) => void;
   fetchEntries: () => Promise<void>;
+  deleteEntry: (id: number) => Promise<void>;
 }
 
 export const useBonusAnimalsStore = create<BonusAnimalsState>((set, get) => ({
@@ -63,6 +64,11 @@ export const useBonusAnimalsStore = create<BonusAnimalsState>((set, get) => ({
   setPage: (page) => {
     set({ page });
     get().fetchEntries();
+  },
+
+  deleteEntry: async (id) => {
+    await deleteBonusAnimal(id);
+    await get().fetchEntries();
   },
 
   fetchEntries: async () => {

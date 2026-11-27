@@ -142,7 +142,7 @@ export default function BonusAnimalsTable({ entries, onRowClick, editBasePath, o
                       <ActionGroupBadge
                         id={entry.id}
                         onEdit={() =>
-                          router.push(`/${locale}${editBasePath}/${entry.id}/edit` as any)
+                          router.push(`${editBasePath}/${entry.id}/edit` as any)
                         }
                         onDelete={() => onDelete?.(entry.id)}
                       />

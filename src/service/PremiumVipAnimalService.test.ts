@@ -35,7 +35,7 @@ describe("getPremiumVipAnimals", () => {
     );
   });
 
-  test("filters by animalName", async () => {
+  test("filters by identifier", async () => {
     mockFindMany.mockResolvedValue([]);
     mockCount.mockResolvedValue(0);
 
@@ -44,7 +44,7 @@ describe("getPremiumVipAnimals", () => {
     expect(mockFindMany).toHaveBeenCalledWith(
       expect.objectContaining({
         where: expect.objectContaining({
-          animalName: { contains: "Fox" },
+          identifier: { contains: "Fox" },
         }),
       })
     );

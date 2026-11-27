@@ -4,6 +4,7 @@ import React from "react";
 import { useTranslations } from "next-intl";
 import { useSession } from "next-auth/react";
 import { hasMinimumRole, isMayor } from "@/utils/roleUtils";
+import { useRouter } from "@/i18n/routing";
 
 import * as Styles from "@/components/page-structure/Table/Table.styles";
 
@@ -19,8 +20,7 @@ import ActionGroupBadge from "@/components/ui/badges/ActionGroupBadge";
 import { getBiomeImage, getBiomeName, getShelterImage } from "@/utils/BiomeUtil";
 import LinkedRow from "@/components/page-structure/Table/LinkedRow";
 import { useAnimalStore } from "@/store/useAnimalStore";
-import { useRouter } from "@/i18n/routing";
-import { TableCellRight, TableHeaderRight } from "@/components/page-structure/Table/Table.styles";
+import { TableHeaderRight } from "@/components/page-structure/Table/Table.styles";
 
 export default function AnimalDesktopTable() {
   const router = useRouter();

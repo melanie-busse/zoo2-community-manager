@@ -8,11 +8,9 @@ import { toast } from "react-toastify";
 
 import SearchableSelect from "@/components/ui/form/SearchableSelect";
 import SubmitButton from "@/components/ui/form/SubmitButton";
-import { confirmDeleteDialog } from "@/utils/alerts";
 import {
   createBonusAnimal,
   updateBonusAnimal,
-  deleteBonusAnimal,
 } from "@/service/frontend/PremiumVipAnimal";
 import type { BonusAnimalFormAnimal } from "@/service/PremiumVipAnimalService";
 import type { PremiumVipAnimalEntryWithAnimal } from "@/service/PremiumVipAnimalService";
@@ -45,7 +43,6 @@ export default function BonusAnimalForm({ animals, initialData, defaultType, mod
   );
   const [isNpc, setIsNpc] = useState(initialData?.isNpc ?? false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isDeleting, setIsDeleting] = useState(false);
 
   const animalOptions = animals.map((a) => ({
     value: String(a.id),
@@ -86,28 +83,6 @@ export default function BonusAnimalForm({ animals, initialData, defaultType, mod
       toast.error(e.message);
     } finally {
       setIsSubmitting(false);
-    }
-  };
-
-  const handleDelete = async () => {
-    if (!initialData) return;
-    const confirmed = await confirmDeleteDialog({
-      title: t("delete_confirm_title"),
-      text: t("delete_confirm_text"),
-      confirmButtonText: t("delete"),
-      cancelButtonText: t("cancel"),
-    });
-    if (!confirmed) return;
-
-    setIsDeleting(true);
-    try {
-      await deleteBonusAnimal(initialData.id);
-      toast.success(t("delete_success"));
-      router.push(backPath as any);
-    } catch (e: any) {
-      toast.error(e.message);
-    } finally {
-      setIsDeleting(false);
     }
   };
 
@@ -183,11 +158,6 @@ export default function BonusAnimalForm({ animals, initialData, defaultType, mod
         <CancelButton type="button" onClick={() => router.push(backPath as any)}>
           {t("cancel")}
         </CancelButton>
-        {mode === "edit" && (
-          <DeleteButton type="button" onClick={handleDelete} disabled={isDeleting}>
-            {isDeleting ? tCommon("saving") : t("delete")}
-          </DeleteButton>
-        )}
       </ButtonRow>
     </FormWrapper>
   );
@@ -281,24 +251,5 @@ const CancelButton = styled.button`
   &:hover {
     border-color: ${({ theme }) => theme.colors.primary[500]};
     color: ${({ theme }) => theme.colors.primary[500]};
-  }
-`;
-
-const DeleteButton = styled.button`
-  padding: 12px 20px;
-  border: 2px solid ${({ theme }) => theme.colors.status.errorText};
-  border-radius: 10px;
-  background: transparent;
-  font-size: 0.95rem;
-  font-weight: 600;
-  cursor: pointer;
-  color: ${({ theme }) => theme.colors.status.errorText};
-  &:hover {
-    background: ${({ theme }) => theme.colors.status.errorText};
-    color: white;
-  }
-  &:disabled {
-    opacity: 0.5;
-    cursor: default;
   }
 `;
